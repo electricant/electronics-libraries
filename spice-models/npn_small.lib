@@ -1,0 +1,37 @@
+*******************************************************************************
+* NPN small signal transistors library
+*
+*******************************************************************************
+
+.MODEL BC550 NPN (IS =1.8E-14 ISE=5.0E-14 NF =.9955 NE =1.46 BF =400 BR =35.5
++		IKF=.14 IKR=.03 ISC=1.72E-13 NC =1.27 NR =1.005 RB =.56 RE =.6
++		RC =.25 VAF=80 VAR=12.5 CJE=13E-12 TF =.64E-9 CJC=4E-12
++		TR =50.72E-9 VJC=.54 MJC=.33)
+
+* (2S)C1815 Complementary 2SA1015
+.model 2SC1815 NPN (Is=2.04E-15 Xti=3 Eg=1.11 Vaf=6 Bf=300 Ne=1.5 Ise=0 Vceo=50
++		Icrating=150m mfg=TOSHIBA Ikf=20m Xtb=1.5 Br=3.377 Nc=2 Isc=0 Ikr=0
++		Rc=1 Cjc=1p Mjc=.3333 Vjc=.75 Fc=.5 Cje=25p Mje=.3333 Vje=.75
++		Tr=450n Tf=20n Itf=0 Vtf=0 Xtf=0)
+.model 2SC1815-GR NPN (Is=2.04E-15 Xti=3 Eg=1.11 Vaf=6 Bf=300 Ne=1.5 Ise=0
++		Vceo=50 Icrating=150m mfg=TOSHIBA Ikf=20m Xtb=1.5 Br=3.377 Nc=2
++		Isc=0 Ikr=0 Rc=1 Cjc=1p Mjc=.3333 Vjc=.75 Fc=.5 Cje=25p Mje=.3333
++		Vje=.75 Tr=450n Tf=20n Itf=0 Vtf=0 Xtf=0)
+.model 2SC1815-Y NPN (Is=2.04E-15 Xti=3 Eg=1.11 Vaf=6 Bf=200 Ne=1.5 Ise=0
++		Vceo=50 Icrating=150m mfg=TOSHIBA Ikf=20m Xtb=1.5 Br=3.377 Nc=2
++		Isc=0 Ikr=0 Rc=1 Cjc=1p Mjc=.3333 Vjc=.75 Fc=.5 Cje=25p Mje=.3333
++		Vje=.75 Tr=450n Tf=20n Itf=0 Vtf=0 Xtf=0)
+
+* 2N3904 Complementary 2N3906
+.model 2N3904 NPN (IS=4.9148E-15 BF=191.70 VAF=100 IKF=.28579 ISE=11.882E-15
++		NE=1.4422 BR=5.6808 VAR=100 IKR=61.753E-3 ISC=71.145E-12 NC=1.6595
++		NK=.8296 RB=5.8072 RC=.70808 CJE=6.9435E-12 VJE=.61872 MJE=.27802
++		CJC=3.7572E-12 VJC=1.2237 MJC=.28886 TF=523.89E-12 XTF=83.066
++		VTF=67.769 ITF=1.8804 TR=10.000E-9)
+
+* 2N5551 Complementary 2N5401
+.model 2N5551 NPN (IS=24.240E-15 BF=210.11 VAF=100 IKF=.1213 ISE=234.58E-15
++		NE=1.5426 BR=.96749 VAR=100 IKR=2.7338 ISC=1.5687E-12 NC=1.8752
++		NK=.66562 RB=.86415 CJE=50.447E-12 VJE=.70813 MJE=.32821
++		CJC=8.0670E-12 VJC=.48157 MJC=.2562 TF=96.238E-12 XTF=55.940
++		VTF=20.111 ITF=57.419E-3 TR=10.000E-9)

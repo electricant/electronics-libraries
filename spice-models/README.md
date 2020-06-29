@@ -1,25 +1,11 @@
-# electronics-libraries
-SPICE models and CAD models I came across/created and related stuff
+SPICE library
+=============
 
-## eagle-libraries
+I wanted all my spice models and symbols to be in one place. As a result this repository is born.
+New stuff will be added when needed.
 
-This folder holds all the libraries, cam and dru files for Eagle.
-
-There are also a few subfolders, namely:
-
-	* `cam` Contains cam files for some board manufacturers
-	* `datasheet` Contains libraries datasheets (when provided)
-	* `dru` Contains dru files for some board manufacturers
-
-## kicad-libraries
-
-This folder holds all the libraries (symbols and layout files) for KiCad.
-
-## spice-models
-
-This folders holds all the SPICE models I currently use.
-
-### Useful websites for SPICE models
+Useful websites:
+----------------
 The following is a list of websites whith lots of models to download
 
 http://www.jan.eguru-il.com/CADLAB.LIB

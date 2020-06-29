@@ -1,0 +1,120 @@
+******************************************************************************
+* 1n47XX series zener diodes (1W)
+*
+* NOTE: not working with GNU-Cap
+******************************************************************************
+
+* 1N4728    3.3 Volt
+.model 1N4728 D(Is=11.11f Rs=6.808 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=315p M=.4346
++		Vj=.75 Fc=.5 Isr=2.595n Nr=2 Bv=3.3 Ibv=5.8452 Nbv=3.6742
++		Ibvl=.27224 Nbvl=11.715 Tbv1=-636.36u)
+
+* 1N4729    3.6 Volt
+.model 1N4729 D(Is=2.306f Rs=2.741 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=300p M=.4641
++		Vj=.75 Fc=.5 Isr=2.405n Nr=2 Bv=3.6 Ibv=1.1936 Nbv=2.2747
++		Ibvl=19.94m Nbvl=12.64 Tbv1=-555.56u)
+
+* 1N4730    3.9 Volt
+.model 1N4730 D(Is=1.379f Rs=1.406 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=280p M=.4369
++		Vj=.75 Fc=.5 Isr=2.441n Nr=2 Bv=3.9 Ibv=.2473 Nbv=2.2758
++		Ibvl=13.346m Nbvl=13.271 Tbv1=-384.62u)
+
+* 1N4731    4.3 Volt
+.model 1N4731 D(Is=837.3E-18 Rs=.1211 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=220p M=.389
++		Vj=.75 Fc=.5 Isr=2.56n Nr=2 Bv=4.3 Ibv=60.167m Nbv=1.8815
++		Ibvl=6.0358m Nbvl=12.57 Tbv1=-232.558u)
+
+* 1N4732    4.7 Volt
+.model D1N4732 D(Is=1.064f Rs=.741 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=208p M=.4176
++		Vj=.75 Fc=.5 Isr=2.364n Nr=2 Bv=4.7 Ibv=.16902 Nbv=1.2344
++		Ibvl=4.0082m Nbvl=11.59 Tbv1=-21.28u)
+
+* 1N4733    5.1 Volt
+.model D1N4733 D(Is=1.214f Rs=1.078 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=185p M=.3509
++		Vj=.75 Fc=.5 Isr=2.601n Nr=2 Bv=5.1 Ibv=.70507 Nbv=.74348
++		Ibvl=4.8274m Nbvl=6.7393 Tbv1=176.471u)
+
+* 1N4734    5.6 Volt
+.model D1N4734 D(Is=1.085f Rs=.7945 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=157p M=.2966
++		Vj=.75 Fc=.5 Isr=2.811n Nr=2 Bv=5.6 Ibv=.37157 Nbv=.64726
++		Ibvl=1m Nbvl=6.5761 Tbv1=267.86u)
+
+* 1N4735    6.2 Volt
+.model D1N4735 D(Is=1.168f Rs=.9756 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=140p M=.3196
++		Vj=.75 Fc=.5 Isr=2.613n Nr=2 Bv=6.2 Ibv=4.9984 Nbv=.32088
++		Ibvl=184.78u Nbvl=.19558 Tbv1=443.55u)
+
+* 1N4736    6.8 Volt
+.model 1N4736 D(Is=1.327f Rs=1.306 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=125p M=.3144
++		Vj=.75 Fc=.5 Isr=2.575n Nr=2 Bv=6.8 Ibv=15 Nbv=.31009
++		Ibvl=149.2u Nbvl=.31028 Tbv1=485.29u)
+
+* 1N4737    7.5 Volt
+.model D1N4737 D(Is=1.699f Rs=1.955 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=106p M=.3176
++		Vj=.75 Fc=.5 Isr=2.488n Nr=2 Bv=7.5 Ibv=15 Nbv=.42018
++		Ibvl=1m Nbvl=.094527 Tbv1=533.33u)
+
+* 1N4738    8.2 Volt
+.model D1N4738 D(Is=2.102f Rs=2.5 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=100p M=.3503
++		Vj=.75 Fc=.5 Isr=2.252n Nr=2 Bv=8.2 Ibv=8 Nbv=.53621
++		Ibvl=213.52u Nbvl=.17879 Tbv1=585.37u)
+
+* 1N4739    9.1 Volt
+.model D1N4739 D(Is=2.11f Rs=2.512 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=89p M=.384
++		Vj=.75 Fc=.5 Isr=2.012n Nr=2 Bv=9.1 Ibv=1.2 Nbv=.72056
++		Ibvl=10m Nbvl=.21148 Tbv1=604.396u)
+
+* 1N4740    10  Volt
+.model D1N4740 D(Is=1.945f Rs=2.302 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=82p M=.3649
++		Vj=.75 Fc=.5 Isr=2.04n Nr=2 Bv=10 Ibv=.35034 Nbv=.84137
++		Ibvl=10m Nbvl=.17757 Tbv1=650u)
+
+* 1N4741    11  Volt
+.model D1N4741 D(Is=1.566f Rs=1.74 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=105p M=.4156
++		Vj=.75 Fc=.5 Isr=1.737n Nr=2 Bv=11 Ibv=92.573m Nbv=1.1098
++		Ibvl=440.66u Nbvl=.23096 Tbv1=672.73u)
+
+* 1N4742    12  Volt
+.model D1N4742 D(Is=1.773f Rs=2.06 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=100p M=.3894
++		Vj=.75 Fc=.5 Isr=1.799n Nr=2 Bv=12 Ibv=89.447m Nbv=1.1527
++		Ibvl=248.34n Nbvl=.8248 Tbv1=700u)
+
+* 1N4743    13  Volt
+.model D1N4743 D(Is=2.253f Rs=2.678 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=80p M=.3644
++		Vj=.75 Fc=.5 Isr=1.87n Nr=2 Bv=13 Ibv=99.671m Nbv=1.1851
++		Ibvl=8.4078u Nbvl=1.2407 Tbv1=846.15u)
+
+* 1N4744    15  Volt
+.model D1N4744 D(Is=3.142f Rs=3.544 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=72.5p M=.3282
++		Vj=.75 Fc=.5 Isr=1.973n Nr=2 Bv=15 Ibv=.14467 Nbv=1.093
++		Ibvl=.1m Nbvl=1.2722 Tbv1=001433.3u)
+
+* 1N4745    16  Volt
+.model D1N4745 D(Is=5.461f Rs=4.974 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=68p M=.3197
++		Vj=.75 Fc=.5 Isr=1.982n Nr=2 Bv=16 Ibv=.25684 Nbv=1.0588
++		Ibvl=1.029m Nbvl=1.0409 Tbv1=875u)
+
+* 1N4746    18  Volt
+.model D1N4746 D(Is=6.994f Rs=5.612 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=59p M=.2906
++		Vj=.75 Fc=.5 Isr=2.088n Nr=2 Bv=18 Ibv=.17098 Nbv=1.2072
++		Ibvl=2.002m Nbvl=1.1457 Tbv1=888.89u)
+
+* 1N4747    20  Volt
+.model D1N4747 D(Is=10.22f Rs=6.585 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=52p M=.2904
++		Vj=.75 Fc=.5 Isr=2.029n Nr=2 Bv=20 Ibv=.15934 Nbv=1.2472
++		Ibvl=211.18u Nbvl=1.9765 Tbv1=850u)
+
+* 1N4748    22  Volt
+.model D1N4748 D(Is=17.49f Rs=7.976 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=49p M=.2829
++		Vj=.75 Fc=.5 Isr=2.024n Nr=2 Bv=22 Ibv=.16996 Nbv=1.315
++		Ibvl=7.0073E-15 Nbvl=1.2735 Tbv1=840.91u)
+
+* 1N4749    24  Volt
+.model D1N4749 D(Is=25.94f Rs=9.006 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=41p M=.2715
++		Vj=.75 Fc=.5 Isr=2.052n Nr=2 Bv=24 Ibv=.14951 Nbv=1.3684
++		Ibvl=164.37u Nbvl=14 Tbv1=895.83u)
+
+* 1N4750    27  Volt
+.model D1N4750 D(Is=62.63f Rs=11.28 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=40p M=.2906
++		Vj=.75 Fc=.5 Isr=1.864n Nr=2 Bv=27 Ibv=.13378 Nbv=1.5283
++		Ibvl=3.4328m Nbvl=2.3046 Tbv1=888.89u)

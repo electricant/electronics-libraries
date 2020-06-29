@@ -1,0 +1,38 @@
+*******************************************************************************
+* PNP small signal transistors library
+*
+*******************************************************************************
+
+* BC560 Complementary BC550
+.MODEL BC560 PNP (IS =1.149E-14 ISE=5E-14 NF =.9872 NE =1.4 BF =330 BR =13
++		IKF=.1 IKR=.012 ISC=1.43E-14 NC =1.1 NR =.996 RB =.2 RE =.4
++		RC =.95 VAR=8.15 VAF=84.56 CJE=16E-12 TF =.493E-9 CJC=10.5E-12
++		TR =73.55E-9 MJC=.415 VJC=.565)
+
+* (2S)A1015 Complementary 2SC1815
+.model 2SA1015 PNP (Is=295.1E-18 Xti=3 Eg=1.11 Vaf=100 Bf=300 Ne=1.5 Ise=0
++		Vceo=50 Icrating=150m Ikf=0 Xtb=1.5 Br=10.45 Nc=2 Isc=0 Ikr=0
++		Rc=15 Cjc=66.2p Mjc=1.054 Vjc=.75 Fc=.5 Cje=5p Mje=.3333 Vje=.75 Tr=10n 
++		Tf=1.661n Itf=0 Vtf=0 Xtf=0)
+.model 2SA1015-GR PNP (Is=295.1E-18 Xti=3 Eg=1.11 Vaf=100 Bf=300 Ne=1.5 Ise=0
++		Vceo=50 Icrating=150m Ikf=0 Xtb=1.5 Br=10.45 Nc=2 Isc=0
++		Ikr=0 Rc=15 Cjc=66.2p Mjc=1.054 Vjc=.75 Fc=.5 Cje=5p Mje=.3333
++		Vje=.75 Tr=10n Tf=1.661n Itf=0 Vtf=0 Xtf=0)
+.model 2SA1015-Y PNP (Is=295.1E-18 Xti=3 Eg=1.11 Vaf=100 Bf=200 Ne=1.5 Ise=0
++		Vceo=50 Icrating=150m Ikf=0 Xtb=1.5 Br=10.45 Nc=2 Isc=0
++		Ikr=0 Rc=15 Cjc=66.2p Mjc=1.054 Vjc=.75 Fc=.5 Cje=5p Mje=.3333
++		Vje=.75 Tr=10n Tf=1.661n Itf=0 Vtf=0 Xtf=0)
+
+* 2N3906 Complementary 2N3904
+.model 2N3906 PNP (IS=7.9190E-15 BF=196.89 VAF=100 IKF=.7271 ISE=13.654E-15
++		NE=1.4535 BR=124.61 VAR=100 IKR=10.010E-3 ISC=18.518E-12 NC=1.6031
++		NK=1.1475 RB=8.6624 RC=.55428 CJE=11.640E-12 VJE=1.0397 MJE=.47196
++		CJC=7.8722E-12 VJC=.98301 MJC=.53872 TF=320.13E-12 XTF=29.514
++		VTF=81.870 ITF=.12448 TR=10.000E-9)
+
+* 2N5401 Complementary 2N5501
+.model 2N5401 PNP (IS=20.743E-15 BF=516.02 VAF=100 IKF=.23172 ISE=30.077E-15
++		NE=1.2905 BR=.1001 VAR=100 IKR=2.7895 ISC=4.1177E-12 NC=2.0459 
++		NK=.80454 RB=1.0110 CJE=50.447E-12 VJE=.70813 MJE=.32821 
++		CJC=9.0325E-12 VJC=.41518 MJC=.33181 TF=48.913E-12 XTF=57.737 
++		VTF=18.593 ITF=23.057E-3 TR=10.000E-9)
