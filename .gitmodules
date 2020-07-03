@@ -1,0 +1,6 @@
+[submodule "kicad-libraries/d1_mini_kicad"]
+	path = kicad-libraries/d1_mini_kicad
+	url = https://github.com/jerome-labidurie/d1_mini_kicad.git
+[submodule "kicad-libraries/kicad-ESP8266"]
+	path = kicad-libraries/kicad-ESP8266
+	url = https://github.com/jdunmire/kicad-ESP8266.git
