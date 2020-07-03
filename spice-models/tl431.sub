@@ -20,4 +20,3 @@ E1  5  2  POLY(2)  (4,2)  (1,2)  0  710  -710
 .MODEL DMOD1 D (RS=.3)
 .MODEL DMOD2 D (RS=1E-6)
 .ENDS
-

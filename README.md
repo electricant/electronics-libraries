@@ -15,6 +15,9 @@ There are also a few subfolders, namely:
 
 This folder holds all the libraries (symbols and layout files) for KiCad.
 
+Some libraries are contained as [submodules](https://github.blog/2016-02-01-working-with-submodules/).
+To have them synchornized issure `git clone --recursive` and `git submodule update --recursive` to update the modules as needed.
+
 ## spice-models
 
 This folders holds all the SPICE models I currently use.
