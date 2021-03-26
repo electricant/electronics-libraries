@@ -1,0 +1,17 @@
+EESchema-LIBRARY Version 2.4
+#encoding utf-8
+#
+# a_black_cat
+#
+DEF a_black_cat EA 0 40 Y Y 1 F N
+F0 "EA" -50 -300 50 H V C CNN
+F1 "a_black_cat" 0 -200 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+C 0 0 180 0 1 0 N
+T 0 400 -50 250 0 0 0 eA Normal 0 C C
+ENDDRAW
+ENDDEF
+#
+#End Library
