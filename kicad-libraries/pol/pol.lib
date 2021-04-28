@@ -29,6 +29,18 @@ X D2 9 -400 -100 100 R 50 50 1 1 I
 ENDDRAW
 ENDDEF
 #
+# VimarPlana
+#
+DEF VimarPlana VP 0 40 Y Y 1 F N
+F0 "VP" 100 400 50 H V C CNN
+F1 "VimarPlana" 250 50 50 H V C CNN
+F2 "" 0 0 50 H I C CNN
+F3 "" 0 0 50 H I C CNN
+DRAW
+S 0 500 500 0 0 1 0 N
+ENDDRAW
+ENDDEF
+#
 # a_black_cat
 #
 DEF a_black_cat EA 0 40 Y Y 1 F N
