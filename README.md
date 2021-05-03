@@ -42,3 +42,6 @@ http://www.ti.com/adc/docs/midlevel.tsp?contentId=31690&DCMP=hpa_tools&HQS=spice
 
 http://cordellaudio.com/book/spice_models.shtml
 (Great models by audio guru Bob Cordell)
+
+http://espice.ugr.es/espice/src/modelos_subckt/spice_complete/
+(Quite a lot of models organized by different categories) 
