@@ -18,6 +18,12 @@ This folder holds all the libraries (symbols and layout files) for KiCad.
 Some libraries are contained as [submodules](https://github.blog/2016-02-01-working-with-submodules/).
 To have them synchornized issure `git clone --recursive` and `git submodule update --recursive` to update the modules as needed.
 
+To make the 3d models usable, add the location from step #1 to list
+    of configured paths as `POL_LIB`. Use a full path. Continuing with
+    the example step #1:
+
+        kicad:Preferences->Configure Paths->Add
+
 ## spice-models
 
 This folders holds all the SPICE models I currently use.
