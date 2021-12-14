@@ -4,3 +4,12 @@
 [submodule "kicad-libraries/kicad-ESP8266"]
 	path = kicad-libraries/kicad-ESP8266
 	url = https://github.com/jdunmire/kicad-ESP8266.git
+[submodule "kicad-libraries/tinkerforge"]
+	path = kicad-libraries/tinkerforge
+	url = https://github.com/Tinkerforge/kicad-libraries.git
+[submodule "kicad-libraries/SparkFun-KiCad-Libraries"]
+	path = kicad-libraries/SparkFun-KiCad-Libraries
+	url = https://github.com/sparkfun/SparkFun-KiCad-Libraries
+[submodule "kicad-libraries/digikey-kicad-library"]
+	path = kicad-libraries/digikey-kicad-library
+	url = https://github.com/Digi-Key/digikey-kicad-library
