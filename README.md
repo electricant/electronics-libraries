@@ -22,6 +22,8 @@ Currently, the following submodules are included:
 * https://github.com/Tinkerforge/kicad-libraries
 * https://github.com/jerome-labidurie/d1_mini_kicad
 * https://github.com/jdunmire/kicad-ESP8266
+* https://github.com/sparkfun/SparkFun-KiCad-Libraries
+* https://github.com/Digi-Key/digikey-kicad-library
 
 To make the 3d models usable, add the location from step #1 to the list
 of configured paths as `POL_LIB`. Use a full path. Continuing with
