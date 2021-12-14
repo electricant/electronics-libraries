@@ -6,10 +6,9 @@ SPICE models and CAD models I came across/created and related stuff
 This folder holds all the libraries, cam and dru files for Eagle.
 
 There are also a few subfolders, namely:
-
-	* `cam` Contains cam files for some board manufacturers
-	* `datasheet` Contains libraries datasheets (when provided)
-	* `dru` Contains dru files for some board manufacturers
+* `cam` Contains cam files for some board manufacturers
+* `datasheet` Contains libraries datasheets (when provided)
+* `dru` Contains dru files for some board manufacturers
 
 ## kicad-libraries
 
@@ -20,10 +19,9 @@ To have them synchornized issure `git clone --recursive` if you are cloning this
 Issue `git submodule update --remote --recursive` to update the modules from time to time.
 
 Currently, the following submodules are included:
-
-	* https://github.com/Tinkerforge/kicad-libraries
-	* https://github.com/jerome-labidurie/d1_mini_kicad
-	* https://github.com/jdunmire/kicad-ESP8266
+* https://github.com/Tinkerforge/kicad-libraries
+* https://github.com/jerome-labidurie/d1_mini_kicad
+* https://github.com/jdunmire/kicad-ESP8266
 
 To make the 3d models usable, add the location from step #1 to the list
 of configured paths as `POL_LIB`. Use a full path. Continuing with
