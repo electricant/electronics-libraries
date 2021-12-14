@@ -16,11 +16,18 @@ There are also a few subfolders, namely:
 This folder holds all the libraries (symbols and layout files) for KiCad.
 
 Some libraries are contained as [submodules](https://github.blog/2016-02-01-working-with-submodules/).
-To have them synchornized issure `git clone --recursive` and `git submodule update --recursive` to update the modules as needed.
+To have them synchornized issure `git clone --recursive` if you are cloning this repo for the first time.
+Issue `git submodule update --remote --recursive` to update the modules from time to time.
 
-To make the 3d models usable, add the location from step #1 to list
-    of configured paths as `POL_LIB`. Use a full path. Continuing with
-    the example step #1:
+Currently, the following submodules are included:
+
+	* https://github.com/Tinkerforge/kicad-libraries
+	* https://github.com/jerome-labidurie/d1_mini_kicad
+	* https://github.com/jdunmire/kicad-ESP8266
+
+To make the 3d models usable, add the location from step #1 to the list
+of configured paths as `POL_LIB`. Use a full path. Continuing with
+the example step #1:
 
         kicad:Preferences->Configure Paths->Add
 
