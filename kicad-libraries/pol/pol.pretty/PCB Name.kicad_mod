@@ -1,0 +1,12 @@
+(footprint "PCB Name" (version 20221018) (generator pcbnew)
+  (layer "F.Cu")
+  (descr "Have the PCB name appear on the board silkscreen")
+  (fp_text reference "REF**" (at 0 -0.5 unlocked) (layer "F.Fab") hide
+      (effects (font (size 1 1) (thickness 0.15)))
+    (tstamp bf19d760-ef23-4cd1-9312-1f038d8f4324)
+  )
+  (fp_text value "VAL**" (at 0 1 unlocked) (layer "F.SilkS")
+      (effects (font (size 1.2 1.2) (thickness 0.2) bold))
+    (tstamp 10c1bc1f-76cd-412d-9042-26f0d38ed9ce)
+  )
+)
