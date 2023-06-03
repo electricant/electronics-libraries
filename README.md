@@ -57,4 +57,7 @@ http://cordellaudio.com/book/spice_models.shtml
 (Great models by audio guru Bob Cordell)
 
 http://espice.ugr.es/espice/src/modelos_subckt/spice_complete/
-(Quite a lot of models organized by different categories) 
+(Quite a lot of models organized by different categories)
+
+https://ltwiki.org/index.php?title=Components_Library_and_Circuits
+(links to various models and subcircuits)
