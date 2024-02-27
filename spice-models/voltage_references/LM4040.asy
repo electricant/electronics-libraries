@@ -1,0 +1,23 @@
+Version 4
+SymbolType BLOCK
+LINE Normal -17 16 0 -15
+LINE Normal 16 16 -17 16
+LINE Normal 0 -15 16 16
+LINE Normal -15 -15 -24 -24
+LINE Normal 0 -15 -15 -15
+LINE Normal 16 -15 0 -15
+LINE Normal 24 -7 16 -15
+LINE Normal 0 -48 0 -15
+LINE Normal 0 16 0 48
+RECTANGLE Normal 48 48 -48 -48
+WINDOW 3 12 62 Left 0
+WINDOW 0 13 -61 Left 0
+SYMATTR Value X-LM4040
+SYMATTR Prefix X
+SYMATTR Description LM4040 Shunt Regulator
+PIN 0 -48 NONE 8
+PINATTR PinName CATHODE/V+
+PINATTR SpiceOrder 1
+PIN 0 48 NONE 8
+PINATTR PinName ANODE/V-
+PINATTR SpiceOrder 2
