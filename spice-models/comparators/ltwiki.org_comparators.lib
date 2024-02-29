@@ -1,0 +1,427 @@
+* The parameters in this comparator library were derived from data sheets for
+* each parts. The macromodel used was developed by MicroSim Corporation, and
+* is produced by the "Parts" option to PSpice.
+*
+* Although we do not use it, another comparator macro model is described in:
+*
+* An Integrated-Circuit Comparator Macromodel
+* by Ian Getreu, Andreas Hadiwidjaja, and Johan Brinch
+* IEEE Journal of Solid-State Circuits, Vol. SC-11, no. 6, Dec. 1976
+*
+* This reference covers the considerations that go into duplicating the
+* behavior of voltage comparators.
+*
+* The comparators are modelled at room temperature. The macro model does not
+* track changes with temperature. This library file contains models for
+* nominal, not worst case, devices.
+*$
+*
+*-----------------------------------------------------------------------------
+* connections: non-inverting input
+* | inverting input
+* | | positive power supply
+* | | | negative power supply
+* | | | | open collector output
+* | | | | | output ground
+* | | | | | |
+.subckt LM111 1 2 3 4 5 6
+*
+f1 9 3 v1 1
+iee 3 7 dc 100.0E-6
+vi1 21 1 dc .45
+vi2 22 2 dc .45
+q1 9 21 7 qin
+q2 8 22 7 qin
+q3 9 8 4 qmo
+q4 8 8 4 qmi
+.model qin PNP(Is=800.0E-18 Bf=833.3)
+.model qmi NPN(Is=800.0E-18 Bf=1002)
+.model qmo NPN(Is=800.0E-18 Bf=1000 Cjc=1E-15 Tr=118.8E-9)
+e1 10 6 9 4 1
+v1 10 11 dc 0
+q5 5 11 6 qoc
+.model qoc NPN(Is=800.0E-18 Bf=34.49E3 Cjc=1E-15 Tf=364.6E-12 Tr=79.34E-9)
+dp 4 3 dx
+rp 3 4 6.122E3
+.model dx D(Is=800.0E-18 Rs=1)
+*
+.ends
+*$
+*-----------------------------------------------------------------------------
+* connections: non-inverting input
+* | inverting input
+* | | positive power supply
+* | | | negative power supply
+* | | | | open collector output
+* | | | | | output ground
+* | | | | | |
+.subckt LM119 1 2 3 4 5 6
+*
+f1 3 9 v1 1
+iee 7 4 dc 100.0E-6
+q1 9 2 7 qin
+q2 8 1 7 qin
+q3 9 8 3 qmo
+q4 8 8 3 qmi
+.model qin NPN(Is=800.0E-18 Bf=333.3)
+.model qmi PNP(Is=800.0E-18 Bf=1002)
+.model qmo PNP(Is=800.0E-18 Bf=1000 Cjc=1E-15 Tr=59.42E-9)
+e1 10 6 3 9 1
+v1 10 11 dc 0
+q5 5 11 6 qoc
+.model qoc NPN(Is=800.0E-18 Bf=41.38E3 Cjc=1E-15 Tf=23.91E-12 Tr=24.01E-9)
+dp 4 3 dx
+rp 3 4 5.556E3
+.model dx D(Is=800.0E-18 Rs=1)
+*
+.ends
+*$
+*-----------------------------------------------------------------------------
+* connections: non-inverting input
+* | inverting input
+* | | positive power supply
+* | | | negative power supply
+* | | | | open collector output
+* | | | | |
+.subckt LM139 1 2 3 4 5
+*
+f1 9 3 v1 1
+iee 3 7 dc 100.0E-6
+vi1 21 1 dc .75
+vi2 22 2 dc .75
+q1 9 21 7 qin
+q2 8 22 7 qin
+q3 9 8 4 qmo
+q4 8 8 4 qmi
+.model qin PNP(Is=800.0E-18 Bf=2.000E3)
+.model qmi NPN(Is=800.0E-18 Bf=1002)
+.model qmo NPN(Is=800.0E-18 Bf=1000 Cjc=1E-15 Tr=475.4E-9)
+e1 10 4 9 4 1
+v1 10 11 dc 0
+q5 5 11 4 qoc
+.model qoc NPN(Is=800.0E-18 Bf=20.69E3 Cjc=1E-15 Tf=3.540E-9 Tr=472.8E-9)
+dp 4 3 dx
+rp 3 4 37.50E3
+.model dx D(Is=800.0E-18 Rs=1)
+*
+.ends
+*$
+*-----------------------------------------------------------------------------
+* connections: non-inverting input
+* | inverting input
+* | | positive power supply
+* | | | negative power supply
+* | | | | open collector output
+* | | | | |
+.subckt LM193 1 2 3 4 5
+*
+x_lm193 1 2 3 4 5 LM139
+*
+* the LM193 is identical to the LM139, but in a different package
+*
+.ends
+*$
+*-----------------------------------------------------------------------------
+* connections: non-inverting input
+* | inverting input
+* | | positive power supply
+* | | | negative power supply
+* | | | | open collector output
+* | | | | | output ground
+* | | | | | |
+.subckt LM211 1 2 3 4 5 6
+*
+x_lm211 1 2 3 4 5 6 LM111
+*
+* the LM211 is identical to the LM111, but has a more limited temp. range
+*
+.ends
+*$
+*-----------------------------------------------------------------------------
+* connections: non-inverting input
+* | inverting input
+* | | positive power supply
+* | | | negative power supply
+* | | | | open collector output
+* | | | | | output ground
+* | | | | | |
+.subckt LM219 1 2 3 4 5 6
+*
+x_lm219 1 2 3 4 5 6 LM119
+*
+* the LM219 is identical to the LM119, but has a more limited temp. range
+*
+.ends
+*$
+*-----------------------------------------------------------------------------
+* connections: non-inverting input
+* | inverting input
+* | | positive power supply
+* | | | negative power supply
+* | | | | open collector output
+* | | | | |
+.subckt LM239 1 2 3 4 5
+*
+x_lm239 1 2 3 4 5 LM139
+*
+* the LM239 is identical to the LM139, but has a more limited temp. range
+*
+.ends
+*$
+*-----------------------------------------------------------------------------
+* connections: non-inverting input
+* | inverting input
+* | | positive power supply
+* | | | negative power supply
+* | | | | open collector output
+* | | | | |
+.subckt LM293 1 2 3 4 5
+*
+x_lm293 1 2 3 4 5 LM139
+*
+* the LM293 is identical to the LM239, but in a different package
+*
+.ends
+*$
+*-----------------------------------------------------------------------------
+* connections: non-inverting input
+* | inverting input
+* | | positive power supply
+* | | | negative power supply
+* | | | | open collector output
+* | | | | | output ground
+* | | | | | |
+.subckt LM311 1 2 3 4 5 6
+*
+f1 9 3 v1 1
+iee 3 7 dc 100.0E-6
+vi1 21 1 dc .45
+vi2 22 2 dc .45
+q1 9 21 7 qin
+q2 8 22 7 qin
+q3 9 8 4 qmo
+q4 8 8 4 qmi
+.model qin PNP(Is=800.0E-18 Bf=500)
+.model qmi NPN(Is=800.0E-18 Bf=1002)
+.model qmo NPN(Is=800.0E-18 Bf=1000 Cjc=1E-15 Tr=124.2E-9)
+e1 10 6 9 4 1
+v1 10 11 dc 0
+q5 5 11 6 qoc
+.model qoc NPN(Is=800.0E-18 Bf=206.9E3 Cjc=1E-15 Tf=7.855E-12 Tr=83.83E-9)
+dp 4 3 dx
+rp 3 4 7.087E3
+.model dx D(Is=800.0E-18)
+*
+.ends
+*$
+*-----------------------------------------------------------------------------
+* connections: non-inverting input
+* | inverting input
+* | | positive power supply
+* | | | negative power supply
+* | | | | open collector output
+* | | | | | output ground
+* | | | | | |
+.subckt LM319 1 2 3 4 5 6
+*
+x_lm319 1 2 3 4 5 6 LM119
+*
+* the LM319 is identical to the LM119, but has a more limited temp. range
+*
+.ends
+*$
+*-----------------------------------------------------------------------------
+* connections: non-inverting input
+* | inverting input
+* | | positive power supply
+* | | | negative power supply
+* | | | | open collector output
+* | | | | |
+.subckt LM339 1 2 3 4 5
+*
+x_lm339 1 2 3 4 5 LM139
+*
+* the LM339 is identical to the LM139, but has a more limited temp. range
+*
+.ends
+*$
+*
+*-----------------------------------------------------------------------------
+* connections: non-inverting input
+* | inverting input
+* | | positive power supply
+* | | | negative power supply
+* | | | | open collector output
+* | | | | |
+.subckt LM393 1 2 3 4 5
+*
+x_lm393 1 2 3 4 5 LM139
+*
+* the LM393 is identical to the LM339, but in a different package
+*
+.ends
+*$
+*-----------------------------------------------------------------------------
+* connections: non-inverting input
+* | inverting input
+* | | positive power supply
+* | | | negative power supply
+* | | | | open collector output
+* | | | | |
+.subckt LM3302 1 2 3 4 5
+*
+x_lm3302 1 2 3 4 5 LM139
+*
+* the LM3302 is identical to the LM139, but has a more limited temp. range
+*
+.ends
+*$
+*-----------------------------------------------------------------------------
+* MANUFACTURERS PART NO. = L161AL (SILICONIX)
+* SUBTYPE: COMPARATOR
+* THIS IS A PRE-RAD MODEL AT 27 C OF THE L161AL
+* THIS MODEL MAY BE USED FOR ALL OF THE FOLLOWING DEVICES :
+* L161AP
+* L161AL
+*
+*
+** THE FOLLOWING ARE THE LIMITATIONS OF THIS MODEL:
+*
+* THIS MODEL IS A TRANSISTOR LEVEL MODEL OF THE SILICONIX L161 VOLTAGE
+* COMPARATOR WHICH FOLLOWS THE SCHEMATIC FROM THE DATA SHEET AND THE
+* PRODUCT SPEC. THIS MODEL DOES NOT SIMULATE VOS AND IOS. IT DOES
+* SIMULATE IBT, VOL, VOH, AND IS ACCORDING TO PRODUCT SPEC LIMITS. THE
+* MODEL SIMULATES +SR WITHIN 5% OF THE SILICONIX DATA SHEET VALUES(PAGE 8-
+* 46). IT DOES NOT SIMULATE -SR. -SR FOR THE ACTUAL DEVICE IS APPROXIMATELY
+* 3 TIMES FASTER THAN THE MODEL SIMULATION. THE MODEL SIMULATES
+* RESPONSE TIME (TRLH) FOR A 100MV OVERDRIVE WITHIN 12% OF THE SILICONIX
+* DATA SHEET(PAGE 8-47) AND TRHL WITHIN 20%. IT DOES NOT SIMULATE RESPONSE
+* TIME FOR A 5MV OVERDRIVE.
+* THE ACTUAL DEVICE IS 2.5 TIMES FASTER FOR TRLH AND IS 5 TIMES FASTER FOR
+* TRHL. THE MODEL DOES NOT SIMULATE A 20MV OVERDRIVE. THE ACTUAL DEVICE
+* IS 1.3 TIMES FASTER FOR TRLH AND 2.3 FASTER FOR TRHL.
+*
+* CONNECTIONS: NON-INVERTING INPUT
+* | INVERTING INPUT
+* | | POSITIVE POWER SUPPLY
+* | | | NEGATIVE POWER SUPPLY
+* | | | | OUTPUT
+* | | | | | ISET
+* | | | | | |
+.SUBCKT L161 9 7 1 8 10 14
+*
+Q1 8 7 3 PNPNOM
+QD1 4 4 8 NPNNOM
+Q2 8 9 6 PNPNOM
+Q3A 3 3 2 PNPNOM
+Q3B 4 3 2 PNPNOM 7
+Q4A 6 6 2 PNPNOM
+Q4B 5 6 2 PNPNOM 7
+Q5 5 4 8 NPNNOM
+Q6A 11 11 1 PNPNOM
+Q6B 10 11 1 PNPNOM 2
+Q6C 2 11 1 PNPNOM 2
+Q7 10 5 8 NPNNOM 2
+Q8 11 12 8 NPNNOM
+Q9 1 13 12 NPNNOM
+Q10 13 12 8 NPNNOM
+J11 14 8 13 JNOM
+.MODEL NPNNOM NPN (
++ IS = 1.66E-16
++ BF = 100
++ NF = 1
++ VAF = 200
++ IKF = 7E-3
++ ISE = 0
++ NE = 1.5
++ BR = 1.1
++ NR = 1
++ VAR = 26
++ IKR = 9.9999E+13
++ ISC = 0
++ NC = 2
++ RB = 150
++ IRB = 9.9999E+13
++ RBM = 0
++ RE = 3
++ RC = 800
++ CJE = 1.35E-12
++ VJE = 0.964
++ MJE = 0.5
++ TF = 1E-9
++ XTF = 0
++ VTF = 9.9999E+13
++ ITF = 0
++ PTF = 0
++ CJC = 1.35E-12
++ VJC = 0.663
++ MJC = 0.5
++ XCJC = 1
++ TR = 100E-9
++ CJS = 0
++ VJS = .75
++ MJS = 0
++ XTB = 1E-12
++ EG = 1.11
++ XTI = 3
++ KF = 0
++ AF = 1
++ FC = .5
++ )
+.MODEL PNPNOM PNP (
++ IS = 2.83E-17
++ BF = 40
++ NF = 1
++ VAF = 80
++ IKF = 0.1E-3
++ ISE = 0
++ NE = 1.5
++ BR = 4
++ NR = 1
++ VAR = 40
++ IKR = 9.9999E+13
++ ISC = 0
++ NC = 2
++ RB = 400
++ IRB = 9.9999E+13
++ RBM = 0
++ RE = 20
++ RC = 1400
++ CJE = 0.85E-12
++ VJE = 0.663
++ MJE = 0.5
++ TF = 100E-9
++ XTF = 0
++ VTF = 9.9999E+13
++ ITF = 0
++ PTF = 0
++ CJC = 1.18E-12
++ VJC = 0.663
++ MJC = 0.5
++ XCJC = 1
++ TR = 100E-9
++ CJS = 0
++ VJS = .75
++ MJS = 0
++ XTB = 1E-12
++ EG = 1.11
++ XTI = 3
++ KF = 0
++ AF = 1
++ FC = .5
++ )
+.MODEL JNOM NJF(
++ VTO = -18
++ BETA = 1E-5
++ LAMBDA = 0
++ RD = 0
++ RS = 0
++ CGS = 0
++ CGD = 0
++ PB = 1
++ IS = 1E-14
++ KF = 0
++ AF = 1
++ FC = .5
++ )
+.ENDS L161
