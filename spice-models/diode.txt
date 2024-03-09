@@ -1,0 +1,4959 @@
+
+*                      Диоды выпpямительные
+*  Содержание:
+*             2Д103А                          KД102A
+*             2Д104А                          KД103A
+*             2Д106А                          KД104A
+*             2Д203А, Б, В, Г, Д              KД105A
+*             2Д212А, Б, В, Г                 КД202Д
+*             2Д213А, Б, В, Г                 КД203А
+*             2Д220А, Б, В, Г, Д, Е, Ж, И     КД204А
+*             2Д419А, Б, В                    КД208А
+*             2Д420А                          КД209А
+*             2Д503Б                          KD212A
+*             2Д510А                          KD213A, Б
+*             2Д521А                          КД219А
+*             2Д522А, Б                       КД220А
+*                                              Д237А, Б, В, Г, Е
+*                                             КД2997
+*                                             КД503А
+*                                             КД509А
+*                                             KD510A
+*                                             КД512А
+*                                             КД513А
+*                                             КД520А
+*                                             КД521А
+*                                             KD522А, Б
+*
+.model KD102A D (Is=1.669n Rs=9.167 N=1 Xti=3 Eg=1.11 Bv=300 Ibv=100u
++    Cjo=30p Vj=.75 M=.3333 Fc=.5 Tt=10n)
+.model D2d103a D (Is=435.9p N=1.676 Rs=1.634 Ikf=3.808  Xti=3 Eg=1.11
++    Cjo=39.43p M=.3333 Vj=.75 Fc=.5 Isr=437.4p Nr=1.958  Bv=100.1
++    Ibv=25.91m Tt=5.771u)
+.model D2d104a D (Is=162n N=2.887 Rs=1.031 Ikf=1.82 Xti=3 Eg=1.11
++    Cjo=29.58p M=.3333 Vj=.75 Fc=.5 Isr=34.09E-30 Nr=5.963 Bv=500.2
++    Ibv=.2589 Tt=5.771u)
+.model KD105B D (IS=8.426e-11 N=1.11 RS=0.12  CJO=120p TT=1.08e-8
++    M=0.33 VJ=0.71 FC=0.5 BV=400 IBV=1E-11 EG=1.11 XTI=3)
+.model D2d106a D (Is=41.54e-27 N=.522 Rs=48.22m Ikf=.3261 Xti=3
++    Eg=1.11  Cjo=334.3p M=.3837 Vj=.75 Fc=.5 Isr=100p Nr=2 Bv=100
++    Ibv=10 Tt=5n)
+.model KD202D D (IS=4.012e-9 N=1.56 RS-4.7E-2 CJO=82p TT=3.19e-7
++    M=0.38 VJ=0.75 FC=0.5 BV=200 IBV=1E-10 EG=1.11 XTI=3)
+.model D2D203A  D  (Is=161.7e-18  Rs=0  N=1  Xti=3  Eg=1.11  Bv=420
++    Ibv=1.5m Cjo=500p Vj=.75 M=.3333 Fc=.5 Tt=50u)
+.model D2D203B  D  (Is=161.7e-18  Rs=0  N=1  Xti=3  Eg=1.11  Bv=560
++    Ibv=1.5m Cjo=500p Vj=.75 M=.3333 Fc=.5 Tt=50u)
+.model D2D203V  D  (Is=161.7e-18  Rs=0  N=1  Xti=3  Eg=1.11  Bv=560
++    Ibv=1.5m Cjo=500p Vj=.75 M=.3333 Fc=.5 Tt=50u)
+.model D2D203G  D  (Is=161.7e-18  Rs=0  N=1  Xti=3  Eg=1.11  Bv=700
++    Ibv=1.5m Cjo=500p Vj=.75 M=.3333 Fc=.5 Tt=50u)
+.model D2D203D  D  (Is=161.7e-18  Rs=0  N=1  Xti=3  Eg=1.11  Bv=700
++    Ibv=1.5m Cjo=500p Vj=.75 M=.3333 Fc=.5 Tt=50u)
+.model KD203A D (IS=2.98e-9 N=1.52 RS=9.3E-3 CJO=21.2P TT=9.09e-7
++    M=.28 VJ=0.73 FC=0.5 BV=600 IBV=1e-10 EG=1.11 XTI=3)
+.model KD204A D (IS=4.110e-9 N=1.52 RS=0.075 CJO=31.5P TT=1.16e-7
++    M=0.35 VJ=0.68 FC=0.5 BV=400 IBV=1e-10 EG=1.11 XTI=3)
+.model KD208A  D (IS=1.81e-10 N=1.31 RS=0.12 CJO=96.3P TT=2.23e-7
++    M=0.38 VJ=0.68 FC=0.5 BV=100 IBV=1e-10 EG=1.11 XTI=3)
+.model KD209A  D  (IS=6.22e-11 N=1.23 RS=0.17 CJO=16.2 TT=7.21e-7
++    M=0.35 VJ=0.68 FC=0.5 BV=600 IBV=1e-10 EG=1.11 XTI=3)
+.model D2D212A  D  (Is=36.89f Rs=0 N=1 Xti=3 Eg=1.11 Bv=200 Ibv=50u
++    Cjo=21p Vj=.75 M=.3333 Fc=.5 Tt=150n)
+.model D2D212B  D  (Is=36.89f Rs=0 N=1 Xti=3 Eg=1.11 Bv=200 Ibv=50u
++    Cjo=21p Vj=.75 M=.3333 Fc=.5 Tt=150n)
+.model D2D212V  D  (Is=36.89f Rs=0 N=1 Xti=3 Eg=1.11 Bv=100 Ibv=50u
++    Cjo=20p Vj=.75 M=.3333 Fc=.5 Tt=150n)
+.model D2D212G  D  (Is=36.89f Rs=0 N=1 Xti=3 Eg=1.11 Bv=100 Ibv=50u
++    Cjo=20p Vj=.75 M=.3333 Fc=.5 Tt=150n)
+.model KD212A  D  (Is=36.89f  Rs=0 N=1 Xti=3 Eg=1.11 Bv=200 Ibv=50u
++    Cjo=21p Vj=.75 M=.3333 Fc=.5 Tt=150n)
+.model D2D213A  D  (Is=350.3e-18  Rs=0  N=1  Xti=3  Eg=1.11  Bv=200
++    Ibv=100n Cjo=61p Vj=.75 M=.3333 Fc=.5 Tt=90n)
+.model D2D213B  D  (Is=350.3e-18  Rs=0  N=1  Xti=3  Eg=1.11  Bv=200
++    Ibv=100n Cjo=61p Vj=.75 M=.3333 Fc=.5 Tt=90n)
+.model D2D213V  D  (Is=350.3e-18  Rs=0  N=1  Xti=3  Eg=1.11  Bv=100
++    Ibv=50n Cjo=61p Vj=.75 M=.3333 Fc=.5 Tt=90n)
+.model D2D213G  D  (Is=350.3e-18  Rs=0  N=1  Xti=3  Eg=1.11  Bv=100
++    Ibv=50n Cjo=61p Vj=.75 M=.3333 Fc=.5 Tt=90n)
+.model KD213A   D  (Is=350.3e-18  Rs=0  N=1  Xti=3  Eg=1.11  Bv=200
++    Ibv=100n Cjo=61p Vj=.75 M=.3333 Fc=.5 Tt=90n)
+.model kd213b  D  (Is=68.84p  Rs=43.52m  N=1  Xti=3  Eg=1.11 Bv=280
++    Ibv=258.6u Cjo=1p Vj=.75 M=.3333 Fc=.5 Tt=50.04n)
+.model KD219A D (IS=5.760e-8 N=1.12 RS=3e-3 CJO=63.1P TT=1.23e-9
++    M=0.33 VJ=0.54 FC=0.5 BV=15 IBV=1e-11 EG=1.11 XTI=3)
+.model D2D220A  D  (Is=338.5e-21  Rs=0  N=1  Xti=3  Eg=1.11  Bv=400
++    Ibv=45u Cjo=100p Vj=.75 M=.3333 Fc=.5 Tt=400n)
+.model D2D220B  D  (Is=338.5e-21  Rs=0  N=1  Xti=3  Eg=1.11  Bv=600
++    Ibv=45u Cjo=100p Vj=.75 M=.3333 Fc=.5 Tt=400n)
+.model D2D220V  D  (Is=338.5e-21  Rs=0  N=1  Xti=3  Eg=1.11  Bv=800
++    Ibv=45u Cjo=100p Vj=.75 M=.3333 Fc=.5 Tt=400n)
+.model D2D220G  D  (Is=338.5e-21  Rs=0  N=1  Xti=3  Eg=1.11 Bv=1000
++    Ibv=45u Cjo=100p Vj=.75 M=.3333 Fc=.5 Tt=400n)
+.model D2D220D  D  (Is=338.5e-21  Rs=0  N=1  Xti=3  Eg=1.11  Bv=400
++    Ibv=45u Cjo=100p Vj=.75 M=.3333 Fc=.5 Tt=700n)
+.model D2D220E  D  (Is=338.5e-21  Rs=0  N=1  Xti=3  Eg=1.11  Bv=600
++    Ibv=45u Cjo=100p Vj=.75 M=.3333 Fc=.5 Tt=700n)
+.model D2D220J  D  (Is=338.5e-21  Rs=0  N=1  Xti=3  Eg=1.11  Bv=800
++    Ibv=45u Cjo=100p Vj=.75 M=.3333 Fc=.5 Tt=700n)
+.model D2D220I  D  (Is=338.5e-21  Rs=0  N=1  Xti=3  Eg=1.11 Bv=1000
++    Ibv=45u Cjo=100p Vj=.75 M=.3333 Fc=.5 Tt=700n)
+.model KD220A   D   (IS=1.12e-11   N=1.25   RS=0.071 CJO=164.5p
++    TT=1.23e-9 M=.33 VJ=.65 FC=0.5 BV=400 IBV=1e-11 EG=1.11 XTI=3)
+.model D237A  D  (Is=4.85e-18 Rs=0 N=1 Xti=3 Eg=1.11 Bv=200 Ibv=50u
++    Cjo=1p Vj=.75 M=.3333 Fc=.5 Tt=1m)
+.model D237B  D  (Is=4.85e-18 Rs=0 N=1 Xti=3 Eg=1.11 Bv=400 Ibv=50u
++    Cjo=1p Vj=.75 M=.3333 Fc=.5 Tt=1m)
+.model D237V  D  (Is=1.617-18 Rs=0 N=1 Xti=3 Eg=1.11 Bv=600 Ibv=50u
++    Cjo=1p Vj=.75 M=.3333 Fc=.5 Tt=1m)
+.model D237E  D  (Is=4.85E-18 Rs=0 N=1 Xti=3 Eg=1.11 Bv=400 Ibv=50u
++    Cjo=1p Vj=.75 M=.3333 Fc=.5 Tt=1m)
+.model D237G  D  (Is=1.85E-18 Rs=0 N=1 Xti=3 Eg=1.11 Bv=200 Ibv=50u
++    Cjo=1p Vj=.75 M=.3333 Fc=.5 Tt=1m)
+.model kd2997a  D  (Is=412.8p  Rs=6.772m N=1 Xti=3 Eg=1.11 Bv=280.4
++    Ibv=.2586 Cjo=1p Vj=.75 M=.3333 Fc=.5 Tt=100.1n)
+.model D2d419a   D  (Is=583.7n  N=1.499  Rs=6.944  Ikf=44.68  Xti=3
++    Eg=1.11 Cjo=810.5f  M=.5736  Vj=1.553  Fc=.5  Isr=2.423u  Nr=2
++    Bv=30.16 Ibv=.6 Tt=144.3p)
+.model D2d419b  D  (Is=583.7n  N=1.499  Rs=6.944  Ikf=44.68   Xti=3
++    Eg=1.11 Cjo=810.5f  M=.5736  Vj=1.553  Fc=.5  Isr=1.674u Nr=2
++    Bv=60.16 Ibv=.6007 Tt=144.3p)
+.model D2d419v   D  (Is=583.7n  N=1.499  Rs=6.944  Ikf=44.68  Xti=3
++    Eg=1.11 Cjo=810.5f  M=.5736  Vj=1.553  Fc=.5  Isr=1.263u  Nr=2
++    Bv=100.1 Ibv=.2779 Tt=144.3p)
+.model D2d420a  D  (Is=17.75p  N=1.678  Rs=.1305  Ikf=4.539   Xti=3
++    Eg=1.11  Cjo=807.9f M=.1321 Vj=.7477 Fc=.5 Isr=27.93n Nr=41.85
++    Bv=35.17 Ibv=.6487 Tt=72.13n)
+.model D2D503B  D  (IS=7.9e-13  RS=2.3  CJO=1.86p M=0.27 TT=7.19n
++    VJ=0.77 BV=50 IBV=1e-11 EG=1.11 FC=0.5 XTI=3 N=1)
+.model KD503A  D (IS=7.92e-13 N=1.11 RS=2.3 CJO=1.45p TT=2.19n
++    M=0.27 VJ=0.71 FC=0.5 BV=30 IBV=1e-11 EG=1.11 XTI=3)
+.model KD509A  D  (IS=1.14e-12 N=1.12 RS=2.1 CJO=2.15p TT=3.25n
++    M=0.33 VJ=0.71 FC=0.5 BV=50 IBV=1E-11 EG=1.11 XTI=3)
+.model D2D510A  D (Is=646.7e-21 Rs=0 N=1 Xti=3 Eg=1.11 Bv=15 Ibv=1u
++    Cjo=1p Vj=.75 M=.3333 Fc=.5 Tt=4p)
+.model KD512A  D  (IS=2.120e-15 N=1.0 RS=9.2 CJO=0.85p TT=.961n
++    M=0.25 VJ=0.69 FC=0.5 BV=15 IBV=1e-11 EG=1.11 XTI=3)
+.model KD513A  D (IS=5.680e-13 N=1.11 RS=1.6 CJO=1.81p TT=.850n
++    M=0.31 VJ=0.69 FC=0.5 BV=50 IBV=1e-11 EG=1.11 XTI=3)
+.model KD520A  D (IS=6.180e-13 N=1.12 RS=6.3 CJO=2.35p TT=1.44n
++    M=0.33 VJ=0.68 FC=0.5 BV=15 IBV=1e-11 EG=1.11 XTI=3)
+.model D2D521A  D  (IS=1.15e-13 RS=3.21 CJO=2.25p M=0.26 TT=3.12n
++    VJ=0.68 BV=75 IBV=1e-11 EG=1.11 FC=0.5 XTI=3 N=1)
+.model KD521A  D  (IS=1.15e-13  N=1.0  RS=3.21 CJO=2.25p TT=3.12n
++    M=0.26 VJ=0.68 FC=0.5 BV=75 IBV=1e-11 EG=1.11 XTI=3)
+.model D2D522A  D  (IS=2.27e-13 RS=1.17 CJO=2.42p M=0.25 TT=2.38n
++    VJ=0.68 BV=50 IBV=1e-11 EG=1.11 FC=0.5 XTI=3 N=1)
+.model D2D522B  D (Is=33.85e-21 Rs=0 N=1 Xti=3 Eg=1.11 Bv=50 Ibv=5u
++    Cjo=4p Vj=.75 M=.3333 Fc=.5 Tt=4p)
+.model KD522A  D  (IS=2.270e-13  N=1.1  RS=1.17  CJO=1.83p TT=2.38n
++    M=0.25 VJ=0.68 FC=0.5 BV=50 IBV=1e-11 EG=1.11 XTI=3)
+.model KD522B  D  (Is=33.85e-21 Rs=0 N=1 Xti=3 Eg=1.11 Bv=30 Ibv=2u
++    Cjo=4p Vj=.75 M=.3333 Fc=.5 Tt=4p)
+*
+*                          Стабилитроны
+*
+*              Д814А, Б, В, Г, Д
+*              Д815А, Б, В, Г, Д, Е, Ж
+*              Д816А, Б, Г, Д
+*              Д817А, Б, В, Г
+*              Д818Е
+*             2С133А                          КС133А
+*             2С147А                          КС139А
+*             2С168А                          КС147А
+*             2С191Г                          КС156А
+*             2С211Г                          КС168А
+*             2С522А
+*             2С527А
+*
+.model D814A D(IS=.3920e-12 N=1.19 RS=1.25 CJO=41.15p  TT=49.11n
++    M=0.41 VJ=0.73 FC=0.5 BV=8 IBV=0.5u EG=1.11 XTI=3)
+.model D814B D(IS=.3920e-12 N=1.19 RS=1.54 CJO=38.39p  TT=58.13n
++    M=0.45 VJ=0.76 FC=0.5 BV=9 IBV=0.5u EG=1.11 XTI=3)
+.model D814V D(IS=.5232e-12 N=1.26 RS=2.5  CJO=37.56p  TT=58.34n
++    M=0.43 VJ=0.76 FC=0.5 BV=10 IBV=1u EG=1.11 XTI=3)
+.model D814G D(IS=.1067e-12 N=1.12 RS=3.4  CJO=28.08p  TT=68.87n
++    M=0.43 VJ=0.75 FC=0.5 BV=11 IBV=1u EG=1.11 XTI=3)
+.model D814D D(IS=.5235e-12 N=1.17 RS=3.8 CJO=29.15Ep  TT=59.96n
++    M=0.41 VJ=0.71 FC=0.5 BV=13 IBV=1u EG=1.11 XTI=3)
+.model D815A D(IS=.1221e-11 N=1.67 RS=0.24 CJO=73.15p  TT=389.8n
++    M=0.37 VJ=0.78 FC=0.5 BV=5.6 IBV=5u EG=1.11 XTI=3)
+.model D815B D(IS=.4173e-12 N=1.22 RS=0.27 CJO=88.12p TT=236.4n
++    M=0.36 VJ=0.78 FC=0.5 BV=6.8 IBV=5u EG=1.11 XTI=3)
+.model D815V D(IS=.5225e-10 N=1.84 RS=0.35 CJO=76.32p TT=245.24n
++    M=0.31 VJ=0.73 FC=0.5 BV=8.2 IBV=5u EG=1.11 XTI=3)
+.model D815G D(IS=.9373e-10 N=1.55 RS=0.6 CJO=63.60p  TT=250.97n
++    M=0.38 VJ=0.71 FC=0.5 BV=10 IBV=5u EG=1.11 XTI=3)
+.model D815D D(IS=.5227e-10 N=1.46 RS=0.7  CJO=73.31p  TT=217.3n
++    M=0.39 VJ=0.74 FC=0.5 BV=12 IBV=5u EG=1.11 XTI=3)
+.model D815E D(IS=.4646e-10 N=1.39 RS=0.9  CJO=72.86p  TT=118.9n
++    M=0.39 VJ=0.78 FC=0.5 BV=15 IBV=5u EG=1.11 XTI=3)
+.model D815J D(IS=.1996e-10 N=1.32 RS=1.1  CJO=82.14p  TT=222.9n
++    M=0.42 VJ=0.75 FC=0.5 BV=18 IBV=5u EG=1.11 XTI=3)
+.model D816A D(IS=.4599e-11 N=1.25 RS=2.4  CJO=105.9p  TT=213.6n
++    M=0.41 VJ=0.71 FC=0.5 BV=22 IBV=10u EG=1.11 XTI=3)
+.model D816B D(IS=.4279e-12 N=1.14  RS=2.8  CJO=133.2p  TT=220.4
++    M=0.41 VJ=0.73 FC=0.5 BV=27 IBV=10u EG=1.11 XTI=3)
+.model D816G D(IS=3.337e-12 N=1.23 RS=4.6  CJO=103.5p  TT=203.5n
++    M=0.39 VJ=0.71 FC=0.5 BV=39 IBV=15u EG=1.11 XTI=3)
+.model D816D D(IS=1.471e-12 N=1.18 RS=5.6  CJO=82.24p  TT=207.4n
++    M=0.40 VJ=0.70 FC=0.5 BV=47 IBV=15u EG=1.11 XTI=3)
+.model D817A D(IS=10.10e-12 N=1.47  RS=12  CJO=57.00p  TT=500.0n
++    M=0.34 VJ=0.80 FC=0.5 BV=56 IBV=20u EG=1.11 XTI=3)
+.model D817B  D(IS=12.00e-12  N=1.43  RS=14  CJO=68.00p  TT=500n
++    M=0.35 VJ=0.8 FC=0.5 BV=68 IBV=20u EG=1.11 XTI=3)
+.model D817V D(IS=12.22e-12 N=1.28  RS=16  CJO=54.48p  TT=414.1n
++    M=0.43 VJ=0.78 FC=0.5 BV=82 IBV=30u EG=1.11 XTI=3)
+.model D817G D(IS=29.34e-12  N=1.27  RS=18  CJO=82.0p  TT=500.0n
++    M=0.38 VJ=0.8 FC=0.5 BV=100 IBV=50u EG=1.11 XTI=3)
+.model d818e D(Is=3m Rs=18 N=1 Xti=3  Eg=1.11  Bv=9  Ibv=3m Cjo=1p
++    Vj=.75 M=.3333 Fc=.5 Tt=5n)
+.model KS133A D(IS=89.00e-15 N=1.16 RS=25  CJO=72.00p  TT=57.00n
++    M=0.47 VJ=0.80 FC=0.5 BV=3.3 IBV=5u EG=1.11 XTI=3)
+.model 2S133A D(IS=193.4e-15 N=1.85 RS=22  CJO=84.51p  TT=46.61n
++    M=0.38 VJ=0.73 FC=0.5 BV=3.3 IBV=5u EG=1.11 XTI=3)
+.model KS139A D(IS=400.0e-15 N=1.35 RS=30  CJO=85.00p  TT=72.00n
++    M=0.45 VJ=0.80 FC=0.5 BV=3.9 IBV=5u EG=1.11 XTI=3)
+.model KS147A D(IS=500.0e-15 N=1.35 RS=22  CJO=85.00p  TT=75.00n
++    M=0.45 VJ=0.80 FC=0.5 BV=4.7 IBV=5u EG=1.11 XTI=3)
+.model 2S147A D(IS=1.236e-12 N=1.87 RS=20.2 CJO=87.60p TT=104.0n
++    M=0.3751 VJ=0.73 FC=0.5 BV=4.7 IBV=5u EG=1.11 XTI=3)
+.model KS156A D(IS=3.600e-12 N=1.52 RS=13  CJO=94.00p  TT=160.0n
++    M=0.41 VJ=0.80 FC=0.5 BV=5.6 IBV=5u EG=1.11 XTI=3)
+.model KS168A D(IS=7.300e-12 N=1.35 RS=5.8 CJO=62.00p  TT=250.0n
++    M=0.50 VJ=0.80 FC=0.5 BV=6.8 IBV=5u EG=1.11 XTI=3)
+.model 2S168A D(IS=7.034e-12 N=1.26 RS=5.8  CJO=0.52p  TT=210.0n
++    M=0.31 VJ=0.75 FC=0.5 BV=6.8 IBV=5u EG=1.11 XTI=3)
+.model 2S191G D(IS=47.47e-15 N=1.27  RS=9  CJO=10.69p  TT=4.337n
++    M=0.39 VJ=0.79 FC=0.5 BV=9.1 IBV=1u EG=1.11 XTI=3)
+.model 2S211G D(IS=418.2e-15 N=1.39  RS=9  CJO=10.17p  TT=7.934n
++    M=0.41 VJ=0.69 FC=0.5 BV=11 IBV=3u EG=1.11 XTI=3)
+.model 2S522A D(IS=41.68e-15 N=1.06  RS=2  CJO=57.24p  TT=32.94n
++    M=0.39 VJ=0.72 FC=0.5 BV=22 IBV=5u EG=1.11 XTI=3)
+.model 2S527A D(IS=25.00e-15 N=1.11  RS=4  CJO=47.42p  TT=256.6n
++    M=0.39 VJ=0.68 FC=0.5 BV=27 IBV=5u EG=1.11 XTI=3)
+*
+* The parameters in this model library were derived from the data sheets for
+* each part.  Most parts were characterize using the Parts option.
+
+.model D1N914	D(Is=0.1p Rs=16 CJO=2p Tt=12n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N914A	D(Is=0.1p Rs=4 CJO=2p Tt=12n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N914B	D(Is=0.1p Rs=2 CJO=2p Tt=12n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N916	D(Is=0.1p Rs=8 CJO=1p Tt=12n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N916A	D(Is=0.1p Rs=4 CJO=1p Tt=12n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N916B	D(Is=0.1p Rs=4 CJO=1p Tt=12n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N3063	D(Is=0.1p Rs=4 CJO=1p Tt=8n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N3064	D(Is=0.1p Rs=4 CJO=1p Tt=8n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N3491	D(Is=68.65f Rs=3.786m Ikf=1.774 N=1 Xti=2 Eg=1.11 Cjo=1.457n
++		M=.9735 Vj=.75 Fc=.5 Isr=11.02u Nr=2 Tt=6.059u)
+*		Motorola	pid=1N3491	case=DO21
+*		88-08-24 rmn
+
+.model D1N3492	D(Is=68.65f Rs=3.786m Ikf=1.774 N=1 Xti=2 Eg=1.11 Cjo=1.457n
++		M=.9735 Vj=.75 Fc=.5 Isr=5.651u Nr=2 Tt=6.059u)
+*		Motorola	pid=1N3491	case=DO21
+*		88-08-24 rmn
+
+.model D1N3493	D(Is=68.65f Rs=3.786m Ikf=1.774 N=1 Xti=2 Eg=1.11 Cjo=1.457n
++		M=.9735 Vj=.75 Fc=.5 Isr=2.888u Nr=2 Tt=6.059u)
+*		Motorola	pid=1N3491	case=DO21
+*		88-08-24 rmn
+
+.model D1N3494	D(Is=68.65f Rs=3.786m Ikf=1.774 N=1 Xti=2 Eg=1.11 Cjo=1.457n
++		M=.9735 Vj=.75 Fc=.5 Isr=1.949u Nr=2 Tt=6.059u)
+*		Motorola	pid=1N3491	case=DO21
+*		88-08-24 rmn
+
+.model D1N3495	D(Is=68.65f Rs=3.786m Ikf=1.774 N=1 Xti=2 Eg=1.11 Cjo=1.457n
++		M=.9735 Vj=.75 Fc=.5 Isr=1.474u Nr=2 Tt=6.059u)
+*		Motorola	pid=1N3491	case=DO21
+*		88-08-24 rmn
+
+.model D1N3604	D(Is=0.1p Rs=3 CJO=1p Tt=3n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N3605	D(Is=0.1p Rs=6 CJO=1p Tt=3n Bv=70 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N3606	D(Is=0.1p Rs=6 CJO=1p Tt=3n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N3879	D(Is=1.058E-18 Rs=11.56m Ikf=2.349 N=1 Xti=14 Eg=1.11 Cjo=113.2p
++		M=.2834 Vj=.75 Fc=.5 Isr=908.6n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3879	case=DO4
+*		88-08-25 rmn
+
+.model D1N3880	D(Is=1.058E-18 Rs=11.56m Ikf=2.349 N=1 Xti=14 Eg=1.11 Cjo=113.2p
++		M=.2834 Vj=.75 Fc=.5 Isr=798n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3879	case=DO4
+*		88-08-25 rmn
+
+.model D1N3881	D(Is=1.058E-18 Rs=11.56m Ikf=2.349 N=1 Xti=14 Eg=1.11 Cjo=113.2p
++		M=.2834 Vj=.75 Fc=.5 Isr=820.5n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3879	case=DO4
+*		88-08-25 rmn
+
+.model D1N3882	D(Is=1.058E-18 Rs=11.56m Ikf=2.349 N=1 Xti=14 Eg=1.11 Cjo=113.2p
++		M=.2834 Vj=.75 Fc=.5 Isr=887.2n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3879	case=DO4
+*		88-08-25 rmn
+
+.model D1N3883	D(Is=1.058E-18 Rs=11.56m Ikf=2.349 N=1 Xti=14 Eg=1.11 Cjo=113.2p
++		M=.2834 Vj=.75 Fc=.5 Isr=994.9n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3879	case=DO4
+*		88-08-25 rmn
+
+.model D1N3889	D(Is=15.03f Rs=9.606m Ikf=.2003 N=1 Xti=3 Eg=1.11 Cjo=117.8p
++		M=.2976 Vj=.75 Fc=.5 Isr=770.3n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3889	case=DO4
+*		88-08-25 rmn
+
+.model D1N3890	D(Is=15.03f Rs=9.606m Ikf=.2003 N=1 Xti=3 Eg=1.11 Cjo=117.8p
++		M=.2976 Vj=.75 Fc=.5 Isr=684.1n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3889	case=DO4
+*		88-08-25 rmn
+
+.model D1N3891	D(Is=15.03f Rs=9.606m Ikf=.2003 N=1 Xti=3 Eg=1.11 Cjo=117.8p
++		M=.2976 Vj=.75 Fc=.5 Isr=672.7n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3889	case=DO4
+*		88-08-25 rmn
+
+.model D1N3892	D(Is=15.03f Rs=9.606m Ikf=.2003 N=1 Xti=3 Eg=1.11 Cjo=117.8p
++		M=.2976 Vj=.75 Fc=.5 Isr=705.6n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3889	case=DO4
+*		88-08-25 rmn
+
+.model D1N3893	D(Is=15.03f Rs=9.606m Ikf=.2003 N=1 Xti=3 Eg=1.11 Cjo=117.8p
++		M=.2976 Vj=.75 Fc=.5 Isr=809.8n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3889	case=DO4
+*		88-08-25 rmn
+
+.model D1N3899	D(Is=5.62f Rs=6.414m Ikf=9.692 N=1 Xti=2 Eg=1.11 Cjo=144.1p
++		M=.2272 Vj=.75 Fc=.5 Isr=1.036u Nr=2 Tt=521.4n)
+*		Motorola	pid=1N3899	case=DO5
+*		88-08-30 rmn
+
+.model D1N3900	D(Is=5.62f Rs=6.414m Ikf=9.692 N=1 Xti=2 Eg=1.11 Cjo=144.1p
++		M=.2272 Vj=.75 Fc=.5 Isr=985.4n Nr=2 Tt=521.4n)
+*		Motorola	pid=1N3899	case=DO5
+*		88-08-30 rmn
+
+.model D1N3901	D(Is=5.62f Rs=6.414m Ikf=9.692 N=1 Xti=2 Eg=1.11 Cjo=144.1p
++		M=.2272 Vj=.75 Fc=.5 Isr=997n Nr=2 Tt=521.4n)
+*		Motorola	pid=1N3899	case=DO5
+*		88-08-30 rmn
+
+.model D1N3902	D(Is=5.62f Rs=6.414m Ikf=9.692 N=1 Xti=2 Eg=1.11 Cjo=144.1p
++		M=.2272 Vj=.75 Fc=.5 Isr=1.076u Nr=2 Tt=521.4n)
+*		Motorola	pid=1N3899	case=DO5
+*		88-08-30 rmn
+
+.model D1N3903	D(Is=5.62f Rs=6.414m Ikf=9.692 N=1 Xti=2 Eg=1.11 Cjo=144.1p
++		M=.2272 Vj=.75 Fc=.5 Isr=1.248u Nr=2 Tt=521.4n)
+*		Motorola	pid=1N3899	case=DO5
+*		88-08-30 rmn
+
+.model D1N3909	D(Is=20.07f Rs=3.842m Ikf=2.963 N=1 Xti=3 Eg=1.11 Cjo=111.7p
++		M=.2683 Vj=.75 Fc=.5 Isr=887.6n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3909	case=DO5
+*		88-08-30 rmn
+
+.model D1N3910	D(Is=20.07f Rs=3.842m Ikf=2.963 N=1 Xti=3 Eg=1.11 Cjo=111.7p
++		M=.2683 Vj=.75 Fc=.5 Isr=805.6n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3909	case=DO5
+*		88-08-30 rmn
+
+.model D1N3911	D(Is=20.07f Rs=3.842m Ikf=2.963 N=1 Xti=3 Eg=1.11 Cjo=111.7p
++		M=.2683 Vj=.75 Fc=.5 Isr=825.8n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3909	case=DO5
+*		88-08-30 rmn
+
+.model D1N3912	D(Is=20.07f Rs=3.842m Ikf=2.963 N=1 Xti=3 Eg=1.11 Cjo=111.7p
++		M=.2683 Vj=.75 Fc=.5 Isr=851.1n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3909	case=DO5
+*		88-08-30 rmn
+
+.model D1N3913	D(Is=20.07f Rs=3.842m Ikf=2.963 N=1 Xti=3 Eg=1.11 Cjo=111.7p
++		M=.2683 Vj=.75 Fc=.5 Isr=973.4n Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3909	case=DO5
+*		88-08-30 rmn
+
+.model D1N4001	D(Is=14.11n N=1.984 Rs=33.89m Ikf=94.81 Xti=3 Eg=1.11
++		Cjo=25.89p M=.44 Vj=.3245 Fc=.5 Bv=75 Ibv=10u Tt=5.7u)
+*		Motorola
+*		Semiconductor Databook (mid 1970s)
+*		03 Jun 91	pwt	creation
+
+.model D1N4002 ako:D1N4001 D(Bv=150)	; use non-rep. peak voltage
+
+.model D1N4003 ako:D1N4001 D(Bv=300)	; use non-rep. peak voltage
+
+.model D1N4004 ako:D1N4001 D(Bv=600)	; use non-rep. peak voltage
+
+.model D1N4005 ako:D1N4001 D(Bv=900)	; use non-rep. peak voltage
+
+.model D1N4006 ako:D1N4001 D(Bv=1200)	; use non-rep. peak voltage
+
+.model D1N4007 ako:D1N4001 D(Bv=1500)	; use non-rep. peak voltage
+
+.model D1N4009	D(Is=0.1p Rs=4 CJO=2p Tt=3n Bv=60 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4148	D(Is=0.1p Rs=16 CJO=2p Tt=12n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4149	D(Is=0.1p Rs=8 CJO=1p Tt=12n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4150	D(Is=10E-15 Rs=1.0 CJO=1.3p Tt=12n Bv=70 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4151	D(Is=0.1p Rs=3 CJO=1p Tt=3n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4152	D(Is=0.1p Rs=6 CJO=1p Tt=3n Bv=70 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4153	D(Is=0.1p Rs=6 CJO=1p Tt=3n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4154	D(Is=0.1p Rs=4 CJO=2p Tt=3n Bv=60 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4305	D(Is=0.1p Rs=4 CJO=1p Tt=8n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4444	D(Is=0.1p Rs=2 CJO=1p Tt=12n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4446	D(Is=0.1p Rs=4 CJO=2p Tt=12n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4447	D(Is=0.1p Rs=4 CJO=1p Tt=12n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4448	D(Is=0.1p Rs=2 CJO=2p Tt=12n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4449	D(Is=0.1p Rs=4 CJO=1p Tt=12n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4454	D(Is=0.1p Rs=4 CJO=1p Tt=8n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4531	D(Is=0.1p Rs=16 CJO=2p Tt=12n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4532	D(Is=0.1p Rs=4 CJO=1p Tt=8n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4533	D(Is=0.1p Rs=6 CJO=1p Tt=3n Bv=70 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4534	D(Is=0.1p Rs=6 CJO=1p Tt=3n Bv=100 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4536	D(Is=0.1p Rs=4 CJO=2p Tt=3n Bv=60 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N4933	D(Is=7.303f Rs=39.41m Ikf=8.427m N=1 Xti=3 Eg=1.11 Cjo=28.09p
++		M=.4422 Vj=.75 Fc=.5 Isr=77.55n Nr=2 Tt=53.73n)
+*		Motorola	pid=1N4933	case=59-04
+*		88-09-01 rmn
+*		90-01-09 pwt	update Tt: Trr=120ns, If=10A, Ir=1.2A, Rl=4
+
+.model D1N4934	D(Is=7.303f Rs=39.41m Ikf=8.427m N=1 Xti=3 Eg=1.11 Cjo=28.09p
++		M=.4422 Vj=.75 Fc=.5 Isr=59.55n Nr=2 Tt=53.73n)
+*		Motorola	pid=1N4933	case=59-04
+*		88-09-01 rmn
+*		90-01-09 pwt	update Tt: Trr=120ns, If=10A, Ir=1.2A, Rl=4
+
+.model D1N4935	D(Is=7.303f Rs=39.41m Ikf=8.427m N=1 Xti=3 Eg=1.11 Cjo=28.09p
++		M=.4422 Vj=.75 Fc=.5 Isr=50.66n Nr=2 Tt=53.73n)
+*		Motorola	pid=1N4933	case=59-04
+*		88-09-01 rmn
+*		90-01-09 pwt	update Tt: Trr=120ns, If=10A, Ir=1.2A, Rl=4
+
+.model D1N4936	D(Is=7.303f Rs=39.41m Ikf=8.427m N=1 Xti=3 Eg=1.11 Cjo=28.09p
++		M=.4422 Vj=.75 Fc=.5 Isr=47.26n Nr=2 Tt=53.73n)
+*		Motorola	pid=1N4933	case=59-04
+*		88-09-01 rmn
+*		90-01-09 pwt	update Tt: Trr=120ns, If=10A, Ir=1.2A, Rl=4
+
+.model D1N4937	D(Is=7.303f Rs=39.41m Ikf=8.427m N=1 Xti=3 Eg=1.11 Cjo=28.09p
++		M=.4422 Vj=.75 Fc=.5 Isr=49.4n Nr=2 Tt=53.73n)
+*		Motorola	pid=1N4933	case=59-04
+*		88-09-01 rmn
+*		90-01-09 pwt	update Tt: Trr=120ns, If=10A, Ir=1.2A, Rl=4
+
+.model D1N4938	D(Is=0.1p Rs=2 CJO=2.5p Tt=35n Bv=300 Ibv=0.1p)
+*		85-??-??	Original library
+
+.model D1N5391	D(Is=127.2f Rs=41.78m Ikf=4.315m N=1 Xti=3 Eg=1.11 Cjo=47.97p
++		M=.4547 Vj=.75 Fc=.5 Isr=36.79u Nr=2 Tt=5.049u)
+*		Motorola	pid=1N5391	case=59-04/DO15
+*		88-09-07 rmn
+
+.model D1N5392	D(Is=127.2f Rs=41.78m Ikf=4.315m N=1 Xti=3 Eg=1.11 Cjo=47.97p
++		M=.4547 Vj=.75 Fc=.5 Isr=26.93u Nr=2 Tt=5.049u)
+*		Motorola	pid=1N5391	case=59-04/DO15
+*		88-09-07 rmn
+
+.model D1N5393	D(Is=127.2f Rs=41.78m Ikf=4.315m N=1 Xti=3 Eg=1.11 Cjo=47.97p
++		M=.4547 Vj=.75 Fc=.5 Isr=19.69u Nr=2 Tt=5.049u)
+*		Motorola	pid=1N5391	case=59-04/DO15
+*		88-09-07 rmn
+
+.model D1N5395	D(Is=127.2f Rs=41.78m Ikf=4.315m N=1 Xti=3 Eg=1.11 Cjo=47.97p
++		M=.4547 Vj=.75 Fc=.5 Isr=14.38u Nr=2 Tt=5.049u)
+*		Motorola	pid=1N5391	case=59-04/DO15
+*		88-09-07 rmn
+
+.model D1N5397	D(Is=127.2f Rs=41.78m Ikf=4.315m N=1 Xti=3 Eg=1.11 Cjo=47.97p
++		M=.4547 Vj=.75 Fc=.5 Isr=11.96u Nr=2 Tt=5.049u)
+*		Motorola	pid=1N5391	case=59-04/DO15
+*		88-09-07 rmn
+
+.model D1N5398	D(Is=127.2f Rs=41.78m Ikf=4.315m N=1 Xti=3 Eg=1.11 Cjo=34.79p
++		M=.4399 Vj=.75 Fc=.5 Isr=10.49u Nr=2 Tt=7.213u)
+*		Motorola	pid=1N5391	case=59-04/DO15
+*		88-09-12 rmn
+
+.model D1N5399	D(Is=127.2f Rs=41.78m Ikf=4.315m N=1 Xti=3 Eg=1.11 Cjo=34.79p
++		M=.4399 Vj=.75 Fc=.5 Isr=10.55u Nr=2 Tt=7.213u)
+*		Motorola	pid=1N5391	case=59-04/DO15
+*		88-09-12 rmn
+
+.model D1N5400	D(Is=11.5f Rs=8.254m Ikf=3.87 N=1 Xti=3 Eg=1.11 Cjo=130.4p
++		M=.3758 Vj=.75 Fc=.5 Isr=102.6u Nr=2)
+*		Motorola	pid=1N5400	case=267-01
+*		88-09-12 rmn
+
+.model D1N5401	D(Is=11.5f Rs=8.254m Ikf=3.87 N=1 Xti=3 Eg=1.11 Cjo=130.4p
++		M=.3758 Vj=.75 Fc=.5 Isr=79.29u Nr=2)
+*		Motorola	pid=1N5400	case=267-01
+*		88-09-12 rmn
+
+.model D1N5402	D(Is=11.5f Rs=8.254m Ikf=3.87 N=1 Xti=3 Eg=1.11 Cjo=130.4p
++		M=.3758 Vj=.75 Fc=.5 Isr=61.19u Nr=2)
+*		Motorola	pid=1N5400	case=267-01
+*		88-09-12 rmn
+
+.model D1N5404	D(Is=11.5f Rs=8.254m Ikf=3.87 N=1 Xti=3 Eg=1.11 Cjo=130.4p
++		M=.3758 Vj=.75 Fc=.5 Isr=47.19u Nr=2)
+*		Motorola	pid=1N5400	case=267-01
+*		88-09-12 rmn
+
+.model D1N5406	D(Is=11.5f Rs=8.254m Ikf=3.87 N=1 Xti=3 Eg=1.11 Cjo=130.4p
++		M=.3758 Vj=.75 Fc=.5 Isr=40.53u Nr=2)
+*		Motorola	pid=1N5400	case=267-01
+*		88-09-12 rmn
+
+.model D1N5711	D(Is=10.58n Rs=32.41 N=1 Xti=5 Eg=.7 Bv=70 Ibv=10u Cjo=2p
++		Vj=.75 M=.3333 Fc=.5 Tt=144.3p)
+*		85-??-??	Original library
+
+.model D1N5712	D(Is=432.8p Rs=12.15 N=1 Xti=5 Eg=.7 Bv=20 Ibv=10u Cjo=1.2p
++		Vj=.75 M=.3333 Fc=.5 Tt=144.3p)
+*		85-??-??	Original library
+
+.model D1N5817	D(Is=2.835u Rs=47.12m Ikf=.3227 N=1 Xti=0 Eg=1.11 Cjo=472.4p
++		M=.6215 Vj=.75 Fc=.5 Isr=37.75u Nr=2)
+*		Motorola	pid=1N5817	case=59-04
+*		88-09-12 rmn
+
+.model D1N5818	D(Is=2.835u Rs=47.12m Ikf=.3227 N=1 Xti=0 Eg=1.11 Cjo=359.3p
++		M=.6513 Vj=.75 Fc=.5 Isr=26.46u Nr=2)
+*		Motorola	pid=1N5817	case=59-04
+*		88-09-12 rmn
+
+.model D1N5819	D(Is=2.835u Rs=47.12m Ikf=.3227 N=1 Xti=0 Eg=1.11 Cjo=302.5p
++		M=.7206 Vj=.75 Fc=.5 Isr=16.98u Nr=2)
+*		Motorola	pid=1N5817	case=59-04
+*		88-09-12 rmn
+
+.model D1N5820	D(Is=8.425u Rs=34.63m Ikf=2.37 N=1 Xti=0 Eg=1.11 Cjo=1.288n
++		M=.5324 Vj=.75 Fc=.5 Isr=58.32u Nr=2)
+*		Motorola	pid=1N5820	case=267-01
+*		88-09-13 rmn
+
+.model D1N5821	D(Is=8.425u Rs=34.63m Ikf=2.37 N=1 Xti=0 Eg=1.11 Cjo=1.132n
++		M=.6043 Vj=.75 Fc=.5 Isr=31.98u Nr=2)
+*		Motorola	pid=1N5820	case=267-01
+*		88-09-13 rmn
+
+.model D1N5822	D(Is=8.425u Rs=34.63m Ikf=2.37 N=1 Xti=0 Eg=1.11 Cjo=1.032n
++		M=.6736 Vj=.75 Fc=.5 Isr=9.599u Nr=2)
+*		Motorola	pid=1N5820	case=267-01
+*		88-09-13 rmn
+
+.model D1N5823	D(Is=40.53u Rs=4.338m Ikf=58.4 N=1 Xti=0 Eg=1.11 Cjo=2.224n
++		M=.465 Vj=.75 Fc=.5 Isr=845.5u Nr=2)
+*		Motorola	pid=1N5823	case=60-01
+*		88-09-13 rmn
+
+.model D1N5824	D(Is=40.53u Rs=4.338m Ikf=58.4 N=1 Xti=0 Eg=1.11 Cjo=1.782n
++		M=.4666 Vj=.75 Fc=.5 Isr=699.9u Nr=2)
+*		Motorola	pid=1N5823	case=60-01
+*		88-09-13 rmn
+
+.model D1N5825	D(Is=40.53u Rs=4.338m Ikf=58.4 N=1 Xti=0 Eg=1.11 Cjo=1.537n
++		M=.4545 Vj=.75 Fc=.5 Isr=673.4u Nr=2)
+*		Motorola	pid=1N5823	case=60-01
+*		88-09-13 rmn
+
+.model D1N5826	D(Is=40.53u Rs=4.338m Ikf=58.4 N=1 Xti=0 Eg=1.11 Cjo=2.248n
++		M=.465 Vj=.75 Fc=.5 Isr=845.5u Nr=2)
+*		Motorola	pid=1N5826	case=DO4
+*		88-09-13 rmn
+
+.model D1N5827	D(Is=40.53u Rs=4.338m Ikf=58.4 N=1 Xti=0 Eg=1.11 Cjo=1.814n
++		M=.468 Vj=.75 Fc=.5 Isr=696.4u Nr=2)
+*		Motorola	pid=1N5826	case=DO4
+*		88-09-13 rmn
+
+.model D1N5828	D(Is=40.53u Rs=4.338m Ikf=58.4 N=1 Xti=0 Eg=1.11 Cjo=1.541n
++		M=.4553 Vj=.75 Fc=.5 Isr=666.5u Nr=2)
+*		Motorola	pid=1N5826	case=DO4
+*		88-09-13 rmn
+
+.model D1N5829	D(Is=89.43u Rs=3.991m Ikf=163.5 N=1 Xti=0 Eg=1.11 Cjo=5.046n
++		M=.5192 Vj=.75 Fc=.5 Isr=1.5m Nr=2)
+*		Motorola	pid=1N5829	case=DO4
+*		88-09-13 rmn
+
+.model D1N5830	D(Is=89.43u Rs=3.991m Ikf=163.5 N=1 Xti=0 Eg=1.11 Cjo=4.091n
++		M=.5169 Vj=.75 Fc=.5 Isr=1.175m Nr=2)
+*		Motorola	pid=1N5829	case=DO4
+*		88-09-13 rmn
+
+.model D1N5831	D(Is=89.43u Rs=3.991m Ikf=163.5 N=1 Xti=0 Eg=1.11 Cjo=3.488n
++		M=.5044 Vj=.75 Fc=.5 Isr=1.188m Nr=2)
+*		Motorola	pid=1N5829	case=DO4
+*		88-09-13 rmn
+
+.model D1N5832	D(Is=89.43u Rs=3.991m Ikf=163.5 N=1 Xti=3 Eg=1.11 Cjo=5.046n
++		M=.5192 Vj=.75 Fc=.5 Isr=1.5m Nr=2)
+*		Motorola	pid=1N5832	case=257-01
+*		88-09-13 rmn
+
+.model D1N5833	D(Is=89.43u Rs=3.991m Ikf=163.5 N=1 Xti=3 Eg=1.11 Cjo=4.091n
++		M=.5169 Vj=.75 Fc=.5 Isr=1.175m Nr=2)
+*		Motorola	pid=1N5832	case=257-01
+*		88-09-13 rmn
+
+.model D1N5834	D(Is=89.43u Rs=3.991m Ikf=163.5 N=1 Xti=3 Eg=1.11 Cjo=3.488n
++		M=.5044 Vj=.75 Fc=.5 Isr=1.188m Nr=2)
+*		Motorola	pid=1N5832	case=257-01
+*		88-09-13 rmn
+
+.model D1N6095	D(Is=1.133u Rs=2.964m Ikf=4.886 N=1 Xti=0 Eg=1.11 Cjo=2.139n
++		M=.4916 Vj=.75 Fc=.5 Isr=4.409u Nr=2)
+*		Motorola	pid=1N6095	case=DO4
+*		88-09-13 rmn
+
+.model D1N6096	D(Is=1.133u Rs=2.964m Ikf=4.886 N=1 Xti=0 Eg=1.11 Cjo=2.139n
++		M=.4916 Vj=.75 Fc=.5 Isr=6.645u Nr=2)
+*		Motorola	pid=1N6095	case=DO4
+*		88-09-13 rmn
+
+.model D1N6097	D(Is=793.4n Rs=3.036m Ikf=8.242 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=16.81u Nr=2)
+*		Motorola	pid=1N6097	case=DO5
+*		88-09-15 rmn
+
+.model D1N6098	D(Is=793.4n Rs=3.036m Ikf=8.242 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=29.51u Nr=2)
+*		Motorola	pid=1N6097	case=DO5
+*		88-09-15 rmn
+
+.model MBD101	D(Is=192.1p Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=893.8f M=98.29m
++		Vj=.75 Fc=.5 Isr=16.91n Nr=2 Bv=5 Ibv=10u)
+*		Motorola	pid=MBD101	case=182-03
+*		88-09-22 bam	creation
+
+.model MBD201	D(Is=1.684p Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=2.034p M=.2771
++		Vj=.75 Fc=.5 Isr=4.301n Nr=2 Bv=20 Ibv=10u)
+*		Motorola	pid=MBD201	case=182-03
+*		88-09-22 bam	creation
+
+.model MBD301	D(Is=1.684p Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=2.034p M=.2771
++		Vj=.75 Fc=.5 Isr=4.879n Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MBD201	case=182-03
+*		88-09-22 bam	creation
+
+.model MBD501	D(Is=276.7E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=1.778p M=.3694
++		Vj=.75 Fc=.5 Isr=2.031n Nr=2 Bv=50 Ibv=10u)
+*		Motorola	pid=MBD501	case=TO92
+*		88-09-22 bam	creation
+
+.model MBD701	D(Is=276.7E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=1.778p M=.3694
++		Vj=.75 Fc=.5 Isr=2.573n Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=MBD501	case=TO92
+*		88-09-22 bam	creation
+
+.model MBR030	D(Is=12.29n Rs=.102 Ikf=15.89m N=1 Xti=0 Eg=1.11 Cjo=90p
++		M=.1112 Vj=.75 Fc=.5 Isr=1.977u Nr=2)
+*		Motorola	pid=MBR030	case=DO35
+*		88-09-15 rmn
+
+.model MBR040	D(Is=12.29n Rs=.102 Ikf=15.89m N=1 Xti=0 Eg=1.11 Cjo=90p
++		M=.1112 Vj=.75 Fc=.5 Isr=1.916u Nr=2)
+*		Motorola	pid=MBR030	case=DO35
+*		88-09-15 rmn
+
+.model MBR115P	D(Is=2.835u Rs=47.12m Ikf=.3227 N=1 Xti=0 Eg=1.11 Cjo=472.4p
++		M=.6215 Vj=.75 Fc=.5 Isr=37.26u Nr=2)
+*		Motorola	pid=1N5817	case=59-04
+*		88-09-12 rmn
+
+.model MBR120P	D(Is=2.835u Rs=47.12m Ikf=.3227 N=1 Xti=0 Eg=1.11 Cjo=472.4p
++		M=.6215 Vj=.75 Fc=.5 Isr=37.75u Nr=2)
+*		Motorola	pid=1N5817	case=59-04
+*		88-09-12 rmn
+
+.model MBR130P	D(Is=2.835u Rs=47.12m Ikf=.3227 N=1 Xti=0 Eg=1.11 Cjo=359.3p
++		M=.6513 Vj=.75 Fc=.5 Isr=26.46u Nr=2)
+*		Motorola	pid=1N5817	case=59-04
+*		88-09-12 rmn
+
+.model MBR140P	D(Is=2.835u Rs=47.12m Ikf=.3227 N=1 Xti=0 Eg=1.11 Cjo=302.5p
++		M=.7206 Vj=.75 Fc=.5 Isr=16.98u Nr=2)
+*		Motorola	pid=1N5817	case=59-04
+*		88-09-12 rmn
+
+.model MBR320	D(Is=823.9n Rs=18.27m Ikf=.5654 N=1 Xti=0 Eg=1.11 Cjo=477.2p
++		M=.4787 Vj=.75 Fc=.5 Isr=382.9n Nr=2)
+*		Motorola	pid=MBR320	case=267-01
+*		88-09-15 rmn
+
+.model MBR320M	D(Is=15.65u Rs=5.102m Ikf=5.993 N=1 Xti=0 Eg=1.11 Cjo=2.22n
++		M=.4625 Vj=.75 Fc=.5 Isr=858.1u Nr=2)
+*		Motorola	pid=MBR320M	case=60
+*		88-09-15 rmn
+
+.model MBR320P	D(Is=8.425u Rs=34.63m Ikf=2.37 N=1 Xti=0 Eg=1.11 Cjo=1.288n
++		M=.5324 Vj=.75 Fc=.5 Isr=58.32u Nr=2)
+*		Motorola	pid=1N5820	case=267-01
+*		88-09-13 rmn
+
+.model MBR330	D(Is=823.9n Rs=18.27m Ikf=.5654 N=1 Xti=0 Eg=1.11 Cjo=477.2p
++		M=.4787 Vj=.75 Fc=.5 Isr=486.2n Nr=2)
+*		Motorola	pid=MBR320	case=267-01
+*		88-09-15 rmn
+
+.model MBR330M	D(Is=15.65u Rs=5.102m Ikf=5.993 N=1 Xti=0 Eg=1.11 Cjo=1.701n
++		M=.4567 Vj=.75 Fc=.5 Isr=730.8u Nr=2)
+*		Motorola	pid=MBR320M	case=60
+*		88-09-15 rmn
+
+.model MBR330P	D(Is=8.425u Rs=34.63m Ikf=2.37 N=1 Xti=0 Eg=1.11 Cjo=1.132n
++		M=.6043 Vj=.75 Fc=.5 Isr=31.98u Nr=2)
+*		Motorola	pid=1N5820	case=267-01
+*		88-09-13 rmn
+
+.model MBR340	D(Is=823.9n Rs=18.27m Ikf=.5654 N=1 Xti=0 Eg=1.11 Cjo=477.2p
++		M=.4787 Vj=.75 Fc=.5 Isr=838.6n Nr=2)
+*		Motorola	pid=MBR320	case=267-01
+*		88-09-15 rmn
+
+.model MBR340M	D(Is=15.65u Rs=5.102m Ikf=5.993 N=1 Xti=0 Eg=1.11 Cjo=1.543n
++		M=.4614 Vj=.75 Fc=.5 Isr=730.8u Nr=2)
+*		Motorola	pid=MBR320M	case=60
+*		88-09-15 rmn
+
+.model MBR340P	D(Is=8.425u Rs=34.63m Ikf=2.37 N=1 Xti=0 Eg=1.11 Cjo=1.032n
++		M=.6736 Vj=.75 Fc=.5 Isr=9.599u Nr=2)
+*		Motorola	pid=1N5820	case=267-01
+*		88-09-13 rmn
+
+.model MBR350	D(Is=403.6n Rs=36.68m Ikf=.6653 N=1 Xti=0 Eg=1.11 Cjo=502.8p
++		M=.5778 Vj=.75 Fc=.5 Isr=577.8n Nr=2)
+*		Motorola	pid=MBR320	case=267-01
+*		88-09-15 rmn
+
+.model MBR360	D(Is=403.6n Rs=36.68m Ikf=.6653 N=1 Xti=0 Eg=1.11 Cjo=502.8p
++		M=.5778 Vj=.75 Fc=.5 Isr=718.2n Nr=2)
+*		Motorola	pid=MBR320	case=267-01
+*		88-09-15 rmn
+
+.model MBR1035	D(Is=168.4n Rs=8.013m Ikf=1.121 N=1 Xti=0 Eg=1.11 Cjo=888.9p
++		M=.4639 Vj=.75 Fc=.5 Isr=6.634u Nr=2)
+*		Motorola	pid=MBR1035	case=TO220AC
+*		88-09-15 rmn
+
+.model MBR1045	D(Is=168.4n Rs=8.013m Ikf=1.121 N=1 Xti=0 Eg=1.11 Cjo=888.9p
++		M=.4639 Vj=.75 Fc=.5 Isr=10.37u Nr=2)
+*		Motorola	pid=MBR1035	case=TO220AC
+*		88-09-15 rmn
+
+.model MBR1520	D(Is=4.091u Rs=4.683m Ikf=3.519 N=1 Xti=0 Eg=1.11 Cjo=2.216n
++		M=.4608 Vj=.75 Fc=.5 Isr=865.4u Nr=2)
+*		Motorola	pid=MBR1520	case=DO4
+*		88-09-15 rmn
+
+.model MBR1530	D(Is=4.091u Rs=4.683m Ikf=3.519 N=1 Xti=0 Eg=1.11 Cjo=1.782n
++		M=.4666 Vj=.75 Fc=.5 Isr=706.4u Nr=2)
+*		Motorola	pid=MBR1520	case=DO4
+*		88-09-15 rmn
+
+.model MBR1540	D(Is=4.091u Rs=4.683m Ikf=3.519 N=1 Xti=0 Eg=1.11 Cjo=1.583n
++		M=.4619 Vj=.75 Fc=.5 Isr=655u Nr=2)
+*		Motorola	pid=MBR1520	case=DO4
+*		88-09-15 rmn
+
+*model MBR2035CT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MBR2035CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=196.8n Rs=8.535m Ikf=7.25 N=1 Xti=0 Eg=1.11 Cjo=892.3p
++		M=.4684 Vj=.75 Fc=.5 Isr=10.18u Nr=2)
+*		Motorola	pid=MBR2035CT	case=TO220AB
+*		88-09-20 rmn
+.ends
+
+*model MBR2045CT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MBR2045CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=196.8n Rs=8.535m Ikf=7.25 N=1 Xti=0 Eg=1.11 Cjo=892.3p
++		M=.4684 Vj=.75 Fc=.5 Isr=6.84u Nr=2)
+*		Motorola	pid=MBR2035CT	case=TO220AB
+*		88-09-20 rmn
+.ends
+
+.model MBR2520	D(Is=21u Rs=5.011m Ikf=69.6 N=1 Xti=0 Eg=1.11 Cjo=5.088n
++		M=.5217 Vj=.75 Fc=.5 Isr=1.482m Nr=2)
+*		Motorola	pid=MBR2520	case=DO4
+*		88-09-20 rmn
+
+.model MBR2530	D(Is=21u Rs=5.011m Ikf=69.6 N=1 Xti=0 Eg=1.11 Cjo=4.111n
++		M=.5182 Vj=.75 Fc=.5 Isr=1.179m Nr=2)
+*		Motorola	pid=MBR2520	case=DO4
+*		88-09-20 rmn
+
+.model MBR2540	D(Is=21u Rs=5.011m Ikf=69.6 N=1 Xti=0 Eg=1.11 Cjo=3.507n
++		M=.5031 Vj=.75 Fc=.5 Isr=1.176m Nr=2)
+*		Motorola	pid=MBR2520	case=DO4
+*		88-09-20 rmn
+
+*model MBR3020CT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MBR3020CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=489n Rs=7.299m Ikf=80.79 N=1 Xti=0 Eg=1.11 Cjo=2.144n
++		M=.4923 Vj=.75 Fc=.5 Isr=2.535u Nr=2)
+*		Motorola	pid=MBR3020CT	case=TO204AA
+*		88-09-20 rmn
+.ends
+
+*model MBR3035CT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MBR3035CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=489n Rs=7.299m Ikf=80.79 N=1 Xti=0 Eg=1.11 Cjo=2.144n
++		M=.4923 Vj=.75 Fc=.5 Isr=3.879u Nr=2)
+*		Motorola	pid=MBR3020CT	case=TO204AA
+*		88-09-20 rmn
+.ends
+
+*model MBR3035PT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MBR3035PT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=489n Rs=7.299m Ikf=80.79 N=1 Xti=0 Eg=1.11 Cjo=2.144n
++		M=.4923 Vj=.75 Fc=.5 Isr=3.879u Nr=2)
+*		Motorola	pid=MBR3020PT	case=TO204AA
+*		88-09-20 rmn
+.ends
+
+*model MBR3045CT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MBR3045CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=489n Rs=7.299m Ikf=80.79 N=1 Xti=0 Eg=1.11 Cjo=2.144n
++		M=.4923 Vj=.75 Fc=.5 Isr=7.268u Nr=2)
+*		Motorola	pid=MBR3020CT	case=TO204AA
+*		88-09-20 rmn
+.ends
+
+*model MBR3045PT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MBR3045PT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=489n Rs=7.299m Ikf=80.79 N=1 Xti=0 Eg=1.11 Cjo=2.144n
++		M=.4923 Vj=.75 Fc=.5 Isr=7.268u Nr=2)
+*		Motorola	pid=MBR3020PT	case=TO204AA
+*		88-09-20 rmn
+.ends
+
+.model MBR3520	D(Is=271.1n Rs=2.727m Ikf=4.793 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=12.22u Nr=2)
+*		Motorola	pid=MBR3520	case=DO4
+*		88-09-21 rmn
+
+.model MBR3535	D(Is=271.1n Rs=2.727m Ikf=4.793 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=22.08u Nr=2)
+*		Motorola	pid=MBR3520	case=DO4
+*		88-09-21 rmn
+
+.model MBR3545	D(Is=271.1n Rs=2.727m Ikf=4.793 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=39.25u Nr=2)
+*		Motorola	pid=MBR3520	case=DO4
+*		88-09-21 rmn
+
+.model MBR3545H	D(Is=271.1n Rs=2.727m Ikf=4.793 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=39.25u Nr=2)
+*		Motorola	pid=MBR3520	case=DO4
+*		88-09-21 rmn
+
+.model MBR3545H1 D(Is=271.1n Rs=2.727m Ikf=4.793 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=39.25u Nr=2)
+*		Motorola	pid=MBR3520	case=DO4
+*		88-09-21 rmn
+
+.model MBR4020	D(Is=27.51u Rs=5.244m Ikf=124.2 N=1 Xti=0 Eg=1.11 Cjo=5.088n
++		M=.5217 Vj=.75 Fc=.5 Isr=1.481m Nr=2)
+*		Motorola	pid=MBR4020	case=DO5
+*		88-09-21 rmn
+
+.model MBR4030	D(Is=27.51u Rs=5.244m Ikf=124.2 N=1 Xti=0 Eg=1.11 Cjo=4.111n
++		M=.5182 Vj=.75 Fc=.5 Isr=1.164m Nr=2)
+*		Motorola	pid=MBR4020	case=DO5
+*		88-09-21 rmn
+
+.model MBR4040	D(Is=27.51u Rs=5.244m Ikf=124.2 N=1 Xti=0 Eg=1.11 Cjo=3.468n
++		M=.5003 Vj=.75 Fc=.5 Isr=1.175m Nr=2)
+*		Motorola	pid=MBR4020	case=DO5
+*		88-09-21 rmn
+
+.model MBR5825H	D(Is=40.53u Rs=4.338m Ikf=58.4 N=1 Xti=0 Eg=1.11 Cjo=1.537n
++		M=.4545 Vj=.75 Fc=.5 Isr=673.4u Nr=2)
+*		Motorola	pid=1N5823	case=60-01
+*		88-09-13 rmn
+
+.model MBR5825H1 D(Is=40.53u Rs=4.338m Ikf=58.4 N=1 Xti=0 Eg=1.11 Cjo=1.537n
++		M=.4545 Vj=.75 Fc=.5 Isr=673.4u Nr=2)
+*		Motorola	pid=1N5823	case=60-01
+*		88-09-13 rmn
+
+.model MBR5831H	D(Is=89.43u Rs=3.991m Ikf=163.5 N=1 Xti=0 Eg=1.11 Cjo=3.488n
++		M=.5044 Vj=.75 Fc=.5 Isr=1.188m Nr=2)
+*		Motorola	pid=1N5829	case=DO4
+*		88-09-13 rmn
+
+.model MBR5831H1 D(Is=89.43u Rs=3.991m Ikf=163.5 N=1 Xti=0 Eg=1.11 Cjo=3.488n
++		M=.5044 Vj=.75 Fc=.5 Isr=1.188m Nr=2)
+*		Motorola	pid=1N5829	case=DO4
+*		88-09-13 rmn
+
+.model MBR6035	D(Is=792.9n Rs=3.092m Ikf=8.666 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=21.96u Nr=2)
+*		Motorola	pid=MBR6035	case=257-01
+*		88-09-21 rmn
+
+.model MBR6035B	D(Is=792.9n Rs=3.092m Ikf=8.666 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=21.96u Nr=2)
+*		Motorola	pid=MBR6035	case=257-01
+*		88-09-21 rmn
+
+.model MBR6035PF D(Is=792.9n Rs=3.092m Ikf=8.666 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=21.96u Nr=2)
+*		Motorola	pid=MBR6035PF	case=DO21
+*		88-09-21 rmn
+
+.model MBR6045	D(Is=792.9n Rs=3.092m Ikf=8.666 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=39.14u Nr=2)
+*		Motorola	pid=MBR6035	case=257-01
+*		88-09-21 rmn
+
+.model MBR6045B	D(Is=792.9n Rs=3.092m Ikf=8.666 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=39.14u Nr=2)
+*		Motorola	pid=MBR6035	case=257-01
+*		88-09-21 rmn
+
+.model MBR6045H	D(Is=792.9n Rs=3.092m Ikf=8.666 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=39.14u Nr=2)
+*		Motorola	pid=MBR6035	case=257-01
+*		88-09-21 rmn
+
+.model MBR6045H1 D(Is=792.9n Rs=3.092m Ikf=8.666 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=39.14u Nr=2)
+*		Motorola	pid=MBR6035	case=257-01
+*		88-09-21 rmn
+
+.model MBR6045PF D(Is=792.9n Rs=3.092m Ikf=8.666 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=39.14u Nr=2)
+*		Motorola	pid=MBR6035PF	case=DO21
+*		88-09-21 rmn
+
+.model MBR6535	D(Is=183.5n Rs=1.6m Ikf=5.736 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=791.2n Nr=2)
+*		Motorola	pid=MBR6535	case=DO5
+*		88-09-21 rmn
+
+.model MBR6545	D(Is=183.5n Rs=1.6m Ikf=5.736 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=1.376u Nr=2)
+*		Motorola	pid=MBR6535	case=DO5
+*		88-09-21 rmn
+
+.model MBR7520	D(Is=4.014u Rs=1.915m Ikf=20.97 N=1 Xti=0 Eg=1.11 Cjo=11.08n
++		M=.5 Vj=.75 Fc=.5 Isr=31.56u Nr=2)
+*		Motorola	pid=MBR7520	case=DO5
+*		88-09-21 rmn
+
+.model MBR7530	D(Is=4.014u Rs=1.915m Ikf=20.97 N=1 Xti=0 Eg=1.11 Cjo=11.08n
++		M=.5 Vj=.75 Fc=.5 Isr=46.23u Nr=2)
+*		Motorola	pid=MBR7520	case=DO5
+*		88-09-21 rmn
+
+.model MBR7535	D(Is=4.014u Rs=1.915m Ikf=20.97 N=1 Xti=0 Eg=1.11 Cjo=11.08n
++		M=.5 Vj=.75 Fc=.5 Isr=57.36u Nr=2)
+*		Motorola	pid=MBR7520	case=DO5
+*		88-09-21 rmn
+
+.model MBR7540	D(Is=4.014u Rs=1.915m Ikf=20.97 N=1 Xti=0 Eg=1.11 Cjo=11.08n
++		M=.5 Vj=.75 Fc=.5 Isr=71.36u Nr=2)
+*		Motorola	pid=MBR7520	case=DO5
+*		88-09-21 rmn
+
+.model MBR7545	D(Is=4.014u Rs=1.915m Ikf=20.97 N=1 Xti=0 Eg=1.11 Cjo=11.08n
++		M=.5 Vj=.75 Fc=.5 Isr=91.68u Nr=2)
+*		Motorola	pid=MBR7520	case=DO5
+*		88-09-21 rmn
+
+.model MBR8035	D(Is=980.4n Rs=1.254m Ikf=3.283 N=1 Xti=0 Eg=1.11 Cjo=6.349n
++		M=.4915 Vj=.75 Fc=.5 Isr=1.649u Nr=2)
+*		Motorola	pid=MBR8035	case=DO5
+*		88-09-21 rmn
+
+.model MBR8045	D(Is=980.4n Rs=1.254m Ikf=3.283 N=1 Xti=0 Eg=1.11 Cjo=6.349n
++		M=.4915 Vj=.75 Fc=.5 Isr=2.787u Nr=2)
+*		Motorola	pid=MBR8035	case=DO5
+*		88-09-21 rmn
+
+*model MBR12035CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MBR12035CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=315.7n Rs=1.179m Ikf=2.094 N=1 Xti=0 Eg=1.11 Cjo=4.052n
++		M=.5058 Vj=.75 Fc=.5 Isr=2.363u Nr=2)
+*		Motorola	pid=MBR12035CT	case=357B-01
+*		88-09-22 rmn
+.ends
+
+*model MBR12045CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MBR12045CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=315.7n Rs=1.179m Ikf=2.094 N=1 Xti=0 Eg=1.11 Cjo=4.052n
++		M=.5058 Vj=.75 Fc=.5 Isr=4.962u Nr=2)
+*		Motorola	pid=MBR12035CT	case=357B-01
+*		88-09-22 rmn
+.ends
+
+*model MBR12050CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MBR12050CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=315.7n Rs=1.179m Ikf=2.094 N=1 Xti=0 Eg=1.11 Cjo=4.052n
++		M=.5058 Vj=.75 Fc=.5 Isr=4.962u Nr=2)
+*		Motorola	pid=MBR12035CT	case=357B-01
+*		88-09-22 rmn
+.ends
+
+*model MBR12060CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MBR12060CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=315.7n Rs=1.179m Ikf=2.094 N=1 Xti=0 Eg=1.11 Cjo=4.052n
++		M=.5058 Vj=.75 Fc=.5 Isr=4.962u Nr=2)
+*		Motorola	pid=MBR12035CT	case=357B-01
+*		88-09-22 rmn
+.ends
+
+*model MBR20035CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MBR20035CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=315.7n Rs=1.179m Ikf=2.094 N=1 Xti=0 Eg=1.11 Cjo=8.95n
++		M=.4719 Vj=.75 Fc=.5 Isr=1.434u Nr=2)
+*		Motorola	pid=MBR12035CT	case=357B-01
+*		88-09-22 rmn
+.ends
+
+*model MBR20045CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MBR20045CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=315.7n Rs=1.179m Ikf=2.094 N=1 Xti=0 Eg=1.11 Cjo=8.95n
++		M=.4719 Vj=.75 Fc=.5 Isr=2.47u Nr=2)
+*		Motorola	pid=MBR12035CT	case=357B-01
+*		88-09-22 rmn
+.ends
+
+*model MBR20050CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MBR20050CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=315.7n Rs=1.179m Ikf=2.094 N=1 Xti=0 Eg=1.11 Cjo=8.95n
++		M=.4719 Vj=.75 Fc=.5 Isr=3.652u Nr=2)
+*		Motorola	pid=MBR12035CT	case=357B-01
+*		88-09-22 rmn
+.ends
+
+*model MBR20060CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MBR20060CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=315.7n Rs=1.179m Ikf=2.094 N=1 Xti=0 Eg=1.11 Cjo=8.95n
++		M=.4719 Vj=.75 Fc=.5 Isr=3.652u Nr=2)
+*		Motorola	pid=MBR12035CT	case=357B-01
+*		88-09-22 rmn
+.ends
+
+*model MBR30035CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MBR30035CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=832.5n Rs=262.1u Ikf=3.986 N=1 Xti=0 Eg=1.11 Cjo=12.18n
++		M=.4673 Vj=.75 Fc=.5 Isr=5.616u Nr=2)
+*		Motorola	pid=MBR30035CT	case=357B-01
+*		88-09-22 rmn
+.ends
+
+*model MBR30045CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MBR30045CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=832.5n Rs=262.1u Ikf=3.986 N=1 Xti=0 Eg=1.11 Cjo=12.18n
++		M=.4673 Vj=.75 Fc=.5 Isr=9.398u Nr=2)
+*		Motorola	pid=MBR30035CT	case=357B-01
+*		88-09-22 rmn
+.ends
+
+.model MBRL030	D(Is=12.29n Rs=.102 Ikf=15.89m N=1 Xti=0 Eg=1.11 Cjo=90p
++		M=.1112 Vj=.75 Fc=.5 Isr=1.977u Nr=2)
+*		Motorola	pid=MBRL030	case=362-01
+*		88-09-15 rmn
+
+.model MBRL040	D(Is=12.29n Rs=.102 Ikf=15.89m N=1 Xti=0 Eg=1.11 Cjo=90p
++		M=.1112 Vj=.75 Fc=.5 Isr=1.916u Nr=2)
+*		Motorola	pid=MBRL030	case=362-01
+*		88-09-15 rmn
+
+.model MPN3404	D(Is=271.5E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=3p M=.3141
++		Vj=.75 Fc=.5 Isr=10.38n Nr=2 Bv=20 Ibv=10u)
+*		Motorola	pid=MPN3404	case=182-03
+*		88-09-22 bam	creation
+
+.model MPN3700	D(Is=266.9E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=2.2p M=.4301
++		Vj=.75 Fc=.5 Isr=7.29n Nr=2 Bv=200 Ibv=10u)
+*		Motorola	pid=MPN3700	case=182-03
+*		88-09-22 bam	creation
+
+.model MR327	D(Is=68.65f Rs=3.786m Ikf=1.774 N=1 Xti=2 Eg=1.11 Cjo=1.457n
++		M=.9735 Vj=.75 Fc=.5 Isr=1.186u Nr=2 Tt=6.059u)
+*		Motorola	pid=1N3491	case=DO21
+*		88-08-24 rmn
+
+.model MR328	D(Is=68.65f Rs=3.786m Ikf=1.774 N=1 Xti=2 Eg=1.11 Cjo=1.457n
++		M=.9735 Vj=.75 Fc=.5 Isr=993.6n Nr=2 Tt=6.059u)
+*		Motorola	pid=1N3491	case=DO21
+*		88-08-24 rmn
+
+.model MR330	D(Is=68.65f Rs=3.786m Ikf=1.774 N=1 Xti=2 Eg=1.11 Cjo=1.457n
++		M=.9735 Vj=.75 Fc=.5 Isr=751.1n Nr=2 Tt=6.059u)
+*		Motorola	pid=1N3491	case=DO21
+*		88-08-24 rmn
+
+.model MR331	D(Is=68.65f Rs=3.786m Ikf=1.774 N=1 Xti=2 Eg=1.11 Cjo=1.457n
++		M=.9735 Vj=.75 Fc=.5 Isr=604.6n Nr=2 Tt=6.059u)
+*		Motorola	pid=1N3491	case=DO21
+*		88-08-24 rmn
+
+.model MR500	D(Is=11.5f Rs=8.254m Ikf=3.87 N=1 Xti=3 Eg=1.11 Cjo=61.08p
++		M=.4421 Vj=.75 Fc=.5 Isr=15.52n Nr=2 Tt=6.81u)
+*		Motorola	pid=MR500	case=267-01
+*		88-09-22 rmn
+
+.model MR501	D(Is=11.5f Rs=8.254m Ikf=3.87 N=1 Xti=3 Eg=1.11 Cjo=61.08p
++		M=.4421 Vj=.75 Fc=.5 Isr=11.46n Nr=2 Tt=6.81u)
+*		Motorola	pid=MR500	case=267-01
+*		88-09-22 rmn
+
+.model MR502	D(Is=11.5f Rs=8.254m Ikf=3.87 N=1 Xti=3 Eg=1.11 Cjo=61.08p
++		M=.4421 Vj=.75 Fc=.5 Isr=8.449n Nr=2 Tt=6.81u)
+*		Motorola	pid=MR500	case=267-01
+*		88-09-22 rmn
+
+.model MR504	D(Is=11.5f Rs=8.254m Ikf=3.87 N=1 Xti=3 Eg=1.11 Cjo=61.08p
++		M=.4421 Vj=.75 Fc=.5 Isr=6.224n Nr=2 Tt=6.81u)
+*		Motorola	pid=MR500	case=267-01
+*		88-09-22 rmn
+
+.model MR506	D(Is=11.5f Rs=8.254m Ikf=3.87 N=1 Xti=3 Eg=1.11 Cjo=61.08p
++		M=.4421 Vj=.75 Fc=.5 Isr=5.204n Nr=2 Tt=6.81u)
+*		Motorola	pid=MR500	case=267-01
+*		88-09-22 rmn
+
+.model MR508	D(Is=11.5f Rs=8.254m Ikf=3.87 N=1 Xti=3 Eg=1.11 Cjo=61.08p
++		M=.4421 Vj=.75 Fc=.5 Isr=4.583n Nr=2 Tt=6.81u)
+*		Motorola	pid=MR500	case=267-01
+*		88-09-22 rmn
+
+.model MR510	D(Is=11.5f Rs=8.254m Ikf=3.87 N=1 Xti=3 Eg=1.11 Cjo=61.08p
++		M=.4421 Vj=.75 Fc=.5 Isr=4.153n Nr=2 Tt=6.81u)
+*		Motorola	pid=MR500	case=267-01
+*		88-09-22 rmn
+
+.model MR750	D(Is=643.5f Rs=1.82m Ikf=4.537 N=1 Xti=3 Eg=1.11 Cjo=1.453n
++		M=.9134 Vj=.75 Fc=.5 Isr=5.322u Nr=2 Tt=6.131u)
+*		Motorola	pid=MR750	case=194-05
+*		88-09-22 rmn
+
+.model MR751	D(Is=643.5f Rs=1.82m Ikf=4.537 N=1 Xti=3 Eg=1.11 Cjo=1.453n
++		M=.9134 Vj=.75 Fc=.5 Isr=2.845u Nr=2 Tt=6.131u)
+*		Motorola	pid=MR750	case=194-05
+*		88-09-22 rmn
+
+.model MR752	D(Is=643.5f Rs=1.82m Ikf=4.537 N=1 Xti=3 Eg=1.11 Cjo=1.453n
++		M=.9134 Vj=.75 Fc=.5 Isr=1.516u Nr=2 Tt=6.131u)
+*		Motorola	pid=MR750	case=194-05
+*		88-09-22 rmn
+
+.model MR754	D(Is=643.5f Rs=1.82m Ikf=4.537 N=1 Xti=3 Eg=1.11 Cjo=1.453n
++		M=.9134 Vj=.75 Fc=.5 Isr=806n Nr=2 Tt=6.131u)
+*		Motorola	pid=MR750	case=194-05
+*		88-09-22 rmn
+
+.model MR756	D(Is=643.5f Rs=1.82m Ikf=4.537 N=1 Xti=3 Eg=1.11 Cjo=1.453n
++		M=.9134 Vj=.75 Fc=.5 Isr=556.9n Nr=2 Tt=6.131u)
+*		Motorola	pid=MR750	case=194-05
+*		88-09-22 rmn
+
+.model MR810	D(Is=1.568f Rs=27.67m Ikf=8.762m N=1 Xti=3 Eg=1.11 Cjo=27.48p
++		M=.4357 Vj=.75 Fc=.5 Isr=79.7n Nr=2 Tt=625.5n)
+*		Motorola	pid=MR810	case=59-04
+*		88-09-22 rmn
+
+.model MR811	D(Is=1.568f Rs=27.67m Ikf=8.762m N=1 Xti=3 Eg=1.11 Cjo=27.48p
++		M=.4357 Vj=.75 Fc=.5 Isr=63.85n Nr=2 Tt=625.5n)
+*		Motorola	pid=MR810	case=59-04
+*		88-09-22 rmn
+
+.model MR812	D(Is=1.568f Rs=27.67m Ikf=8.762m N=1 Xti=3 Eg=1.11 Cjo=27.48p
++		M=.4357 Vj=.75 Fc=.5 Isr=52.54n Nr=2 Tt=625.5n)
+*		Motorola	pid=MR810	case=59-04
+*		88-09-22 rmn
+
+.model MR813	D(Is=1.568f Rs=27.67m Ikf=8.762m N=1 Xti=3 Eg=1.11 Cjo=27.48p
++		M=.4357 Vj=.75 Fc=.5 Isr=49.93n Nr=2 Tt=625.5n)
+*		Motorola	pid=MR810	case=59-04
+*		88-09-22 rmn
+
+.model MR814	D(Is=1.568f Rs=27.67m Ikf=8.762m N=1 Xti=3 Eg=1.11 Cjo=27.48p
++		M=.4357 Vj=.75 Fc=.5 Isr=50.86n Nr=2 Tt=625.5n)
+*		Motorola	pid=MR810	case=59-04
+*		88-09-22 rmn
+
+.model MR816	D(Is=1.568f Rs=27.67m Ikf=8.762m N=1 Xti=3 Eg=1.11 Cjo=27.48p
++		M=.4357 Vj=.75 Fc=.5 Isr=53.5n Nr=2 Tt=625.5n)
+*		Motorola	pid=MR810	case=59-04
+*		88-09-22 rmn
+
+.model MR817	D(Is=1.568f Rs=27.67m Ikf=8.762m N=1 Xti=3 Eg=1.11 Cjo=27.48p
++		M=.4357 Vj=.75 Fc=.5 Isr=57.5n Nr=2 Tt=625.5n)
+*		Motorola	pid=MR810	case=59-04
+*		88-09-22 rmn
+
+.model MR818	D(Is=1.568f Rs=27.67m Ikf=8.762m N=1 Xti=3 Eg=1.11 Cjo=27.48p
++		M=.4357 Vj=.75 Fc=.5 Isr=71.75n Nr=2 Tt=625.5n)
+*		Motorola	pid=MR810	case=59-04
+*		88-09-22 rmn
+
+.model MR820	D(Is=441.8f Rs=5.044m Ikf=.1535 N=1 Xti=3 Eg=1.11 Cjo=111.7p
++		M=.2683 Vj=.75 Fc=.5 Isr=848.9n Nr=2 Tt=369.9n)
+*		Motorola	pid=MR820	case=194-04
+*		88-09-22 rmn
+
+.model MR821	D(Is=441.8f Rs=5.044m Ikf=.1535 N=1 Xti=3 Eg=1.11 Cjo=111.7p
++		M=.2683 Vj=.75 Fc=.5 Isr=759.4n Nr=2 Tt=369.9n)
+*		Motorola	pid=MR820	case=194-04
+*		88-09-22 rmn
+
+.model MR822	D(Is=441.8f Rs=5.044m Ikf=.1535 N=1 Xti=3 Eg=1.11 Cjo=111.7p
++		M=.2683 Vj=.75 Fc=.5 Isr=749.9n Nr=2 Tt=369.9n)
+*		Motorola	pid=MR820	case=194-04
+*		88-09-22 rmn
+
+.model MR824	D(Is=441.8f Rs=5.044m Ikf=.1535 N=1 Xti=3 Eg=1.11 Cjo=111.7p
++		M=.2683 Vj=.75 Fc=.5 Isr=973.4n Nr=2 Tt=369.9n)
+*		Motorola	pid=MR820	case=194-04
+*		88-09-22 rmn
+
+.model MR826	D(Is=441.8f Rs=5.044m Ikf=.1535 N=1 Xti=3 Eg=1.11 Cjo=111.7p
++		M=.2683 Vj=.75 Fc=.5 Isr=1.331u Nr=2 Tt=369.9n)
+*		Motorola	pid=MR820	case=194-04
+*		88-09-22 rmn
+
+.model MR831	D(Is=111.5f Rs=7.494m Ikf=.1157 N=1 Xti=3 Eg=1.11 Cjo=72.84p
++		M=.4441 Vj=.75 Fc=.5 Isr=47.65n Nr=2 Tt=369.9n)
+*		Motorola	pid=MR850	case=60-1
+*		88-09-22 rmn
+
+.model MR850	D(Is=111.5f Rs=7.494m Ikf=.1157 N=1 Xti=3 Eg=1.11 Cjo=72.84p
++		M=.4441 Vj=.75 Fc=.5 Isr=56.92n Nr=2 Tt=369.9n)
+*		Motorola	pid=MR850	case=60-1
+*		88-09-22 rmn
+
+.model MR852	D(Is=111.5f Rs=7.494m Ikf=.1157 N=1 Xti=3 Eg=1.11 Cjo=72.84p
++		M=.4441 Vj=.75 Fc=.5 Isr=58.47n Nr=2 Tt=369.9n)
+*		Motorola	pid=MR850	case=60-1
+*		88-09-22 rmn
+
+.model MR854	D(Is=111.5f Rs=7.494m Ikf=.1157 N=1 Xti=3 Eg=1.11 Cjo=72.84p
++		M=.4441 Vj=.75 Fc=.5 Isr=71.28n Nr=2 Tt=369.9n)
+*		Motorola	pid=MR850	case=60-1
+*		88-09-22 rmn
+
+.model MR856	D(Is=111.5f Rs=7.494m Ikf=.1157 N=1 Xti=3 Eg=1.11 Cjo=72.84p
++		M=.4441 Vj=.75 Fc=.5 Isr=79.57n Nr=2 Tt=369.9n)
+*		Motorola	pid=MR850	case=60-1
+*		88-09-22 rmn
+
+.model MR860	D(Is=1.705p Rs=3.151m Ikf=.1029 N=1 Xti=0 Eg=1.11 Cjo=144.1p
++		M=.216 Vj=.75 Fc=.5 Isr=1.086u Nr=2 Tt=369.9n)
+*		Motorola	pid=MR860	case=DO5
+*		88-09-22 rmn
+
+.model MR861	D(Is=1.705p Rs=3.151m Ikf=.1029 N=1 Xti=0 Eg=1.11 Cjo=144.1p
++		M=.216 Vj=.75 Fc=.5 Isr=1.041u Nr=2 Tt=369.9n)
+*		Motorola	pid=MR860	case=DO5
+*		88-09-22 rmn
+
+.model MR862	D(Is=1.705p Rs=3.151m Ikf=.1029 N=1 Xti=0 Eg=1.11 Cjo=144.1p
++		M=.216 Vj=.75 Fc=.5 Isr=1.076u Nr=2 Tt=369.9n)
+*		Motorola	pid=MR860	case=DO5
+*		88-09-22 rmn
+
+.model MR864	D(Is=1.705p Rs=3.151m Ikf=.1029 N=1 Xti=0 Eg=1.11 Cjo=144.1p
++		M=.216 Vj=.75 Fc=.5 Isr=1.339u Nr=2 Tt=369.9n)
+*		Motorola	pid=MR860	case=DO5
+*		88-09-22 rmn
+
+.model MR866	D(Is=1.705p Rs=3.151m Ikf=.1029 N=1 Xti=0 Eg=1.11 Cjo=144.1p
++		M=.216 Vj=.75 Fc=.5 Isr=1.888u Nr=2 Tt=369.9n)
+*		Motorola	pid=MR860	case=DO5
+*		88-09-22 rmn
+
+.model MR870	D(Is=2.553p Rs=2.727m Ikf=81.7m N=1 Xti=2 Eg=1.11 Cjo=114.4p
++		M=.2829 Vj=.75 Fc=.5 Isr=804.3n Nr=2 Tt=369.9n)
+*		Motorola	pid=MR870	case=DO5
+*		88-09-22 rmn
+
+.model MR871	D(Is=2.553p Rs=2.727m Ikf=81.7m N=1 Xti=2 Eg=1.11 Cjo=114.4p
++		M=.2829 Vj=.75 Fc=.5 Isr=749.9n Nr=2 Tt=369.9n)
+*		Motorola	pid=MR870	case=DO5
+*		88-09-22 rmn
+
+.model MR872	D(Is=2.553p Rs=2.727m Ikf=81.7m N=1 Xti=2 Eg=1.11 Cjo=114.4p
++		M=.2829 Vj=.75 Fc=.5 Isr=740.4n Nr=2 Tt=369.9n)
+*		Motorola	pid=MR870	case=DO5
+*		88-09-22 rmn
+
+.model MR874	D(Is=2.553p Rs=2.727m Ikf=81.7m N=1 Xti=2 Eg=1.11 Cjo=114.4p
++		M=.2829 Vj=.75 Fc=.5 Isr=879.5n Nr=2 Tt=369.9n)
+*		Motorola	pid=MR870	case=DO5
+*		88-09-22 rmn
+
+.model MR876	D(Is=2.553p Rs=2.727m Ikf=81.7m N=1 Xti=2 Eg=1.11 Cjo=114.4p
++		M=.2829 Vj=.75 Fc=.5 Isr=1.207u Nr=2 Tt=369.9n)
+*		Motorola	pid=MR870	case=DO5
+*		88-09-22 rmn
+
+.model MR1366	D(Is=1.058E-18 Rs=11.56m Ikf=2.349 N=1 Xti=14 Eg=1.11 Cjo=113.2p
++		M=.2834 Vj=.75 Fc=.5 Isr=1.188u Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3879	case=DO4
+*		88-08-25 rmn
+
+.model MR1376	D(Is=15.03f Rs=9.606m Ikf=.2003 N=1 Xti=3 Eg=1.11 Cjo=117.8p
++		M=.2976 Vj=.75 Fc=.5 Isr=1.094u Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3889	case=DO4
+*		88-08-25 rmn
+
+.model MR1386	D(Is=5.62f Rs=6.414m Ikf=9.692 N=1 Xti=2 Eg=1.11 Cjo=144.1p
++		M=.2272 Vj=.75 Fc=.5 Isr=1.752u Nr=2 Bv=100 Ibv=100u Tt=521.4n)
+*		Motorola	pid=1N3899	case=DO5
+*		88-08-30 rmn
+
+.model MR1396	D(Is=20.07f Rs=3.842m Ikf=2.963 N=1 Xti=3 Eg=1.11 Cjo=111.7p
++		M=.2683 Vj=.75 Fc=.5 Isr=1.331u Nr=2 Tt=369.9n)
+*		Motorola	pid=1N3909	case=DO5
+*		88-08-30 rmn
+
+.model MR2400	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=16.52u Nr=2 Tt=5.41u)
+*		Motorola	pid=MR2400	case=339-02
+*		88-09-22 rmn
+
+.model MR2400F	D(Is=193.2f Rs=4.941m Ikf=56.72m N=1 Xti=8 Eg=1.11 Cjo=144.1p
++		M=.216 Vj=.75 Fc=.5 Isr=1.086u Nr=2 Tt=672.2n)
+*		Motorola	pid=MR2400F	case=339-02
+*		88-09-22 rmn
+
+.model MR2401	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=12.33u Nr=2 Tt=5.41u)
+*		Motorola	pid=MR2400	case=339-02
+*		88-09-22 rmn
+
+.model MR2401F	D(Is=193.2f Rs=4.941m Ikf=56.72m N=1 Xti=8 Eg=1.11 Cjo=144.1p
++		M=.216 Vj=.75 Fc=.5 Isr=1.041u Nr=2 Tt=672.2n)
+*		Motorola	pid=MR2400F	case=339-02
+*		88-09-22 rmn
+
+.model MR2402	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=9.182u Nr=2 Tt=5.41u)
+*		Motorola	pid=MR2400	case=339-02
+*		88-09-22 rmn
+
+.model MR2402F	D(Is=193.2f Rs=4.941m Ikf=56.72m N=1 Xti=8 Eg=1.11 Cjo=144.1p
++		M=.216 Vj=.75 Fc=.5 Isr=1.076u Nr=2 Tt=672.2n)
+*		Motorola	pid=MR2400F	case=339-02
+*		88-09-22 rmn
+
+.model MR2404	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=6.834u Nr=2 Tt=5.41u)
+*		Motorola	pid=MR2400	case=339-02
+*		88-09-22 rmn
+
+.model MR2404F	D(Is=193.2f Rs=4.941m Ikf=56.72m N=1 Xti=8 Eg=1.11 Cjo=144.1p
++		M=.216 Vj=.75 Fc=.5 Isr=1.365u Nr=2 Tt=672.2n)
+*		Motorola	pid=MR2400F	case=339-02
+*		88-09-22 rmn
+
+.model MR2406	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=5.749u Nr=2 Tt=5.41u)
+*		Motorola	pid=MR2400	case=339-02
+*		88-09-22 rmn
+
+.model MR2406F	D(Is=193.2f Rs=4.941m Ikf=56.72m N=1 Xti=8 Eg=1.11 Cjo=144.1p
++		M=.216 Vj=.75 Fc=.5 Isr=1.888u Nr=2 Tt=672.2n)
+*		Motorola	pid=MR2400F	case=339-02
+*		88-09-22 rmn
+
+.model MR2500	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=16.52u Nr=2 Tt=5.338u)
+*		Motorola	pid=MR2500	case=139-03
+*		88-09-22 rmn
+
+.model MR2500M	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=16.52u Nr=2 Tt=5.338u)
+*		Motorola	pid=MR2500	case=193-04
+*		88-09-22 rmn
+
+.model MR2501	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=12.33u Nr=2 Tt=5.338u)
+*		Motorola	pid=MR2500	case=139-03
+*		88-09-22 rmn
+
+.model MR2501M	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=12.33u Nr=2 Tt=5.338u)
+*		Motorola	pid=MR2500	case=193-04
+*		88-09-22 rmn
+
+.model MR2502	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=9.182u Nr=2 Tt=5.338u)
+*		Motorola	pid=MR2500	case=139-03
+*		88-09-22 rmn
+
+.model MR2502M	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=9.182u Nr=2 Tt=5.338u)
+*		Motorola	pid=MR2500	case=193-04
+*		88-09-22 rmn
+
+.model MR2504	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=6.834u Nr=2 Tt=5.338u)
+*		Motorola	pid=MR2500	case=139-03
+*		88-09-22 rmn
+
+.model MR2504M	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=6.834u Nr=2 Tt=5.338u)
+*		Motorola	pid=MR2500	case=193-04
+*		88-09-22 rmn
+
+.model MR2506	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=5.749u Nr=2 Tt=5.338u)
+*		Motorola	pid=MR2500	case=139-03
+*		88-09-22 rmn
+
+.model MR2506M	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=5.749u Nr=2 Tt=5.338u)
+*		Motorola	pid=MR2500	case=193-04
+*		88-09-22 rmn
+
+.model MR2508	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=5.085u Nr=2 Tt=5.338u)
+*		Motorola	pid=MR2500	case=139-03
+*		88-09-22 rmn
+
+.model MR2508M	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=5.085u Nr=2 Tt=5.338u)
+*		Motorola	pid=MR2500	case=193-04
+*		88-09-22 rmn
+
+.model MR2510	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=4.623u Nr=2 Tt=5.338u)
+*		Motorola	pid=MR2500	case=139-03
+*		88-09-22 rmn
+
+.model MR2510M	D(Is=639.2f Rs=1.833m Ikf=6.473 N=1 Xti=3 Eg=1.11 Cjo=423.7p
++		M=.4272 Vj=.75 Fc=.5 Isr=4.623u Nr=2 Tt=5.338u)
+*		Motorola	pid=MR2500	case=193-04
+*		88-09-22 rmn
+
+.model MUR105	D(Is=5.547p Rs=20.1m Ikf=14.47m N=1 Xti=0 Eg=1.11 Cjo=67.21p
++		M=.4934 Vj=.75 Fc=.5 Isr=461.8p Nr=2 Tt=61.66n)
+*		Motorola	pid=MUR105	case=59-04
+*		88-09-22 rmn
+
+.model MUR110	D(Is=5.547p Rs=20.1m Ikf=14.47m N=1 Xti=0 Eg=1.11 Cjo=67.21p
++		M=.4934 Vj=.75 Fc=.5 Isr=462.9p Nr=2 Tt=61.66n)
+*		Motorola	pid=MUR105	case=59-04
+*		88-09-22 rmn
+
+.model MUR115	D(Is=5.547p Rs=20.1m Ikf=14.47m N=1 Xti=0 Eg=1.11 Cjo=67.21p
++		M=.4934 Vj=.75 Fc=.5 Isr=605.8p Nr=2 Tt=61.66n)
+*		Motorola	pid=MUR105	case=59-04
+*		88-09-22 rmn
+
+.model MUR120	D(Is=1.043p Rs=74.44m Ikf=2.705m N=1 Xti=2 Eg=1.11 Cjo=28.43p
++		M=.6225 Vj=.75 Fc=.5 Isr=416.1p Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR120	case=59-04
+*		88-09-22 rmn
+
+.model MUR130	D(Is=1.043p Rs=74.44m Ikf=2.705m N=1 Xti=2 Eg=1.11 Cjo=28.43p
++		M=.6225 Vj=.75 Fc=.5 Isr=659.1p Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR120	case=59-04
+*		88-09-22 rmn
+
+.model MUR140	D(Is=1.043p Rs=74.44m Ikf=2.705m N=1 Xti=2 Eg=1.11 Cjo=28.43p
++		M=.6225 Vj=.75 Fc=.5 Isr=1.163n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR120	case=59-04
+*		88-09-22 rmn
+
+.model MUR150	D(Is=1.043p Rs=74.44m Ikf=2.705m N=1 Xti=2 Eg=1.11 Cjo=28.43p
++		M=.6225 Vj=.75 Fc=.5 Isr=2.094n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR120	case=59-04
+*		88-09-22 rmn
+
+.model MUR160	D(Is=1.043p Rs=74.44m Ikf=2.705m N=1 Xti=2 Eg=1.11 Cjo=28.43p
++		M=.6225 Vj=.75 Fc=.5 Isr=7.011n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR120	case=59-04
+*		88-09-22 rmn
+
+.model MUR170	D(Is=4.5f Rs=.1249 Ikf=7.308m N=1 Xti=10 Eg=1.11 Cjo=23.31p
++		M=.525 Vj=.75 Fc=.5 Isr=2.536n Nr=2 Tt=185n)
+*		Motorola	pid=MUR170	case=59-04
+*		88-09-22 rmn
+
+.model MUR180	D(Is=4.5f Rs=.1249 Ikf=7.308m N=1 Xti=10 Eg=1.11 Cjo=23.31p
++		M=.525 Vj=.75 Fc=.5 Isr=3.342n Nr=2 Tt=185n)
+*		Motorola	pid=MUR170	case=59-04
+*		88-09-22 rmn
+
+.model MUR190	D(Is=4.5f Rs=.1249 Ikf=7.308m N=1 Xti=10 Eg=1.11 Cjo=23.31p
++		M=.525 Vj=.75 Fc=.5 Isr=4.833n Nr=2 Tt=185n)
+*		Motorola	pid=MUR170	case=59-04
+*		88-09-22 rmn
+
+.model MUR405	D(Is=1.693p Rs=6.903m Ikf=.3668 N=1 Xti=0 Eg=1.11 Cjo=128.7p
++		M=.299 Vj=.75 Fc=.5 Isr=1.644n Nr=2 Tt=61.66n)
+*		Motorola	pid=MUR405	case=267-01
+*		88-09-22 rmn
+
+.model MUR410	D(Is=1.693p Rs=6.903m Ikf=.3668 N=1 Xti=0 Eg=1.11 Cjo=128.7p
++		M=.299 Vj=.75 Fc=.5 Isr=1.57n Nr=2 Tt=61.66n)
+*		Motorola	pid=MUR405	case=267-01
+*		88-09-22 rmn
+
+.model MUR415	D(Is=1.693p Rs=6.903m Ikf=.3668 N=1 Xti=0 Eg=1.11 Cjo=128.7p
++		M=.299 Vj=.75 Fc=.5 Isr=2.007n Nr=2 Tt=61.66n)
+*		Motorola	pid=MUR405	case=267-01
+*		88-09-22 rmn
+
+.model MUR420	D(Is=289.1f Rs=33.23m Ikf=5.678m N=1 Xti=5 Eg=1.11 Cjo=70.72p
++		M=.5733 Vj=.75 Fc=.5 Isr=710.2p Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR420	case=267-01
+*		88-09-22 rmn
+
+.model MUR430	D(Is=289.1f Rs=33.23m Ikf=5.678m N=1 Xti=5 Eg=1.11 Cjo=70.72p
++		M=.5733 Vj=.75 Fc=.5 Isr=965.7p Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR420	case=267-01
+*		88-09-22 rmn
+
+.model MUR440	D(Is=289.1f Rs=33.23m Ikf=5.678m N=1 Xti=5 Eg=1.11 Cjo=70.72p
++		M=.5733 Vj=.75 Fc=.5 Isr=1.556n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR420	case=267-01
+*		88-09-22 rmn
+
+.model MUR450	D(Is=289.1f Rs=33.23m Ikf=5.678m N=1 Xti=5 Eg=1.11 Cjo=70.72p
++		M=.5733 Vj=.75 Fc=.5 Isr=2.451n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR420	case=267-01
+*		88-09-22 rmn
+
+.model MUR460	D(Is=289.1f Rs=33.23m Ikf=5.678m N=1 Xti=5 Eg=1.11 Cjo=70.72p
++		M=.5733 Vj=.75 Fc=.5 Isr=6.495n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR420	case=267-01
+*		88-09-22 rmn
+
+.model MUR470	D(Is=92.91f Rs=58.12m Ikf=16.23m N=1 Xti=5 Eg=1.11 Cjo=66.41p
++		M=.5022 Vj=.75 Fc=.5 Isr=10.96n Nr=2 Tt=185n)
+*		Motorola	pid=MUR470	case=267-01
+*		88-09-22 rmn
+
+.model MUR480	D(Is=92.91f Rs=58.12m Ikf=16.23m N=1 Xti=5 Eg=1.11 Cjo=66.41p
++		M=.5022 Vj=.75 Fc=.5 Isr=18.09n Nr=2 Tt=185n)
+*		Motorola	pid=MUR470	case=267-01
+*		88-09-22 rmn
+
+.model MUR490	D(Is=92.91f Rs=58.12m Ikf=16.23m N=1 Xti=5 Eg=1.11 Cjo=66.41p
++		M=.5022 Vj=.75 Fc=.5 Isr=27n Nr=2 Tt=185n)
+*		Motorola	pid=MUR470	case=267-01
+*		88-09-22 rmn
+
+.model MUR805	D(Is=12.4f Rs=79.85m Ikf=54.2m N=1 Xti=15 Eg=1.11 Cjo=471.3p
++		M=.4206 Vj=.75 Fc=.5 Isr=40.54n Nr=2 Tt=185n)
+*		Motorola	pid=MUR805	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR810	D(Is=4.433p Rs=5.91m Ikf=92.2m N=1 Xti=3 Eg=1.11 Cjo=265.3p
++		M=.4253 Vj=.75 Fc=.5 Isr=49.76n Nr=2 Tt=61.66n)
+*		Motorola	pid=MUR805	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR815	D(Is=4.433p Rs=5.91m Ikf=92.2m N=1 Xti=3 Eg=1.11 Cjo=265.3p
++		M=.4253 Vj=.75 Fc=.5 Isr=324.9n Nr=2 Tt=61.66n)
+*		Motorola	pid=MUR805	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR820	D(Is=1.026p Rs=36.34m Ikf=17.71m N=1 Xti=10 Eg=1.11 Cjo=367p
++		M=.4068 Vj=.75 Fc=.5 Isr=10.29n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR820	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR830	D(Is=1.026p Rs=36.34m Ikf=17.71m N=1 Xti=10 Eg=1.11 Cjo=367p
++		M=.4068 Vj=.75 Fc=.5 Isr=32.31n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR820	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR840	D(Is=1.026p Rs=36.34m Ikf=17.71m N=1 Xti=10 Eg=1.11 Cjo=367p
++		M=.4068 Vj=.75 Fc=.5 Isr=132.1n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR820	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR850	D(Is=853.7f Rs=41.35m Ikf=21.56m N=1 Xti=3 Eg=1.11 Cjo=367p
++		M=.4068 Vj=.75 Fc=.5 Isr=85.16n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR850	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR860	D(Is=853.7f Rs=41.35m Ikf=21.56m N=1 Xti=3 Eg=1.11 Cjo=367p
++		M=.4068 Vj=.75 Fc=.5 Isr=217.5n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR850	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR870	D(Is=12.4f Rs=79.85m Ikf=54.2m N=1 Xti=15 Eg=1.11 Cjo=471.3p
++		M=.4206 Vj=.75 Fc=.5 Isr=40.55n Nr=2 Tt=185n)
+*		Motorola	pid=MUR870	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR880	D(Is=12.4f Rs=79.85m Ikf=54.2m N=1 Xti=15 Eg=1.11 Cjo=471.3p
++		M=.4206 Vj=.75 Fc=.5 Isr=62.82n Nr=2 Tt=185n)
+*		Motorola	pid=MUR870	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR890	D(Is=12.4f Rs=79.85m Ikf=54.2m N=1 Xti=15 Eg=1.11 Cjo=471.3p
++		M=.4206 Vj=.75 Fc=.5 Isr=116.5n Nr=2 Tt=185n)
+*		Motorola	pid=MUR870	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR1100	D(Is=4.5f Rs=.1249 Ikf=7.308m N=1 Xti=10 Eg=1.11 Cjo=23.31p
++		M=.525 Vj=.75 Fc=.5 Isr=9.146n Nr=2 Tt=185n)
+*		Motorola	pid=MUR170	case=59-04
+*		88-09-22 rmn
+
+.model MUR1505	D(Is=6.318n Rs=17.32m Ikf=6.39m N=1 Xti=3 Eg=1.11 Cjo=525.4p
++		M=.414 Vj=.75 Fc=.5 Isr=7.631n Nr=2 Tt=86.32n)
+*		Motorola	pid=MUR1505	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR1510	D(Is=6.318n Rs=17.32m Ikf=6.39m N=1 Xti=3 Eg=1.11 Cjo=525.4p
++		M=.414 Vj=.75 Fc=.5 Isr=15.22n Nr=2 Tt=86.32n)
+*		Motorola	pid=MUR1505	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR1515	D(Is=6.318n Rs=17.32m Ikf=6.39m N=1 Xti=3 Eg=1.11 Cjo=525.4p
++		M=.414 Vj=.75 Fc=.5 Isr=47.16n Nr=2 Tt=86.32n)
+*		Motorola	pid=MUR1505	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR1520	D(Is=146p Rs=22.09m Ikf=11.37m N=1 Xti=3 Eg=1.11 Cjo=525.4p
++		M=.414 Vj=.75 Fc=.5 Isr=39.53n Nr=2 Tt=148n)
+*		Motorola	pid=MUR1520	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR1530	D(Is=146p Rs=22.09m Ikf=11.37m N=1 Xti=3 Eg=1.11 Cjo=525.4p
++		M=.414 Vj=.75 Fc=.5 Isr=129.6n Nr=2 Tt=148n)
+*		Motorola	pid=MUR1520	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR1540	D(Is=146p Rs=22.09m Ikf=11.37m N=1 Xti=3 Eg=1.11 Cjo=525.4p
++		M=.414 Vj=.75 Fc=.5 Isr=519.8n Nr=2 Tt=148n)
+*		Motorola	pid=MUR1520	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR1550	D(Is=95.51p Rs=46.69m Ikf=8.883m N=1 Xti=6 Eg=1.11 Cjo=525.4p
++		M=.414 Vj=.75 Fc=.5 Isr=63.65n Nr=2 Tt=148n)
+*		Motorola	pid=MUR1550	case=TO220AC
+*		88-09-22 rmn
+
+.model MUR1560	D(Is=95.51p Rs=46.69m Ikf=8.883m N=1 Xti=6 Eg=1.11 Cjo=525.4p
++		M=.414 Vj=.75 Fc=.5 Isr=251.2n Nr=2 Tt=148n)
+*		Motorola	pid=MUR1550	case=TO220AC
+*		88-09-22 rmn
+
+*model MUR1605CT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MUR1605CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=3.387p Rs=5.971m Ikf=.1093 N=1 Xti=2.5 Eg=1.11 Cjo=262p
++		M=.4108 Vj=.75 Fc=.5 Isr=21.24n Nr=2 Tt=61.66n)
+*		Motorola	pid=MUR1605CT	case=TO220AB
+*		88-09-22 rmn
+.ends
+
+*model MUR1610CT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MUR1610CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=3.387p Rs=5.971m Ikf=.1093 N=1 Xti=2.5 Eg=1.11 Cjo=262p
++		M=.4108 Vj=.75 Fc=.5 Isr=53.43n Nr=2 Tt=61.66n)
+*		Motorola	pid=MUR1605CT	case=TO220AB
+*		88-09-22 rmn
+.ends
+
+*model MUR1615CT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MUR1615CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=3.387p Rs=5.971m Ikf=.1093 N=1 Xti=2.5 Eg=1.11 Cjo=262p
++		M=.4108 Vj=.75 Fc=.5 Isr=362.2n Nr=2 Tt=61.66n)
+*		Motorola	pid=MUR1605CT	case=TO220AB
+*		88-09-22 rmn
+.ends
+
+*model MUR1620CT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MUR1620CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=16.33p Rs=48.08m Ikf=13.56m N=1 Xti=4 Eg=1.11 Cjo=367p
++		M=.4068 Vj=.75 Fc=.5 Isr=10.29n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR1620CT	case=TO220AB
+*		88-09-22 rmn
+.ends
+
+*model MUR1630CT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MUR1630CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=16.33p Rs=48.08m Ikf=13.56m N=1 Xti=4 Eg=1.11 Cjo=367p
++		M=.4068 Vj=.75 Fc=.5 Isr=30.56n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR1620CT	case=TO220AB
+*		88-09-22 rmn
+.ends
+
+*model MUR1640CT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MUR1640CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=16.33p Rs=48.08m Ikf=13.56m N=1 Xti=4 Eg=1.11 Cjo=367p
++		M=.4068 Vj=.75 Fc=.5 Isr=132.1n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR1620CT	case=TO220AB
+*		88-09-22 rmn
+.ends
+
+*model MUR1650CT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MUR1650CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=5.654p Rs=97.05m Ikf=0 N=1 Xti=0 Eg=1.11 Cjo=367p M=.4068
++		Vj=.75 Fc=.5 Isr=85.16n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR1650CT	case=TO220AB
+*		88-09-22 rmn
+.ends
+
+*model MUR1660CT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MUR1660CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=5.654p Rs=97.05m Ikf=0 N=1 Xti=0 Eg=1.11 Cjo=367p M=.4068
++		Vj=.75 Fc=.5 Isr=217.5n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR1650CT	case=TO220AB
+*		88-09-22 rmn
+.ends
+
+.model MUR2505	D(Is=67.39p Rs=4.351m Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=243.6p
++		M=.1593 Vj=.75 Fc=.5 Isr=38.29n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR2505	case=DO4
+*		88-09-23 rmn
+
+.model MUR2510	D(Is=67.39p Rs=4.351m Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=243.6p
++		M=.1593 Vj=.75 Fc=.5 Isr=100.8n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR2505	case=DO4
+*		88-09-23 rmn
+
+.model MUR2515	D(Is=67.39p Rs=4.351m Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=243.6p
++		M=.1593 Vj=.75 Fc=.5 Isr=262n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR2505	case=DO4
+*		88-09-23 rmn
+
+.model MUR2520	D(Is=67.39p Rs=4.351m Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=243.6p
++		M=.1593 Vj=.75 Fc=.5 Isr=759.3n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR2505	case=DO4
+*		88-09-23 rmn
+
+*model MUR3005PT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MUR3005PT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=40.28p Rs=11.6m Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=516.5p M=.3938
++		Vj=.75 Fc=.5 Isr=9.503n Nr=2 Tt=86.32n)
+*		Motorola	pid=MUR3005PT	case=TO218AC
+*		88-09-23 rmn
+.ends
+
+*model MUR3010PT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MUR3010PT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=40.28p Rs=11.6m Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=516.5p M=.3938
++		Vj=.75 Fc=.5 Isr=17.85n Nr=2 Tt=86.32n)
+*		Motorola	pid=MUR3005PT	case=TO218AC
+*		88-09-23 rmn
+.ends
+
+*model MUR3015PT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MUR3015PT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=40.28p Rs=11.6m Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=516.5p M=.3938
++		Vj=.75 Fc=.5 Isr=53.27n Nr=2 Tt=86.32n)
+*		Motorola	pid=MUR3005PT	case=TO218AC
+*		88-09-23 rmn
+.ends
+
+*model MUR3020PT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MUR3020PT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=3.026p Rs=19.2m Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=516.5p M=.3938
++		Vj=.75 Fc=.5 Isr=44.27n Nr=2 Tt=148n)
+*		Motorola	pid=MUR3020PT	case=TO218AC
+*		88-09-23 rmn
+.ends
+
+*model MUR3030PT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MUR3030PT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=3.026p Rs=19.2m Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=516.5p M=.3938
++		Vj=.75 Fc=.5 Isr=146.3n Nr=2 Tt=148n)
+*		Motorola	pid=MUR3020PT	case=TO218AC
+*		88-09-23 rmn
+.ends
+
+*model MUR3040PT  anode1
+*		  | anode2
+*		  | | cathode
+*		  | | |
+.subckt MUR3040PT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=3.026p Rs=19.2m Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=516.5p M=.3938
++		Vj=.75 Fc=.5 Isr=590.1n Nr=2 Tt=148n)
+*		Motorola	pid=MUR3020PT	case=TO218AC
+*		88-09-23 rmn
+.ends
+
+.model MUR4100	D(Is=92.91f Rs=58.12m Ikf=16.23m N=1 Xti=5 Eg=1.11 Cjo=66.41p
++		M=.5022 Vj=.75 Fc=.5 Isr=48.52n Nr=2 Tt=185n)
+*		Motorola	pid=MUR470	case=267-01
+*		88-09-22 rmn
+
+.model MUR5005	D(Is=546.8p Rs=4.299m Ikf=29.53m N=1 Xti=3 Eg=1.11 Cjo=243.6p
++		M=.1593 Vj=.75 Fc=.5 Isr=61.04n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR5005	case=DO5
+*		88-09-23 rmn
+
+.model MUR5010	D(Is=546.8p Rs=4.299m Ikf=29.53m N=1 Xti=3 Eg=1.11 Cjo=243.6p
++		M=.1593 Vj=.75 Fc=.5 Isr=164.7n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR5005	case=DO5
+*		88-09-23 rmn
+
+.model MUR5015	D(Is=546.8p Rs=4.299m Ikf=29.53m N=1 Xti=3 Eg=1.11 Cjo=243.6p
++		M=.1593 Vj=.75 Fc=.5 Isr=356.4n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR5005	case=DO5
+*		88-09-23 rmn
+
+.model MUR5020	D(Is=546.8p Rs=4.299m Ikf=29.53m N=1 Xti=3 Eg=1.11 Cjo=243.6p
++		M=.1593 Vj=.75 Fc=.5 Isr=902.8n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR5005	case=DO5
+*		88-09-23 rmn
+
+.model MUR8100	D(Is=12.4f Rs=79.85m Ikf=54.2m N=1 Xti=15 Eg=1.11 Cjo=471.3p
++		M=.4206 Vj=.75 Fc=.5 Isr=232.7n Nr=2 Tt=185n)
+*		Motorola	pid=MUR870	case=TO220AC
+*		88-09-22 rmn
+
+*model MUR10005CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MUR10005CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=325.8p Rs=5.154m Ikf=55.19m N=1 Xti=3 Eg=1.11 Cjo=10.93n
++		M=.4052 Vj=.75 Fc=.5 Isr=507.5n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR10005CT	case=357B-01
+*		88-09-23 rmn
+.ends
+
+*model MUR10010CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MUR10010CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=325.8p Rs=5.154m Ikf=55.19m N=1 Xti=3 Eg=1.11 Cjo=10.93n
++		M=.4052 Vj=.75 Fc=.5 Isr=686.4n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR10005CT	case=357B-01
+*		88-09-23 rmn
+.ends
+
+*model MUR10015CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MUR10015CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=325.8p Rs=5.154m Ikf=55.19m N=1 Xti=3 Eg=1.11 Cjo=10.93n
++		M=.4052 Vj=.75 Fc=.5 Isr=839.6n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR10005CT	case=357B-01
+*		88-09-23 rmn
+.ends
+
+*model MUR10020CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MUR10020CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=325.8p Rs=5.154m Ikf=55.19m N=1 Xti=3 Eg=1.11 Cjo=10.93n
++		M=.4052 Vj=.75 Fc=.5 Isr=1.08u Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR10005CT	case=357B-01
+*		88-09-23 rmn
+.ends
+
+*model MUR20005CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MUR20005CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=9.944p Rs=4.756m Ikf=0 N=1 Xti=4 Eg=1.11 Cjo=1.113n
++		M=.3502 Vj=.75 Fc=.5 Isr=29.71n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR20005CT	case=TO218AC
+*		88-09-23 rmn
+.ends
+
+*model MUR20010CT  anode1
+*		   | anode2
+	  	   | | cathode
+*		   | | |
+.subckt MUR20010CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=9.944p Rs=4.756m Ikf=0 N=1 Xti=4 Eg=1.11 Cjo=1.113n
++		M=.3502 Vj=.75 Fc=.5 Isr=57.52n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR20005CT	case=TO218AC
+*		88-09-23 rmn
+.ends
+
+*model MUR20015CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MUR20015CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=9.944p Rs=4.756m Ikf=0 N=1 Xti=4 Eg=1.11 Cjo=1.113n
++		M=.3502 Vj=.75 Fc=.5 Isr=148.3n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR20005CT	case=TO218AC
+*		88-09-23 rmn
+.ends
+
+*model MUR20020CT  anode1
+*		   | anode2
+*		   | | cathode
+*		   | | |
+.subckt MUR20020CT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=9.944p Rs=4.756m Ikf=0 N=1 Xti=4 Eg=1.11 Cjo=1.113n
++		M=.3502 Vj=.75 Fc=.5 Isr=705.9n Nr=2 Tt=123.3n)
+*		Motorola	pid=MUR20005CT	case=TO218AC
+*		88-09-23 rmn
+.ends
+
+*model R710XPT  anode1
+*		| anode2
+*		| | cathode
+*		| | |
+.subckt R710XPT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=33.87p Rs=12.15m Ikf=.1142 N=1 Xti=3 Eg=1.11 Cjo=519.9p
++		M=.3951 Vj=.75 Fc=.5 Isr=510.7n Nr=2 Tt=246.6n)
+*		Motorola	pid=R710XPT	case=TO218AC
+*		88-09-23 rmn
+.ends
+
+*model R711XPT  anode1
+*		| anode2
+*		| | cathode
+*		| | |
+.subckt R711XPT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=33.87p Rs=12.15m Ikf=.1142 N=1 Xti=3 Eg=1.11 Cjo=519.9p
++		M=.3951 Vj=.75 Fc=.5 Isr=432.8n Nr=2 Tt=246.6n)
+*		Motorola	pid=R710XPT	case=TO218AC
+*		88-09-23 rmn
+.ends
+
+*model R712XPT  anode1
+*		| anode2
+*		| | cathode
+*		| | |
+.subckt R712XPT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=33.87p Rs=12.15m Ikf=.1142 N=1 Xti=3 Eg=1.11 Cjo=519.9p
++		M=.3951 Vj=.75 Fc=.5 Isr=395.5n Nr=2 Tt=246.6n)
+*		Motorola	pid=R710XPT	case=TO218AC
+*		88-09-23 rmn
+.ends
+
+*model R714XPT  anode1
+*		| anode2
+*		| | cathode
+*		| | |
+.subckt R714XPT 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=33.87p Rs=12.15m Ikf=.1142 N=1 Xti=3 Eg=1.11 Cjo=519.9p
++		M=.3951 Vj=.75 Fc=.5 Isr=459.8n Nr=2 Tt=246.6n)
+*		Motorola	pid=R710XPT	case=TO218AC
+*		88-09-23 rmn
+.ends
+
+
+.model SD41	D(Is=1.133u Rs=2.964m Ikf=4.886 N=1 Xti=0 Eg=1.11 Cjo=2.139n
++		M=.4916 Vj=.75 Fc=.5 Isr=7.934u Nr=2)
+*		Motorola	pid=1N6095	case=DO4
+*		88-09-13 rmn
+
+.model SD51	D(Is=793.4n Rs=3.036m Ikf=8.242 N=1 Xti=0 Eg=1.11 Cjo=4.498n
++		M=.478 Vj=.75 Fc=.5 Isr=32.13u Nr=2)
+*		Motorola	pid=1N6097	case=DO5
+*		88-09-15 rmn
+
+*model SD241  anode1
+*	      | anode2
+*	      | | cathode
+*	      | | |
+.subckt SD241 1 2 3
+  d1 1 3 dx
+  d2 2 3 dx
+  .model dx	D(Is=489n Rs=7.299m Ikf=80.79 N=1 Xti=0 Eg=1.11 Cjo=2.144n
++		M=.4923 Vj=.75 Fc=.5 Isr=7.268u Nr=2)
+*		Motorola	pid=MBR3020CT	case=TO204AA
+*		88-09-20 rmn
+.ends
+
+*** Current-regulator diodes
+
+* The parameters in this model library were derived from the data sheets for
+* each part.  Each part was characterize using the Parts option.
+
+*model D1N5283	anode
+*	 	| cathode
+*		| |
+.subckt D1N5283	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=340u Betatce=-.5 Rd=1 Rs=0 Lambda=395.5u Vto=-.8108 
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKL		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5284	anode
+*		| cathode
+*		| |
+.subckt D1N5284	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=326u Betatce=-.5 Rd=1 Rs=0 Lambda=400u Vto=-.8575
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKL		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5285	anode
+*		| cathode
+*		| |
+.subckt D1N5285	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=295u Betatce=-.5 Rd=1 Rs=0 Lambda=392.6u Vto=-.9576
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKL		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5286	anode
+*		| cathode
+*		| |
+.subckt D1N5286	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=265u Betatce=-.5 Rd=1 Rs=0 Lambda=393.3u Vto=-1.063
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKL		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5287	anode
+*		| cathode
+*		| |
+.subckt D1N5287	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=234u Betatce=-.5 Rd=1 Rs=0 Lambda=387.9u Vto=-1.188
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKL		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5288	anode
+*		| cathode
+*		| |
+.subckt D1N5288	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=197u Betatce=-.5 Rd=1 Rs=0 Lambda=371.8u Vto=-1.413
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKL		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5289	anode
+*		| cathode
+*		| |
+.subckt D1N5289	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=187.5u Betatce=-.5 Rd=1 Rs=0 Lambda=381.4u Vto=-1.518
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKL		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5290	anode
+*		| cathode
+*		| |
+.subckt D1N5290	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=178.5u Betatce=-.5 Rd=1 Rs=0 Lambda=380.9u Vto=-1.621
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKL		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5291	anode
+*		| cathode
+*		| |
+.subckt D1N5291	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=152u Betatce=-.5 Rd=1 Rs=0 Lambda=357.1u Vto=-1.916
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKL		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5292	anode
+*		| cathode
+*		| |
+.subckt D1N5292	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=134u Betatce=-.5 Rd=1 Rs=0 Lambda=366.1u Vto=-2.149
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKL		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5293	anode
+*		| cathode
+*		| |
+.subckt D1N5293	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=315u Betatce=-.5 Rd=1 Rs=0 Lambda=173.5u Vto=-1.470
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKM		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5294	anode
+*		| cathode
+*		| |
+.subckt D1N5294	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=293.5u Betatce=-.5 Rd=1 Rs=0 Lambda=185.3u Vto=-1.60
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKM		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5295	anode
+*		| cathode
+*		| |
+.subckt D1N5295	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=277.5u Betatce=-.5 Rd=1 Rs=0 Lambda=203.3u Vto=-1.721
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKM		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5296	anode
+*		| cathode
+*		| |
+.subckt D1N5296	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=275u Betatce=-.5 Rd=1 Rs=0 Lambda=211.0u Vto=-1.8205
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKM		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5297	anode
+*		| cathode
+*		| |
+.subckt D1N5297	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=260u Betatce=-.5 Rd=1 Rs=0 Lambda=227u Vto=-1.954
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKM		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5298	anode
+*		| cathode
+*		| |
+.subckt D1N5298	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=218u Betatce=-.5 Rd=1 Rs=0 Lambda=239.1u Vto=-2.252
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKM		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5299	anode
+*		| cathode
+*		| |
+.subckt D1N5299	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=200u Betatce=-.5 Rd=1 Rs=0 Lambda=252.5u Vto=-2.453
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKM		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5300	anode
+*		| cathode
+*		| |
+.subckt D1N5300	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=185u Betatce=-.5 Rd=1 Rs=0 Lambda=240.4u Vto=-2.650
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKM		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5301	anode
+*		| cathode
+*		| |
+.subckt D1N5301	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=184u Betatce=-.5 Rd=1 Rs=0 Lambda=285.7u Vto=-2.761
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKM		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5302	anode
+*		| cathode
+*		| |
+.subckt D1N5302	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=182u Betatce=-.5 Rd=1 Rs=0 Lambda=303u Vto=-2.866
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKM		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5303	anode
+*		| cathode
+*		| |
+.subckt D1N5303	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=1.45m Betatce=-.5 Rd=1 Rs=0 Lambda=625u Vto=-1.052
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKO		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5304	anode
+*		| cathode
+*		| |
+.subckt D1N5304	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=1.345m Betatce=-.5 Rd=1 Rs=0 Lambda=585u Vto=-1.158
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKO		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5305	anode
+*		| cathode
+*		| |
+.subckt D1N5305	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=1.25m Betatce=-.5 Rd=1 Rs=0 Lambda=568u Vto=-1.267
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKO		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5306	anode
+*		| cathode
+*		| |
+.subckt D1N5306	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=1.16m Betatce=-.5 Rd=1 Rs=0 Lambda=568.2u Vto=-1.3785
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKO		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5307	anode
+*		| cathode
+*		| |
+.subckt D1N5307	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=1.09m Betatce=-.5 Rd=1 Rs=0 Lambda=554.2u Vto=-1.485
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKO		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5308	anode
+*		| cathode
+*		| |
+.subckt D1N5308	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=1.06m Betatce=-.5 Rd=1 Rs=0 Lambda=544.8u Vto=-1.598
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKO		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5309	anode
+*		| cathode
+*		| |
+.subckt D1N5309	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=.93m Betatce=-.5 Rd=1 Rs=0 Lambda=556.7u Vto=-1.797 
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKO		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5310	anode
+*		| cathode
+*		| |
+.subckt D1N5310	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=.92m Betatce=-.5 Rd=1 Rs=0 Lambda=541.2u Vto=-1.897
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKO		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5311	anode
+*		| cathode
+*		| |
+.subckt D1N5311	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=885u Betatce=-.5 Rd=1 Rs=0 Lambda=534.2u Vto=-2.020
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKO		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5312	anode
+*		| cathode
+*		| |
+.subckt D1N5312	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=870u Betatce=-.5 Rd=1 Rs=0 Lambda=534.1u Vto=-2.120
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKO		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5313	anode
+*		| cathode
+*		| |
+.subckt D1N5313	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=790u Betatce=-.5 Rd=1 Rs=0 Lambda=516.3u Vto=-2.336
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKO		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model D1N5314	anode
+*		| cathode
+*		| |
+.subckt D1N5314	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=750u Betatce=-.5 Rd=1 Rs=0 Lambda=531.9u Vto=-2.506
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Motorola	pid=NKO		case=DO7
+*		88-07-25 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR022	anode
+*		| cathode
+*		| |
+.subckt CR022	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=340u Betatce=-.5 Rd=1 Rs=0 Lambda=395.5u Vto=-.8108 
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKL		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR024	anode
+*		| cathode
+*		| |
+.subckt CR024	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=326u Betatce=-.5 Rd=1 Rs=0 Lambda=400u Vto=-.8575
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKL		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR027	anode
+*		| cathode
+*		| |
+.subckt CR027	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=295u Betatce=-.5 Rd=1 Rs=0 Lambda=392.6u Vto=-.9576
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKL		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR030	anode
+*		| cathode
+*		| |
+.subckt CR030	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=265u Betatce=-.5 Rd=1 Rs=0 Lambda=393.3u Vto=-1.063
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKL		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR033	anode
+*		| cathode
+*		| |
+.subckt CR033	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=234u Betatce=-.5 Rd=1 Rs=0 Lambda=387.9u Vto=-1.188
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKL		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR039	anode
+*		| cathode
+*		| |
+.subckt CR039	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=197u Betatce=-.5 Rd=1 Rs=0 Lambda=371.8u Vto=-1.413
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKL		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR043	anode
+*		| cathode
+*		| |
+.subckt CR043	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=187.5u Betatce=-.5 Rd=1 Rs=0 Lambda=381.4u Vto=-1.518
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKL		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR047	anode
+*		| cathode
+*		| |
+.subckt CR047	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=178.5u Betatce=-.5 Rd=1 Rs=0 Lambda=380.9u Vto=-1.621
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKL		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR056	anode
+*		| cathode
+*		| |
+.subckt CR056	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=152u Betatce=-.5 Rd=1 Rs=0 Lambda=357.1u Vto=-1.916
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKL		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR062	anode
+*		| cathode
+*		| |
+.subckt CR062	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=134u Betatce=-.5 Rd=1 Rs=0 Lambda=366.1u Vto=-2.149
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKL		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR068	anode
+*		| cathode
+*		| |
+.subckt CR068	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=315u Betatce=-.5 Rd=1 Rs=0 Lambda=173.5u Vto=-1.470
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKM		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR075	anode
+*		| cathode
+*		| |
+.subckt CR075	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=293.5u Betatce=-.5 Rd=1 Rs=0 Lambda=185.3u Vto=-1.60
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKM		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR082	anode
+*		| cathode
+*		| |
+.subckt CR082	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=277.5u Betatce=-.5 Rd=1 Rs=0 Lambda=203.3u Vto=-1.721
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKM		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR091	anode
+*		| cathode
+*		| |
+.subckt CR091	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=275u Betatce=-.5 Rd=1 Rs=0 Lambda=211.0u Vto=-1.8205
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKM		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR100	anode
+*		| cathode
+*		| |
+.subckt CR100	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=260u Betatce=-.5 Rd=1 Rs=0 Lambda=227u Vto=-1.954
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKM		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR110	anode
+*		| cathode
+*		| |
+.subckt CR110	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=218u Betatce=-.5 Rd=1 Rs=0 Lambda=239.1u Vto=-2.252
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKM		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR120	anode
+*		| cathode
+*		| |
+.subckt CR120	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=200u Betatce=-.5 Rd=1 Rs=0 Lambda=252.5u Vto=-2.453
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKM		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR130	anode
+*		| cathode
+*		| |
+.subckt CR130	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=185u Betatce=-.5 Rd=1 Rs=0 Lambda=240.4u Vto=-2.650
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKM		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR140	anode
+*		| cathode
+*		| |
+.subckt CR140	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=184u Betatce=-.5 Rd=1 Rs=0 Lambda=285.7u Vto=-2.761
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKM		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR150	anode
+*		| cathode
+*		| |
+.subckt CR150	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=182u Betatce=-.5 Rd=1 Rs=0 Lambda=303u Vto=-2.866
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKM		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR160	anode
+*		| cathode
+*		| |
+.subckt CR160	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=1.45m Betatce=-.5 Rd=1 Rs=0 Lambda=625u Vto=-1.052
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR180	anode
+*		| cathode
+*		| |
+.subckt CR180	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=1.345m Betatce=-.5 Rd=1 Rs=0 Lambda=585u Vto=-1.158
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR200	anode
+*		| cathode
+*		| |
+.subckt CR200	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=1.25m Betatce=-.5 Rd=1 Rs=0 Lambda=568u Vto=-1.267
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR220	anode
+*		| cathode
+*		| |
+.subckt CR220	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=1.16m Betatce=-.5 Rd=1 Rs=0 Lambda=568.2u Vto=-1.3785
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR240	anode
+*		| cathode
+*		| |
+.subckt CR240	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=1.09m Betatce=-.5 Rd=1 Rs=0 Lambda=554.2u Vto=-1.485
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR270	anode
+*		| cathode
+*		| |
+.subckt CR270	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=1.06m Betatce=-.5 Rd=1 Rs=0 Lambda=544.8u Vto=-1.598
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR300	anode
+*		| cathode
+*		| |
+.subckt CR300	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=.93m Betatce=-.5 Rd=1 Rs=0 Lambda=556.7u Vto=-1.797 
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR330	anode
+*		| cathode
+*		| |
+.subckt CR330	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=.92m Betatce=-.5 Rd=1 Rs=0 Lambda=541.2u Vto=-1.897
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR360	anode
+*		| cathode
+*		| |
+.subckt CR360	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=885u Betatce=-.5 Rd=1 Rs=0 Lambda=534.2u Vto=-2.020
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR390	anode
+*		| cathode
+*		| |
+.subckt CR390	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=870u Betatce=-.5 Rd=1 Rs=0 Lambda=534.1u Vto=-2.120
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR430	anode
+*		| cathode
+*		| |
+.subckt CR430	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=790u Betatce=-.5 Rd=1 Rs=0 Lambda=516.3u Vto=-2.336
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR470	anode
+*		| cathode
+*		| |
+.subckt CR470	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=750u Betatce=-.5 Rd=1 Rs=0 Lambda=531.9u Vto=-2.506
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CR530	anode
+*		| cathode
+*		| |
+.subckt CR530	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=407.5u Betatce=-.5 Rd=1 Rs=0 Lambda=539.1u Vto=-3.607
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-21 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CRR0240	anode
+*		| cathode
+*		| |
+.subckt CRR0240	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=127u Betatce=-.5 Rd=1 Rs=0 Lambda=320.8u Vto=-1.373
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKL		case=TO18mod
+*		88-07-22 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CRR0360	anode
+*		| cathode
+*		| |
+.subckt CRR0360	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=100u Betatce=-.5 Rd=1 Rs=0 Lambda=291.7u Vto=-1.898
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKL		case=TO18mod
+*		88-07-22 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CRR0560	anode
+*		| cathode
+*		| |
+.subckt CRR0560	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=63u Betatce=-.5 Rd=1 Rs=0 Lambda=298.2u Vto=-2.98
++		Vtotc=-2.5m N=2 Xti=3 Cgd=3p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKL		case=TO18mod
+*		88-07-22 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CRR0800	anode
+*		| cathode
+*		| |
+.subckt CRR0800	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=150u Betatce=-.5 Rd=1 Rs=0 Lambda=240u Vto=-2.31
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKM		case=TO18mod
+*		88-07-22 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CRR1250	anode
+*		| cathode
+*		| |
+.subckt CRR1250	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=99u Betatce=-.5 Rd=1 Rs=0 Lambda=177.8u Vto=-3.562
++		Vtotc=-2.5m N=2 Xti=3 Cgd=4.5p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKM		case=TO18mod
+*		88-07-22 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CRR1950	anode
+*		| cathode
+*		| |
+.subckt CRR1950	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=630u Betatce=-.5 Rd=1 Rs=0 Lambda=641u Vto=-1.752
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-22 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CRR2900	anode
+*		| cathode
+*		| |
+.subckt CRR2900	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=480u Betatce=-.5 Rd=1 Rs=0 Lambda=615.9u Vto=-2.457 
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-22 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model CRR4300	anode
+*		| cathode
+*		| |
+.subckt CRR4300	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=282.5u Betatce=-.5 Rd=1 Rs=0 Lambda=664.4u Vto=-3.9
++		Vtotc=-2.5m N=2 Xti=3 Cgd=6p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKO		case=TO18mod
+*		88-07-22 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model J500	anode
+*		| cathode
+*		| |
+.subckt J500	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=82u Betatce=-.5 Rd=1 Rs=0 Lambda=520.8u Vto=-1.705
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-22 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J501	anode
+*		| cathode
+*		| |
+.subckt J501	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=93u Betatce=-.5 Rd=1 Rs=0 Lambda=506.1u Vto=-1.878
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-22 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+			
+*model J502	anode
+*		| cathode
+*		| |
+.subckt J502	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=79u Betatce=-.5 Rd=1 Rs=0 Lambda=527.9u Vto=-2.33
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-22 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J503	anode
+*		| cathode
+*		| |
+.subckt J503	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=87.5u Betatce=-.5 Rd=1 Rs=0 Lambda=525u Vto=-2.527
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-22 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J504	anode
+*		| cathode
+*		| |
+.subckt J504	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=87u Betatce=-.5 Rd=1 Rs=0 Lambda=533.3u Vto=-2.931
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-22 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J505	anode
+*		| cathode
+*		| |
+.subckt J505	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=100u Betatce=-.5 Rd=1 Rs=0 Lambda=526u Vto=-3.158
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-22 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J506	anode
+*		| cathode
+*		| |
+.subckt J506	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=96u Betatce=-.5 Rd=1 Rs=0 Lambda=510u Vto=-3.81
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-22 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J507	anode
+*		| cathode
+*		| |
+.subckt J507	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=100u Betatce=-.5 Rd=1 Rs=0 Lambda=555.6u Vto=-4.24
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-22 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J508	anode
+*		| cathode
+*		| |
+.subckt J508	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=108u Betatce=-.5 Rd=1 Rs=0 Lambda=595.4u Vto=-4.705
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-22 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J509	anode
+*		| cathode
+*		| |
+.subckt J509	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=106.5u Betatce=-.5 Rd=1 Rs=0 Lambda=555.7u Vto=-5.3
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-22 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J510	anode
+*		| cathode
+*		| |
+.subckt J510	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=104.5u Betatce=-.5 Rd=1 Rs=0 Lambda=555.6u Vto=-5.859
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-22 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J511	anode
+*		| cathode
+*		| |
+.subckt J511	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=120u Betatce=-.5 Rd=1 Rs=0 Lambda=708.5u Vto=-6.246
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-22 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J552	anode
+*		| cathode
+*		| |
+.subckt J552	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=30u Betatce=-.5 Rd=1 Rs=0 Lambda=477.9u Vto=-3.97
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NKL		case=TO92mod
+*		88-07-22 bam	POVmax=100
+*		88-12-16 pwt
+.ends
+
+*model J553	anode
+*		| cathode
+*		| |
+.subckt J553	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=22u Betatce=-.5 Rd=1 Rs=0 Lambda=200u Vto=-4.761
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-22 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J554	anode
+*		| cathode
+*		| |
+.subckt J554	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=141u Betatce=-.5 Rd=1 Rs=0 Lambda=1m Vto=-2.656
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-25 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J555	anode
+*		| cathode
+*		| |
+.subckt J555	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=410u Betatce=-.5 Rd=1 Rs=0 Lambda=568u Vto=-2.208
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-25 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J556	anode
+*		| cathode
+*		| |
+.subckt J556	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=875u Betatce=-.5 Rd=1 Rs=0 Lambda=555.7u Vto=-1.85
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-25 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model J557	anode
+*		| cathode
+*		| |
+.subckt J557	1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=323u Betatce=-.5 Rd=1 Rs=0 Lambda=462.9u Vto=-3.73
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=NCL		case=TO92mod
+*		88-07-25 bam	POVmax=50
+*		88-12-16 pwt
+.ends
+
+*model JR135V	anode
+*		| cathode
+*		| |
+.subckt JR135V  1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=38u Betatce=-.5 Rd=1 Rs=0 Lambda=1.031m Vto=-3.562
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=VRMA	case=TO92mod
+*		88-07-25 bam	POVmax=135
+*		88-12-16 pwt
+.ends
+
+*model JR170V	anode
+*		| cathode
+*		| |
+.subckt JR170V  1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=38u Betatce=-.5 Rd=1 Rs=0 Lambda=1.031m Vto=-3.562
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=VRMA	case=TO92mod
+*		88-07-25 bam	POVmax=170
+*		88-12-16 pwt
+.ends
+
+*model JR200V	anode
+*		| cathode
+*		| |
+.subckt JR200V  1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=38u Betatce=-.5 Rd=1 Rs=0 Lambda=1.031m Vto=-3.562
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=VRMA	case=TO92mod
+*		88-07-25 bam	POVmax=200
+*		88-12-16 pwt
+.ends
+
+*model JR220V	anode
+*		| cathode
+*		| |
+.subckt JR220V  1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=38u Betatce=-.5 Rd=1 Rs=0 Lambda=1.031m Vto=-3.562
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=VRMA	case=TO92mod
+*		88-07-25 bam	POVmax=220
+*		88-12-16 pwt
+.ends
+
+*model JR240V	anode
+*		| cathode
+*		| |
+.subckt JR240V  1 2
+  j1 1 2 2 jx
+  .model   jx	NJF(Beta=38u Betatce=-.5 Rd=1 Rs=0 Lambda=1.031m Vto=-3.562
++		Vtotc=-2.5m N=2 Xti=3 Cgd=2p Is=10f M=.5 Pb=1 Fc=.5 Af=1)
+*		Siliconix	pid=VRMA	case=TO92mod
+*		88-07-25 bam	POVmax=240
+*		88-12-16 pwt
+.ends
+
+*** Voltage-variable capacitance diodes
+
+* The parameters in this model library were derived from the data sheets for
+* each part.  Each part was characterize using the Parts option.
+
+.model D1N5139	D(Is=55p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=16.26p M=.455 Vj=.75
++		Fc=.5 Isr=543.1p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5139A	D(Is=55p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=16.26p M=.455 Vj=.75
++		Fc=.5 Isr=543.1p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5140	D(Is=54.2p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=23.92p M=.4554
++		Vj=.75 Fc=.5 Isr=542.5p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5140A	D(Is=54.2p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=23.92p M=.4554
++		Vj=.75 Fc=.5 Isr=542.5p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5141	D(Is=54.3p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=28.69p M=.4553
++		Vj=.75 Fc=.5 Isr=542.6p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5141A	D(Is=54.3p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=28.69p M=.4553
++		Vj=.75 Fc=.5 Isr=542.6p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5142	D(Is=54.3p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=35.85p M=.455
++		Vj=.75 Fc=.5 Isr=543.4p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5142A	D(Is=54.3p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=35.85p M=.455
++		Vj=.75 Fc=.5 Isr=543.4p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5143	D(Is=54.3p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=43.02p M=.455
++		Vj=.75 Fc=.5 Isr=543.3p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5143A	D(Is=54.3p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=43.02p M=.455
++		Vj=.75 Fc=.5 Isr=543.3p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5144	D(Is=49.9p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=55.7p M=.4763
++		Vj=.75 Fc=.5 Isr=499.6p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5144A	D(Is=49.9p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=55.7p M=.4763
++		Vj=.75 Fc=.5 Isr=499.6p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5145	D(Is=49.9p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=68.37p M=.4763
++		Vj=.75 Fc=.5 Isr=499.7p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5145A	D(Is=49.9p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=68.37p M=.4763
++		Vj=.75 Fc=.5 Isr=499.7p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5146	D(Is=49.9p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=83.55p M=.4763
++		Vj=.75 Fc=.5 Isr=499.6p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5146A	D(Is=49.9p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=83.55p M=.4763
++		Vj=.75 Fc=.5 Isr=499.6p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5147	D(Is=49.9p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=98.74p M=.4763
++		Vj=.75 Fc=.5 Isr=499.6p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5147A	D(Is=49.9p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=98.74p M=.4763
++		Vj=.75 Fc=.5 Isr=499.6p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5148	D(Is=43.3p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=120.6p M=.5123
++		Vj=.75 Fc=.5 Isr=433.6p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5148A	D(Is=43.3p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=120.6p M=.5123
++		Vj=.75 Fc=.5 Isr=433.6p Nr=2 Bv=70 Ibv=10u)
+*		Motorola	pid=1N5139	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5441A	D(Is=4.85E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=14.93p M=.4261
++		Vj=.75 Fc=.5 Isr=12.83p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5442A	D(Is=7.14E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=18.01p M=.4261
++		Vj=.75 Fc=.5 Isr=12.83p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5443A	D(Is=10.51E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=21.95p M=.426
++		Vj=.75 Fc=.5 Isr=12.84p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5444A	D(Is=15.47E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=26.34p M=.426
++		Vj=.75 Fc=.5 Isr=12.84p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5445A	D(Is=22.77E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=31.95p M=.4096
++		Vj=.75 Fc=.5 Isr=13.53p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5446A	D(Is=22.77E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=38.34p M=.4096
++		Vj=.75 Fc=.5 Isr=13.53p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5447A	D(Is=33.52E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=42.6p M=.4097
++		Vj=.75 Fc=.5 Isr=13.52p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5448A	D(Is=49.35E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=46.85p M=.4096
++		Vj=.75 Fc=.5 Isr=13.53p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5449A	D(Is=88.13E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=57.51p M=.4096
++		Vj=.75 Fc=.5 Isr=13.53p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5450A	D(Is=292.2E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=74.34p M=.44
++		Vj=.75 Fc=.5 Isr=12.27p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5451A	D(Is=405.9E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=87.86p M=.44
++		Vj=.75 Fc=.5 Isr=12.28p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5452A	D(Is=563.8E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=111.7p M=.4691
++		Vj=.75 Fc=.5 Isr=11.19p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5453A	D(Is=783.1E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=133.1p M=.4689
++		Vj=.75 Fc=.5 Isr=11.19p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5454A	D(Is=1.088f Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=161.7p M=.4692
++		Vj=.75 Fc=.5 Isr=11.18p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5455A	D(Is=1.511f Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=195p M=.4692
++		Vj=.75 Fc=.5 Isr=11.18p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5456A	D(Is=2.099f Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=259.9p M=.5175
++		Vj=.75 Fc=.5 Isr=9.585p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5441A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5461A	D(Is=4.85E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=14.93p M=.4261
++		Vj=.75 Fc=.5 Isr=12.83p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5462A	D(Is=7.14E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=18.01p M=.4261
++		Vj=.75 Fc=.5 Isr=12.83p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5463A	D(Is=10.51E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=21.95p M=.426
++		Vj=.75 Fc=.5 Isr=12.84p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5464A	D(Is=15.47E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=26.34p M=.426
++		Vj=.75 Fc=.5 Isr=12.84p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5465A	D(Is=22.77E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=31.95p M=.4096
++		Vj=.75 Fc=.5 Isr=13.53p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5466A	D(Is=22.77E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=38.34p M=.4096
++		Vj=.75 Fc=.5 Isr=13.53p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5467A	D(Is=33.52E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=42.6p M=.4097
++		Vj=.75 Fc=.5 Isr=13.52p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5468A	D(Is=49.35E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=46.85p M=.4096
++		Vj=.75 Fc=.5 Isr=13.53p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5469A	D(Is=88.13E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=57.51p M=.4096
++		Vj=.75 Fc=.5 Isr=13.53p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5470A	D(Is=292.2E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=74.34p M=.44
++		Vj=.75 Fc=.5 Isr=12.27p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5471A	D(Is=405.9E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=87.86p M=.44
++		Vj=.75 Fc=.5 Isr=12.28p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5472A	D(Is=563.8E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=111.7p M=.4691
++		Vj=.75 Fc=.5 Isr=11.19p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5473A	D(Is=783.1E-18 Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=133.1p M=.4689
++		Vj=.75 Fc=.5 Isr=11.19p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5474A	D(Is=1.088f Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=161.7p M=.4692
++		Vj=.75 Fc=.5 Isr=11.18p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5475A	D(Is=1.511f Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=195p M=.4692
++		Vj=.75 Fc=.5 Isr=11.18p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model D1N5476A	D(Is=2.099f Rs=.1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=259.9p M=.5175
++		Vj=.75 Fc=.5 Isr=9.585p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=1N5461A	case=DO204AA
+*		88-09-22 bam	creation
+
+.model MV104	D(Is=1.465p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=83.22p M=.463
++		Vj=.75 Fc=.5 Isr=14.3p Nr=2 Bv=32 Ibv=10u)
+*		Motorola	pid=MV104	case=TO92
+*		88-09-22 bam	creation
+
+.model MV104G	D(Is=1.465p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=76.93p M=.4633
++		Vj=.75 Fc=.5 Isr=14.28p Nr=2 Bv=32 Ibv=10u)
+*		Motorola	pid=MV104	case=TO92
+*		88-09-22 bam	creation
+
+.model MV209	D(Is=434f Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=125p M=.9079 Vj=.75
++		Fc=.5 Isr=4.395p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV209	case=182-03
+*		88-09-22 bam	creation
+
+.model MV1866	D(Is=10.04p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=22.2p M=.4322
++		Vj=.75 Fc=.5 Isr=98.44p Nr=2 Bv=75 Ibv=10u)
+*		Motorola	pid=MV1866	case=DO204AA
+*		88-09-22 bam	creation
+
+.model MV1868	D(Is=10.04p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=26.65p M=.4322
++		Vj=.75 Fc=.5 Isr=98.44p Nr=2 Bv=75 Ibv=10u)
+*		Motorola	pid=MV1866	case=DO204AA
+*		88-09-22 bam	creation
+
+.model MV1870	D(Is=10.04p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=33.31p M=.4322
++		Vj=.75 Fc=.5 Isr=98.44p Nr=2 Bv=75 Ibv=10u)
+*		Motorola	pid=MV1866	case=DO204AA
+*		88-09-22 bam	creation
+
+.model MV1871	D(Is=10.04p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=39.97p M=.4322
++		Vj=.75 Fc=.5 Isr=98.44p Nr=2 Bv=75 Ibv=10u)
+*		Motorola	pid=MV1866	case=DO204AA
+*		88-09-22 bam	creation
+
+.model MV1872	D(Is=10.04p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=51.35p M=.4592
++		Vj=.75 Fc=.5 Isr=89.05p Nr=2 Bv=75 Ibv=10u)
+*		Motorola	pid=MV1866	case=DO204AA
+*		88-09-22 bam	creation
+
+.model MV1874	D(Is=10.04p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=63.04p M=.4593
++		Vj=.75 Fc=.5 Isr=88.99p Nr=2 Bv=75 Ibv=10u)
+*		Motorola	pid=MV1866	case=DO204AA
+*		88-09-22 bam	creation
+
+.model MV1876	D(Is=10.04p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=77.02p M=.4592
++		Vj=.75 Fc=.5 Isr=89.05p Nr=2 Bv=75 Ibv=10u)
+*		Motorola	pid=MV1866	case=DO204AA
+*		88-09-22 bam	creation
+
+.model MV1877	D(Is=10.04p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=91p M=.4591 Vj=.75
++		Fc=.5 Isr=89.08p Nr=2 Bv=75 Ibv=10u)
+*		Motorola	pid=MV1866	case=DO204AA
+*		88-09-22 bam	creation
+
+.model MV1878	D(Is=10.04p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=102.3p M=.4214
++		Vj=.75 Fc=.5 Isr=102.5p Nr=2 Bv=75 Ibv=10u)
+*		Motorola	pid=MV1866	case=DO204AA
+*		88-09-22 bam	creation
+
+.model MV2101	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=14.93p M=.4261
++		Vj=.75 Fc=.5 Isr=16.02p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2102	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=18.01p M=.4261
++		Vj=.75 Fc=.5 Isr=16.02p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2103	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=21.95p M=.426
++		Vj=.75 Fc=.5 Isr=16.03p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2104	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=26.34p M=.426
++		Vj=.75 Fc=.5 Isr=16.03p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2105	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=34.49p M=.4511
++		Vj=.75 Fc=.5 Isr=14.85p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2106	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=41.39p M=.4511
++		Vj=.75 Fc=.5 Isr=14.85p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2107	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=50.59p M=.4511
++		Vj=.75 Fc=.5 Isr=14.85p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2108	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=62.08p M=.4511
++		Vj=.75 Fc=.5 Isr=14.85p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2109	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=82.03p M=.4933
++		Vj=.75 Fc=.5 Isr=13.06p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2110	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=96.94p M=.4933
++		Vj=.75 Fc=.5 Isr=13.06p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2111	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=116.8p M=.4933
++		Vj=.75 Fc=.5 Isr=13.06p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2112	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=140.6p M=.4989
++		Vj=.75 Fc=.5 Isr=12.84p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2113	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=170.8p M=.499
++		Vj=.75 Fc=.5 Isr=12.84p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2114	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=205.9p M=.4988
++		Vj=.75 Fc=.5 Isr=12.84p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2115	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=225.2p M=.4399
++		Vj=.75 Fc=.5 Isr=15.36p Nr=2 Bv=30 Ibv=10u)
+*		Motorola	pid=MV2101	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2201	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=14.93p M=.4261
++		Vj=.75 Fc=.5 Isr=16.02p Nr=2 Bv=25 Ibv=10u)
+*		Motorola	pid=MV2201	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2203	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=21.95p M=.426
++		Vj=.75 Fc=.5 Isr=16.03p Nr=2 Bv=25 Ibv=10u)
+*		Motorola	pid=MV2201	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2205	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=34.49p M=.4511
++		Vj=.75 Fc=.5 Isr=14.85p Nr=2 Bv=25 Ibv=10u)
+*		Motorola	pid=MV2201	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2207	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=50.59p M=.4511
++		Vj=.75 Fc=.5 Isr=14.85p Nr=2 Bv=25 Ibv=10u)
+*		Motorola	pid=MV2201	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2209	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=82.03p M=.4933
++		Vj=.75 Fc=.5 Isr=13.06p Nr=2 Bv=25 Ibv=10u)
+*		Motorola	pid=MV2201	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2211	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=116.8p M=.4933
++		Vj=.75 Fc=.5 Isr=13.06p Nr=2 Bv=25 Ibv=10u)
+*		Motorola	pid=MV2201	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2213	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=170.8p M=.499
++		Vj=.75 Fc=.5 Isr=12.84p Nr=2 Bv=25 Ibv=10u)
+*		Motorola	pid=MV2201	case=182-03
+*		88-09-22 bam	creation
+
+.model MV2215	D(Is=1.365p Rs=1 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=225.2p M=.4399
++		Vj=.75 Fc=.5 Isr=15.36p Nr=2 Bv=25 Ibv=10u)
+*		Motorola	pid=MV2201	case=182-03
+*		88-09-22 bam	creation
+
+*** Zener Diodes ***
+
+* The parameters Ibv, Ibvl, Nbv, and Nbvl, were characterized by matching the
+* manufacturer's Zener impedance at three current levels.  The parameter Tbv1
+* is calculated directly.  The remaining parameters were characterize using
+* the Parts option.
+
+.model D1N746	D(Is=31.47f Rs=9.494 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=220p M=.5959
++		Vj=.75 Fc=.5 Isr=2.035n Nr=2 Bv=3.3 Ibv=45.862m Nbv=3.0477
++		Ibvl=29.831m Nbvl=11.606 Tbv1=-636.4u)
+*		Motorola	pid=1N746	case=DO-35
+*		89-9-18 gjg
+*		Vz = 3.3 @ 20mA, Zz = 310 @ 1mA, Zz = 68 @ 5mA, Zz = 19 @ 20mA
+
+.model D1N747	D(Is=1.242f Rs=1.137 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=210p M=.6063
++		Vj=.75 Fc=.5 Isr=1.922n Nr=2 Bv=3.6 Ibv=13.987m Nbv=3.031
++		Ibvl=10.212m Nbvl=12.73 Tbv1=-555.6u)
+*		Motorola	pid=1N747	case=DO-35
+*		89-9-18 gjg
+*		Vz = 3.6 @ 20mA, Zz = 330 @ 1mA, Zz = 52 @ 5mA, Zz = 7.3 @ 20mA
+
+.model D1N748	D(Is=1.252f Rs=1.156 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=205p M=.6004
++		Vj=.75 Fc=.5 Isr=1.867n Nr=2 Bv=3.9 Ibv=17.244m Nbv=2.4016
++		Ibvl=8.619m Nbvl=13.283 Tbv1=-384.62u)
+*		Motorola	pid=1N748	case=DO-35
+*		89-9-18 gjg
+*		Vz = 3.9 @ 20mA, Zz = 345 @ 1mA, Zz = 49 @ 5mA, Zz = 5.8 @ 20mA
+
+.model D1N749	D(Is=880.5E-18 Rs=.25 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=190p M=.6124
++		Vj=.75 Fc=.5 Isr=1.743n Nr=2 Bv=4.3 Ibv=16.748m Nbv=1.7936
++		Ibvl=5.0382m Nbvl=12.554 Tbv1=-232.56u)
+*		Motorola	pid=1N749	case=DO-35
+*		89-9-18 gjg
+*		Vz = 4.3 @ 20mA, Zz = 325 @ 1mA, Zz = 24 @ 5mA, Zz = 3.2 @ 20mA
+
+.model D1N750	D(Is=880.5E-18 Rs=.25 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=175p M=.5516
++		Vj=.75 Fc=.5 Isr=1.859n Nr=2 Bv=4.7 Ibv=20.245m Nbv=1.6989
++		Ibvl=1.9556m Nbvl=14.976 Tbv1=-21.277u)
+*		Motorola	pid=1N750	case=DO-35
+*		89-9-18 gjg
+*		Vz = 4.7 @ 20mA, Zz = 300 @ 1mA, Zz = 12.5 @ 5mA, Zz =2.6  @ 20mA
+
+.model D1N751	D(Is=1.004f Rs=.5875 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=160p M=.5484
++		Vj=.75 Fc=.5 Isr=1.8n Nr=2 Bv=5.1 Ibv=27.721m Nbv=1.1779
++		Ibvl=1.1646m Nbvl=21.894 Tbv1=176.47u)
+*		Motorola	pid=1N751	case=DO-35
+*		89-9-18-gjg
+*		Vz = 5.1 @ 20mA, Zz = 175 @ 1mA, Zz = 8.2 @ 5mA, Zz = 2.2 @ 20mA
+
+.model D1N752	D(Is=1.154f Rs=.9471 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=150p M=.5788
++		Vj=.75 Fc=.5 Isr=1.625n Nr=2 Bv=5.6 Ibv=62.583m Nbv=.62382
++		Ibvl=631.96u Nbvl=50 Tbv1=267.86u)
+*		Motorola	pid=1N752	case=DO-35
+*		89-9-18 gjg
+*		Vz = 5.6 @ 20mA, Zz = 40 @ 1mA, Zz = 4.5 @ 5mA, Zz = 1.9 @ 20mA
+
+.model D1N753	D(Is=1.536f Rs=1.687 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=130p M=.5259
++		Vj=.75 Fc=.5 Isr=1.719n Nr=2 Bv=6.2 Ibv=1.9685 Nbv=.28384
++		Ibvl=7.0094e-7 Nbvl=.29418 Tbv1=443.55u)
+*		Motorola	pid=1N753	case=DO-35
+*		89-9-18 gjg
+*		Vz = 6.2 @ 20mA, Zz = 9 @ 1mA, Zz = 3.4 @ 5mA, Zz = 1.85 @ 20mA
+
+.model D1N754	D(Is=1.616f Rs=1.818 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=120p M=.5117
++		Vj=.75 Fc=.5 Isr=1.698n Nr=2 Bv=6.8 Ibv=2.8814 Nbv=.28248
++		Ibvl=1.9426e-6 Nbvl=.27168 Tbv1=485.29u)
+*		Motorola	pid=1N754	case=DO-35
+*		89-9-19 gjg
+*		Vz = 6.8 @ 20mA, Zz = 9.1 @ 1mA, Zz = 3.5 @ 5mA, Zz = 2 @ 20mA
+
+.model D1N755	D(Is=2.077f Rs=2.467 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=104p M=.5061
++		Vj=.75 Fc=.5 Isr=1.645n Nr=2 Bv=7.5 Ibv=2.5701 Nbv=.39227
++		Ibvl=4.0222e-5 Nbvl=.25042 Tbv1=533.33u)
+*		Motorola	pid=1N755	case=DO-35
+*		89-9-18 gjg
+*		Vz = 7.5 @ 20mA, Zz = 12.5 @ 1mA, Zz = 5.3 @ 5mA, Zz = 2.3 @ 20mA
+
+.model D1N756	D(Is=2.453f Rs=2.9 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=90p M=.448
++		Vj=.75 Fc=.5 Isr=1.803n Nr=2 Bv=8.2 Ibv=1.5593 Nbv=.51406
++		Ibvl=8.3521e-5 Nbvl=.1313 Tbv1=585.366u)
+*		Motorola	pid=1N756	case=DO-35
+*		89-9-19 gjg
+*		Vz = 8.2 @ 20mA, Zz = 16 @ 1mA, Zz = 6.9 @ 5mA, Zz = 2.5 @ 20mA
+
+.model D1N757	D(Is=2.453f Rs=2.9 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=78p M=.4399
++		Vj=.75 Fc=.5 Isr=1.762n Nr=2 Bv=9.1 Ibv=.48516 Nbv=.7022
++		Ibvl=1m Nbvl=.13785 Tbv1=604.396u)
+*		Motorola	pid=1N757	case=DO-35
+*		89-9-18 gjg
+*		Vz = 9.1 @ 20mA, Zz = 21 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.7 @ 20mA
+
+.model D1N758	D(Is=1.953f Rs=2.305 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=68p M=.3856
++		Vj=.75 Fc=.5 Isr=1.939n Nr=2 Bv=10 Ibv=.16597 Nbv=.84122
++		Ibvl=1.003m Nbvl=.20892 Tbv1=650u)
+*		Motorola	pid=1N758	case=DO-35
+*		89-9-18 gjg
+*		Vz = 10 @ 20mA, Zz = 24 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.9 @ 20mA
+
+.model D1N759	D(Is=1.773f Rs=2.06 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=102p M=.4868
++		Vj=.75 Fc=.5 Isr=1.393n Nr=2 Bv=12 Ibv=79.489m Nbv=1.1528
++		Ibvl=142.9n Nbvl=.95108 Tbv1=700u)
+*		Motorola	pid=1N759	case=DO-35
+*		89-9-18 gjg
+*		Vz = 12 @ 20mA, Zz = 32 @ 1mA, Zz = 7.5 @ 5mA, Zz = 4 @ 20mA
+
+.model D1N957A	D(Is=1.616f Rs=1.82 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=120p M=.5117
++		Vj=.75 Fc=.5 Isr=1.698n Nr=2 Bv=6.8 Ibv=1.8441 Nbv=.28243
++		Ibvl=6.2172E-15 Nbvl=.50147 Tbv1=485.294u)
+*		Motorola	pid=1N957A	case=DO-35
+*		89-9-18 gjg
+*		Vz = 6.8 @ 18.5mA, Zz = 9.1 @ 1mA, Zz = 3.5 @ 5mA, Zz = 2 @ 20mA
+
+.model D1N958A	D(Is=2.077f Rs=2.467 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=104p M=.5061
++		Vj=.75 Fc=.5 Isr=1.645n Nr=2 Bv=7.5 Ibv=.90645 Nbv=.39227
++		Ibvl=.5849n Nbvl=1.5122 Tbv1=533.33u)
+*		Motorola	pid=1N958A	case=DO-35
+*		89-9-18 gjg
+*		Vz = 7.5 @ 16.5mA, Zz = 12.5 @ 1mA, Zz = 5.3 @ 5mA, Zz = 2.3 @ 20mA
+
+.model D1N959A	D(Is=2.491f Rs=2.938 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=90p M=.448
++		Vj=.75 Fc=.5 Isr=1.803n Nr=2 Bv=8.2 Ibv=.41558 Nbv=.51229
++		Ibvl=.65179n Nbvl=1.1568 Tbv1=585.37u)
+*		Motorola	pid=1N959A	case=DO-35
+*		89-9-18 gjg
+*		Vz = 8.2 @ 15mA, Zz = 16 @ 1mA, Zz = 6.9 @ 5mA, Zz = 2.5 @ 20mA
+
+.model D1N960A	D(Is=2.168f Rs=2.578 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=78p M=.4399
++		Vj=.75 Fc=.5 Isr=1.762n Nr=2 Bv=9.1 Ibv=97.714m Nbv=.71712
++		Ibvl=.58975n Nbvl=.98128 Tbv1=604.4u)
+*		Motorola	pid=1N960A	case=DO-35
+*		89-9-18 gjg
+*		Vz = 9.1 @ 14mA, Zz = 21 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.7 @ 20mA
+
+.model D1N961A	D(Is=1.953f Rs=2.305 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=68p M=.3856
++		Vj=.75 Fc=.5 Isr=1.939n Nr=2 Bv=10 Ibv=46.912m Nbv=.84122
++		Ibvl=626.74p Nbvl=.78605 Tbv1=650u)
+*		Motorola 	pid=1N961A	case=DO-35
+*		89-9-18 gjg
+*		Vz = 10 @ 12.5mA, Zz = 24 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.9 @ 20mA
+
+.model D1N962A	D(Is=1.609f Rs=1.813 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=115p M=.4751
++		Vj=.75 Fc=.5 Isr=1.493n Nr=2 Bv=11 Ibv=24.084m Nbv=1.1052
++		Ibvl=149.27n Nbvl=.22862 Tbv1=672.73u)
+*		Motorola	pid=1N962A	case=DO-35
+*		89-9-18 gjg
+*		Vz = 11 @ 11.5mA, Zz = 30.5 @ 1mA, Zz = 7.4 @ 5mA, Zz = 3.25 @ 20mA
+
+.model D1N963A	D(Is=1.773f Rs=2.061 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=102p M=.4868
++		Vj=.75 Fc=.5 Isr=1.393n Nr=2 Bv=12 Ibv=21.7m Nbv=1.1527
++		Ibvl=29.343n Nbvl=.245 Tbv1=700u)
+*		Motorola	pid=1N963A	case=DO-35
+*		89-9-18 gjg
+*		Vz = 12 @ 10.5mA, Zz = 32 @ 1mA, Zz = 7.5 @ 5mA, Zz = 4 @ 20mA
+
+.model D1N964A	D(Is=2.253f Rs=2.678 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=90p M=.4558
++		Vj=.75 Fc=.5 Isr=1.461n Nr=2 Bv=13 Ibv=21.761m Nbv=1.1851
++		Ibvl=468.81n Nbvl=.65126 Tbv1=846.15u)
+*		Motorola	pid=1N964A	case=DO-35
+*		89-9-18 gjg
+*		Vz = 13 @ 9.5mA, Zz = 33.5 @ 1mA, Zz = 8 @ 5mA, Zz = 4.9 @ 20mA
+
+.model D1N965A	D(Is=3.142f Rs=3.536 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=80.5p M=.4186
++		Vj=.75 Fc=.5 Isr=1.527n Nr=2 Bv=15 Ibv=24.573m Nbv=1.0932
++		Ibvl=7.1249u Nbvl=.65646 Tbv1=833.33u)
+*		Motorola	pid=1N965A	case=DO-35
+*		89-9-18 gjg
+*		Vz = 15 @ 8.5mA, Zz = 32 @ 1mA, Zz = 8.25 @ 5mA, Zz = 5.75 @ 20mA
+
+.model D1N966A	D(Is=5.461f Rs=4.975 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=69p M=.4472
++		Vj=.75 Fc=.5 Isr=1.371n Nr=2 Bv=16 Ibv=32.07m Nbv=1.0589
++		Ibvl=44.191u Nbvl=.86786 Tbv1=875u)
+*		Motorola	pid=1N966A	case=DO-35
+*		89-9-18 gjg
+*		Vz = 16 @ 7.8mA, Zz = 32.5 @ 1mA, Zz = 9.8 @ 5mA, Zz = 6.9 @ 20mA
+
+.model D1N967A	D(Is=7.021f Rs=5.619 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=60p M=.4093
++		Vj=.75 Fc=.5 Isr=1.461n Nr=2 Bv=18 Ibv=23.333m Nbv=1.2074
++		Ibvl=215.7u Nbvl=.71348 Tbv1=888.9u)
+*		Motorola 	pid=1N967A	case=DO-35
+*		89-9-18 gjg
+*		Vz = 18 @ 7mA, Zz = 37 @ 1mA, Zz = 11 @ 5mA, Zz = 7.9 @ 20mA
+
+.model D1N968A	D(Is=10.18f Rs=6.578 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=59p M=.4063
++		Vj=.75 Fc=.5 Isr=1.415n Nr=2 Bv=20 Ibv=21.603m Nbv=1.2514
++		Ibvl=218.21u Nbvl=1.2514 Tbv1=850u)
+*		Motorola	pid=1N968A 	case=DO-35
+*		89-9-18 gjg
+*		Vz = 20 @ 6.2mA, Zz = 39 @ 1mA, Zz = 13 @ 5mA, Zz = 8.25 @ 20mA
+
+.model D1N969A	D(Is=17.49f Rs=7.976 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=50p M=.4141
++		Vj=.75 Fc=.5 Isr=1.33n Nr=2 Bv=22 Ibv=20.578m Nbv=1.315
++		Ibvl=207.85u Nbvl=1.315 Tbv1=840.91u)
+*		Motorola	pid=1N969A	case=DO-35
+*		89-9-18 gjg
+*		Vz = 22 @ 5.6mA, Zz = 42 @ 1mA, Zz = 15 @ 5mA, Zz = 9.5 @ 20mA
+
+.model D1N970A	D(Is=25.64f Rs=8.973 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=44p M=.3798
++		Vj=.75 Fc=.5 Isr=1.438n Nr=2 Bv=24 Ibv=19.386m Nbv=1.3784
++		Ibvl=162.43u Nbvl=8.7919 Tbv1=895.83u)
+*		Motorola	pid=1N970A	case=DO-35
+*		89-9-18 gjg
+*		Vz = 24 @ 5.2mA, Zz = 48 @ 1mA, Zz = 16 @ 5mA, Zz = 11 @ 20mA
+
+.model D1N971A	D(Is=81.47f Rs=11.96 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=42p M=.3983
++		Vj=.75 Fc=.5 Isr=1.294n Nr=2 Bv=27 Ibv=87.12m Nbv=.51025
++		Ibvl=9.0498m Nbvl=2.0249 Tbv1=888.89u)
+*		Motorola	pid=1N971A	case=DO-35
+*		89-9-18 gjg
+*		Vz = 27 @ 4.6mA, Zz = 52 @ 1mA, Zz = 21 @ 5mA, Zz = 12 @ 20mA
+
+.model D1N4728	D(Is=11.11f Rs=6.808 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=315p M=.4346
++		Vj=.75 Fc=.5 Isr=2.595n Nr=2 Bv=3.3 Ibv=5.8452 Nbv=3.6742
++		Ibvl=.27224 Nbvl=11.715 Tbv1=-636.36u)
+*		Motorola	pid=1N4728	case=DO-41
+*		89-9-19 gjg
+*		Vz = 3.3 @ 76mA, Zz = 310 @ 1mA, Zz = 68 @ 5mA, Zz = 19 @ 20mA
+
+.model D1N4729	D(Is=2.306f Rs=2.741 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=300p M=.4641
++		Vj=.75 Fc=.5 Isr=2.405n Nr=2 Bv=3.6 Ibv=1.1936 Nbv=2.2747
++		Ibvl=19.94m Nbvl=12.64 Tbv1=-555.56u)
+*		Motorola	pid=1N4729	case=DO-41
+*		89-9-19 gjg
+*		Vz = 3.6 @ 69mA, Zz = 330 @ 1mA, Zz = 52 @ 5mA, Zz = 7.3 @ 20mA
+
+.model D1N4730	D(Is=1.379f Rs=1.406 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=280p M=.4369
++		Vj=.75 Fc=.5 Isr=2.441n Nr=2 Bv=3.9 Ibv=.2473 Nbv=2.2758
++		Ibvl=13.346m Nbvl=13.271 Tbv1=-384.62u)
+*		Motorola	pid=1N4730	case=DO-41
+*		89-9-19 gjg
+*		Vz = 3.9 @ 64mA, Zz = 345 @ 1mA, Zz = 49 @ 5mA, Zz = 5.8 @ 20mA
+
+.model D1N4731	D(Is=837.3E-18 Rs=.1211 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=220p M=.389
++		Vj=.75 Fc=.5 Isr=2.56n Nr=2 Bv=4.3 Ibv=60.167m Nbv=1.8815
++		Ibvl=6.0358m Nbvl=12.57 Tbv1=-232.558u)
+*		Motorola	pid=1N4731	case=DO-41
+*		89-9-19 gjg
+*		Vz = 4.3 @ 58mA, Zz = 325 @ 1mA, Zz = 24 @ 5mA, Zz = 3.2 @ 20mA
+
+.model D1N4732	D(Is=1.064f Rs=.741 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=208p M=.4176
++		Vj=.75 Fc=.5 Isr=2.364n Nr=2 Bv=4.7 Ibv=.16902 Nbv=1.2344
++		Ibvl=4.0082m Nbvl=11.59 Tbv1=-21.28u)
+*		Motorola	pid=1N4732	case=DO-41
+*		89-9-19 gjg
+*		Vz = 4.7 @ 53mA, Zz = 300 @ 1mA, Zz = 12.5 @ 5mA, Zz =2.6  @ 20mA
+
+.model D1N4733	D(Is=1.214f Rs=1.078 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=185p M=.3509
++		Vj=.75 Fc=.5 Isr=2.601n Nr=2 Bv=5.1 Ibv=.70507 Nbv=.74348
++		Ibvl=4.8274m Nbvl=6.7393 Tbv1=176.471u)
+*		Motorola	pid=1N4733	case=DO-41
+*		89-9-19 gjg
+*		Vz = 5.1 @ 49mA, Zz = 175 @ 1mA, Zz = 8.2 @ 5mA, Zz = 2.2 @ 20mA
+
+.model D1N4734	D(Is=1.085f Rs=.7945 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=157p M=.2966
++		Vj=.75 Fc=.5 Isr=2.811n Nr=2 Bv=5.6 Ibv=.37157 Nbv=.64726
++		Ibvl=1m Nbvl=6.5761 Tbv1=267.86u)
+*		Motorola	pid=1N4734	case=DO-41
+*		89-9-19 gjg
+*		Vz = 5.6 @ 45mA, Zz = 40 @ 1mA, Zz = 4.5 @ 5mA, Zz = 1.9 @ 20mA
+
+.model D1N4735	D(Is=1.168f Rs=.9756 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=140p M=.3196
++		Vj=.75 Fc=.5 Isr=2.613n Nr=2 Bv=6.2 Ibv=4.9984 Nbv=.32088
++		Ibvl=184.78u Nbvl=.19558 Tbv1=443.55u)
+*		Motorola	pid=1N4735	case=DO-41
+*		89-9-19 gjg
+*		Vz = 6.2 @ 41mA, Zz = 9 @ 1mA, Zz = 3.4 @ 5mA, Zz = 1.85 @ 20mA
+
+.model D1N4736	D(Is=1.327f Rs=1.306 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=125p M=.3144
++		Vj=.75 Fc=.5 Isr=2.575n Nr=2 Bv=6.8 Ibv=15 Nbv=.31009
++		Ibvl=149.2u Nbvl=.31028 Tbv1=485.29u)
+*		Motorola	pid=1N4736 	case=DO-41
+*		89-9-19 gjg
+*		Vz = 6.8 @ 37mA, Zz = 9.1 @ 1mA, Zz = 3.5 @ 5mA, Zz = 2 @ 20mA
+
+.model D1N4737	D(Is=1.699f Rs=1.955 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=106p M=.3176
++		Vj=.75 Fc=.5 Isr=2.488n Nr=2 Bv=7.5 Ibv=15 Nbv=.42018
++		Ibvl=1m Nbvl=.094527 Tbv1=533.33u)
+*		Motorola	pid=1N4737	case=DO-41
+*		89-9-19 gjg
+*		Vz = 7.5 @ 34mA, Zz = 12.5 @ 1mA, Zz = 5.3 @ 5mA, Zz = 2.3 @ 20mA
+
+.model D1N4738	D(Is=2.102f Rs=2.5 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=100p M=.3503
++		Vj=.75 Fc=.5 Isr=2.252n Nr=2 Bv=8.2 Ibv=8 Nbv=.53621
++		Ibvl=213.52u Nbvl=.17879 Tbv1=585.37u)
+*		Motorola	pid=1N4738 	case=DO-41
+*		89-9-19 gjg
+*		Vz = 8.2 @ 31mA, Zz = 16 @ 1mA, Zz = 6.9 @ 5mA, Zz = 2.5 @ 20mA
+
+.model D1N4739	D(Is=2.11f Rs=2.512 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=89p M=.384
++		Vj=.75 Fc=.5 Isr=2.012n Nr=2 Bv=9.1 Ibv=1.2 Nbv=.72056
++		Ibvl=10m Nbvl=.21148 Tbv1=604.396u)
+*		Motorola	pid=1N4739	case=DO-41
+*		89-9-19 gjg
+*		Vz = 9.1 @ 28mA, Zz = 21 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.7 @ 20mA
+
+.model D1N4740	D(Is=1.945f Rs=2.302 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=82p M=.3649
++		Vj=.75 Fc=.5 Isr=2.04n Nr=2 Bv=10 Ibv=.35034 Nbv=.84137
++		Ibvl=10m Nbvl=.17757 Tbv1=650u)
+*		Motorola	pid=1N4740	case=DO-41
+*		89-9-19 gjg
+*		Vz = 10 @ 25mA, Zz = 24 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.9 @ 20mA
+
+.model D1N4741	D(Is=1.566f Rs=1.74 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=105p M=.4156
++		Vj=.75 Fc=.5 Isr=1.737n Nr=2 Bv=11 Ibv=92.573m Nbv=1.1098
++		Ibvl=440.66u Nbvl=.23096 Tbv1=672.73u)
+*		Motorola	pid=1N4741	case=DO-41
+*		89-9-19 gjg
+*		Vz = 11 @ 23mA, Zz = 30.5 @ 1mA, Zz = 7.4 @ 5mA, Zz = 3.25 @ 20mA
+
+.model D1N4742	D(Is=1.773f Rs=2.06 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=100p M=.3894
++		Vj=.75 Fc=.5 Isr=1.799n Nr=2 Bv=12 Ibv=89.447m Nbv=1.1527
++		Ibvl=248.34n Nbvl=.8248 Tbv1=700u)
+*		Motorola	pid=1N4742	case=DO-41
+*		89-9-19 gjg
+*		Vz = 12 @ 21mA, Zz = 32 @ 1mA, Zz = 7.5 @ 5mA, Zz = 4 @ 20mA
+
+.model D1N4743	D(Is=2.253f Rs=2.678 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=80p M=.3644
++		Vj=.75 Fc=.5 Isr=1.87n Nr=2 Bv=13 Ibv=99.671m Nbv=1.1851
++		Ibvl=8.4078u Nbvl=1.2407 Tbv1=846.15u)
+*		Motorola	pid=1N4743	case=DO-41
+*		89-9-19 gjg
+*		Vz = 13 @ 19mA, Zz = 33.5 @ 1mA, Zz = 8 @ 5mA, Zz = 4.9 @ 20mA
+
+.model D1N4744	D(Is=3.142f Rs=3.544 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=72.5p M=.3282
++		Vj=.75 Fc=.5 Isr=1.973n Nr=2 Bv=15 Ibv=.14467 Nbv=1.093
++		Ibvl=.1m Nbvl=1.2722 Tbv1=001433.3u)
+*		Motorola	pid=1N4744	case=DO-41
+*		89-9-19 gjg
+*		Vz = 15 @ 17mA, Zz = 32 @ 1mA, Zz = 8.25 @ 5mA, Zz = 5.75 @ 20mA
+
+.model D1N4745	D(Is=5.461f Rs=4.974 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=68p M=.3197
++		Vj=.75 Fc=.5 Isr=1.982n Nr=2 Bv=16 Ibv=.25684 Nbv=1.0588
++		Ibvl=1.029m Nbvl=1.0409 Tbv1=875u)
+*		Motorola	pid=1N4745	case=DO-41
+*		89-9-19 gjg
+*		Vz = 16 @ 15.5mA, Zz = 32.5 @ 1mA, Zz = 9.8 @ 5mA, Zz = 6.9 @ 20mA
+
+.model D1N4746	D(Is=6.994f Rs=5.612 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=59p M=.2906
++		Vj=.75 Fc=.5 Isr=2.088n Nr=2 Bv=18 Ibv=.17098 Nbv=1.2072
++		Ibvl=2.002m Nbvl=1.1457 Tbv1=888.89u)
+*		Motorola 	pid=1N4746	case=DO-41
+*		89-9-19 gjg
+*		Vz = 18 @ 14mA, Zz = 37 @ 1mA, Zz = 11 @ 5mA, Zz = 7.9 @ 20mA
+
+.model D1N4747	D(Is=10.22f Rs=6.585 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=52p M=.2904
++		Vj=.75 Fc=.5 Isr=2.029n Nr=2 Bv=20 Ibv=.15934 Nbv=1.2472
++		Ibvl=211.18u Nbvl=1.9765 Tbv1=850u)
+*		Motorola	pid=1N4747	case=DO-41
+*		89-9-19 gjg
+*		Vz = 20 @ 12.5mA, Zz = 39 @ 1mA, Zz = 13 @ 5mA, Zz = 8.25 @ 20mA
+
+.model D1N4748	D(Is=17.49f Rs=7.976 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=49p M=.2829
++		Vj=.75 Fc=.5 Isr=2.024n Nr=2 Bv=22 Ibv=.16996 Nbv=1.315
++		Ibvl=7.0073E-15 Nbvl=1.2735 Tbv1=840.91u)
+*		Motorola	pid=1N4748	case=DO-41
+*		89-9-19 gjg
+*		Vz = 22 @ 11.5mA, Zz = 42 @ 1mA, Zz = 15 @ 5mA, Zz = 9.5 @ 20mA
+
+.model D1N4749	D(Is=25.94f Rs=9.006 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=41p M=.2715
++		Vj=.75 Fc=.5 Isr=2.052n Nr=2 Bv=24 Ibv=.14951 Nbv=1.3684
++		Ibvl=164.37u Nbvl=14 Tbv1=895.83u)
+*		Motorola	pid=1N4749 	case=DO-41
+*		89-9-19 gjg
+*		Vz = 24 @ 10.5mA, Zz = 48 @ 1mA, Zz = 16 @ 5mA, Zz = 11 @ 20mA
+
+.model D1N4750	D(Is=62.63f Rs=11.28 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=40p M=.2906
++		Vj=.75 Fc=.5 Isr=1.864n Nr=2 Bv=27 Ibv=.13378 Nbv=1.5283
++		Ibvl=3.4328m Nbvl=2.3046 Tbv1=888.89u)
+*		Motorola	pid=1N4750	case=DO-41
+*		89-9-19 gjg
+*		Vz = 27 @ 9.5mA, Zz = 52 @ 1mA, Zz = 21 @ 5mA, Zz = 12 @ 20mA
+
+.model D1N5226	D(Is=31.47f Rs=9.494 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=220p M=.5959
++		Vj=.75 Fc=.5 Isr=2.035n Nr=2 Bv=3.3 Ibv=45.862m Nbv=3.0477
++		Ibvl=29.831m Nbvl=11.606 Tbv1=-636.36u)
+*		Motorola	pid=1N5226	case=DO-35
+*		89-9-18 gjg
+*		Vz = 3.3 @ 20mA, Zz = 310 @ 1mA, Zz = 68 @ 5mA, Zz = 19 @ 20mA
+
+.model D1N5227	D(Is=1.242f Rs=1.137 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=210p M=.6063
++		Vj=.75 Fc=.5 Isr=1.922n Nr=2 Bv=3.6 Ibv=13.987m Nbv=3.031
++		Ibvl=10.212m Nbvl=12.73 Tbv1=-555.56u)
+*		Motorola	pid=1N5227	case=DO-35
+*		89-9-18 gjg
+*		Vz = 3.6 @ 20mA, Zz = 330 @ 1mA, Zz = 52 @ 5mA, Zz = 7.3 @ 20mA
+
+.model D1N5228	D(Is=1.252f Rs=1.156 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=205p M=.6004
++		Vj=.75 Fc=.5 Isr=1.867n Nr=2 Bv=3.9 Ibv=17.244m Nbv=2.4016
++		Ibvl=8.619m Nbvl=13.283 Tbv1=-384.62u)
+*		Motorola	pid=1N5228	case=DO-35
+*		89-9-18 gjg
+*		Vz = 3.9 @ 20mA, Zz = 345 @ 1mA, Zz = 49 @ 5mA, Zz = 5.8 @ 20mA
+
+.model D1N5229	D(Is=880.5E-18 Rs=.25 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=190p M=.6124
++		Vj=.75 Fc=.5 Isr=1.743n Nr=2 Bv=4.3 Ibv=16.748m Nbv=1.7936
++		Ibvl=5.0382m Nbvl=12.554 Tbv1=-232.56u)
+*		Motorola	pid=1N5229	case=DO-35
+*		89-9-18 gjg
+*		Vz = 4.3 @ 20mA, Zz = 325 @ 1mA, Zz = 24 @ 5mA, Zz = 3.2 @ 20mA
+
+.model D1N5230	D(Is=880.5E-18 Rs=.25 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=175p M=.5516
++		Vj=.75 Fc=.5 Isr=1.859n Nr=2 Bv=4.7 Ibv=20.245m Nbv=1.6989
++		Ibvl=1.9556m Nbvl=14.976 Tbv1=-21.28u)
+*		Motorola	pid=1N5230	case=DO-35
+*		89-9-18 gjg
+*		Vz = 4.7 @ 20mA, Zz = 300 @ 1mA, Zz = 12.5 @ 5mA, Zz =2.6  @ 20mA
+
+.model D1N5231	D(Is=1.004f Rs=.5875 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=160p M=.5484
++		Vj=.75 Fc=.5 Isr=1.8n Nr=2 Bv=5.1 Ibv=27.721m Nbv=1.1779
++		Ibvl=1.1646m Nbvl=21.894 Tbv1=176.47u)
+*		Motorola	pid=1N5231	case=DO-35
+*		89-9-18-gjg
+*		Vz = 5.1 @ 20mA, Zz = 175 @ 1mA, Zz = 8.2 @ 5mA, Zz = 2.2 @ 20mA
+
+.model D1N5232	D(Is=1.154f Rs=.9471 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=150p M=.5788
++		Vj=.75 Fc=.5 Isr=1.625n Nr=2 Bv=5.6 Ibv=62.583m Nbv=.62382
++		Ibvl=631.96u Nbvl=50 Tbv1=267.86u)
+*		Motorola	pid=1N5232	case=DO-35
+*		89-9-18 gjg
+*		Vz = 5.6 @ 20mA, Zz = 40 @ 1mA, Zz = 4.5 @ 5mA, Zz = 1.9 @ 20mA
+
+.model D1N5233	D(Is=629E-18 Rs=1.176 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=140p M=.5369
++		Vj=.75 Fc=.5 Isr=1.707n Nr=2 Bv=6 Ibv=.10969 Nbv=.5351
++		Ibvl=.11553 Nbvl=.049362 Tbv1=416.67u)
+*		Motorola	pid=1N5233	case=DO-35
+*		89-9-18 gjg
+*		Vz = 6 @ 20mA, Zz = 15 @ 1mA, Zz = 3.9 @ 5mA, Zz = 1.9 @ 20mA
+
+.model D1N5234	D(Is=1.536f Rs=1.687 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=130p M=.5259
++		Vj=.75 Fc=.5 Isr=1.719n Nr=2 Bv=6.2 Ibv=1.9685 Nbv=.28384
++		Ibvl=7.0094e-7 Nbvl=.29418 Tbv1=443.55u)
+*		Motorola	pid=1N5234	case=DO-35
+*		89-9-18 gjg
+*		Vz = 6.2 @ 20mA, Zz = 9 @ 1mA, Zz = 3.4 @ 5mA, Zz = 1.85 @ 20mA
+
+.model D1N5235	D(Is=1.616f Rs=1.818 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=120p M=.5117
++		Vj=.75 Fc=.5 Isr=1.698n Nr=2 Bv=6.8 Ibv=2.8814 Nbv=.28248
++		Ibvl=1.9426e-6 Nbvl=.27168 Tbv1=485.29u)
+*		Motorola	pid=1N5235	case=DO-35
+*		89-9-19 gjg
+*		Vz = 6.8 @ 20mA, Zz = 9.1 @ 1mA, Zz = 3.5 @ 5mA, Zz = 2 @ 20mA
+
+.model D1N5236	D(Is=2.077f Rs=2.467 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=104p M=.5061
++		Vj=.75 Fc=.5 Isr=1.645n Nr=2 Bv=7.5 Ibv=2.5701 Nbv=.39227
++		Ibvl=4.0222e-5 Nbvl=.25042 Tbv1=533.33u)
+*		Motorola	pid=1N5236	case=DO-35
+*		89-9-18 gjg
+*		Vz = 7.5 @ 20mA, Zz = 12.5 @ 1mA, Zz = 5.3 @ 5mA, Zz = 2.3 @ 20mA
+
+.model D1N5237	D(Is=2.453f Rs=2.9 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=90p M=.448
++		Vj=.75 Fc=.5 Isr=1.803n Nr=2 Bv=8.2 Ibv=1.5593 Nbv=.51406
++		Ibvl=8.3521e-5 Nbvl=.1313 Tbv1=585.37u)
+*		Motorola	pid=1N5237	case=DO-35
+*		89-9-19 gjg
+*		Vz = 8.2 @ 20mA, Zz = 16 @ 1mA, Zz = 6.9 @ 5mA, Zz = 2.5 @ 20mA
+
+.model D1N5238	D(Is=2.463f Rs=2.907 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=81p M=.3066
++		Vj=.75 Fc=.5 Isr=2.447n Nr=2 Bv=8.7 Ibv=1.1648 Nbv=.55226
++		Ibvl=16.469u Nbvl=.14431 Tbv1=586.21u)
+*		Motorola	pid=1N5238	case=DO-35
+*		89-9-18 gjg
+*		Vz = 8.7 @ 20mA, Zz = 17 @ 1mA, Zz = 7.1 @ 5mA, Zz = 2.5 @ 20mA
+
+.model D1N5239	D(Is=2.453f Rs=2.9 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=78p M=.4399
++		Vj=.75 Fc=.5 Isr=1.762n Nr=2 Bv=9.1 Ibv=.48516 Nbv=.7022
++		Ibvl=1m Nbvl=.13785 Tbv1=604.396u)
+*		Motorola	pid=1N5239	case=DO-35
+*		89-9-18 gjg
+*		Vz = 9.1 @ 20mA, Zz = 21 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.7 @ 20mA
+
+.model D1N5240	D(Is=1.953f Rs=2.305 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=68p M=.3856
++		Vj=.75 Fc=.5 Isr=1.939n Nr=2 Bv=10 Ibv=.16597 Nbv=.84122
++		Ibvl=1.003m Nbvl=.20892 Tbv1=650u)
+*		Motorola	pid=1N5240	case=DO-35
+*		89-9-18 gjg
+*		Vz = 10 @ 20mA, Zz = 24 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.9 @ 20mA
+
+.model D1N5241	D(Is=1.609f Rs=1.7386 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=115p M=.4751
++		Vj=.75 Fc=.5 Isr=1.493n Nr=2 Bv=11 Ibv=67.039m Nbv=1.1099
++		Ibvl=157.8u Nbvl=.23763 Tbv1=672.73u)
+*		Motorola	pid=1N5241	case=DO-35
+*		89-9-18 gjg
+*		Vz = 11 @ 20mA, Zz = 30.5 @ 1mA, Zz = 7.4 @ 5mA, Zz = 3.25 @ 20mA
+
+.model D1N5242	D(Is=1.773f Rs=2.06 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=102p M=.4868
++		Vj=.75 Fc=.5 Isr=1.393n Nr=2 Bv=12 Ibv=79.489m Nbv=1.1528
++		Ibvl=142.9n Nbvl=.95108 Tbv1=700u)
+*		Motorola	pid=1N5242	case=DO-35
+*		89-9-18 gjg
+*		Vz = 12 @ 20mA, Zz = 32 @ 1mA, Zz = 7.5 @ 5mA, Zz = 4 @ 20mA
+
+.model D1N5243	D(Is=2.253f Rs=2.678 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=90p M=.4558
++		Vj=.75 Fc=.5 Isr=1.461n Nr=2 Bv=13 Ibv=21.761m Nbv=1.1851
++		Ibvl=468.81n Nbvl=.65126 Tbv1=846.15u)
+*		Motorola	pid=1N5243	case=DO-35
+*		89-9-18 gjg
+*		Vz = 13 @ 9.5mA, Zz = 33.5 @ 1mA, Zz = 8 @ 5mA, Zz = 4.9 @ 20mA
+
+.model D1N5244	D(Is=2.579f Rs=3.025 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=83p M=.4217
++		Vj=.75 Fc=.5 Isr=1.556n Nr=2 Bv=14 Ibv=22.862m Nbv=1.1153
++		Ibvl=25.632u Nbvl=.60946 Tbv1=785.71u)
+*		Motorola	pid=1N5244	case=DO-35
+*		89-9-18 gjg
+*		Vz = 14 @ 9mA, Zz = 32 @ 1mA, Zz = 8.1 @ 5mA, Zz = 5.1 @ 20mA
+
+.model D1N5245	D(Is=3.142f Rs=3.536 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=80.5p M=.4186
++		Vj=.75 Fc=.5 Isr=1.527n Nr=2 Bv=15 Ibv=24.573m Nbv=1.0932
++		Ibvl=7.1249u Nbvl=.65646 Tbv1=833.33u)
+*		Motorola	pid=1N5245	case=DO-35
+*		89-9-18 gjg
+*		Vz = 15 @ 8.5mA, Zz = 32 @ 1mA, Zz = 8.25 @ 5mA, Zz = 5.75 @ 20mA
+
+.model D1N5246	D(Is=5.461f Rs=4.975 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=69p M=.4472
++		Vj=.75 Fc=.5 Isr=1.371n Nr=2 Bv=16 Ibv=32.07m Nbv=1.0589
++		Ibvl=44.191u Nbvl=.86786 Tbv1=875u)
+*		Motorola	pid=1N5246	case=DO-35
+*		89-9-18 gjg
+*		Vz = 16 @ 7.8mA, Zz = 32.5 @ 1mA, Zz = 9.8 @ 5mA, Zz = 6.9 @ 20mA
+
+.model D1N5247	D(Is=5.398f Rs=4.945 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=63p M=.4188
++		Vj=.75 Fc=.5 Isr=1.453n Nr=2 Bv=17 Ibv=25.923m Nbv=1.1189
++		Ibvl=324.66u Nbvl=.86905 Tbv1=823.53u)
+* 		Motorola	pid=1N5247 	case=DO-35
+*		89-9-18 gjg
+*		Vz = 17 @ 7.4mA, Zz = 34 @ 1mA, Zz = 10 @ 5mA, Zz = 7 @ 20mA
+
+.model D1N5248	D(Is=7.021f Rs=5.619 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=60p M=.4093
++		Vj=.75 Fc=.5 Isr=1.461n Nr=2 Bv=18 Ibv=23.333m Nbv=1.2074
++		Ibvl=215.7u Nbvl=.71348 Tbv1=888.89u)
+*		Motorola 	pid=1N5248	case=DO-35
+*		89-9-18 gjg
+*		Vz = 18 @ 7mA, Zz = 37 @ 1mA, Zz = 11 @ 5mA, Zz = 7.9 @ 20mA
+
+.model D1N5249	D(Is=7.946f Rs=5.936 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=60p M=.4201
++		Vj=.75 Fc=.5 Isr=1.384n Nr=2 Bv=19 Ibv=23.157m Nbv=1.1973
++		Ibvl=302.56u Nbvl=.88158 Tbv1=894.74u)
+*		Motorola	pid=1N5249	case=DO-35
+*		89-9-18 gjg
+*		Vz = 19 @ 6.6mA, Zz = 37 @ 1mA, Zz = 11.5 @ 5mA, Zz = 8 @ 20mA
+
+.model D1N5250	D(Is=10.18f Rs=6.578 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=59p M=.4063
++		Vj=.75 Fc=.5 Isr=1.415n Nr=2 Bv=20 Ibv=21.603m Nbv=1.2514
++		Ibvl=218.21u Nbvl=1.2514 Tbv1=850u)
+*		Motorola	pid=1N5250 	case=DO-35
+*		89-9-18 gjg
+*		Vz = 20 @ 6.2mA, Zz = 39 @ 1mA, Zz = 13 @ 5mA, Zz = 8.25 @ 20mA
+
+.model D1N5251	D(Is=17.49f Rs=7.976 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=50p M=.4141
++		Vj=.75 Fc=.5 Isr=1.33n Nr=2 Bv=22 Ibv=20.578m Nbv=1.315
++		Ibvl=207.85u Nbvl=1.315 Tbv1=840.91u)
+*		Motorola	pid=1N5251	case=DO-35
+*		89-9-18 gjg
+*		Vz = 22 @ 5.6mA, Zz = 42 @ 1mA, Zz = 15 @ 5mA, Zz = 9.5 @ 20mA
+
+.model D1N5252	D(Is=25.64f Rs=8.973 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=44p M=.3798
++		Vj=.75 Fc=.5 Isr=1.438n Nr=2 Bv=24 Ibv=19.386m Nbv=1.3784
++		Ibvl=162.43u Nbvl=8.7919 Tbv1=895.83u)
+*		Motorola	pid=1N5252	case=DO-35
+*		89-9-18 gjg
+*		Vz = 24 @ 5.2mA, Zz = 48 @ 1mA, Zz = 16 @ 5mA, Zz = 11 @ 20mA
+
+.model D1N5253	D(Is=34.8f Rs=9.761 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=43p M=.3908
++		Vj=.75 Fc=.5 Isr=1.366n Nr=2 Bv=25 Ibv=16.176m Nbv=1.529
++		Ibvl=687.1u Nbvl=2.256 Tbv1=880u)
+*		Motorola	pid=1N5253	case=DO-35
+*		89-9-81 gjg
+*		Vz = 25 @ 5mA, Zz = 50 @ 1mA, Zz = 19 @ 5mA, Zz = 11 @ 20mA
+
+.model D1N5254	D(Is=81.47f Rs=11.96 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=42p M=.3983
++		Vj=.75 Fc=.5 Isr=1.294n Nr=2 Bv=27 Ibv=87.12m Nbv=.51025
++		Ibvl=9.0498m Nbvl=2.0249 Tbv1=888.89u)
+*		Motorola	pid=1N5254	case=DO-35
+*		89-9-18 gjg
+*		Vz = 27 @ 4.6mA, Zz = 52 @ 1mA, Zz = 21 @ 5mA, Zz = 12 @ 20mA
+
+.model MLL746	D(Is=31.47f Rs=9.494 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=220p M=.5959
++		Vj=.75 Fc=.5 Isr=2.035n Nr=2 Bv=3.3 Ibv=45.862m Nbv=3.0477
++		Ibvl=29.831m Nbvl=11.606 Tbv1=-636.36u)
+*		Motorola	pid=MLL746	case=362-01
+*		89-9-18 gjg
+*		Vz = 3.3 @ 20mA, Zz = 310 @ 1mA, Zz = 68 @ 5mA, Zz = 19 @ 20mA
+
+.model MLL747	D(Is=1.242f Rs=1.137 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=210p M=.6063
++		Vj=.75 Fc=.5 Isr=1.922n Nr=2 Bv=3.6 Ibv=13.987m Nbv=3.031
++		Ibvl=10.212m Nbvl=12.73 Tbv1=-555.56u)
+*		Motorola	pid=MLL747	case=362-01
+*		89-9-18 gjg
+*		Vz = 3.6 @ 20mA, Zz = 330 @ 1mA, Zz = 52 @ 5mA, Zz = 7.3 @ 20mA
+
+.model MLL748	D(Is=1.252f Rs=1.156 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=205p M=.6004
++		Vj=.75 Fc=.5 Isr=1.867n Nr=2 Bv=3.9 Ibv=17.244m Nbv=2.4016
++		Ibvl=8.619m Nbvl=13.283 Tbv1=-384.62u)
+*		Motorola	pid=MLL748	case=362-01
+*		89-9-18 gjg
+*		Vz = 3.9 @ 20mA, Zz = 345 @ 1mA, Zz = 49 @ 5mA, Zz = 5.8 @ 20mA
+
+.model MLL749	D(Is=880.5E-18 Rs=.25 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=190p M=.6124
++		Vj=.75 Fc=.5 Isr=1.743n Nr=2 Bv=4.3 Ibv=16.748m Nbv=1.7936
++		Ibvl=5.0382m Nbvl=12.554 Tbv1=-232.56u)
+*		Motorola	pid=MLL749	case=362-01
+*		89-9-18 gjg
+*		Vz = 4.3 @ 20mA, Zz = 325 @ 1mA, Zz = 24 @ 5mA, Zz = 3.2 @ 20mA
+
+.model MLL750	D(Is=880.5E-18 Rs=.25 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=175p M=.5516
++		Vj=.75 Fc=.5 Isr=1.859n Nr=2 Bv=4.7 Ibv=20.245m Nbv=1.6989
++		Ibvl=1.9556m Nbvl=14.976 Tbv1=-21.277u)
+*		Motorola	pid=MLL750	case=362-01
+*		89-9-18 gjg
+*		Vz = 4.7 @ 20mA, Zz = 300 @ 1mA, Zz = 12.5 @ 5mA, Zz =2.6  @ 20mA
+
+.model MLL751	D(Is=1.004f Rs=.5875 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=160p M=.5484
++		Vj=.75 Fc=.5 Isr=1.8n Nr=2 Bv=5.1 Ibv=27.721m Nbv=1.1779
++		Ibvl=1.1646m Nbvl=21.894 Tbv1=176.47u)
+*		Motorola	pid=MLL751	case=362-01
+*		89-9-18-gjg
+*		Vz = 5.1 @ 20mA, Zz = 175 @ 1mA, Zz = 8.2 @ 5mA, Zz = 2.2 @ 20mA
+
+.model MLL752	D(Is=1.154f Rs=.9471 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=150p M=.5788
++		Vj=.75 Fc=.5 Isr=1.625n Nr=2 Bv=5.6 Ibv=62.583m Nbv=.62382
++		Ibvl=631.96u Nbvl=50 Tbv1=267.86u)
+*		Motorola	pid=MLL752	case=362-01
+*		89-9-18 gjg
+*		Vz = 5.6 @ 20mA, Zz = 40 @ 1mA, Zz = 4.5 @ 5mA, Zz = 1.9 @ 20mA
+
+.model MLL753	D(Is=1.536f Rs=1.687 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=130p M=.5259
++		Vj=.75 Fc=.5 Isr=1.719n Nr=2 Bv=6.2 Ibv=1.9685 Nbv=.28384
++		Ibvl=7.0094e-7 Nbvl=.29418 Tbv1=443.55u)
+*		Motorola	pid=MLL753	case=362-01
+*		89-9-18 gjg
+*		Vz = 6.2 @ 20mA, Zz = 9 @ 1mA, Zz = 3.4 @ 5mA, Zz = 1.85 @ 20mA
+
+.model MLL754	D(Is=1.616f Rs=1.818 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=120p M=.5117
++		Vj=.75 Fc=.5 Isr=1.698n Nr=2 Bv=6.8 Ibv=2.8814 Nbv=.28248
++		Ibvl=1.9426e-6 Nbvl=.27168 Tbv1=485.29u)
+*		Motorola	pid=MLL754	case=362-01
+*		89-9-19 gjg
+*		Vz = 6.8 @ 20mA, Zz = 9.1 @ 1mA, Zz = 3.5 @ 5mA, Zz = 2 @ 20mA
+
+.model MLL755	D(Is=2.077f Rs=2.467 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=104p M=.5061
++		Vj=.75 Fc=.5 Isr=1.645n Nr=2 Bv=7.5 Ibv=2.5701 Nbv=.39227
++		Ibvl=4.0222e-5 Nbvl=.25042 Tbv1=533.33u)
+*		Motorola	pid=MLL755	case=362-01
+*		89-9-18 gjg
+*		Vz = 7.5 @ 20mA, Zz = 12.5 @ 1mA, Zz = 5.3 @ 5mA, Zz = 2.3 @ 20mA
+
+.model MLL756	D(Is=2.453f Rs=2.9 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=90p M=.448
++		Vj=.75 Fc=.5 Isr=1.803n Nr=2 Bv=8.2 Ibv=1.5593 Nbv=.51406
++		Ibvl=8.3521e-5 Nbvl=.1313 Tbv1=585.37u)
+*		Motorola	pid=MLL756	case=362-01
+*		89-9-19 gjg
+*		Vz = 8.2 @ 20mA, Zz = 16 @ 1mA, Zz = 6.9 @ 5mA, Zz = 2.5 @ 20mA
+
+.model MLL757	D(Is=2.453f Rs=2.9 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=78p M=.4399
++		Vj=.75 Fc=.5 Isr=1.762n Nr=2 Bv=9.1 Ibv=.48516 Nbv=.7022
++		Ibvl=1m Nbvl=.13785 Tbv1=604.396u)
+*		Motorola	pid=MLL757	case=362-01
+*		89-9-18 gjg
+*		Vz = 9.1 @ 20mA, Zz = 21 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.7 @ 20mA
+
+.model MLL758	D(Is=1.953f Rs=2.305 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=68p M=.3856
++		Vj=.75 Fc=.5 Isr=1.939n Nr=2 Bv=10 Ibv=.16597 Nbv=.84122
++		Ibvl=1.003m Nbvl=.20892 Tbv1=650u)
+*		Motorola	pid=MLL758	case=362-01
+*		89-9-18 gjg
+*		Vz = 10 @ 20mA, Zz = 24 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.9 @ 20mA
+
+.model MLL759	D(Is=1.773f Rs=2.06 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=102p M=.4868
++		Vj=.75 Fc=.5 Isr=1.393n Nr=2 Bv=12 Ibv=79.489m Nbv=1.1528
++		Ibvl=142.9n Nbvl=.95108 Tbv1=700u)
+*		Motorola	pid=MLL759	case=362-01
+*		89-9-18 gjg
+*		Vz = 12 @ 20mA, Zz = 32 @ 1mA, Zz = 7.5 @ 5mA, Zz = 4 @ 20mA
+
+.model MLL957A	D(Is=1.616f Rs=1.82 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=120p M=.5117
++		Vj=.75 Fc=.5 Isr=1.698n Nr=2 Bv=6.8 Ibv=1.8441 Nbv=.28243
++		Ibvl=6.2172E-15 Nbvl=.50147 Tbv1=485.29u)
+*		Motorola	pid=MLL957A	case=362-01
+*		89-9-18 gjg
+*		Vz = 6.8 @ 18.5mA, Zz = 9.1 @ 1mA, Zz = 3.5 @ 5mA, Zz = 2 @ 20mA
+
+.model MLL958A	D(Is=2.077f Rs=2.467 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=104p M=.5061
++		Vj=.75 Fc=.5 Isr=1.645n Nr=2 Bv=7.5 Ibv=.90645 Nbv=.39227
++		Ibvl=.5849p Nbvl=1.5122 Tbv1=533.33u)
+*		Motorola	pid=MLL958A	case=362-01
+*		89-9-18 gjg
+*		Vz = 7.5 @ 16.5mA, Zz = 12.5 @ 1mA, Zz = 5.3 @ 5mA, Zz = 2.3 @ 20mA
+
+.model MLL959A	D(Is=2.491f Rs=2.938 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=90p M=.448
++		Vj=.75 Fc=.5 Isr=1.803n Nr=2 Bv=8.2 Ibv=.41558 Nbv=.51229
++		Ibvl=.65179p Nbvl=1.1568 Tbv1=585.37u)
+*		Motorola	pid=MLL959A	case=362-01
+*		89-9-18 gjg
+*		Vz = 8.2 @ 15mA, Zz = 16 @ 1mA, Zz = 6.9 @ 5mA, Zz = 2.5 @ 20mA
+
+.model MLL960A	D(Is=2.168f Rs=2.578 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=78p M=.4399
++		Vj=.75 Fc=.5 Isr=1.762n Nr=2 Bv=9.1 Ibv=97.714m Nbv=.71712
++		Ibvl=.58975p Nbvl=.98128 Tbv1=604.396u)
+*		Motorola	pid=MLL960A	case=362-01
+*		89-9-18 gjg
+*		Vz = 9.1 @ 14mA, Zz = 21 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.7 @ 20mA
+
+.model MLL961A	D(Is=1.953f Rs=2.305 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=68p M=.3856
++		Vj=.75 Fc=.5 Isr=1.939n Nr=2 Bv=10 Ibv=46.912m Nbv=.84122
++		Ibvl=626.74p Nbvl=.78605 Tbv1=650u)
+*		Motorola 	pid=MLL961A	case=362-01
+*		89-9-18 gjg
+*		Vz = 10 @ 12.5mA, Zz = 24 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.9 @ 20mA
+
+.model MLL962A	D(Is=1.609f Rs=1.813 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=115p M=.4751
++		Vj=.75 Fc=.5 Isr=1.493n Nr=2 Bv=11 Ibv=24.084m Nbv=1.1052
++		Ibvl=149.27n Nbvl=.22862 Tbv1=672.73u)
+*		Motorola	pid=MLL962A	case=362-01
+*		89-9-18 gjg
+*		Vz = 11 @ 11.5mA, Zz = 30.5 @ 1mA, Zz = 7.4 @ 5mA, Zz = 3.25 @ 20mA
+
+.model MLL963A	D(Is=1.773f Rs=2.061 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=102p M=.4868
++		Vj=.75 Fc=.5 Isr=1.393n Nr=2 Bv=12 Ibv=21.7m Nbv=1.1527
++		Ibvl=29.343n Nbvl=.245 Tbv1=700u)
+*		Motorola	pid=MLL963A	case=362-01
+*		89-9-18 gjg
+*		Vz = 12 @ 10.5mA, Zz = 32 @ 1mA, Zz = 7.5 @ 5mA, Zz = 4 @ 20mA
+
+.model MLL964A	D(Is=2.253f Rs=2.678 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=90p M=.4558
++		Vj=.75 Fc=.5 Isr=1.461n Nr=2 Bv=13 Ibv=21.761m Nbv=1.1851
++		Ibvl=468.81n Nbvl=.65126 Tbv1=008461.5u)
+*		Motorola	pid=MLL964A	case=362-01
+*		89-9-18 gjg
+*		Vz = 13 @ 9.5mA, Zz = 33.5 @ 1mA, Zz = 8 @ 5mA, Zz = 4.9 @ 20mA
+
+.model MLL965A	D(Is=3.142f Rs=3.536 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=80.5p M=.4186
++		Vj=.75 Fc=.5 Isr=1.527n Nr=2 Bv=15 Ibv=24.573m Nbv=1.0932
++		Ibvl=7.1249u Nbvl=.65646 Tbv1=833.33u)
+*		Motorola	pid=MLL965A	case=362-01
+*		89-9-18 gjg
+*		Vz = 15 @ 8.5mA, Zz = 32 @ 1mA, Zz = 8.25 @ 5mA, Zz = 5.75 @ 20mA
+
+.model MLL966A	D(Is=5.461f Rs=4.975 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=69p M=.4472
++		Vj=.75 Fc=.5 Isr=1.371n Nr=2 Bv=16 Ibv=32.07m Nbv=1.0589
++		Ibvl=44.191u Nbvl=.86786 Tbv1=875u)
+*		Motorola	pid=MLL966A	case=362-01
+*		89-9-18 gjg
+*		Vz = 16 @ 7.8mA, Zz = 32.5 @ 1mA, Zz = 9.8 @ 5mA, Zz = 6.9 @ 20mA
+
+.model MLL967A	D(Is=7.021f Rs=5.619 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=60p M=.4093
++		Vj=.75 Fc=.5 Isr=1.461n Nr=2 Bv=18 Ibv=23.333m Nbv=1.2074
++		Ibvl=215.7u Nbvl=.71348 Tbv1=888.89u)
+*		Motorola 	pid=MLL967A	case=362-01
+*		89-9-18 gjg
+*		Vz = 18 @ 7mA, Zz = 37 @ 1mA, Zz = 11 @ 5mA, Zz = 7.9 @ 20mA
+
+.model MLL968A	D(Is=10.18f Rs=6.578 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=59p M=.4063
++		Vj=.75 Fc=.5 Isr=1.415n Nr=2 Bv=20 Ibv=21.603m Nbv=1.2514
++		Ibvl=218.21u Nbvl=1.2514 Tbv1=850u)
+*		Motorola	pid=MLL968A 	case=362-01
+*		89-9-18 gjg
+*		Vz = 20 @ 6.2mA, Zz = 39 @ 1mA, Zz = 13 @ 5mA, Zz = 8.25 @ 20mA
+
+.model MLL969A	D(Is=17.49f Rs=7.976 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=50p M=.4141
++		Vj=.75 Fc=.5 Isr=1.33n Nr=2 Bv=22 Ibv=20.578m Nbv=1.315
++		Ibvl=207.85u Nbvl=1.315 Tbv1=840.91u)
+*		Motorola	pid=MLL969A	case=362-01
+*		89-9-18 gjg
+*		Vz = 22 @ 5.6mA, Zz = 42 @ 1mA, Zz = 15 @ 5mA, Zz = 9.5 @ 20mA
+
+.model MLL970A	D(Is=25.64f Rs=8.973 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=44p M=.3798
++		Vj=.75 Fc=.5 Isr=1.438n Nr=2 Bv=24 Ibv=19.386m Nbv=1.3784
++		Ibvl=162.43u Nbvl=8.7919 Tbv1=895.83u)
+*		Motorola	pid=MLL970A	case=362-01
+*		89-9-18 gjg
+*		Vz = 24 @ 5.2mA, Zz = 48 @ 1mA, Zz = 16 @ 5mA, Zz = 11 @ 20mA
+
+.model MLL971A	D(Is=81.47f Rs=11.96 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=42p M=.3983
++		Vj=.75 Fc=.5 Isr=1.294n Nr=2 Bv=27 Ibv=87.12m Nbv=.51025
++		Ibvl=9.0498m Nbvl=2.0249 Tbv1=888.89u)
+*		Motorola	pid=MLL971A	case=362-01
+*		89-9-18 gjg
+*		Vz = 27 @ 4.6mA, Zz = 52 @ 1mA, Zz = 21 @ 5mA, Zz = 12 @ 20mA
+
+.model MLL4728	D(Is=11.11f Rs=6.808 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=220p M=.5959
++		Vj=.75 Fc=.5 Isr=241.3p Nr=2 Bv=3.3 Ibv=5.8452 Nbv=3.6742
++		Ibvl=.27224 Nbvl=11.715 Tbv1=-636.36u)
+*		Motorola	pid=MLL4728	case=362B-01
+*		89-9-18 gjg
+*		Vz = 3.3 @ 76mA, Zz = 310 @ 1mA, Zz = 68 @ 5mA, Zz = 19 @ 20mA
+
+.model MLL4729	D(Is=2.306f Rs=2.741 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=210p M=.6063
++		Vj=.75 Fc=.5 Isr=239.2p Nr=2 Bv=3.6 Ibv=1.1936 Nbv=2.2747
++		Ibvl=19.94m Nbvl=12.64 Tbv1=-555.556u)
+*		Motorola	pid=MLL4729	case=362B-01
+*		89-9-18 gjg
+*		Vz = 3.6 @ 69mA, Zz = 330 @ 1mA, Zz = 52 @ 5mA, Zz = 7.3 @ 20mA
+
+.model MLL4730	D(Is=1.379f Rs=1.406 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=205p M=.6004
++		Vj=.75 Fc=.5 Isr=240.4p Nr=2 Bv=3.9 Ibv=.2473 Nbv=2.2758
++		Ibvl=13.346m Nbvl=13.271 Tbv1=-384.62u)
+*		Motorola	pid=MLL4730	case=362B-01
+*		89-9-18 gjg
+*		Vz = 3.9 @ 64mA, Zz = 345 @ 1mA, Zz = 49 @ 5mA, Zz = 5.8 @ 20mA
+
+.model MLL4731	D(Is=837.3E-18 Rs=.1211 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=190p
++		M=.6124 Vj=.75 Fc=.5 Isr=238p Nr=2 Bv=4.3 Ibv=60.167m Nbv=1.8815
++		Ibvl=6.0358m Nbvl=12.57 Tbv1=-232.56u)
+*		Motorola	pid=MLL4731	case=362B-01
+*		89-9-18 gjg
+*		Vz = 4.3 @ 58mA, Zz = 325 @ 1mA, Zz = 24 @ 5mA, Zz = 3.2 @ 20mA
+
+.model MLL4732	D(Is=1.064f Rs=.741 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=175p M=.5516
++		Vj=.75 Fc=.5 Isr=250.6p Nr=2 Bv=4.7 Ibv=.16902 Nbv=1.2344
++		Ibvl=4.0082m Nbvl=11.59 Tbv1=-21.28u)
+*		Motorola	pid=MLL4732	case=362B-01
+*		89-9-18 gjg
+*		Vz = 4.7 @ 53mA, Zz = 300 @ 1mA, Zz = 12.5 @ 5mA, Zz =2.6  @ 20mA
+
+.model MLL4733	D(Is=1.214f Rs=1.078 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=160p M=.5484
++		Vj=.75 Fc=.5 Isr=251.3p Nr=2 Bv=5.1 Ibv=.70507 Nbv=.74348
++		Ibvl=4.8274m Nbvl=6.7393 Tbv1=176.47u)
+*		Motorola	pid=MLL4733	case=362B-01
+*		89-9-18 gjg
+*		Vz = 5.1 @ 49mA, Zz = 175 @ 1mA, Zz = 8.2 @ 5mA, Zz = 2.2 @ 20mA
+
+.model MLL4734	D(Is=1.085f Rs=.7945 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=150p M=.5788
++		Vj=.75 Fc=.5 Isr=188.6p Nr=2 Bv=5.6 Ibv=.37157 Nbv=.64726
++		Ibvl=1m Nbvl=6.5761 Tbv1=267.86u)
+*		Motorola	pid=MLL4734	case=362B-01
+*		89-9-18 gjg
+*		Vz = 5.6 @ 45mA, Zz = 40 @ 1mA, Zz = 4.5 @ 5mA, Zz = 1.9 @ 20mA
+
+.model MLL4735	D(Is=1.168f Rs=.9756 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=130p M=.5259
++		Vj=.75 Fc=.5 Isr=171.6p Nr=2 Bv=6.2 Ibv=4.9984 Nbv=.32088
++		Ibvl=184.78u Nbvl=.19558 Tbv1=443.55u)
+*		Motorola	pid=MLL4735	case=362B-01
+*		89-9-18 gjg
+*		Vz = 6.2 @ 41mA, Zz = 9 @ 1mA, Zz = 3.4 @ 5mA, Zz = 1.85 @ 20mA
+
+.model MLL4736	D(Is=1.327f Rs=1.306 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=120p M=.5117
++		Vj=.75 Fc=.5 Isr=155.5p Nr=2 Bv=6.8 Ibv=15 Nbv=.31009
++		Ibvl=149.2u Nbvl=.31028 Tbv1=485.29u)
+*		Motorola	pid=MLL4736 	case=362B-01
+*		89-9-18 gjg
+*		Vz = 6.8 @ 37mA, Zz = 9.1 @ 1mA, Zz = 3.5 @ 5mA, Zz = 2 @ 20mA
+
+.model MLL4737	D(Is=1.699f Rs=1.955 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=104p M=.5061
++		Vj=.75 Fc=.5 Isr=142.7p Nr=2 Bv=7.5 Ibv=15 Nbv=.42018
++		Ibvl=1m Nbvl=.094527 Tbv1=533.33u)
+*		Motorola	pid=MLL4737	case=362B-01
+*		89-9-18 gjg
+*		Vz = 7.5 @ 34mA, Zz = 12.5 @ 1mA, Zz = 5.3 @ 5mA, Zz = 2.3 @ 20mA
+
+.model MLL4738	D(Is=2.102f Rs=2.5 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=90p M=.448
++		Vj=.75 Fc=.5 Isr=149.5p Nr=2 Bv=8.2 Ibv=8 Nbv=.53621
++		Ibvl=213.52u Nbvl=.17879 Tbv1=585.37u)
+*		Motorola	pid=MLL4738	case=362B-01
+*		89-9-18 gjg
+*		Vz = 8.2 @ 31mA, Zz = 16 @ 1mA, Zz = 6.9 @ 5mA, Zz = 2.5 @ 20mA
+
+.model MLL4739	D(Is=2.11f Rs=2.512 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=78p M=.4399
++		Vj=.75 Fc=.5 Isr=143.2p Nr=2 Bv=9.1 Ibv=1.2 Nbv=.72056
++		Ibvl=10m Nbvl=.21148 Tbv1=604.396u)
+*		Motorola	pid=MLL4739	case=362B-01
+*		89-9-18 gjg
+*		Vz = 9.1 @ 28mA, Zz = 21 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.7 @ 20mA
+
+.model MLL4740	D(Is=1.945f Rs=2.302 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=68p M=.3856
++		Vj=.75 Fc=.5 Isr=157.9p Nr=2 Bv=10 Ibv=.35034 Nbv=.84137
++		Ibvl=10m Nbvl=.17757 Tbv1=650u)
+*		Motorola	pid=MLL4740	case=362B-01
+*		89-9-18 gjg
+*		Vz = 10 @ 25mA, Zz = 24 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.9 @ 20mA
+
+.model MLL4741	D(Is=1.566f Rs=1.74 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=115p M=.4751
++		Vj=.75 Fc=.5 Isr=121.9p Nr=2 Bv=11 Ibv=92.573m Nbv=1.1098
++		Ibvl=440.66u Nbvl=.23096 Tbv1=672.73u)
+*		Motorola	pid=MLL4741	case=362B-01
+*		89-9-18 gjg
+*		Vz = 11 @ 23mA, Zz = 30.5 @ 1mA, Zz = 7.4 @ 5mA, Zz = 3.25 @ 20mA
+
+.model MLL4742	D(Is=1.773f Rs=2.06 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=102p M=.4868
++		Vj=.75 Fc=.5 Isr=114.2p Nr=2 Bv=12 Ibv=89.447m Nbv=1.1527
++		Ibvl=248.34n Nbvl=.8248 Tbv1=700u)
+*		Motorola	pid=MLL4742	case=362B-01
+*		89-9-18 gjg
+*		Vz = 12 @ 21mA, Zz = 32 @ 1mA, Zz = 7.5 @ 5mA, Zz = 4 @ 20mA
+
+.model MLL4743	D(Is=2.253f Rs=2.678 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=90p M=.4558
++		Vj=.75 Fc=.5 Isr=119.4p Nr=2 Bv=13 Ibv=99.671m Nbv=1.1851
++		Ibvl=8.4078u Nbvl=1.2407 Tbv1=846.15u)
+*		Motorola	pid=MLL4743	case=362B-01
+*		89-9-18 gjg
+*		Vz = 13 @ 19mA, Zz = 33.5 @ 1mA, Zz = 8 @ 5mA, Zz = 4.9 @ 20mA
+
+.model MLL4744	D(Is=3.142f Rs=3.544 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=80.5p M=.4961
++		Vj=.75 Fc=.5 Isr=100.5p Nr=2 Bv=15 Ibv=.14467 Nbv=1.093
++		Ibvl=.1m Nbvl=1.2722 Tbv1=833.33u)
+*		Motorola	pid=MLL4744	case=362B-01
+*		89-9-18 gjg
+*		Vz = 15 @ 17mA, Zz = 32 @ 1mA, Zz = 8.25 @ 5mA, Zz = 5.75 @ 20mA
+
+.model MLL4745	D(Is=5.461f Rs=4.974 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=69p M=.4472
++		Vj=.75 Fc=.5 Isr=111.9p Nr=2 Bv=16 Ibv=.25684 Nbv=1.0588
++		Ibvl=1.029m Nbvl=1.0409 Tbv1=875u)
+*		Motorola	pid=MLL4745	case=362B-01
+*		89-9-18 gjg
+*		Vz = 16 @ 15.5mA, Zz = 32.5 @ 1mA, Zz = 9.8 @ 5mA, Zz = 6.9 @ 20mA
+
+.model MLL4746	D(Is=6.994f Rs=5.612 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=60p M=.4093
++		Vj=.75 Fc=.5 Isr=119.2p Nr=2 Bv=18 Ibv=.17098 Nbv=1.2072
++		Ibvl=2.002m Nbvl=1.1457 Tbv1=888.89u)
+*		Motorola	pid=MLL4746	case=362B-01
+*		89-9-18 gjg
+*		Vz = 18 @ 14mA, Zz = 37 @ 1mA, Zz = 11 @ 5mA, Zz = 7.9 @ 20mA
+
+.model MLL4747	D(Is=10.22f Rs=6.585 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=59p M=.4063
++		Vj=.75 Fc=.5 Isr=115.5p Nr=2 Bv=20 Ibv=.15934 Nbv=1.2472
++		Ibvl=211.18u Nbvl=1.9765 Tbv1=850u)
+*		Motorola	pid=MLL4747	case=362B-01
+*		89-9-18 gjg
+*		Vz = 20 @ 12.5mA, Zz = 39 @ 1mA, Zz = 13 @ 5mA, Zz = 8.25 @ 20mA
+
+.model MLL4748	D(Is=17.49f Rs=7.976 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=52p M=.4284
++		Vj=.75 Fc=.5 Isr=103.9p Nr=2 Bv=22 Ibv=.16996 Nbv=1.315
++		Ibvl=7.0073E-15 Nbvl=1.2735 Tbv1=840.91u)
+*		Motorola	pid=MLL4748	case=362B-01
+*		89-9-18 gjg
+*		Vz = 22 @ 11.5mA, Zz = 42 @ 1mA, Zz = 15 @ 5mA, Zz = 9.5 @ 20mA
+
+.model MLL4749	D(Is=25.94f Rs=9.006 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=44p M=.3798
++		Vj=.75 Fc=.5 Isr=123.2p Nr=2 Bv=24 Ibv=.14951 Nbv=1.3684
++		Ibvl=164.37u Nbvl=14 Tbv1=895.84u)
+*		Motorola	pid=MLL4749	case=362B-01
+*		89-9-19 gjg
+*		Vz = 24 @ 10.5mA, Zz = 48 @ 1mA, Zz = 16 @ 5mA, Zz = 11 @ 20mA
+
+.model MLL4750	D(Is=62.63f Rs=11.28 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=42p M=.3983
++		Vj=.75 Fc=.5 Isr=110.6p Nr=2 Bv=27 Ibv=.13378 Nbv=1.52832
++		Ibvl=3.4328m Nbvl=2.3046 Tbv1=888.89u)
+*		Motorola	pid=MLL4750	case=362B-01
+*		89-9-18 gjg
+*		Vz = 27 @ 9.5mA, Zz = 52 @ 1mA, Zz = 21 @ 5mA, Zz = 12 @ 20mA
+
+.model MLL5226	D(Is=31.35f Rs=9.494 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=220p M=.5959
++		Vj=.75 Fc=.5 Isr=241.3p Nr=2 Bv=3.3 Ibv=45.862m Nbv=3.0477
++		Ibvl=29.831m Nbvl=11.606 Tbv1=-636.36u)
+*		Motorola	pid=MLL5226	case=362-01
+*		89-9-18 gjg
+*		Vz = 3.3 @ 20mA, Zz = 310 @ 1mA, Zz = 68 @ 5mA, Zz = 19 @ 20mA
+
+.model MLL5227	D(Is=1.242f Rs=1.137 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=210p M=.6063
++		Vj=.75 Fc=.5 Isr=239.2p Nr=2 Bv=3.6 Ibv=13.987m Nbv=3.031
++		Ibvl=10.212m Nbvl=12.73 Tbv1=-555.56u)
+*		Motorola	pid=MLL5227	case=362-01
+*		89-9-18 gjg
+*		Vz = 3.6 @ 20mA, Zz = 330 @ 1mA, Zz = 52 @ 5mA, Zz = 7.3 @ 20mA
+
+.model MLL5228	D(Is=1.252f Rs=1.156 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=205p M=.7147
++		Vj=.75 Fc=.5 Isr=218.2p Nr=2 Bv=3.9 Ibv=17.244m Nbv=2.4016
++		Ibvl=8.619m Nbvl=13.283 Tbv1=-384.62u)
+*		Motorola	pid=MLL5228	case=362-01
+*		89-9-18 gjg
+*		Vz = 3.9 @ 20mA, Zz = 345 @ 1mA, Zz = 49 @ 5mA, Zz = 5.8 @ 20mA
+
+.model MLL5229	D(Is=880.5E-18 Rs=.25 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=190p M=.6124
++		Vj=.75 Fc=.5 Isr=238p Nr=2 Bv=4.3 Ibv=16.748m Nbv=1.7936
++		Ibvl=5.0382m Nbvl=12.554 Tbv1=-232.56u)
+*		Motorola	pid=MLL5229	case=362-01
+*		89-9-18 gjg
+*		Vz = 4.3 @ 20mA, Zz = 325 @ 1mA, Zz = 24 @ 5mA, Zz = 3.2 @ 20mA
+
+.model MLL5230	D(Is=880.5E-18 Rs=.25 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=175p M=.5516
++		Vj=.75 Fc=.5 Isr=195.3p Nr=2 Bv=4.7 Ibv=20.245m Nbv=1.6989
++		Ibvl=1.9556m Nbvl=14.796 Tbv1=-21.277u)
+*		Motorola	pid=MLL5230	case=362-01
+*		89-9-81 gjg
+*		Vz = 4.7 @ 20mA, Zz = 300 @ 1mA, Zz = 12.5 @ 5mA, Zz =2.6  @ 20mA
+
+.model MLL5231	D(Is=1.004f Rs=.5875 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=160p M=.5484
++		Vj=.75 Fc=.5 Isr=196.1p Nr=2 Bv=5.1 Ibv=27.721m Nbv=1.1779
++		Ibvl=1.1646m Nbvl=21.894 Tbv1=176.47u)
+*		Motorola	pid=MLL5231	case=362-01
+*		89-9-18 gjg
+*		Vz = 5.1 @ 20mA, Zz = 175 @ 1mA, Zz = 8.2 @ 5mA, Zz = 2.2 @ 20mA
+
+.model MLL5232	D(Is=1.154f Rs=.9471 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=150p M=.5788
++		Vj=.75 Fc=.5 Isr=160.1p Nr=2 Bv=5.6 Ibv=1.062583 Nbv=.62382
++		Ibvl=631.96u Nbvl=50 Tbv1=267.86u)
+*		Motorola	pid=MLL5232	case=362-01
+*		89-9-18 gjg
+*		Vz = 5.6 @ 20mA, Zz = 40 @ 1mA, Zz = 4.5 @ 5mA, Zz = 1.9 @ 20mA
+
+.model MLL5233	D(Is=629E-18 Rs=1.176 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=140p M=.5369
++		Vj=.75 Fc=.5 Isr=168.6p Nr=2 Bv=6 Ibv=.10969 Nbv=.5351
++		Ibvl=.11553 Nbvl=.049362 Tbv1=416.67u)
+*		Motorola	pid=MLL5233	case=362-01
+*		89-9-18 gjg
+*		Vz = 6 @ 20mA, Zz = 15 @ 1mA, Zz = 3.9 @ 5mA, Zz = 1.9 @ 20mA
+
+.model MLL5234	D(Is=1.536f Rs=1.687 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=130p M=.5259
++		Vj=.75 Fc=.5 Isr=151.5p Nr=2 Bv=6.2 Ibv=1.9685 Nbv=.28384
++		Ibvl=700.94n Nbvl=.29418 Tbv1=443.56u)
+*		Motorola	pid=MLL5234 	case=362-01
+*		89-9-18 gjg
+*		Vz = 6.2 @ 20mA, Zz = 9 @ 1mA, Zz = 3.4 @ 5mA, Zz = 1.85 @ 20mA
+
+.model MLL5235	D(Is=1.616f Rs=1.818 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=120p M=.5117
++		Vj=.75 Fc=.5 Isr=141p Nr=2 Bv=6.8 Ibv=2.8814 Nbv=.28248
++		Ibvl=1.9426u Nbvl=.27168 Tbv1=485.29u)
+*		Motorola	pid=MLL5235	case=362-01
+*		89-9-18 gjg
+*		Vz = 6.8 @ 20mA, Zz = 9.1 @ 1mA, Zz = 3.5 @ 5mA, Zz = 2 @ 20mA
+
+.model MLL5236	D(Is=2.077f Rs=2.467 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=104p M=.5061
++		Vj=.75 Fc=.5 Isr=131.6p Nr=2 Bv=7.5 Ibv=2.5701 Nbv=.39227
++		Ibvl=40.222u Nbvl=.25042 Tbv1=533.33u)
+*		Motorola	pid=MLL5236 	case=362-01
+*		89-9-18 gjg
+*		Vz = 7.5 @ 20mA, Zz = 12.5 @ 1mA, Zz = 5.3 @ 5mA, Zz = 2.3 @ 20mA
+
+.model MLL5237	D(Is=2.453f Rs=2.9 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=90p M=.448
++		Vj=.75 Fc=.5 Isr=144.8p Nr=2 Bv=8.2 Ibv=1.5593 Nbv=.51406
++		Ibvl=83.521u Nbvl=.1313 Tbv1=585.37u)
+*		Motorla		pid=MLL5237	case=362-01
+*		89-9-18 gjg
+*		Vz = 8.2 @ 20mA, Zz = 16 @ 1mA, Zz = 6.9 @ 5mA, Zz = 2.5 @ 20mA
+
+.model MLL5238	D(Is=2.463f Rs=2.907 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=81p M=.3066
++		Vj=.75 Fc=.5 Isr=199.5p Nr=2 Bv=8.7 Ibv=1.1648 Nbv=.55226
++		Ibvl=16.469u Nbvl=.14431 Tbv1=586.21u)
+*		Motorola	pid=MLL5238	case=362-01
+*		89-9-18 gjg
+*		Vz = 8.7 @ 20mA, Zz = 17 @ 1mA, Zz = 7.1 @ 5mA, Zz = 2.5 @ 20mA
+
+.model MLL5239	D(Is=2.453f Rs=2.9 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=78p M=.4399
++		Vj=.75 Fc=.5 Isr=143.2p Nr=2 Bv=9.1 Ibv=.48516 Nbv=.7022
++		Ibvl=1m Nbvl=.13785 Tbv1=604.396u)
+*		Motorola	pid=MLL5239 	case=362-01
+*		89-9-18 gjg
+*		Vz = 9.1 @ 20mA, Zz = 21 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.7 @ 20mA
+
+.model MLL5240	D(Is=1.953f Rs=2.305 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=68p M=.3856
++		Vj=.75 Fc=.5 Isr=155.1p Nr=2 Bv=10 Ibv=.16597 Nbv=.84122
++		Ibvl=1.003m Nbvl=.20892 Tbv1=650u)
+*		Motorola		pid=MLL5240	case=362-01
+*		89-9-18 gjg
+*		Vz = 10 @ 20mA, Zz = 24 @ 1mA, Zz = 7.25 @ 5mA, Zz = 2.9 @ 20mA
+
+.model MLL5241	D(Is=1.609f Rs=1.739 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=115p M=.4751
++		Vj=.75 Fc=.5 Isr=121.9p Nr=2 Bv=11 Ibv=67.039m Nbv=1.1099
++		Ibvl=157.8u Nbvl=.23763 Tbv1=672.73u)
+*		Motorola	pid=MLL5241	case=362-01
+*		89-9-18 gjg
+*		Vz = 11 @ 20mA, Zz = 30.5 @ 1mA, Zz = 7.4 @ 5mA, Zz = 3.25 @ 20mA
+
+.model MLL5242	D(Is=1.773f Rs=2.06 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=102p M=.5136
++		Vj=.75 Fc=.5 Isr=106.6p Nr=2 Bv=12 Ibv=79.489m Nbv=1.1528
++		Ibvl=142.9n Nbvl=.95108 Tbv1=700u)
+*		Motorola	pid=MLL5242	case=362-01
+*		89-9-18 gjg
+*		Vz = 12 @ 20mA, Zz = 32 @ 1mA, Zz = 7.5 @ 5mA, Zz = 4 @ 20mA
+
+.model MLL5243	D(Is=2.253f Rs=2.678 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=90p M=.4558
++		Vj=.75 Fc=.5 Isr=119.4p Nr=2 Bv=13 Ibv=21.761m Nbv=1.1851
++		Ibvl=468.81n Nbvl=.65126 Tbv1=846.15u)
+*		Motorola	pid=MLL5243 	case=362-01
+*		89-9-18 gjg
+*		Vz = 13 @ 9.5mA, Zz = 33.5 @ 1mA, Zz = 8 @ 5mA, Zz = 4.9 @ 20mA
+
+.model MLL5244	D(Is=2.579f Rs=3.025 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=83p M=.4217
++		Vj=.75 Fc=.5 Isr=130.1p Nr=2 Bv=14 Ibv=22.862m Nbv=1.1153
++		Ibvl=25.632u Nbvl=.60946 Tbv1=785.71u)
+*		Motorola	pid=MLL5244	case=362-01
+*		89-9-18 gjg
+*		Vz = 14 @ 9mA, Zz = 32 @ 1mA, Zz = 8.1 @ 5mA, Zz = 5.1 @ 20mA
+
+.model MLL5245	D(Is=3.142f Rs=3.536 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=80.5p M=.4961
++		Vj=.75 Fc=.5 Isr=102.1p Nr=2 Bv=15 Ibv=24.573m Nbv=1.0932
++		Ibvl=7.1249u Nbvl=.65646 Tbv1=833.33u)
+*		Motorola	pid=MLL5245	case=362-01
+*		89-9-18 gjg
+*		Vz = 15 @ 8.5mA, Zz = 32 @ 1mA, Zz = 8.25 @ 5mA, Zz = 5.75 @ 20mA
+
+.model MLL5246	D(Is=5.461f Rs=4.975 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=64p M=.4166
++		Vj=.75 Fc=.5 Isr=122.9p Nr=2 Bv=16 Ibv=32.07m Nbv=1.0589
++		Ibvl=44.191u Nbvl=.86786 Tbv1=875u)
+*		Motorola	pid=MLL5246	case=362-01
+*		89-9-18 gjg
+*		Vz = 16 @ 7.8mA, Zz = 32.5 @ 1mA, Zz = 9.8 @ 5mA, Zz = 6.9 @ 20mA
+
+.model MLL5247	D(Is=5.398f Rs=4.945 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=63p M=.4188
++		Vj=.75 Fc=.5 Isr=118.3p Nr=2 Bv=17 Ibv=25.923m Nbv=1.1189
++		Ibvl=324.66u Nbvl=.86905 Tbv1=823.53u)
+*		Motorola	pid=MLL5247 	case=362-01
+*		89-9-18 gjg
+*		Vz = 17 @ 7.4mA, Zz = 34 @ 1mA, Zz = 10 @ 5mA, Zz = 7 @ 20mA
+
+.model MLL5248	D(Is=7.021f Rs=5.619 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=60p M=.4093
++		Vj=.75 Fc=.5 Isr=118.2p Nr=2 Bv=18 Ibv=23.333m Nbv=1.2074
++		Ibvl=215.7u Nbvl=.71348 Tbv1=888.89u)
+*		Motorola	pid=MLL5248	case=362-01
+*		89-9-18 gjg
+*		Vz = 18 @ 7mA, Zz = 37 @ 1mA, Zz = 11 @ 5mA, Zz = 7.9 @ 20mA
+
+.model MLL5249	D(Is=7.946f Rs=5.936 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=60p M=.4201
++		Vj=.75 Fc=.5 Isr=114.4p Nr=2 Bv=19 Ibv=23.157m Nbv=1.1973
++		Ibvl=302.56u Nbvl=.88158 Tbv1=894.74u)
+*		Motorola	pid=MLL5249	case=362-01
+*		89-9-18 gjg
+*		Vz = 19 @ 6.6mA, Zz = 37 @ 1mA, Zz = 11.5 @ 5mA, Zz = 8 @ 20mA
+
+.model MLL5250	D(Is=10.18f Rs=6.578 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=59p M=.4063
++		Vj=.75 Fc=.5 Isr=116.1p Nr=2 Bv=20 Ibv=21.603m Nbv=1.2514
++		Ibvl=218.21u Nbvl=1.2514 Tbv1=850u)
+*		Motorola	pid=MLL5250	case=362-01
+*		89-9-18 gjg
+*		Vz = 20 @ 6.2mA, Zz = 39 @ 1mA, Zz = 13 @ 5mA, Zz = 8.25 @ 20mA
+
+.model MLL5251	D(Is=17.49f Rs=7.976 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=50p M=.4141
++		Vj=.75 Fc=.5 Isr=107.9p Nr=2 Bv=22 Ibv=20.578m Nbv=1.315
++		Ibvl=207.85u Nbvl=1.315 Tbv1=840.91u)
+*		Motorola	pid=MLL5251	case=362-01
+*		89-9-18 gjg
+*		Vz = 22 @ 5.6mA, Zz = 42 @ 1mA, Zz = 15 @ 5mA, Zz = 9.5 @ 20mA
+
+.model MLL5252	D(Is=25.64f Rs=8.973 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=44p M=.3798
++		Vj=.75 Fc=.5 Isr=117.8p Nr=2 Bv=24 Ibv=19.386m Nbv=1.3784
++		Ibvl=162.43u Nbvl=8.7919 Tbv1=895.83u)
+*		Motorola	pid=MLL5252	case=362-01
+*		89-9-18 gjg
+*		Vz = 24 @ 5.2mA, Zz = 48 @ 1mA, Zz = 16 @ 5mA, Zz = 11 @ 20mA
+
+.model MLL5253	D(Is=34.8f Rs=9.761 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=43p M=.3908
++		Vj=.75 Fc=.5 Isr=111.4p Nr=2 Bv=25 Ibv=16.176m Nbv=1.529
++		Ibvl=687.1u Nbvl=2.256 Tbv1=880u)
+*		Motorola	pid=MLL5253 	case=362-01
+*		89-9-18 gjg
+*		Vz = 25 @ 5mA, Zz = 50 @ 1mA, Zz = 19 @ 5mA, Zz = 11 @ 20mA
+
+.model MLL5254	D(Is=81.47f Rs=11.96 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=42p M=.3983
++		Vj=.75 Fc=.5 Isr=104.6p Nr=2 Bv=27 Ibv=87.12m Nbv=.51025
++		Ibvl=9.0498m Nbvl=2.0249 Tbv1=888.89u)
+*		Motorola	pid=MLL5254 	case=362-01
+*		89-9-81 gjg
+*		Vz = 27 @ 4.6mA, Zz = 52 @ 1mA, Zz = 21 @ 5mA, Zz = 12 @ 20mA
+
+.model kd521a   D(Is=115f Rs=3.21 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=2.25p M=.26
++               Vj=.68 Fc=.5 Isr=100p Nr=2 Bv=75 Ibv=10p Tt=3.12n)
+.model KD512A   D(Is=2.12E-15 Rs=9.2 CJO=1.16P M=0.25 TT=0.961N
++               VJ=0.69 BV=15 IBV=1E-11 EG=1.11 FC=0.5 XTI=3 N=1)
+.MODEL Q2D522A  D(IS=2.27E-13 RS=1.17 CJO=2.42P M=0.25 TT=2.38N
++               VJ=0.68 BV=50 IBV=1E-11 EG=1.11 FC=0.5 XTI=1 N=1)
+.MODEL Q2D103A  D(IS=6.71E-13 RS=3.43 CJO=8.58P M=0.29 TT=4.15N
++               VJ=0.72 BV=75 IBV=1E-11 EG=1.11 FC=0.5 XTI=3 N=1)
+.MODEL Q2D503A  D(IS=7.9E-13 RS=2.3 CJO=1.86P M=0.27 TT=7.19N
++               VJ=0.77 BV=50 IBV=1E-11 EG=1.11 FC=0.5 XTI=3 N=1)
+.MODEL Q2D521A  D(IS=1.15E-13 RS=3.21 CJO=2.25P M=0.26 TT=3.12N
++               VJ=0.68 BV=75 IBV=1E-11 EG=1.11 FC=0.5 XTI=3 N=1)
+.MODEL KD102A   D(IS=2.166E-11 N=1.28 RS=1.79 CJO=3.27P TT=6.12E-9
++               M=0.32 VJ=0.71 FC=0.5 BV=250 IBV=1E-11 EG=1.11 XTI=3)
+.model kd202d   D(Is=4.012n Rs=47m N=1.56 Xti=3 Eg=1.11 Cjo=82p M=.28
++               Vj=.73 Fc=.5 Isr=100p Nr=2 Bv=600 Ibv=100p Tt=319n)
+
+*** end of library file

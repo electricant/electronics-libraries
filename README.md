@@ -38,6 +38,8 @@ This folders holds all the SPICE models I currently use.
 ### Useful websites for SPICE models
 The following is a list of websites whith lots of models to download
 
+https://ee.kpi.ua/~yv/edu/lib/spicelib/
+
 http://www.jan.eguru-il.com/CADLAB.LIB
 (lots of diodes)
 

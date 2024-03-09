@@ -1,0 +1,3378 @@
+*****************************************************************************
+*
+*		 БИБЛИОТЕКА МОДЕЛЕЙ ОПЕРАЦИОННЫХ УСИЛИТЕЛЕЙ
+*
+*****************************************************************************
+*
+* Coдержит: UD1208
+*	    140UD5  6A	6B  7  7A  7B  8  8A  8B  9  11	 17  18	 20  22	 23 
+*		    25	27
+*	    1401UD1  2	5
+*	    1408UD1
+*	    1409UD1
+*	    1423UD1
+*	    153UD1  2  3  4  5	6
+*	    154UD1A  2	3A  4A
+*	    157UD1
+*	    175UV4
+*	    544UD1  2A
+*	    551UD1A
+*	    553UD1  2
+*	    574UD1  2
+*	    1100SK2
+*	    140UD6A 
+*	    140UD17A  
+*	    140UD17B  
+*	    k153ud6 
+*	    154UD3A  
+*
+*****************************************************************************
+*
+* Внимание! Цоколевка выводов макромоделей всех	ОУ не совпадает	с
+*	    реальной разводкой корпуса микросхем.
+*	    Корпуса схем 175УВ4	, 1100СК2 и макромодели	имеют
+*	    совпадающую	цоколевку за исключением вывода	"земля".
+*
+*****************************************************************************
+*
+*---------------------	UD1208 operational amplifier  ----------------------
+*
+* ud1208 operational amplifier "macromodel" subcircuit
+* created using	Parts version 1.04 on 10/24/90 at 10:36
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	ud1208	1 2 3 4	5
+*
+  c1   11 12 261.9E-15
+  c2	6  7 30.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	212.2E6	-200E6 200E6 200E6 -200E6
+  ga	6  0 11	12 18.85E-6
+  gcm	0  6 10	99 6.284E-9
+  iee  10  4 dc	24.10E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 53.05E3
+  rc2	3 12 53.05E3
+  re1  13 10 50.68E3
+  re2  14 10 50.68E3
+  ree  10 99 8.299E6
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 395.0E3
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	10
+  vln	0 92 dc	10
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=240)
+.ends
+*----------------------
+*
+*----------------------	 140UD5	operational amplifier  ----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	140UD5	1 2 3 4	5 6 7
+*
+  c1   11 12 2.887E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	101.0E3	-100E3 100E3 100E3 -100E3
+  ga	6  0 11	12 1.131E-3
+  gcm	0  6 10	99 754.1E-9
+  iee  10  4 dc	120.1E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 884.1
+  rc2	3 12 884.1
+  re1  13 10 452.6
+  re2  14 10 452.6
+  ree  10 99 1.665E6
+  ro1	8  5 120
+  ro2	7 99 35
+  rp	3  4 1.863E3
+  vb	9  0 dc	0
+  vc	3 53 dc	6
+  ve   54  4 dc	8
+  vlim	7  8 dc	0
+  vlp  91  0 dc	20
+  vln	0 92 dc	20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=1.200E3)
+.ends
+*--------------------
+*
+*--------------------  140UD6A operational amplifier  -----------------------
+*
+* 140UD6A operational amplifier	"macromodel" subcircuit
+* created using	Parts release 5.1 on 12/17/92 at 02:27
+*
+* connections:	 non-inverting input
+*		 | inverting input
+*		 | | positive power supply
+*		 | | | negative	power supply
+*		 | | | | output
+		 | | | | |
+*		 | | | | |
+.subckt	140UD6A	 1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2	6  7 20.00E-12
+  cee  10 99 800.0E-15
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	42.44E6	-40E6 40E6 40E6	-40E6
+  ga	6  0 11	12 125.7E-6
+  gcm	0  6 10	99 12.57E-9
+  iee  10  4 dc	52.06E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 7.958E3
+  rc2	3 12 7.958E3
+  re1  13 10 6.955E3
+  re2  14 10 6.955E3
+  ree  10 99 3.842E6
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 10.92E3
+  vb	9  0 dc	0
+  vc	3 53 dc	4
+  ve   54  4 dc	4
+  vlim	7  8 dc	0
+  vlp  91  0 dc	20
+  vln	0 92 dc	20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=866.7)
+.ends
+*--------------------
+*
+*--------------------  140UD6B operational amplifier  -----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	140UD6B	1 2 3 4	5
+*
+  c1   11 12 2.887E-12
+  c2	6  7 20.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	11.94E6	-10E6 10E6 10E6	-10E6
+  ga	6  0 11	12 125.7E-6
+  gcm	0  6 10	99 15.71E-9
+  iee  10  4 dc	50.04E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 7.957E3
+  rc2	3 12 7.957E3
+  re1  13 10 6.917E3
+  re2  14 10 6.917E3
+  ree  10 99 3.997E6
+  ro1	8  5 720
+  ro2	7 99 30
+  rp	3  4 10.91E3
+  vb	9  0 dc	0
+  vc	3 53 dc	3
+  ve   54  4 dc	3
+  vlim	7  8 dc	0
+  vlp  91  0 dc	10
+  vln	0 92 dc	10
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=1.250E3)
+.ends
+*----------------------
+*
+*----------------------	 140UD7	operational amplifier  ----------------------
+*
+* 140ud7 operational amplifier "macromodel" subcircuit
+* created using	Parts version 1.04 on 10/08/90 at 09:23
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	140ud7	1 2 3 4	5
+*
+  c1   11 12 2.887E-12
+  c2	6  7 20.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	42.44E6	-40E6 40E6 40E6	-40E6
+  ga	6  0 11	12 100.5E-6
+  gcm	0  6 10	99 31.79E-9
+  iee  10  4 dc	14.14E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 9.946E3
+  rc2	3 12 9.946E3
+  re1  13 10 6.189E3
+  re2  14 10 6.189E3
+  ree  10 99 14.14E6
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 32.36E3
+  vb	9  0 dc	0
+  vc	3 53 dc	3
+  ve   54  4 dc	3
+  vlim	7  8 dc	0
+  vlp  91  0 dc	20
+  vln	0 92 dc	20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=100)
+.ends
+*--------------------
+*
+*--------------------  140UD7A operational amplifier  -----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	140UD7A	1 2 3 4	5 6 7
+*
+  c1   11 12 2.887E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	42.44E6	-40E6 40E6 40E6	-40E6
+  ga	6  0 11	12 100.5E-6
+  gcm	0  6 10	99 30.47E-9
+  iee  10  4 dc	6.400E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 9.946E3
+  rc2	3 12 9.946E3
+  re1  13 10 1.242E3
+  re2  14 10 1.242E3
+  ree  10 99 31.25E6
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 10.74E3
+  vb	9  0 dc	0
+  vc	3 53 dc	3.500
+  ve   54  4 dc	3.500
+  vlim	7  8 dc	0
+  vlp  91  0 dc	20
+  vln	0 92 dc	20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=15)
+.ends
+*--------------------
+*
+*--------------------  140UD7B operational amplifier  -----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	140ud7	1 2 3 4	5
+*
+  c1   11 12 2.887E-12
+  c2	6  7 20.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	42.44E6	-40E6 40E6 40E6	-40E6
+  ga	6  0 11	12 100.5E-6
+  gcm	0  6 10	99 50.27E-9
+  iee  10  4 dc	6.200E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 9.946E3
+  rc2	3 12 9.946E3
+  re1  13 10 1.282E3
+  re2  14 10 1.282E3
+  ree  10 99 32.26E6
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 10.61E3
+  vb	9  0 dc	0
+  vc	3 53 dc	4
+  ve   54  4 dc	4
+  vlim	7  8 dc	0
+  vlp  91  0 dc	20
+  vln	0 92 dc	20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=30)
+.ends
+*---------------------
+*
+*---------------------	140UD8 operational amplifier  -----------------------
+*
+* 140ud8 operational amplifier "macromodel" subcircuit
+* created using	Parts version 1.04 on 10/05/90 at 15:22
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	140ud8	1 2 3 4	5
+*
+  c1   11 12 174.6E-15
+  c2	6  7 20.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	127.3E6	-100E6 100E6 100E6 -100E6
+  ga	6  0 11	12 125.7E-6
+  gcm	0  6 10	99 12.57E-9
+  iss	3 10 dc	100.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10	jx
+  j2   12  1 10	jx
+  r2	6  9 100.0E3
+  rd1	4 11 7.957E3
+  rd2	4 12 7.957E3
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 18.00E3
+  rss  10 99 2.000E6
+  vb	9  0 dc	0
+  vc	3 53 dc	2
+  ve   54  4 dc	2
+  vlim	7  8 dc	0
+  vlp  91  0 dc	20
+  vln	0 92 dc	20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=10.00E-12 Beta=315.9E-6 Vto=-1)
+.ends
+*---------------------
+*
+*---------------------	140UD8A	operational amplifier  ----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	140UD8A	1 2 3 4	5
+*
+  c1   11 12 2.887E-12
+  c2	6  7 33.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	24.11E6	-20E6 20E6 20E6	-20E6
+  ga	6  0 11	12 207.4E-6
+  gcm	0  6 10	99 64.80E-9
+  iss  10  4 dc	66.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10	jx
+  j2   12  1 10	jx
+  r2	6  9 100.0E3
+  rd1	3 11 4.822E3
+  rd2	3 12 4.822E3
+  ro1	8  5 290
+  ro2	7 99 10
+  rp	3  4 6.000E3
+  rss  10 99 3.030E6
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	15
+  vln	0 92 dc	15
+.model dx D(Is=800.0E-18)
+.model jx NJF(Is=100.0E-12 Beta=1.303E-3 Vto=-1)
+.ends
+*---------------------
+*
+*---------------------	140UD8B	operational amplifier  ----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	140UD8B	1 2 3 4	5
+*
+  c1   11 12 2.887E-12
+  c2	6  7 33.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	24.11E6	-20E6 20E6 20E6	-20E6
+  ga	6  0 11	12 207.4E-6
+  gcm	0  6 10	99 64.80E-9
+  iss  10  4 dc	66.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10	jx
+  j2   12  1 10	jx
+  r2	6  9 100.0E3
+  rd1	3 11 4.822E3
+  rd2	3 12 4.822E3
+  ro1	8  5 290
+  ro2	7 99 10
+  rp	3  4 6.000E3
+  rss  10 99 3.030E6
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	15
+  vln	0 92 dc	15
+.model dx D(Is=800.0E-18)
+.model jx NJF(Is=100.0E-12 Beta=1.303E-3 Vto=-1)
+.ends
+*---------------------
+*
+*---------------------	140UD9 operational amplifier  -----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	140UD9	1 2 3 4	5 6 7
+*
+  c1   11 12 2.887E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	2.321E6	-2E6 2E6 2E6 -2E6
+  ga	6  0 11	12 754.1E-6
+  gcm	0  6 10	99 75.41E-9
+  iee  10  4 dc	60.40E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 1.326E3
+  rc2	3 12 1.326E3
+  re1  13 10 460.9
+  re2  14 10 460.9
+  ree  10 99 3.311E6
+  ro1	8  5 55
+  ro2	7 99 20
+  rp	3  4 3.778E3
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	20
+  vln	0 92 dc	20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=150)
+.ends
+*--------------------
+*
+*--------------------  140UD11 operational amplifier  -----------------------
+*
+* 140ud11 operational amplifier	"macromodel" subcircuit
+* created using	Parts release 5.1 on 02/15/93 at 10:22
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	140ud11	1 2 3 4	5
+*
+  c1   11 12 2.469E-12
+  c2	6  7 28.00E-12
+  cee  10 99 42.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	4.737E6	-5E6 5E6 5E6 -5E6
+  ga	6  0 11	12 2.639E-3
+  gcm	0  6 10	99 83.51E-9
+  iee  10  4 dc	1.400E-3
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 378.9
+  rc2	3 12 378.9
+  re1  13 10 341.9
+  re2  14 10 341.9
+  ree  10 99 142.8E3
+  ro1	8  5 30
+  ro2	7 99 40
+  rp	3  4 4.546E3
+  vb	9  0 dc	0
+  vc	3 53 dc	3
+  ve   54  4 dc	3
+  vlim	7  8 dc	0
+  vlp  91  0 dc	25
+  vln	0 92 dc	25
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=2.800E3)
+.ends
+*---------------------
+*
+*---------------------	140UD12	operational amplifier  ----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	140UD12	1 2 3 4	5
+*
+  c1   11 12 2.887E-12
+  c2	6  7 20.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	29.84E6	-30E6 30E6 30E6	-30E6
+  ga	6  0 11	12 125.7E-6
+  gcm	0  6 10	99 39.27E-9
+  iee  10  4 dc	16.80E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 7.957E3
+  rc2	3 12 7.957E3
+  re1  13 10 4.499E3
+  re2  14 10 4.499E3
+  ree  10 99 11.90E6
+  ro1	8  5 810
+  ro2	7 99 40
+  rp	3  4 50.00E6
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	10
+  vln	0 92 dc	10
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=20)
+.ends
+*---------------------
+*
+*---------------------	140UD17	operational amplifier  ----------------------
+*
+* 140ud17 operational amplifier	"macromodel" subcircuit
+* created using	Parts release 5.1 on 02/15/93 at 11:02
+* (не учтено значение второго полюса)
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	140ud17	1 2 3 4	5
+*
+  c1   11 12 2.887E-12
+  c2	6  7 30.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	29.47E6	-30E6 30E6 30E6	-30E6
+  ga	6  0 11	12 113.1E-6
+  gcm	0  6 10	99 56.55E-12
+  iss  10  4 dc	75.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10	jx
+  j2   12  1 10	jx
+  r2	6  9 100.0E3
+  rd1	3 11 8.842E3
+  rd2	3 12 8.842E3
+  ro1	8  5 70
+  ro2	7 99 60
+  rp	3  4 6.000E3
+  rss  10 99 2.667E6
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	6
+  vln	0 92 dc	6
+.model dx D(Is=800.0E-18)
+.model jx NJF(Is=1.900E-9 Beta=170.5E-6	Vto=-1)
+.ends
+*----------------------
+*
+*----------------------	 140UD18 operational amplifier	---------------------
+*
+* 140ud18 operational amplifier	"macromodel" subcircuit
+* created using	Parts version 1.04 on 10/24/90 at 08:55
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	140ud18	1 2 3 4	5
+*
+  c1   11 12 174.6E-15
+  c2	6  7 20.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	53.05E6	-50E6 50E6 50E6	-50E6
+  ga	6  0 11	12 37.70E-6
+  gcm	0  6 10	99 2.120E-9
+  iss	3 10 dc	40.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10	jx
+  j2   12  1 10	jx
+  r2	6  9 100.0E3
+  rd1	4 11 26.52E3
+  rd2	4 12 26.52E3
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 15.00E3
+  rss  10 99 5.000E6
+  vb	9  0 dc	0
+  vc	3 53 dc	2
+  ve   54  4 dc	2
+  vlim	7  8 dc	0
+  vlp  91  0 dc	7.500
+  vln	0 92 dc	7.500
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=500.0E-12 Beta=71.08E-6 Vto=-1)
+.ends
+*---------------------
+*
+*---------------------	140UD20	operational amplifier  ----------------------
+*
+* connections:	non-inverting input1
+*		| inverting input1
+*		| | positive power supply1
+*		| | | output1
+*		| | | |
+*		| | | |	non-inverting input2
+*		| | | |	| inverting input2
+*		| | | |	| | positive power supply2
+*		| | | |	| | | output2
+*		| | | |	| | | |
+*		| | | |	| | | |	negative power supply
+*		| | | |	| | | |	|
+.SUBCKT	140UD20	1 2 3 4	5 6 7 8	9
+ X1 1 2	3 9 4 UD20
+ X2 5 6	7 9 8 UD20
+.ENDS
+.subckt	UD20 1 2 3 4 5
+  c1   11 12 5.774E-12
+  c2	6  7 20.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	198.9E6	-200E6 200E6 200E6 -200E6
+  ga	6  0 11	12 125.7E-6
+  gcm	0  6 10	99 104.7E-9
+  iee  10  4 dc	6.200E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 7.957E3
+  rc2	3 12 7.957E3
+  re1  13 10 643
+  re2  14 10 643
+  ree  10 99 32.26E6
+  ro1	8  5 140
+  ro2	7 99 10
+  rp	3  4 10.61E3
+  vb	9  0 dc	0
+  vc	3 53 dc	3.500
+  ve   54  4 dc	3.500
+  vlim	7  8 dc	0
+  vlp  91  0 dc	12
+  vln	0 92 dc	12
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=30)
+.ends
+*----------------------
+*
+*----------------------	 140UD22 operational amplifier	---------------------
+*
+* 140ud22 operational amplifier	"macromodel" subcircuit
+* created using	Parts version 1.04 on 10/24/90 at 09:05
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	140ud22	1 2 3 4	5 6 7
+*
+  c1   11 12 261.9E-15
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	42.44E6	-40E6 40E6 40E6	-40E6
+  ga	6  0 11	12 942.6E-6
+  gcm	0  6 10	99 94.26E-9
+  iee  10  4 dc	360.0E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 1.061E3
+  rc2	3 12 1.061E3
+  re1  13 10 917.2
+  re2  14 10 917.2
+  ree  10 99 555.6E3
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 6.466E3
+  vb	9  0 dc	0
+  vc	3 53 dc	2
+  ve   54  4 dc	2
+  vlim	7  8 dc	0
+  vlp  91  0 dc	20
+  vln	0 92 dc	20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=900.0E3)
+.ends
+*----------------------
+*
+*----------------------	 140UD23 operational amplifier	---------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	140UD23	1 2 3 4	5
+*
+  c1   11 12 2.887E-12
+  c2	6  7 30.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	2.122E6	-2E6 2E6 2E6 -2E6
+  ga	6  0 11	12 942.6E-6
+  gcm	0  6 10	99 377.0E-9
+  iee  10  4 dc	900.2E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 1.061E3
+  rc2	3 12 1.061E3
+  re1  13 10 1.003E3
+  re2  14 10 1.003E3
+  ree  10 99 222.2E3
+  ro1	8  5 125
+  ro2	7 99 25
+  rp	3  4 4.918E3
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	10
+  vln	0 92 dc	10
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=4.500E3)
+.ends
+*---------------------
+*
+*---------------------	140UD25A operational amplifier	---------------------
+*
+* 140ud25a operational amplifier "macromodel" subcircuit
+* created using	Parts release 5.1 on 02/15/93 at 13:58
+*
+* connections:	 non-inverting input
+*		 | inverting input
+*		 | | positive power supply
+*		 | | | negative	power supply
+*		 | | | | output
+*		 | | | | |
+.subckt	140ud25a 1 2 3 4 5
+*
+  c1   11 12 27.30E-12
+  c2	6  7 150.0E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	11.32E6	-10E6 10E6 10E6	-10E6
+  ga	6  0 11	12 4.712E-3
+  gcm	0  6 10	99 14.73E-9
+  iee  10  4 dc	255.1E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 212.2
+  rc2	3 12 212.2
+  re1  13 10 9.347
+  re2  14 10 9.347
+  ree  10 99 784.1E3
+  ro1	8  5 35
+  ro2	7 99 15
+  rp	3  4 12.44E3
+  vb	9  0 dc	0
+  vc	3 53 dc	3
+  ve   54  4 dc	3
+  vlim	7  8 dc	0
+  vlp  91  0 dc	6
+  vln	0 92 dc	6
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=3.188E3)
+.ends
+*----------------------
+*
+*----------------------	 140UD27 operational amplifier	---------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	140ud27	1 2 3 4	5
+*
+  c1   11 12 5.460E-12
+  c2	6  7 30.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	39.78E6	-40E6 40E6 40E6	-40E6
+  ga	6  0 11	12 1.508E-3
+  gcm	0  6 10	99 755.9E-12
+  iee  10  4 dc	84.02E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 663.1
+  rc2	3 12 663.1
+  re1  13 10 47.24
+  re2  14 10 47.24
+  ree  10 99 2.380E6
+  ro1	8  5 40
+  ro2	7 99 30
+  rp	3  4 9.233E3
+  vb	9  0 dc	0
+  vc	3 53 dc	1.200
+  ve   54  4 dc	1.200
+  vlim	7  8 dc	0
+  vlp  91  0 dc	40
+  vln	0 92 dc	40
+.model dx D(Is=800.0E-18 Rs=1)
+.model qx NPN(Is=800.0E-18 Bf=4.200E3)
+.ends
+*---------------------
+*
+*---------------------	1401UD1	operational amplifier  ----------------------
+*
+* connections:	non-inverting input1
+*		|  inverting input1
+*		|  |  output1
+*		|  |  |
+*		|  |  |	 non-inverting input2
+*		|  |  |	 |  inverting input2
+*		|  |  |	 |  |  output2
+*		|  |  |	 |  |  |
+*		|  |  |	 |  |  |  non-inverting	input3
+*		|  |  |	 |  |  |  |  inverting input3
+*		|  |  |	 |  |  |  |  |	output3
+*		|  |  |	 |  |  |  |  |	|
+*		|  |  |	 |  |  |  |  |	|  non-inverting input4
+*		|  |  |	 |  |  |  |  |	|  |  inverting	input4
+*		|  |  |	 |  |  |  |  |	|  |  |	 output4
+*		|  |  |	 |  |  |  |  |	|  |  |	 |
+*		|  |  |	 |  |  |  |  |	|  |  |	 |  positive power supply4
+*		|  |  |	 |  |  |  |  |	|  |  |	 |  |  negative	power supply4
+*		|  |  |	 |  |  |  |  |	|  |  |	 |  |  |
+.SUBCKT	1401UD1	1  2  3	 4  5  6  7  8	9  10 11 12 13 14
+ X1  1	2 13 14	3 UD1
+ X2  4	5 13 14	6 UD1
+ X3  7	8 13 14	9 UD1
+ X4 10 11 13 14	12
+.ENDS
+.subckt	UD1 1 2	3 4 5
+  c1   11 12 2.887E-12
+  c2	6  7 30.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	169.7E3	-200E3 200E3 200E3 -200E3
+  ga	6  0 11	12 471.3E-6
+  gcm	0  6 10	99 147.3E-9
+  iee  10  4 dc	15.20E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 2.122E3
+  rc2	3 12 2.122E3
+  re1  13 10 600
+  re2  14 10 600
+  ree  10 99 13.16E6
+  ro1	8  5 125
+  ro2	7 99 25
+  rp	3  4 15.11E3
+  vb	9  0 dc	0
+  vc	3 53 dc	2.500
+  ve   54  4 dc	2.500
+  vlim	7  8 dc	0
+  vlp  91  0 dc	13
+  vln	0 92 dc	13
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=75)
+.ends
+*---------------------
+*
+*---------------------	1401UD2	operational amplifier  ----------------------
+*
+* connections:	non-inverting input1
+*		|  inverting input1
+*		|  |  output1
+*		|  |  |
+*		|  |  |	 non-inverting input2
+*		|  |  |	 |  inverting input2
+*		|  |  |	 |  |  output2
+*		|  |  |	 |  |  |
+*		|  |  |	 |  |  |  non-inverting	input3
+*		|  |  |	 |  |  |  |  inverting input3
+*		|  |  |	 |  |  |  |  |	output3
+*		|  |  |	 |  |  |  |  |	|
+*		|  |  |	 |  |  |  |  |	|  non-inverting input4
+*		|  |  |	 |  |  |  |  |	|  |  inverting	input4
+*		|  |  |	 |  |  |  |  |	|  |  |	 output4
+*		|  |  |	 |  |  |  |  |	|  |  |	 |
+*		|  |  |	 |  |  |  |  |	|  |  |	 |  positive power supply
+*		|  |  |	 |  |  |  |  |	|  |  |	 |  |  negative	power supply
+*		|  |  |	 |  |  |  |  |	|  |  |	 |  |  |
+.SUBCKT	1401UD2	1  2  3	 4  5  6  7  8	9 10 11	12 13 14
+ X1  1	2 13 14	 3 UD2
+ X2  4	5 13 14	 6 UD2
+ X3  7	8 13 14	 9 UD2
+ X4 10 11 13 14	12 UD2
+.ENDS
+.subckt	UD2 1 2	3 4 5
+  c1   11 12 2.887E-12
+  c2	6  7 30.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	169.7E3	-200E3 200E3 200E3 -200E3
+  ga	6  0 11	12 471.3E-6
+  gcm	0  6 10	99 147.3E-9
+  iee	3 10 dc	15.20E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	4 11 2.122E3
+  rc2	4 12 2.122E3
+  re1  13 10 250
+  re2  14 10 250
+  ree  10 99 13.16E6
+  ro1	8  5 125
+  ro2	7 99 25
+  rp	3  4 36.66E3
+  vb	9  0 dc	0
+  vc	3 53 dc	3
+  ve   54  4 dc	3
+  vlim	7  8 dc	0
+  vlp  91  0 dc	13
+  vln	0 92 dc	13
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=75)
+.ends
+*----------------------
+*
+*----------------------	 1401UD5 operational amplifier	---------------------
+*
+* connections:	 non-inverting input
+*		 | inverting input
+*		 | | positive power supply
+*		 | | | negative	power supply
+*		 | | | | output
+*		 | | | | |
+.subckt	1401ud5	 1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2	6  7 30.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	21.22E6	-20E6 20E6 20E6	-20E6
+  ga	6  0 11	12 188.5E-6
+  gcm	0  6 10	99 59.61E-9
+  iee	3 10 dc	15.09E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	4 11 5.305E3
+  rc2	4 12 5.305E3
+  re1  13 10 1.845E3
+  re2  14 10 1.845E3
+  ree  10 99 13.25E6
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 9.082E3
+  vb	9  0 dc	0
+  vc	3 53 dc	1.500
+  ve   54  4 dc	0
+  vlim	7  8 dc	0
+  vlp  91  0 dc	40
+  vln	0 92 dc	40
+.model dx D(Is=800.0E-18 Rs=1)
+.model qx PNP(Is=800.0E-18 Bf=166.7)
+.ends
+*---------------------
+*
+*---------------------	1408UD1	operational amplifier  ----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	1408UD1	1 2 3 4	5
+*
+  c1   11 12 2.887E-12
+  c2	6  7 30.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	29.71E6	-30E6 30E6 30E6	-30E6
+  ga	6  0 11	12 94.26E-6
+  gcm	0  6 10	99 29.46E-9
+  iee  10  4 dc	45.20E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 10.61E3
+  rc2	3 12 10.61E3
+  re1  13 10 9.418E3
+  re2  14 10 9.418E3
+  ree  10 99 4.425E6
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 17.72E3
+  vb	9  0 dc	0
+  vc	3 53 dc	8
+  ve   54  4 dc	8
+  vlim	7  8 dc	0
+  vlp  91  0 dc	100
+  vln	0 92 dc	100
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=225)
+.ends
+*---------------------
+*
+*---------------------	1409UD1	operational amplifier  ----------------------
+*
+* 1409ud1 operational amplifier	"macromodel" subcircuit
+* created using	Parts version 1.04 on 10/24/90 at 08:47
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	1409ud1	1 2 3 4	5 6 7
+*
+  c1   11 12 174.6E-15
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	6.365E6	-6E6 6E6 6E6 -6E6
+  ga	6  0 11	12 125.7E-6
+  gcm	0  6 10	99 39.75E-9
+  iss  10  4 dc	80.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10	jx
+  j2   12  1 10	jx
+  r2	6  9 100.0E3
+  rd1	3 11 7.957E3
+  rd2	3 12 7.957E3
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 10.00E3
+  rss  10 99 2.500E6
+  vb	9  0 dc	0
+  vc	3 53 dc	2
+  ve   54  4 dc	2
+  vlim	7  8 dc	0
+  vlp  91  0 dc	8.330
+  vln	0 92 dc	8.330
+.model dx D(Is=800.0E-18)
+.model jx NJF(Is=1.000E-9 Beta=394.9E-6	Vto=-1)
+.ends
+*---------------------
+*
+*---------------------	1423UD1	operational amplifier  ----------------------
+*
+* 1423ud1 operational amplifier	"macromodel" subcircuit
+* created using	Parts version 1.04 on 10/24/90 at 10:26
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	1423ud1	1 2 3 4	5
+*
+  c1   11 12 261.9E-15
+  c2	6  7 30.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	1.516E6	-2E6 2E6 2E6 -2E6
+  ga	6  0 11	12 263.9E-6
+  gcm	0  6 10	99 87.97E-9
+  iee  10  4 dc	4.800E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 3.789E3
+  rc2	3 12 3.789E3
+  re1  13 10 -6.988E3
+  re2  14 10 -6.988E3
+  ree  10 99 41.67E6
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 32.31E3
+  vb	9  0 dc	0
+  vc	3 53 dc	.8
+  ve   54  4 dc	.8
+  vlim	7  8 dc	0
+  vlp  91  0 dc	5
+  vln	0 92 dc	5
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=2.400E6)
+.ends
+*---------------------
+*
+*---------------------	153UD1 operational amplifier  -----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	153UD1	1 2 3 4	5 6 7
+*
+  c1   11 12 5.774E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	848.7E3	-800E3 800E3 800E3 -800E3
+  ga	6  0 11	12 942.6E-6
+  gcm	0  6 10	99 471.3E-9
+  iee  10  4 dc	3.000E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 1.061E3
+  rc2	3 12 1.061E3
+  re1  13 10 1.780E3
+  re2  14 10 1.780E3
+  ree  10 99 66.67E6
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 5.002E3
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	50
+  vln	0 92 dc	50
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=1.500)
+.ends
+*---------------------
+*
+*---------------------	153UD2 operational amplifier  -----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	153UD2	1 2 3 4	5 6 7
+*
+  c1   11 12 4.020E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	848.7E3	-800E3 800E3 800E3 -800E3
+  ga	6  0 11	12 565.6E-6
+  gcm	0  6 10	99 176.7E-9
+  iee  10  4 dc	16.00E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 1.768E3
+  rc2	3 12 1.768E3
+  re1  13 10 1.500E3
+  re2  14 10 1.500E3
+  ree  10 99 12.50E6
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 10.05E3
+  vb	9  0 dc	0
+  vc	3 53 dc	4
+  ve   54  4 dc	4
+  vlim	7  8 dc	0
+  vlp  91  0 dc	50
+  vln	0 92 dc	50
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=15)
+.ends
+*---------------------
+*
+*---------------------	153UD3 operational amplifier  -----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	153UD3	1 2 3 4	5 6 7
+*
+  c1   11 12 8.661E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	1.473E6	-1E6 1E6 1E6 -1E6
+  ga	6  0 11	12 565.6E-6
+  gcm	0  6 10	99 56.56E-9
+  iee  10  4 dc	16.00E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 1.768E3
+  rc2	3 12 1.768E3
+  re1  13 10 1.570E3
+  re2  14 10 1.570E3
+  ree  10 99 12.50E6
+  ro1	8  5 120
+  ro2	7 99 30
+  rp	3  4 9.042E3
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	12
+  vln	0 92 dc	12
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=15)
+.ends
+*---------------------
+*
+*---------------------	153UD4 operational amplifier  -----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	153UD4	1 2 3 4	5 6 7
+*
+  c1   11 12 2.887E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	265.2E3	-300E3 300E3 300E3 -300E3
+  ga	6  0 11	12 188.5E-6
+  gcm	0  6 10	99 58.91E-9
+  iee  10  4 dc	3.800E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 5.305E3
+  rc2	3 12 5.305E3
+  re1  13 10 8.000E3
+  re2  14 10 8.000E3
+  ree  10 99 52.63E6
+  ro1	8  5 1.400E3
+  ro2	7 99 100
+  rp	3  4 98.68E3
+  vb	9  0 dc	0
+  vc	3 53 dc	2
+  ve   54  4 dc	2
+  vlim	7  8 dc	0
+  vlp  91  0 dc	1
+  vln	0 92 dc	1
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=3.750)
+.ends
+*---------------------
+*
+*---------------------	153UD5 operational amplifier  -----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	153UD5	1 2 3 4	5 6 7
+*
+  c1   11 12 2.887E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	70.73E6	-70E6 70E6 70E6	-70E6
+  ga	6  0 11	12 565.6E-6
+  gcm	0  6 10	99 1.131E-9
+  iee  10  4 dc	4.000E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 1.768E3
+  rc2	3 12 1.768E3
+  re1  13 10 10.00E3
+  re2  14 10 10.00E3
+  ree  10 99 50.00E6
+  ro1	8  5 125
+  ro2	7 99 25
+  rp	3  4 9.009E3
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	10
+  vln	0 92 dc	10
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=3)
+.ends
+*--------------------
+*
+*--------------------  153UD6 operational amplifier  ------------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	153UD6	1 2 3 4	5 6 7
+*
+  c1   11 12 2.887E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	3.536E6	-4E6 4E6 4E6 -4E6
+  ga	6  0 11	12 565.6E-6
+  gcm	0  6 10	99 176.7E-9
+  iee  10  4 dc	15.15E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 1.768E3
+  rc2	3 12 1.768E3
+  re1  13 10 1.640E3
+  re2  14 10 1.640E3
+  ree  10 99 13.20E6
+  ro1	8  5 125
+  ro2	7 99 25
+  rp	3  4 10.05E3
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	20
+  vln	0 92 dc	20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=100)
+.ends
+*---------------------
+*
+*---------------------	154UD1 operational amplifier  -----------------------
+*
+* 154ud1a operational amplifier	"macromodel" subcircuit
+* created using	Parts release 5.1 on 02/15/93 at 15:23
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	154ud1a	1 2 3 4	5
+*
+  c1   11 12 6.995E-12
+  c2	6  7 30.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	31.83E6	-30E6 30E6 30E6	-30E6
+  ga	6  0 11	12 188.5E-6
+  gcm	0  6 10	99 9.425E-9
+  iee	3 10 dc	300.0E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	4 11 5.305E3
+  rc2	4 12 5.305E3
+  re1  13 10 5.132E3
+  re2  14 10 5.132E3
+  ree  10 99 666.6E3
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 13.64E3
+  vb	9  0 dc	0
+  vc	3 53 dc	4
+  ve   54  4 dc	4
+  vlim	7  8 dc	0
+  vlp  91  0 dc	7.500
+  vln	0 92 dc	7.500
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=7.500E3)
+.ends
+*---------------------
+*
+*---------------------	154UD2 operational amplifier  -----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	154UD2	1 2 3 4	5
+*
+  c1   11 12 2.887E-12
+  c2	6  7 30.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	28.29E3	-30E3 30E3 30E3	-30E3
+  ga	6  0 11	12 4.713E-3
+  gcm	0  6 10	99 523.7E-9
+  iee  10  4 dc	600.0E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 212.2
+  rc2	3 12 212.2
+  re1  13 10 126
+  re2  14 10 126
+  ree  10 99 333.3E3
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 4.688E3
+  vb	9  0 dc	0
+  vc	3 53 dc	6
+  ve   54  4 dc	6
+  vlim	7  8 dc	0
+  vlp  91  0 dc	20
+  vln	0 92 dc	20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=30.00E3)
+.ends
+*-------------------
+*
+*--------------------  154UD3A operational amplifier  -----------------------
+*
+* 154UD3a operational amplifier	"macromodel" subcircuit
+* created using	Parts release 5.1 on 12/17/92 at 02:30
+*
+* connections:	 non-inverting input
+*		 | inverting input
+*		 | | positive power supply
+*		 | | | negative	power supply
+*		 | | | | output
+*		 | | | | |
+.subckt	154UD3A	 1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2	6  7 20pF
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	339.5E3	-30E3 30E3 30E3	-30E3
+  ga	6  0 11	12 942.5E-6
+  gcm	0  6 10	99 74.80E-9
+  iee  10  4 dc	800.5E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 1.061E3
+  rc2	3 12 1.061E3
+  re1  13 10 995.8
+  re2  14 10 995.8
+  ree  10 99 249.9E3
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 4.839E3
+  vb	9  0 dc	0
+  vc	3 53 dc	5.500
+  ve   54  4 dc	5.500
+  vlim	7  8 dc	0
+  vlp  91  0 dc	10
+  vln	0 92 dc	10
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=1.778E3)
+.ends
+*---------------------
+*
+*---------------------	154UD4A	operational amplifier  ----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	154UD4	1 2 3 4	5 6 7
+*
+  c1   11 12 2.645E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	42.44E6	-40E6 40E6 40E6	-40E6
+  ga	6  0 11	12 18.85E-3
+  gcm	0  6 10	99 6.284E-6
+  iee  10  4 dc	9.000E-3
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 53.05
+  rc2	3 12 53.05
+  re1  13 10 47.30
+  re2  14 10 47.30
+  ree  10 99 22.22E3
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 15.00E3
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	15
+  vln	0 92 dc	15
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=45.00E3)
+.ends
+*----------------------
+*
+*----------------------	 157UD1	operational amplifier  ----------------------
+*
+* 157ud1 operational amplifier "macromodel" subcircuit
+* created using	Parts version 1.04 on 10/24/90 at 10:52
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	157ud1	1 2 3 4	5 6 7
+*
+  c1   11 12 261.9E-15
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	21.22E6	-20E6 20E6 20E6	-20E6
+  ga	6  0 11	12 94.26E-6
+  gcm	0  6 10	99 31.42E-9
+  iee  10  4 dc	16.00E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 10.61E3
+  rc2	3 12 10.61E3
+  re1  13 10 6.713E3
+  re2  14 10 6.713E3
+  ree  10 99 12.50E6
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 6.690E3
+  vb	9  0 dc	0
+  vc	3 53 dc	3
+  ve   54  4 dc	3
+  vlim	7  8 dc	0
+  vlp  91  0 dc	1.000E3
+  vln	0 92 dc	1.000E3
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=15)
+.ends
+*----------------------
+*
+*----------------------	 175UV4	Differential amplifier	---------------------
+*
+* Внимание! Схема требует подключения  всех зарезервированных во входном
+*	    наборе выводов. Вместо вывода 1 подключается 0.
+*
+* connections:	collector of T2
+*		| resistor RC2
+*		| | base of T2
+*		| | | output of	RC2+RC1
+*		| | | |	base of	T1
+*		| | | |	| resistor RC1
+*		| | | |	| | resistor network output
+*		| | | |	| | | resistor network output
+*		| | | |	| | | |	collector T1
+*		| | | |	| | | |	|  resistor network output
+*		| | | |	| | | |	|  | resistor network output
+*		| | | |	| | | |	|  |  |	 base of T3
+*		| | | |	| | | |	|  |  |	 |  emitter of T3
+*		| | | |	| | | |	|  |  |	 |  |
+*		| | | |	| | | |	|  |  |	 |  |
+.SUBCKT	175UV4	2 3 4 5	6 7 8 9	10 11 12 13 14
+*
+RC1   7	 5  .5K
+RC2   3	 5  .5K
+REE  14	 0  1K
+RE    1	 0  1K
+RBB  15	13  1K
+RB   15	16  1K
+R1    8	 9  1K
+R2    9	11  1K
+R3   11	12  1K
+R4   12	15  1K
+Q1    7	 6 17  0  qx
+Q2    8	 4 17  0  qx
+Q3   17	13 14  0  qx
+Q4   15	16  1  0  qx
+.MODEL	 qx   NPN (IS=1.4E-15 BF=100	 RB=1K	    NF=1.1   VAF=15
++		   IKF=10M    ISE=1.E-14 NE=2	    BR=2     NR=1.1
++		   VAR=15     IKR=10M	 ISC=1.E-13 NC=2     RBM=150
++		   RE=5	      RC=100	 VJE=0.75   XTB=1.12
++		   CJS=0.4PF  TF=0.08NS	 TR=0.2NS   CJE=0.5PF
++		   CJC=0.25PF VJC=0.7 )
+.ends
+*---------------------
+*
+*---------------------	544UD1 operational amplifier  -----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	544UD1	1 2 3 4	5
+*
+  c1   11 12 2.887E-12
+  c2	6  7 10.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	39.78E6	-40E6 40E6 40E6	-40E6
+  ga	6  0 11	12 62.84E-6
+  gcm	0  6 10	99 41.89E-9
+  iss	3 10 dc	20.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10	jx
+  j2   12  1 10	jx
+  r2	6  9 100.0E3
+  rd1	4 11 15.91E3
+  rd2	4 12 15.91E3
+  ro1	8  5 100
+  ro2	7 99 20
+  rp	3  4 9.000E3
+  rss  10 99 10.00E6
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	15
+  vln	0 92 dc	15
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=394.9E-6 Vto=-1)
+.ends
+*---------------------
+*
+*---------------------	544UD2A	operational amplifier  ----------------------
+*
+* 544ud2a operational amplifier	"macromodel" subcircuit
+* created using	Parts release 5.1 on 02/11/93 at 10:25
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	544ud2a	1 2 3 4	5
+*
+  c1   11 12 2.99E-12
+  c2	6  7 15.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	353.7E3	-40E3 40E3 40E3	-40E3
+  ga	6  0 11	12 2.827E-3
+  gcm	0  6 10	99 80.78E-9
+  iss  10  4 dc	300.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10	jx
+  j2   12  1 10	jx
+  r2	6  9 100.0E3
+  rd1	3 11 353.7
+  rd2	3 12 353.7
+  ro1	8  5 25
+  ro2	7 99 25
+  rp	3  4 4.286E3
+  rss  10 99 666.7E3
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	15
+  vln	0 92 dc	15
+.model dx D(Is=800.0E-18)
+.model jx NJF(Is=15.00E-12 Beta=26.65E-3 Vto=-1)
+.ends
+*---------------------
+*
+*---------------------	551UD1A	operational amplifier  ----------------------
+*
+* 551ud1a operational amplifier	"macromodel" subcircuit
+* created using	Parts version 1.04 on 10/24/90 at 09:33
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	551ud1a	1 2 3 4	5 6 7
+*
+  c1   11 12 261.9E-15
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	106.1E6	-100E6 100E6 100E6 -100E6
+  ga	6  0 11	12 188.5E-6
+  gcm	0  6 10	99 1.885E-9
+  iee  10  4 dc	340.0E-9
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 5.305E3
+  rc2	3 12 5.305E3
+  re1  13 10 -147.5E3
+  re2  14 10 -147.5E3
+  ree  10 99 588.2E6
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 12.00E3
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	7.500
+  vln	0 92 dc	7.500
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=7.500)
+.ends
+*----------------------
+*
+*----------------------	 553UD1	operational amplifier  ----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	553ud1	1 2 3 4	5 6 7
+*
+  c1   11 12 28.87E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	14.32E3	-10E3 10E3 10E3	-10E3
+  ga	6  0 11	12 31.42E-3
+  gcm	0  6 10	99 993.6E-9
+  iee  10  4 dc	2.000E-3
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 31.83
+  rc2	3 12 31.83
+  re1  13 10 5.962
+  re2  14 10 5.962
+  ree  10 99 99.98E3
+  ro1	8  5 50
+  ro2	7 99 100
+  rp	3  4 45.01E3
+  vb	9  0 dc	0
+  vc	3 53 dc	1
+  ve   54  4 dc	1
+  vlim	7  8 dc	0
+  vlp  91  0 dc	50
+  vln	0 92 dc	50
+.model dx D(Is=800.0E-18 Rs=1)
+.model qx NPN(Is=800.0E-18 Bf=5.000E3)
+.ends
+*---------------------
+*
+*---------------------	553UD2 operational amplifier  -----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|  compensation
+*		| | | |	| / \
+.subckt	553ud2	1 2 3 4	5 6 7
+*
+  c1   11 12 8.661E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	37.73E6	-40E6 40E6 40E6	-40E6
+  ga	6  0 11	12 188.5E-6
+  gcm	0  6 10	99 2.988E-9
+  iee  10  4 dc	15.06E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 5.305E3
+  rc2	3 12 5.305E3
+  re1  13 10 1.849E3
+  re2  14 10 1.849E3
+  ree  10 99 13.28E6
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 15.11E3
+  vb	9  0 dc	0
+  vc	3 53 dc	1
+  ve   54  4 dc	1
+  vlim	7  8 dc	0
+  vlp  91  0 dc	25
+  vln	0 92 dc	25
+.model dx D(Is=800.0E-18 Rs=1)
+.model qx NPN(Is=800.0E-18 Bf=250)
+.ends
+*----------------------
+*
+*----------------------	 574UD1	operational amplifier  ----------------------
+*
+* connections:	non-inverting input
+*		| inverting input
+*		| | positive power supply
+*		| | | negative power supply
+*		| | | |	output
+*		| | | |	|
+.subckt	574UD1	1 2 3 4	5
+*
+  c1   11 12 2.887E-12
+  c2	6  7 10.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	1.989E6	-2E6 2E6 2E6 -2E6
+  ga	6  0 11	12 628.4E-6
+  gcm	0  6 10	99 523.7E-9
+  iss  10  4 dc	500.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10	jx
+  j2   12  1 10	jx
+  r2	6  9 100.0E3
+  rd1	3 11 1.591E3
+  rd2	3 12 1.591E3
+  ro1	8  5 210
+  ro2	7 99 40
+  rp	3  4 3.750E3
+  rss  10 99 400.0E3
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	10
+  vln	0 92 dc	10
+.model dx D(Is=800.0E-18)
+.model jx NJF(Is=15.00E-12 Beta=1.580E-3 Vto=-1)
+.ends
+*---------------------
+*
+*---------------------	574UD2 operational amplifier  -----------------------
+*
+* connections:	non-inverting input1
+*		| inverting input1
+*		| | output1
+*		| | | non-inverting input2
+*		| | | |	inverting input2
+*		| | | |	| output2
+*		| | | |	| |
+*		| | | |	| | positive power supply
+*		| | | |	| | | negative power supply
+*		| | | |	| | | |
+.SUBCKT	574UD2	4 3 2 6	7 8 5 1
+  X1 4 3 5 1 2 K574
+  X2 6 7 5 1 8 K574
+.ENDS
+.subckt	K574  1	2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2	6  7 10.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	1.989E6	-2E6 2E6 2E6 -2E6
+  ga	6  0 11	12 628.4E-6
+  gcm	0  6 10	99 523.7E-9
+  iss  10  4 dc	500.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10	jx
+  j2   12  1 10	jx
+  r2	6  9 100.0E3
+  rd1	3 11 1.591E3
+  rd2	3 12 1.591E3
+  ro1	8  5 210
+  ro2	7 99 40
+  rp	3  4 3.750E3
+  rss  10 99 400.0E3
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	10
+  vln	0 92 dc	10
+.model dx D(Is=800.0E-18)
+.model jx NJF(Is=15.00E-12 Beta=1.580E-3 Vto=-1)
+.ends
+*---------------------
+*
+*---------------------	1100CK2	sample/hold circuit  ------------------------
+*
+* connections:	positive power supply
+*		| input	signal
+*		| | negative power supply
+*		| | | output
+*		| | | |"hold" capacitor
+*		| | | |	| logic	"sample/hold" signal 2
+*		| | | |	| | logic "sample/hold"	signal 1
+*		| | | |	| | |
+.SUBCKT	1100CK2	1 3 4 5	6 7 8
+RX1  36	 5  30K
+SW1 37	6  31  32  SWITCH
+DX1  36	37  DMOD
+DX2  37	36  DMOD
+X21  6	 5  1  4   5	OUTPUT
+X12  3	36  1  4  37	INPUT
+*====Drive switch circuit ======
+R1C1  31  1  30K
+R1C2  32  1  30K
+Q11   31  7 33 qdr
+Q22   32  8 34 qdr
+R1E1  33 35  13K
+R1E2  34 35  13K
+Ibias 35 4  100UA
+*================================
+.MODEL	 qdr  NPN (IS=1.4E-15  BF=100	 BR=2)
+.MODEL DMOD D (IS=1.E-15 RS=2 TT=.08N CJO=.5P)
+.MODEL SWITCH VSWITCH (RON=1.E9	ROFF=300 VON=.05  VOFF=2.9)
+.ENDS  K1100CK2
+.subckt	INPUT	1   2  3  4   5
+  c1   11 12 2.887E-12
+  c2	6  7 20.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	1.194E6	-1E6 1E6 1E6 -1E6
+  ga	6  0 11	12 2.514E-3
+  gcm	0  6 10	99 100.5E-9
+  iee  10  4 dc	1.000E-3
+  hlim 90  0 vlim 1K
+  q1   11  2 13	qx
+  q2   12  1 14	qx
+  r2	6  9 100.0E3
+  rc1	3 11 397.8
+  rc2	3 12 397.8
+  re1  13 10 346
+  re2  14 10 346
+  ree  10 99 200.0E3
+  ro1	8  5 25
+  ro2	7 99 25
+  rp	3  4 22.16E3
+  vb	9  0 dc	0
+  vc	3 53 dc	5
+  ve   54  4 dc	5
+  vlim	7  8 dc	0
+  vlp  91  0 dc	40
+  vln	0 92 dc	40
+.ends INPUT
+.subckt	OUTPUT	 1 2 3 4 5
+  c1   11 12 881.7E-15
+  c2	6  7 10.00E-12
+  dc	5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp	4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb	7 99 poly(5) vb	vc ve vlp vln 0	127.3E6	-100E6 100E6 100E6 -100E6
+  ga	6  0 11	12 628.4E-6
+  gcm	0  6 10	99 20.95E-9
+  iss  10  4 dc	900.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10	jx
+  j2   12  1 10	jx
+  r2	6  9 100.0E3
+  rd1	3 11 1.591E3
+  rd2	3 12 1.591E3
+  ro1	8  5 50
+  ro2	7 99 25
+  rp	3  4 11.52E3
+  rss  10 99 222.2E3
+  vb	9  0 dc	0
+  vc	3 53 dc	7
+  ve   54  4 dc	7
+  vlim	7  8 dc	0
+  vlp  91  0 dc	20
+  vln	0 92 dc	20
+.ends OUTPUT
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=5.000E3)
+.model jx NJF(Is=15.00E-12 Beta=877.5E-6 Vto=-1)
+*--------------------------------------------------
+
+
+* k140ud8 operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/05/90 at 15:22
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt k140ud8  1 2 3 4 5
+*
+  c1   11 12 174.6E-15
+  c2    6  7 20.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -100E6 100E6 100E6 -100E6
+  ga    6  0 11 12 125.7E-6
+  gcm   0  6 10 99 12.57E-9
+  iss   3 10 dc 100.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 7.957E3
+  rd2   4 12 7.957E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 18.00E3
+  rss  10 99 2.000E6
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=10.00E-12 Beta=315.9E-6 Vto=-1)
+.ends
+
+* k140ud7 operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/08/90 at 09:23
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt k140ud7  1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 20.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -40E6 40E6 40E6 -40E6
+  ga    6  0 11 12 100.5E-6
+  gcm   0  6 10 99 31.79E-9
+  iee  10  4 dc 14.14E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 9.946E3
+  rc2   3 12 9.946E3
+  re1  13 10 6.189E3
+  re2  14 10 6.189E3
+  ree  10 99 14.14E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 32.36E3
+  vb    9  0 dc 0
+  vc    3 53 dc 3
+  ve   54  4 dc 3
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=100)
+.ends
+
+* k544ud2 operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/11/90 at 10:58
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt k544ud2  1 2 3 4 5 6 7
+*
+  c1   11 12 174.6E-15
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -100E6 100E6 100E6 -100E6
+  ga    6  0 11 12 1.885E-3
+  gcm   0  6 10 99 188.5E-9
+  iss   3 10 dc 400.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 530.5
+  rd2   4 12 530.5
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 9.000E3
+  rss  10 99 500.0E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=17.77E-3 Vto=-1)
+.ends
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt k553ud2  1 2 3 4 5 6 7
+*
+  c1   11 12 8.661E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 37.73E6 -40E6 40E6 40E6 -40E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 2.988E-9
+  iee  10  4 dc 15.06E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 5.305E3
+  rc2   3 12 5.305E3
+  re1  13 10 1.849E3
+  re2  14 10 1.849E3
+  ree  10 99 13.28E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 15.11E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 25
+  vln   0 92 dc 25
+.model dx D(Is=800.0E-18 Rs=1)
+.model qx NPN(Is=800.0E-18 Bf=250)
+.ends
+
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt k140ud11 1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 20.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 636.5E3 -600E3 600E3 600E3 -600E3
+  ga    6  0 11 12 12.57E-3
+  gcm   0  6 10 99 125.7E-9
+  iee  10  4 dc 1.400E-3
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 79.57
+  rc2   3 12 79.57
+  re1  13 10 42.61
+  re2  14 10 42.61
+  ree  10 99 142.8E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 9.678E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 22
+  vln   0 92 dc 22
+.model dx D(Is=800.0E-18 Rs=1)
+.model qx NPN(Is=800.0E-18 Bf=4.667E3)
+.ends
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt 1401ud5  1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 21.22E6 -20E6 20E6 20E6 -20E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 59.61E-9
+  iee   3 10 dc 15.09E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 5.305E3
+  rc2   4 12 5.305E3
+  re1  13 10 1.845E3
+  re2  14 10 1.845E3
+  ree  10 99 13.25E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 9.082E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 0
+  vlim  7  8 dc 0
+  vlp  91  0 dc 40
+  vln   0 92 dc 40
+.model dx D(Is=800.0E-18 Rs=1)
+.model qx PNP(Is=800.0E-18 Bf=166.7)
+.ends
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt k140ud17 1 2 3 4 5
+*
+  c1   11 12 8.661E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 221.0E6 -200E6 200E6 200E6 -200E6
+  ga    6  0 11 12 113.1E-6
+  gcm   0  6 10 99 56.69E-12
+  iee  10  4 dc 6.002E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 8.841E3
+  rc2   3 12 8.841E3
+  re1  13 10 219.4
+  re2  14 10 219.4
+  ree  10 99 33.32E6
+  ro1   8  5 40
+  ro2   7 99 20
+  rp    3  4 12.03E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 30
+  vln   0 92 dc 30
+.model dx D(Is=800.0E-18 Rs=1)
+.model qx NPN(Is=800.0E-18 Bf=3.000E3)
+.ends
+*-----------------------------------------------------------------------------
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt k140ud27 1 2 3 4 5
+*
+  c1   11 12 5.460E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 39.78E6 -40E6 40E6 40E6 -40E6
+  ga    6  0 11 12 1.508E-3
+  gcm   0  6 10 99 755.9E-12
+  iee  10  4 dc 84.02E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 663.1
+  rc2   3 12 663.1
+  re1  13 10 47.24
+  re2  14 10 47.24
+  ree  10 99 2.380E6
+  ro1   8  5 40
+  ro2   7 99 30
+  rp    3  4 9.233E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.200
+  ve   54  4 dc 1.200
+  vlim  7  8 dc 0
+  vlp  91  0 dc 40
+  vln   0 92 dc 40
+.model dx D(Is=800.0E-18 Rs=1)
+.model qx NPN(Is=800.0E-18 Bf=4.200E3)
+.ends
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt k553ud1  1 2 3 4 5 6 7
+*
+  c1   11 12 28.87E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 14.32E3 -10E3 10E3 10E3 -10E3
+  ga    6  0 11 12 31.42E-3
+  gcm   0  6 10 99 993.6E-9
+  iee  10  4 dc 2.000E-3
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 31.83
+  rc2   3 12 31.83
+  re1  13 10 5.962
+  re2  14 10 5.962
+  ree  10 99 99.98E3
+  ro1   8  5 50
+  ro2   7 99 100
+  rp    3  4 45.01E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 50
+  vln   0 92 dc 50
+.model dx D(Is=800.0E-18 Rs=1)
+.model qx NPN(Is=800.0E-18 Bf=5.000E3)
+.ends
+* k1408ud1 operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/24/90 at 10:56
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt k1408ud1 1 2 3 4 5
+*
+  c1   11 12 261.9E-15
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 29.71E6 -30E6 30E6 30E6 -30E6
+  ga    6  0 11 12 94.26E-6
+  gcm   0  6 10 99 31.42E-9
+  iee  10  4 dc 45.08E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 10.61E3
+  rc2   3 12 10.61E3
+  re1  13 10 9.443E3
+  re2  14 10 9.443E3
+  ree  10 99 4.437E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 22.00E3
+  vb    9  0 dc 0
+  vc    3 53 dc 8
+  ve   54  4 dc 8
+  vlim  7  8 dc 0
+  vlp  91  0 dc 100
+  vln   0 92 dc 100
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=562.5)
+.ends
+* k1409ud1 operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/24/90 at 08:47
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt k1409ud1 1 2 3 4 5 6 7
+*
+  c1   11 12 174.6E-15
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 6.365E6 -6E6 6E6 6E6 -6E6
+  ga    6  0 11 12 125.7E-6
+  gcm   0  6 10 99 39.75E-9
+  iss  10  4 dc 80.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   3 11 7.957E3
+  rd2   3 12 7.957E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 10.00E3
+  rss  10 99 2.500E6
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 8.330
+  vln   0 92 dc 8.330
+.model dx D(Is=800.0E-18)
+.model jx NJF(Is=1.000E-9 Beta=394.9E-6 Vto=-1)
+.ends
+* k140ud18 operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/24/90 at 08:55
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt k140ud18 1 2 3 4 5
+*
+  c1   11 12 174.6E-15
+  c2    6  7 20.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 53.05E6 -50E6 50E6 50E6 -50E6
+  ga    6  0 11 12 37.70E-6
+  gcm   0  6 10 99 2.120E-9
+  iss   3 10 dc 40.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 26.52E3
+  rd2   4 12 26.52E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 15.00E3
+  rss  10 99 5.000E6
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 7.500
+  vln   0 92 dc 7.500
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=500.0E-12 Beta=71.08E-6 Vto=-1)
+.ends
+* k140ud22 operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/24/90 at 09:05
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt k140ud22 1 2 3 4 5 6 7
+*
+  c1   11 12 261.9E-15
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -40E6 40E6 40E6 -40E6
+  ga    6  0 11 12 942.6E-6
+  gcm   0  6 10 99 94.26E-9
+  iee  10  4 dc 360.0E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 1.061E3
+  rc2   3 12 1.061E3
+  re1  13 10 917.2
+  re2  14 10 917.2
+  ree  10 99 555.6E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 6.466E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=900.0E3)
+.ends
+* k140ud23 operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/24/90 at 10:13
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt k140ud23 1 2 3 4 5
+*
+  c1   11 12 174.6E-15
+  c2    6  7 20.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 1.591E6 -2E6 2E6 2E6 -2E6
+  ga    6  0 11 12 1.257E-3
+  gcm   0  6 10 99 418.9E-9
+  iss   3 10 dc 600.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 795.7
+  rd2   4 12 795.7
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 8.000E3
+  rss  10 99 333.3E3
+  vb    9  0 dc 0
+  vc    3 53 dc 4.500
+  ve   54  4 dc 4.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 7.500
+  vln   0 92 dc 7.500
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=50.00E-12 Beta=5.265E-3 Vto=-1)
+.ends
+* k1423ud1 operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/24/90 at 10:26
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt k1423ud1 1 2 3 4 5
+*
+  c1   11 12 261.9E-15
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 1.516E6 -2E6 2E6 2E6 -2E6
+  ga    6  0 11 12 263.9E-6
+  gcm   0  6 10 99 87.97E-9
+  iee  10  4 dc 4.800E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 3.789E3
+  rc2   3 12 3.789E3
+  re1  13 10 -6.988E3
+  re2  14 10 -6.988E3
+  ree  10 99 41.67E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 32.31E3
+  vb    9  0 dc 0
+  vc    3 53 dc .8
+  ve   54  4 dc .8
+  vlim  7  8 dc 0
+  vlp  91  0 dc 5
+  vln   0 92 dc 5
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=2.400E6)
+.ends
+* k154ud1 operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/24/90 at 10:43
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt k154ud1  1 2 3 4 5
+*
+  c1   11 12 261.9E-15
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 84.87E6 -80E6 80E6 80E6 -80E6
+  ga    6  0 11 12 94.26E-6
+  gcm   0  6 10 99 4.713E-9
+  iee  10  4 dc 300.0E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 10.61E3
+  rc2   3 12 10.61E3
+  re1  13 10 10.44E3
+  re2  14 10 10.44E3
+  ree  10 99 666.6E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 -125.0E3
+  vb    9  0 dc 0
+  vc    3 53 dc 3
+  ve   54  4 dc 3
+  vlim  7  8 dc 0
+  vlp  91  0 dc 6
+  vln   0 92 dc 6
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=7.500E3)
+.ends
+* k154ud2 operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/24/90 at 10:02
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt k154ud2  1 2 3 4 5 6 7
+*
+  c1   11 12 261.9E-15
+  cee  10 99 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 141.5E3 -100E3 100E3 100E3 -100E3
+  ga    6  0 11 12 2.828E-3
+  gcm   0  6 10 99 942.6E-9
+  iee  10  4 dc 4.500E-3
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 353.6
+  rc2   3 12 353.6
+  re1  13 10 342.1
+  re2  14 10 342.1
+  ree  10 99 44.44E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 -20.00E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 7.500
+  vln   0 92 dc 7.500
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=225.0E3)
+.ends
+* k154ud3 operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/24/90 at 10:06
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt k154ud3  1 2 3 4 5 6 7
+*
+  c1   11 12 261.9E-15
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 141.5E3 -100E3 100E3 100E3 -100E3
+  ga    6  0 11 12 2.828E-3
+  gcm   0  6 10 99 942.6E-9
+  iee  10  4 dc 2.400E-3
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 353.6
+  rc2   3 12 353.6
+  re1  13 10 332
+  re2  14 10 332
+  ree  10 99 83.32E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 27.28E3
+  vb    9  0 dc 0
+  vc    3 53 dc 5
+  ve   54  4 dc 5
+  vlim  7  8 dc 0
+  vlp  91  0 dc 7.500
+  vln   0 92 dc 7.500
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=6.000E3)
+.ends
+* k157ud1 operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/24/90 at 10:52
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt k157ud1  1 2 3 4 5 6 7
+*
+  c1   11 12 261.9E-15
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 21.22E6 -20E6 20E6 20E6 -20E6
+  ga    6  0 11 12 94.26E-6
+  gcm   0  6 10 99 31.42E-9
+  iee  10  4 dc 16.00E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 10.61E3
+  rc2   3 12 10.61E3
+  re1  13 10 6.713E3
+  re2  14 10 6.713E3
+  ree  10 99 12.50E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 6.690E3
+  vb    9  0 dc 0
+  vc    3 53 dc 3
+  ve   54  4 dc 3
+  vlim  7  8 dc 0
+  vlp  91  0 dc 1.000E3
+  vln   0 92 dc 1.000E3
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=15)
+.ends
+* k551ud1a operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/24/90 at 09:33
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt k551ud1a 1 2 3 4 5 6 7
+*
+  c1   11 12 261.9E-15
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 106.1E6 -100E6 100E6 100E6 -100E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 1.885E-9
+  iee  10  4 dc 340.0E-9
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 5.305E3
+  rc2   3 12 5.305E3
+  re1  13 10 -147.5E3
+  re2  14 10 -147.5E3
+  ree  10 99 588.2E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 12.00E3
+  vb    9  0 dc 0
+  vc    3 53 dc 5
+  ve   54  4 dc 5
+  vlim  7  8 dc 0
+  vlp  91  0 dc 7.500
+  vln   0 92 dc 7.500
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=7.500)
+.ends
+* kud1208 operational amplifier "macromodel" subcircuit
+* created using Parts version 1.04 on 10/24/90 at 10:36
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt kud1208  1 2 3 4 5
+*
+  c1   11 12 261.9E-15
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 212.2E6 -200E6 200E6 200E6 -200E6
+  ga    6  0 11 12 18.85E-6
+  gcm   0  6 10 99 6.284E-9
+  iee  10  4 dc 24.10E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 53.05E3
+  rc2   3 12 53.05E3
+  re1  13 10 50.68E3
+  re2  14 10 50.68E3
+  ree  10 99 8.299E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 395.0E3
+  vb    9  0 dc 0
+  vc    3 53 dc 5
+  ve   54  4 dc 5
+  vlim  7  8 dc 0
+  vlp  91  0 dc 10
+  vln   0 92 dc 10
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=240)
+.ends
+
+* 140UD6A operational amplifier "macromodel" subcircuit
+* created using Parts release 5.1 on 12/17/92 at 02:27
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+                 | | | | | balance
+*                | | | | | |  |
+.subckt 140UD6A  1 2 3 4 5 0  0
+*
+  c1   11 12 8.660E-12
+  c2    6  7 20.00E-12
+  cee  10 99 800.0E-15
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -40E6 40E6 40E6 -40E6
+  ga    6  0 11 12 125.7E-6
+  gcm   0  6 10 99 12.57E-9
+  iee  10  4 dc 52.06E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 7.958E3
+  rc2   3 12 7.958E3
+  re1  13 10 6.955E3
+  re2  14 10 6.955E3
+  ree  10 99 3.842E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 10.92E3
+  vb    9  0 dc 0
+  vc    3 53 dc 4
+  ve   54  4 dc 4
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=866.7)
+.ends
+*----------------------------------------------------------
+* 140UD17A operational amplifier "macromodel" subcircuit
+* created using Parts release 5.1 on 12/17/92 at 02:06
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+                 | | | | | balance
+*                | | | | | | |
+.subckt 140UD17A 1 2 3 4 5 0 0
+*
+  c1   11 12 8.660E-12
+  c2    6  7 67.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 114.0E6 -10E6 10E6 10E6 -10E6
+  ga    6  0 11 12 105.2E-6
+  gcm   0  6 10 99 350.8E-12
+  iee  10  4 dc 6.704E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 9.502E3
+  rc2   3 12 9.502E3
+  re1  13 10 1.780E3
+  re2  14 10 1.780E3
+  ree  10 99 29.83E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 7.513E3
+  vb    9  0 dc 0
+  vc    3 53 dc 3
+  ve   54  4 dc 3
+  vlim  7  8 dc 0
+  vlp  91  0 dc 25
+  vln   0 92 dc 25
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=1.675E3)
+.ends
+*--------------------------------------------------------
+* 140UD17B operational amplifier "macromodel" subcircuit
+* created using Parts release 5.1 on 12/17/92 at 02:08
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+                 | | | | | balance
+*                | | | | | | |
+.subckt 140UD17B 1 2 3 4 5 0 0
+*
+  c1   11 12 8.660E-12
+  c2    6  7 67.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 114.0E6 -10E6 10E6 10E6 -10E6
+  ga    6  0 11 12 105.2E-6
+  gcm   0  6 10 99 350.8E-12
+  iee  10  4 dc 6.706E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 9.502E3
+  rc2   3 12 9.502E3
+  re1  13 10 1.780E3
+  re2  14 10 1.780E3
+  ree  10 99 29.82E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 7.513E3
+  vb    9  0 dc 0
+  vc    3 53 dc 3
+  ve   54  4 dc 3
+  vlim  7  8 dc 0
+  vlp  91  0 dc 25
+  vln   0 92 dc 25
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=1.117E3)
+.ends
+*-----------------------------------------------------
+* k153ud6 operational amplifier "macromodel" subcircuit
+* created using Parts release 5.1 on 12/17/92 at 02:33
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt k153ud6  1 2 3 4 5 6 7
+*
+  c1   11 12 8.660E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 26.53E6 -30E6 30E6 30E6 -30E6
+  ga    6  0 11 12 75.40E-6
+  gcm   0  6 10 99 7.540E-9
+  iee  10  4 dc 10.15E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 13.26E3
+  rc2   3 12 13.26E3
+  re1  13 10 7.971E3
+  re2  14 10 7.971E3
+  ree  10 99 19.70E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 10.03E3
+  vb    9  0 dc 0
+  vc    3 53 dc 5
+  ve   54  4 dc 5
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=66.67)
+.ends
+*---------------------------------------------------------
+* 154UD3a operational amplifier "macromodel" subcircuit
+* created using Parts release 5.1 on 12/17/92 at 02:30
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | | balance
+                 | | | | | | | |
+.subckt 154UD3A  1 2 3 4 5 0 0 0
+*
+  c1   11 12 8.660E-12
+  c2    6  7 20pF
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 339.5E3 -30E3 30E3 30E3 -30E3
+  ga    6  0 11 12 942.5E-6
+  gcm   0  6 10 99 74.80E-9
+  iee  10  4 dc 800.5E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 1.061E3
+  rc2   3 12 1.061E3
+  re1  13 10 995.8
+  re2  14 10 995.8
+  ree  10 99 249.9E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 4.839E3
+  vb    9  0 dc 0
+  vc    3 53 dc 5.500
+  ve   54  4 dc 5.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 10
+  vln   0 92 dc 10
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=1.778E3)
+.ends
+*---------------------------------------------------------
