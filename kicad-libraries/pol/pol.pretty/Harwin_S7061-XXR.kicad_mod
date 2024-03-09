@@ -1,0 +1,245 @@
+(footprint "Harwin_S7061-XXR"
+	(version 20240108)
+	(generator "pcbnew")
+	(generator_version "8.0")
+	(layer "F.Cu")
+	(descr "Spring Contact, 5.5mm SMD")
+	(property "Reference" "REF**"
+		(at 3.9 0 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(uuid "5e57abee-1126-40ea-ad9c-729a49997d48")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "Value" "Harwin_S7061-XXR"
+		(at 0 -1.9 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "2daa5c2c-6002-49fd-b1a0-f89b0c727705")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(property "Footprint" ""
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "ea953236-fe8a-43b4-9baf-dec8928ecccf")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Datasheet" "https://cdn.harwin.com/pdfs/S7061R.pdf"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "d89c8da4-a08f-4c96-a1db-b75574977bde")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Description" "Spring Contact, 5.5mm SMD"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(hide yes)
+		(uuid "100f2eee-71c8-4804-bd3a-132eb43c85e7")
+		(effects
+			(font
+				(size 1.27 1.27)
+			)
+		)
+	)
+	(property "Manufacturer" "Harwin Inc."
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "6538cc88-e3cb-43d9-810d-057e4213363a")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(property "PartNumber" "S7061-XXR"
+		(at 0 0 0)
+		(unlocked yes)
+		(layer "F.SilkS")
+		(hide yes)
+		(uuid "70c0d725-f84d-4158-a60a-416eed1a8fb9")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.1)
+			)
+		)
+	)
+	(attr smd)
+	(fp_line
+		(start -3.7 -1.4)
+		(end -3.7 1.4)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "32df2323-289b-4a74-85ea-7c8f7fcfcd5f")
+	)
+	(fp_line
+		(start -3.7 1.4)
+		(end 3.7 1.4)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "49948a4d-6a87-44c8-9840-f4c01aadacf8")
+	)
+	(fp_line
+		(start 3.7 -1.4)
+		(end -3.7 -1.4)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "65de556a-a93d-4b11-aa06-b6f879a8ac47")
+	)
+	(fp_line
+		(start 3.7 1.4)
+		(end 3.7 -1.4)
+		(stroke
+			(width 0.05)
+			(type default)
+		)
+		(layer "F.CrtYd")
+		(uuid "17d95de8-b6f8-4212-a90e-d570ec918779")
+	)
+	(fp_line
+		(start -3.5 -1.25)
+		(end 3.5 -1.25)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "950f0ff2-1277-4d46-af34-176f29b20c87")
+	)
+	(fp_line
+		(start -3.5 1.25)
+		(end -3.5 -1.25)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "bf997c10-c23c-46c7-8fc7-77ceb641c9e8")
+	)
+	(fp_line
+		(start -3.5 1.25)
+		(end 3.5 1.25)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "6fa72928-1180-409e-b84a-4bf92471603e")
+	)
+	(fp_line
+		(start -1.8 1.25)
+		(end -1.8 -1.25)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "8c92f2e6-fefc-4089-94dc-6b998442d03d")
+	)
+	(fp_line
+		(start 0.8 -1)
+		(end -3.5 -1.25)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "60841493-19d9-4618-b11d-8284dac7beee")
+	)
+	(fp_line
+		(start 0.8 -1)
+		(end 0.8 1)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "90eda7e5-eafc-489a-8f68-ded56f443850")
+	)
+	(fp_line
+		(start 0.8 1)
+		(end -3.5 1.25)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "62fb4158-a937-4eda-9c8d-b81973252a5b")
+	)
+	(fp_line
+		(start 3.5 1.25)
+		(end 3.5 -1.25)
+		(stroke
+			(width 0.1)
+			(type default)
+		)
+		(layer "F.Fab")
+		(uuid "697a893d-c03e-4725-b3a9-6ad5b3cb3464")
+	)
+	(fp_text user "${REFERENCE}"
+		(at 0 2.5 0)
+		(unlocked yes)
+		(layer "F.Fab")
+		(uuid "1740b87f-2ac5-4e5a-a2c5-b62cf19f88da")
+		(effects
+			(font
+				(size 1 1)
+				(thickness 0.15)
+			)
+		)
+	)
+	(pad "1" smd rect
+		(at 0 0)
+		(size 7.4 2.9)
+		(layers "F.Cu" "F.Paste" "F.Mask")
+		(thermal_bridge_angle 45)
+		(uuid "722022eb-aacb-4369-ad68-f1984bd2c412")
+	)
+	(model "${POL_LIB}/pol.3dshapes/Harwin_s7061-42r.stp"
+		(offset
+			(xyz 0.3 0 2.6)
+		)
+		(scale
+			(xyz 1 1 1)
+		)
+		(rotate
+			(xyz -90 0 0)
+		)
+	)
+)
