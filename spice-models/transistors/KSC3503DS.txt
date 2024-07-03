@@ -1,0 +1,18 @@
+************ Power Discrete BJT Electrical Parameters ***************
+** Product: KSC3503DS
+** Package: TO-126
+**-------------------------------------------------------------------
+.MODEL KSC3503DS NPN
++ IS=3.510E-14            BF=174.09             VAF=600
++ IKF=0.12325             ISE=2.2538E-13        NE=2.0
++ BR=0.64499              VAR=100               IKR=0.43102
++ ISC=6.4644E-10          NC=1.5                RE=0.048
++ RC=0.815                RB=8.134              RBM=0.034
++ IRB=3.0e-6              CJE=8.10E-12          MJE=0.401
++ VJE=0.75                CJC=8.20E-12          MJC=0.31
++ VJC=0.75                TF=9.995E-10          XTF=2
++ VTF=35                  ITF=1                 TR=1.0E-8
++ EG=0.84                 XTB=2.5               FC=0.5
+**-------------------------------------------------------------------
+** Creation: Sep.-01-2011   Rev: 0.0
+** Fairchild Semiconductor

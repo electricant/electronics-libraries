@@ -1,0 +1,92 @@
+***********************************************************
+*
+* BF723
+*
+* Nexperia
+*
+* High voltage PNP Transistor
+* IC   = 100 mA
+* VCEO = 250 V 
+* hFE  = min. 50 @ 20V/25mA
+*
+*
+*
+*
+* Package pinning does not match Spice model pinning.
+* Package: SOT 223
+* 
+* Package Pin 1: Base
+* Package Pin 2: Collector
+* Package Pin 3: Emitter
+* Package Pin 4: Collector
+*
+* Extraction date (week/year): 10/2019  
+* Spicemodel includes temperature dependency
+*
+**********************************************************
+*#
+* Please note: Diode D1, Transistor Q2 and Resistor RQ 
+* are dedicated to improve modeling of quasi
+* saturation area and reverse mode operation
+* and do not reflect physical devices.
+* 
+.SUBCKT BF723 1 2 3
+Q1 1 2 3 MAIN 0.7842
+Q2 11 2 3 MAIN 0.2158
+RQ 1 11 752.4
+D1 1 2 DIODE
+*
+.MODEL MAIN PNP
++ IS = 2.466E-14
++ NF = 1.001
++ ISE = 4.966E-14
++ NE = 1.716
++ BF = 120
++ IKF = 0.008858
++ VAF = 129.8
++ NR = 1.003
++ ISC = 1.889E-14
++ NC = 1.201
++ BR = 1.977
++ IKR = 0.1221
++ VAR = 34.94
++ RB = 50
++ IRB = 0.00053
++ RBM = 0.3
++ RE = 0.01
++ RC = 0.3809
++ XTB = 1.927
++ EG = 1.11
++ XTI = 10.73
++ CJE = 3.85E-11
++ VJE = 0.672
++ MJE = 0.3369
++ TF = 6.503E-10
++ XTF = 25
++ VTF = 8.862
++ ITF = 0.0509
++ PTF = 0
++ CJC = 1.123E-11
++ VJC = 0.461
++ MJC = 0.3869
++ XCJC = 0.459
++ TR = 1E-05
++ CJS = 0
++ VJS = 0.75
++ MJS = 0.333
++ FC = 0.99
+.MODEL DIODE D
++ IS = 1.51E-12
++ N = 1.14
++ BV = 1000
++ IBV = 0.001
++ RS = 170.6
++ CJO = 0
++ VJ = 1
++ M = 0.5
++ FC = 0
++ TT = 0
++ EG = 1.11
++ XTI = 3
+.ENDS
+*

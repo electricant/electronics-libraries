@@ -1,0 +1,34 @@
+************ Power Discrete BJT Electrical Circuit Model ***************
+** Product: KSA1381
+** Package: TO-126
+** CRT Display, Video Output
+**----------------------------------------------------------------------
+.MODEL KSA1381 pnp          
++ IS = 5.5544E-14     
++ BF = 148                          
++ BR = 1.592                    
++ ISE = 2.0546E-15        
++ NE = 1.5               
++ ISC = 3.24807E-10
++ NC = 2                  
++ VAF = 580
++ VAR = 100
++ IKF = 0.2163            
++ IKR = 0.087544 
++ RB = 10.18             
++ RE = 0.0512 
++ RC = 4.072                
++ CJE = 9.572E-12
++ VJE = 0.748  
++ MJE = 0.371          
++ FC = 0.5  
++ CJC = 1.147E-12
++ VJC = 0.541          
++ MJC = 0.329
++ TF = 1.0312E-09
++ XTB = 0.907
++ EG = 0.62
++ XTI = 3
+**----------------------------------------------------------------------
+** Creation: Aug-30-2007 Rev: 2.0
+** Fairchild Semiconductor
