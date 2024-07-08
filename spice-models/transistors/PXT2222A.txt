@@ -1,0 +1,88 @@
+***********************************************************
+*
+* PXT2222A
+*
+* Nexperia
+*
+* Switching NPN Transistor
+* IC   = 100 mA
+* VCEO = 40 V
+* hFE  = 100 - 300  @ 10V/150mA
+*
+*
+*
+*
+* Package pinning does not match Spice model pinning.
+* Package: SOT 89
+*
+* Package Pin 1: Emitter
+* Package Pin 2: Collector
+* Package Pin 3: Base
+*
+*
+* Extraction date (week/year): 25/2014
+* Spicemodel includes temperature dependency
+*
+**********************************************************
+*#
+* Please note: Diode D1 is dedicated to improve modeling in reverse
+* mode of operation and does not reflect a physical device.
+*
+.SUBCKT PXT2222A 1 2 3
+Q1 1 2 3 MAIN
+D1 2 1 DIODE
+*
+.MODEL MAIN NPN
++ IS = 1.718E-014
++ NF = 0.9872
++ ISE = 5.598E-015
++ NE = 1.415
++ BF = 231
++ IKF = 0.774
++ VAF = 47.16
++ NR = 0.985
++ ISC = 1.754E-016
++ NC = 1.182
++ BR = 4.5
++ IKR = 0.01941
++ VAR = 11.97
++ RB = 120
++ IRB = 0.001
++ RBM = 6.2
++ RE = 0.04575
++ RC = 0.3532
++ XTB = 1.679
++ EG = 1.11
++ XTI = 5.305
++ CJE = 3.431E-011
++ VJE = 0.6681
++ MJE = 0.2959
++ TF = 3.7E-010
++ XTF = 25
++ VTF = 2
++ ITF = 0.18
++ PTF = 0
++ CJC = 1.046E-011
++ VJC = 0.4009
++ MJC = 0.3151
++ XCJC = 1
++ TR = 8.5E-008
++ CJS = 0
++ VJS = 0.75
++ MJS = 0.333
++ FC = 0.78
+.MODEL DIODE D
++ IS = 2.018E-012
++ N = 1.111
++ BV = 1000
++ IBV = 0.001
++ RS = 341.5
++ CJO = 0
++ VJ = 1
++ M = 0.5
++ FC = 0
++ TT = 0
++ EG = 1.11
++ XTI = 3
+.ENDS
+*

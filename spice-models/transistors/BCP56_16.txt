@@ -1,0 +1,92 @@
+***********************************************************
+*
+* BCP56_16
+*
+* Nexperia
+*
+* Medium power NPN Transistor
+* IC   = 1 A
+* VCEO = 80 V
+* hFE  = 100 - 250 @ 2V/150mA
+*
+*
+*
+*
+* Package pinning does not match Spice model pinning.
+* Package: SOT 223
+*
+* Package Pin 1: Base
+* Package Pin 2: Collector
+* Package Pin 3: Emitter
+* Package Pin 4: Collector
+*
+* Extraction date (week/year): 17/2022
+* Spicemodel includes temperature dependency
+*
+**********************************************************
+*#
+* Please note: Diode D1, Transistor Q2 and Resistor RQ
+* are dedicated to improve modeling of quasi
+* saturation area and reverse mode operation
+* and do not reflect physical devices.
+*
+.SUBCKT BCP56_16 1 2 3
+Q1 1 2 3 MAIN 0.9101
+Q2 11 2 3 MAIN 0.08992
+RQ 1 11 50
+D1 2 1 DIODE
+*
+.MODEL MAIN NPN
++ IS = 8.811E-14
++ NF = 0.9954
++ ISE = 1.113E-14
++ NE = 1.52
++ BF = 142
++ IKF = 0.6416
++ VAF = 8
++ NR = 0.9943
++ ISC = 2.266E-14
++ NC = 1.361
++ BR = 35.83
++ IKR = 1.883
++ VAR = 81
++ RB = 10.4
++ IRB = 0.0011
++ RBM = 2.5
++ RE = 0.0864
++ RC = 0.09966
++ XTB = 0.6022
++ EG = 1.11
++ XTI = 6.507
++ CJE = 1.442E-10
++ VJE = 0.7013
++ MJE = 0.3245
++ TF = 7.8E-10
++ XTF = 7
++ VTF = 5
++ ITF = 2
++ PTF = 0
++ CJC = 2.052E-11
++ VJC = 0.5
++ MJC = 0.4015
++ XCJC = 1
++ TR = 2.3E-08
++ CJS = 0
++ VJS = 0.75
++ MJS = 0.333
++ FC = 0.9
+.MODEL DIODE D
++ IS = 1.323E-14
++ N = 0.9814
++ BV = 1000
++ IBV = 0.001
++ RS = 3185
++ CJO = 0
++ VJ = 1
++ M = 0.5
++ FC = 0
++ TT = 0
++ EG = 1.11
++ XTI = 3
+.ENDS
+*
