@@ -1,0 +1,490 @@
+* Library of Japanese Junction Field-Effect Transistor (JFET) Models
+
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+
+* $Revision:   1.5  $
+* $Author:   RPEREZ  $
+* $Date:   17 Apr 1998 15:23:14  $
+*
+* ---------------------------------------------------------------------------
+* The parameters in this model library were derived from the data sheets for
+* each part.  Each part was characterized using the Parts option.
+* ---------------------------------------------------------------------------
+*$
+.model J2sj40   PJF(Beta=2.211m Rs=98.27 Rd=98.27 Betatce=-.5 Lambda=2.571m
++               Vto=-2.046 Vtotc=-2.5m Cgd=1p M=.3333 Pb=1 Fc=.5 Cgs=17.55p
++               Isr=154.3p Nr=2 Is=15.43p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sj44   PJF(Beta=20.62m Rs=1 Rd=1 Betatce=-.5 Lambda=1.5m Vto=-.6711
++               Vtotc=-2.5m Cgd=17.79p M=.3333 Pb=1 Fc=.5 Cgs=32p Isr=174.9p
++               Nr=2 Is=17.49p N=1 Xti=3 Alpha=10u Vk=100 Kf=81.89E-18 Af=1)
+*$
+.model J2SJ45   PJF(Beta=20.62m Rs=1 Rd=1 Betatce=-.5 Lambda=1.5m Vto=-.6263
++               Vtotc=-2.5m Cgd=17.79p M=.3333 Pb=1 Fc=.5 Cgs=32p Isr=174.9p
++               Nr=2 Is=17.49p N=1 Xti=3 Alpha=10u Vk=100 Kf=.2025 Af=1)
+*$
+.model J2sj72   PJF(Beta=98.77m Rs=0 Rd=0 Betatce=-.5 Lambda=2.348m Vto=-.4509
++               Vtotc=-2.5m Cgd=146.3p M=.3167 Pb=.3905 Fc=.5 Cgs=142.1p
++               Isr=129.8p Nr=2 Is=12.98p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=61.28E-18 Af=1)
+*$
+.model J2sj74   PJF(Beta=92.12m Rs=7.748 Rd=7.748 Betatce=-.5 Lambda=4.464m
++               Vto=-.5428 Vtotc=-2.5m Cgd=85.67p M=.3246 Pb=.3905 Fc=.5
++               Cgs=78.27p Isr=129.8p Nr=2 Is=12.98p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=26.64E-18 Af=1)
+*$
+.model J2sj103  PJF(Beta=2.197m Rs=76.76 Rd=76.76 Betatce=-.5 Lambda=735.3u
++               Vto=-2.037 Vtotc=-2.5m Cgd=18.95p M=.5045 Pb=.3905 Fc=.5
++               Cgs=17.02p Isr=38.48f Nr=2 Is=3.848f N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sj104  PJF(Beta=.108 Rs=9.661 Rd=9.661 Betatce=-.5 Lambda=3.626m
++               Vto=-.5426 Vtotc=-2.5m Cgd=88.37p M=.326 Pb=.3905 Fc=.5
++               Cgs=76.59p Isr=874.9f Nr=2 Is=87.49f N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sj105  PJF(Beta=1.547m Rs=44.12 Rd=44.12 Betatce=-.5 Lambda=9.39m
++               Vto=-2.083 Vtotc=-2.5m Cgd=16.52p M=.4604 Pb=.3905 Fc=.5
++               Cgs=14.58p Isr=46.51f Nr=2 Is=4.651f N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sj106  PJF(Beta=2.024m Rs=73.27 Rd=73.27 Betatce=-.5 Lambda=10.16m
++               Vto=-2.034 Vtotc=-2.5m Cgd=14.1p M=.4932 Pb=.6889 Fc=.5
++               Cgs=14.53p Isr=53f Nr=2 Is=5.3f N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sj107  PJF(Beta=.1025 Rs=7.903 Rd=7.903 Betatce=-.5 Lambda=3.626m
++               Vto=-.5399 Vtotc=-2.5m Cgd=88.39p M=.3263 Pb=.3905 Fc=.5
++               Cgs=75.72p Isr=1.143p Nr=2 Is=114.3f N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sj108  PJF(Beta=.1019 Rs=8.625 Rd=8.625 Betatce=-.5 Lambda=4.73m
++               Vto=-.5376 Vtotc=-2.5m Cgd=87.55p M=.3346 Pb=.3905 Fc=.5
++               Cgs=71.9p Isr=120.7p Nr=2 Is=12.07p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=25.16E-18 Af=1)
+*$
+.model J2sj109  PJF(Beta=39.21m Rs=0 Rd=0 Betatce=-.5 Lambda=4.338m Vto=-.5762
++               Vtotc=-2.5m Cgd=67.64p M=.2562 Pb=.3905 Fc=.5 Cgs=61.12p
++               Isr=158.7p Nr=2 Is=15.87p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=109.9E-18 Af=1)
+*$
+.model J2sj125  PJF(Beta=2.211m Rs=98.27 Rd=98.27 Betatce=-.5 Lambda=2.571m
++               Vto=-2.046 Vtotc=-2.5m Cgd=1p M=.3333 Pb=1 Fc=.5 Cgs=17.55p
++               Isr=154.3p Nr=2 Is=15.43p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sj129  PJF(Beta=5.262m Rs=12.33 Rd=12.33 Betatce=-.5 Lambda=2.98m
++               Vto=-1.264 Vtotc=-2.5m Cgd=8.006p M=.3333 Pb=1 Fc=.5 Cgs=18.4p
++               Isr=15.43n Nr=2 Is=1.543n N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sj144  PJF(Beta=1.815m Rs=62.06 Rd=62.06 Betatce=-.5 Lambda=7.747m
++               Vto=-2.077 Vtotc=-2.5m Cgd=11.35p M=.5109 Pb=1.232 Fc=.5
++               Cgs=14.58p Isr=65.84f Nr=2 Is=6.584f N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sj145  PJF(Beta=2.211m Rs=98.27 Rd=98.27 Betatce=-.5 Lambda=2.571m
++               Vto=-2.046 Vtotc=-2.5m Cgd=1p M=.3333 Pb=1 Fc=.5 Cgs=17.55p
++               Isr=154.3p Nr=2 Is=15.43p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sj163  PJF(Beta=1.534m Rs=0 Rd=0 Betatce=-.5 Lambda=10m Vto=-1.121
++               Vtotc=-2.5m Cgd=8.895p M=.3333 Pb=1 Fc=.5 Cgs=8p Isr=1.543n
++               Nr=2 Is=154.3p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sj164  PJF(Beta=1.534m Rs=0 Rd=0 Betatce=-.5 Lambda=10m Vto=-1.171
++               Vtotc=-2.5m Cgd=6.671p M=.3333 Pb=1 Fc=.5 Cgs=7p Isr=1.543n
++               Nr=2 Is=154.3p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk104  NJF(Beta=4.145m Rs=102.5 Rd=102.5 Betatce=-.5 Lambda=16m
++               Vto=-2.003 Vtotc=-2.5m Cgd=2.001p M=.3333 Pb=1 Fc=.5 Cgs=3.17p
++               Isr=1.543n Nr=2 Is=154.3p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk105  NJF(Beta=3.955m Rs=99.46 Rd=99.46 Betatce=-.5 Lambda=16m
++               Vto=-2.003 Vtotc=-2.5m Cgd=2.001p M=.3333 Pb=1 Fc=.5 Cgs=3.17p
++               Isr=154.3p Nr=2 Is=15.43p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk108  NJF(Beta=28.33m Rs=14.67 Rd=14.67 Betatce=-.5 Lambda=2.273m
++               Vto=-.6597 Vtotc=-2.5m Cgd=1p M=.3333 Pb=1 Fc=.5 Cgs=19.55p
++               Isr=154.3p Nr=2 Is=15.43p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk110  NJF(Beta=85.09m Rs=0 Rd=0 Betatce=-.5 Lambda=7.031m Vto=-.3784
++               Vtotc=-2.5m Cgd=26p M=.3333 Pb=1 Fc=.5 Cgs=40.69p Isr=174.9p
++               Nr=2 Is=17.49p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk117  NJF(Beta=26.72m Rs=12.31 Rd=12.31 Betatce=-.5 Lambda=2.462m
++               Vto=-.8647 Vtotc=-2.5m Cgd=7.762p M=.384 Pb=1.153 Fc=.5
++               Cgs=14.09p Isr=112.8p Nr=2 Is=11.28p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk118  NJF(Beta=900.4u Rs=35.9 Rd=35.9 Betatce=-.5 Lambda=330.7u
++               Vto=-2.715 Vtotc=-2.5m Cgd=5.674p M=.455 Pb=2.002 Fc=.5
++               Cgs=6.557p Isr=112.8p Nr=2 Is=11.28p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk121  NJF(Beta=5.257m Rs=1 Rd=1 Betatce=-.5 Lambda=10.82m Vto=-1.136
++               Vtotc=-2.5m Cgd=5.337p M=.3333 Pb=1 Fc=.5 Cgs=8.322p Isr=190.9p
++               Nr=2 Is=19.09p N=1 Xti=3 Alpha=10u Vk=100 Kf=3.579f Af=1)
+*$
+.model J2sk123  NJF(Beta=5.803m Rs=161.2 Rd=161.2 Betatce=-.5 Lambda=37m
++               Vto=-.2958 Vtotc=-2.5m Cgd=1p M=.3333 Pb=1 Fc=.5 Cgs=1p Isr=1p
++               Nr=2 Is=100f N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk125  NJF(Beta=16.37m Rs=32.76 Rd=32.76 Betatce=-.5 Lambda=20m
++               Vto=-3.217 Vtotc=-2.5m Cgd=5.782p M=.3333 Pb=1 Fc=.5 Cgs=5.4p
++               Isr=1.909n Nr=2 Is=190.9p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=146.1E-18 Af=1)
+*$
+.model J2sk146  NJF(Beta=75.04m Rs=1.116 Rd=1.116 Betatce=-.5 Lambda=689.7u
++               Vto=-.5038 Vtotc=-2.5m Cgd=46.53p M=.3541 Pb=.3905 Fc=.5
++               Cgs=69.32p Isr=104.7p Nr=2 Is=10.47p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=21.36E-18 Af=1)
+*$
+.model J2sk147  NJF(Beta=83.15m Rs=1.055 Rd=1.055 Betatce=-.5 Lambda=824.7u
++               Vto=-.3535 Vtotc=-2.5m Cgd=46.24p M=.3582 Pb=.3905 Fc=.5
++               Cgs=70.25p Isr=84.77p Nr=2 Is=8.477p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=29.26f Af=1)
+*$
+.model J2sk152  NJF(Beta=22.6m Rs=9.028 Rd=9.028 Betatce=-.5 Lambda=33.33m
++               Vto=-1.067 Vtotc=-2.5m Cgd=3.634p M=.3333 Pb=1 Fc=.5 Cgs=5.892p
++               Isr=51.93p Nr=864.6 Is=5.193p N=1 Xti=3 Alpha=435.7u Vk=81.6
++               Kf=2.599E-18 Af=.7991)
+*$
+.model J2sk163  NJF(Beta=16.97m Rs=.3153 Rd=.3153 Betatce=-.5 Lambda=10m
++               Vto=-.8096 Vtotc=-2.5m Cgd=13.34p M=.3333 Pb=1 Fc=.5 Cgs=9p
++               Isr=174.9p Nr=2 Is=17.49p N=1 Xti=3 Alpha=10u Vk=100 Kf=0 Af=1)
+*$
+.model J2sk170  NJF(Beta=59.86m Rs=4.151 Rd=4.151 Betatce=-.5 Lambda=1.923m
++               Vto=-.5024 Vtotc=-2.5m Cgd=20p M=.3805 Pb=.4746 Fc=.5
++               Cgs=25.48p Isr=84.77p Nr=2 Is=8.477p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=111.3E-18 Af=1)
+*$
+.model J2sk184  NJF(Beta=22.59m Rs=9.159 Rd=9.159 Betatce=-.5 Lambda=1.853f
++               Vto=-.8914 Vtotc=-2.5m Cgd=8.59p M=.2921 Pb=.3905 Fc=.5
++               Cgs=14.37p Isr=112.8p Nr=2 Is=11.28p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk198  NJF(Beta=13.86m Rs=0 Rd=0 Betatce=-.5 Lambda=10m Vto=-.6364
++               Vtotc=-2.5m Cgd=7.783p M=.3333 Pb=1 Fc=.5 Cgs=8.5p Isr=15.43n
++               Nr=2 Is=1.543n N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk208  NJF(Beta=1.059m Rs=56.63 Rd=56.63 Betatce=-.5 Lambda=2.8m
++               Vto=-2.638 Vtotc=-2.5m Cgd=10.38p M=.4373 Pb=.3905 Fc=.5
++               Cgs=6.043p Isr=112.8p Nr=2 Is=11.28p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk212  NJF(Beta=4.444m Rs=25.32 Rd=25.32 Betatce=-.5 Lambda=1.315u
++               Vto=-1.446 Vtotc=-2.5m Cgd=105.4f M=.3333 Pb=1 Fc=.5 Cgs=3.95p
++               Isr=4.016n Nr=2 Is=401.6p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk218  NJF(Beta=21.75m Rs=9.079 Rd=9.079 Betatce=-.5 Lambda=4.184m
++               Vto=-1.19 Vtotc=-2.5m Cgd=2.308p M=.3333 Pb=1 Fc=.5 Cgs=6.73p
++               Isr=476.2p Nr=2 Is=47.62p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=5.418E-18 Af=.4915)
+*$
+.model J2sk223  NJF(Beta=13.4m Rs=3.185 Rd=3.185 Betatce=-.5 Lambda=261.7u
++               Vto=-1.205 Vtotc=-2.5m Cgd=7.853p M=.3333 Pb=1 Fc=.5 Cgs=9.5p
++               Isr=154.3p Nr=2 Is=15.43p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk242  NJF(Beta=3.326m Rs=5.875 Rd=5.875 Betatce=-.5 Lambda=1.429u
++               Vto=-1.514 Vtotc=-2.5m Cgd=72.68f M=.3333 Pb=1 Fc=.5 Cgs=3.96p
++               Isr=4.016n Nr=2 Is=401.6p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk246  NJF(Beta=1.07m Rs=56.76 Rd=56.76 Betatce=-.5 Lambda=2.8m
++               Vto=-2.638 Vtotc=-2.5m Cgd=10.38p M=.4373 Pb=.3905 Fc=.5
++               Cgs=6.043p Isr=112.8p Nr=2 Is=11.28p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk266  NJF(Beta=1.194m Rs=96.01 Rd=96.01 Betatce=-.5 Lambda=8.325m
++               Vto=-.6041 Vtotc=-2.5m Cgd=1p M=.3333 Pb=1 Fc=.5 Cgs=9.406p
++               Isr=1p Nr=2 Is=100f N=1 Xti=3 Alpha=10u Vk=100 Kf=21.36E-18
++               Af=1)
+*$
+.model J2sk300  NJF(Beta=24.54m Rs=10.28 Rd=10.28 Betatce=-.5 Lambda=33.33m
++               Vto=-1.068 Vtotc=-2.5m Cgd=3.634p M=.3333 Pb=1 Fc=.5 Cgs=5.923p
++               Isr=49.61p Nr=898.5 Is=4.961p N=1 Xti=3 Alpha=290.6u Vk=77.59
++               Kf=2.712E-18 Af=.7967)
+*$
+.model J2sk301  NJF(Beta=3.559m Rs=28.98 Rd=28.98 Betatce=-.5 Lambda=20.43m
++               Vto=-1.562 Vtotc=-2.5m Cgd=4.225p M=.3333 Pb=1 Fc=.5 Cgs=4.6p
++               Isr=1.543n Nr=2 Is=154.3p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk303  NJF(Beta=3.801m Rs=25.61 Rd=25.61 Betatce=-.5 Lambda=3.8m
++               Vto=-1.766 Vtotc=-2.5m Cgd=3.336p M=.3333 Pb=1 Fc=.5 Cgs=3.5p
++               Isr=174.9p Nr=2 Is=17.49p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk304  NJF(Beta=3.7m Rs=22.22 Rd=22.22 Betatce=-.5 Lambda=7.407m
++               Vto=-1.728 Vtotc=-2.5m Cgd=3.336p M=.3333 Pb=1 Fc=.5 Cgs=3.5p
++               Isr=174.9p Nr=2 Is=17.49p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk316  NJF(Beta=16.36m Rs=8.135 Rd=8.135 Betatce=-.5 Lambda=45.45m
++               Vto=-.9948 Vtotc=-2.5m Cgd=2.08p M=.3333 Pb=1 Fc=.5 Cgs=3.968p
++               Isr=476.2p Nr=2 Is=47.62p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=5.03E-18 Af=.5737)
+*$
+.model J2sk330  NJF(Beta=996.5u Rs=47.61 Rd=47.61 Betatce=-.5 Lambda=6.66m
++               Vto=-2.623 Vtotc=-2.5m Cgd=10.38p M=.4373 Pb=.3905 Fc=.5
++               Cgs=6.043p Isr=1.101p Nr=2 Is=110.1f N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk332  NJF(Beta=22.23m Rs=1.246 Rd=1.246 Betatce=-.5 Lambda=4.433m
++               Vto=-.6434 Vtotc=-2.5m Cgd=6.671p M=.3333 Pb=1 Fc=.5 Cgs=10p
++               Isr=174.9p Nr=2 Is=17.49p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk333  NJF(Beta=13.54m Rs=3.571 Rd=3.571 Betatce=-.5 Lambda=261.7u
++               Vto=-.9871 Vtotc=-2.5m Cgd=6.282p M=.3333 Pb=1 Fc=.5 Cgs=9p
++               Isr=154.3p Nr=2 Is=15.43p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk334  NJF(Beta=2.351m Rs=77.01 Rd=77.01 Betatce=-.5 Lambda=.125
++               Vto=-.422 Vtotc=-2.5m Cgd=4.67p M=.3333 Pb=1 Fc=.5 Cgs=5p
++               Isr=1p Nr=2 Is=100f N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk362  NJF(Beta=32.9m Rs=13.97 Rd=13.97 Betatce=-.5 Lambda=3.656m
++               Vto=-.5996 Vtotc=-2.5m Cgd=8.385p M=.2804 Pb=.3905 Fc=.5
++               Cgs=14.13p Isr=143.2f Nr=2 Is=14.32f N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk363  NJF(Beta=87.8m Rs=2.238 Rd=2.238 Betatce=-.5 Lambda=1.157m
++               Vto=-.5798 Vtotc=-2.5m Cgd=47.41p M=.3702 Pb=.3905 Fc=.5
++               Cgs=70.37p Isr=1.027p Nr=2 Is=102.7f N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk364  NJF(Beta=66.89m Rs=5.895 Rd=5.895 Betatce=-.5 Lambda=6.579m
++               Vto=-.4467 Vtotc=-2.5m Cgd=22.34p M=.3865 Pb=.3905 Fc=.5
++               Cgs=24.31p Isr=204.1f Nr=2 Is=20.41f N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk365  NJF(Beta=32.67m Rs=15.46 Rd=15.46 Betatce=-.5 Lambda=981.2u
++               Vto=-.6657 Vtotc=-2.5m Cgd=8.547p M=.2869 Pb=.3905 Fc=.5
++               Cgs=14.06p Isr=125f Nr=2 Is=12.5f N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk366  NJF(Beta=64.8m Rs=5.353 Rd=5.353 Betatce=-.5 Lambda=3.772m
++               Vto=-.5976 Vtotc=-2.5m Cgd=22.88p M=.3889 Pb=.3905 Fc=.5
++               Cgs=26.03p Isr=205.9f Nr=2 Is=20.59f N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk367  NJF(Beta=5.71m Rs=97.67 Rd=97.67 Betatce=-.5 Lambda=1.299m
++               Vto=-1.441 Vtotc=-2.5m Cgd=9.66p M=.3654 Pb=.3905 Fc=.5
++               Cgs=9.61p Isr=70.37p Nr=2 Is=7.037p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk368  NJF(Beta=5.71m Rs=97.67 Rd=97.67 Betatce=-.5 Lambda=1.299m
++               Vto=-1.441 Vtotc=-2.5m Cgd=9.66p M=.3654 Pb=.3905 Fc=.5
++               Cgs=9.61p Isr=70.37p Nr=2 Is=7.037p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk369  NJF(Beta=82.61m Rs=1.556 Rd=1.556 Betatce=-.5 Lambda=414.5u
++               Vto=-.3552 Vtotc=-2.5m Cgd=46.72p M=.3623 Pb=.3905 Fc=.5
++               Cgs=70.51p Isr=86.47p Nr=2 Is=8.647p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=74.85E-18 Af=1)
+*$
+.model J2sk370  NJF(Beta=62.95m Rs=4.733 Rd=4.733 Betatce=-.5 Lambda=1.19m
++               Vto=-.4562 Vtotc=-2.5m Cgd=23.16p M=.3938 Pb=.3905 Fc=.5
++               Cgs=23.61p Isr=86.47p Nr=2 Is=8.647p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=55.11E-18 Af=1)
+*$
+.model J2sk371  NJF(Beta=77.06m Rs=.3627 Rd=.3627 Betatce=-.5 Lambda=519.8u
++               Vto=-.359 Vtotc=-2.5m Cgd=46.37p M=.3604 Pb=.3905 Fc=.5
++               Cgs=70.66p Isr=86.47p Nr=2 Is=8.647p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=85.86E-18 Af=1)
+*$
+.model J2sk372  NJF(Beta=86.85m Rs=2.288 Rd=2.288 Betatce=-.5 Lambda=2.299m
++               Vto=-.5041 Vtotc=-2.5m Cgd=47.11p M=.3677 Pb=.4158 Fc=.5
++               Cgs=67.97p Isr=968.5f Nr=2 Is=96.85f N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk373  NJF(Beta=5.71m Rs=97.67 Rd=97.67 Betatce=-.5 Lambda=1.299m
++               Vto=-1.441 Vtotc=-2.5m Cgd=9.66p M=.3654 Pb=.3905 Fc=.5
++               Cgs=9.61p Isr=70.37p Nr=2 Is=7.037p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.model J2sk374  NJF(Beta=3.631m Rs=28.89 Rd=28.89 Betatce=-.5 Lambda=26m
++               Vto=-1.533 Vtotc=-2.5m Cgd=4.225p M=.3333 Pb=1 Fc=.5 Cgs=4.6p
++               Isr=1.543n Nr=2 Is=154.3p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk381  NJF(Beta=4.233m Rs=161.2 Rd=161.2 Betatce=-.5 Lambda=14.71m
++               Vto=-2.146 Vtotc=-2.5m Cgd=3.336p M=.3333 Pb=1 Fc=.5 Cgs=6.5p
++               Isr=154.3p Nr=2 Is=15.43p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk389  NJF(Beta=51.76m Rs=8.008 Rd=8.008 Betatce=-.5 Lambda=11.22m
++               Vto=-.5275 Vtotc=-2.5m Cgd=18.28p M=.3367 Pb=.3905 Fc=.5
++               Cgs=20.07p Isr=112.8p Nr=2 Is=11.28p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=92.85E-18 Af=1)
+*$
+.model J2sk427  NJF(Beta=15.14m Rs=0 Rd=0 Betatce=-.5 Lambda=25m Vto=-.5411
++               Vtotc=-2.5m Cgd=4.225p M=.3333 Pb=1 Fc=.5 Cgs=5.1p Isr=215.2p
++               Nr=2 Is=21.52p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk433  NJF(Beta=4.233m Rs=161.2 Rd=161.2 Betatce=-.5 Lambda=13.05m
++               Vto=-2.146 Vtotc=-2.5m Cgd=3.336p M=.3333 Pb=1 Fc=.5 Cgs=6.5p
++               Isr=154.3p Nr=2 Is=15.43p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk436  NJF(Beta=15.14m Rs=0 Rd=0 Betatce=-.5 Lambda=25m Vto=-.7273
++               Vtotc=-2.5m Cgd=4p M=.3333 Pb=1 Fc=.5 Cgs=5p Isr=215.2p Nr=2
++               Is=21.52p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk443  NJF(Beta=33.35m Rs=11.64 Rd=11.64 Betatce=-.5 Lambda=14.44m
++               Vto=-1.382 Vtotc=-2.5m Cgd=5.088p M=.3333 Pb=1 Fc=.5 Cgs=6.2p
++               Isr=215.2p Nr=2 Is=21.52p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk444  NJF(Beta=31.75m Rs=5.147 Rd=5.147 Betatce=-.5 Lambda=13.33m
++               Vto=-.4531 Vtotc=-2.5m Cgd=5.088p M=.3333 Pb=1 Fc=.5 Cgs=6.2p
++               Isr=215.2p Nr=2 Is=21.52p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk445  NJF(Beta=31.75m Rs=5.147 Rd=5.147 Betatce=-.5 Lambda=13.33m
++               Vto=-.4531 Vtotc=-2.5m Cgd=5.088p M=.3333 Pb=1 Fc=.5 Cgs=6.2p
++               Isr=215.2p Nr=2 Is=21.52p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk456  NJF(Beta=5.02m Rs=1 Rd=1 Betatce=-.5 Lambda=2.215m Vto=-.1736
++               Vtotc=-2.5m Cgd=4.179p M=.3333 Pb=1 Fc=.5 Cgs=4.9p Isr=10.76n
++               Nr=2 Is=1.076n N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk492  NJF(Beta=25.31m Rs=11.23 Rd=11.23 Betatce=-.5 Lambda=2.523m
++               Vto=-.6591 Vtotc=-2.5m Cgd=1p M=.3333 Pb=1 Fc=.5 Cgs=19.55p
++               Isr=154.3p Nr=2 Is=15.43p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk505  NJF(Beta=9.378m Rs=1 Rd=1 Betatce=-.5 Lambda=7.463m Vto=-1.464
++               Vtotc=-2.5m Cgd=2.907p M=.3333 Pb=1 Fc=.5 Cgs=3.4p Isr=215.2p
++               Nr=2 Is=21.52p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk507  NJF(Beta=9.378m Rs=1 Rd=1 Betatce=-.5 Lambda=7.463m Vto=-1.459
++               Vtotc=-2.5m Cgd=2.907p M=.3333 Pb=1 Fc=.5 Cgs=3.4p Isr=215.2p
++               Nr=2 Is=21.52p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk514  NJF(Beta=1.481m Rs=34.58 Rd=34.58 Betatce=-.5 Lambda=9.804m
++               Vto=-1.639 Vtotc=-2.5m Cgd=2.891m M=.3333 Pb=1 Fc=.5 Cgs=4p
++               Isr=174.9p Nr=2 Is=17.49p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk518  NJF(Beta=2.492m Rs=1 Rd=1 Betatce=-.5 Lambda=5m Vto=-4.932
++               Vtotc=-2.5m Cgd=4.448p M=.3333 Pb=1 Fc=.5 Cgs=4p Isr=174.9p
++               Nr=2 Is=17.49p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk519  NJF(Beta=2.492m Rs=1 Rd=1 Betatce=-.5 Lambda=5m Vto=-4.942
++               Vtotc=-2.5m Cgd=4.448p M=.3333 Pb=1 Fc=.5 Cgs=4p Isr=174.9p
++               Nr=2 Is=17.49p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk523  NJF(Beta=16.34m Rs=0 Rd=0 Betatce=-.5 Lambda=10m Vto=-.8194
++               Vtotc=-2.5m Cgd=7.116p M=.3333 Pb=1 Fc=.5 Cgs=9.8p Isr=8.745n
++               Nr=2 Is=874.5p N=1 Xti=3 Alpha=10u Vk=100 Kf=21.12E-18 Af=1)
+*$
+.model J2sk533  NJF(Beta=18.3m Rs=2.309 Rd=2.309 Betatce=-.5 Lambda=946.7u
++               Vto=-.6592 Vtotc=-2.5m Cgd=6.894p M=.3333 Pb=1 Fc=.5 Cgs=12.5m
++               Isr=17.49p Nr=2 Is=1.749p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=24.42E-18 Af=1)
+*$
+.model J2sk606  NJF(Beta=11.35m Rs=0 Rd=0 Betatce=-.5 Lambda=2.488m Vto=-.9414
++               Vtotc=-2.5m Cgd=454.3f M=.3333 Pb=1 Fc=.5 Cgs=5.5p Isr=4.016n
++               Nr=2 Is=401.6p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk607  NJF(Beta=8.087m Rs=0 Rd=0 Betatce=-.5 Lambda=2.907m Vto=-1.087
++               Vtotc=-2.5m Cgd=454.3f M=.3333 Pb=1 Fc=.5 Cgs=5.5p Isr=4.016n
++               Nr=2 Is=401.6p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk608  NJF(Beta=11.35m Rs=0 Rd=0 Betatce=-.5 Lambda=2.907m Vto=-.9405
++               Vtotc=-2.5m Cgd=454.3f M=.3333 Pb=1 Fc=.5 Cgs=5.5p Isr=4.016n
++               Nr=2 Is=401.6p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk613  NJF(Beta=20.71m Rs=7.903 Rd=7.903 Betatce=-.5 Lambda=50m
++               Vto=-1.101 Vtotc=-2.5m Cgd=2.907p M=.3333 Pb=1 Fc=.5 Cgs=4.621p
++               Isr=7.26p Nr=1.524K Is=726f N=1 Xti=3 Alpha=545.2u Vk=80.67
++               Kf=4.89E-18 Af=.569)
+*$
+.model J2sk624  NJF(Beta=5.821m Rs=162.6 Rd=162.6 Betatce=-.5 Lambda=37m
++               Vto=-.2808 Vtotc=-2.5m Cgd=1p M=.3333 Pb=1 Fc=.5 Cgs=1p Isr=1p
++               Nr=2 Is=100f N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk625  NJF(Beta=4.79m Rs=0 Rd=0 Betatce=-.5 Lambda=12.9m Vto=-.179
++               Vtotc=-2.5m Cgd=4.179p M=.3333 Pb=1 Fc=.5 Cgs=4.9p Isr=10.76n
++               Nr=2 Is=1.076n N=1 Xti=3 Alpha=10u Vk=100 Kf=30.65m Af=1)
+*$
+.model J2sk645  NJF(Beta=1.015m Rs=57.06 Rd=57.06 Betatce=-.5 Lambda=14.63m
++               Vto=-.4588 Vtotc=-2.5m Cgd=3.5p M=.3333 Pb=1 Fc=.5 Cgs=3.96p
++               Isr=10.76n Nr=2 Is=1.076n N=1 Xti=3 Alpha=10u Vk=100 Kf=30.65m
++               Af=1)
+*$
+.model J2sk652  NJF(Beta=3.613m Rs=28.22 Rd=28.22 Betatce=-.5 Lambda=20.43m
++               Vto=-1.553 Vtotc=-2.5m Cgd=4.16p M=.3333 Pb=1 Fc=.5 Cgs=4.35p
++               Isr=1.543n Nr=2 Is=154.3p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk660  NJF(Beta=1.39m Rs=0 Rd=0 Betatce=-.5 Lambda=11.76m Vto=-.4414
++               Vtotc=-2.5m Cgd=1p M=.3333 Pb=1 Fc=.5 Cgs=3.95p Isr=1p Nr=2
++               Is=100f N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk662  NJF(Beta=13.37m Rs=0 Rd=0 Betatce=-.5 Lambda=16.67m Vto=-.6503
++               Vtotc=-2.5m Cgd=7.783p M=.3333 Pb=1 Fc=.5 Cgs=10.5p Isr=15.43n
++               Nr=2 Is=1.543n N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk663  NJF(Beta=3.631m Rs=28.89 Rd=28.89 Betatce=-.5 Lambda=26m
++               Vto=-1.533 Vtotc=-2.5m Cgd=4.225p M=.3333 Pb=1 Fc=.5 Cgs=4.6p
++               Isr=1.543n Nr=2 Is=154.3p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk715  NJF(Beta=41.53m Rs=0 Rd=0 Betatce=-.5 Lambda=24.69m Vto=-.7045
++               Vtotc=-2.5m Cgd=5.451p M=.3333 Pb=1 Fc=.5 Cgs=7p Isr=215.2p
++               Nr=2 Is=21.52p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk771  NJF(Beta=5.616m Rs=26.88 Rd=26.88 Betatce=-.5 Lambda=5.55m
++               Vto=-1.56 Vtotc=-2.5m Cgd=4.67p M=.3333 Pb=1 Fc=.5 Cgs=6.9p
++               Isr=174.9p Nr=2 Is=17.49p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk772  NJF(Beta=5.663m Rs=27.74 Rd=27.74 Betatce=-.5 Lambda=4.5m
++               Vto=-1.562 Vtotc=-2.5m Cgd=4.67p M=.3333 Pb=1 Fc=.5 Cgs=6.9p
++               Isr=174.9p Nr=2 Is=17.49p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2SK879  NJF(Beta=888.9u Rs=40.83 Rd=40.83 Betatce=-.5 Lambda=520u
++               Vto=-2.77 Vtotc=-2.5m Cgd=10.46p M=.4408 Pb=.3905 Fc=.5
++               Cgs=6.026p Isr=154.3p Nr=2 Is=15.43p N=1 Xti=3 Alpha=10u Vk=100
++               Kf=1E-18 Af=1)
+*$
+.MODEL J2SK880 NJF VTO=-5.332 LAMBDA=1.000E-6 IS=8.822E-12 ISR=88.22E-12
++ ALPHA=1.000E-6 VK=1 RD=1 RS=1 CGD=1.000E-12 CGS=7.950E-12 KF=1.000E-18
++ BETATCE=-.5 VTOTC=-2.500E-3
+*$
+.model J2sk930  NJF(Beta=3.268m Rs=148 Rd=148 Betatce=-.5 Lambda=14.49m
++               Vto=-2.148 Vtotc=-2.5m Cgd=3.336p M=.3333 Pb=1 Fc=.5 Cgs=6.5p
++               Isr=154.3p Nr=2 Is=15.43p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2sk1103 NJF(Beta=1.077m Rs=0 Rd=0 Betatce=-.5 Lambda=5.382m Vto=-1.187
++               Vtotc=-2.5m Cgd=4.003p M=.3333 Pb=1 Fc=.5 Cgs=4.1p Isr=1.543n
++               Nr=2 Is=154.3p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk1104 NJF(Beta=1.077m Rs=0 Rd=0 Betatce=-.5 Lambda=5.382m Vto=-1.187
++               Vtotc=-2.5m Cgd=4.003p M=.3333 Pb=1 Fc=.5 Cgs=4.1p Isr=1.543n
++               Nr=2 Is=154.3p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18 Af=1)
+*$
+.model J2sk1216 NJF(Beta=15.71m Rs=6.47 Rd=6.47 Betatce=-.5 Lambda=49.55m
++               Vto=-.9921 Vtotc=-2.5m Cgd=2.08p M=.3333 Pb=1 Fc=.5 Cgs=4.286p
++               Isr=476.2p Nr=2 Is=47.62p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+.model J2SK1227 NJF(Beta=1.121m Rs=80.03 Rd=80.03 Betatce=-.5 Lambda=582.5u
++               Vto=-.6472 Vtotc=-2.5m Cgd=1p M=.3333 Pb=1 Fc=.5 Cgs=6.4p
++               Isr=154.3p Nr=2 Is=15.43p N=1 Xti=3 Alpha=10u Vk=100 Kf=1E-18
++               Af=1)
+*$
+*** end of library file

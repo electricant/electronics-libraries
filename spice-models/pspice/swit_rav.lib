@@ -1,0 +1,674 @@
+* These are average models for the simulation of voltage, current and 
+* resonant mode supplies. 
+
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+
+* $Revision:   1.12  $
+* $Author:   RPEREZ  $
+* $Date:   20 Apr 1998 13:36:42  $
+
+* ---------------------------------------------------------------------------
+
+* For more Information please refer to:
+*
+* 1) Vatche Vorperian, "Simplified Analysis of PWM Converters
+*    using Model of PWM Switch", IEEE Transactions on Aerospace and 
+*    Electronic Systems, May 1990, Vol 26 No 3, pp. 490-505.
+*
+* 2) Vatche Vorperian, "Equivalent Circuit Models for Resonant and PWM
+*    Switches", IEEE Transactions on Power Electronics, Vol 4 No 2, April
+*    1989, pp. 205-214.
+*
+* Other useful references for the simulation of switching regulators are:
+*
+* 1) Vincent G. Bello, "Using the SPICE2 CAD package for easy simulation
+*    of switching regulators in both continuous and discontinuous 
+*    conduction modes", Proceedings of Powercon 8, Paper H3, April 1981.
+*
+* 2) Vincent G. Bello, "Using the SPICE2 CAD package to simulate and 
+*    design the current mode converter", Proceedings of Powercon 11,
+*    Paper H2, 1984.
+*
+ 
+* Please read the notes above the models where they exist and review
+* the sample power supplies supplied.
+
+*
+*$
+**** VMLSCCM ****
+*
+* Large signal voltage Continuous conduction voltage mode model
+* Params:  RMPHITE  --> External ramp height 
+*       VALLEYV  --> Valley voltage of external ramp
+*
+* Pins  control voltage --  
+*       common --------   |
+*       passive-----   |  |
+*       active --   |  |  |
+*                |  |  |  |
+.subckt VMLSCCM  A  P  C  VC Params: RMPHITE=2 VALLEYV=1 
+  emod d 0   table {(v(vc)-VALLEYV)/RMPHITE} = (0,0) (1,1)
+  gap  a x   value {v(d)*i(vcm)} 
+  ecp  x p   value={v(d)*v(a,p)}
+  vcm  x c 0
+  rconv d 0 1g
+.ends
+
+*------------------------------------------------------------------------------
+*|* This  Supply uses Vorperians "Switch Model" to simulate a power supply which is
+*|* also simulated with the macromodel of the sg1526 c.f. "sg1526.cir" . 
+*|
+*|* A transient and AC analysis can be performed on the circuit and
+*|* the information obtained is documented below
+*|
+*|* The file as it stands does the transient analysis
+*|* To do the ac analysis just remove the '*' from the .AC statement
+*|* and insert a '*' in front of the .tran statement, then select
+*|* which ac source to activate depending on which characteric of
+*|* the power supply you want to examine. 
+*|
+*|.lib "swit_rav.lib"
+*|.probe
+*|
+*|* the tran statement will simulate 10ms during which the supply experiences 
+*|* a one amp step load and a .1 volt step at the positive input of the error 
+*|* amp
+*|*
+*|.tran 1ns 10ms  
+*|
+*|*.ac dec 10 10 100k
+*|
+*|  VIN 1 0 20 ac 0    ; with ac set to 1 and the ac analysis sweep done
+*|*        vdb(out)-vdb(10)  ---->   audio suceptibility
+*|  vinAC 55 out 0 ac 1  ; with ac set to 1 and the ac analysis sweep done
+*|*        vdb(out)-vdb(55)  ---->   loop gain
+*|*        vp(out)-vp(55)    ---->   loop phase
+*|*        vdb(out)-vdb(10)  ---->   control to output transfer function gain  
+*|*        vp(out)-vp(10)    ---->   control to output transfer function phase
+*|  Iout out 0 0 ac 0    ; with ac set to 1 and the ac analysis sweep done
+*|*        v(out)            ---->   output impedance
+*|*
+*|  vref 51 0 pulse(4.9 5 6ms 1us 1us 25ms 50ms)
+*|  iload out 0 pulse(0 1 1ms 1us 1us 25ms 50ms)
+*|  rdamp 2 3 3
+*|  lf 3 out 500uh
+*|  rc1 6 0 .0002
+*|  cf out 6 4840uf
+*|  rl out 0 5
+*|  x1 1 0 2 10  VMLSCCM Params: RMPHITE=2 VALLEYV=1 
+*|  x2 51  55 10 erramp
+*|* compesation network 
+*|  CCOMP 78 0 100N
+*|  RCOMP 10 78 18k
+*|* ERROR AMPLIFIER
+*|* OUTPUT -----------------
+*|* INVERTING I/P -----    |
+*|* NON INV I/P ---   |    |
+*|*               |   |    |
+*|.SUBCKT erramp  1   2    5  
+*|  VT 10 0 4.3
+*|  VB 20 0 .7
+*|  RIN1 1 0 1e10
+*|  RIN2 2 0 1e10
+*|  DT 5 10 DX
+*|  DB 20 5 DX
+*|  G1 0 5 TABLE {.0045 *(V(1)-V(2)) } (-200U -200U) (200U 200U)
+*|  ROUT 5 0  2meg
+*|  CPOLE 5 0 .2N
+*|.MODEL DX D(IS=1E-19 RS=.01)
+*|.ENDS
+*--------------------------------------------------------------------------
+
+*$
+**** VMLSDCM ****
+*
+* Large signal Discontinuous conduction voltage mode model
+* Params:  RMPHITE  --> External ramp height 
+*       VALLEYV  --> Valley voltage of external ramp
+*       LFIL     --> Filter inductance
+*       FS       --> Operating frequency
+*
+* Pins  control voltage --  
+*       common --------   |
+*       passive-----   |  |
+*       active --   |  |  |
+*                |  |  |  |
+.subckt VMLSDCM  A  P  C  Vc Params: RMPHITE=2 VALLEYV=1 LFIL=500u FS=50k
+  vconv conv  0  1
+  emod  d     0  table {v(conv)*(v(vc)-VALLEYV)/RMPHITE} = (.01,.01) (.99,.99)
+  etbl  anum  0  table {2*lfil*fs*i(vmp)} (1e-8,1e-8) (400,400)
+  emew  mew   0  value={v(conv)*v(d)*v(d)*v(a,c)/v(anum) }
+  gac   a     c  value={v(conv)*v(mew)*i(vmp) } 
+  ecp   c     x  value={v(conv)*v(mew)*v(a,c)}
+  vmp   p     x  0
+  rconv d     0  1g
+  rc    conv  0  1g 
+  ranum anum 0 1g
+  r5    mew   0  1g
+.ends
+
+*--------------------------------------------------------------------------
+*|* Discontinuous conduction mode power supply example
+*|* The file as it stands does the transient analysis
+*|* To do the ac analysis just remove the '*' from the .AC statement
+*|* and insert a '*' in front of the .tran statement, then select
+*|* which ac source to activate depending on which characteric of
+*|* the power supply you want to examine. 
+*|
+*|.option abstol=1e-8
+*|.lib "swit_rav.lib"
+*|.probe
+*|
+*|* the tran statement will simulate 5ms during which the reference steps from 
+*|* 5 to 5.1
+*|*
+*|.tran 1ns 60ms   
+*|*.savebias "tran.dat" tran time 39.9m
+*|*.loadbias "tran.dat"
+*|*.ac dec 10 10 100k
+*|
+*|  VIN 1 0  pulse (0 20  1ns 1ms 1ms 20 40) ac 0    ; with ac set to 1 and the ac analysis sweep done
+*|*        vdb(out)-vdb(10)  ---->   audio suceptibility 
+*|  vinAC 55 out 0 ac 1  ; with ac set to 1 and the ac analysis sweep done
+*|*        vdb(out)-vdb(55)  ---->   loop gain
+*|*        vp(out)-vp(55)    ---->   loop phase
+*|*        vdb(out)-vdb(10)  ---->   control to output transfer function gain  
+*|*        vp(out)-vp(10)    ---->   control to output transfer function phase
+*|  Iout out 0 0 ac 0    ; with ac set to 1 and the ac analysis sweep done
+*|*        v(out)            ---->   output impedance
+*|*
+*|  iload out 0 .01
+*|  rdamp 2 3 3
+*|  lf 3 out 500uh
+*|  rc1 6 0 .0002
+*|  cf out 6 4840uf
+*|  rl out 0 1g
+*|  x1 1 0 2 10  VMLSDCM params: lfil=500u fs=50k
+*|  vref 51 0 pulse (5 5.1 40ms 1ns 1ns 40ms 80ms)
+*|  x2 51  55 10 erramp
+*|* compesation network
+*|  CCOMP 10 78 100N
+*|  RCOMP 78 0 18k
+*|
+*|* ERROR AMPLIFIER
+*|* OUTPUT -----------------
+*|* INVERTING I/P -----    |
+*|* NON INV I/P ---   |    |
+*|*               |   |    |
+*|.SUBCKT erramp  1   2    5  
+*|  VT 10 0 4.3
+*|  VB 20 0 .7
+*|  RIN1 1 0 1e10
+*|  RIN2 2 0 1e10
+*|  DT 5 10 DX
+*|  DB 20 5 DX
+*|  G1 0 5 TABLE {.0062 *(V(1)-V(2)) } (-200U -200U) (200U 200U)
+*|  ROUT 5 0  2meg
+*|  CPOLE 5 0 .2N
+*|.MODEL DX D(IS=1E-19 RS=.01)
+*|.ENDS
+*----------------------------------------------------------------------------
+
+*$
+**** VMCCMDCM ****
+*
+* NOTES:: This model combines the CCM and DCM model for voltage model control
+* The purpose of this model is to allow the user view the effect 
+* of a load transient which traverses the CCM-DCM switching point.
+* Due to some convergence problems this model needs a setup time to start 
+* the simulation. The relevant load transient should be started and viewed
+* after the transients from the setup have died out. The default for this
+* setup period {start} is 4 milli seconds.
+*
+*
+* Large signal combined CCM and DCM model
+* Params:  RMPHITE  --> External ramp height 
+*       VALLEYV  --> Valley voltage of external ramp
+*       LFIL     --> Filter inductance
+*       FS       --> Operating frequency
+*          START    --> setup time necessary for the model to set itself up
+*
+* Pins  control voltage --  
+*       common --------  |
+*       passive-----  |  |
+*       active --  |  |  |
+*               |  |  |  |
+.subckt vmccmdcm  A  P  C  Vc  Params: RMPHITE=2 VALLEYV=1 LFIL=500u FS=50k
++ start=4m
+  emod  d     0  table {v(conv)*(v(vc)-VALLEYV)/RMPHITE} = (.01,.01) (.99,.99)
+  vconv conv 0 1
+  rcr conv 0 1g
+  va a adash 0
+*  D1 ADASH ADASHD DX 
+  r1 compa  0 1g
+  r2 compb  0 1g
+  r3 is_ccm 0 1g
+  r4 is_dcm 0 1g
+  r5 mew    0 1g
+  r6 mewexp 0 1g
+  r7 viva   0 1g
+  r8 st     0 1g
+  r9 vc     0 1g
+  vstart start 0 pulse (0 1 {start-2m} 1m 1m 100 200)
+  rstart start 0 1k
+  Eclip viva 0 table {i(va)} (1e-6,1e-6) (300,300)  ; clip i(va)
+  ecompa compa 0 table={v(start)*v(conv)*(v(c,p))/V(Viva) } (0 0) (11k 11k)
+  ecompb compb 0 table={v(conv)*-2*lfil*Fs/(v(d)*v(d)-v(d)+1e-6)} (0 0) (1k 1k)
+  vccm ccmst 0 1
+  sst  ccmst is_ccm st 0 sccdc
+  sst1 is_ccml is_ccm st 0 sccdco
+.model sccdc vswitch(ron=1 roff=1meg von=1 voff=.5)
+.model sccdco vswitch(ron=1meg roff=1 von=1 voff=.5)
+  vsst  st  0 pulse(10 0 1ns 1ns 1ns 100 200)
+  eccm is_ccml 0 table {V(CONV)*10*(v(compb,compa)) }= (0,0) (1,1)
+  edcm is_dcm 0  value={v(conv)*(1-v(is_ccm)) } 
+*calculate voltage ratio for switch in dcm for common common configuration
+  emew mew 0 value={  v(conv)*((v(d)*v(d)*(v(c,p)))/(2*lfil*fs*V(VIva)) )}
+*dcm expresion for voltage ratio = mew/1+mew (common passive configuration)
+  emewexp mewexp 0 value={ v(conv)*(v(mew) / ( 1+v(mew) ))} 
+  gap adash x value={v(conv)*(v(is_ccm)*v(d)*i(vm)+ v(is_dcm)*v(mewexp)*i(vm)) } 
+  ecp x p value={v(conv)*(v(is_ccm)*v(d)*v(a,p) + v(is_dcm)*v(mewexp)*v(a,p))}
+  vm x c 0
+  rconv d 0 1g
+.model dx d(is=1e-12 n=.15) ; this model has a low vbeon
+.ends
+
+
+*----------------------------------------------------------------------------
+*|* This file uses Vorperians switch model and an effort is made
+*|* to combine ccm and dcm in the single model
+*|* This allows transient simulations which traverse both
+*|* regions such a serious reduction in load as is simulated here
+*|
+*|.options numdgt=8 itl5=0 abstol=1e-8
+*|.lib "swit_rav.lib"
+*|
+*|.probe
+*|
+*|.ic v(x1.is_ccm)=1
+*|*.ac dec 10 10 100k
+*|
+*|  VIN 1 0 20 ac 0    ; with ac set to 1 and the ac analysis sweep done
+*|*        vdb(5)-vdb(10)  ---->   audio suceptibility
+*|  vinAC 55 5 0 ac 1  ; with ac set to 1 and the ac analysis sweep done
+*|*        vdb(5)-vdb(55)  ---->   loop gain
+*|*        vp(5)-vp(55)    ---->   loop phase
+*|*        vdb(5)-vdb(10)  ---->   control to output transfer function gain  
+*|*        vp(5)-vp(10)    ---->   control to output transfer function phase
+*|  Iout 5 0 0 ac 0    ; with ac set to 1 and the ac analysis sweep done
+*|*        v(5)            ---->   output impedance
+*|*
+*|
+*|* the tran statement will simulate 10ms during which the supply's load
+*|* is reduced from 1 a to .01 amp
+*|*
+*|.tran 1ns 10ms   
+*|
+*|* define filter values
+*|.param lfil=500uh
+*|.param fs = 50k
+*|
+*|  iload 5 0 pulse( 1 .01 100us 2ms 100us 25ms 50ms)
+*|  rdamp 2 3 3
+*|  lf 3 5 500uh
+*|  rc1 6 0 .0002
+*|  cf 5 6 4840uf
+*|  rl 5 0 1g
+*|  x1 1 0 2 10  vmccmdcm Params: RMPHITE=2 VALLEYV=1 LFIL=500u FS=50k 
+*|  vref 51 0 5
+*|  x2 51  55 10 erramp
+*|* compesation network
+*|  CCOMP 10 78 100N
+*|  RCOMP 78 0 18k
+*|
+*|* ERROR AMPLIFIER
+*|* OUTPUT -----------------
+*|* INVERTING I/P -----    |
+*|* NON INV I/P ---   |    |
+*|*               |   |    |
+*|.SUBCKT erramp  1   2    5  
+*|  VT 10 0 4.3
+*|  VB 20 0 .7
+*|  RIN1 1 0 1e10
+*|  RIN2 2 0 1e10
+*|  DT 5 10 DX
+*|  DB 20 5 DX
+*|  G1 0 5 TABLE {.0062 *(V(1)-V(2)) } (-200U -200U) (200U 200U)
+*|  ROUT 5 0  2meg
+*|  CPOLE 5 0 .2N
+*|.MODEL DX D(IS=1E-19 RS=.01)
+*|.ENDS
+*----------------------------------------------------------------------------
+
+*$
+**** VMSSCCM ****
+*
+* Small signal Continuous conduction voltage mode model
+* Params:  RMPHITE  --> External ramp height 
+*          D       --> Duty cycle
+*          Ic      --> Current flowing from terminal C
+*                       See diagrams: but for buck it is Vo/r
+*                               for boost it is Iin
+*       Vap      --> Voltage across terminal A P
+*                    See diagrams: but for buck it is Vin
+*       Rsw        --> Switch on resistance
+*       Rd         --> diode on resistance
+*          Rm       --> which models the base storage effects see [1] in app note
+*          Re       --> models ripple across esr of cap see [1]
+*                        
+* Pins  control voltage --  
+*       common --------   |
+*       passive-----   |  |
+*       active --   |  |  |
+*                |  |  |  |
+.subckt VMSSCCM  A  P  C  VC Params: RMPHITE=2 D=0.4 IC=1 VAP=20 
++                                    Rsw=1e-6 Rd=1e-6 Re=1e-6 Rm=1e-6
+  efm  4 0 value ={v(Vc)/rmphite} 
+  e2   A 6 value={v(0,4)*Vap/d}
+  g1   A P value={v(4)*IC}
+  gxfr 6 P VALUE={I(vms)*D}
+  exfr 9 P VALUE={V(6,P)*D}
+  vms  9 8 0
+  rd   8 C {d*rd+(1-d)*rsw+d*(1-d)*re+rm}
+  rope 4 0 1g
+  rgnd 0 P 1g
+.ends
+
+*----------------------------------------------------------------------------
+*|* This supply uses Vorperians linearised switch model to simulate a power supply 
+*|* which is also simulated with the macromodel of the sg1526 c.f. "sg1526.cir" . 
+*|* A transient and AC analysis can be performed on the circuit and
+*|* the information obtained is documented below
+*|
+*|* The circuit description as it stands does the transient analysis
+*|* To do the ac analysis just remove the '*' from the .Ac statement
+*|* and insert a '*' in front of the .tran statement, then select
+*|* which ac source to activate depending on which characteristic of
+*|* the power supply you want to examine. 
+*|.lib "swit_rav.lib"
+*|
+*|.probe
+*|
+*|*.ac dec 10 10 100k
+*|*
+*|VIN 1 0 20 ac 0    ; with ac set to 1 and the ac analysis sweep done
+*|*        vdb(5)-vdb(10)  ---->   audio suceptibility
+*|vinAC 55 5 0 ac 1  ; with ac set to 1 and the ac analysis sweep done
+*|*        vdb(5)-vdb(55)  ---->   loop gain
+*|*        vp(5)-vp(55)    ---->   loop phase
+*|*        vdb(5)-vdb(10)  ---->   control to output transfer function gain  
+*|*        vp(5)-vp(10)    ---->   control to output transfer function phase
+*|Iout 5 0 0 ac 0    ; with ac set to 1 and the ac analysis sweep done
+*|*        v(5)            ---->   output impedance
+*|*
+*|.options  expand
+*|
+*|* the tran statement will simulate 10ms during which the supply experiences 
+*|* a one amp step load and a .1v step at the + input of the error amp 
+*|*
+*|.tran 1ns 10ms 
+*|iload 5 0 pulse(0 1 1ms 1us 1us 25ms 50ms)
+*|vref 51 0 pulse(5 5.1 6ms 1us 1us 25ms 50ms)
+*|
+*|lf 2 5 500uh
+*|rc1 6 0 .0002
+*|cf 5 6 4840uf
+*|rl 5 0 5
+*|x1 1 0 2 10 VMSSCCM Params: RMPHITE=2 D=0.4 IC=1 VAP=20 
+*|+                                    Rsw=3 Rd=3 
+*|x2 51  55 10  erramp
+*|* compesation network
+*|CCOMP 10 78 100N
+*|RCOMP 78 0 18k
+*|
+*|
+*|* ERROR AMPLIFIER
+*|* OUTPUT -----------------
+*|* INVERTING I/P -----    |
+*|* NON INV I/P ---   |    |
+*|*               |   |    |
+*|.SUBCKT erramp  1   2    5  
+*|VT 10 0 4.3
+*|VB 20 0 .7
+*|RIN1 1 0 1e10
+*|RIN2 2 0 1e10
+*|DT 5 10 DX
+*|DB 20 5 DX
+*|*G1 0 5 TABLE {.0062*EXP((V(1)-V(2))/.0256) *(V(1)-V(2)) } (-100U -100U) (100U 100U)
+*|G1 0 5 TABLE {.0045 *(V(1)-V(2)) } (-200U -200U) (200U 200U)
+*|ROUT 5 0  2meg
+*|CPOLE 5 0 .2N
+*|.MODEL DX D(IS=1E-19 RS=.01)
+*|.ENDS
+*------------------------------------------------------------------------------------
+
+*$
+**** CMSSCCM ****
+*
+* Small signal continuous conduction current mode model
+* Params:  Se       --> External ramp slope (v/s) 
+*       Sn       --> Current semse ramp slope (v/s)
+*       FS       --> Operating frequency
+*          D        --> Duty cycle
+*          Lfil     --> filter inductance
+*          Ic       --> Current from terminal C
+*              see diagrams in application note          
+*          Vap      --> Voltage across terminals a and p
+*              see diagrams in application note          
+*       Ri       --> current feedback coeeficient
+* Pins  control voltage --  
+*       common --------   |
+*       passive-----   |  |
+*       active --   |  |  |
+*                |  |  |  |
+.subckt CMSSCCM  A  P  C  VC   Params: Se=1e5 Sn=1e5 Fs=100k D=.75 Lfil=5u
++                          Ic=100 Vap=20 Ri=.01 pi=3.14159
+RI A P { -(2*Fs*Sn*Vap*Lfil)/(D*(2*fs*Ic*Sn*Lfil+Vap*d*(2*Se*(d-1)+Sn*d) ))}
+gki a p VALUE={V(VC) *Ic * d/(ri*abs(Ic))}
+gr a p VALUE={(V(c,p))*(IC/Vap-d * ( ((1-d)*se/sn+.5-d)/(lfil*fs) ))}
+gf p c VALUE={V(a,p)*(d*( ((1-d)*se/sn+.5-d)/(lfil*fs) )- D*(1-d)/(2*lfil*fs))}
+gko p c VALUE= {V(VC)*Ic/(ri*abs(Ic))}
+ro c p { (lfil*fs)/( (1-d)*se/sn+.5-d )}
+cs c p   {4/(lfil*pwr(2*pi*fs,2))}
+r1 vc 0 1g
+r2 0 p 1g
+.ends
+
+*---------------------------------------------------------------------------
+*|* Sample supply for the small signal current mode model
+*|* this supply does a transient during which 10 amps is pulsed int the
+*|* output (node 5)
+*|* all ac quantities can be examined by using the techniques shown
+*|* in the previous supplies
+*|.lib "swit_rav.lib"
+*|  vg 1 0 ac 0
+*|  r1 2 3 .0001
+*|  lf 3 5 5u
+*|  rc 5 4 .003
+*|  cf 4 0 6500u
+*|  r 5 0 .05
+*|  is 0 5 ac 0 pulse (0 10 1.6m .1n .5u 1 2)
+*|  X1   1  0  2  9  CMSSCCM Params: Se=2.52e4 Sn=1.e4 Fs=100k D=.74 Lfil=5u
+*|+                        Ic=150 Vap=10.1 Ri=.01
+*|  x2 5 0 9 comp
+*|.options itl5=0 expand
+*|.tran .1ns 2.5ms 
+*|.probe
+*|
+*|.subckt comp 1 2 3a
+*|  e1 1a 0 value = {v(1)*.3333}
+*|  r1 1a 4 20k
+*|  r2 1a 5 1k
+*|  c1 5 4 .0083u
+*|  c2 4 3 .0015u
+*|  rx 4 3 1g
+*|  eamp 3 2 poly(2) (4,2) (6,2) 0 -1e12 1e12
+*|  e3 3a 0 value = {v(3)*.33333} ; output of 1842 amp scaled by .3333
+*|  r3a 3a 0 1g
+*|  r1a 1a 0 1g
+*|  vr 6 2 2.5
+*|  rr 6 2 1g
+*|.ends
+*|
+*|.end
+*---------------------------------------------------------------------------
+
+*$
+**** CMLSCCM ****
+*
+* Large signal continuous conduction current mode model
+* Params:  Se       --> External ramp slope (v/s) 
+*       FS       --> Operating frequency
+*          Lfil     --> filter inductance
+*       Ri       --> current feedback coeeficient
+* Pins  control voltage --  
+*       common --------   |
+*       passive-----   |  |
+*       active --   |  |  |
+*                |  |  |  |
+.subckt CMLSCCM  a  p  c  Vc params: Se=2.52e4 Fs=100k Lfil=5u Ri=.01
++                                 Pi=3.14159
+vmc ca c 0
+rca ca 0 1g
+emew mew 0 value={v(ca,p)/V(a,p)}
+rmew mew 0 1g
+gap a p value={i(vmc)*v(mew)}
+gpc p ca value={v(vc)/ri}
+gcp ca p value={v(mew)*Se/(Ri*Fs) + V(ca,p)*(1-v(mew))/(2*Lfil*Fs)}
+cs c p   {4/(lfil*pwr(2*pi*fs,2))}
+.ends
+
+
+
+*---------------------------------------------------------------------------
+*|* Sample supply for the large signal current mode model
+*|* this supply does a transient during which 10 amps is pulsed int the
+*|* output (node 5)
+*|* all ac quantities can be examined by using the techniques shown
+*|* in the previous supplies
+*|.lib "swit_rav.lib"
+*|
+*|.param see=1e4 rii=.01
+*|.step param rii list .005 .01
+*|  vg 1 0 10.1 ac 0
+*|  r1 2 3 .0001
+*|  lf 3 5 5u
+*|  rc 5 4 .003
+*|  cf 4 0 6500u
+*|  r 5 0 .05
+*|  is 0 5 ac 0 pulse (0 10 1.6m 1n .5u 1 2)
+*|  X1   1  0  2  9  CMLSCCM Params: Se={see} Fs=100k Lfil=5u Ri={rii}
+*|  x2 5 0 9 comp
+*|.options itl5=0 expand
+*|.tran .1ns 2.5ms 
+*|.probe
+*|
+*|.subckt comp 1 2 3a
+*|  e1 1a 0 value = {v(1)*.3333}
+*|  r1 1a 4 20k
+*|  r2 1a 5 1k
+*|  c1 5 4 .0083u
+*|  c2 4 3 .0015u
+*|  rx 4 3 1g
+*|  eamp 3 2 poly(2) (4,2) (6,2) 0 -1e12 1e12
+*|  e3 3a 0 value = {v(3)*.33333} ; output of 1842 amp scaled by .3333
+*|  r3a 3a 0 1g
+*|  r1a 1a 0 1g
+*|  vr 6 2 2.5
+*|  rr 6 2 1g
+*|.ends
+*-----------------------------------------------------------------------------
+
+*$
+**** QRLSZCS ****
+*
+* NOTES:: Due to the high level of nonlinearity within the supply 
+* it may be necessay to simulate the supply in openloop to find the correct
+* starting bias point. The procedure involves sweeping the control 
+* voltage (open loop) until the correct output voltage is obtained. We can use
+* the bias values to begin our transient and ac  analyses (see supply below). 
+*
+*
+* Large signal quasi-resonant mode zero current switched model
+* Params:  VCOCOEFF --> coefficant for voltage to frequency conversion
+*          Fsoffset --> frequency from Vco at zero Vc 
+*          Lo       --> resonant filter value
+*          Co       --> resonant capacitor value
+*          N        --> full wave = 2 : half wave = 1
+*
+* Pins  control voltage -- 
+*       common --------   |
+*       passive-----   |  |
+*       active --   |  |  |
+*                |  |  |  |
+.subckt QRLSZCS  A  P  C VC   Params: VCOCOEFF=20k Lo=20n Co=.1u N=2 
++                         PI=3.14159 Fsoffset=280k
+  Eco fs 0 value={(fsoffset+v(vc)*vcocoeff)*1u} ; *1u scale fs to avoid large voltages
+  vmic ci c 0
+  ealp alp 0 value = { 1u + sqrt(Lo/Co)*i(vmic)/(v(a,p)+1u) } ; +1u to avoid /0
+  ep1  p1  0 value = {v(alp)/2+n*pi-((2*n-3) * arctan( v(alp)/sqrt(1-pwr(v(alp),2)) ) )  }
+  ep2  p2  0 value = {  1/v(alp) - (2*n-3) * sqrt( 1/pwr(v(alp),2) -1) }
+  rp1  p1  0 1g
+  efr  fr  0 value = {V(P1)+v(P2)}
+  rfr  fr  0 1g
+  rp2  p2  0 1g 
+  ral  alp 0 1g
+  gap  a   p    value {v(fs)*v(fr)*sqrt(Lo*Co)*i(vmic)*1MEG} ;*1MEG to unscale fs
+  ecp  ci  p    value={v(fs)*v(fr)*sqrt(Lo*Co)*v(a,p)*1MEG}  ;*1MEG to unscale fs
+  rfs  fs  0 1g
+.ends  
+
+
+
+*---------------------------------------------------------------------------
+*|* Sample supply for the large signal resonant mode  model
+*|* Note that the configuration simulates the supply in open loop,
+*|* we can see below that a voltage source fixes the control voltage
+*|* to the correct voltage to give the desired 12 volts out
+*|* The correct value of Vc is found using a dc sweep and monitoring
+*|* the output. The reason for doing this is to generate the correct bias
+*|* point for the supply which we save in "sav.dat". With this bias point
+*|* we can now start our closed loop analysis by using the loadbias command.
+*|*
+*|* 
+*|* all ac quantities can be examined by using the techniques shown
+*|* in the previous supplies
+*|*Zero current switched resonant mode supply
+*|
+*|.lib "swit_rav.lib"
+*|.OPTIONS ABSTOL=1E-6
+*|.probe
+*|  vin in  0  25
+*|  vsst  st  0 pulse(0 1 1m 1ns 1ns 100 200)
+*|  sst1 out 0 st 0 sccdc
+*|.model sccdc vswitch(ron=13 roff=1g von=1 voff=.5)
+*|*.tran 1ns 5m
+*|*.dc vc  4 6 .1
+*|*.loadbias  "sav.dat" 
+*|.savebias "sav.dat" op
+*|  Lif in  in1   238u
+*|  Cif in1 0     1000u
+*|  Lo  in1 a     .59u
+*|  x1  a   0     c  Vc QRLSZCS PARAMS: Vcocoeff=73.2k Fsoffset=287k Lo=.59u
+*|+                      Co=10n N=1
+*|  Co  c   0     10n
+*|  Lf  c   out   41.9u
+*|  Cf  out 0     5u
+*|  Ro  out 0     13
+*|  rf1 out 1     5.9k
+*|  rf2 1   0     4.1k
+*|  vc vc 0 4.334               *|||||  Open  LOOP  |||||*
+*|  rc vc 0 1g                  *|||||  Open  LOOP  |||||*
+*|*  X2  1 Vc comp              *|||||  Close LOOP  |||||*
+*|.subckt comp 1 Vc 
+*|  rin 1    neg 47k
+*|  rfb neg  inb 330k
+*|  cfb inb  vc  39p
+*|  vpos pos 0  4.92
+*|  rpos pos 0  1g
+*|  eamp vc 0 value={1e8*(v(pos)-v(neg))}
+*|.ends
+
+*$
+
+

@@ -1,0 +1,3290 @@
+* Library of Japanese Power MOSFET Models
+
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+
+* $Revision:   1.8  $
+* $Author:   rperez  $
+* $Date:   17 Nov 1998 10:47:44  $
+*
+* ---------------------------------------------------------------------------
+* The parameters in this model library were derived from the data sheets for
+* each part.  Each part was characterized using the Parts option.
+* ---------------------------------------------------------------------------
+*$
+.model M2SJ102  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=517.6n W=.55 L=2u Rs=20m Vto=-.8464
++               Rd=0 Rds=50K Cgso=266.4p Cgdo=684.2p Cbd=1.598n Mj=.5 Pb=.8
++               Fc=.5 Rg=43.92 Is=170.4E-18 N=.7688 Rb=51.08m)
+*$
+.model M2SJ114  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=540.1n W=1.1 L=2u Rs=20m Vto=-.9423
++               Rd=0 Rds=160K Cgso=593.2p Cgdo=250.4p Cbd=746.2p Mj=.5 Pb=.8
++               Fc=.5 Rg=28.78 Is=16.48n N=1.62 Rb=18.86m)
+*$
+.MODEL M2SJ115 PMOS LEVEL=3 L=2.000E-6 W=2.200 KP=520.4E-9 RS=10.00E-3 RD=.296
++ VTO=.6733 RDS=1.000E6 TOX=2.000E-6 CGSO=40.00E-12 CGDO=10.00E-12 CBD=1.980E-9
++ MJ=.4189 PB=.3905 RG=211.5 RB=1.000E-3 GAMMA=0 KAPPA=0 UO=300
+*$
+.model M2SJ116  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=502.5n W=1.2 L=2u Rs=20m Vto=-1.018
++               Rd=0 Rds=320K Cgso=812.9p Cgdo=74.73p Cbd=909.7p Mj=.5 Pb=.8
++               Fc=.5 Rg=34.65 Is=138.4n N=1.777 Rb=20.43m)
+*$
+.model M2SJ118  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=538.3n W=2 L=2u Rs=20m Vto=-3.119
++               Rd=.45 Rds=120K Cgso=327.4p Cgdo=104.8p Cbd=1.305n Mj=.9848
++               Pb=3 Fc=.5 Rg=20.08 Is=10f N=1 Rb=1m)
+*$
+.model M2SJ119  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=538.3n W=2 L=2u Rs=20m Vto=-3.119
++               Rd=.45 Rds=140K Cgso=327.4p Cgdo=104.8p Cbd=1.305n Mj=.9848
++               Pb=3 Fc=.5 Rg=20.08 Is=10f N=1 Rb=1m)
+*$
+.model M2SJ120  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=519n W=.2 L=2u Rs=20m Vto=-1.661 Rd=.2
++               Rds=350K Cgso=0 Cgdo=876.1p Cbd=291.4p Mj=.4645 Pb=3 Fc=.5
++               Rg=3.14 Is=10f N=1 Rb=1m)
+*$
+.model M2SJ122  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=524.2n W=2.4 L=2u Rs=0 Vto=-3.251
++               Rd=10.56m Rds=50K Cgso=204.1p Cgdo=230.1p Cbd=5.067n Mj=.5793
++               Pb=.3905 Fc=.5 Rg=5.574 Is=10E-21 N=.6205 Rb=12.98m)
+*$
+.model M2SJ123  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=517.8n W=2.5 L=2u Rs=20m Vto=-1.567
++               Rd=10m Rds=70K Cgso=4p Cgdo=1p Cbd=2.466n Mj=.4316 Pb=.3915
++               Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SJ128  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=516.1n W=4.3 L=2u Rs=20m Vto=-1.855
++               Rd=.668 Rds=10MEG Cgso=4p Cgdo=1p Cbd=421.9p Mj=.517 Pb=3 Fc=.5
++               Rg=277.2 Is=1f N=1 Rb=1m)
+*$
+.model M2SJ132  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=514.6n W=4.9 L=2u Rs=20m Vto=-2.035
++               Rd=.1321 Rds=3MEG Cgso=4p Cgdo=1p Cbd=683.2p Mj=.4219 Pb=.871
++               Fc=.5 Rg=466.9 Is=10E-21 N=.5602 Rb=0)
+*$
+.model M2SJ133  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=20u W=.5 L=2u Rs=20m Vto=-3 Rd=10m
++               Rds=1MEG Cgso=4p Cgdo=1p Cbd=1n Mj=.5 Pb=.8 Fc=.5 Rg=5 Is=10f
++               N=1 Rb=1m)
+*$
+.model M2SJ134  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=1u W=3.6 L=2u Rs=20m Vto=-1.354
++               Rd=.1679 Rds=10MEG Cgso=4p Cgdo=1p Cbd=1.54n Mj=.451 Pb=.4295
++               Fc=.5 Rg=160.6 Is=7.133f N=1 Rb=10m)
+*$
+.model M2SJ135  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=516.5n W=7.819 L=2u Rs=0 Vto=-1.774
++               Rd=.25 Rds=10MEG Cgso=4p Cgdo=1p Cbd=2.055n Mj=.5093 Pb=.3905
++               Fc=.5 Rg=138.1 Is=1f N=1 Rb=1m)
+*$
+.model M2SJ136  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=5u W=1 L=2u Rs=10m Vto=-2.021 Rd=.1245
++               Rds=6MEG Cgso=4p Cgdo=1p Cbd=1.506n Mj=.4641 Pb=.6857 Fc=.5
++               Rg=440 Is=10E-21 N=.15 Rb=0)
+*$
+.model M2SJ137  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=516.9n W=6.1 L=2u Rs=20m Vto=-2.278
++               Rd=.1206 Rds=6MEG Cgso=4p Cgdo=1p Cbd=1.49n Mj=.4681 Pb=.7277
++               Fc=.5 Rg=698.4 Is=1f N=1 Rb=10m)
+*$
+.model M2SJ140  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=1.3u W=4.8 L=2u Rs=10m Vto=-1.141
++               Rd=61.99m Rds=6MEG Cgso=4p Cgdo=1p Cbd=1.454n Mj=.5248 Pb=2.203
++               Fc=.5 Rg=249.2 Is=1f N=1 Rb=10m)
+*$
+.model M2SJ141  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=503.8n W=17 L=2u Rs=20m Vto=-1.599
++               Rd=89.74m Rds=6MEG Cgso=4p Cgdo=1p Cbd=1.455n Mj=.5 Pb=1.953
++               Fc=.5 Rg=158.8 Is=1f N=1 Rb=29.8m)
+*$
+.model M2SJ142  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=509.6n W=18 L=2u Rs=20m Vto=-1.518
++               Rd=.1027 Rds=10MEG Cgso=4p Cgdo=1p Cbd=1.516n Mj=.5465 Pb=2.779
++               Fc=.5 Rg=131.9 Is=1f N=1 Rb=21.7m)
+*$
+.model M2SJ143  PMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=300 Phi=.6 Kp=507.9n W=19 L=2u Rs=20m Vto=-1.547
++               Rd=64.85m Rds=6MEG Cgso=4p Cgdo=1p Cbd=2.168n Mj=.5197 Pb=1.199
++               Fc=.5 Rg=140.7 Is=1f N=1 Rb=10m)
+*$
+.model M2SK1029 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=4u W=1.35 L=2u Rs=20m Vto=2.908 Rd=.274
++               Rds=500K Cgso=893.8p Cgdo=124.2p Cbd=4.745n Mj=.7605 Pb=.4081
++               Fc=.5 Rg=0 Is=1f N=1 Rb=10m)
+*$
+.model M2SK1044 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.022u W=3.8 L=2u Rs=20m Vto=3.293
++               Rd=1.413 Rds=800K Cgso=366.9p Cgdo=24.34p Cbd=2.781n Mj=.7919
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1045 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.022u W=3.8 L=2u Rs=20m Vto=3.293
++               Rd=1.413 Rds=900K Cgso=366.9p Cgdo=24.34p Cbd=2.781n Mj=.7919
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1047 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=5.4 L=2u Rs=20m Vto=3.149
++               Rd=.1708 Rds=250K Cgso=382.7p Cgdo=90.4p Cbd=2.891n Mj=1.2
++               Pb=1.406 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1048 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=5.4 L=2u Rs=20m Vto=3.149
++               Rd=.1708 Rds=250K Cgso=382.7p Cgdo=90.4p Cbd=2.891n Mj=1.2
++               Pb=1.406 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1049 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=4.7 L=2u Rs=20m Vto=3.013
++               Rd=.4072 Rds=450K Cgso=560.5p Cgdo=24.79p Cbd=3.095n Mj=.6915
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1050 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=4.8 L=2u Rs=10m Vto=3.372
++               Rd=.4899 Rds=450K Cgso=523.6p Cgdo=20.05p Cbd=3.044n Mj=.6785
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1051 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.04u W=8.1 L=2u Rs=15m Vto=2.775
++               Rd=10E-21 Rds=50K Cgso=327.2p Cgdo=17.67p Cbd=6.336n Mj=.5052
++               Pb=.3905 Fc=.5 Rg=20.42 Is=543.4f N=.9854 Rb=17.4m)
+*$
+.model M2SK1073 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.022u W=2 L=2u Rs=20m Vto=3.525
++               Rd=2.652 Rds=800K Cgso=605.7p Cgdo=32.2p Cbd=1.382n Mj=.8861
++               Pb=.5439 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1074 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.022u W=2 L=2u Rs=20m Vto=3.525
++               Rd=2.652 Rds=800K Cgso=605.7p Cgdo=32.2p Cbd=1.382n Mj=.8861
++               Pb=.5439 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.MODEL M2SK1079 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=1.6000
++ KP=1.0271E-6
++ RS=10.000E-3
++ RD=.79346
++ VTO=1.6700
++ RDS=2.0000E6
++ TOX=2.0000E-6
++ CGSO=458.49E-12
++ CGDO=10.196E-12
++ CBD=145.12E-12
++ MJ=1.1555
++ PB=3
++ RG=18.874
++ IS=14.298E-9
++ N=1.7748
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1119 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=2.5000
++ KP=1.0452E-6
++ RS=10.000E-3
++ RD=2.8862
++ VTO=2.5000
++ RDS=5.3333E6
++ TOX=2.0000E-6
++ CGSO=2.4868E-9
++ CGDO=25.134E-12
++ CBD=726.82E-12
++ MJ=1.3842
++ PB=3
++ RG=10.000E-3
++ IS=3.8028E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1120 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=2.7000
++ KP=1.0489E-6
++ RS=10.000E-3
++ RD=1.3935
++ VTO=2.4500
++ RDS=5.3333E6
++ TOX=2.0000E-6
++ CGSO=4.4094E-9
++ CGDO=46.583E-12
++ CBD=1.3248E-9
++ MJ=1.4376
++ PB=3
++ RG=10.000E-3
++ IS=4.5093E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.model M2SK1136 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.037u W=7.2 L=2u Rs=20m Vto=1.59
++               Rd=20.56m Rds=500K Cgso=10.71p Cgdo=97.06p Cbd=2.039n Mj=.7268
++               Pb=.3905 Fc=.5 Rg=0 Is=10E-21 N=.4678 Rb=15.4m)
+*$
+.model M2SK1137 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.045u W=20 L=2u Rs=10m Vto=1.73
++               Rd=14.67m Rds=500K Cgso=0 Cgdo=32.79p Cbd=5.4n Mj=.6778 Pb=.469
++               Fc=.5 Rg=0 Is=10.05E-21 N=.5836 Rb=3.532m)
+*$
+.model M2SK1138 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.041u W=5.8 L=2u Rs=20m Vto=1.866
++               Rd=.1857 Rds=1.5MEG Cgso=50.59p Cgdo=43.56p Cbd=1.85n Mj=1.2
++               Pb=.4544 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1139 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.05u W=19 L=2u Rs=20m Vto=1.293
++               Rd=64.47m Rds=1.5MEG Cgso=105.1p Cgdo=13.93p Cbd=4.061n
++               Mj=1.039 Pb=.491 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1142 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.068u W=1.1 L=2u Rs=5m Vto=3.896
++               Rd=5.662 Rds=800K Cgso=359p Cgdo=25.63p Cbd=898.2p Mj=.7822
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1143 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.068u W=1.1 L=2u Rs=5m Vto=3.792
++               Rd=6.079 Rds=900K Cgso=359p Cgdo=25.63p Cbd=873.3p Mj=.7714
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1198 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=3.7 L=2u Rs=20m Vto=3.517
++               Rd=3.086 Rds=7MEG Cgso=174.5p Cgdo=8.835p Cbd=5.188n Mj=1.2
++               Pb=.9531 Fc=.5 Rg=9.643 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1319 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.02u W=3 L=2u Rs=20m Vto=3.279
++               Rd=.3356 Rds=250K Cgso=260.8p Cgdo=62.94p Cbd=2.221n Mj=1.034
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1320 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.04u W=2.6 L=2u Rs=10m Vto=1.265
++               Rd=.385 Rds=300K Cgso=464.7p Cgdo=72.94p Cbd=1.866n Mj=.9767
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1321 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.041u W=1.9 L=2u Rs=20m Vto=3.356
++               Rd=.7241 Rds=450K Cgso=486p Cgdo=43.09p Cbd=1.339n Mj=.764
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1322 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.018u W=2.2 L=2u Rs=0 Vto=3.232 Rd=1m
++               Rds=500K Cgso=206.7p Cgdo=51.07p Cbd=1.018n Mj=1.002 Pb=.7881
++               Fc=.5 Rg=0 Is=207.9u N=4.026 Rb=36.96m)
+*$
+.model M2SK1323 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.009u W=1.2 L=2u Rs=20m Vto=3.95
++               Rd=5.237 Rds=800K Cgso=833.3p Cgdo=26.85p Cbd=794.6p Mj=.7644
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1324 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.039u W=.97 L=2u Rs=20m Vto=3.793
++               Rd=5.65 Rds=900K Cgso=1.024n Cgdo=33.24p Cbd=819.4p Mj=.7643
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.MODEL M2SK1357 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=.93
++ KP=1.0330E-6
++ RS=10.000E-3
++ RD=2.1850
++ VTO=2.8500
++ RDS=4.8000E6
++ TOX=2.0000E-6
++ CGSO=5.3225E-9
++ CGDO=67.743E-12
++ CBD=874.70E-12
++ MJ=1.3802
++ PB=3
++ RG=1.3144E9
++ IS=37.320E-6
++ N=2.7737
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1359 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=2.5000
++ KP=1.0452E-6
++ RS=10.000E-3
++ RD=2.8862
++ VTO=2.5000
++ RDS=5.3333E6
++ TOX=2.0000E-6
++ CGSO=2.7698E-9
++ CGDO=25.099E-12
++ CBD=727.12E-12
++ MJ=1.3854
++ PB=3
++ RG=10.000E-3
++ IS=3.8028E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1363 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=2.9000
++ KP=1.0384E-6
++ RS=10.000E-3
++ RD=.99874
++ VTO=2.5000
++ RDS=4.8000E6
++ TOX=2.0000E-6
++ CGSO=4.1412E-9
++ CGDO=43.359E-12
++ CBD=1.3070E-9
++ MJ=1.3899
++ PB=3
++ RG=10.000E-3
++ IS=27.527E-6
++ N=2.7093
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1365 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=2.7000
++ KP=1.0489E-6
++ RS=10.000E-3
++ RD=1.3935
++ VTO=2.4500
++ RDS=5.3333E6
++ TOX=2.0000E-6
++ CGSO=4.5825E-9
++ CGDO=46.558E-12
++ CBD=1.3070E-9
++ MJ=1.3899
++ PB=3
++ RG=10.000E-3
++ IS=4.5093E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1378 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=5.6000
++ KP=1.0336E-6
++ RS=10.000E-3
++ RD=.28936
++ VTO=3
++ RDS=3.2000E6
++ TOX=2.0000E-6
++ CGSO=2.3656E-9
++ CGDO=22.394E-12
++ CBD=22.884E-9
++ MJ=1.5000
++ PB=.55457
++ RG=10.000E-3
++ IS=3.4754E-15
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1381 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=80
++ KP=1.0414E-6
++ RS=10.000E-3
++ RD=12.030E-3
++ VTO=1.6300
++ RDS=2.0000E6
++ TOX=2.0000E-6
++ CGSO=209.17E-12
++ CGDO=4.0957E-12
++ CBD=5.1553E-9
++ MJ=.53156
++ PB=.91157
++ RG=1.0697
++ IS=10.879E-3
++ N=4.6427
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1382 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=120
++ KP=1.0768E-6
++ RS=10.000E-3
++ RD=3.0823E-3
++ VTO=1.6000
++ RDS=2.0000E6
++ TOX=2.0000E-6
++ CGSO=336.41E-12
++ CGDO=38.446E-12
++ CBD=7.5003E-9
++ MJ=1.5000
++ RG=10.000E-3
++ IS=32.928E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.model M2SK1410 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.032u W=7.9 L=2u Rs=20m Vto=3.452
++               Rd=.3147 Rds=500K Cgso=182.5p Cgdo=25.81p Cbd=3.605n Mj=.7968
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1411 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.038u W=8.055 L=2u Rs=20m Vto=4.706
++               Rd=.1987 Rds=500K Cgso=301.8p Cgdo=45.7p Cbd=5.456n Mj=.8512
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1416 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.041u W=9.4 L=2u Rs=20m Vto=2.39
++               Rd=11.88m Rds=600K Cgso=4p Cgdo=1p Cbd=1.47n Mj=.4997 Pb=1.127
++               Fc=.5 Rg=236.6 Is=1f N=1 Rb=1m)
+*$
+.model M2SK1440 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=5.3 L=2u Rs=20m Vto=2.53
++               Rd=.9307 Rds=450K Cgso=4p Cgdo=1p Cbd=3.285n Mj=.8767 Pb=.3905
++               Fc=.5 Rg=92.93 Is=1f N=1 Rb=1m)
+*$
+.model M2SK1476 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.027u W=3.7 L=2u Rs=20m Vto=4.104
++               Rd=.3796 Rds=450K Cgso=364p Cgdo=24.99p Cbd=2.383n Mj=.7761
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1477 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.027u W=3.7 L=2u Rs=20m Vto=4.104
++               Rd=.3796 Rds=500K Cgso=364p Cgdo=24.99p Cbd=2.383n Mj=.7761
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.MODEL M2SK1486 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=37
++ KP=1.0223E-6
++ RS=10.000E-3
++ RD=62.346E-3
++ VTO=2.8700
++ RDS=2.0000E6
++ TOX=2.0000E-6
++ CGSO=309.55E-12
++ CGDO=9.0444E-12
++ CBD=4.4267E-9
++ MJ=1.0451
++ PB=3
++ RG=10.000E-3
++ IS=383.47E-6
++ N=3.6136
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1489 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=4.8000
++ KP=1.0362E-6
++ RS=10.000E-3
++ RD=.7366
++ VTO=2.2500
++ RDS=5.3333E6
++ TOX=2.0000E-6
++ CGSO=1.9036E-9
++ CGDO=31.423E-12
++ CBD=3.7375E-9
++ MJ=1.1448
++ PB=2.0044
++ RG=10.000E-3
++ IS=5.1802E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1529 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=3.5000
++ KP=1.0249E-6
++ RS=10.000E-3
++ RD=.72396
++ VTO=1.3000
++ RDS=360.00E3
++ TOX=2.0000E-6
++ CGSO=2.8345E-9
++ CGDO=43.155E-12
++ CBD=2.3553E-9
++ MJ=1.0202
++ PB=2.4016
++ RG=10.000E-3
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1530 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=3.5000
++ KP=1.0249E-6
++ RS=10.000E-3
++ RD=.72231
++ VTO=1.5000
++ RDS=400.00E3
++ TOX=2.0000E-6
++ CGSO=2.7228E-9
++ CGDO=43.155E-12
++ CBD=1.2320E-9
++ MJ=1.2780
++ PB=3
++ RG=10.000E-3
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1542 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=94
++ KP=1.0324E-6
++ RS=10.000E-3
++ RD=2.5684E-3
++ VTO=1.3000
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=504.84E-12
++ CGDO=14.546E-12
++ CBD=6.3630E-9
++ MJ=1.3984
++ PB=1.1608
++ RG=10.000E-3
++ IS=6.4432E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1544 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=12
++ KP=1.0292E-6
++ RS=10.000E-3
++ RD=.11659
++ VTO=2.8000
++ RDS=3.3333E6
++ TOX=2.0000E-6
++ CGSO=997.35E-12
++ CGDO=16.748E-12
++ CBD=4.1900E-9
++ MJ=1.0031
++ PB=2.0268
++ RG=10.000E-3
++ IS=21.342E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.model M2SK1562 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.045u W=3.2 L=2u Rs=20m Vto=3.979
++               Rd=.3849 Rds=450K Cgso=335.6p Cgdo=32.18p Cbd=2.009n Mj=.7763
++               Pb=.514 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1563 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.045u W=3.2 L=2u Rs=20m Vto=3.979
++               Rd=.3849 Rds=500K Cgso=335.6p Cgdo=32.18p Cbd=2.009n Mj=.7763
++               Pb=.514 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1568 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.035u W=3 L=2u Rs=20m Vto=3.083
++               Rd=.3815 Rds=250K Cgso=273.3p Cgdo=62.91p Cbd=1.286n Mj=1.081
++               Pb=.8374 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK1569 NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.035u W=3 L=2u Rs=20m Vto=3.083
++               Rd=.3815 Rds=300K Cgso=273.3p Cgdo=62.91p Cbd=1.286n Mj=1.081
++               Pb=.8374 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.MODEL M2SK1600 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=1.9000
++ KP=1.0494E-6
++ RS=10.000E-3
++ RD=4.1493
++ VTO=2.7500
++ RDS=12.800E6
++ TOX=2.0000E-6
++ CGSO=1.5769E-9
++ CGDO=13.209E-12
++ CBD=499.03E-12
++ MJ=.82698
++ PB=1.1268
++ RG=10.000E-3
++ IS=1.3129E-15
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1601 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=1.9000
++ KP=1.0494E-6
++ RS=10.000E-3
++ RD=5.6503
++ VTO=2.7000
++ RDS=14.400E6
++ TOX=2.0000E-6
++ CGSO=1.5926E-9
++ CGDO=13.209E-12
++ CBD=431.34E-12
++ MJ=.95223
++ PB=1.3587
++ RG=10.000E-3
++ IS=1.0812E-15
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1602 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=1.9000
++ KP=1.0494E-6
++ RS=10.000E-3
++ RD=4.1493
++ VTO=2.7500
++ RDS=12.800E6
++ TOX=2.0000E-6
++ CGSO=1.6032E-9
++ CGDO=13.206E-12
++ CBD=499.06E-12
++ MJ=.82691
++ PB=1.1265
++ RG=10.000E-3
++ IS=1.1585E-15
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1641 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=5.5000
++ KP=1.0301E-6
++ RS=10.000E-3
++ RD=.11679
++ VTO=3
++ RDS=1.6667E6
++ TOX=2.0000E-6
++ CGSO=982.78E-12
++ CGDO=27.956E-12
++ CBD=1.7282E-9
++ RG=10.000E-3
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1642 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=4.8000
++ KP=1.0395E-6
++ RS=10.000E-3
++ RD=.28108
++ VTO=3
++ RDS=2.6667E6
++ TOX=2.0000E-6
++ CGSO=1.1348E-9
++ CGDO=15.058E-12
++ CBD=18.640E-9
++ MJ=1.2261
++ PB=.3905
++ RG=.20871
++ IS=3.4754E-15
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1643 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=2.6000
++ KP=1.0236E-6
++ RS=10.000E-3
++ RD=2.3838
++ VTO=2.8000
++ RDS=4.8000E6
++ TOX=2.0000E-6
++ CGSO=2.5193E-9
++ CGDO=24.132E-12
++ CBD=4.1292E-9
++ MJ=1.5000
++ PB=.3905
++ RG=10.000E-3
++ IS=2.8041E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1653 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=100
++ KP=1.0692E-6
++ RS=10.000E-3
++ RD=2.7936E-3
++ VTO=1.3000
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=485.06E-12
++ CGDO=13.655E-12
++ CBD=5.3145E-9
++ MJ=1.5000
++ PB=2.2345
++ RG=10.000E-3
++ IS=7.3359E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1692 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=4.1000
++ KP=1.0400E-6
++ RS=10.000E-3
++ RD=1.6262
++ VTO=2.5000
++ RDS=4.8000E6
++ TOX=2.0000E-6
++ CGSO=1.8881E-9
++ CGDO=18.369E-12
++ CBD=1.4379E-9
++ MJ=1.5000
++ PB=2.9283
++ RG=10.000E-3
++ IS=1.9300E-3
++ N=4.4872
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1719 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=8.7000
++ KP=1.0313E-6
++ RS=10.000E-3
++ RD=43.750E-3
++ VTO=1.4500
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=510.58E-12
++ CGDO=14.548E-12
++ CBD=612.59E-12
++ RG=10.000E-3
++ IS=1.9647E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1721 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=2.2000
++ KP=1.0541E-6
++ RS=10.000E-3
++ RD=2.3655
++ VTO=3
++ RDS=3.3333E6
++ TOX=2.0000E-6
++ CGSO=650.19E-12
++ CGDO=10.263E-12
++ CBD=506.15E-12
++ RG=10.000E-3
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1722 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=4.6000
++ KP=1.0388E-6
++ RS=10.000E-3
++ RD=1.2302
++ VTO=2.9000
++ RDS=3.3333E6
++ TOX=2.0000E-6
++ CGSO=447.67E-12
++ CGDO=5.9954E-12
++ CBD=1.1105E-9
++ MJ=.82602
++ PB=3
++ RG=10.000E-3
++ IS=2.1676E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1745 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=10
++ KP=1.0447E-6
++ RS=10.000E-3
++ RD=.24948
++ VTO=3.5000
++ RDS=3.3333E6
++ TOX=2.0000E-6
++ CGSO=372.61E-12
++ CGDO=10.043E-12
++ CBD=2.4147E-9
++ MJ=.84673
++ PB=1.6037
++ RG=10.000E-3
++ IS=10.413E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1746 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=2.7000
++ KP=1.0526E-6
++ RS=10.000E-3
++ RD=2.8900
++ VTO=2.9000
++ RDS=4.0000E6
++ TOX=2.0000E-6
++ CGSO=449.19E-12
++ CGDO=4.6371E-12
++ CBD=559.00E-12
++ MJ=.64666
++ PB=.39636
++ RG=10.000E-3
++ IS=30.719E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK175 NMOS LEVEL=3 L=2.000E-6 W=.62 KP=1.037E-6 RS=10.00E-3
++ RD=1.000E-3 VTO=-.2321 RDS=6.000E6 TOX=2.000E-6 CGSO=40.00E-12 CGDO=10.00E-12
++ CBD=2.184E-9 RG=188.1 RB=1.000E-3 GAMMA=0 KAPPA=0
+*$
+.MODEL M2SK176 NMOS LEVEL=3 L=2.000E-6 W=.62 KP=1.037E-6 RS=10.00E-3
++ RD=1.000E-3 VTO=-.2321 RDS=6.000E6 TOX=2.000E-6 CGSO=40.00E-12 CGDO=10.00E-12
++ CBD=2.184E-9 RG=188.1 RB=1.000E-3 GAMMA=0 KAPPA=0
+*$
+.MODEL M2SK1792 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=100
++ KP=1.0649E-6
++ RS=10.000E-3
++ RD=2.7847E-3
++ VTO=1.3000
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=100.00E-18
++ CGDO=13.655E-6
++ CBD=4.7043E-9
++ MJ=1.5000
++ PB=.49034
++ RG=10.000E-3
++ IS=7.3359E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1854 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=4.4000
++ KP=1.0386E-6
++ RS=10.000E-3
++ RD=.72462
++ VTO=3.2000
++ RDS=8.0000E6
++ TOX=2.0000E-6
++ CGSO=377.70E-12
++ CGDO=7.1333E-12
++ CBD=790.01E-12
++ MJ=.81541
++ PB=1.7792
++ RG=10.000E-3
++ IS=3.8055E-3
++ N=4.9767
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1855 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=5.6000
++ KP=1.0401E-6
++ RS=10.000E-3
++ RD=.48702
++ VTO=3.3000
++ RDS=3.3333E6
++ TOX=2.0000E-6
++ CGSO=397.54E-12
++ CGDO=11.216E-12
++ CBD=1.1282E-9
++ MJ=.84643
++ PB=1.9003
++ RG=10.000E-3
++ IS=8.3150E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1858 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=1.9000
++ KP=1.0494E-6
++ RS=10.000E-3
++ RD=4.1441
++ VTO=3
++ RDS=12.800E6
++ TOX=2.0000E-6
++ CGSO=1.5027E-9
++ CGDO=13.209E-12
++ CBD=1.0000E-9
++ RG=10.000E-3
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1865 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=5.6000
++ KP=1.0304E-6
++ RS=10.000E-3
++ RD=.48651
++ VTO=3.3000
++ RDS=3.3333E6
++ TOX=2.0000E-6
++ CGSO=396.59E-12
++ CGDO=11.216E-12
++ CBD=1.1282E-9
++ MJ=.84641
++ PB=1.9002
++ RG=10.000E-3
++ IS=8.3150E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1929 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=2
++ KP=1.0412E-6
++ RS=10.000E-3
++ RD=2.3496
++ VTO=3
++ RDS=4.8000E6
++ TOX=2.0000E-6
++ CGSO=2.9817E-9
++ CGDO=31.397E-12
++ CBD=214.96E-12
++ RG=10.000E-3
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK1930 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=2.5000
++ KP=1.0452E-6
++ RS=10.000E-3
++ RD=2.8862
++ VTO=2.5000
++ RDS=5.3333E6
++ TOX=2.0000E-6
++ CGSO=2.7698E-9
++ CGDO=25.099E-12
++ CBD=710.74E-12
++ MJ=1.3054
++ PB=3
++ RG=10.000E-3
++ IS=3.8028E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2013 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=1.3000
++ KP=1.0030E-6
++ RS=10.000E-3
++ RD=10.000E-3
++ VTO=1.5000
++ RDS=1.0000E6
++ TOX=2.0000E-6
++ CGSO=40.000E-12
++ CGDO=10.000E-12
++ CBD=156.73E-12
++ MJ=.96725
++ PB=3
++ RG=5
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2030 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=3.1000
++ KP=1.0428E-6
++ RS=10.000E-3
++ RD=1.0000E-3
++ VTO=3
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=359.03E-12
++ CGDO=55.602E-12
++ CBD=1.0017E-9
++ MJ=.90375
++ PB=1.6220
++ RG=10.000E-3
++ IS=1.7785E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2077 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=3.6000
++ KP=1.0228E-6
++ RS=10.000E-3
++ RD=1.3160
++ VTO=2.5000
++ RDS=4.2667E6
++ TOX=2.0000E-6
++ CGSO=2.0730E-9
++ CGDO=20.931E-12
++ CBD=1.8708E-9
++ MJ=1.2070
++ PB=1.9100
++ RG=10.000E-3
++ IS=184.46E-15
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2089 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=3.1000
++ KP=1.0285E-6
++ RS=10.000E-3
++ RD=1.6982
++ VTO=3
++ RDS=4.2667E6
++ TOX=2.0000E-6
++ CGSO=1.0716E-9
++ CGDO=22.672E-12
++ CBD=233.57E-12
++ RG=10.000E-3
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2146 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=1.2000
++ KP=1.0417E-6
++ RS=10.000E-3
++ RD=.94828
++ VTO=3.2500
++ RDS=1.6667E6
++ TOX=2.0000E-6
++ CGSO=528.19E-12
++ CGDO=16.804E-12
++ CBD=265.02E-12
++ MJ=.96683
++ PB=3
++ RG=5.2680
++ IS=32.336E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2162 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=.5
++ RS=10.000E-3
++ RD=10.000E-3
++ VTO=3
++ RDS=1.0000E6
++ TOX=2.0000E-6
++ CGSO=40.000E-12
++ CGDO=10.000E-12
++ CBD=149.14E-12
++ RG=5
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2173 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=130
++ KP=997.83E-9
++ RS=10.000E-3
++ RD=1.0669E-3
++ VTO=1.7500
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=145.40E-12
++ CGDO=6.4562E-12
++ CBD=6.7653E-9
++ MJ=.72882
++ PB=.77072
++ RG=.57531
++ IS=485.04E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2200 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=2.6000
++ KP=1.0318E-6
++ RS=10.000E-3
++ RD=.18007
++ VTO=1.6000
++ RDS=2.0000E6
++ TOX=2.0000E-6
++ CGSO=836.09E-12
++ CGDO=24.409E-12
++ CBD=385.45E-12
++ MJ=1.5000
++ PB=2.6465
++ RG=10.000E-3
++ IS=1.7879E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2201 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=2.6000
++ KP=1.0318E-6
++ RS=10.000E-3
++ RD=.18007
++ VTO=1.6000
++ RDS=2.0000E6
++ TOX=2.0000E-6
++ CGSO=836.09E-12
++ CGDO=24.409E-12
++ CBD=385.45E-12
++ MJ=1.5000
++ PB=2.6465
++ RG=10.000E-3
++ IS=1.7879E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2222 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=3.1000
++ KP=1.0285E-6
++ RS=10.000E-3
++ RD=1.6982
++ VTO=3
++ RDS=4.2667E6
++ TOX=2.0000E-6
++ CGSO=1.6014E-9
++ CGDO=15.384E-12
++ CBD=1.0000E-9
++ RG=10.000E-3
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2228 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=8.8000
++ KP=1.0342E-6
++ RS=10.000E-3
++ RD=44.123E-3
++ VTO=1.4500
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=506.35E-12
++ CGDO=14.379E-12
++ CBD=1.0283E-9
++ MJ=.92365
++ PB=1.7452
++ RG=10.000E-3
++ IS=80.840E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2229 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=5.1000
++ KP=1.0318E-6
++ RS=10.000E-3
++ RD=63.460E-3
++ VTO=1.7500
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=386.20E-12
++ CGDO=16.705E-12
++ CBD=769.73E-12
++ MJ=.63122
++ PB=.39744
++ RG=.85053
++ IS=80.840E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2230 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=1.2000
++ KP=1.0417E-6
++ RS=10.000E-3
++ RD=.84641
++ VTO=3.3000
++ RDS=1.6667E6
++ TOX=2.0000E-6
++ CGSO=523.24E-12
++ CGDO=16.804E-12
++ CBD=265.02E-12
++ MJ=.96677
++ PB=3
++ RG=5.7200
++ IS=32.336E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2231 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=5.1000
++ KP=1.0318E-6
++ RS=10.000E-3
++ RD=63.460E-3
++ VTO=1.7500
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=389.47E-12
++ CGDO=1.9608E-15
++ CBD=873.08E-12
++ MJ=.51932
++ PB=.3905
++ RG=20.666
++ IS=1.5698E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2232 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=43
++ KP=1.0285E-6
++ RS=10.000E-3
++ RD=20.615E-3
++ VTO=1.4500
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=162.16E-12
++ CGDO=6.3787E-12
++ CBD=2.2521E-9
++ MJ=.67915
++ PB=.3905
++ RG=4.3134
++ IS=5.3256E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2233 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=49
++ KP=1.0277E-6
++ RS=10.000E-3
++ RD=7.0281E-3
++ VTO=1.7000
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=192.64E-12
++ CGDO=8.6826E-12
++ CBD=3.9116E-9
++ MJ=.91867
++ PB=1.0224
++ RG=1.1551
++ IS=355.70E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2235 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=.5
++ RS=10.000E-3
++ RD=1.1613
++ VTO=3
++ RDS=5.0000E6
++ TOX=2.0000E-6
++ CGSO=1.9497E-9
++ CGDO=34.999E-12
++ CBD=1.0000E-9
++ RG=5.5157
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2266 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=49
++ KP=1.0277E-6
++ RS=10.000E-3
++ RD=6.9965E-3
++ VTO=1.7500
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=189.52E-12
++ CGDO=8.6826E-12
++ CBD=3.9178E-9
++ MJ=.87843
++ PB=.9575
++ RG=1.2588
++ IS=355.70E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2267 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=220
++ KP=1.0189E-6
++ RS=10.000E-3
++ RD=1.0000E-3
++ VTO=1.5500
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=158.89E-12
++ CGDO=5.6978E-12
++ CBD=12.050E-9
++ MJ=.81525
++ PB=.68432
++ RG=10.000E-3
++ IS=646.72E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2274 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=3.2000
++ KP=1.0235E-6
++ RS=10.000E-3
++ RD=1.3980
++ VTO=3.2500
++ RDS=4.2667E6
++ TOX=2.0000E-6
++ CGSO=1.0520E-9
++ CGDO=18.824E-12
++ CBD=186.61E-12
++ RG=10.000E-3
++ IS=10.599E-6
++ N=2.6592
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2311 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=43
++ KP=1.0383E-6
++ RS=10.000E-3
++ RD=20.601E-3
++ VTO=1.5500
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=156.16E-12
++ CGDO=6.3777E-12
++ CBD=2.1979E-9
++ MJ=.90861
++ PB=1.1280
++ RG=10.000E-3
++ IS=5.4344E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2312 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=140
++ KP=1.0050E-6
++ RS=10.000E-3
++ RD=1.2069E-3
++ VTO=1.8000
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=136.01E-12
++ CGDO=5.9812E-12
++ CBD=6.8748E-9
++ MJ=.80514
++ PB=.85827
++ RG=.64335
++ IS=468.87E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2313 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=220
++ KP=1.0189E-6
++ RS=10.000E-3
++ RD=1.0000E-3
++ VTO=1.5500
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=158.89E-12
++ CGDO=5.6978E-12
++ CBD=12.050E-9
++ MJ=.81525
++ PB=.68432
++ RG=10.000E-3
++ IS=646.72E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2314 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=29
++ KP=1.0463E-6
++ RS=10.000E-3
++ RD=48.050E-3
++ VTO=1.5000
++ RDS=2.0000E6
++ TOX=2.0000E-6
++ CGSO=311.42E-12
++ CGDO=6.9827E-12
++ CBD=3.1377E-9
++ MJ=1.5000
++ PB=.9641
++ RG=2.2804
++ IS=5.5609E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2319 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=3.6000
++ KP=1.0228E-6
++ RS=10.000E-3
++ RD=1.3149
++ VTO=2.6000
++ RDS=12.800E6
++ TOX=2.0000E-6
++ CGSO=2.0336E-9
++ CGDO=20.931E-12
++ CBD=5.0409E-9
++ MJ=1.1015
++ PB=.3905
++ RG=10.000E-3
++ IS=1.7851E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2320 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=4.6000
++ KP=1.0388E-6
++ RS=10.000E-3
++ RD=.92593
++ VTO=3.3000
++ RDS=12.800E6
++ TOX=2.0000E-6
++ CGSO=1.4173E-9
++ CGDO=24.565E-12
++ CBD=6.6183E-9
++ MJ=1.3327
++ PB=.3905
++ RG=10.000E-3
++ IS=2.7248E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2350 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=8.5000
++ KP=1.0314E-6
++ RS=10.000E-3
++ RD=.21863
++ VTO=2.6000
++ RDS=4.0000E6
++ TOX=2.0000E-6
++ CGSO=213.27E-12
++ CGDO=5.1871E-12
++ CBD=1.1427E-9
++ MJ=1.5000
++ PB=2.0859
++ RG=10.000E-3
++ IS=2.2980E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2376 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=140
++ KP=1.0050E-6
++ RS=10.000E-3
++ RD=1.2069E-3
++ VTO=1.8000
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=136.01E-12
++ CGDO=5.9812E-12
++ CBD=6.8748E-9
++ MJ=.80514
++ PB=.85827
++ RG=.64335
++ IS=485.04E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2381 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=6.9000
++ KP=1.0371E-6
++ RS=10.000E-3
++ RD=.51186
++ VTO=2.6000
++ RDS=4.0000E6
++ TOX=2.0000E-6
++ CGSO=168.18E-12
++ CGDO=5.8422E-12
++ CBD=508.65E-12
++ MJ=1.0555
++ PB=1.8265
++ RG=10.000E-3
++ IS=234.24E-6
++ N=3.6656
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2382 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=32
++ KP=1.0396E-6
++ RS=10.000E-3
++ RD=.11183
++ VTO=2.5000
++ RDS=4.0000E6
++ TOX=2.0000E-6
++ CGSO=168.61E-12
++ CGDO=4.7084E-12
++ CBD=2.5374E-9
++ MJ=.84374
++ PB=1.0676
++ RG=10.000E-3
++ IS=6.4619E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2385 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=54
++ KP=1.0419E-6
++ RS=10.000E-3
++ RD=11.902E-3
++ VTO=1.7500
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=186.45E-12
++ CGDO=7.8302E-12
++ CBD=3.9287E-9
++ MJ=.82217
++ PB=.86758
++ RG=1.3195
++ IS=7.0906E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2391 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=24
++ KP=1.0266E-6
++ RS=10.000E-3
++ RD=46.281E-3
++ VTO=1.5000
++ RDS=2.0000E6
++ TOX=2.0000E-6
++ CGSO=359.33E-12
++ CGDO=8.4596E-12
++ CBD=3.2845E-9
++ MJ=.85863
++ PB=.3905
++ RG=2.3239
++ IS=5.7405E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2398 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=48
++ KP=1.0297E-6
++ RS=10.000E-3
++ RD=6.5919E-3
++ VTO=2.2000
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=168.12E-12
++ CGDO=8.8668E-12
++ CBD=3.9293E-9
++ MJ=.82147
++ PB=.86675
++ RG=2.2391
++ IS=323.36E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2399 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=6.1000
++ KP=1.0369E-6
++ RS=10.000E-3
++ RD=.1218
++ VTO=1.6500
++ RDS=2.0000E6
++ TOX=2.0000E-6
++ CGSO=680.38E-12
++ CGDO=14.503E-12
++ CBD=1.3300E-9
++ MJ=.78043
++ PB=.3905
++ RG=10.000E-3
++ IS=1.7851E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2400 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=5.9000
++ KP=1.0441E-6
++ RS=10.000E-3
++ RD=.12077
++ VTO=1.6500
++ RDS=2.0000E6
++ TOX=2.0000E-6
++ CGSO=699.46E-12
++ CGDO=15.000E-12
++ CBD=1.2719E-9
++ MJ=1.2770
++ PB=.90942
++ RG=10.000E-3
++ IS=1.7851E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2401 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=37
++ KP=1.0223E-6
++ RS=10.000E-3
++ RD=.11282
++ VTO=2.5000
++ RDS=2.0000E6
++ TOX=2.0000E-6
++ CGSO=145.08E-12
++ CGDO=4.0687E-12
++ CBD=2.7216E-9
++ MJ=.65672
++ PB=.3905
++ RG=10.000E-3
++ IS=6.4619E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2417 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=11
++ KP=1.0458E-6
++ RS=10.000E-3
++ RD=.3869
++ VTO=2.4000
++ RDS=5.0000E6
++ TOX=2.0000E-6
++ CGSO=259.54E-12
++ CGDO=3.1932E-12
++ CBD=1.2614E-9
++ MJ=.78005
++ PB=.93507
++ RG=10.000E-3
++ IS=48.504E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2445 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=62
++ KP=1.0417E-6
++ RS=10.000E-3
++ RD=1.0000E-3
++ VTO=2.2000
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=250.38E-12
++ CGDO=13.686E-12
++ CBD=7.4467E-9
++ MJ=.76588
++ PB=.66626
++ RG=1.3609
++ IS=533.54E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2466 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=150
++ KP=1.0347E-6
++ RS=10.000E-3
++ RD=22.430E-3
++ VTO=1.6300
++ RDS=2.0000E6
++ TOX=2.0000E-6
++ CGSO=87.668E-12
++ CGDO=1.8329E-12
++ CBD=1.8918E-9
++ MJ=.71887
++ PB=.7505
++ RG=10.000E-3
++ IS=11.333E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2467-Y NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=5.6000
++ KP=1.0334E-6
++ RS=10.000E-3
++ RD=10.000E-3
++ VTO=3
++ RDS=360.00E3
++ TOX=2.0000E-6
++ CGSO=40.000E-12
++ CGDO=10.000E-12
++ CBD=624.36E-12
++ RG=5
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2493 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=25
++ KP=1.0199E-6
++ RS=10.000E-3
++ RD=33.334E-3
++ VTO=1
++ RDS=320.00E3
++ TOX=2.0000E-6
++ CGSO=325.48E-12
++ CGDO=14.987E-12
++ CBD=1.9449E-9
++ MJ=1.5000
++ PB=.83374
++ RG=7.9233
++ IS=80.840E-18
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2507 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=29
++ KP=1.0463E-6
++ RS=10.000E-3
++ RD=15.894E-3
++ VTO=1.7000
++ RDS=1.0000E6
++ TOX=2.0000E-6
++ CGSO=151.66E-12
++ CGDO=5.2936E-12
++ CBD=1.8057E-9
++ MJ=.67866
++ PB=.3905
++ RG=4.0993
++ IS=7.9350E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2508 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=41
++ KP=1.0325E-6
++ RS=10.000E-3
++ RD=.16363
++ VTO=2.5000
++ RDS=5.0000E6
++ TOX=2.0000E-6
++ CGSO=134.41E-12
++ CGDO=1.8312E-12
++ CBD=1.5642E-9
++ RG=10.000E-3
++ IS=6.0115E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2542 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=20
++ KP=1.0452E-6
++ RS=10.000E-3
++ RD=.7261
++ VTO=3.0500
++ RDS=10.000E6
++ TOX=2.0000E-6
++ CGSO=163.65E-12
++ CGDO=1.6264E-12
++ CBD=2.4795E-9
++ MJ=1.1959
++ PB=2.5431
++ RG=10.000E-3
++ IS=1.7639E-3
++ N=3.9429
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2543 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=20
++ KP=1.0452E-6
++ RS=10.000E-3
++ RD=.7261
++ VTO=3.0500
++ RDS=10.000E6
++ TOX=2.0000E-6
++ CGSO=116.97E-12
++ CGDO=2.1268E-12
++ CBD=2.5673E-9
++ MJ=1.2482
++ PB=2.8218
++ RG=10.000E-3
++ IS=1.7639E-3
++ N=3.9429
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2544 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=8.9000
++ KP=1.0346E-6
++ RS=10.000E-3
++ RD=.85862
++ VTO=3
++ RDS=12.000E6
++ TOX=2.0000E-6
++ CGSO=403.38E-12
++ CGDO=3.3768E-12
++ CBD=2.5816E-9
++ MJ=1.3188
++ PB=3
++ RG=10.000E-3
++ IS=224.09E-9
++ N=1.8394
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2545 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=8.9000
++ KP=1.0346E-6
++ RS=10.000E-3
++ RD=.85862
++ VTO=3
++ RDS=12.000E6
++ TOX=2.0000E-6
++ CGSO=403.38E-12
++ CGDO=3.3768E-12
++ CBD=2.5843E-9
++ MJ=.97511
++ PB=2.1094
++ RG=10.000E-3
++ IS=449.49E-9
++ N=1.9189
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2549 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=8.9000
++ KP=1.0381E-6
++ RS=10.000E-3
++ RD=.13913
++ VTO=.9
++ RDS=320.00E3
++ TOX=2.0000E-6
++ CGSO=160.46E-12
++ CGDO=12.665E-12
++ CBD=378.48E-12
++ MJ=1.5000
++ PB=1.1796
++ RG=178.87
++ IS=2.7605E-3
++ N=4.9099
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2598 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=35
++ KP=1.0328E-6
++ RS=10.000E-3
++ RD=.16268
++ VTO=2.3500
++ RDS=5.0000E6
++ TOX=2.0000E-6
++ CGSO=166.65E-12
++ CGDO=2.1461E-12
++ CBD=1.0731E-9
++ MJ=.41641
++ PB=.3905
++ RG=10.000E-3
++ IS=2.6315E-3
++ N=4.2214
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2599 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=2.7000
++ KP=1.0338E-6
++ RS=10.000E-3
++ RD=2.7844
++ VTO=3.1500
++ RDS=10.000E6
++ TOX=2.0000E-6
++ CGSO=346.47E-12
++ CGDO=3.7111E-12
++ CBD=727.71E-12
++ MJ=1.0243
++ PB=1.8794
++ RG=10.000E-3
++ IS=394.72E-6
++ N=4.2214
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2602 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=8.9000
++ KP=1.0324E-6
++ RS=10.000E-3
++ RD=.85945
++ VTO=2.8000
++ RDS=12.000E6
++ TOX=2.0000E-6
++ CGSO=423.06E-12
++ CGDO=3.3768E-12
++ CBD=2.6065E-9
++ MJ=1.0785
++ PB=1.9573
++ RG=10.000E-3
++ IS=449.49E-9
++ N=1.9189
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2603 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=3.8000
++ KP=1.0341E-6
++ RS=10.000E-3
++ RD=2.9166
++ VTO=3
++ RDS=12.800E6
++ TOX=2.0000E-6
++ CGSO=683.99E-12
++ CGDO=7.9115E-12
++ CBD=1.5797E-9
++ MJ=.87149
++ PB=1.1641
++ RG=10.000E-3
++ IS=859.01E-9
++ N=2.1098
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2604 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=3.9000
++ KP=1.0295E-6
++ RS=10.000E-3
++ RD=1.8185
++ VTO=2.9000
++ RDS=12.800E6
++ TOX=2.0000E-6
++ CGSO=761.92E-12
++ CGDO=11.577E-12
++ CBD=2.0634E-9
++ MJ=1.3020
++ PB=3
++ RG=10.000E-3
++ IS=662.80E-6
++ N=3.7557
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2605 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=3.9000
++ KP=1.0263E-6
++ RS=10.000E-3
++ RD=1.8182
++ VTO=2.9000
++ RDS=12.800E6
++ TOX=2.0000E-6
++ CGSO=761.39E-12
++ CGDO=11.577E-12
++ CBD=2.0667E-9
++ MJ=1.3171
++ PB=3
++ RG=10.000E-3
++ IS=662.80E-6
++ N=3.7557
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2607 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=9.3000
++ KP=1.0359E-6
++ RS=10.000E-3
++ RD=.96034
++ VTO=2.9000
++ RDS=12.800E6
++ TOX=2.0000E-6
++ CGSO=810.02E-12
++ CGDO=8.0854E-12
++ CBD=4.5723E-9
++ MJ=.94107
++ PB=1.6469
++ RG=10.000E-3
++ IS=6.1408E-3
++ N=4.7728
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2608 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=3.6000
++ KP=1.0405E-6
++ RS=10.000E-3
++ RD=3.6429
++ VTO=3
++ RDS=14.400E6
++ TOX=2.0000E-6
++ CGSO=717.05E-12
++ CGDO=8.3519E-12
++ CBD=1.5725E-9
++ MJ=1.0812
++ PB=1.5593
++ RG=10.000E-3
++ IS=512.58E-9
++ N=2.0380
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2610 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=5
++ KP=1.0401E-6
++ RS=10.000E-3
++ RD=2.2350
++ VTO=2.9000
++ RDS=14.400E6
++ TOX=2.0000E-6
++ CGSO=992.04E-12
++ CGDO=10.027E-12
++ CBD=2.2842E-9
++ MJ=1.0992
++ PB=3
++ RG=10.000E-3
++ IS=768.88E-9
++ N=2.0380
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2611 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=7.9000
++ KP=1.0401E-6
++ RS=10.000E-3
++ RD=1.0557
++ VTO=2.8000
++ RDS=14.400E6
++ TOX=2.0000E-6
++ CGSO=792.25E-12
++ CGDO=8.2525E-12
++ CBD=4.1358E-9
++ MJ=1.3557
++ PB=3
++ RG=10.000E-3
++ IS=61.058E-6
++ N=2.7891
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2614 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=22
++ KP=1.0149E-6
++ RS=10.000E-3
++ RD=11.396E-3
++ VTO=1.4000
++ RDS=1.0000E6
++ TOX=2.0000E-6
++ CGSO=227.43E-12
++ CGDO=6.9917E-12
++ CBD=809.00E-12
++ RG=10.000E-3
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2615 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=4
++ KP=1.0412E-6
++ RS=10.000E-3
++ RD=.16391
++ VTO=1.4000
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=376.42E-12
++ CGDO=7.3662E-12
++ CBD=150.84E-12
++ RG=14.557
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2662 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=5.9000
++ KP=1.0338E-6
++ RS=10.000E-3
++ RD=1.2926
++ VTO=3
++ RDS=10.000E6
++ TOX=2.0000E-6
++ CGSO=352.58E-12
++ CGDO=2.5482E-12
++ CBD=1.3543E-9
++ MJ=1.5000
++ PB=2.9777
++ RG=1.3217
++ IS=295.16E-9
++ N=1.9665
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2679 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=4.2000
++ KP=1.0418E-6
++ RS=10.000E-3
++ RD=.76718
++ VTO=2.6000
++ RDS=8.0000E6
++ TOX=2.0000E-6
++ CGSO=565.92E-12
++ CGDO=8.3522E-12
++ CBD=1.2435E-9
++ MJ=.76745
++ PB=1.1338
++ RG=10.000E-3
++ IS=2.0672E-3
++ N=4.2888
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2698 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=27
++ KP=1.0476E-6
++ RS=10.000E-3
++ RD=.32974
++ VTO=3
++ RDS=10.000E6
++ TOX=2.0000E-6
++ CGSO=264.59E-12
++ CGDO=2.0399E-12
++ CBD=5.1917E-9
++ MJ=1.0964
++ PB=2.2048
++ RG=10.000E-3
++ IS=1.0736E-3
++ N=3.6212
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2700 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=3.8000
++ KP=1.0341E-6
++ RS=10.000E-3
++ RD=3.6166
++ VTO=3
++ RDS=14.400E6
++ TOX=2.0000E-6
++ CGSO=683.99E-12
++ CGDO=7.9115E-12
++ CBD=1.5615E-9
++ MJ=1.1796
++ PB=1.9102
++ RG=10.000E-3
++ IS=734.01E-9
++ N=2.0946
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2719 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=3.4000
++ KP=1.0488E-6
++ RS=10.000E-3
++ RD=3.6090
++ VTO=3
++ RDS=14.400E6
++ TOX=2.0000E-6
++ CGSO=753.77E-12
++ CGDO=8.8442E-12
++ CBD=1.5708E-9
++ MJ=1.1471
++ PB=1.6840
++ RG=6.6822
++ IS=734.01E-9
++ N=2.0946
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2733 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=1.7000
++ KP=1.0205E-6
++ RS=10.000E-3
++ RD=7.8242
++ VTO=3
++ RDS=14.400E6
++ TOX=2.0000E-6
++ CGSO=738.78E-12
++ CGDO=13.256E-12
++ CBD=713.21E-12
++ MJ=1.4664
++ PB=2.8334
++ RG=10.000E-3
++ IS=522.13E-9
++ N=2.1923
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2741 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=11
++ KP=1.0073E-6
++ RS=10.000E-3
++ RD=88.885E-3
++ VTO=1.4000
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=229.86E-12
++ CGDO=7.6464E-12
++ CBD=361.01E-12
++ RG=10.000E-3
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2776 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=20
++ KP=1.0452E-6
++ RS=10.000E-3
++ RD=.72659
++ VTO=2.8000
++ RDS=10.000E6
++ TOX=2.0000E-6
++ CGSO=175.93E-12
++ CGDO=1.6264E-12
++ CBD=2.4802E-9
++ MJ=1.1551
++ PB=2.4390
++ RG=10.000E-3
++ IS=1.0252E-6
++ N=2.0380
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2777 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=8.9000
++ KP=1.0346E-6
++ RS=10.000E-3
++ RD=.85951
++ VTO=2.8000
++ RDS=12.000E6
++ TOX=2.0000E-6
++ CGSO=423.24E-12
++ CGDO=3.3768E-12
++ CBD=2.6065E-9
++ MJ=1.0785
++ PB=1.9573
++ RG=10.000E-3
++ IS=224.09E-9
++ N=1.8394
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK2789 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=30
++ KP=1.0223E-6
++ RS=10.000E-3
++ RD=48.229E-3
++ VTO=1.4000
++ RDS=2.0000E6
++ TOX=2.0000E-6
++ CGSO=311.14E-12
++ CGDO=6.7490E-12
++ CBD=3.2846E-9
++ MJ=.8585
++ PB=.3905
++ RG=1.9897
++ IS=7.8401E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.model M2SK294  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=2.77u W=.3 L=2u Rs=20m Vto=4.613
++               Rd=10E-21 Rds=65K Cgso=921.2p Cgdo=470.2p Cbd=611.3p Mj=.8603
++               Pb=3 Fc=.5 Rg=16.22 Is=1f N=1 Rb=10m)
+*$
+.model M2SK295  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=2.77u W=.3 L=2u Rs=20m Vto=4.613
++               Rd=10E-21 Rds=80K Cgso=921.2p Cgdo=470.2p Cbd=611.3p Mj=.8603
++               Pb=3 Fc=.5 Rg=16.22 Is=1f N=1 Rb=10m)
+*$
+.model M2SK298  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.038u W=1.36 L=2u Rs=20m Vto=3.394
++               Rd=1.5 Rds=320K Cgso=547.2p Cgdo=34.64p Cbd=878.2p Mj=.9427
++               Pb=1.451 Fc=.5 Rg=28.43 Is=1f N=1 Rb=1m)
+*$
+.model M2SK299  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.038u W=1.36 L=2u Rs=20m Vto=3.394
++               Rd=1.5 Rds=360K Cgso=547.2p Cgdo=34.64p Cbd=878.2p Mj=.9427
++               Pb=1.451 Fc=.5 Rg=28.43 Is=1f N=1 Rb=1m)
+*$
+.model M2SK312  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.032u W=1.861 L=2u Rs=20m Vto=3.355
++               Rd=.4766 Rds=320K Cgso=734.4p Cgdo=45.33p Cbd=1.011n Mj=.8782
++               Pb=3 Fc=.5 Rg=27.69 Is=10f N=1 Rb=1m)
+*$
+.model M2SK313  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.032u W=1.861 L=2u Rs=20m Vto=3.355
++               Rd=.4766 Rds=360K Cgso=734.4p Cgdo=45.33p Cbd=1.011n Mj=.8782
++               Pb=3 Fc=.5 Rg=27.69 Is=10f N=1 Rb=1m)
+*$
+.MODEL M2SK317 NMOS LEVEL=3 L=2.000E-6 W=.62 KP=1.030E-6 RS=10.00E-3 RD=7.890
++ VTO=1.062 RDS=6.000E6 TOX=2.000E-6 CGSO=40.00E-12 CGDO=10.00E-12
++ CBD=673.6E-12 RG=441.3 RB=1.000E-3 GAMMA=0 KAPPA=0
+*$
+.MODEL M2SK318 NMOS LEVEL=3 L=2.000E-6 W=.27 KP=1.045E-6 RS=10.00E-3
++ RD=1.000E-3 VTO=.6402 RDS=140.0E3 TOX=2.000E-6 CGSO=40.00E-12 CGDO=10.00E-12
++ CBD=339.6E-12 RG=1.031E3 RB=1.000E-3 GAMMA=0 KAPPA=0
+*$
+.model M2SK324  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.032u W=5.814 L=2u Rs=20m Vto=3
++               Rd=.3808 Rds=400K Cgso=4p Cgdo=1p Cbd=4.051n Mj=.6788 Pb=.3905
++               Fc=.5 Rg=217.8 Is=1f N=1 Rb=0)
+*$
+.model M2SK325  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.032u W=5.814 L=2u Rs=20m Vto=3
++               Rd=.4308 Rds=450K Cgso=4p Cgdo=1p Cbd=4.051n Mj=.6788 Pb=.3905
++               Fc=.5 Rg=217.8 Is=1f N=1 Rb=0)
+*$
+.model M2SK355  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.033u W=4.8 L=2u Rs=20m Vto=2.61
++               Rd=41.65m Rds=150K Cgso=4p Cgdo=1p Cbd=13.06n Mj=.8104 Pb=.3905
++               Fc=.5 Rg=560 Is=69.88u N=2.719 Rb=0)
+*$
+.model M2SK356  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.029u W=6.608 L=2u Rs=20m Vto=2.936
++               Rd=.1469 Rds=250K Cgso=4p Cgdo=1p Cbd=5.911n Mj=.686 Pb=.3905
++               Fc=.5 Rg=341.8 Is=1f N=1 Rb=1m)
+*$
+.model M2SK357  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.039u W=1.3 L=2u Rs=20m Vto=3.675
++               Rd=.3286 Rds=150K Cgso=4p Cgdo=1p Cbd=853.7p Mj=.9921 Pb=3
++               Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK358  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.01u W=1.1 L=2u Rs=20m Vto=2.174
++               Rd=.4368 Rds=250K Cgso=4p Cgdo=1p Cbd=4.016n Mj=.8712 Pb=.3905
++               Fc=.5 Rg=421.6 Is=1f N=1 Rb=10m)
+*$
+.model M2SK385  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.043u W=5.626 L=2u Rs=20m Vto=2.978
++               Rd=.6 Rds=400K Cgso=4p Cgdo=1p Cbd=2.827n Mj=.5824 Pb=.3905
++               Fc=.5 Rg=207.8 Is=10f N=1 Rb=1m)
+*$
+.model M2SK386  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.043u W=5.626 L=2u Rs=20m Vto=2.978
++               Rd=.6 Rds=450K Cgso=4p Cgdo=1p Cbd=2.828n Mj=.5824 Pb=.3905
++               Fc=.5 Rg=207.8 Is=10f N=1 Rb=1m)
+*$
+.model M2SK387  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=7.547u W=1 L=2u Rs=20m Vto=3.262
++               Rd=56.16m Rds=150K Cgso=4p Cgdo=1p Cbd=10.36n Mj=.7514 Pb=.3905
++               Fc=.5 Rg=549.9 Is=2.04u N=1.993 Rb=6.334m)
+*$
+.model M2SK388  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.023u W=5.701 L=2u Rs=20m Vto=2.919
++               Rd=.1379 Rds=250K Cgso=4p Cgdo=1p Cbd=4.511n Mj=.6212 Pb=.3905
++               Fc=.5 Rg=255.8 Is=1f N=1 Rb=1m)
+*$
+.MODEL M2SK405 NMOS LEVEL=3 L=2.000E-6 W=1.900 KP=1.018E-6 RS=10.00E-3 RD=11.37
++ VTO=.9547 RDS=6.000E6 TOX=2.000E-6 CGSO=40.00E-12 CGDO=10.00E-12
++ CBD=893.7E-12 RG=123.9 RB=1.000E-3 GAMMA=0 KAPPA=0
+*$
+.model M2SK420  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.042u W=2 L=2u Rs=20m Vto=2.5 Rd=.8474
++               Rds=400K Cgso=4p Cgdo=1p Cbd=654.2p Mj=.5 Pb=.8 Fc=.5 Rg=220.4
++               Is=10f N=1 Rb=1m)
+*$
+.model M2SK440  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.034u W=2.073 L=2u Rs=20m Vto=3.634
++               Rd=.2966 Rds=160K Cgso=379.8p Cgdo=36.09p Cbd=692.8p Mj=.7016
++               Pb=2.677 Fc=.5 Rg=14.37 Is=1f N=1 Rb=10m)
+*$
+.model M2SK442  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.015u W=1.2 L=2u Rs=20m Vto=1.626
++               Rd=10m Rds=70K Cgso=4p Cgdo=1p Cbd=1.349n Mj=.4534 Pb=.3905
++               Fc=.5 Rg=845.4 Is=10f N=1 Rb=1m)
+*$
+.MODEL M2SK447 NMOS LEVEL=3 L=2.000E-6 W=3.200 KP=1.025E-6 RS=10.00E-3
++ RD=1.000E-3 VTO=2.625 RDS=250.0E3 TOX=2.000E-6 CGSO=40.00E-12 CGDO=10.00E-12
++ CBD=1.000E-9 RG=172 RB=1.000E-3 GAMMA=0 KAPPA=0
+*$
+.model M2SK459  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.04u W=3.2 L=2u Rs=30m Vto=3.777
++               Rd=.28 Rds=2MEG Cgso=4p Cgdo=1p Cbd=1.408n Mj=.504 Pb=.3905
++               Fc=.5 Rg=108.1 Is=1f N=1 Rb=0)
+*$
+.model M2SK479  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.023u W=3.5 L=2u Rs=20m Vto=4.365
++               Rd=.146 Rds=2.5MEG Cgso=4p Cgdo=1p Cbd=3.198n Mj=.5308 Pb=.3905
++               Fc=.5 Rg=146.2 Is=1f N=1 Rb=1m)
+*$
+.model M2SK512  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.051u W=1.9 L=2u Rs=20m Vto=2.169
++               Rd=.6 Rds=400K Cgso=778.4p Cgdo=58.42p Cbd=4.202n Mj=.8174
++               Pb=.3905 Fc=.5 Rg=12.39 Is=1f N=1 Rb=1m)
+*$
+.model M2SK513  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.048u W=.4324 L=2u Rs=20m Vto=2.515
++               Rd=4.615 Rds=640K Cgso=1.084n Cgdo=89.28p Cbd=433.5p Mj=1.096
++               Pb=3 Fc=.5 Rg=43.89 Is=10f N=1 Rb=1m)
+*$
+.model M2SK525  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.028u W=2.3 L=2u Rs=20m Vto=2.851
++               Rd=52.46m Rds=150K Cgso=4p Cgdo=1p Cbd=1.813n Mj=.4965 Pb=.3905
++               Fc=.5 Rg=667.3 Is=10E-21 N=.5457 Rb=0)
+*$
+.model M2SK526  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.047u W=2.6 L=2u Rs=20m Vto=2.26
++               Rd=.2831 Rds=250K Cgso=4p Cgdo=1p Cbd=1.489n Mj=.5048 Pb=.3905
++               Fc=.5 Rg=357.9 Is=1f N=1 Rb=1m)
+*$
+.model M2SK528  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.045u W=1.7 L=2u Rs=20m Vto=2.94
++               Rd=1.709 Rds=400K Cgso=4p Cgdo=1p Cbd=739.6p Mj=.5559 Pb=.3905
++               Fc=.5 Rg=297 Is=1f N=1 Rb=1m)
+*$
+.model M2SK529  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.008u W=1.6 L=2u Rs=20m Vto=2.609
++               Rd=1.807 Rds=450K Cgso=4p Cgdo=1p Cbd=656p Mj=.5263 Pb=.3905
++               Fc=.5 Rg=286.9 Is=1f N=1 Rb=1m)
+*$
+.model M2SK530  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.07u W=1.5 L=2u Rs=20m Vto=2.108
++               Rd=1.029 Rds=400K Cgso=4p Cgdo=1p Cbd=1.126n Mj=.5636 Pb=.3905
++               Fc=.5 Rg=269.5 Is=1f N=1 Rb=0)
+*$
+.model M2SK531  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.05u W=1.7 L=2u Rs=20m Vto=2.5
++               Rd=1.112 Rds=450K Cgso=4p Cgdo=1p Cbd=910.4p Mj=.5601 Pb=.5434
++               Fc=.5 Rg=265.5 Is=10f N=1 Rb=1m)
+*$
+.model M2SK532  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.026u W=4.179 L=2u Rs=0 Vto=2.634
++               Rd=10E-21 Rds=60K Cgso=4p Cgdo=1p Cbd=6.316n Mj=.5629 Pb=.3905
++               Fc=.5 Rg=1.084K Is=10f N=1 Rb=1m)
+*$
+.model M2SK534  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.04u W=1.066 L=2u Rs=20m Vto=2.876
++               Rd=3.009 Rds=640K Cgso=968.9p Cgdo=50.32p Cbd=567.8p Mj=.749
++               Pb=3 Fc=.5 Rg=38.61 Is=1f N=1 Rb=10m)
+*$
+.model M2SK535  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.029u W=.5131 L=2u Rs=20m Vto=3.174
++               Rd=3.398 Rds=3.2MEG Cgso=887.8p Cgdo=59.23p Cbd=269.3n Mj=.4851
++               Pb=.3905 Fc=.5 Rg=8.749 Is=10f N=1 Rb=1m)
+*$
+.model M2SK538  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.03u W=.67 L=2u Rs=20m Vto=2.47
++               Rd=2.993 Rds=3MEG Cgso=4p Cgdo=1p Cbd=3.236n Mj=.8032 Pb=.3905
++               Fc=.5 Rg=1.264K Is=1f N=1 Rb=1m)
+*$
+.model M2SK539  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.054u W=1.9 L=2u Rs=20m Vto=3.46
++               Rd=2.187 Rds=3MEG Cgso=4p Cgdo=1p Cbd=2.025n Mj=.566 Pb=.3905
++               Fc=.5 Rg=827.9 Is=1f N=1 Rb=10m)
+*$
+.model M2Sk542  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.031u W=.75 L=2u Rs=5m Vto=2.576
++               Rd=.6667 Rds=3MEG Cgso=4p Cgdo=1p Cbd=432.6p Mj=.4509 Pb=.3905
++               Fc=.5 Rg=921.8 Is=1f N=1 Rb=1m)
+*$
+.model M2SK568  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=5.1 L=2u Rs=20m Vto=2.947
++               Rd=.3 Rds=450K Cgso=4p Cgdo=1p Cbd=8.862n Mj=1.185 Pb=3 Fc=.5
++               Rg=226.4 Is=1f N=1 Rb=0)
+*$
+.model M2SK578  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.021u W=4.2 L=2u Rs=20m Vto=2.511
++               Rd=60m Rds=150K Cgso=4p Cgdo=1p Cbd=14.53n Mj=.8791 Pb=.3905
++               Fc=.5 Rg=535.1 Is=10.01E-21 N=.5105 Rb=0)
+*$
+.model M2SK591  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=19.71 L=2u Rs=0 Vto=1.687
++               Rd=21.58m Rds=6MEG Cgso=4p Cgdo=1p Cbd=3.208n Mj=.6787 Pb=1.37
++               Fc=.5 Rg=455.2 Is=636.8E-18 N=.7423 Rb=2.376m)
+*$
+.model M2SK611Z NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.039u W=.28 L=2u Rs=20m Vto=1.696 Rd=3
++               Rds=8MEG Cgso=4p Cgdo=1p Cbd=83.4p Mj=.3846 Pb=.3905 Fc=.5
++               Rg=455.5 Is=10f N=1 Rb=1m)
+*$
+.model M2SK612Z NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.029u W=7 L=2u Rs=20m Vto=1.931
++               Rd=.2391 Rds=8MEG Cgso=4p Cgdo=1p Cbd=621.6p Mj=.4897 Pb=.3905
++               Fc=.5 Rg=92.25 Is=10f N=1 Rb=1m)
+*$
+.model M2SK643  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.042u W=5.989 L=2u Rs=10m Vto=3.34
++               Rd=.5397 Rds=1.5MEG Cgso=795.9p Cgdo=15.87p Cbd=21.2n Mj=1.2
++               Pb=.3905 Fc=.5 Rg=0 Is=1f N=1 Rb=1m)
+*$
+.model M2SK654  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.033u W=1.2 L=2u Rs=20m Vto=1.516
++               Rd=1.013 Rds=8MEG Cgso=4p Cgdo=1p Cbd=2.316n Mj=.5371 Pb=.3905
++               Fc=.5 Rg=104.8 Is=10f N=1 Rb=1m)
+*$
+.model M2SK659  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.052u W=14.29 L=2u Rs=20m Vto=.5683
++               Rd=10E-21 Rds=6MEG Cgso=4p Cgdo=1p Cbd=2.675n Mj=.4672 Pb=.3905
++               Fc=.5 Rg=102.8 Is=10f N=1 Rb=1m)
+*$
+.model M2SK678  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.052u W=11 L=2u Rs=20m Vto=3 Rd=.2745
++               Rds=1.667MEG Cgso=792p Cgdo=7.979p Cbd=3.355n Mj=.5 Pb=.8 Fc=.5
++               Rg=0 Is=1f N=1 Rb=1m)
+*$
+.MODEL M2SK679 NMOS LEVEL=3 L=2.000E-6 W=1.400 KP=1.052E-6 RS=10.00E-3 RD=.1816
++ VTO=1.387 RDS=3.000E6 TOX=2.000E-6 CGSO=40.00E-12 CGDO=10.00E-12
++ CBD=155.2E-12 RG=730.7 RB=1.000E-3 GAMMA=0 KAPPA=0
+*$
+.MODEL M2SK680 NMOS LEVEL=3 L=2.000E-6 W=1.400 KP=1.052E-6 RS=10.00E-3 RD=.1816
++ VTO=1.387 RDS=3.000E6 TOX=2.000E-6 CGSO=40.00E-12 CGDO=10.00E-12
++ CBD=155.2E-12 RG=730.7 RB=1.000E-3 GAMMA=0 KAPPA=0
+*$
+.model M2SK681  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=1.137 L=2u Rs=5m Vto=1.864
++               Rd=.2834 Rds=2MEG Cgso=4p Cgdo=1p Cbd=121.3p Mj=.3778 Pb=1.919
++               Fc=.5 Rg=15.47K Is=10E-21 N=.5305 Rb=6.066n)
+*$
+.model M2SK693  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.052u W=11 L=2u Rs=20m Vto=3 Rd=.2745
++               Rds=1.5MEG Cgso=791.1p Cgdo=8.868p Cbd=3.32n Mj=.5 Pb=.8 Fc=.5
++               Rg=0 Is=1f N=1 Rb=1m)
+*$
+.model M2SK694  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.052u W=11 L=2u Rs=20m Vto=3 Rd=.3545
++               Rds=1.667MEG Cgso=805.8p Cgdo=7.977p Cbd=3.355n Mj=.5 Pb=.8
++               Fc=.5 Rg=0 Is=1m N=1 Rb=1m)
+*$
+.model M2SK700  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.02u W=1.831 L=2u Rs=0 Vto=1.465
++               Rd=.25 Rds=8MEG Cgso=4p Cgdo=1p Cbd=201.8p Mj=.3661 Pb=.5733
++               Fc=.5 Rg=1.516K Is=10E-21 N=.5305 Rb=6.066n)
+*$
+.model M2SK702  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.029u W=6 L=2u Rs=20m Vto=1.586 Rd=.4
++               Rds=10MEG Cgso=4p Cgdo=1p Cbd=1.33n Mj=.524 Pb=.3905 Fc=.5
++               Rg=110.3 Is=1f N=1 Rb=10m)
+*$
+.model M2SK703  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=6 L=2u Rs=20m Vto=1.384
++               Rd=.1587 Rds=10MEG Cgso=4p Cgdo=1p Cbd=1.387n Mj=.5453 Pb=.3905
++               Fc=.5 Rg=117.1 Is=1f N=1 Rb=0)
+*$
+.model M2SK704  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.029u W=4.666 L=2u Rs=40m Vto=1.292
++               Rd=17.4m Rds=6MEG Cgso=4p Cgdo=1p Cbd=1.559n Mj=.4864 Pb=.4705
++               Fc=.5 Rg=284.6 Is=44.59p N=1.144 Rb=8.419m)
+*$
+.model M2SK705  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.043u W=4.53 L=2u Rs=10m Vto=1.24
++               Rd=52.74m Rds=6MEG Cgso=4p Cgdo=1p Cbd=1.783n Mj=.5017 Pb=.3905
++               Fc=.5 Rg=138.3 Is=1m N=.1 Rb=59.99m)
+*$
+.model M2SK707  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.033u W=6.78 L=2u Rs=0 Vto=2.931 Rd=.1
++               Rds=2.5MEG Cgso=4p Cgdo=1p Cbd=2.718n Mj=.7375 Pb=3 Fc=.5
++               Rg=241.9 Is=1f N=2 Rb=0)
+*$
+.model M2SK719  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.058u W=2 L=2u Rs=20m Vto=2.72
++               Rd=2.975 Rds=9MEG Cgso=4p Cgdo=1p Cbd=1.549n Mj=.6635 Pb=.3905
++               Fc=.5 Rg=181.9 Is=1f N=1 Rb=10m)
+*$
+.model M2SK720A NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.042u W=5.056 L=2u Rs=20m Vto=1.956
++               Rd=.1027 Rds=2.5MEG Cgso=4p Cgdo=1p Cbd=3.089n Mj=.8391
++               Pb=1.904 Fc=.5 Rg=115.8 Is=1f N=1 Rb=1m)
+*$
+.model M2SK732  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.057u W=2.3 L=2u Rs=20m Vto=3.418
++               Rd=.4302 Rds=450K Cgso=605.2p Cgdo=58.36p Cbd=2.295n Mj=1.035
++               Pb=.714 Fc=.5 Rg=0 Is=10f N=1 Rb=0)
+*$
+.model M2SK733  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.019u W=2.3 L=2u Rs=20m Vto=3.418
++               Rd=.4302 Rds=450K Cgso=605.2p Cgdo=58.36p Cbd=2.295n Mj=1.035
++               Pb=.714 Fc=.5 Rg=0 Is=10f N=1 Rb=0)
+*$
+.model M2SK734  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.027u W=4.7 L=2u Rs=20m Vto=3.331
++               Rd=.33 Rds=450K Cgso=414p Cgdo=48.07p Cbd=3.23n Mj=.8711
++               Pb=.6238 Fc=.5 Rg=0 Is=10f N=1 Rb=0)
+*$
+.model M2SK735  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.042u W=4.4 L=2u Rs=20m Vto=2.799
++               Rd=.5571 Rds=4.5MEG Cgso=5.865p Cgdo=6.109p Cbd=10E-21 Mj=.5
++               Pb=.8 Fc=.5 Rg=0 Is=10E-21 N=4.783 Rb=1.594m)
+*$
+.model M2SK736  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.008u W=22.24 L=2u Rs=5m Vto=1.734
++               Rd=17.35m Rds=10MEG Cgso=4p Cgdo=1p Cbd=3.578n Mj=.5664
++               Pb=.3905 Fc=.5 Rg=207.3 Is=456.4E-21 N=.6162 Rb=0)
+*$
+.model M2SK737  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.03u W=14.59 L=2u Rs=0 Vto=.5683
++               Rd=30m Rds=10MEG Cgso=4p Cgdo=1p Cbd=3.077n Mj=.5769 Pb=.3905
++               Fc=.5 Rg=45.55 Is=10E-21 N=.2927 Rb=126.1n)
+*$
+.model M2SK738z NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.034u W=7.6 L=2u Rs=0 Vto=1.906
++               Rd=53.86m Rds=3MEG Cgso=4p Cgdo=1p Cbd=894.1p Mj=.3493 Pb=.3905
++               Fc=.5 Rg=180.9 Is=158.6E-18 N=.7126 Rb=43.29m)
+*$
+.model M2SK739Z NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.034u W=7.6 L=2u Rs=0 Vto=1.906
++               Rd=.1323 Rds=6MEG Cgso=4p Cgdo=1p Cbd=713.9p Mj=.4143 Pb=.3905
++               Fc=.5 Rg=122.6 Is=10E-21 N=.4929 Rb=0)
+*$
+.model M2SK773  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.04u W=8.2 L=2u Rs=20m Vto=3.384
++               Rd=.4102 Rds=5MEG Cgso=4p Cgdo=1p Cbd=3.553n Mj=.6304 Pb=.3905
++               Fc=.5 Rg=116.5 Is=1f N=1 Rb=1m)
+*$
+.model M2SK774  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.039u W=8 L=2u Rs=0 Vto=3.506 Rd=.3025
++               Rds=5MEG Cgso=4p Cgdo=1p Cbd=8.98n Mj=.8248 Pb=.3905 Fc=.5
++               Rg=150.8 Is=1f N=1 Rb=0)
+*$
+.model M2SK775  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.007u W=2.393 L=2u Rs=20m Vto=3.922
++               Rd=2.341 Rds=450K Cgso=4p Cgdo=1p Cbd=582.7p Mj=.6367 Pb=.3905
++               Fc=.5 Rg=182.8 Is=10f N=1 Rb=1m)
+*$
+.model M2SK777  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.043u W=4.2 L=2u Rs=20m Vto=3.293
++               Rd=.379 Rds=450K Cgso=4p Cgdo=1p Cbd=3.297n Mj=.6644 Pb=.3905
++               Fc=.5 Rg=304.6 Is=10f N=1 Rb=1m)
+*$
+.model M2SK784  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.03u W=8.5 L=2u Rs=0 Vto=1.875 Rd=0
++               Rds=4.5MEG Cgso=4p Cgdo=1p Cbd=4.195n Mj=.5 Pb=.8 Fc=.5 Rg=0
++               Is=765.2n N=1.79 Rb=8.248m)
+*$
+.model M2SK785  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.035u W=5.68 L=2u Rs=0 Vto=1.818
++               Rd=.2569 Rds=5MEG Cgso=4p Cgdo=1p Cbd=3.152n Mj=.5549 Pb=.3905
++               Fc=.5 Rg=198.5 Is=1f N=1 Rb=1m)
+*$
+.model M2SK786  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.004u W=1.409 L=2u Rs=20m Vto=3.45
++               Rd=6.256 Rds=9MEG Cgso=4p Cgdo=1p Cbd=669.7p Mj=.5685 Pb=.3905
++               Fc=.5 Rg=104.6 Is=1f N=1 Rb=10m)
+*$
+.model M2SK788  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=9.786 L=2u Rs=20m Vto=4.02
++               Rd=.2608 Rds=1.667MEG Cgso=506.4p Cgdo=13.34p Cbd=4.855n Mj=1.2
++               Pb=2.947 Fc=.5 Rg=0 Is=1f N=1 Rb=1m)
+*$
+.model M2SK789  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=9.786 L=2u Rs=20m Vto=4.02
++               Rd=.2355 Rds=1.5MEG Cgso=506.4p Cgdo=13.34p Cbd=4.855n Mj=1.2
++               Pb=2.947 Fc=.5 Rg=0 Is=1f N=1 Rb=1m)
+*$
+.model M2SK790  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=9.786 L=2u Rs=20m Vto=4.02
++               Rd=.2355 Rds=1.667MEG Cgso=506.4p Cgdo=13.34p Cbd=4.855n Mj=1.2
++               Pb=2.947 Fc=.5 Rg=0 Is=1f N=1 Rb=1m)
+*$
+.model M2SK791  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.031u W=.6657 L=2u Rs=20m Vto=2.586
++               Rd=2.928 Rds=2.833MEG Cgso=4p Cgdo=1p Cbd=1.361n Mj=.5832
++               Pb=.3905 Fc=.5 Rg=1.478K Is=1f N=1 Rb=1m)
+*$
+.model M2SK792  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.031u W=.6657 L=2u Rs=20m Vto=2.586
++               Rd=2.928 Rds=3MEG Cgso=4p Cgdo=1p Cbd=1.361n Mj=.5832 Pb=.3905
++               Fc=.5 Rg=1.478K Is=1f N=1 Rb=1m)
+*$
+.model M2Sk793  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.034u W=.99 L=2u Rs=20m Vto=2.756
++               Rd=2.082 Rds=2.833MEG Cgso=4p Cgdo=1p Cbd=5.601n Mj=.8066
++               Pb=.3905 Fc=.5 Rg=1.395K Is=1f N=1 Rb=1m)
+*$
+.model M2SK794  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.034u W=.99 L=2u Rs=20m Vto=2.756
++               Rd=2.082 Rds=3MEG Cgso=4p Cgdo=1p Cbd=5.601n Mj=.8066 Pb=.3905
++               Fc=.5 Rg=1.395K Is=1f N=1 Rb=1m)
+*$
+.model M2SK797  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.031u W=200 L=2u Rs=15m Vto=2.044
++               Rd=10E-21 Rds=600K Cgso=4p Cgdo=1p Cbd=10.69n Mj=.5545 Pb=.546
++               Fc=.5 Rg=40.89 Is=88.61n N=1.49 Rb=8.637m)
+*$
+.model M2SK798  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.031u W=200 L=2u Rs=15m Vto=2.044
++               Rd=10E-21 Rds=1MEG Cgso=4p Cgdo=1p Cbd=10.69n Mj=.5545 Pb=.546
++               Fc=.5 Rg=40.89 Is=88.61n N=1.49 Rb=8.637m)
+*$
+.model M2SK799  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.04u W=8.3 L=2u Rs=20m Vto=3.271
++               Rd=.3272 Rds=4.5MEG Cgso=4p Cgdo=1p Cbd=10E-21 Mj=.5 Pb=.8
++               Fc=.5 Rg=0 Is=.5 N=.1 Rb=0)
+*$
+.model M2SK800  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.049u W=10 L=2u Rs=20m Vto=3.361
++               Rd=.3272 Rds=4.5MEG Cgso=4p Cgdo=1p Cbd=10E-21 Mj=.5 Pb=.8
++               Fc=.5 Rg=0 Is=.5 N=.1 Rb=0)
+*$
+.model M2SK801Z NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.021u W=2.9 L=2u Rs=20m Vto=1.59
++               Rd=.1106 Rds=3MEG Cgso=4p Cgdo=1p Cbd=712.2p Mj=.4992 Pb=.3905
++               Fc=.5 Rg=4.252K Is=56.83p N=1.219 Rb=3.063m)
+*$
+.model M2SK802  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.031u W=2.7 L=2u Rs=20m Vto=1.489
++               Rd=.104 Rds=3MEG Cgso=4p Cgdo=1p Cbd=705.7p Mj=.4926 Pb=.3905
++               Fc=.5 Rg=4.29K Is=90.68p N=1.247 Rb=6.144m)
+*$
+.model M2SK810  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.064u W=10.03 L=2u Rs=0 Vto=1.44
++               Rd=.12 Rds=10MEG Cgso=473.7p Cgdo=10.26p Cbd=3.948n Mj=.8363
++               Pb=.3905 Fc=.5 Rg=4.942 Is=10E-21 N=.2963 Rb=0)
+*$
+.model M2SK811  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.064u W=10.03 L=2u Rs=0 Vto=1.44
++               Rd=.12 Rds=10MEG Cgso=473.7p Cgdo=10.26p Cbd=3.948n Mj=.8363
++               Pb=.3905 Fc=.5 Rg=4.942 Is=10E-21 N=.2963 Rb=0)
+*$
+.MODEL M2SK812 NMOS LEVEL=3 L=2.000E-6 W=8.600 KP=1.032E-6 RS=10.00E-3
++ RD=28.21E-3 VTO=1.238 RDS=7.500E6 TOX=2.000E-6 CGSO=31.71E-12 CGDO=69.17E-12
++ CBD=841.4E-12 RG=14.59 IS=108.1E-9 N=1.954 RB=1.000E-9 GAMMA=0 KAPPA=0
+*$
+.MODEL M2SK813 NMOS LEVEL=3 L=2.000E-6 W=8.600 KP=1.032E-6 RS=10.00E-3
++ RD=28.21E-3 VTO=1.238 RDS=7.500E6 TOX=2.000E-6 CGSO=31.71E-12 CGDO=69.17E-12
++ CBD=841.4E-12 RG=14.59 IS=108.1E-9 N=1.954 RB=1.000E-9 GAMMA=0 KAPPA=0
+*$
+.model M2SK815  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.06u W=15.88 L=2u Rs=20m Vto=1.242
++               Rd=50m Rds=10MEG Cgso=510.2p Cgdo=10.34p Cbd=3.133n Mj=.8226
++               Pb=1.172 Fc=.5 Rg=6.225 Is=10E-21 N=.4554 Rb=0)
+*$
+.model M2SK817  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.034u W=17.7 L=2u Rs=33m Vto=1.314
++               Rd=10E-21 Rds=6MEG Cgso=510.1p Cgdo=14.8p Cbd=4.569n Mj=.6741
++               Pb=.3905 Fc=.5 Rg=4.697 Is=1f N=1 Rb=0)
+*$
+.model M2SK819  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.034u W=4.9 L=2u Rs=20m Vto=2.949
++               Rd=.5584 Rds=5MEG Cgso=4p Cgdo=1p Cbd=5.933n Mj=.8668 Pb=.3905
++               Fc=.5 Rg=116.4 Is=1f N=1 Rb=10m)
+*$
+.model M2SK820  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.046u W=5 L=2u Rs=20m Vto=3.309
++               Rd=.1057 Rds=2.5MEG Cgso=4p Cgdo=1p Cbd=1.552n Mj=.6463 Pb=3
++               Fc=.5 Rg=139.3 Is=1f N=1 Rb=10m)
+*$
+.model M2SK821  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.046u W=5 L=2u Rs=20m Vto=3.309
++               Rd=.1057 Rds=2.5MEG Cgso=4p Cgdo=1p Cbd=1.552n Mj=.6463 Pb=3
++               Fc=.5 Rg=139.3 Is=1f N=1 Rb=10m)
+*$
+.model M2SK822  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.031u W=6.9 L=2u Rs=20m Vto=2.827
++               Rd=52.06m Rds=2.5MEG Cgso=4p Cgdo=1p Cbd=10.91n Mj=.7358
++               Pb=.3905 Fc=.5 Rg=231.7 Is=1f N=1 Rb=0)
+*$
+.model M2SK823  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.034u W=6.5 L=2u Rs=20m Vto=2.601
++               Rd=58.84m Rds=2.5MEG Cgso=4p Cgdo=1p Cbd=8.039n Mj=.7391
++               Pb=.5898 Fc=.5 Rg=232.9 Is=10E-21 N=.4642 Rb=1m)
+*$
+.model M2SK824  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.035u W=8.1 L=2u Rs=20m Vto=2.5
++               Rd=.3438 Rds=4.5MEG Cgso=4p Cgdo=1p Cbd=4.824n Mj=.6924
++               Pb=.3905 Fc=.5 Rg=81.66 Is=1f N=1 Rb=1m)
+*$
+.model M2SK825  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.031u W=8.3 L=2u Rs=20m Vto=3.294
++               Rd=.3278 Rds=4.5MEG Cgso=4p Cgdo=1p Cbd=10E-21 Mj=.5 Pb=.8
++               Fc=.5 Rg=0 Is=.5 N=.1 Rb=0)
+*$
+.model M2SK826  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.079u W=7.121 L=2u Rs=20m Vto=3.349
++               Rd=.3347 Rds=4.5MEG Cgso=4p Cgdo=1p Cbd=4.701n Mj=.6185
++               Pb=.3905 Fc=.5 Rg=163.2 Is=10E-21 N=1.596 Rb=0)
+*$
+.model M2SK827  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.079u W=7.121 L=2u Rs=20m Vto=3.349
++               Rd=.3347 Rds=4.5MEG Cgso=4p Cgdo=1p Cbd=4.701n Mj=.6185
++               Pb=.3905 Fc=.5 Rg=163.2 Is=10E-21 N=1.596 Rb=0)
+*$
+.model M2SK828  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.042u W=7.2 L=2u Rs=20m Vto=3.369
++               Rd=4.388 Rds=5MEG Cgso=4p Cgdo=1p Cbd=4.645n Mj=.6824 Pb=.3905
++               Fc=.5 Rg=132.1 Is=10f N=1 Rb=1m)
+*$
+.model M2SK829  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.042u W=8.3 L=2u Rs=10m Vto=3.322
++               Rd=.4007 Rds=5MEG Cgso=4p Cgdo=1p Cbd=9.137n Mj=.8804 Pb=.3905
++               Fc=.5 Rg=112.9 Is=1f N=1 Rb=0)
+*$
+.model M2SK830  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=990.8n W=11 L=2u Rs=20m Vto=3.513
++               Rd=.2886 Rds=5MEG Cgso=4p Cgdo=1p Cbd=4.388n Mj=.6015 Pb=.3905
++               Fc=.5 Rg=108.7 Is=10f N=1 Rb=1m)
+*$
+.model M2SK831  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.026u W=11 L=2u Rs=40m Vto=3.453
++               Rd=.2731 Rds=5MEG Cgso=4p Cgdo=1p Cbd=8.793n Mj=.8154 Pb=.3905
++               Fc=.5 Rg=126.9 Is=1f N=1 Rb=0)
+*$
+.model M2SK832  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.021u W=2.4 L=2u Rs=20m Vto=2.829
++               Rd=3.002 Rds=9MEG Cgso=4p Cgdo=1p Cbd=374p Mj=.538 Pb=3 Fc=.5
++               Rg=155.2 Is=10E-21 N=4.124 Rb=1.628m)
+*$
+.model M2SK833  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.043u W=2.4 L=2u Rs=20m Vto=2.942
++               Rd=4.4 Rds=9MEG Cgso=4p Cgdo=1p Cbd=808.5p Mj=.5 Pb=.3905 Fc=.5
++               Rg=181 Is=1f N=1 Rb=0)
+*$
+.model M2SK845  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.086u W=2.2 L=2u Rs=20m Vto=3.259
++               Rd=.789 Rds=450K Cgso=436.3p Cgdo=46.38p Cbd=1.39n Mj=.777
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK846  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.057u W=2.2 L=2u Rs=20m Vto=3.544
++               Rd=2.895 Rds=900K Cgso=485.2p Cgdo=27.42p Cbd=1.6n Mj=.8776
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK847  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.041u W=2 L=2u Rs=20m Vto=3.525
++               Rd=2.991 Rds=900K Cgso=523.9p Cgdo=32.19p Cbd=1.676n Mj=.8515
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.MODEL M2SK850 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=8.4000
++ KP=1.0312E-6
++ RS=10.000E-3
++ RD=1.0000E-3
++ VTO=2.9500
++ RDS=666.67E3
++ TOX=2.0000E-6
++ CGSO=40.000E-12
++ CGDO=10.000E-12
++ CBD=5.6606E-9
++ MJ=.49855
++ PB=.57538
++ RG=40.345
++ IS=982.38E-6
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK851 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=15
++ KP=1.0142E-6
++ RS=10.000E-3
++ RD=40.477E-3
++ VTO=2.9500
++ RDS=1.3333E6
++ TOX=2.0000E-6
++ CGSO=427.29E-12
++ CGDO=18.976E-12
++ CBD=5.2731E-9
++ MJ=.6965
++ PB=1.4052
++ RG=.55162
++ IS=2.1477E-3
++ N=5
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.model M2SK854  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.031u W=3 L=2u Rs=20m Vto=3.2 Rd=1
++               Rds=4.5MEG Cgso=4p Cgdo=1p Cbd=4.031n Mj=.8865 Pb=.3905 Fc=.5
++               Rg=34.95 Is=1f N=1 Rb=1m)
+*$
+.model M2SK855  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.031u W=3 L=2u Rs=20m Vto=3.2 Rd=1
++               Rds=5MEG Cgso=4p Cgdo=1p Cbd=4.031n Mj=.8865 Pb=.3905 Fc=.5
++               Rg=34.95 Is=1f N=1 Rb=1m)
+*$
+.model M2SK871  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.063u W=1.9 L=2u Rs=30m Vto=2.562
++               Rd=5.5 Rds=9MEG Cgso=4p Cgdo=1p Cbd=1.724n Mj=.8463 Pb=.3905
++               Fc=.5 Rg=89.03 Is=1f N=1 Rb=1m)
+*$
+.model M2SK872  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.026u W=3.9 L=2u Rs=20m Vto=3.053
++               Rd=1.648 Rds=9MEG Cgso=4p Cgdo=1p Cbd=3.404n Mj=.7604 Pb=.3905
++               Fc=.5 Rg=171.8 Is=1f N=1 Rb=1m)
+*$
+.model M2SK873  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.039u W=4 L=2u Rs=20m Vto=3.143
++               Rd=.757 Rds=4.5MEG Cgso=4p Cgdo=1p Cbd=4.546n Mj=.8413 Pb=.3905
++               Fc=.5 Rg=249.9 Is=1f N=1 Rb=10m)
+*$
+.model M2SK874  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.029u W=4.152 L=2u Rs=20m Vto=2.94
++               Rd=.9 Rds=5MEG Cgso=4p Cgdo=1p Cbd=3.472n Mj=.8215 Pb=.3905
++               Fc=.5 Rg=254.4 Is=1f N=1 Rb=1m)
+*$
+.model M2SK875  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.037u W=4.2 L=2u Rs=20m Vto=2.424
++               Rd=.4063 Rds=4.5MEG Cgso=4p Cgdo=1p Cbd=9.138n Mj=.8756
++               Pb=.3905 Fc=.5 Rg=200.6 Is=1f N=1 Rb=10m)
+*$
+.model M2SK876  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.032u W=6.785 L=2u Rs=20m Vto=3.172
++               Rd=.5165 Rds=5MEG Cgso=4p Cgdo=1p Cbd=9.77n Mj=.8997 Pb=.3905
++               Fc=.5 Rg=191.8 Is=1f N=1 Rb=10m)
+*$
+.model M2SK926  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.018u W=2.4 L=2u Rs=20m Vto=2.26
++               Rd=.2615 Rds=2.5MEG Cgso=4p Cgdo=1p Cbd=3.431n Mj=.7276
++               Pb=.3905 Fc=.5 Rg=133.7 Is=1f N=1 Rb=1m)
+*$
+.model M2SK928  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.025u W=3.6 L=2u Rs=20m Vto=3.339
++               Rd=1.429 Rds=4.5MEG Cgso=4p Cgdo=1p Cbd=3.33n Mj=.8356 Pb=.3905
++               Fc=.5 Rg=37.67 Is=10f N=1 Rb=1m)
+*$
+.model M2SK929  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.025u W=3.6 L=2u Rs=20m Vto=3.339
++               Rd=1.429 Rds=5MEG Cgso=4p Cgdo=1p Cbd=3.33n Mj=.8356 Pb=.3905
++               Fc=.5 Rg=37.67 Is=10f N=1 Rb=1m)
+*$
+.model M2SK934  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.015u W=2.5 L=2u Rs=20m Vto=3.279
++               Rd=.3033 Rds=250K Cgso=299.4p Cgdo=76.03p Cbd=1.297n Mj=1.092
++               Pb=.8607 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2Sk935  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.019u W=2.8 L=2u Rs=20m Vto=3.279
++               Rd=.2896 Rds=300K Cgso=275p Cgdo=67.6p Cbd=1.313n Mj=1.03
++               Pb=.7656 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK936  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.032u W=9.8 L=2u Rs=0 Vto=3.334 Rd=1m
++               Rds=50K Cgso=44.76p Cgdo=191.6p Cbd=4.653n Mj=.773 Pb=1.284
++               Fc=.5 Rg=0 Is=10p N=1 Rb=1m)
+*$
+.MODEL M2SK940 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=1.2000
++ KP=1.0306E-6
++ RS=10.000E-3
++ RD=.20104
++ VTO=1.4000
++ RDS=1.2000E6
++ TOX=2.0000E-6
++ CGSO=909.96E-12
++ CGDO=29.956E-12
++ CBD=275.64E-12
++ MJ=.89322
++ PB=1.1076
++ RG=10.000E-3
++ IS=194.96E-9
++ N=2.0751
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK941 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=1.6000
++ KP=1.0145E-6
++ RS=10.000E-3
++ RD=.792
++ VTO=1.6500
++ RDS=2.0000E6
++ TOX=2.0000E-6
++ CGSO=460.68E-12
++ CGDO=10.197E-12
++ CBD=290.00E-12
++ MJ=.77805
++ PB=.3905
++ RG=18.289
++ IS=40.787E-9
++ N=1.8951
++ RB=1.0000E-9
++ GAMMA=0
++ KAPPA=0)
+*$
+.MODEL M2SK944 NMOS(
++ LEVEL=3
++ L=2.0000E-6
++ W=13
++ KP=1.0682E-6
++ RS=10.000E-3
++ RD=88.737E-3
++ VTO=3
++ RDS=1.6667E6
++ TOX=2.0000E-6
++ CGSO=591.37E-12
++ CGDO=19.388E-12
++ CBD=1.0000E-9
++ RG=10.000E-3
++ RB=1.0000E-3
++ GAMMA=0
++ KAPPA=0)
+*$
+.model M2SK946  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.031u W=2.2 L=2u Rs=20m Vto=3.295
++               Rd=3.725 Rds=9MEG Cgso=4p Cgdo=1p Cbd=1.335n Mj=.7354 Pb=.3905
++               Fc=.5 Rg=93.36 Is=1f N=1 Rb=1m)
+*$
+.model M2SK987  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.029u W=2.4 L=2u Rs=20m Vto=3.157
++               Rd=.9781 Rds=500K Cgso=270.1p Cgdo=42.49p Cbd=962.2p Mj=.8412
++               Pb=.5975 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK988  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=3.2 L=2u Rs=20m Vto=3.928
++               Rd=.663 Rds=500K Cgso=349.2p Cgdo=38.49p Cbd=2.429n Mj=.9131
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK989  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.034u W=3 L=2u Rs=20m Vto=3.928
++               Rd=.6523 Rds=500K Cgso=367.7p Cgdo=41.11p Cbd=2.317n Mj=.9035
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$
+.model M2SK990  NMOS(Level=3 Gamma=0 Delta=0 Eta=0 Theta=0 Kappa=0.2 Vmax=0 Xj=0
++               Tox=2u Uo=600 Phi=.6 Kp=1.036u W=4.2 L=2u Rs=20m Vto=3.761
++               Rd=.4233 Rds=500K Cgso=260p Cgdo=23.98p Cbd=3.303n Mj=.6765
++               Pb=.3905 Fc=.5 Rg=0 Is=10f N=1 Rb=1m)
+*$

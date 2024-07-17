@@ -1,0 +1,304 @@
+* Library of European Power Bipolar Transistor Models
+*
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+*
+* $Revision:   1.4  $
+* $Author:   RPEREZ  $
+* $Date:   17 Apr 1998 14:08:08  $
+*
+*
+* ---------------------------------------------------------------------------
+* The parameters in this model library were derived from the data sheets for
+* each part.  Each part was characterized using Parts.
+*
+*
+*------------------------------------------------------------------------------
+* Power Bipolar Transistors
+* Contents: SIEMENS Discrete Semiconductors for Surface Mounting 87/88
+* Contents: PHILIPS Semiconductors Book S4a 1986
+* Contents: TELEFUNKEN electronic Power Transistors 1989
+* note	: hoe, C and Ts may be estimated by given or conventional limits.
+*$
+.model BDX35    NPN(Is=3.108p Xti=3 Eg=1.11 Vaf=100 Bf=142.3 Ise=6.491p
++               Ne=1.454 Ikf=11.52 Nk=.7978 Xtb=1.5 Br=1.376 Isc=67.94p
++               Nc=1.505 Ikr=.7805 Rc=.1082 Cjc=97.16p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=291.5p Mje=.3333 Vje=.5 Tr=1u Tf=1.557n Itf=448.8 Xtf=89.4
++               Vtf=10)
+*		PHILIPS		pid=bdx35	case=TO126
+*		91-08-12 dsq
+*$
+.model BDX36    NPN(Is=3.108p Xti=3 Eg=1.11 Vaf=100 Bf=142.3 Ise=6.491p
++               Ne=1.454 Ikf=11.52 Nk=.7978 Xtb=1.5 Br=1.376 Isc=67.94p
++               Nc=1.505 Ikr=.7805 Rc=.1082 Cjc=97.16p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=291.5p Mje=.3333 Vje=.5 Tr=1u Tf=1.557n Itf=448.8 Xtf=89.4
++               Vtf=10)
+*		PHILIPS		pid=bdx35	case=TO126
+*		91-08-12 dsq
+*$
+.model BDX37    NPN(Is=3.108p Xti=3 Eg=1.11 Vaf=100 Bf=136.4 Ise=14.05p
++               Ne=1.373 Ikf=10.46 Nk=.7878 Xtb=1.5 Br=8.022 Isc=4.708p
++               Nc=1.658 Ikr=3.131 Rc=.1056 Cjc=97.16p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=291.5p Mje=.3333 Vje=.5 Tr=1u Tf=1.556n Itf=447.7 Xtf=90.04
++               Vtf=10)
+*		PHILIPS		pid=bdx37	case=TO126
+*		91-08-12 dsq
+*$
+.model BDX77    NPN(Is=487.2f Xti=3 Eg=1.11 Vaf=100 Bf=14.34K Ise=391.7p
++               Ne=1.908 Ikf=.3088 Nk=.6439 Xtb=1.5 Br=222.1 Isc=750.1f
++               Nc=1.777 Ikr=1.062 Rc=63.13m Cjc=485.8p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=1.457n Mje=.3333 Vje=.5 Tr=1u Tf=13.87n Itf=5.655K
++               Xtf=7.064 Vtf=10)
+*		PHILIPS		pid=bdx77	case=TO220
+*		91-08-13 dsq
+*$
+.model BDX78    PNP(Is=1.554p Xti=3 Eg=1.11 Vaf=100 Bf=257.6 Ise=14.36p
++               Ne=1.662 Ikf=1.865 Nk=.6053 Xtb=1.5 Br=1.749 Isc=48.91p
++               Nc=1.594 Ikr=.2185 Rc=54.28m Cjc=340.1p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=1.02n Mje=.3333 Vje=.5 Tr=1u Tf=11.41n Itf=85.35 Xtf=9.975
++               Vtf=10)
+*		PHILIPS		pid=bdx78	case=TO220
+*		91-08-13 dsq
+*$
+.model BSS79B   NPN(Is=1.009p Xti=3 Eg=1.11 Vaf=100 Bf=152.7 Ise=1.041p
++               Ne=1.355 Ikf=.4144 Nk=.5579 Xtb=1.5 Br=3.366 Isc=136.8p
++               Nc=1.377 Ikr=.8852 Rc=.7122 Cjc=15.66p Mjc=.3438 Vjc=.5 Fc=.5
++               Cje=47.1p Mje=.3333 Vje=.5 Tr=325n Tf=520.6p Itf=3.531
++               Xtf=83.82 Vtf=10)
+*		SIEMENS		pid=bss79b	case=SOT23
+*		91-08-27 dsq
+*$
+.model BSS79C   NPN(Is=1.009p Xti=3 Eg=1.11 Vaf=100 Bf=328.1 Ise=8.891p
++               Ne=1.743 Ikf=.3947 Nk=.527 Xtb=1.5 Br=20.21 Isc=2.646n Nc=1.692
++               Ikr=1.242 Rc=.7827 Cjc=15.66p Mjc=.3438 Vjc=.5 Fc=.5 Cje=47.1p
++               Mje=.3333 Vje=.5 Tr=285n Tf=520.4p Itf=3.369 Xtf=83.42 Vtf=10)
+*		SIEMENS		pid=bss79c	case=SOT23
+*		91-08-27 dsq
+*$
+.model BSS80B   PNP(Is=9.744f Xti=3 Eg=1.11 Vaf=100 Bf=144.2 Ise=1.345p
++               Ne=1.642 Ikf=1.079 Nk=.8891 Xtb=1.5 Br=1.985 Isc=6.583n Nc=2.16
++               Ikr=.9399 Rc=1.678 Cjc=16.99p Mjc=.4804 Vjc=.5 Fc=.5 Cje=51p
++               Mje=.3333 Vje=.5 Tr=82.44n Tf=504.8p Itf=8.87 Xtf=627.8 Vtf=10)
+*		SIEMENS		pid=bss80b	case=SOT23
+*		91-08-27 dsq
+*$
+.model BSS80C   PNP(Is=9.744f Xti=3 Eg=1.11 Vaf=100 Bf=348.4 Ise=15.57p
++               Ne=2.076 Ikf=.8077 Nk=.8941 Xtb=1.5 Br=1.729 Isc=9.826n
++               Nc=2.227 Ikr=1.336 Rc=1.633 Cjc=16.99p Mjc=.4804 Vjc=.5 Fc=.5
++               Cje=51p Mje=.3333 Vje=.5 Tr=82.75n Tf=504.1p Itf=11.14
++               Xtf=535.9 Vtf=10)
+*		SIEMENS		pid=bss80c	case=SOT23
+*		91-08-27 dsq
+*$
+.model BSS81B   NPN(Is=1.009p Xti=3 Eg=1.11 Vaf=100 Bf=152.7 Ise=1.041p
++               Ne=1.355 Ikf=.4144 Nk=.5579 Xtb=1.5 Br=3.366 Isc=136.8p
++               Nc=1.377 Ikr=.8852 Rc=.7122 Cjc=15.66p Mjc=.3438 Vjc=.5 Fc=.5
++               Cje=47.1p Mje=.3333 Vje=.5 Tr=325n Tf=520.6p Itf=3.531
++               Xtf=83.82 Vtf=10)
+*		SIEMENS		pid=bss79b	case=SOT23
+*		91-08-27 dsq
+*$
+.model BSS81C   NPN(Is=1.009p Xti=3 Eg=1.11 Vaf=100 Bf=328.1 Ise=8.891p
++               Ne=1.743 Ikf=.3947 Nk=.527 Xtb=1.5 Br=20.21 Isc=2.646n Nc=1.692
++               Ikr=1.242 Rc=.7827 Cjc=15.66p Mjc=.3438 Vjc=.5 Fc=.5 Cje=47.1p
++               Mje=.3333 Vje=.5 Tr=285n Tf=520.4p Itf=3.369 Xtf=83.42 Vtf=10)
+*		SIEMENS		pid=bss79c	case=SOT23
+*		91-08-27 dsq
+*$
+.model BSS82B   PNP(Is=9.744f Xti=3 Eg=1.11 Vaf=100 Bf=144.2 Ise=1.345p
++               Ne=1.642 Ikf=1.079 Nk=.8891 Xtb=1.5 Br=1.985 Isc=6.583n Nc=2.16
++               Ikr=.9399 Rc=1.678 Cjc=16.99p Mjc=.4804 Vjc=.5 Fc=.5 Cje=51p
++               Mje=.3333 Vje=.5 Tr=82.44n Tf=504.8p Itf=8.87 Xtf=627.8 Vtf=10)
+*		SIEMENS		pid=bss80b	case=SOT23
+*		91-08-27 dsq
+*$
+.model BSS82C   PNP(Is=9.744f Xti=3 Eg=1.11 Vaf=100 Bf=348.4 Ise=15.57p
++               Ne=2.076 Ikf=.8077 Nk=.8941 Xtb=1.5 Br=1.729 Isc=9.826n
++               Nc=2.227 Ikr=1.336 Rc=1.633 Cjc=16.99p Mjc=.4804 Vjc=.5 Fc=.5
++               Cje=51p Mje=.3333 Vje=.5 Tr=82.75n Tf=504.1p Itf=11.14
++               Xtf=535.9 Vtf=10)
+*		SIEMENS		pid=bss80c	case=SOT23
+*		91-08-27 dsq
+*$
+.model BU207    NPN(Is=70.49f Xti=3 Eg=1.11 Vaf=100 Bf=41.51 Ise=184.7p
++               Ne=1.683 Ikf=1.977 Nk=.6679 Xtb=1.5 Br=1.065 Isc=990.3f
++               Nc=1.573 Ikr=.947 Rc=35.58m Cjc=303.6p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=910.8p Mje=.3333 Vje=.5 Tr=193.4u Tf=22.17n Itf=114.7K
++               Xtf=49.25K Vtf=10)
+*		TELEFUNKEN	pid=bu207	case=TO3
+*		91-08-13 dsq
+*$
+.model BU208    NPN(Is=70.49f Xti=3 Eg=1.11 Vaf=100 Bf=41.51 Ise=184.7p
++               Ne=1.683 Ikf=1.977 Nk=.6679 Xtb=1.5 Br=1.065 Isc=990.3f
++               Nc=1.573 Ikr=.947 Rc=35.58m Cjc=303.6p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=910.8p Mje=.3333 Vje=.5 Tr=193.4u Tf=22.17n Itf=114.7K
++               Xtf=49.25K Vtf=10)
+*		TELEFUNKEN	pid=bu207	case=TO3
+*		91-08-13 dsq
+*$
+.model BU208A   NPN(Is=70.49f Xti=3 Eg=1.11 Vaf=100 Bf=41.51 Ise=184.7p
++               Ne=1.683 Ikf=1.977 Nk=.6679 Xtb=1.5 Br=1.065 Isc=990.3f
++               Nc=1.573 Ikr=.947 Rc=35.58m Cjc=303.6p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=910.8p Mje=.3333 Vje=.5 Tr=193.4u Tf=22.17n Itf=114.7K
++               Xtf=49.25K Vtf=10)
+*		TELEFUNKEN	pid=bu207	case=TO3
+*		91-08-13 dsq
+*$
+.model BU209    NPN(Is=70.49f Xti=3 Eg=1.11 Vaf=100 Bf=364 Ise=5.912p Ne=1.357
++               Ikf=1.587 Nk=.6998 Xtb=1.5 Br=2.651 Isc=4.394p Nc=1.301
++               Ikr=1.707 Rc=39.15m Cjc=303.6p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=910.8p Mje=.3333 Vje=.5 Tr=19.61u Tf=22.16n Itf=649.2K
++               Xtf=288.6K Vtf=10)
+*		TELEFUNKEN	pid=bu209	case=TO3
+*		91-08-13 dsq
+*$
+.model BU508    NPN(Is=148.5p Xti=3 Eg=1.11 Vaf=100 Bf=43.23 Ise=1.355n
++               Ne=1.413 Ikf=8.245 Nk=.8069 Xtb=1.75 Br=2.131 Isc=529.1p
++               Nc=1.567 Ikr=1.689 Rc=32.64m Cjc=303.6p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=910.8p Mje=.3333 Vje=.5 Tr=16.1u Tf=22.02n Itf=183.6
++               Xtf=18.91K Vtf=10)
+*		TELEFUNKEN	pid=bu508	case=TOP3
+*		91-08-14 dsq
+*$
+.model BU508A   NPN(Is=148.5p Xti=3 Eg=1.11 Vaf=100 Bf=43.23 Ise=1.355n
++               Ne=1.413 Ikf=8.245 Nk=.8069 Xtb=1.75 Br=2.131 Isc=529.1p
++               Nc=1.567 Ikr=1.689 Rc=32.64m Cjc=303.6p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=910.8p Mje=.3333 Vje=.5 Tr=16.1u Tf=22.02n Itf=183.6
++               Xtf=18.91K Vtf=10)
+*		TELEFUNKEN	pid=bu508	case=TOP3
+*		91-08-14 dsq
+*$
+.model BU508DR  NPN(Is=85.92p Xti=3 Eg=1.11 Vaf=100 Bf=43.48K Ise=18.19u Ne=2.9
++               Ikf=1.639 Nk=.8151 Xtb=1.5 Br=11.84 Isc=5.251n Nc=1.556
++               Ikr=1.229 Rc=7.009m Cjc=303.6p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=910.6p Mje=.3333 Vje=.5 Tr=5.692u Tf=21.03n Itf=9.956
++               Xtf=231.8 Vtf=10)
+*		TELEFUNKEN	pid=bc508dr	case=TOP3
+*		91-08-14 dsq
+*$
+.model BU705    NPN(Is=30.73n Xti=3 Eg=1.11 Vaf=100 Bf=19.28 Ise=246.8n
++               Ne=1.832 Ikf=1.083 Nk=.6266 Xtb=1.5 Br=2.014 Isc=6.122u
++               Nc=1.683 Ikr=1.552 Rc=40.87m Cjc=194.3p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=582p Mje=.3333 Vje=.5 Tr=1u Tf=20.83n Itf=498.9 Xtf=51.13K
++               Vtf=10)
+*		TELEFUNKEN	pid=bu705	case=TOP3
+*		91-08-14 dsq
+*$
+.model BU908    NPN(Is=148.5p Xti=3 Eg=1.11 Vaf=100 Bf=656.7 Ise=11.42n
++               Ne=1.614 Ikf=.542 Nk=.6352 Xtb=1.75 Br=6.932 Isc=463.7p
++               Nc=1.522 Ikr=2.814 Rc=22.73m Cjc=303.6p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=910.8p Mje=.3333 Vje=.5 Tr=1u Tf=21.44n Itf=27.47
++               Xtf=1.214K Vtf=10)
+*		TELEFUNKEN	pid=bu908	case=TOP3
+*		91-08-14 dsq
+*$
+.model BUV47    NPN(Is=974.4f Xti=3 Eg=1.11 Vaf=100 Bf=94.74 Ise=2.566p
++               Ne=1.206 Ikf=15.7 Nk=.8401 Xtb=2 Br=20.89 Isc=198.1p Nc=1.474
++               Ikr=10.96 Rc=35.63m Cjc=364.4p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=1.093n Mje=.3333 Vje=.5 Tr=988.4n Tf=21.48n Itf=100.2
++               Xtf=205.4 Vtf=10)
+*		TELEFUNKEN	pid=buv47	case=TOP3
+*		91-08-15 dsq
+*$
+.model BUV47A   NPN(Is=974.4f Xti=3 Eg=1.11 Vaf=100 Bf=94.74 Ise=2.566p
++               Ne=1.206 Ikf=15.7 Nk=.8401 Xtb=2 Br=20.89 Isc=198.1p Nc=1.474
++               Ikr=10.96 Rc=35.63m Cjc=364.4p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=1.093n Mje=.3333 Vje=.5 Tr=988.4n Tf=21.48n Itf=100.2
++               Xtf=205.4 Vtf=10)
+*		TELEFUNKEN	pid=buv47	case=TOP3
+*		91-08-15 dsq
+*$
+.model BUV48    NPN(Is=743.3f Xti=3 Eg=1.11 Vaf=100 Bf=41.88 Ise=743.3f
++               Ne=1.171 Ikf=10.06 Nk=.5974 Xtb=1.5 Br=7.434 Isc=4.347p Nc=1.57
++               Ikr=2.795 Rc=31.86m Cjc=607.3p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=1.822n Mje=.3333 Vje=.5 Tr=2.944u Tf=30.09n Itf=106
++               Xtf=353.7 Vtf=10)
+*		TELEFUNKEN	pid=buv48	case=TOP3
+*		91-08-15 dsq
+*$
+.model BUV48A   NPN(Is=743.3f Xti=3 Eg=1.11 Vaf=100 Bf=41.88 Ise=743.3f
++               Ne=1.171 Ikf=10.06 Nk=.5974 Xtb=1.5 Br=7.434 Isc=4.347p Nc=1.57
++               Ikr=2.795 Rc=31.86m Cjc=607.3p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=1.822n Mje=.3333 Vje=.5 Tr=2.445u Tf=30.15n Itf=202.4
++               Xtf=1.227K Vtf=10)
+*		TELEFUNKEN	pid=buv48a	case=TOP3
+*		91-08-15 dsq
+*$
+.model BUV48T   NPN(Is=305.5f Xti=3 Eg=1.11 Vaf=100 Bf=92.39 Ise=609.6f
++               Ne=1.181 Ikf=19.52 Nk=.7617 Xtb=2 Br=19.28 Isc=733.1f Nc=1.49
++               Ikr=2.357 Rc=27.48m Cjc=607.3p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=1.822n Mje=.3333 Vje=.5 Tr=1.934u Tf=28.64n Itf=44.23
++               Xtf=136.6 Vtf=10)
+*		TELEFUNKEN 	pid=buv48t	case=TOP3
+*		91-08-15 dsq
+*$
+.model BUX47    NPN(Is=305.5f Xti=3 Eg=1.11 Vaf=100 Bf=54.08K Ise=536.1f
++               Ne=1.16 Ikf=13.47 Nk=.8217 Xtb=1.5 Br=3.59 Isc=852f Nc=1.46
++               Ikr=4.723 Rc=30.78m Cjc=364.4p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=1.093n Mje=.3333 Vje=.5 Tr=2.682u Tf=21.49n Itf=71.86
++               Xtf=157.1 Vtf=10)
+*		TELEFUNKEN	pid=bux47	case=TO3
+*		91-08-15 dsq
+*$
+.model BUX47A   NPN(Is=305.5f Xti=3 Eg=1.11 Vaf=100 Bf=54.08K Ise=536.1f
++               Ne=1.16 Ikf=13.47 Nk=.8217 Xtb=1.5 Br=3.59 Isc=852f Nc=1.46
++               Ikr=4.723 Rc=30.78m Cjc=364.4p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=1.093n Mje=.3333 Vje=.5 Tr=3.031u Tf=21.58n Itf=100.7
++               Xtf=293.8 Vtf=10)
+*		TELEFUNKEN	pid=bux47a	case=TO3
+*		91-08-15 dsq
+*$
+.model BUX48    NPN(Is=370.6f Xti=3 Eg=1.11 Vaf=100 Bf=34.44 Ise=7.119p
++               Ne=1.351 Ikf=9.232 Nk=.5851 Xtb=1.5 Br=3.89 Isc=674.4f Nc=1.417
++               Ikr=4.746 Rc=31.6m Cjc=607.3p Mjc=.3333 Vjc=.5 Fc=.5 Cje=1.822n
++               Mje=.3333 Vje=.5 Tr=4.048u Tf=26.69n Itf=1.383K Xtf=202.3K
++               Vtf=10)
+*		TELEFUNKEN	pid=bux48	case=TO3
+*		91-08-15 dsq
+*$
+.model BUX48A   NPN(Is=370.6f Xti=3 Eg=1.11 Vaf=100 Bf=34.44 Ise=7.119p
++               Ne=1.351 Ikf=9.232 Nk=.5851 Xtb=1.5 Br=3.89 Isc=674.4f Nc=1.417
++               Ikr=4.746 Rc=31.6m Cjc=607.3p Mjc=.3333 Vjc=.5 Fc=.5 Cje=1.822n
++               Mje=.3333 Vje=.5 Tr=3.416u Tf=26.69n Itf=1.383K Xtf=202.3K
++               Vtf=10)
+*		TELEFUNKEN	pid=bux48a	case=TO3
+*		91-08-15 dsq
+*$
+.model S518T    NPN(Is=150.1f Xti=3 Eg=1.11 Vaf=100 Bf=49.32 Ise=58.07p
++               Ne=1.525 Ikf=1.856 Nk=.6661 Xtb=1.5 Br=1.867 Isc=274.5f
++               Nc=1.685 Ikr=2.673 Rc=42.09m Cjc=303.6p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=910.8p Mje=.3333 Vje=.5 Tr=1u Tf=20.52n Itf=4.991 Xtf=87.42
++               Vtf=10)
+*		TELEFUNKEN	pid=s518t	case=TO3
+*		91-08-15 dsq
+*$
+.model SMBT2222 NPN(Is=9.744f Xti=3 Eg=1.11 Vaf=100 Bf=122.1 Ise=116.9f
++               Ne=1.485 Ikf=.5201 Nk=.5543 Xtb=1.5 Br=5.309 Isc=7.693n
++               Nc=2.439 Ikr=15.54 Rc=.6155 Cjc=17.01p Mjc=.49 Vjc=.5 Fc=.5
++               Cje=51p Mje=.3333 Vje=.5 Tr=57.91n Tf=482.2p Itf=.7603
++               Xtf=12.98 Vtf=10)
+*		SIEMENS		pid=smbt2222	case=SOT23
+*		91-08-28 dsq
+*$
+.model SMBT2907 PNP(Is=67.34f Xti=3 Eg=1.11 Vaf=100 Bf=183.9 Ise=602.5f
++               Ne=1.428 Ikf=.4354 Nk=.648 Xtb=1.5 Br=111.8 Isc=1.068n Nc=1.667
++               Ikr=10.24 Rc=2.035 Cjc=16.82p Mjc=.3333 Vjc=.5 Fc=.5 Cje=50.46p
++               Mje=.3333 Vje=.5 Tr=83.81n Tf=503.5p Itf=4.162 Xtf=30.04 Vtf=10
+*		SIEMENS		pid=smbt2907	case=SOT23
+*		91-09-04 dsq
+*$
+.model SMBT3904 NPN(Is=9.744f Xti=3 Eg=1.11 Vaf=190.7 Bf=589.6 Ise=173.5f
++               Ne=1.416 Ikf=20.51m Nk=.5689 Xtb=1.5 Br=1 Isc=99.04p Nc=1.675
++               Ikr=10.67 Rc=1.971 Cjc=6.901p Mjc=.3333 Vjc=.5 Fc=.5 Cje=6.64p
++               Mje=.3333 Vje=.5 Tr=386.2n Tf=296.4p Itf=241.2 Xtf=496.2K
++               Vtf=10)
+*		SIEMENS		pid=smbt3904	case=SOT23
+*		91-09-05 dsq
+*$
+.model SMBT3906 PNP(Is=9.744f Xti=3 Eg=1.11 Vaf=65.24 Bf=149.8 Ise=82.57f
++               Ne=1.449 Ikf=28.66m Nk=.4984 Xtb=1.5 Br=1 Isc=38.84p Nc=1.759
++               Ikr=9.336 Rc=1.714 Cjc=6.211p Mjc=.3333 Vjc=.5 Fc=.5 Cje=8.299p
++               Mje=.3333 Vje=.5 Tr=304.2n Tf=365.5p Itf=13.39 Xtf=148.4 Vtf=10
+*		SIEMENS		pid=smbt3906	case=SOT23
+*		91-09-05 dsq
+*$
+* end of library

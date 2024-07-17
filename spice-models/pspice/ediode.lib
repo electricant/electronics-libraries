@@ -1,0 +1,779 @@
+* Library of European Diode Models
+*
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+*
+* $Revision:   1.8  $
+* $Author:   rperez  $
+* $Date:   11 Jan 1999 10:08:42  $
+*
+*
+* ---------------------------------------------------------------------------
+* The parameters in this model library were derived from the data sheets for
+* each part.  Each part was characterized using Parts.
+*
+*
+*------------------------------------------------------------------------------
+* Silicon planar epitaxial / planar Diodes
+* contents: SIEMENS Discrete Semiconductors for Surface Mounting 87/88
+* contents: PHILIPS Semiconductors Book S1 1986
+* contents: TELEFUNKEN electronic Diodes Data book 1988
+*$
+.model BA204    D(Is=36.76n N=2.208 Rs=0 Ikf=.8822 Xti=3 Eg=1.11 Cjo=2.601p
++               M=.1126 Vj=.5 Fc=.5 Isr=39.81n Nr=2 Bv=50 Ibv=1u Tt=14.43n)
+*		TELEFUNKEN	pid=ba204	case=DO35
+*		91-08-19 dsq
+*$
+.model BA220    D(Is=3.608n N=1.84 Rs=0 Ikf=26.23m Xti=3 Eg=1.11 Cjo=2.5p
++               M=.3333 Vj=.5 Fc=.5 Bv=10 Ibv=1.5u Tt=25.95n)
+*		PHILIPS		pid=ba220	case=DO35
+*		91-08-20 dsq
+*$
+.model BA221    D(Is=478n N=2.719 Rs=0 Ikf=.5348 Xti=3 Eg=1.11 Cjo=2.5p M=.3333
++               Vj=.5 Fc=.5 Bv=30 Ibv=200n Tt=25.95n)
+*		PHILIPS		pid=ba221	case=DO35
+*		91-08-20 dsq
+*$
+.model BA314    D(Is=32.62f N=1.151 Rs=.3876 Ikf=0 Xti=3 Eg=1.11 Cjo=140p
++               M=.3333 Vj=.5 Fc=.5 Bv=4 Ibv=5u )
+*		PHILIPS		pid=ba314	case=DO35
+*		91-08-20 dsq
+*$
+.model BA315    D(Is=3.334n N=1.912 Rs=.5497 Ikf=35.98m Xti=3 Eg=1.11 Cjo=3p
++               M=.3333 Vj=.5 Fc=.5 Bv=5 Ibv=1.5u )
+*		PHILIPS		pid=ba315	case=DO35
+*		91-08-20 dsq
+*$
+.model BA316    D(Is=66.6n N=2.353 Rs=.7979 Ikf=0 Xti=3 Eg=1.11 Cjo=2p M=.3333
++               Vj=.5 Fc=.5 Bv=10 Ibv=200n Tt=25.95n)
+*		PHILIPS		pid=ba318	case=DO35
+*		91-08-20 dsq
+*$
+.model BA317    D(Is=66.6n N=2.353 Rs=.7979 Ikf=0 Xti=3 Eg=1.11 Cjo=2p M=.3333
++               Vj=.5 Fc=.5 Bv=30 Ibv=200n Tt=25.95n)
+*		PHILIPS		pid=ba318	case=DO35
+*		91-08-20 dsq
+*$
+.model BA318    D(Is=66.6n N=2.353 Rs=.7979 Ikf=0 Xti=3 Eg=1.11 Cjo=2p M=.3333
++               Vj=.5 Fc=.5 Bv=50 Ibv=200n Tt=25.95n)
+*		PHILIPS		pid=ba318	case=DO35
+*		91-08-20 dsq
+*$
+.model BA482    D(Is=5.714p N=1.52 Rs=0 Ikf=0 Xti=3 Eg=1.11 Cjo=1.041p M=.3333
++               Vj=.5 Fc=.5 Isr=288.4p Nr=2 )
+*		PHILIPS		pid=ba482	case=DO34
+*		91-08-20 dsq
+*$
+.model BA483    D(Is=5.714p N=1.52 Rs=0 Ikf=0 Xti=3 Eg=1.11 Cjo=956.5f M=.3333
++               Vj=.5 Fc=.5 Isr=288.4p Nr=2 )
+*		PHILIPS		pid=ba483	case=DO34
+*		91-08-20 dsq
+*$
+.model BA484    D(Is=5.714p N=1.52 Rs=0 Ikf=0 Xti=3 Eg=1.11 Cjo=1.316p M=.3333
++               Vj=.5 Fc=.5 Isr=288.4p Nr=2 )
+*		PHILIPS		pid=ba484	case=DO34
+*		91-08-20 dsq
+*$
+.model BAL74    D(Is=12.47n N=2.098 Rs=.74 Ikf=0 Xti=3 Eg=1.11 Cjo=2p M=.3333
++               Vj=.5 Fc=.5 Isr=12.36n Nr=2 Bv=75 Ibv=100u Tt=5.771n)
+*		SIEMENS		pid=bal74	case=SOT23
+*		91-08-26 dsq
+*$
+.model BAL99    D(Is=12.47n N=2.098 Rs=.74 Ikf=0 Xti=3 Eg=1.11 Cjo=1.5p M=.3333
++               Vj=.5 Fc=.5 Isr=333.9n Nr=2 Bv=105 Ibv=100u Tt=8.656n)
+*		SIEMENS		pid=bal99	case=SOT23
+*		91-08-26 dsq
+*$
+.model BAQ33    D(Is=18.01f N=1.162 Rs=.7165 Xti=3 Eg=1.11 Cjo=3p
++               M=.3333 Vj=.5 Fc=.5 Isr=159.2p Nr=2 Bv=40 Ibv=5u )
+*		TELEFUNKEN	pid=baq33	case=SOD80
+*		91-08-19 dsq
+*$
+.model BAQ34    D(Is=18.01f N=1.162 Rs=.7165 Xti=3 Eg=1.11 Cjo=3p
++               M=.3333 Vj=.5 Fc=.5 Isr=127p Nr=2 Bv=70 Ibv=5u )
+*		TELEFUNKEN	pid=baq34	case=SOD80
+*		91-08-19 dsq
+*$
+.model BAQ35    D(Is=18.01f N=1.162 Rs=.7165 Xti=3 Eg=1.11 Cjo=3p
++               M=.3333 Vj=.5 Fc=.5 Isr=101.1p Nr=2 Bv=140 Ibv=5u)
+*		TELEFUNKEN	pid=baq35	case=SOD80
+*		91-08-19 dsq
+*$
+.model BAR74    D(Is=12.47n N=2.098 Rs=.74 Ikf=0 Xti=3 Eg=1.11 Cjo=2p M=.3333
++               Vj=.5 Fc=.5 Isr=12.36n Nr=2 Bv=75 Ibv=100u Tt=5.771n)
+*		SIEMENS		pid=bal74	case=SOT23
+*		91-08-26 dsq
+*$
+.model BAR99    D(Is=12.47n N=2.098 Rs=.74 Ikf=0 Xti=3 Eg=1.11 Cjo=1.5p M=.3333
++               Vj=.5 Fc=.5 Isr=333.9n Nr=2 Bv=105 Ibv=100u Tt=8.656n)
+*		SIEMENS		pid=bal99	case=SOT23
+*		91-08-26 dsq
+*$
+.model BAS16    D(Is=4.198n N=1.977 Rs=.4599 Ikf=1.408 Xti=3 Eg=1.11 Cjo=2p
++               M=.3333 Vj=.5 Fc=.5 Isr=1.115n Nr=2 Bv=75 Ibv=100u Tt=8.656n)
+*		SIEMENS		pid=bas16	case=SOT23
+*		91-08-29 dsq
+*$
+.model BAS17    D(Is=3.474p N=1.397 Rs=.4483 Ikf=0 Xti=3 Eg=1.11 Cjo=140p
++               M=.3333 Vj=.5 Fc=.5 Bv=4 Ibv=5u )
+*		PHILIPS		pid=bas17	case=SOT23
+*		91-08-20 dsq
+*$
+.model BAS19    D(Is=71.25n N=2.361 Rs=.1985 Ikf=52.12m Xti=3 Eg=1.11 Cjo=5p
++               M=.3333 Vj=.5 Fc=.5 Isr=4.909n Nr=2 Bv=120 Ibv=100u Tt=72.13n)
+*		SIEMENS		pid=bas19	case=SOT23
+*		91-08-29 dsq
+*$
+.model BAS20    D(Is=71.25n N=2.361 Rs=.1985 Ikf=52.12m Xti=3 Eg=1.11 Cjo=5p
++               M=.3333 Vj=.5 Fc=.5 Isr=4.29n Nr=2 Bv=200 Ibv=100u Tt=72.13n)
+*		SIEMENS		pid=bas20	case=SOT23
+*		91-08-29 dsq
+*$
+.model BAS21    D(Is=71.25n N=2.361 Rs=.1985 Ikf=52.12m Xti=3 Eg=1.11 Cjo=5p
++               M=.3333 Vj=.5 Fc=.5 Isr=3.899n Nr=2 Bv=250 Ibv=100u Tt=72.13n)
+*		SIEMENS		pid=bas21	case=SOT23
+*		91-08-29 dsq
+*$
+.model BAS28    D(Is=1.036n N=1.768 Rs=.9405 Ikf=0 Xti=3 Eg=1.11 Cjo=2p M=.3333
++               Vj=.5 Fc=.5 Isr=1.722n Nr=2 Bv=85 Ibv=100u Tt=8.656n)
+*		SIEMENS		pid=bas28	case=SOT23
+*		91-08-29 dsq
+*$
+.model BAS32    D(Is=118.4p N=1.574 Rs=.8411 Ikf=0 Xti=3 Eg=1.11 Cjo=1p M=.3333
++               Vj=.5 Fc=.5 Isr=1.896n Nr=2.145 Bv=75 Ibv=5u Tt=5.771n)
+*		PHILIPS		pid=bas32	case=SOD80
+*		91-08-20 dsq
+*$
+.model BAS33    D(Is=18.18f N=1.162 Rs=.7323 Ikf=0 Xti=3 Eg=1.11 Cjo=3p M=.3333
++               Vj=.5 Fc=.5 Isr=159.2p Nr=2 Bv=40 Ibv=5u )
+*		TELEFUNKEN	pid=bas33	case=DO35
+*		91-08-19 dsq
+*$
+.model BAS34    D(Is=18.18f N=1.162 Rs=.7323 Ikf=0 Xti=3 Eg=1.11 Cjo=3p M=.3333
++               Vj=.5 Fc=.5 Isr=127p Nr=2 Bv=70 Ibv=5u )
+*		TELEFUNKEN	pid=bas34	case=DO35
+*		91-08-19 dsq
+*$
+.model BAS40    D(Is=754.9E-21 N=1 Rs=.1 Ikf=0 Xti=3 Eg=1.11 Cjo=4p M=.3333
++               Vj=.5 Fc=.5 Isr=254.1n Nr=2 Bv=40 Ibv=10u)
+*		SIEMENS		pid=bas40	case=SOT23
+*		91-08-29 dsq
+*$
+.model BAS40-04 D(Is=754.9E-21 N=1 Rs=.1 Ikf=0 Xti=3 Eg=1.11 Cjo=4p M=.3333
++               Vj=.5 Fc=.5 Isr=254.1n Nr=2 Bv=40 Ibv=10u)
+*		SIEMENS		pid=bas40	case=SOT23
+*		91-08-29 dsq
+*$
+.model BAS40-05 D(Is=754.9E-21 N=1 Rs=.1 Ikf=0 Xti=3 Eg=1.11 Cjo=4p M=.3333
++               Vj=.5 Fc=.5 Isr=254.1n Nr=2 Bv=40 Ibv=10u)
+*		SIEMENS		pid=bas40	case=SOT23
+*		91-08-29 dsq
+*$
+.model BAS40-06 D(Is=754.9E-21 N=1 Rs=.1 Ikf=0 Xti=3 Eg=1.11 Cjo=4p M=.3333
++               Vj=.5 Fc=.5 Isr=254.1n Nr=2 Bv=40 Ibv=10u)
+*		SIEMENS		pid=bas40	case=SOT23
+*		91-08-29 dsq
+*$
+.MODEL BAS70    D( IS=3.5557E-6 N=2.6494 RS=7.1919 IKF=2.6463E-3 XTI=2 EG=.69
+                CJO=1.0760E-12 VJ=5.5207 ISR=1.2002E-9 BV=70 IBV=10.000E-6)
+*		SIEMENS		pid=bas70	case=SOT23
+*		99-01-11 bh
+*$
+.model BAS70-04 D( IS=3.5557E-6 N=2.6494 RS=7.1919 IKF=2.6463E-3 XTI=2 EG=.69
+                CJO=1.0760E-12 VJ=5.5207 ISR=1.2002E-9 BV=70 IBV=10.000E-6)
+*		SIEMENS		pid=bas70	case=SOT23
+*		99-01-11 bh
+*$
+.model BAS70-05 D( IS=3.5557E-6 N=2.6494 RS=7.1919 IKF=2.6463E-3 XTI=2 EG=.69
+                CJO=1.0760E-12 VJ=5.5207 ISR=1.2002E-9 BV=70 IBV=10.000E-6)
+*		SIEMENS		pid=bas70	case=SOT23
+*		99-01-11 bh
+*$
+.model BAS70-06 D( IS=3.5557E-6 N=2.6494 RS=7.1919 IKF=2.6463E-3 XTI=2 EG=.69
+                CJO=1.0760E-12 VJ=5.5207 ISR=1.2002E-9 BV=70 IBV=10.000E-6)
+*		SIEMENS		pid=bas70	case=SOT23
+*		99-01-11 bh
+*$
+.model BAT17    D(Is=3.167n N=1.104 Rs=.7144 Ikf=8.133m Xti=3 Eg=1.11
++               Cjo=921.1f M=.3333 Vj=.5 Fc=.5 Isr=50.62n Nr=2 Bv=4 Ibv=10u)
+*		SIEMENS		pid=bat17	case=SOT23
+*		91-08-29 dsq
+*$
+.model BAT17-04 D(Is=3.167n N=1.104 Rs=.7144 Ikf=8.133m Xti=3 Eg=1.11
++               Cjo=921.1f M=.3333 Vj=.5 Fc=.5 Isr=50.62n Nr=2 Bv=4 Ibv=10u)
+*		SIEMENS		pid=bat17	case=SOT23
+*		91-08-29 dsq
+*$
+.model BAT17-05 D(Is=3.167n N=1.104 Rs=.7144 Ikf=8.133m Xti=3 Eg=1.11
++               Cjo=921.1f M=.3333 Vj=.5 Fc=.5 Isr=50.62n Nr=2 Bv=4 Ibv=10u)
+*		SIEMENS		pid=bat17	case=SOT23
+*		91-08-29 dsq
+*$
+.model BAT17-06 D(Is=3.167n N=1.104 Rs=.7144 Ikf=8.133m Xti=3 Eg=1.11
++               Cjo=921.1f M=.3333 Vj=.5 Fc=.5 Isr=50.62n Nr=2 Bv=4 Ibv=10u)
+*		SIEMENS		pid=bat17	case=SOT23
+*		91-08-29 dsq
+*$
+.model BAT18    D(Is=458.2f N=1.304 Rs=0 Ikf=79.99m Xti=3 Eg=1.11 Cjo=2.419p
++               M=.3333 Vj=.5 Fc=.5 Isr=10.69p Nr=2.141 )
+*		PHILIPS		pid=bat18	case=SOT23
+*		91-08-20 dsq
+*$
+.model BAV10    D(Is=118.2n N=2.252 Rs=.5711 Ikf=0 Xti=3 Eg=1.11 Cjo=1.7p
++               M=.3333 Vj=.5256 Fc=.5 Bv=60 Ibv=100n Tt=8.656n)
+*		PHILIPS		pid=bav10	case=SOD27
+*		91-08-20 dsq
+*$
+.model BAV100  D(Is=546.9n N=2.854 Rs=.1647 Ikf=.1486 Xti=3 Eg=1.11 Cjo=1.456p
++               M=.3333 Vj=.5 Fc=.5 Bv=60 Ibv=100u Tt=72.13n)
+*		PHILIPS		pid=bav103	case=SOD80
+*		91-08-20 dsq
+*$
+.model BAV101  D(Is=546.9n N=2.854 Rs=.1647 Ikf=.1486 Xti=3 Eg=1.11 Cjo=1.456p
++               M=.3333 Vj=.5 Fc=.5 Bv=120 Ibv=100u Tt=72.13n)
+*		PHILIPS		pid=bav103	case=SOD80
+*		91-08-20 dsq
+*$
+.model BAV102   D(Is=546.9n N=2.854 Rs=.1647 Ikf=.1486 Xti=3 Eg=1.11 Cjo=1.456p
++               M=.3333 Vj=.5 Fc=.5 Bv=200 Ibv=100u Tt=72.13n)
+*		PHILIPS		pid=bav103	case=SOD80
+*		91-08-20 dsq
+*$
+.model BAV103   D(Is=546.9n N=2.854 Rs=.1647 Ikf=.1486 Xti=3 Eg=1.11 Cjo=1.456p
++               M=.3333 Vj=.5 Fc=.5 Bv=250 Ibv=100u Tt=72.13n)
+*		PHILIPS		pid=bav103	case=SOD80
+*		91-08-20 dsq
+*$
+.model BAV17    D(Is=712.8p N=1.64 Rs=1.241 Ikf=0 Xti=3 Eg=1.11 Cjo=1.5p
++               M=.3333 Vj=.5 Fc=.5 Isr=28.8n Nr=2 Bv=25 Ibv=100u Tt=72.13n)
+*		TELEFUNKEN	pid=bav17	case=DO35
+*		91-08-19 dsq
+*$
+.model BAV18    D(Is=546.9n N=2.854 Rs=.1647 Ikf=.1486 Xti=3 Eg=1.11 Cjo=1.456p
++               M=.3333 Vj=.5 Fc=.5 Bv=60 Ibv=100u Tt=72.13n)
+*		PHILIPS		pid=bav21	case=DO35
+*		91-08-20 dsq
+*$
+.model BAV19    D(Is=546.9n N=2.854 Rs=.1647 Ikf=.1486 Xti=3 Eg=1.11 Cjo=1.456p
++               M=.3333 Vj=.5 Fc=.5 Bv=120 Ibv=100u Tt=72.13n)
+*		PHILIPS		pid=bav21	case=DO35
+*		91-08-20 dsq
+*$
+.model BAV20    D(Is=546.9n N=2.854 Rs=.1647 Ikf=.1486 Xti=3 Eg=1.11 Cjo=1.456p
++               M=.3333 Vj=.5 Fc=.5 Bv=200 Ibv=100u Tt=72.13n)
+*		PHILIPS		pid=bav21	case=DO35
+*		91-08-20 dsq
+*$
+.model BAV21    D(Is=546.9n N=2.854 Rs=.1647 Ikf=.1486 Xti=3 Eg=1.11 Cjo=1.456p
++               M=.3333 Vj=.5 Fc=.5 Bv=250 Ibv=100u Tt=72.13n)
+*		PHILIPS		pid=bav21	case=DO35
+*		91-08-20 dsq
+*$
+.SUBCKT BAV70 1 2 3
+D1 1 3 DBAV70
+D2 2 3 DBAV70
+.model DBAV70    D(Is=1.211n N=1.797 Rs=.8835 Ikf=0 Xti=3 Eg=1.11 Cjo=1.5p
++               M=.3333 Vj=.5 Fc=.5 Isr=1.689n Nr=2 Tt=8.656n)
+*		SIEMENS		pid=bav70	case=SOT23
+*		91-08-29 dsq
+* Changed to dual diodes (one package) RAP 5-28-96
+.ENDS
+*$
+.SUBCKT BAV74 1 2 3
+D1 1 3 DBAV74
+D2 2 3 DBAV74
+.model DBAV74    D(Is=1.211n N=1.797 Rs=.8837 Ikf=0 Xti=3 Eg=1.11 Cjo=2p M=.3333
++               Vj=.5 Fc=.5 Isr=21.22n Nr=2 Tt=5.771n)
+*		SIEMENS		pid=bav74	case=SOT23
+*		91-08-29 dsq
+* Changed to dual diodes (one package) RAP 5-28-96
+.ENDS
+*$
+.SUBCKT BAV99 1 2 3
+D1 3 1 DBAV99
+D2 2 3 DBAV99
+.model DBAV99    D(Is=1.211n N=1.797 Rs=.8837 Ikf=0 Xti=3 Eg=1.11 Cjo=1.5p
++               M=.3333 Vj=.5 Fc=.5 Isr=1.689n Nr=2 Tt=8.656n)
+*		SIEMENS		pid=bav99	case=SOT23
+*		91-08-29 dsq
+* Changed to dual diodes (one package) RAP 5-28-96
+.ENDS
+*$
+.model BAW101   D(Is=6.431p N=1.383 Rs=.405 Ikf=0 Xti=3 Eg=1.11 Cjo=6p M=.3333
++               Vj=.5 Fc=.5 Isr=18.89n Nr=2 Bv=300 Ibv=100u Tt=1.443u)
+*		SIEMENS		pid=baw101	case=SOT143
+*		91-08-29 dsq
+*$
+.model BAW24    D(Is=92.66n N=2.661 Rs=.2305 Ikf=0 Xti=3 Eg=1.11 Cjo=4p M=.3333
++               Vj=.5 Fc=.5 Isr=1.697n Nr=2 Bv=50 Ibv=5u Tt=8.656n)
+*		TELEFUNKEN	pid=baw24	case=DO35
+*		91-08-19 dsq
+*$
+.model BAW25    D(Is=1.027u N=2.807 Rs=.329 Ikf=0 Xti=3 Eg=1.11 Cjo=4p M=.3333
++               Vj=.5 Fc=.5 Bv=50 Ibv=5u Tt=8.656n)
+*		TELEFUNKEN	pid=baw25	case=DO35
+*		91-08-19 dsq
+*$
+.model BAW26    D(Is=92.66n N=2.661 Rs=.2305 Ikf=0 Xti=3 Eg=1.11 Cjo=4p M=.3333
++               Vj=.5 Fc=.5 Isr=1.485n Nr=2 Bv=75 Ibv=5u Tt=8.656n)
+*		TELEFUNKEN	pid=baw26	case=DO35
+*		91-08-19 dsq
+*$
+.model BAW27    D(Is=1.347n N=1.132 Rs=.5822 Ikf=9.244u Xti=3 Eg=1.11 Cjo=4p
++               M=.3333 Vj=.5 Fc=.5 Isr=19.95n Nr=2 Bv=75 Ibv=5u Tt=8.656n)
+*		TELEFUNKEN	pid=baw27	case=DO35
+*		91-08-19 dsq
+*$
+.SUBCKT BAW56 1 2 3
+D1 3 1 DBAW56
+D2 3 2 DBAW56
+.model DBAW56    D(Is=4.198n N=1.977 Rs=.4599 Ikf=1.408 Xti=3 Eg=1.11 Cjo=2p
++               M=.3333 Vj=.5 Fc=.5 Isr=1.115n Nr=2 Tt=8.656n)
+*		SIEMENS		pid=baw56	case=SOT23
+*		91-08-29 dsq
+* Changed to dual diodes (one package) RAP 5-28-96
+.ENDS
+*$
+.model BAW62    D(Is=28.91n N=2.207 Rs=.7275 Ikf=0 Xti=3 Eg=1.11 Cjo=1.247p
++               M=.3333 Vj=.5 Fc=.5 Bv=75 Ibv=5u Tt=5.771n)
+*		PHILIPS		pid=baw62	case=SOD27
+*		91-08-20 dsq
+*$
+.model BAW78A   D(Is=2.84f N=1.017 Rs=.3281 Ikf=.3883 Xti=3 Eg=1.11 Cjo=10p
++               M=.3333 Vj=.5 Fc=.5 Isr=2.148n Nr=2 Tt=1.443u)
+*		SIEMENS		pid=baw78a	case=SOT89
+*		91-08-28 dsq
+*$
+.model BAW78B   D(Is=2.84f N=1.017 Rs=.3281 Ikf=.3883 Xti=3 Eg=1.11 Cjo=10p
++               M=.3333 Vj=.5 Fc=.5 Isr=1.707n Nr=2 Tt=1.443u)
+*		SIEMENS		pid=baw78b	case=SOT89
+*		91-08-28 dsq
+*$
+.model BAW78C   D(Is=2.84f N=1.017 Rs=.3281 Ikf=.3883 Xti=3 Eg=1.11 Cjo=10p
++               M=.3333 Vj=.5 Fc=.5 Isr=1.356n Nr=2 Tt=1.443u)
+*		SIEMENS		pid=baw78c	case=SOT89
+*		91-08-28 dsq
+*$
+.model BAW78D   D(Is=2.84f N=1.017 Rs=.3281 Ikf=.3883 Xti=3 Eg=1.11 Cjo=10p
++               M=.3333 Vj=.5 Fc=.5 Isr=1.077n Nr=2 Tt=1.443u)
+*		SIEMENS		pid=baw78d	case=SOT89
+*		91-08-28 dsq
+*$
+.model BAW79A   D(Is=2.84f N=1.017 Rs=.3281 Ikf=.3883 Xti=3 Eg=1.11 Cjo=10p
++               M=.3333 Vj=.5 Fc=.5 Isr=2.148n Nr=2 Tt=1.443u)
+*		SIEMENS		pid=baw78a	case=SOT89
+*		91-08-28 dsq
+*$
+.model BAW79B   D(Is=2.84f N=1.017 Rs=.3281 Ikf=.3883 Xti=3 Eg=1.11 Cjo=10p
++               M=.3333 Vj=.5 Fc=.5 Isr=1.707n Nr=2 Tt=1.443u)
+*		SIEMENS		pid=baw78b	case=SOT89
+*		91-08-28 dsq
+*$
+.model BAW79C   D(Is=2.84f N=1.017 Rs=.3281 Ikf=.3883 Xti=3 Eg=1.11 Cjo=10p
++               M=.3333 Vj=.5 Fc=.5 Isr=1.356n Nr=2 Tt=1.443u)
+*		SIEMENS		pid=baw78c	case=SOT89
+*		91-08-28 dsq
+*$
+.model BAW79D   D(Is=2.84f N=1.017 Rs=.3281 Ikf=.3883 Xti=3 Eg=1.11 Cjo=10p
++               M=.3333 Vj=.5 Fc=.5 Isr=1.077n Nr=2 Tt=1.443u)
+*		SIEMENS		pid=baw78d	case=SOT89
+*		91-08-28 dsq
+*$
+.model BAX12    D(Is=492.7n N=2.427 Rs=0 Ikf=13.1T Xti=3 Eg=1.11 Cjo=15p
++               M=.3333 Vj=.5 Fc=.5 Bv=148 Ibv=1m Tt=72.13n)
+*		PHILIPS		pid=bax12	case=DO35
+*		91-08-20 dsq
+*$
+.model BAX14    D(Is=634.5p N=1.517 Rs=.1166 Ikf=.134 Xti=3 Eg=1.11 Cjo=20p
++               M=.3333 Vj=.5 Fc=.5 Isr=28.82n Nr=2 Tt=72.13n)
+*		PHILIPS		pid=bax14	case=SOD27
+*		91-08-20 dsq
+*$
+.model BAX18    D(Is=113.7f N=1.116 Rs=.16 Ikf=0 Xti=3 Eg=1.11 Cjo=20p M=.3333
++               Vj=.5 Fc=.5 Isr=5.635n Nr=2 )
+*		PHILIPS		pid=bax18	case=SOD27
+*		91-08-20 dsq
+*$
+.model BAY135   D(Is=18.06f N=1.162 Rs=.7274 Ikf=0 Xti=3 Eg=1.11 Cjo=3p M=.3333
++               Vj=.5 Fc=.5 Isr=202.2p Nr=2 Bv=140 Ibv=5u )
+*		TELEFUNKEN	pid=bay135	case=DO35
+*		91-08-19 dsq
+*$
+.model BAY68    D(Is=44.55n N=2.245 Rs=31.65m Ikf=0 Xti=3 Eg=1.11 Cjo=2.285p
++               M=.1136 Vj=.5 Fc=.5 Isr=35.47n Nr=2 Bv=35 Ibv=100u Tt=14.43n)
+*		TELEFUNKEN	pid=bay68	case=DO35
+*		91-08-19 dsq
+*$
+.model BAY69    D(Is=44.55n N=2.245 Rs=31.65m Ikf=0 Xti=3 Eg=1.11 Cjo=2.285p
++               M=.1136 Vj=.5 Fc=.5 Isr=32.82n Nr=2 Bv=60 Ibv=100u Tt=14.43n)
+*		TELEFUNKEN	pid=bay69 	case=DO35
+*		91-08-19 dsq
+*$
+.model BAY80    D(Is=10.64n N=2.111 Rs=0 Ikf=.1809 Xti=3 Eg=1.11 Cjo=6p M=.3333
++               Vj=.5 Fc=.5 Isr=14.36n Nr=2 Bv=150 Ibv=100u Tt=72.13n)
+*		PHILIPS		pid=bay80	case=DO35
+*		91-08-20 dsq
+*$
+.model BGX50A   D(Is=34.64p N=1.508 Rs=.8895 Ikf=.317 Xti=3 Eg=1.11 Cjo=1.5p
++               M=.3333 Vj=.5 Fc=.5 Isr=1.915n Nr=2 Tt=8.656n)
+*		SIEMENS		pid=bgx50a	case=SOT143
+*		91-08-29 dsq
+*$
+* created using Parts release 7.1p on 08/13/96 at 14:01
+.SUBCKT BYV28-200 1 2
+DFWD	1	2	DFWD
+RLEAK	1	2	371.586Meg	
+
+.MODEL DFWD D
++ IS=8.867749E-9
++ N=1.31328
++ RS=4.732565E-2
++ IKF=0.0291082
++ CJO=215.00E-12
++ M=.37818
++ VJ=.4741
++ ISR=1.553225E-8
++ NR=2.61378
++ BV=234.20
++ IBV=2.5886
++ TT=35.258E-9
+.ENDS
+*$
+* created using Parts release 7.1p on 08/14/96 at 09:04
+* This is a dual diode.
+*
+.SUBCKT BYV32-100 1 2 3
+* First Diode
+D1A	1	3	DFWD
+D1B	1	3	DXTRA
+RLEAK1	1	3	162.222Meg
+* Second Diode
+D2A	2	3	DFWD
+D2B	2	3	DXTRA
+RLEAK2	2	3	162.222Meg
+
+.MODEL DFWD D
++ IS=394.5497E-15
++ N=0.700558
++ RS=13.87057E-3
++ IKF=0.154144
++ CJO=65.411E-12
++ M=.19684
++ VJ=.3905
++ ISR=61.56399E-9
++ NR=1.39444
++ BV=135.2
++ IBV=.25864
++ TT=25.854E-9
+
+.MODEL DXTRA    D  
++ IS = 1.367485E-12
++ RS = 483.3709E-6
++ N = 0.890962
++ IKF = 0.00159295
++ TT = 0
++ CJO = 0
++ VJ = 1
++ M = .5
++ EG = 1.11
++ XTI = 3
++ KF = 0
++ AF = 1
++ FC = .5
++ BV = 1E5
++ IBV = .001
+
+.ENDS
+*$
+* created using Parts release 7.1p on 08/14/96 at 09:04
+* This is a dual diode.
+*
+.SUBCKT BYV32-150 1 2 3
+* First Diode
+D1A	1	3	DFWD
+D1B	1	3	DXTRA
+RLEAK1	1	3	244.249Meg	
+* Second Diode
+D2A	2	3	DFWD
+D2B	2	3	DXTRA
+RLEAK2	2	3	244.249Meg
+
+.MODEL DFWD D
++ IS=2.344186E-12
++ N=0.723238
++ RS=13.29894E-3
++ IKF=0.0991974
++ CJO=65.411E-12
++ M=0.196918
++ VJ=.3905
++ ISR=56.78560E-9
++ NR=2.46315
++ BV=202.80
++ IBV=10
++ TT=25.854E-9
+
+.MODEL DXTRA    D  
++ IS = 1.212774E-12
++ RS = 475.7798E-6
++ N = 0.892458
++ IKF = 0.00159295
++ TT = 0
++ CJO = 0
++ VJ = 1
++ M = .5
++ EG = 1.11
++ XTI = 3
++ KF = 0
++ AF = 1
++ FC = .5
++ BV = 1E5
++ IBV = .001
+
+.ENDS
+*$
+* created using Parts release 7.1p on 08/14/96 at 09:04
+* This is a dual diode.
+*
+.SUBCKT BYV32-200 1 2 3
+* First Diode
+D1A	1	3	DFWD
+D1B	1	3	DXTRA
+RLEAK1	1	3	324.632Meg
+* Second Diode
+D2A	2	3	DFWD
+D2B	2	3	DXTRA
+RLEAK2	2	3	324.632Meg
+
+.MODEL DFWD D
++ IS=1.696093E-12
++ N=0.774478
++ RS=14.33726E-3
++ IKF=1.74853
++ CJO=65.411E-12
++ M=.19684
++ VJ=.3905
++ ISR=53.79256E-9
++ NR=1.96984
++ BV=270.20
++ IBV=.25864
++ TT=25.854E-9
+
+.MODEL DXTRA    D  
++ IS = 1.220293E-12
++ RS = 475.6895E-6
++ N = 0.886928
++ IKF = 0.00162588
++ TT = 0
++ CJO = 0
++ VJ = 1
++ M = .5
++ EG = 1.11
++ XTI = 3
++ KF = 0
++ AF = 1
++ FC = .5
++ BV = 1E5
++ IBV = .001
+
+.ENDS
+*$
+* created using Parts release 7.1p on 08/14/96 at 09:04
+* This is a dual diode.
+*
+.SUBCKT BYV32-50 1 2 3
+* First Diode
+D1A	1	3	DFWD
+D1B	1	3	DXTRA
+D1C	3	1	DLEAK
+RLEAK1	1	3	826.337Meg
+* Second Diode
+D2A	2	3	DFWD
+D2B	2	3	DXTRA
+D2C	3	2	DLEAK
+RLEAK2	2	3	826.337Meg
+
+.MODEL DFWD D
++ IS=4.069996e-013
++ N=0.746454
++ RS=1.662981e-002
++ CJO=65.411E-12
++ M=.19684
++ VJ=.3905
++ ISR=1.838366e-007
++ NR=2.46315
++ BV=67.798
++ IBV=10
++ TT=25.854E-9
+
+.MODEL DXTRA    D  
++ IS = 1.367485E-12
++ RS = 483.3709E-6
++ N = 0.890962
++ IKF = 0.00159295
++ TT = 0
++ CJO = 0
++ VJ = 1
++ M = .5
++ EG = 1.11
++ XTI = 3
++ KF = 0
++ AF = 1
++ FC = .5
++ BV = 1E5
++ IBV = .001
+
+.MODEL DLEAK    D  
++ IS = 2.381248E-12
++ RS = 0.1
++ N = 169
++ TT = 0
++ CJO = 0
++ VJ = 1
++ M = .5
++ EG = 1.11
++ XTI = 3
++ KF = 0
++ AF = 1
++ FC = .5
++ BV = 1E5
++ IBV = .001
+
+.ENDS
+*$
+* created using Parts release 7.1p on 08/15/96 at 13:39
+.SUBCKT BYV42-150 1 2 3
+* First Diode
+D1A	1	3	DFWD
+D1B	1	3	DXTRA
+* Second Diode
+D2A	2	3	DFWD
+D2B	2	3	DXTRA
+
+.MODEL DFWD D
++ IS=2.088451E-15
++ N=5.21455
++ RS=9.601314E-3
++ CJO=245.94E-12
++ M=.42884
++ VJ=1.0610
++ ISR=2.378375E-6
++ NR=1.61012
++ BV=202.55
++ IBV=12.932E-3
++ TT=28.167E-9
+
+.MODEL DXTRA    D  
++ IS = 4.970717E-12
++ RS = 809.0624E-6
++ N = 1.17381
++ IKF = 0.00444743
++ TT = 0
++ CJO = 0
++ VJ = 1
++ M = .5
++ EG = 1.11
++ XTI = 3
++ KF = 0
++ AF = 1
++ FC = .5
++ BV = 1E5
++ IBV = .001
+
+.MODEL DLEAK    D  
++ IS = 1.386210E-15
++ RS = .1
++ N = 202.16
++ TT = 0
++ CJO = 0
++ VJ = 1
++ M = .5
++ EG = 1.11
++ XTI = 3
++ KF = 0
++ AF = 1
++ FC = .5
++ BV = 1E5
++ IBV = .001
+
+.ENDS
+*$
+* created using Parts release 7.1p on 08/16/96 at 11:51
+.MODEL BYW96E D
++ IS=59.77971E-6
++ N=3.61403
++ RS=52.308E-3
++ IKF=0.566356
++ CJO=27.010E-12
++ M=.43978
++ VJ=.81612
++ ISR=447.9139E-9
++ NR=2.54303
++ BV=1.2003E3
++ IBV=2.5910
++ TT=295.54E-9
+*$
+.model D1N4148  D(Is=2.682n N=1.836 Rs=.5664 Ikf=44.17m Xti=3 Eg=1.11 Cjo=4p
++               M=.3333 Vj=.5 Fc=.5 Isr=1.565n Nr=2 Bv=100 Ibv=100u Tt=11.54n)
+*		TELEFUNKEN	pid=d1n4148	case=DO35
+*		91-08-20 dsq
+*$
+.model D1N4149  D(Is=2.682n N=1.836 Rs=.5664 Ikf=44.17m Xti=3 Eg=1.11 Cjo=2p
++               M=.3333 Vj=.5 Fc=.5 Isr=1.565n Nr=2 Bv=100 Ibv=100u Tt=11.54n)
+*		TELEFUNKEN	pid=d1n4149	case=DO35
+*		91-08-20 dsq
+*$
+.model D1N4151  D(Is=2.2n N=1.768 Rs=.5927 Ikf=8.512m Xti=3 Eg=1.11 Cjo=1.725p
++               M=88.82m Vj=.5 Fc=.5 Isr=7.832n Nr=2 Bv=75 Ibv=5u Tt=5.771n)
+*		TELEFUNKEN	pid=d1n4151	case=DO35
+*		91-08-20 dsq
+*$
+.model D1N4154  D(Is=153.4p N=1.487 Rs=.6329 Ikf=3.53m Xti=3 Eg=1.11 Cjo=2.251p
++               M=.1575 Vj=.5 Fc=.5 Isr=4.763n Nr=2 Bv=35 Ibv=5u Tt=5.771n)
+*		TELEFUNKEN	pid=d1n4154	case=DO35
+*		91-08-20 dsq
+*$
+.model D1N4446  D(Is=1.071n N=1.698 Rs=.8383 Ikf=0 Xti=3 Eg=1.11 Cjo=4p M=.3333
++               Vj=.75 Fc=.5 Isr=2.441n Nr=2 Bv=100 Ibv=100u Tt=11.54n)
+*		TELEFUNKEN	pid=d1n4446	case=DO35
+*		91-08-20 dsq
+*$
+.model D1N4447  D(Is=1.071n N=1.698 Rs=.8383 Ikf=0 Xti=3 Eg=1.11 Cjo=2p M=.3333
++               Vj=.5 Fc=.5 Isr=2.149n Nr=2 Bv=100 Ibv=100u Tt=11.54n)
+*		TELEFUNKEN	pid=d1n4447	case=DO35
+*		91-08-20 dsq
+*$
+.model D1N4448  D(Is=2.681n N=1.835 Rs=.5142 Ikf=34.82m Xti=3 Eg=1.11 Cjo=4p
++               M=.3333 Vj=.5 Fc=.5 Isr=1.566n Nr=2 Bv=100 Ibv=100u Tt=11.54n)
+*		TELEFUNKEN	pid=d1n4448	case=DO35
+*		91-08-20 dsq
+*$
+.model D1N4449  D(Is=2.018n N=1.791 Rs=.6887 Ikf=0 Xti=3 Eg=1.11 Cjo=2p M=.3333
++               Vj=.5 Fc=.5 Isr=1.806n Nr=2 Bv=100 Ibv=100u Tt=11.54n)
+*		TELEFUNKEN	pid=d1n4449	case=DO35
+*		91-08-20 dsq
+*$
+.model LL4148   D(Is=2.565n N=1.83 Rs=.5557 Ikf=36.88m Xti=3 Eg=1.11 Cjo=1.501p
++               M=78.12m Vj=.5 Fc=.5 Isr=1n Nr=2 Bv=100 Ibv=100u Tt=11.54n)
+*		TELEFUNKEN	pid=ll4148	case=SOD80
+*		91-08-19 dsq
+*$
+.model LL4150   D(Is=3.142n N=1.686 Rs=.5046 Ikf=28.86m Xti=3 Eg=1.11 Cjo=2.5p
++               M=.3333 Vj=.5 Fc=.5 Bv=50 Ibv=100n Tt=5.771n)
+*		TELEFUNKEN	pid=ll4150	case=SOD80
+*		91-08-19 dsq
+*$
+.model LL4151   D(Is=10.62n N=2.018 Rs=.3839 Ikf=14.03m Xti=3 Eg=1.11 Cjo=1.72p
++               M=95.03m Vj=.5 Fc=.5 Isr=25.4n Nr=2 Bv=75 Ibv=5u Tt=5.771n)
+*		TELEFUNKEN	pid=ll4151	case=SOD80
+*		91-08-19 dsq
+*$
+.model LL4154   D(Is=3.378n N=1.825 Rs=.4962 Ikf=8.849m Xti=3 Eg=1.11 Cjo=2.3p
++               M=.1486 Vj=.5 Fc=.5 Isr=53.86n Nr=2 Bv=35 Ibv=5u Tt=5.771n)
+*		TELEFUNKEN	pid=ll4154	case=SOD80
+*		91-08-19 dsq
+*$
+.model LL4448   D(Is=2.388n N=1.817 Rs=.5104 Ikf=27.83m Xti=3 Eg=1.11
++               Cjo=1.501p M=78.12m Vj=.5 Fc=.5 Isr=1n Nr=2 Bv=100 Ibv=100u
++               Tt=11.54n)
+*		TELEFUNKEN	pid=ll4448	case=SOD80
+*		91-08-19 dsq
+*$

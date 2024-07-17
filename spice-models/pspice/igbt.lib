@@ -1,0 +1,2632 @@
+* Library of  Insulated Gate Bipolar Transistor (IGBT) Models
+
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+
+* $Revision:   1.6  $
+* $Author:   RPEREZ  $
+* $Date:   17 Apr 1998 14:59:00  $
+*
+* ---------------------------------------------------------------------------
+* The parameters in this model library were derived from the data sheets for
+* each part.  Each part was characterized using the Parts program and Optimizer program.
+* ---------------------------------------------------------------------------
+
+*$
+
+* Created using Parts release 6.3 on 12/14/95 at 17:24
+.MODEL APT25GF100BN NIGBT
++ TAU=447.41E-9
++ KP=2.1704
++ AREA=12.500E-6
++ BVF=2
++ AGD=4.8000E-6
++ WB=117.00E-6
++ VT=3.4974
++ KF=.5005
++ CGS=18.572E-9
++ COXD=43.300E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/18/95 at 17:56
+.MODEL APT30G100BN NIGBT
++ TAU=415.50E-9
++ KP=2.0764
++ AREA=15.000E-6
++ BVF=2
++ AGD=6.0000E-6
++ WB=117.00E-6
++ VT=3.6994
++ KF=.58505
++ CGS=10.575E-9
++ COXD=41.470E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/19/95 at 10:02
+.MODEL APT30GF60BN NIGBT
++ TAU=250.30E-9
++ KP=1.5868
++ AREA=15.000E-6
++ AGD=4.2000E-6
++ VT=3.5260
++ KF=1.7366
++ CGS=10.514E-9
++ COXD=52.000E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:46
+.MODEL APT30GL100BN NIGBT
++ TAU=466.15E-9
++ KP=1.6746
++ AREA=15.000E-6
++ BVF=2
++ AGD=3.5000E-6
++ WB=117.00E-6
++ VT=3.5600
++ KF=1.8590
++ CGS=11.161E-9
++ COXD=76.121E-9
++ VTD=-3.3630
+
+*$
+
+* Created using Parts release 6.3 on 09/20/95 at 15:36
+.MODEL APT35G50BN NIGBT
++ TAU=301.76E-9
++ KP=1.8329
++ AREA=17.500E-6
++ VT=3.7833
++ KF=.78171
++ CGS=13.190E-9
++ COXD=40.000E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:47
+.MODEL APT35G60BN NIGBT
++ TAU=301.76E-9
++ KP=1.8329
++ AREA=17.500E-6
++ AGD=4.0000E-6
++ VT=3.7833
++ KF=.75258
++ CGS=8.5502E-9
++ COXD=65.110E-9
++ VTD=-5.2140
+
+*$
+
+* Created using Parts release 6.3 on 09/20/95 at 15:47
+.MODEL APT35GL60BN NIGBT
++ TAU=316.09E-9
++ KP=2.5184
++ AREA=17.500E-6
++ AGD=5.5000E-6
++ VT=3.9697
++ KF=1.0902
++ CGS=13.130E-9
++ COXD=32.460E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:47
+.MODEL APT40GF100BN NIGBT
++ TAU=437.04E-9
++ KP=3.1483
++ AREA=20.000E-6
++ AGD=6.0000E-6
++ BVF=2
++ WB=117.00E-6
++ VT=3.8519
++ KF=.41043
++ CGS=13.417E-9
++ COXD=59.557E-9
++ VTD=-6.4030
+
+*$
+
+* Created using Parts release 6.3 on 09/20/95 at 16:51
+.MODEL APT45G100BN NIGBT
++ TAU=435.82E-9
++ KP=2.7564
++ AREA=22.500E-6
++ BVF=2
++ AGD=4.5000E-6
++ WB=117.00E-6
++ VT=3.5792
++ KF=.65663
++ CGS=9.0000E-9
++ COXD=90.840E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/14/95 at 22:24
+.MODEL APT45GF60BN NIGBT
++ TAU=208.93E-9
++ KP=3.7812
++ AREA=22.500E-6
++ AGD=7.0000E-6
++ VT=4.1363
++ KF=1.3103
++ CGS=11.071E-9
++ COXD=49.680E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/20/95 at 17:08
+.MODEL APT45GL100BN NIGBT
++ TAU=460.91E-9
++ KP=4.2283
++ AREA=22.500E-6
++ BVF=2
++ AGD=3.5000E-6
++ WB=117.00E-6
++ VT=4.1917
++ KF=1.4912
++ CGS=10.000E-9
++ COXD=100.00E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/14/95 at 22:39
+.MODEL APT50G50BN NIGBT
++ TAU=338.50E-9
++ KP=3.3182
++ AREA=25.000E-6
++ AGD=5.6000E-6
++ VT=3.6512
++ KF=.59846
++ CGS=8.0000E-9
++ COXD=75.000E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/14/95 at 22:45
+.MODEL APT50G60BN NIGBT
++ TAU=317.08E-9
++ KP=3.9093
++ AREA=25.000E-6
++ AGD=5.6000E-6
++ VT=3.9838
++ KF=.55147
++ CGS=8.0000E-9
++ COXD=75.000E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:48
+.MODEL APT50GF100BN NIGBT
++ TAU=349.22E-9
++ KP=7.5320
++ AREA=25.000E-6
++ BVF=2
++ AGD=4.3000E-6
++ WB=117.00E-6
++ VT=4.2495
++ KF=.5005
++ CGS=13.009E-9
++ COXD=147.00E-9
++ VTD=-7.2450
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:49
+.MODEL APT50GL60BN NIGBT
++ TAU=386.28E-9
++ KP=4.4241
++ AREA=25.000E-6
++ AGD=4.0000E-6
++ VT=4.0601
++ KF=.73398
++ CGS=6.0000E-9
++ COXD=96.780E-9
++ VTD=-6.0770
+
+*$
+
+* Created using Parts release 6.3 on 12/14/95 at 23:28
+.MODEL APT55GF60BN NIGBT
++ TAU=275.34E-9
++ KP=5.8619
++ AREA=27.500E-6
++ VT=3.9796
++ KF=.7681
++ CGS=12.000E-9
++ COXD=120.00E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 11:31
+.MODEL APT65GL100BN NIGBT
++ TAU=453.54E-9
++ KP=5.1817
++ AREA=32.500E-6
++ BVF=2
++ AGD=6.0000E-6
++ WB=117.00E-6
++ VT=3.8514
++ KF=1.3355
++ CGS=10.000E-9
++ COXD=100.00E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 14:59
+.MODEL APT75GL60BN NIGBT
++ TAU=312.10E-9
++ KP=6.9038
++ AREA=37.500E-6
++ AGD=6.0000E-6
++ VT=3.9235
++ KF=1.8496
++ CGS=10.000E-9
++ COXD=160.50E-9
++ VTD=1
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 11:20
+.MODEL APT90GF100JN NIGBT
++ TAU=441.62E-9
++ KP=12.931
++ AREA=45.000E-6
++ BVF=2
++ AGD=16.000E-6
++ WB=117.00E-6
++ VT=4.1653
++ KF=.5005
++ CGS=22.000E-9
++ COXD=100.20E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 17:02
+.MODEL BSM100GB100D NIGBT
++ TAU=488.31E-9
++ KP=11.132
++ AREA=67.500E-6
++ BVF=2
++ AGD=25.750E-6
++ WB=117.00E-6
++ VT=5.4278
++ KF=.88459
++ CGS=50.360E-9
++ COXD=130.70E-9
++ VTD=-7
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 17:06
+.MODEL BSM150GB100D NIGBT
++ TAU=489.48E-9
++ KP=18.614
++ AREA=100.00E-6
++ BVF=2
++ AGD=50.000E-6
++ WB=117.00E-6
++ VT=6.0692
++ KF=.85846
++ CGS=46.975E-9
++ COXD=81.967E-9
++ VTD=-7
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 17:07
+.MODEL BSM200GA120D NIGBT
++ TAU=484.88E-9
++ KP=23.199
++ AREA=137.50E-6
++ BVF=2
++ AGD=68.750E-6
++ WB=117.00E-6
++ VT=5.4597
++ KF=1.0969
++ CGS=74.309E-9
++ COXD=77.015E-9
++ VTD=-7
+
+*$
+
+* Created using Parts release 6.3 on 12/15/95 at 00:10
+.MODEL BSM25GB100D NIGBT
++ TAU=415.10E-9
++ KP=3.1335
++ AREA=17.500E-6
++ BVF=2
++ AGD=4.5000E-6
++ WB=117.00E-6
++ VT=5.4695
++ KF=1.6690
++ CGS=40.000E-9
++ COXD=180.70E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/15/95 at 00:15
+.MODEL BSM50GB100D NIGBT
++ TAU=415.10E-9
++ KP=5.7432
++ AREA=35.000E-6
++ BVF=2
++ AGD=15.000E-6
++ WB=117.00E-6
++ VT=5.5114
++ KF=2.2105
++ CGS=51.630E-9
++ COXD=140.30E-9
++ VTD=-3
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 17:44
+.MODEL BSM75GB100D NIGBT
++ TAU=489.48E-9
++ KP=9.3068
++ AREA=50.000E-6
++ BVF=2
++ AGD=25.000E-6
++ WB=117.00E-6
++ VT=6.0692
++ KF=.97525
++ CGS=43.441E-9
++ COXD=103.79E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/15/95 at 00:34
+.MODEL BUK854-500IS NIGBT
++ TAU=5.6137E-6
++ KP=1.7102
++ AREA=7.5000E-6
++ AGD=3.0000E-6
++ VT=4.4544
++ KF=.66532
++ CGS=8.0800E-9
++ COXD=21.530E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 18:11
+.MODEL BUK856-400IZ NIGBT
++ TAU=8.6343E-6
++ KP=16.819
++ AGD=3.0000E-6
++ VT=1.8156
++ KF=.3879
++ CGS=15.000E-9
++ COXD=37.850E-9
++ VTD=-4
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 18:15
+.MODEL BUK856-450IX NIGBT
++ TAU=8.9607E-6
++ KP=3.5569
++ AREA=7.5000E-6
++ AGD=2.8000E-6
++ VT=4.4511
++ KF=.86667
++ CGS=17.000E-9
++ COXD=41.610E-9
++ VTD=-4
+
+*$
+
+* Created using Parts release 6.3 on 12/15/95 at 18:19
+.MODEL CM1000HA-24H NIGBT
++ TAU=345.24E-9
++ KP=100
++ AREA=1.0000E-3
++ BVF=2
++ AGD=250.00E-6
++ WB=117.00E-6
++ VT=6.8046
++ KF=13.491
++ CGS=19.496E-9
++ COXD=35.810E-9
++ VTD=-11.800
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 09:30
+.MODEL CM100DY-12E NIGBT
++ TAU=271.94E-9
++ KP=11.649
++ AREA=100.00E-6
++ AGD=25.000E-6
++ VT=3.8603
++ KF=.68955
++ CGS=15.247E-9
++ COXD=53.500E-9
++ VTD=-9.0840
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:50
+.MODEL CM100DY-12H NIGBT
++ TAU=241.49E-9
++ KP=9.1038
++ AREA=100.00E-6
++ AGD=25.000E-6
++ VT=6.6124
++ KF=6.2369
++ CGS=9.1237E-9
++ COXD=31.202E-9
++ VTD=-5.6150
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 16:41
+.MODEL CM100DY-24E NIGBT
++ TAU=329.53E-9
++ KP=24.316
++ AREA=100.00E-6
++ BVF=2
++ AGD=25.000E-6
++ WB=117.00E-6
++ VT=5.8100
++ KF=.82329
++ CGS=28.295E-9
++ COXD=152.00E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 16:44
+.MODEL CM100DY-24H NIGBT
++ TAU=297.06E-9
++ KP=11.656
++ AREA=150.00E-6
++ BVF=2
++ AGD=25.000E-6
++ WB=117.00E-6
++ VT=6.7288
++ KF=29.195
++ CGS=12.039E-9
++ COXD=37.490E-9
++ VTD=-10.350
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 16:47
+.MODEL CM100E3Y-12E NIGBT
++ TAU=271.94E-9
++ KP=11.713
++ AREA=100.00E-6
++ AGD=25.000E-6
++ VT=3.8634
++ KF=.73864
++ CGS=14.306E-9
++ COXD=52.810E-9
++ VTD=-10.010
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 16:47
+.MODEL CM100E3Y-24E NIGBT
++ TAU=393.42E-9
++ KP=12.680
++ AREA=100.00E-6
++ BVF=2
++ AGD=25.000E-6
++ WB=117.00E-6
++ VT=3.9472
++ KF=1.3809
++ CGS=15.339E-9
++ COXD=58.110E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 16:49
+.MODEL CM150DY-12E NIGBT
++ TAU=271.94E-9
++ KP=16.368
++ AREA=150.00E-6
++ AGD=37.500E-6
++ VT=3.8041
++ KF=.75911
++ CGS=13.244E-9
++ COXD=50.790E-9
++ VTD=-11.500
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:51
+.MODEL CM150DY-12H NIGBT
++ TAU=241.49E-9
++ KP=12.933
++ AREA=150.00E-6
++ AGD=37.500E-6
++ VT=6.5262
++ KF=5.7186
++ CGS=9.1085E-9
++ COXD=32.003E-9
++ VTD=-5.3440
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 16:52
+.MODEL CM150DY-24E NIGBT
++ TAU=329.53E-9
++ KP=34.684
++ AREA=150.00E-6
++ BVF=2
++ AGD=37.500E-6
++ WB=117.00E-6
++ VT=5.7151
++ KF=1.0723
++ CGS=30.101E-9
++ COXD=128.90E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 16:54
+.MODEL CM150DY-24H NIGBT
++ TAU=338.37E-9
++ KP=18.417
++ AREA=175.00E-6
++ BVF=2
++ AGD=37.500E-6
++ WB=117.00E-6
++ VT=6.7529
++ KF=6.2395
++ CGS=15.117E-9
++ COXD=42.430E-9
++ VTD=-8.9170
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 16:55
+.MODEL CM150E3Y-12E NIGBT
++ TAU=271.94E-9
++ KP=16.870
++ AREA=150.00E-6
++ AGD=37.500E-6
++ VT=3.7876
++ KF=.71797
++ CGS=14.007E-9
++ COXD=51.580E-9
++ VTD=-10.600
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 16:56
+.MODEL CM150E3Y-24E NIGBT
++ TAU=284.65E-9
++ KP=34.761
++ AREA=150.00E-6
++ BVF=2
++ AGD=37.500E-6
++ WB=117.00E-6
++ VT=5.7391
++ KF=2.6586
++ CGS=29.878E-9
++ COXD=150.60E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 16:57
+.MODEL CM200DY-12E NIGBT
++ TAU=271.94E-9
++ KP=20.614
++ AREA=200.00E-6
++ AGD=50.000E-6
++ VT=3.6550
++ KF=.81081
++ CGS=17.632E-9
++ COXD=48.080E-9
++ VTD=-10
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 16:58
+.MODEL CM200DY-12H NIGBT
++ TAU=241.49E-9
++ KP=18.962
++ AREA=200.00E-6
++ AGD=50.000E-6
++ VT=6.6407
++ KF=4.8879
++ CGS=8.5110E-9
++ COXD=28.010E-9
++ VTD=-9.9990
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 16:59
+.MODEL CM200DY-24E NIGBT
++ TAU=329.53E-9
++ KP=45.343
++ AREA=200.00E-6
++ BVF=2
++ AGD=50.000E-6
++ WB=117.00E-6
++ VT=5.7414
++ KF=1.2096
++ CGS=29.086E-9
++ COXD=125.90E-9
++ VTD=-7.8630
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:00
+.MODEL CM200DY-24H NIGBT
++ TAU=333.02E-9
++ KP=20.859
++ AREA=250.00E-6
++ BVF=2
++ AGD=50.000E-6
++ WB=117.00E-6
++ VT=6.6361
++ KF=6.1726
++ CGS=14.966E-9
++ COXD=40.320E-9
++ VTD=-8.3390
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:03
+.MODEL CM200DY-28H NIGBT
++ TAU=337.65E-9
++ KP=18.451
++ AREA=200.00E-6
++ BVF=2
++ AGD=50.000E-6
++ WB=117.00E-6
++ VT=6.7542
++ KF=1.8490
++ CGS=16.405E-9
++ COXD=41.950E-9
++ VTD=-11.640
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:51
+.MODEL CM200E3Y-12E NIGBT
++ TAU=271.94E-9
++ KP=27.221
++ AREA=200.00E-6
++ AGD=50.000E-6
++ VT=4.0751
++ KF=.63188
++ CGS=16.262E-9
++ COXD=43.425E-9
++ VTD=-12.820
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:04
+.MODEL CM200E3Y-24E NIGBT
++ TAU=329.53E-9
++ KP=27.894
++ AREA=200.00E-6
++ BVF=2
++ AGD=50.000E-6
++ WB=117.00E-6
++ VT=4.0403
++ KF=4.5809
++ CGS=16.269E-9
++ COXD=51.060E-9
++ VTD=-7.3910
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:06
+.MODEL CM200HA-24E NIGBT
++ TAU=329.53E-9
++ KP=46.066
++ AREA=200.00E-6
++ BVF=2
++ AGD=50.000E-6
++ WB=117.00E-6
++ VT=5.7514
++ KF=1.1972
++ CGS=30.780E-9
++ COXD=111.70E-9
++ VTD=-9.2210
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:11
+.MODEL CM200HA-24H NIGBT
++ TAU=333.02E-9
++ KP=20.890
++ AREA=250.00E-6
++ BVF=2
++ AGD=50.000E-6
++ WB=117.00E-6
++ VT=6.6118
++ KF=6.4905
++ CGS=15.006E-9
++ COXD=36.580E-9
++ VTD=-10.970
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:12
+.MODEL CM300DY-12E NIGBT
++ TAU=271.94E-9
++ KP=33.731
++ AREA=300.00E-6
++ AGD=75.000E-6
++ VT=3.8944
++ KF=1.3680
++ CGS=13.795E-9
++ COXD=49.810E-9
++ VTD=-11
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:14
+.MODEL CM300DY-12H NIGBT
++ TAU=271.94E-9
++ KP=26.335
++ AREA=300.00E-6
++ AGD=75.000E-6
++ VT=6.5500
++ KF=2.8969
++ CGS=8.7327E-9
++ COXD=27.340E-9
++ VTD=-9.7380
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:15
+.MODEL CM300DY-24E NIGBT
++ TAU=329.53E-9
++ KP=66.286
++ AREA=300.00E-6
++ BVF=2
++ AGD=75.000E-6
++ WB=117.00E-6
++ VT=5.6993
++ KF=1.1217
++ CGS=29.406E-9
++ COXD=118.80E-9
++ VTD=-8.9400
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:16
+.MODEL CM300DY-24H NIGBT
++ TAU=338.37E-9
++ KP=38.281
++ AREA=350.00E-6
++ BVF=2
++ AGD=75.000E-6
++ WB=117.00E-6
++ VT=6.8569
++ KF=5.6723
++ CGS=17.622E-9
++ COXD=30.330E-9
++ VTD=-14.570
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:17
+.MODEL CM300DY-28H NIGBT
++ TAU=337.65E-9
++ KP=31.943
++ AREA=300.00E-6
++ BVF=2
++ AGD=75.000E-6
++ WB=117.00E-6
++ VT=7.0560
++ KF=1.6403
++ CGS=17.397E-9
++ COXD=58.750E-9
++ VTD=-6.0940
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:17
+.MODEL CM300E3Y-12E NIGBT
++ TAU=271.94E-9
++ KP=39.870
++ AREA=300.00E-6
++ AGD=75.000E-6
++ VT=4.0365
++ KF=.62492
++ CGS=14.035E-9
++ COXD=52.270E-9
++ VTD=-9.3250
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:20
+.MODEL CM300HA-12E NIGBT
++ TAU=271.94E-9
++ KP=33.731
++ AREA=300.00E-6
++ AGD=75.000E-6
++ VT=3.8944
++ KF=.79633
++ CGS=13.795E-9
++ COXD=49.980E-9
++ VTD=-11.100
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:21
+.MODEL CM300HA-12H NIGBT
++ TAU=263.27E-9
++ KP=25.744
++ AREA=350.00E-6
++ AGD=75.000E-6
++ VT=6.5303
++ KF=3.1758
++ CGS=7.1215E-9
++ COXD=28.790E-9
++ VTD=-8.3390
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:22
+.MODEL CM300HA-24E NIGBT
++ TAU=329.53E-9
++ KP=64.862
++ AREA=300.00E-6
++ BVF=2
++ AGD=75.000E-6
++ WB=117.00E-6
++ VT=5.6679
++ KF=1.1192
++ CGS=28.871E-9
++ COXD=137.30E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:52
+.MODEL CM300HA-24H NIGBT
++ TAU=338.37E-9
++ KP=41.124
++ AREA=350.00E-6
++ BVF=2
++ AGD=75.000E-6
++ WB=117.00E-6
++ VT=6.9464
++ KF=6.5406
++ CGS=14.716E-9
++ COXD=40.137E-9
++ VTD=-10.670
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:24
+.MODEL CM400DY-12H NIGBT
++ TAU=241.49E-9
++ KP=42.611
++ AREA=400.00E-6
++ AGD=100.00E-6
++ VT=6.7851
++ KF=5.0898
++ CGS=8.8929E-9
++ COXD=26.790E-9
++ VTD=-9.9730
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:25
+.MODEL CM400HA-12E NIGBT
++ TAU=271.94E-9
++ KP=50.305
++ AREA=400.00E-6
++ AGD=100.00E-6
++ VT=3.9684
++ KF=.69115
++ CGS=15.753E-9
++ COXD=53.960E-9
++ VTD=-12.390
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:25
+.MODEL CM400HA-12H NIGBT
++ TAU=241.49E-9
++ KP=41.077
++ AREA=400.00E-6
++ AGD=100.00E-6
++ VT=6.6945
++ KF=5.5555
++ CGS=8.9167E-9
++ COXD=33.660E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:53
+.MODEL CM400HA-24H NIGBT
++ TAU=341.86E-9
++ KP=45.363
++ AREA=450.00E-6
++ BVF=2
++ AGD=100.00E-6
++ WB=117.00E-6
++ VT=6.7442
++ KF=6.3455
++ CGS=14.314E-9
++ COXD=32.977E-9
++ VTD=-19.690
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:28
+.MODEL CM400HA-28H NIGBT
++ TAU=337.65E-9
++ KP=42.610
++ AREA=400.00E-6
++ BVF=2
++ AGD=100.00E-6
++ WB=117.00E-6
++ VT=6.8415
++ KF=1.5938
++ CGS=16.350E-9
++ COXD=49.250E-9
++ VTD=-8.0730
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:29
+.MODEL CM400HA-34H NIGBT
++ TAU=510.40E-9
++ KP=75.437
++ AREA=400.00E-6
++ BVF=2
++ AGD=100.00E-6
++ WB=117.00E-6
++ VT=7.1515
++ KF=.64194
++ CGS=17.720E-9
++ COXD=66.260E-9
++ VTD=-11.370
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:29
+.MODEL CM50DY-12E NIGBT
++ TAU=271.94E-9
++ KP=6.1369
++ AREA=50.000E-6
++ AGD=12.500E-6
++ VT=3.9422
++ KF=.70805
++ CGS=16.394E-9
++ COXD=43.110E-9
++ VTD=-12.970
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:30
+.MODEL CM50DY-12H NIGBT
++ TAU=241.49E-9
++ KP=5.1783
++ AREA=50.000E-6
++ AGD=12.500E-6
++ VT=6.7817
++ KF=4.3985
++ CGS=9.8369E-9
++ COXD=28.870E-9
++ VTD=-6.8290
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:31
+.MODEL CM50DY-24E NIGBT
++ TAU=329.53E-9
++ KP=9.1492
++ AREA=50.000E-6
++ BVF=2
++ AGD=12.500E-6
++ WB=117.00E-6
++ VT=5.5187
++ KF=1.4764
++ CGS=29.762E-9
++ COXD=113.50E-9
++ VTD=-9.9760
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 07:19
+.MODEL CM50DY-24H NIGBT
++ TAU=336.01E-9
++ KP=5.4957
++ AREA=60.000E-6
++ BVF=2
++ AGD=12.500E-6
++ WB=117.00E-6
++ VT=6.6975
++ KF=8.1942
++ CGS=14.750E-9
++ COXD=37.770E-9
++ VTD=-12.050
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:33
+.MODEL CM50DY-28H NIGBT
++ TAU=337.65E-9
++ KP=5.3143
++ AREA=50.000E-6
++ BVF=2
++ AGD=12.500E-6
++ WB=117.00E-6
++ VT=6.9004
++ KF=1.5921
++ CGS=19.500E-9
++ COXD=33.520E-9
++ VTD=-8.8780
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:34
+.MODEL CM50E3Y-12E NIGBT
++ TAU=271.94E-9
++ KP=5.7710
++ AREA=50.000E-6
++ AGD=12.500E-6
++ VT=3.8289
++ KF=.76747
++ CGS=16.429E-9
++ COXD=44.720E-9
++ VTD=-12.220
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:35
+.MODEL CM50E3Y-24E NIGBT
++ TAU=310.00E-9
++ KP=11.710
++ BVF=2
++ AREA=50.000E-6
++ AGD=12.500E-6
++ WB=117.00E-6
++ VT=5.7543
++ KF=1.5980
++ CGS=29.949E-9
++ COXD=113.90E-9
++ VTD=-9.3800
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:36
+.MODEL CM600HA-12H NIGBT
++ TAU=264.05E-9
++ KP=48.796
++ AREA=600.00E-6
++ AGD=150.00E-6
++ VT=6.5093
++ KF=4.3087
++ CGS=9.2524E-9
++ COXD=29.060E-9
++ VTD=-6.6860
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:37
+.MODEL CM600HA-24E NIGBT
++ TAU=329.53E-9
++ KP=128.31
++ AREA=600.00E-6
++ BVF=2
++ AGD=150.00E-6
++ WB=117.00E-6
++ VT=5.6394
++ KF=1.0550
++ CGS=30.596E-9
++ COXD=97.500E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:38
+.MODEL CM600HA-24H NIGBT
++ TAU=338.37E-9
++ KP=77.504
++ AREA=700.00E-6
++ BVF=2
++ AGD=150.00E-6
++ WB=117.00E-6
++ VT=6.8805
++ KF=6.3537
++ CGS=14.678E-9
++ COXD=44.520E-9
++ VTD=-8.1640
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:39
+.MODEL CM600HA-28H NIGBT
++ TAU=337.65E-9
++ KP=45.051
++ AREA=600.00E-6
++ BVF=2
++ AGD=150.00E-6
++ WB=117.00E-6
++ VT=6.7581
++ KF=2.3306
++ CGS=16.857E-9
++ COXD=60.920E-9
++ VTD=-6.2640
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:40
+.MODEL CM75DY-12E NIGBT
++ TAU=271.94E-9
++ KP=8.7105
++ AREA=75.000E-6
++ AGD=18.750E-6
++ VT=3.8762
++ KF=.71348
++ CGS=13.935E-9
++ COXD=47.640E-9
++ VTD=-12.270
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:40
+.MODEL CM75DY-12H NIGBT
++ TAU=271.94E-9
++ KP=6.7214
++ AREA=75.000E-6
++ AGD=18.750E-6
++ VT=6.5651
++ KF=2.9684
++ CGS=7.8777E-9
++ COXD=25.760E-9
++ VTD=-13.670
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:43
+.MODEL CM75DY-24E NIGBT
++ TAU=329.53E-9
++ KP=22.251
++ AREA=75.000E-6
++ BVF=2
++ AGD=18.750E-6
++ WB=117.00E-6
++ VT=5.6919
++ KF=1.9565
++ CGS=41.666E-9
++ COXD=151.90E-9
++ VTD=-8.5280
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:42
+.MODEL CM75DY-24H NIGBT
++ TAU=329.13E-9
++ KP=8.9704
++ AREA=100.00E-6
++ BVF=2
++ AGD=18.750E-6
++ WB=117.00E-6
++ VT=6.7347
++ KF=5.6810
++ CGS=12.441E-9
++ COXD=46.620E-9
++ VTD=-7.1250
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:43
+.MODEL CM75E3Y-12E NIGBT
++ TAU=271.94E-9
++ KP=8.5635
++ AREA=75.000E-6
++ AGD=18.750E-6
++ VT=3.8312
++ KF=.70418
++ CGS=15.240E-9
++ COXD=47.830E-9
++ VTD=-11.050
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 17:44
+.MODEL CM75E3Y-24E NIGBT
++ TAU=329.53E-9
++ KP=21.627
++ AREA=75.000E-6
++ BVF=2
++ AGD=18.750E-6
++ WB=117.00E-6
++ VT=5.7450
++ KF=1.3404
++ CGS=43.515E-9
++ COXD=183.80E-9
++ VTD=-5
+
+*$
+
+.SUBCKT CPU165MF 1 2 4 5 6 7 9 10 11 12
+R1 1 2 1U
+R2 5 6 1U
+R3 6 7 1U
+R4 10 11 1U
+R5 11 12 1U
+Z1 1 4 6 CPU165MF
+Z2 6 9 11 CPU165MF
+.MODEL CPU165MF NIGBT
++ TAU=288.03E-9
++ KP=6.8460
++ AREA=21.000E-6
++ AGD=10.379E-6
++ VT=5.1032
++ KF=4.8384
++ CGS=21.485E-9
++ COXD=32.833E-9
++ VTD=-5
+.ENDS
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 13:00
+.SUBCKT CPV362MF 1 3 4 6 7
+Z1 1 3 4 CPV362MF
+Z2 4 6 7 CPV362MF
+.MODEL CPV362MF NIGBT
++ TAU=444.07E-9
++ KP=1.0555
++ AREA=4.4000E-6
++ AGD=1.1710E-6
++ VT=5.9575
++ KF=2
++ CGS=7.6163E-9
++ COXD=42.293E-9
++ VTD=-4.9970
+.ENDS
+
+*$
+
+* Created using Parts release 6.3 on 12/08/95 at 13:01
+.SUBCKT CPV363MF 1 3 4 6 7
+Z1 1 3 4 CPV363MF
+Z2 4 6 7 CPV363MF
+.MODEL CPV363MF NIGBT
++ TAU=419.12E-9
++ KP=1.7035
++ AREA=4.3500E-6
++ AGD=1.9172E-6
++ VT=4.7416
++ KF=3.0737
++ CGS=21.465E-9
++ COXD=39.337E-9
++ VTD=-4.9960
+.ENDS
+
+*$
+
+* created using Parts release 7.1p on 09/05/96 at 17:01
+.MODEL GT10G101 NIGBT
++ TAU=1.1726E-6
++ KP=1.8037
++ AREA=18.000E-6
++ AGD=7.2000E-6
++ WB=50.000E-6
++ VT=4.6344
++ NB=500.00E12
++ KF=1.2100
++ CGS=8.7104E-9
++ COXD=18.877E-9
++ VTD=-2.7053E-6
+
+*$
+
+* created using Parts release 7.1p on 09/05/96 at 17:06
+.MODEL GT10G102 NIGBT
++ TAU=1.1726E-6
++ KP=3.0573
++ AREA=18.000E-6
++ AGD=7.2000E-6
++ WB=50.000E-6
++ VT=2.8132
++ NB=500.00E12
++ KF=.6877
++ CGS=6.2916E-9
++ COXD=19.016E-9
++ VTD=-27.053E-12
+
+*$
+
+* created using Parts release 7.1p on 09/05/96 at 17:12
+.MODEL GT15G101 NIGBT
++ TAU=1.1773E-6
++ KP=3.4145
++ AREA=22.000E-6
++ AGD=8.8000E-6
++ WB=50.000E-6
++ VT=5.9739
++ NB=500.00E12
++ KF=.79348
++ CGS=12.763E-9
++ COXD=18.154E-9
++ VTD=-27.053E-12
+
+*$
+
+* created using Parts release 7.1p on 09/05/96 at 17:23
+.MODEL GT15J101 NIGBT
++ TAU=79.808E-9
++ KP=.62916
++ AREA=7.5000E-6
++ AGD=3.0000E-6
++ WB=60.000E-6
++ VT=4.9194
++ KF=10.557
++ CGS=35.730E-9
++ COXD=81.291E-9
++ VTD=-2.7000E-9
+
+*$
+
+* created using Parts release 7.1p on 09/05/96 at 17:34
+.MODEL GT15J102 NIGBT
++ TAU=79.808E-9
++ KP=.56168
++ AREA=7.5000E-6
++ AGD=3.0000E-6
++ WB=60.000E-6
++ VT=4.7338
++ KF=11.864
++ CGS=35.414E-9
++ COXD=82.044E-9
++ VTD=-2.7000E-9
+
+*$
+
+* created using Parts release 7.1p on 09/05/96 at 17:40
+.MODEL GT15J103SM NIGBT
++ TAU=79.808E-9
++ KP=.56168
++ AREA=7.5000E-6
++ AGD=3.0000E-6
++ WB=60.000E-6
++ VT=4.7338
++ KF=11.864
++ CGS=35.414E-9
++ COXD=82.044E-9
++ VTD=-2.7000E-9
+
+*$
+
+* created using Parts release 7.1p on 09/05/96 at 17:52
+.MODEL GT15N101 NIGBT
++ TAU=103.11E-9
++ KP=1.6728
++ AREA=7.5000E-6
++ AGD=3.0000E-6
++ WB=62.000E-6
++ VT=3.5495
++ NB=90.000E12
++ KF=.8153
++ CGS=40.651E-9
++ COXD=206.41E-9
++ VTD=34.698E-6
+
+*$
+
+* created using Parts release 7.1p on 09/05/96 at 17:59
+.MODEL GT15Q101 NIGBT
++ TAU=89.194E-9
++ KP=2.2597
++ AREA=7.5000E-6
++ AGD=3.0000E-6
++ WB=57.000E-6
++ VT=5.3452
++ NB=50.000E12
++ KF=1.5610
++ CGS=54.556E-9
++ COXD=177.80E-9
++ VTD=34.698E-6
+
+*$
+
+* created using Parts release 7.1p on 09/05/96 at 11:56
+.MODEL GT50J101 NIGBT
++ TAU=283.08E-9
++ KP=1.8177
++ AREA=25.000E-6
++ AGD=10.000E-6
++ VT=5.1986
++ KF=2.1474
++ CGS=18.213E-9
++ COXD=52.381E-9
++ VTD=-5
+
+*$
+
+* created using Parts release 7.1p on 08/13/96 at 16:19
+.MODEL GT50J102 NIGBT
++ TAU=262.10E-9
++ KP=9.8987
++ AREA=25.000E-6
++ AGD=10.000E-6
++ VT=8.6976
++ KF=2.6349
++ CGS=20.982E-9
++ COXD=48.455E-9
++ VTD=-5
+
+*$
+
+* created using Parts release 7.1p on 08/13/96 at 17:24
+.MODEL GT50J301 NIGBT
++ TAU=262.10E-9
++ KP=9.1008
++ AREA=25.000E-6
++ AGD=10.000E-6
++ VT=8.6411
++ KF=2.8637
++ CGS=20.888E-9
++ COXD=44.273E-9
++ VTD=-5
+
+*$
+
+* created using Parts release 7.1p on 08/15/96 at 17:31
+.MODEL GT50M101 NIGBT
++ TAU=336.33E-9
++ KP=5.78898
++ AREA=25.000E-6
++ AGD=1.157012E-5
++ WB=117.00E-6
++ VT=3.38138
++ KF=1.4610
++ CGS=3.694818E-8
++ COXD=1.111522E-7
++ VTD=-5.00952
+
+*$
+
+* created using Parts release 7.1p on 08/08/96 at 14:33
+.MODEL GT5G101 NIGBT
++ TAU=120.00E-6
++ KP=6.75782
++ AREA=22.500E-6
++ AGD=5.9250E-6
++ VT=3.43564
++ KF=.250123
++ CGS=3.1705E-9
++ COXD=10.994E-9
++ VTD=-4.9691
+
+*$
+
+* created using Parts release 7.1p on 08/15/96 at 13:15
+.MODEL GT60J101 NIGBT
++ TAU=291.70E-9
++ KP=3.8060
++ AREA=30.000E-6
++ AGD=12.000E-6
++ VT=4.2669
++ KF=1.8841
++ CGS=18.862E-9
++ COXD=64.769E-9
++ VTD=-4
+
+*$
+
+* created using Parts release 7.1p on 08/30/96 at 16:43
+.MODEL GT60M102 NIGBT
++ TAU=361.62E-9
++ KP=11.572
++ AREA=30.000E-6
++ AGD=12.000E-6
++ WB=117.00E-6
++ VT=4.8892
++ NB=220.00E12
++ KF=8.4743
++ CGS=21.965E-9
++ COXD=79.102E-9
++ VTD=-5
+
+*$
+
+* created using Parts release 7.1p on 09/03/96 at 12:39
+.MODEL GT60M103 NIGBT
++ TAU=450.37E-9
++ KP=11.380
++ AREA=30.000E-6
++ AGD=1.131553E-5
++ WB=117.00E-6
++ VT=4.8924
++ KF=1.1722
++ CGS=2.670175E-8
++ COXD=8.307276E-8
++ VTD=-5.03141
+
+*$
+
+* created using Parts release 7.1p on 08/14/96 at 15:39
+.MODEL GT80J101 NIGBT
++ TAU=309.77E-9
++ KP=10.183
++ AREA=40.000E-6
++ AGD=16.000E-6
++ VT=4.5776
++ KF=3.1072
++ CGS=16.140E-9
++ COXD=52.289E-9
++ VTD=-12
+
+*$
+
+* created using Parts release 7.1p on 07/16/96 at 10:07
+.MODEL GT8J101 NIGBT
++ TAU=192.10E-9
++ KP=0.370938
++ AREA=3.8000E-6
++ AGD=1.496398E-6
++ VT=3.87846
++ KF=204.287
++ CGS=3.354430E-8
++ COXD=6.440967E-8
++ VTD=-2.97956
+
+*$
+
+* created using Parts release 7.1p on 07/16/96 at 11:57
+.MODEL GT8J102SM NIGBT
++ TAU=262.10E-9
++ KP=.41665
++ AREA=4.0000E-6
++ AGD=1.6000E-6
++ VT=4.2442
++ KF=2.1934
++ CGS=36.729E-9
++ COXD=41.081E-9
++ VTD=-5
+
+*$
+
+* created using Parts release 7.1p on 07/05/96 at 13:58
+.MODEL GT8Q101 NIGBT
++ TAU=295.59E-9
++ KP=.87093
++ AREA=4.0000E-6
++ AGD=1.6000E-6
++ WB=117.00E-6
++ VT=5.2457
++ BVN=5
++ KF=50.469
++ CGS=72.349E-9
++ COXD=117.45E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/04/95 at 10:22
+.MODEL HGTD10N40F1 NIGBT
++ TAU=798.40E-9
++ KP=1.3926
++ AREA=6.0000E-6
++ AGD=3.0000E-6
++ VT=3.2545
++ KF=.51589
++ CGS=12.748E-9
++ COXD=8.9339E-9
++ VTD=-19.050
+
+*$
+
+* Created using Parts release 6.3 on 12/04/95 at 10:43
+.MODEL HGTD10N50F1 NIGBT
++ TAU=798.40E-9
++ KP=1.3926
++ AREA=6.0000E-6
++ AGD=3.0000E-6
++ VT=3.2545
++ KF=.51589
++ CGS=12.823E-9
++ COXD=8.7416E-9
++ VTD=-18.520
+
+*$
+
+* Created using Parts release 6.3 on 12/01/95 at 14:35
+.MODEL HGTD6N40E1 NIGBT
++ TAU=610.55E-9
++ KP=.37076
++ AREA=3.7500E-6
++ AGD=1.8750E-6
++ VT=3.7294
++ KF=1.6309
++ CGS=13.051E-9
++ COXD=17.173E-9
++ VTD=-98.320E-3
+
+*$
+
+* Created using Parts release 6.3 on 12/01/95 at 15:32
+.MODEL HGTD6N50E1 NIGBT
++ TAU=610.55E-9
++ KP=.56564
++ AREA=3.7500E-6
++ AGD=1.8750E-6
++ VT=3.9739
++ KF=.63334
++ CGS=14.209E-9
++ COXD=11.894E-9
++ VTD=-99.450E-3
+
+*$
+
+* Created using Parts release 6.3 on 12/04/95 at 12:28
+.MODEL HGTG12N60D1D NIGBT
++ TAU=313.60E-9
++ KP=2.8702
++ AREA=10.500E-6
++ AGD=5.2500E-6
++ VT=4.8812
++ KF=1.0155
++ CGS=17.328E-9
++ COXD=5.5738E-9
++ VTD=1.7010
+
+*$
+
+* Created using Parts release 6.3 on 12/01/95 at 16:07
+.MODEL HGTG24N60D1D NIGBT
++ TAU=335.87E-9
++ KP=10.076
++ AREA=20.000E-6
++ AGD=10.000E-6
++ VT=4.6400
++ KF=.71526
++ CGS=25.698E-9
++ COXD=43.051E-9
++ VTD=.3091
+
+*$
+
+* Created using Parts release 6.3 on 12/11/95 at 16:13
+.MODEL HGTG32N60E2 NIGBT
++ TAU=320.06E-9
++ KP=11.743
++ AREA=25.000E-6
++ AGD=12.500E-6
++ VT=4.9325
++ KF=.5005
++ CGS=41.394E-9
++ COXD=47.901E-9
++ VTD=.2391
+
+*$
+
+* Created using Parts release 6.3 on 12/01/95 at 17:48
+.MODEL HGTH12N40C1 NIGBT
++ TAU=315.00E-9
++ KP=1.7838
++ AREA=6.0000E-6
++ AGD=3.0000E-6
++ VT=2.8824
++ KF=15
++ CGS=29.783E-9
++ COXD=15.880E-6
++ VTD=-27.880E-6
+
+*$
+
+* Created using Parts release 6.3 on 11/30/95 at 10:31
+.MODEL HGTH12N50C1 NIGBT
++ TAU=315.00E-9
++ KP=1.7838
++ AREA=6.0000E-6
++ AGD=3.0000E-6
++ VT=2.8824
++ KF=15
++ CGS=30.076E-9
++ COXD=18.042E-9
++ VTD=1.013
+
+*$
+
+* Created using Parts release 6.3 on 12/01/95 at 16:41
+.MODEL HGTP10N40C1 NIGBT
++ TAU=386.00E-9
++ KP=1.7515
++ AREA=5.0000E-6
++ AGD=2.5000E-6
++ VT=2.8878
++ KF=1.6030
++ CGS=35.848E-9
++ COXD=22.129E-9
++ VTD=16.510E-3
+
+*$
+
+* Created using Parts release 6.3 on 12/01/95 at 18:00
+.MODEL HGTP10N50C1 NIGBT
++ TAU=321.00E-9
++ KP=1.7851
++ AREA=5.0000E-6
++ AGD=2.5000E-6
++ VT=2.8838
++ KF=15
++ CGS=36.065E-9
++ COXD=13.480E-9
++ VTD=-402.30E-6
+
+*$
+
+* Created using Parts release 6.3 on 12/01/95 at 18:23
+.MODEL HGTP12N60D1 NIGBT
++ TAU=220.00E-9
++ KP=3.5847
++ AREA=10.500E-6
++ AGD=5.2500E-6
++ VT=5.1153
++ KF=15
++ CGS=23.320E-9
++ COXD=37.026E-9
++ VTD=-50.000E-9
+
+*$
+
+* Created using Parts release 6.3 on 12/04/95 at 08:07
+.MODEL HGTP6N40E1D NIGBT
++ TAU=610.55E-9
++ KP=.56978
++ AREA=3.7500E-6
++ AGD=1.8750E-6
++ VT=3.9776
++ KF=.51737
++ CGS=13.762E-9
++ COXD=17.795E-9
++ VTD=-783.50E-6
+
+*$
+
+* Created using Parts release 6.3 on 12/04/95 at 08:21
+.MODEL HGTP6N50E1D NIGBT
++ TAU=610.55E-9
++ KP=.56978
++ AREA=3.7500E-6
++ AGD=1.8750E-6
++ VT=3.9776
++ KF=.51737
++ CGS=13.836E-9
++ COXD=15.694E-9
++ VTD=-.4224
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:55
+.MODEL IRGBC20F NIGBT
++ TAU=263.96E-9
++ KP=.82992
++ AREA=32.000E-6
++ AGD=4.0000E-6
++ VT=5.6227
++ KF=1.8345
++ CGS=1.2212E-9
++ COXD=5.4740E-9
++ VTD=-6.4920
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:55
+.MODEL IRGBC20S NIGBT
++ TAU=447.39E-9
++ KP=.89751
++ AREA=38.000E-6
++ AGD=4.7500E-6
++ VT=4.6178
++ KF=1.4321
++ CGS=809.54E-12
++ COXD=4.4885E-9
++ VTD=-8.1590
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:56
+.MODEL IRGBC30F NIGBT
++ TAU=264.07E-9
++ KP=1.6985
++ AREA=60.000E-6
++ AGD=7.7500E-6
++ VT=4.7055
++ KF=1.9385
++ CGS=990.49E-12
++ COXD=3.7832E-9
++ VTD=-7.2340
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:56
+.MODEL IRGBC30S NIGBT
++ TAU=449.43E-9
++ KP=2.2986
++ AREA=67.500E-6
++ AGD=8.5000E-6
++ VT=4.5893
++ KF=1.0868
++ CGS=977.68E-12
++ COXD=3.0226E-9
++ VTD=-8.6780
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:57
+.MODEL IRGBC40F NIGBT
++ TAU=230.29E-9
++ KP=2.1928
++ AREA=100.00E-6
++ AGD=12.250E-6
++ VT=5.3409
++ KF=4.4904
++ CGS=1.0358E-9
++ COXD=8.2170E-9
++ VTD=-4.9770
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:58
+.MODEL IRGBC40S NIGBT
++ TAU=444.73E-9
++ KP=4.1570
++ AREA=120.00E-6
++ AGD=12.500E-6
++ VT=4.5653
++ KF=1.1580
++ CGS=1.0852E-9
++ COXD=7.3393E-9
++ VTD=-6.3210
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:58
+.MODEL IRGPC40F NIGBT
++ TAU=242.73E-9
++ KP=2.1754
++ AREA=100.00E-6
++ AGD=12.250E-6
++ VT=5.3408
++ KF=3.8999
++ CGS=1.1683E-9
++ COXD=8.2640E-9
++ VTD=-6.4620
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:59
+.MODEL IRGPC40S NIGBT
++ TAU=444.73E-9
++ KP=4.7553
++ AREA=120.00E-6
++ AGD=15.000E-6
++ VT=4.5937
++ KF=1.0079
++ CGS=1.1315E-9
++ COXD=5.2578E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:59
+.MODEL IRGPC50F NIGBT
++ TAU=203.99E-9
++ KP=6.2118
++ AREA=140.00E-6
++ AGD=17.000E-6
++ VT=4.8547
++ KF=6.6311
++ CGS=1.9879E-9
++ COXD=16.910E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 14:00
+.MODEL IRGPC50S NIGBT
++ TAU=346.16E-9
++ KP=7.5150
++ AREA=160.00E-6
++ AGD=17.500E-6
++ VT=4.5112
++ KF=1.3967
++ CGS=1.5967E-9
++ COXD=16.732E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 13:47
+.MODEL IXGH10N100 NIGBT
++ TAU=588.38E-9
++ BVF=2
++ KP=1.8125
++ WB=117.00E-6
++ VT=5.0635
++ KF=.3639
++ CGS=34.220E-9
++ COXD=15.865E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/08/95 at 13:47
+.MODEL IXGH10N100A NIGBT
++ TAU=411.72E-9
++ BVF=2
++ KP=1.8526
++ WB=117.00E-6
++ VT=5.0418
++ KF=.33802
++ CGS=33.845E-9
++ COXD=16.732E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 08:46
+.MODEL IXGH10N60 NIGBT
++ TAU=232.60E-9
++ KP=2.9457
++ VT=4.7786
++ KF=.60148
++ CGS=30.360E-9
++ COXD=17.190E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 09:00
+.MODEL IXGH10N60A NIGBT
++ TAU=232.60E-9
++ KP=3.1260
++ VT=4.8573
++ KF=.63456
++ CGS=30.246E-9
++ COXD=17.444E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 15:11
+.MODEL IXGH17N100 NIGBT
++ TAU=543.10E-9
++ BVF=2
++ KP=3.1534
++ AREA=17.000E-6
++ AGD=8.5000E-6
++ WB=117.00E-6
++ VT=4.6062
++ KF=.23
++ CGS=29.350E-9
++ COXD=23.827E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/08/95 at 13:57
+.MODEL IXGH17N100A NIGBT
++ TAU=373.15E-9
++ BVF=2
++ KP=3.2174
++ AREA=17.000E-6
++ AGD=8.5000E-6
++ WB=117.00E-6
++ VT=4.5798
++ KF=.28005
++ CGS=28.991E-9
++ COXD=24.741E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 10:12
+.MODEL IXGH20N60 NIGBT
++ TAU=198.49E-9
++ KP=7.9327
++ AREA=20.000E-6
++ AGD=10.000E-6
++ VT=4.4567
++ KF=.44403
++ CGS=28.080E-9
++ COXD=15.517E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 11:05
+.MODEL IXGH20N60A NIGBT
++ TAU=164.18E-9
++ KP=8.0604
++ AREA=20.000E-6
++ AGD=10.000E-6
++ VT=4.4561
++ KF=.97447
++ CGS=27.920E-9
++ COXD=14.723E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/08/95 at 13:18
+.MODEL IXGH24N60A NIGBT
++ TAU=215.04E-9
++ KP=2.2491
++ AREA=24.000E-6
++ AGD=12.000E-6
++ VT=3.3730
++ KF=.86496
++ CGS=21.272E-9
++ COXD=13.698E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 12:40
+.MODEL IXGH25N100 NIGBT
++ TAU=158.39E-9
++ BVF=2
++ KP=22.019
++ AREA=25.000E-6
++ AGD=12.500E-6
++ VT=4.9905
++ KF=.5005
++ CGS=34.401E-9
++ COXD=24.819E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 13:17
+.MODEL IXGH25N100A NIGBT
++ TAU=283.23E-9
++ BVF=2
++ KP=22.029
++ AREA=25.000E-6
++ AGD=12.500E-6
++ WB=117.00E-6
++ VT=4.9910
++ KF=.5005
++ CGS=32.809E-9
++ COXD=31.596E-9
++ VTD=2.621
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 14:41
+.MODEL IXGH30N60 NIGBT
++ TAU=171.19E-9
++ KP=4.1698
++ AREA=25.000E-6
++ AGD=12.500E-6
++ VT=4.4737
++ KF=3.1410
++ CGS=29.852E-9
++ COXD=50.672E-9
++ VTD=4.5460
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 14:44
+.MODEL IXGH30N60A NIGBT
++ TAU=171.19E-9
++ KP=4.1698
++ AREA=25.000E-6
++ AGD=12.500E-6
++ VT=4.4737
++ KF=3.1410
++ CGS=29.852E-9
++ COXD=35.633E-9
++ VTD=-.4271
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 15:33
+.MODEL IXGH32N60A NIGBT
++ TAU=158.30E-9
++ KP=6.0806
++ AREA=30.000E-6
++ AGD=15.000E-6
++ VT=5.4490
++ KF=3.6657
++ CGS=20.707E-9
++ COXD=33.861E-9
++ VTD=.2961
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 15:22
+.MODEL IXGH38N60A NIGBT
++ TAU=126.08E-9
++ KP=5.7499
++ AREA=38.000E-6
++ AGD=19.000E-6
++ VT=5.2351
++ KF=1.2245
++ CGS=17.828E-9
++ COXD=20.070E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 16:20
+.MODEL IXGH40N60 NIGBT
++ TAU=287.56E-9
++ KP=50.034
++ AREA=37.500E-6
++ AGD=18.750E-6
++ VT=4.1822
++ KF=.36047
++ CGS=31.942E-9
++ COXD=53.188E-9
++ VTD=2.6570
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 15:33
+.MODEL IXGH40N60A NIGBT
++ TAU=168.42E-9
++ KP=14.463
++ AREA=37.500E-6
++ AGD=10.750E-6
++ VT=3.5128
++ KF=.59658
++ CGS=21.513E-9
++ COXD=56.680E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 15:37
+.MODEL IXGK50N60A NIGBT
++ TAU=240.90E-9
++ KP=15.726
++ AREA=37.500E-6
++ AGD=10.750E-6
++ VT=3.6638
++ KF=1.2712
++ CGS=20.081E-9
++ COXD=50.360E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/08/95 at 13:56
+.MODEL IXGM17N100 NIGBT
++ TAU=543.10E-9
++ BVF=2
++ KP=3.1534
++ AREA=17.000E-6
++ AGD=8.5000E-6
++ WB=117.00E-6
++ VT=4.6062
++ KF=.23
++ CGS=29.350E-9
++ COXD=23.827E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/08/95 at 13:57
+.MODEL IXGM17N100A NIGBT
++ TAU=373.15E-9
++ BVF=2
++ KP=3.2174
++ AREA=17.000E-6
++ AGD=8.5000E-6
++ WB=117.00E-6
++ VT=4.5798
++ KF=.28005
++ CGS=28.991E-9
++ COXD=24.741E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/19/95 at 08:03
+.MODEL IXGM20N60 NIGBT
++ TAU=164.18E-9
++ KP=2.3032
++ AREA=20.000E-6
++ AGD=10.000E-6
++ VT=3.5605
++ KF=7.7202
++ CGS=25.534E-9
++ COXD=20.792E-9
++ VTD=-.773
+
+*$
+
+* Created using Parts release 6.3 on 09/05/95 at 11:16
+.MODEL IXGM20N60A NIGBT
++ TAU=164.18E-9
++ KP=1.8581
++ AREA=20.000E-6
++ AGD=10.000E-6
++ VT=2.6854
++ KF=2.2970
++ CGS=27.662E-9
++ COXD=11.625E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/08/95 at 14:04
+.MODEL IXGM25N100 NIGBT
++ TAU=411.72E-9
++ KP=3.4039
++ AREA=25.000E-6
++ BVF=2
++ AGD=12.500E-6
++ WB=117.00E-6
++ VT=3.5914
++ KF=.65198
++ CGS=26.767E-9
++ COXD=33.058E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/08/95 at 14:06
+.MODEL IXGM25N100A NIGBT
++ TAU=360.80E-9
++ KP=3.4283
++ AREA=25.000E-6
++ BVF=2
++ AGD=12.500E-6
++ WB=117.00E-6
++ VT=3.5817
++ KF=.53139
++ CGS=26.614E-9
++ COXD=33.479E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 14:34
+.MODEL IXGM30N60 NIGBT
++ TAU=344.41E-9
++ KP=3.4592
++ AREA=25.000E-6
++ AGD=12.500E-6
++ VT=4.5642
++ KF=.97111
++ CGS=29.383E-9
++ COXD=30.941E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/18/95 at 14:38
+.MODEL IXGM30N60A NIGBT
++ TAU=171.19E-9
++ KP=3.6195
++ AREA=25.000E-6
++ AGD=12.500E-6
++ VT=4.5224
++ KF=4.3111
++ CGS=28.786E-9
++ COXD=33.796E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 16:25
+.MODEL IXGM40N60 NIGBT
++ TAU=359.25E-9
++ KP=13.745
++ AREA=37.500E-6
++ AGD=12.750E-6
++ VT=3.5391
++ KF=.23764
++ CGS=23.945E-9
++ COXD=41.420E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/05/95 at 12:49
+.MODEL IXGM40N60A NIGBT
++ TAU=168.42E-9
++ KP=13.832
++ AREA=37.500E-6
++ AGD=18.750E-6
++ VT=3.4417
++ KF=.50387
++ CGS=30.882E-9
++ COXD=43.420E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/12/95 at 16:41
+.MODEL MG100H1BS1 NIGBT
++ TAU=309.77E-9
++ KP=11.815
++ AREA=50.000E-6
++ AGD=25.000E-6
++ VT=4.2737
++ KF=.46591
++ CGS=32.425E-9
++ COXD=28.700E-9
++ VTD=-6.7450
+
+*$
+
+* Created using Parts release 6.3 on 12/13/95 at 08:21
+.MODEL MG15H1BS1 NIGBT
++ TAU=436.52E-9
++ KP=1.2097
++ AREA=7.5000E-6
++ AGD=3.7500E-6
++ VT=4.3542
++ KF=.53671
++ CGS=40.566E-9
++ COXD=30.935E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/12/95 at 14:25
+.MODEL MG15N1BS1 NIGBT
++ TAU=617.10E-9
++ KP=2.3669
++ AREA=7.5000E-6
++ BVF=2
++ AGD=3.7500E-6
++ WB=117.00E-6
++ VT=4.0576
++ KF=.42567
++ CGS=37.692E-9
++ COXD=88.394E-9
++ VTD=-4.1940
+
+*$
+
+* Created using Parts release 6.3 on 12/12/95 at 12:45
+.MODEL MG25H1BS1 NIGBT
++ TAU=386.00E-9
++ KP=1.5151
++ AREA=12.500E-6
++ AGD=6.2500E-6
++ VT=3.4907
++ KF=.89714
++ CGS=18.376E-9
++ COXD=12.170E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/14/95 at 11:51
+.MODEL MG25N1BS1 NIGBT
++ TAU=617.10E-9
++ KP=1.7257
++ AREA=12.500E-6
++ BVF=2
++ AGD=6.2500E-6
++ WB=117.00E-6
++ VT=3.1645
++ KF=.87147
++ CGS=64.149E-9
++ COXD=83.412E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/15/95 at 13:47
+.MODEL MG50H1BS1 NIGBT
++ TAU=386.00E-9
++ KP=4.7507
++ AREA=25.000E-6
++ AGD=12.500E-6
++ VT=4.8351
++ KF=1.0193
++ CGS=18.785E-9
++ COXD=49.353E-9
++ VTD=-6.3470
+
+*$
+
+* Created using Parts release 6.3 on 12/15/95 at 15:13
+.MODEL MG50N1BS1 NIGBT
++ TAU=617.10E-9
++ KP=9.1503
++ AREA=25.000E-6
++ BVF=2
++ AGD=12.500E-6
++ WB=117.00E-6
++ VT=4.3718
++ KF=.3464
++ CGS=68.282E-9
++ COXD=49.340E-9
++ VTD=-6.5270
+
+*$
+
+* Created using Parts release 6.3 on 08/29/95 at 14:59
+.MODEL MG50N2YS9 NIGBT
++ TAU=617.10E-9
++ KP=10.608
++ AREA=25.000E-6
++ BVF=2
++ AGD=12.500E-6
++ WB=117.00E-6
++ VT=4.4330
++ KF=.34644
++ CGS=95.992E-9
++ COXD=1.0000E-15
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 10:34
+.MODEL Z1MBI30L-060 NIGBT
++ TAU=234.76E-9
++ KP=4.8896
++ AREA=15.000E-6
++ AGD=7.5000E-6
++ VT=5.4026
++ KF=1.1582
++ CGS=54.871E-9
++ COXD=52.283E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 10:34
+.MODEL Z1MBI50L-060 NIGBT
++ TAU=234.76E-9
++ KP=5.7812
++ AREA=25.000E-6
++ AGD=12.500E-6
++ VT=4.5000
++ KF=1.8706
++ CGS=51.389E-9
++ COXD=30.469E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 10:39
+.MODEL Z1MBI75L-060 NIGBT
++ TAU=234.76E-9
++ KP=9.1741
++ AREA=37.500E-6
++ AGD=18.750E-6
++ VT=4.5712
++ KF=1.8078
++ CGS=34.577E-9
++ COXD=61.951E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 10:41
+.MODEL Z6MBI10F-060 NIGBT
++ TAU=926.93E-9
++ KP=1.1262
++ AREA=5.0000E-6
++ AGD=2.5000E-6
++ VT=4.8198
++ KF=.84231
++ CGS=51.404E-9
++ COXD=59.424E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/13/95 at 13:11
+.MODEL Z6MBI10L-060 NIGBT
++ TAU=234.76E-9
++ KP=1.2172
++ AREA=5.0000E-6
++ AGD=2.5000E-6
++ VT=4.3623
++ KF=1.6740
++ CGS=51.633E-9
++ COXD=46.618E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 12/13/95 at 14:01
+.MODEL Z6MBI15F-060 NIGBT
++ TAU=926.93E-9
++ KP=1.2649
++ AREA=7.5000E-6
++ AGD=3.7500E-6
++ VT=3.4557
++ KF=.98066
++ CGS=51.713E-9
++ COXD=33.795E-9
++ VTD=-13.450
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 11:09
+.MODEL Z6MBI15L-060 NIGBT
++ TAU=234.76E-9
++ KP=2.0608
++ AREA=7.5000E-6
++ AGD=3.0000E-6
++ VT=5.2083
++ KF=1.5313
++ CGS=40.814E-9
++ COXD=70.200E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 11:13
+.MODEL Z6MBI20F-060 NIGBT
++ TAU=926.93E-9
++ KP=2.3276
++ AREA=15.000E-6
++ AGD=7.5000E-6
++ VT=4.8782
++ KF=.71371
++ CGS=24.187E-9
++ COXD=50.350E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 11:16
+.MODEL Z6MBI20L-060 NIGBT
++ TAU=234.76E-9
++ KP=3.2932
++ VT=5.4101
++ KF=1.2877
++ CGS=37.010E-9
++ COXD=50.670E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 11:18
+.MODEL Z6MBI30F-060 NIGBT
++ TAU=926.93E-9
++ KP=4.0324
++ AREA=15.000E-6
++ AGD=7.5000E-6
++ VT=5.1162
++ KF=.4619
++ CGS=37.434E-9
++ COXD=64.136E-9
++ VTD=-5
+
+*$
+
+* Created using Parts release 6.3 on 09/21/95 at 11:19
+.MODEL Z6MBI30L-060 NIGBT
++ TAU=926.93E-9
++ KP=3.6174
++ AREA=15.000E-6
++ AGD=7.5000E-6
++ VT=4.8978
++ KF=.75719
++ CGS=37.249E-9
++ COXD=53.239E-9
++ VTD=-5
+*$

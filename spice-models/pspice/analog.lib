@@ -1,0 +1,10 @@
+* Obsolete Analog Library 
+*
+* $Revision:   1.2  $
+* $Author:   MMCGONIG  $
+* $Date:   22 Apr 1997 08:53:32  $
+*$
+****************************************************************
+Originally scheduled for inclusion with release 8.0, because of conflicts
+with the Evaluation program, library was renamed Ana_swit.lib (which will be
+in release 8.0.) 

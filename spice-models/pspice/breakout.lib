@@ -1,0 +1,272 @@
+*   Library of default models for use with Schematics "breakout" symbols
+*
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+
+
+*   $Revision:   1.15  $
+*   $Author:   rperez  $
+*   $Date:   13 Oct 1998 13:59:12  $
+*
+*---------------------------------------------------------------
+*
+*$
+.model Bbreak GASFET
+*$
+.model Cbreak CAP C=1
+*$
+.model Dbreak D Is=1e-14 Cjo=.1pF Rs=.1
+*$
+.subckt Dbreak3 1 2 3
+D1 1 3 Dbreak
+D2 2 3 Dbreak
+.ends
+*$
+.model Jbreakn NJF
+*$
+.model Jbreakp PJF
+*$
+.model Kbreak CORE
+*$
+.model Lbreak IND  L=1
+*$
+.model Mbreakn NMOS
+*$
+.model Mbreakp PMOS
+*$
+.model MbreaknD NMOS VTO=-4.0
+*$
+.model MbreakpD PMOS VTO=4.0
+*$
+.model Qbreakn NPN
+*$
+.model Qbreakp PNP
+*$
+.model Qbreakl LPNP
+*$
+* connections:      Collector
+*                   |  Base
+*                   |  |  Emitter
+*                   |  |  |
+.SUBCKT QDarBreakN  1  2  3
+*
+Q1 1 2 4 Q1model
+Q2 1 4 3 Q2model 2.893
+D1 3 1 Dmodel
+R1 2 4 8.000E3
+R2 4 3 120
+.MODEL Dmodel D
++ IS=10.00E-15 RS=1.000E-3 N=1 XTI=3
++  CJO=10.00E-21 VJ=1 M=.5 FC=.5
+.MODEL Q1model NPN
++  IS=98.70E-15 BF=267 NF=1 VAF=100
++  IKF=.3468 ISE=2.100E-12 NE=1.428 BR=.7915
++  NR=1 VAR=100 IKR=1.714 ISC=1.630E-12
++  NC=1.878 RB=1.224 NK=.5
++  RE=0 RC=.1245 EG=1.110
++  CJE=10.00E-12 VJE=.75 MJE=.33 TF=1.000E-9
++  XTF=1 VTF=10 ITF=10.00E-3 CJC=10.00E-12
++  VJC=.75 MJC=.33 XCJC=.9 FC=.5
++  TR=1.000E-9
+.MODEL Q2model NPN
++  IS=98.70E-15 BF=267 NF=1 VAF=100
++  IKF=.3468 ISE=2.100E-12 NE=1.428 BR=.7915
++  NR=1 VAR=100 IKR=1.714 ISC=1.630E-12
++  NC=1.878 RB=1.224 NK=.5
++  RE=0 RC=.1245 EG=1.110
++  CJE=10.00E-12 VJE=.75 MJE=.33 TF=1.000E-9
++  XTF=1 VTF=10 ITF=10.00E-3 CJC=0
++  VJC=.75 MJC=.33 XCJC=.9 FC=.5
++  TR=1.000E-9
+.ENDS
+*$
+* connections:      Collector
+*                   |  Base
+*                   |  |  Emitter
+*                   |  |  |
+.SUBCKT QDarBreakP  1  2  3
+*
+Q1 1 2 4 Q1model
+Q2 1 4 3 Q2model 2.893
+D1 1 3 Dmodel
+R1 2 4 8.000E3
+R2 4 3 120
+.MODEL Dmodel D
++ IS=10.00E-15 RS=1.000E-3 N=1 XTI=3
++  CJO=10.00E-21 VJ=1 M=.5 FC=.5
+.MODEL Q1model PNP
++  IS=98.70E-15 BF=267 NF=1 VAF=100
++  IKF=.3468 ISE=2.100E-12 NE=1.428 BR=.7915
++  NR=1 VAR=100 IKR=1.714 ISC=1.630E-12
++  NC=1.878 RB=1.224 NK=.5
++  RE=0 RC=.1245 EG=1.110
++  CJE=10.00E-12 VJE=.75 MJE=.33 TF=1.000E-9
++  XTF=1 VTF=10 ITF=10.00E-3 CJC=10.00E-12
++  VJC=.75 MJC=.33 XCJC=.9 FC=.5
++  TR=1.000E-9
+.MODEL Q2model PNP
++  IS=98.70E-15 BF=267 NF=1 VAF=100
++  IKF=.3468 ISE=2.100E-12 NE=1.428 BR=.7915
++  NR=1 VAR=100 IKR=1.714 ISC=1.630E-12
++  NC=1.878 RB=1.224 NK=.5
++  RE=0 RC=.1245 EG=1.110
++  CJE=10.00E-12 VJE=.75 MJE=.33 TF=1.000E-9
++  XTF=1 VTF=10 ITF=10.00E-3 CJC=0
++  VJC=.75 MJC=.33 XCJC=.9 FC=.5
++  TR=1.000E-9
+.ENDS
+*$
+.model Rbreak RES R=1
+*$
+.model Sbreak VSWITCH Roff=1e6 Ron=1.0 Voff=0.0 Von=1.0
+*$
+.model Wbreak ISWITCH  Ioff=0.0 Ion=1e-3 Roff=1e6 Ron=1.0
+*$
+.model Zbreakn NIGBT
+*$
+.subckt ADC8Break IN REF GND CNVRT STAT OVR
++                 DB7 DB6 DB5 DB4 DB3 DB2 DB1 DB0
++                 OPTIONAL: DPWR=$G_DPWR DGND=$G_DGND
++                 PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+
+U1 ADC(8)  DPWR DGND IN REF GND CNVRT STAT OVR 
++          DB7 DB6 DB5 DB4 DB3 DB2 DB1 DB0
++          ADC8TIM IO_STD
++          MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+
+.MODEL  ADC8TIM UADC 
+
+.ENDS
+*$
+.subckt ADC10Break IN REF GND CNVRT STAT OVR
++                  DB9 DB8 DB7 DB6 DB5 DB4 DB3 DB2 DB1 DB0
++                  OPTIONAL: DPWR=$G_DPWR DGND=$G_DGND
++                  PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+
+U1 ADC(10) DPWR DGND IN REF GND CNVRT STAT OVR 
++          DB9 DB8 DB7 DB6 DB5 DB4 DB3 DB2 DB1 DB0
++          ADC10_TIMING IO_STD
++          MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+
+.MODEL  ADC10_TIMING UADC 
+
+.ENDS
+*$
+.subckt ADC12Break IN REF GND CNVRT STAT OVR
++                  DB11 DB10 DB9 DB8 DB7 DB6 DB5 DB4 DB3 DB2 DB1 DB0
++                  OPTIONAL: DPWR=$G_DPWR DGND=$G_DGND
++                  PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+
+U1 ADC(12) DPWR DGND IN REF GND CNVRT STAT OVR 
++          DB11 DB10 DB9 DB8 DB7 DB6 DB5 DB4 DB3 DB2 DB1 DB0
++          ADC12_TIMING IO_STD
++          MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+
+.MODEL  ADC12_TIMING UADC 
+
+.ENDS
+*$
+.subckt DAC8Break OUT REF GND
++                 DB7 DB6 DB5 DB4 DB3 DB2 DB1 DB0
++                 OPTIONAL: DPWR=$G_DPWR DGND=$G_DGND
++                 PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+
+U1 DAC(8) DPWR DGND OUT REF GND
++         DB7 DB6 DB5 DB4 DB3 DB2 DB1 DB0
++         DAC8_TIMING IO_STD
++         MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+
+.MODEL DAC8_TIMING UDAC
+
+.ENDS
+*$
+.subckt DAC10Break OUT REF GND
++                  DB9 DB8 DB7 DB6 DB5 DB4 DB3 DB2 DB1 DB0
++                  OPTIONAL: DPWR=$G_DPWR DGND=$G_DGND
++                  PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+
+U1 DAC(10) DPWR DGND OUT REF GND
++          DB9 DB8 DB7 DB6 DB5 DB4 DB3 DB2 DB1 DB0
++          DAC10_TIMING IO_STD
++          MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+
+.MODEL DAC10_TIMING UDAC
+
+.ENDS
+*$
+.subckt DAC12Break OUT REF GND 
++                  DB11 DB10 DB9 DB8 DB7 DB6 DB5 DB4 DB3 DB2 DB1 DB0
++                  OPTIONAL: DPWR=$G_DPWR DGND=$G_DGND
++                  PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+
+U1 DAC(12) DPWR DGND OUT REF GND
++          DB11 DB10 DB9 DB8 DB7 DB6 DB5 DB4 DB3 DB2 DB1 DB0
++          DAC12_TIMING IO_STD
++          MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+
+.MODEL DAC12_TIMING UDAC
+
+.ENDS
+*$
+.SUBCKT ROM32Kx8Break A14 A13 A12 A11 A10 A9 A8 A7 A6 A5 A4 A3 A2 A1 A0
++                     OEbar O7 O6 O5 O4 O3 O2 O1 O0 
++                     OPTIONAL: DPWR=$G_DPWR DGND=$G_DGND
++                     PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+
+U1 ROM(15,8) DPWR DGND OE
++            A14 A13 A12 A11 A10 A9 A8 A7 A6 A5 A4 A3 A2 A1 A0
++            O7 O6 O5 O4 O3 O2 O1 O0
++            ROM_TIMING
++            IO_STD   
++            MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+*+            DATA=
+*+            FILE=
+
+U2 INV DPWR DGND OEbar OE
++            INV_TIMING IO_STD
+
+.MODEL ROM_TIMING UROM
+.MODEL INV_TIMING UGATE
+
+.ENDS
+*$
+.SUBCKT RAM8Kx8Break RE WE
++                    A12 A11 A10 A9 A8 A7 A6 A5 A4 A3 A2 A1 A0
++                    W7 W6 W5 W4 W3W W2 W1 W0
++                    R7 R6 R5 R4 R3 R2 R1 R0
++                    OPTIONAL: DPWR=$G_DPWR DGND=$G_DGND
++                    PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+
+
+U1 RAM(13,8) DPWR DGND RE WE 
++            A12 A11 A10 A9 A8 A7 A6 A5 A4 A3 A2 A1 A0
++            W7 W6 W5 W4 W3W W2 W1 W0
++            R7 R6 R5 R4 R3 R2 R1 R0
++            RAM8Kx8_TIMING IO_STD
++            MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+*+            DATA=
+*+            FILE=
+
+.MODEL 	RAM8Kx8_TIMING URAM
+
+.ENDS
+*$
+.SUBCKT RAM8Kx1Break RE WE
++                    A15 A14 A13 A12 A11 A10 A9 A8 A7 A6 A5 A4 A3 A2 A1 A0
++                    D_IN D_OUT
++                    OPTIONAL: DPWR=$G_DPWR DGND=$G_DGND
++                    PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+
+
+U1 RAM(16,1) DPWR DGND RE WE 
++            A15 A14 A13 A12 A11 A10 A9 A8 A7 A6 A5 A4 A3 A2 A1 A0
++            D_IN D_OUT
++            RAM8Kx1_TIMING IO_STD
++            MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+*+            DATA=
+*+            FILE=
+
+.MODEL 	RAM8Kx1_TIMING URAM
+
+.ENDS
+*$
+

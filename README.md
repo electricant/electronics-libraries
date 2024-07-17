@@ -63,3 +63,6 @@ http://espice.ugr.es/espice/src/modelos_subckt/spice_complete/
 
 https://ltwiki.org/index.php?title=Components_Library_and_Circuits
 (links to various models and subcircuits)
+
+http://robustdesignconcepts.com/files/pspice/pmindex.htm
+(Original pspice library)

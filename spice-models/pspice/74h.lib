@@ -1,0 +1,1298 @@
+* Library of 74H Family Digital Models
+*
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+*
+*
+* $Revision:   1.4  $
+* $Author:   RPEREZ  $
+* $Date:   16 Apr 1998 14:30:32  $
+*
+*
+*$
+*---------
+* 74H00  Quadruple 2-input Positive-Nand Gates
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn   06/23/89	Update interface and model devices
+*
+.subckt 74H00  A B Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(2) DPWR DGND
++	A B   Y 
++	D_H00 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H00 ugate (
++	tplhty=5.9ns	tplhmx=10ns
++	tphlty=6.2ns	tphlmx=10ns
++	)
+*$
+*---------
+* 74H01  Quadruple 2-input Positive-Nand Gates with Open-Collector Outputs
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/23/89	Update interface and model names
+*
+.subckt 74H01  A B Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(2) DPWR DGND
++	A B   Y 
++	D_H01 IO_H_OC MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H01 ugate (
++	tplhty=10ns	tplhmx=15ns
++	tphlty=7.5ns	tphlmx=12ns
++	)
+*$
+*---------
+* 74H04  Hex Inverters
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/23/89	Update interface and model names
+*
+.subckt 74H04  A Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inv DPWR DGND
++	A   Y 
++	D_H04 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H04 ugate (
++	tplhty=6ns	tplhmx=10ns
++	tphlty=6.5ns	tphlmx=10ns
++	)
+*$
+*---------
+* 74H05  Hex Inverters with Open-Collector Outputs
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn 	06/23/89	Update interface and model names
+*
+.subckt 74H05  A Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inv DPWR DGND
++	A   Y 
++	D_H05 IO_H_OC MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H05 ugate (
++	tplhty=10ns	tplhmx=15ns
++	tphlty=7.5ns	tphlmx=12ns
++	)
+*$
+*---------
+* 74H10  Triple 3-input Positive-Nand Gates
+* 
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn 	06/23/89	Update interface and model names
+*
+.subckt 74H10  A B C Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(3) DPWR DGND
++	A B C   Y 
++	D_H10 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H10 ugate (
++	tplhty=5.9ns	tplhmx=10ns
++	tphlty=6.3ns	tphlmx=10ns
++	)
+*$
+*---------
+* 74H11  Triple 3-input Positive-And Gates
+*
+* The TTL Data Book, Vol 2, 1985               
+* tdn	06/23/89	Update interface and model names
+*
+.subckt 74H11  A B C Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 and(3) DPWR DGND
++	A B C   Y 
++	D_H11 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H11 ugate (
++	tplhty=7.6ns	tplhmx=12ns
++	tphlty=8.8ns	tphlmx=12ns
++	)
+*$
+*---------
+* 74H15  Triple 3-input Positive-And Gates with Open-Collector Outputs
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/26/89	Update interface and model names
+*
+.subckt 74H15  A B C Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 and(3) DPWR DGND
++	A B C   Y 
++	D_H15 IO_H_OC MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H15 ugate (
++	tplhty=12ns	tplhmx=18ns
++	tphlty=9ns	tphlmx=13ns
++	)
+*$
+*---------
+* 74H20  Dual 4-input Positive-Nand Gates
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/26/89	Update interface and model names
+*
+.subckt 74H20  A B C D Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(4) DPWR DGND
++	A B C D   Y 
++	D_H20 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H20 ugate (
++	tplhty=6ns	tplhmx=10ns
++	tphlty=7ns	tphlmx=10ns
++	)
+*$
+*---------
+* 74H21  Dual 4-input Positive-And Gates
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/26/89	Update interface and model names
+*
+.subckt 74H21  A B C D Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 and(4) DPWR DGND
++	A B C D   Y 
++	D_H21 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H21 ugate (
++	tplhty=7.6ns	tplhmx=12ns
++	tphlty=8.8ns	tphlmx=12ns
++	)
+*$
+*---------
+* 74H22  Dual 4-input Positive-Nand Gates with Open-Collector Outputs
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/26/89	Update interface and model names
+*
+.subckt 74H22  A B C D Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(4) DPWR DGND
++	A B C D   Y 
++	D_H22 IO_H_OC MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H22 ugate (
++	tplhty=10ns	tplhmx=15ns
++	tphlty=7.5ns	tphlmx=12ns
++	)
+*$
+*---------
+* 74H30  8-input Positive-Nand Gates
+* 
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/26/89	Update interface and model names
+*
+.subckt 74H30  A B C D E F G H Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(8) DPWR DGND
++	A B C D E F G H   Y 
++	D_H30 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H30 ugate (
++	tplhty=6.8ns	tplhmx=10ns
++	tphlty=8.9ns	tphlmx=12ns
++	)
+*$
+*---------
+* 74H40  Dual 4-input Positive-Nand Buffers
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/26/89	Update interface and model names
+*
+.subckt 74H40  A B C D Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(4) DPWR DGND
++	A B C D   Y 
++	D_H40 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H40 ugate (
++	tplhty=8.5ns	tplhmx=12ns
++	tphlty=6.5ns	tphlmx=12ns
++	)
+*$
+*---------
+* 74H50  Dual 2-wide 2-input And-Or-Invert Gates
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/27/89	Update interface and model names
+*
+.subckt 74H50  1A 1B 1C 1D X XBAR 1Y 2A 2B 2C 2D 2Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+* --- NOTE ---
+* The x and xbar inputs of gate 1 of this chip can only come from the 
+* following gates:
+*	'H50
+*	'H60
+*	'H62
+* PSpice, however, will not check that these are properly connected.
+*
+U1V inv DPWR DGND
++	XBAR   XBARC 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U1 aoi(2,3) DPWR DGND
++	1A 1B 1C 1D X XBARC   1Y 
++	D_H50_1 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 aoi(2,2) DPWR DGND
++	2A 2B 2C 2D   2Y 
++	D_H50_1 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H50_1 ugate (
++	tplhty=6.8ns	tplhmx=11ns
++	tphlty=6.2ns	tphlmx=11ns
++	)
+*$
+*---------
+* 74H51  And-Or-Invert Gates
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/27/89	Update interface and model names
+*
+.subckt 74H51  A B C D Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 aoi(2,2) DPWR DGND
++	A B C D   Y 
++	D_H51 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H51 ugate (
++	tplhty=6.8ns	tplhmx=11ns
++	tphlty=6.2ns	tphlmx=11ns
++	)
+*$
+*-------------------------------------------------------------------------
+* 74H52  Expandable 4-wide And-Or Gates N package pin configuration
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/27/89	Update interface and model names
+*
+.subckt 74H52  A B C D E F G H I X Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+* --- NOTE ---
+* The x input of this gate should only come from the following gates:
+*	'H61
+* PSpice, however, will not check that they are properly connected.
+*
+U1 ao(3,5) DPWR DGND
++	A	B	$D_HI
++	C	D	E
++	F	G	$D_HI
++	H	I	$D_HI
++	X	$D_HI	$D_HI
++	Y
++	D_H52 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H52 ugate (
++	tplhty=10.6ns	tplhmx=15ns
++	tphlty=9.2ns	tphlmx=15ns
++	)
+*$
+*---------
+* 74H53  Expandable 4-wide And-Or-Invert Gates
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/27/89	Update interface and model names
+*
+.subckt 74H53  A B C D E F G H I X XBAR Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+* --- NOTE ---
+* The x and xbar inputs of this gate should only come from the following
+* chips:
+*	'H60
+*	'H62
+* PSpice, however, will not check that these are properly connected.
+*
+U1 inv DPWR DGND
++	XBAR   XBARC 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U2 aoi(3,5) DPWR DGND
++	A	B	$D_HI
++	C	D	$D_HI
++	E	F	G
++	H	I	$D_HI
++	X	XBARC	$D_HI
++	Y
++	D_H53 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H53 ugate (
++	tplhty=7ns	tplhmx=11ns
++	tphlty=6.2ns	tphlmx=11ns
++	)
+*$
+*---------
+* 74H54  4-wide And-Or-Invert Gates
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/27/89	Update interface and model names
+*
+.subckt 74H54  A B C D E F G H I Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 aoi(3,4) DPWR DGND
++	A	B	$D_HI
++	C	D	$D_HI
++	E	F	G
++	H	I	$D_HI
++	Y
++	D_H54 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H54 ugate (
++	tplhty=7ns	tplhmx=11ns
++	tphlty=6.2ns	tphlmx=11ns
++	)
+*$
+*---------
+* 74H55  Expandable 2-wide 4-input And-Or-Invrt Gates
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/27/89	Update interface and model names
+*
+.subckt 74H55  A B C D E F G H X XBAR Y
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+* --- NOTE ---
+* The x and xbar inputs of this gate should only come from the following 
+* gates:
+*	'H60
+*	'H62
+* PSpice, however, will not check that these are properly connected.
+*
+U1 inv DPWR DGND
++	XBAR   XBARC 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U2 aoi(4,3) DPWR DGND
++	A	B	C	D
++	E	F	G	H
++	X	XBARC	$D_HI	$D_HI
++	Y
++	D_H55 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H55 ugate (
++	tplhty=7ns	tplhmx=11ns
++	tphlty=6.5ns	tphlmx=11ns
++	)
+*$
+*---------
+* 74H60  Dual 4-input Expander
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/28/89	Update interface and model names
+*
+.subckt 74H60  A B C D X XBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+* --- NOTE ---
+* this gate should only be connected to the following expandable gates:
+*	'H50
+*	'H53
+*	'H55
+* connected by both x and xbar connections
+* PSpice, however, will not check that these are correctly connected.
+* ALSO  this gate has no propagation delay.
+* There is a total propagation delay in the last level NOR gate in the
+* above chips, so when properly connected, the expanded combination will
+* work correctly.
+*
+*
+U1 and(4) DPWR DGND
++	A B C D   X 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U2 inv DPWR DGND
++	X   XBAR 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+.ends
+*
+*$
+*-------------------------------------------------------------------------
+* 74H61  Triple 3-input Expanders
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	07/06/89	Update interface and model names
+*
+.subckt 74H61  A B C X
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+* --- NOTE ---
+* This gate should only be connected to the following expandable gates:
+*	'H52
+* PSpice, however, will not check that these are properly connected.
+* ALSO  this gate has no propagation delay.
+* There is a total propagation delay in the last level OR gate in the
+* above chip, so when properly connected, the expanded combination
+* will work correctly.
+*
+U1 and(3) DPWR DGND
++	A B C   X 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+.ends
+*
+*$
+*-------------------------------------------------------------------------
+* 74H62  4-wide And-Or Expanders  N package pin configuration
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/28/89	Update interface and model names
+*
+.subckt 74H62  A B C D E F G H I J X XBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+* --- NOTE ---
+* this gate should only be connected to the following expandable gates:
+*	'H50
+*	'H53
+*	'H55
+* connected by both x and xbar connections
+* PSpice, however, will not check that these are properly connected.
+* ALSO  this gate has no propagation delay.
+* There is a total propagation delay in the last level NOR gate in the 
+* above chips, so when properly connected, the expanded combination will
+* work correctly.
+*
+U1 ao(3,4) DPWR DGND
++	A	B	$D_HI
++	C	D	E
++	F	G	H
++	I	J	$D_HI
++	X
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U2 inv DPWR DGND
++	X   XBAR 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+.ends
+*
+*$
+*-------------------------------------------------------------------------
+* 74H71  And-Or Gated J-K Master-Slave Flip-Flops with Preset
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	08/11/89	Update interface and model names
+*
+.subckt 74H71  PREBAR CLK J1A J1B J2A J2B K1A K1B K2A K2B Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U0 buf DPWR DGND
++	PREBAR   PREB 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U1 buf DPWR DGND
++	CLK   CLK_BUF 
++	D_H71_1 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 ao(2,2) DPWR DGND
++	J1A J1B J2A J2B   J 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U3 ao(2,2) DPWR DGND
++	K1A K1B K2A K2A   K 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U4 inva(3) DPWR DGND
++	J K CLK_BUF   JB KB CLKB 
++	D0_GATE IO_H 
+UF1 srff(1) DPWR DGND
++	PREB $D_HI CLK_BUF   W1 W2   Y YB 
++	D_H71_2 IO_H MNTYMXDLY={MNTYMXDLY} 
+UF2 srff(1) DPWR DGND
++	PREB $D_HI CLKB   Y YB   Q1 QB1 
++	D_H71_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+U5 ao(3,2) DPWR DGND
++	J K QBD J KB $D_HI   W1 
++	D_H71_4 IO_H 
+U6 ao(3,2) DPWR DGND
++	J K QD JB K $D_HI   W2 
++	D_H71_4 IO_H 
+U7 bufa(4) DPWR DGND
++	Q1 Q1 QB1 QB1   Q QD QBAR QBD 
++	D_H71_4 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H71_1 ugate (
++	tplhty=3ns	tplhmx=3ns
++	)
+.model D_H71_2 ugff (
++	twghmn=12ns	twpclmn=16ns
++	)
+.model D_H71_3 ugff (
++	twghmn=28ns	twpclmn=16ns
++	tppcqhlty=3ns	tppcqhlmx=10ns
++	tppcqlhty=9ns	tppcqlhmx=21ns
++	tpgqlhty=11ns	tpgqlhmx=18ns
++	tpgqhlty=19ns	tpgqhlmx=24ns
++	)
+.model D_H71_4 ugate (
++	tphlty=3ns	tphlmx=3ns
++	tplhty=3ns	tplhmx=3ns
++	)
+*$
+*---------
+* 74H72  And Gated J-K Master-Slave Flip-Flops with Preset and Clear
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	08/11/89	Update interface and model names
+*
+.subckt 74H72  PREBAR CLRBAR CLK J1 J2 J3 K1 K2 K3 Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 bufa(2) DPWR DGND
++	PREBAR CLRBAR   PREB CLRB 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U2 buf DPWR DGND
++	CLK   CLK_BUF 
++	D_H72_1 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 anda(3,2) DPWR DGND
++	J1 J2 J3 K1 K2 K3   J K 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U4 inva(3) DPWR DGND
++	J K CLK_BUF   JB KB CLKB 
++	D0_GATE IO_H 
+UF1 srff(1) DPWR DGND
++	PREB CLRB CLK_BUF   W1 W2   Y YB 
++	D_H72_2 IO_H MNTYMXDLY={MNTYMXDLY} 
+UF2 srff(1) DPWR DGND
++	PREB CLRB CLKB   Y YB   Q1 QB1 
++	D_H72_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+U5 ao(3,2) DPWR DGND
++	J K QBD J KB $D_HI   W1 
++	D_H72_4 IO_H 
+U6 ao(3,2) DPWR DGND
++	J K QD JB K $D_HI   W2 
++	D_H72_4 IO_H 
+U7 bufa(4) DPWR DGND
++	Q1 Q1 QB1 QB1   Q QD QBAR QBD 
++	D_H72_4 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H72_1 ugate (
++	tplhty=3ns	tplhmx=3ns
++	)
+.model D_H72_2 ugff (
++	twghmn=12ns	twpclmn=16ns
++	)
+.model D_H72_3 ugff (
++	twghmn=28ns	twpclmn=16ns
++	tppcqhlty=3ns	tppcqhlmx=10ns
++	tppcqlhty=9ns	tppcqlhmx=21ns
++	tpgqlhty=11ns	tpgqlhmx=18ns
++	tpgqhlty=19ns	tpgqhlmx=24ns
++	)
+.model D_H72_4 ugate (
++	tphlty=3ns	tphlmx=3ns
++	tplhty=3ns	tplhmx=3ns
++	)
+*$
+*---------
+* 74H73  Dual J-K Flip-Flops with Clear 
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/28/89	Update interface and model names
+*
+.subckt 74H73  CLK CLRBAR J K Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UIBUF bufa(3) DPWR DGND
++	CLRBAR J K   CLRBAR_BUF J_BUF K_BUF 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U2BUF buf DPWR DGND
++	CLK   CLK_BUF 
++	D_H73_4 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U1 inva(3) DPWR DGND
++	CLK_BUF J_BUF K_BUF   CLKBAR JB KB 
++	D0_GATE IO_H 
+U2A ao(3,2) DPWR DGND
++	J_BUF QBAR_BUFD K_BUF J_BUF KB $D_HI   W1 
++	D_H73_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+U2B ao(3,2) DPWR DGND
++	J_BUF QBUFD K_BUF JB K_BUF $D_HI   W2 
++	D_H73_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+U3 srff(1) DPWR DGND
++	$D_HI CLRBAR_BUF CLK_BUF   W1 W2   Y YB 
++	D_H73_1 IO_H MNTYMXDLY={MNTYMXDLY} 
+U4 srff(1) DPWR DGND
++	$D_HI CLRBAR_BUF CLKBAR   Y YB   QBUF QBAR_BUF 
++	D_H73_2 IO_H MNTYMXDLY={MNTYMXDLY} 
+UOBUF bufa(2) DPWR DGND
++	QBUF QBAR_BUF   Q QBAR 
++	D_H73_3 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UBUF bufa(2) DPWR DGND
++	QBUF QBAR_BUF   QBUFD QBAR_BUFD 
++	D_H73_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+.ends
+*
+.model D_H73_1 ugff (
++	twghmx=6ns	twghty=6ns
++	twpclmx=16ns	twpclty=16ns
++	)
+.model D_H73_2 ugff (
++	tppcqlhty=2ns	tppcqlhmx=9ns
++	tppcqhlty=8ns	tppcqhlmx=20ns
++	tpgqlhty=10ns	tpgqlhmx=17ns
++	tpgqhlty=18ns	tpgqhlmx=23ns
++	twghmx=28ns	twghty=28ns
++	twpclmx=16ns	twpclty=16ns
++	)
+.model D_H73_3 ugate (
++	tplhty=4ns	tplhmx=4ns
++	tphlty=4ns	tphlmx=4ns
++	)
+.model D_H73_4 ugate (
++	tplhmn=6ns	tplhmx=6ns
++	)
+*$
+*---------
+* 74H74  Dual D-Type Positive-Edge-Triggered Flip-Flops w/ Preset & Clear
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/28/89	Update interface and model names
+*
+.subckt 74H74  1CLRBAR 1D 1CLK 1PREBAR 1Q 1QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UIBUF buf DPWR DGND
++	1D   1DBUF 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U1 inv DPWR DGND
++	1DBUF   1DBAR 
++	D_H74_2 IO_H MNTYMXDLY={MNTYMXDLY} 
+U2 nxor DPWR DGND
++	1DBUF 1DBAR   T1 
++	D0_GATE IO_H 
+U3 and(2) DPWR DGND
++	T1 X   T2 
++	D0_GATE IO_H 
+U4 xor DPWR DGND
++	1DBUF T2   DOUT 
++	D0_GATE IO_H 
+UFF1 dff(1) DPWR DGND
++	1PREBAR 1CLRBAR 1CLK   DOUT   1Q 1QBAR 
++	D_H74_1 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H74_2 ugate (
++	tplhmn=1ns	tphlmn=6ns
++	)
+.model D_H74_1 ueff (
++	twpclmn=25ns	twclklmn=13.5ns
++	twclkhmn=15ns	tsudclkmn=9ns
++	thdclkmn=5ns	tppcqlhmx=20ns
++	tppcqhlmx=30ns	tpclkqlhty=8.5ns
++	tpclkqlhmx=15ns	tpclkqhlty=13.0ns
++	tpclkqhlmx=20ns
++	)
+*$
+*---------
+* 74H76  Dual J_K Flip-Flops with Preset and Clear
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/28/89	Update interface and model names
+*
+.subckt 74H76  CLK PREBAR CLRBAR J K Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+*--NOTE--
+* These Flip-Flops are pulse triggered
+*
+UIBUF bufa(4) DPWR DGND
++	PREBAR CLRBAR J K   PREBAR_BUF CLRBAR_BUF J_BUF K_BUF 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U1 srff(1) DPWR DGND
++	PREBAR_BUF CLRBAR_BUF CLK_BUF   W1 W2   Y YB 
++	D_H76_1 IO_H MNTYMXDLY={MNTYMXDLY} 
+U2 srff(1) DPWR DGND
++	PREBAR_BUF CLRBAR_BUF CLKBAR   Y YB   Q2 QB2 
++	D_H76_2 IO_H MNTYMXDLY={MNTYMXDLY} 
+U2BUF buf DPWR DGND
++	CLK   CLK_BUF 
++	D_H76_4 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inva(3) DPWR DGND
++	CLK_BUF J_BUF K_BUF   CLKBAR JB KB 
++	D0_GATE IO_H 
+U4 ao(3,2) DPWR DGND
++	J_BUF K_BUF QB2D J_BUF KB $D_HI   W1 
++	D_H76_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+U5 ao(3,2) DPWR DGND
++	J_BUF K_BUF Q2D JB K_BUF $D_HI   W2 
++	D_H76_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+UOBUF bufa(2) DPWR DGND
++	Q2 QB2   Q QBAR 
++	D_H76_3 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UBUF bufa(2) DPWR DGND
++	Q2 QB2   Q2D QB2D 
++	D_H76_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+.ends
+*
+.model D_H76_1 ugff (
++	twghmx=8ns	twghty=8ns
++	twpclmx=16ns	twpclty=16ns
++	)
+.model D_H76_2 ugff (
++	tppcqlhty=2ns	tppcqlhmx=9ns
++	tppcqhlty=8ns	tppcqhlmx=20ns
++	tpgqlhty=10ns	tpgqlhmx=17ns
++	tpgqhlty=18ns	tpgqhlmx=23ns
++	twghmx=28ns	twghty=28ns
++	twpclmx=16ns	twpclty=16ns
++	)
+.model D_H76_3 ugate (
++	tplhty=4ns	tphlmx=4ns
++	tphlty=4ns	tphlmx=4ns
++	)
+.model D_H76_4 ugate (
++	tplhmn=4ns	tplhmx=4ns
++	)
+*$
+*-------------------------------------------------------------------------
+* 74H78  Dual J-K Flip-Flops with Preset, Common Clear, and Common Clock   
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn    06/28/89    	Update interface and model names
+*
+.subckt 74H78  CLK CLRBAR 1PREBAR 1J 1K 1Q 1QBAR 2PREBAR 2J 2K 2Q 2QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UIBUF buf DPWR DGND
++	CLRBAR   CLRBAR_BUF 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U2BUF buf DPWR DGND
++	CLK   CLK_BUF 
++	D_H78_4 IO_H IO_LEVEL={IO_LEVEL} 
+X1  CLK_BUF CLRBAR_BUF 1PREBAR 1J 1K 1Q 1QBAR  DPWR DGND  74H78_SUB
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+X2  CLK_BUF CLRBAR_BUF 2PREBAR 2J 2K 2Q 2QBAR  DPWR DGND  74H78_SUB
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+*
+.subckt 74H78_SUB  CLK CLRBAR PREBAR J K Q QBAR DPWR DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 srff(1) DPWR DGND
++	PREBAR CLRBAR CLK   W1 W2   Y YB 
++	D_H78_1 IO_H MNTYMXDLY={MNTYMXDLY} 
+U2 srff(1) DPWR DGND
++	PREBAR CLRBAR CLKBAR   Y YB   Q1 QB1 
++	D_H78_2 IO_H MNTYMXDLY={MNTYMXDLY} 
+U3 inva(3) DPWR DGND
++	CLK J K   CLKBAR JB KB 
++	D0_GATE IO_H 
+UB bufa(2) DPWR DGND
++	Q1 QB1   QD QBD 
++	D_H78_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+UOB bufa(2) DPWR DGND
++	Q1 QB1   Q QBAR 
++	D_H78_5 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 ao(3,2) DPWR DGND
++	J QBD K J KB $D_HI   W1 
++	D_H78_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+U5 ao(3,2) DPWR DGND
++	JB K $D_HI J K QD   W2 
++	D_H78_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+.ends
+*
+.model D_H78_1 ugff (
++	twghmx=12ns	twghty=12ns
++	twpclmx=16ns	twpclty=16ns
++	)
+.model D_H78_2 ugff (
++	tpgqlhty=8ns	tpgqlhmx=8ns
++	tpgqhlty=10ns	tpgqhlmx=3ns
++	twghmx=28ns	twghty=28ns
++	twpclmx=16ns	twpclty=16ns
++	)
+.model D_H78_3 ugate (
++	tphlty=3ns	tplhmx=3ns
++	tplhty=3ns	tphlmx=3ns
++	)
+.model D_H78_4 ugate (
++	tplhmn=3ns	tplhmx=3ns
++	)
+.model D_H78_5 ugate (
++	tplhty=6ns	tplhmx=13ns
++	tphlty=12ns	tphlmx=24ns
++	)
+*$
+*-------------------------------------------------------------------------
+* 74H87  4-bit True/Complement, Zero/One Elements     
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	06/29/89	Update interface and model names
+*
+.subckt 74H87  A1 A2 A3 A4 B C Y1 Y2 Y3 Y4
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UIBUF buf DPWR DGND
++	C   C_BUF 
++	D_H87_1 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 inv DPWR DGND
++	B   B_BAR 
++	D_H87_1 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+X1  A1 B_BAR C_BUF Y1  DPWR DGND  SUB87
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+X2  A2 B_BAR C_BUF Y2  DPWR DGND  SUB87
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+X3  A3 B_BAR C_BUF Y3  DPWR DGND  SUB87
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+X4  A4 B_BAR C_BUF Y4  DPWR DGND  SUB87
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+*
+.subckt SUB87  A B C Y DPWR DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(2) DPWR DGND
++	A B   D 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U2 xor DPWR DGND
++	D C   Y 
++	D_H87_2 IO_H MNTYMXDLY={MNTYMXDLY} 
+.ends
+*
+.model D_H87_1 ugate (
++	tplhty=4ns	tplhmx=6ns
++	tphlty=3ns	tphlmx=5ns
++	)
+.model D_H87_2 ugate (
++	tplhty=14ns	tplhmx=20ns
++	tphlty=13ns	tphlmx=19ns
++	)
+*
+*$
+*-------------------------------------------------------------------------
+* 74H101  And-Or-Gated J-K Negative-Edge-Triggered Flip-Flops with Preset
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	08/17/89	Update interface and model names
+*
+.subckt 74H101  PREBAR CLK J1A J1B J2A J2B K1A K1B K2A K2B Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 ao(2,2) DPWR DGND
++	J1A J1B J2A J2B   J1 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U2 ao(2,2) DPWR DGND
++	K1A K1B K2A K2B   K1 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U3 bufa(4) DPWR DGND
++	K1 J1 CLK PREBAR   K11 J11 CLK_BUF PREB 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U4 bufa(2) DPWR DGND
++	K1 J1   K11 J11 
++	D_H101_1 IO_H MNTYMXDLY={MNTYMXDLY} 
+U5 inva(4) DPWR DGND
++	J11 K11 PREB CLK_BUF   J11B K11B PRE CLKB 
++	D0_GATE IO_H 
+U6 ao(3,2) DPWR DGND
++	J11 K11 Q1 $D_HI K11 J11B   K 
++	D0_GATE IO_H 
+U7 ao(3,2) DPWR DGND
++	J11 K11 QB1 $D_HI J11 K11B   J 
++	D0_GATE IO_H 
+U8 jkff(1) DPWR DGND
++	PREB $D_HI CLK_BUF   J K   QD QBD 
++	D_H101_2 IO_H MNTYMXDLY={MNTYMXDLY} 
+U9 bufa(2) DPWR DGND
++	QD QBD   Q1 QB1 
++	D_H101_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+U10 bufa(2) DPWR DGND
++	QD QBD   Q2 QB2 
++	D_H101_1 IO_H MNTYMXDLY={MNTYMXDLY} 
+X1  PRE PREB CLK_BUF CLKB Q2 Q  DPWR DGND  101SUB
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+X2  PRE PREB CLK_BUF CLKB QB2 QBAR  DPWR DGND  101SUB
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+*
+.subckt 101SUB  P PB C CB IN OUT DPWR DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 and(3) DPWR DGND
++	C IN P   OUT1 
++	D_H101_4 IO_H MNTYMXDLY={MNTYMXDLY} 
+U2 and(3) DPWR DGND
++	CB IN P   OUT2 
++	D_H101_5 IO_H MNTYMXDLY={MNTYMXDLY} 
+U3 and(2) DPWR DGND
++	PB IN   OUT3 
++	D_H101_6 IO_H MNTYMXDLY={MNTYMXDLY} 
+U4 or(3) DPWR DGND
++	OUT1 OUT2 OUT3   OUT 
++	D_H101_7 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H101_1 ugate (
++	tphlmn=3ns	tphlmx=3ns
++	)
+.model D_H101_2 ueff (
++	twclkhmn=10ns	twclklmn=15ns
++	twpclmn=16ns	tsudclkmn=10ns
++	tpclkqhlty=1ns	tpclkqhlmx=1ps
++	)
+.model D_H101_3 ugate (
++	tphlty=16ns	tphlmx=20ns
++	tplhty=10ns	tplhmx=15ns
++	)
+.model D_H101_4 ugate (
++	tphlty=1ns	tphlmx=1ps
++	)
+.model D_H101_5 ugate (
++	tphlty=9ns	tphlmx=15ns
++	)
+.model D_H101_6 ugate (
++	tplhty=2ns	tplhmx=3ns
++	tphlty=1ns	tphlmx=1ps
++	)
+.model D_H101_7 ugate (
++	tplhty=8ns	tplhmx=12ns
++	tphlty=11ns	tphlmx=17ns
++	)
+*$
+*-------------------------------------------------------------------------
+* 74H102  And-Gated J-K Negative-Edge-Triggered Flip-Flops w/ Preset & Clear 
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	08/17/89	Update interface and model names
+*
+.subckt 74H102  CLK PREBAR CLRBAR J1 J2 J3 K1 K2 K3 Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 anda(3,2) DPWR DGND
++	J1 J2 J3 K1 K2 K3   J10 K10 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U2 bufa(5) DPWR DGND
++	K10	J10	CLK	PREBAR	CLRBAR
++	K11	J11	CLK_BUF	PREB	CLRB
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U3 bufa(4) DPWR DGND
++	K10 J10 QD QBD   K11 J11 Q2 QB2 
++	D_H102_1 IO_H MNTYMXDLY={MNTYMXDLY} 
+U4 inva(5) DPWR DGND
++	J11	K11	PREB	CLRB	CLK_BUF
++	J11B	K11B	PRE	CLR	CLKB
++	D0_GATE IO_H 
+U5 ao(3,2) DPWR DGND
++	J11 K11 Q1 $D_HI K11 J11B   K 
++	D0_GATE IO_H 
+U6 ao(3,2) DPWR DGND
++	J11 K11 QB1 $D_HI J11 K11B   J 
++	D0_GATE IO_H 
+U7 jkff(1) DPWR DGND
++	PREB CLRB CLK_BUF   J K   QD QBD 
++	D_H102_2 IO_H MNTYMXDLY={MNTYMXDLY} 
+U8 bufa(2) DPWR DGND
++	QD QBD   Q1 QB1 
++	D_H102_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+X1  PRE PREB CLR CLRB CLK_BUF CLKB Q2 Q  DPWR DGND  102SUB
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+X2  PRE PREB CLR CLRB CLK_BUF CLKB QB2 QBAR  DPWR DGND  102SUB
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+*
+.subckt 102SUB  P PB C CB CK CKB IN OUT DPWR DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(2) DPWR DGND
++	P C   PC 
++	D0_GATE IO_H 
+U2 and(2) DPWR DGND
++	IN PC   INCK 
++	D_H102_4 IO_H MNTYMXDLY={MNTYMXDLY} 
+U3 and(2) DPWR DGND
++	IN PC   INCKB 
++	D_H102_5 IO_H MNTYMXDLY={MNTYMXDLY} 
+U4 anda(2,2) DPWR DGND
++	INCK CK INCKB CKB   OUT1 OUT2 
++	D0_GATE IO_H 
+U5 and(2) DPWR DGND
++	PB IN   OUT3 
++	D_H102_6 IO_H MNTYMXDLY={MNTYMXDLY} 
+U6 or(3) DPWR DGND
++	OUT1 OUT2 OUT3   OUT 
++	D_H102_7 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H102_1 ugate (
++	tphlmn=3ns	tphlmx=3ns
++	)
+.model D_H102_2 ueff (
++	twclkhmn=10ns	twclklmn=15ns
++	twpclmn=16ns	tsudclkmn=10ns
++	tpclkqhlty=1ns	tpclkqhlmx=1ps
++	)
+.model D_H102_3 ugate (
++	tphlty=16ns	tphlmx=20ns
++	tplhty=10ns	tplhmx=15ns
++	)
+.model D_H102_4 ugate (
++	tphlty=1ns	tphlmx=1ps
++	)
+.model D_H102_5 ugate (
++	tphlty=9ns	tphlmx=15ns
++	)
+.model D_H102_6 ugate (
++	tplhty=2ns	tplhmx=3ns
++	tphlty=1ns	tphlmx=1ps
++	)
+.model D_H102_7 ugate (
++	tplhty=8ns	tplhmx=12ns
++	tphlty=11ns	tphlmx=17ns
++	)
+*$
+*-------------------------------------------------------------------------
+* 74H103  Dual J-K Negative-Edge-Triggered Flip-Flops with Clear
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	08/17/89	Update interface and model names
+*
+.subckt 74H103  1CLK 1CLRBAR 1J 1K 1Q 1QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 bufa(4) DPWR DGND
++	1K 1J 1CLK 1CLRBAR   K11 J11 CLK_BUF CLRB 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U2 bufa(4) DPWR DGND
++	1K 1J QD QBD   K11 J11 Q2 QB2 
++	D_H103_1 IO_H MNTYMXDLY={MNTYMXDLY} 
+U3 inva(4) DPWR DGND
++	J11 K11 CLRB CLK_BUF   J11B K11B CLR CLKB 
++	D0_GATE IO_H 
+U4 ao(3,2) DPWR DGND
++	J11 K11 Q1 $D_HI K11 J11B   K 
++	D0_GATE IO_H 
+U5 ao(3,2) DPWR DGND
++	J11 K11 QB1 $D_HI J11 K11B   J 
++	D0_GATE IO_H 
+U6 jkff(1) DPWR DGND
++	$D_HI CLRB CLK_BUF   J K   QD QBD 
++	D_H103_2 IO_H MNTYMXDLY={MNTYMXDLY} 
+U7 bufa(2) DPWR DGND
++	QD QBD   Q1 QB1 
++	D_H103_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+X1  CLR CLRB CLK_BUF CLKB Q2 1Q  DPWR DGND  103SUB
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+X2  CLR CLRB CLK_BUF CLKB QB2 1QBAR  DPWR DGND  103SUB
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+*
+.subckt 103SUB  P PB C CB IN OUT DPWR DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 and(3) DPWR DGND
++	C IN P   OUT1 
++	D_H103_4 IO_H MNTYMXDLY={MNTYMXDLY} 
+U2 and(3) DPWR DGND
++	CB IN P   OUT2 
++	D_H103_5 IO_H MNTYMXDLY={MNTYMXDLY} 
+U3 and(2) DPWR DGND
++	PB IN   OUT3 
++	D_H103_6 IO_H MNTYMXDLY={MNTYMXDLY} 
+U4 or(3) DPWR DGND
++	OUT1 OUT2 OUT3   OUT 
++	D_H103_7 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H103_1 ugate (
++	tphlmn=3ns	tphlmx=3ns
++	)
+.model D_H103_2 ueff (
++	twclkhmn=10ns	twclklmn=15ns
++	twpclmn=16ns	tsudclkmn=10ns
++	tpclkqhlty=1ns	tpclkqhlmx=1ps
++	)
+.model D_H103_3 ugate (
++	tphlty=16ns	tphlmx=20ns
++	tplhty=10ns	tplhmx=15ns
++	)
+.model D_H103_4 ugate (
++	tphlty=1ns	tphlmx=1ps
++	)
+.model D_H103_5 ugate (
++	tphlty=9ns	tphlmx=15ns
++	)
+.model D_H103_6 ugate (
++	tplhty=2ns	tplhmx=3ns
++	tphlty=1ns	tphlmx=1ps
++	)
+.model D_H103_7 ugate (
++	tplhty=8ns	tplhmx=12ns
++	tphlty=11ns	tphlmx=17ns
++	)
+*$
+*-------------------------------------------------------------------------
+* 74H106  Dual J-K Negative-Edge-Triggered Flip-Flops w/ Preset & Clear 
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	08/17/89	Update interface and model names
+*
+.subckt 74H106  1CLK 1PREBAR 1CLRBAR 1J 1K 1Q 1QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 bufa(7) DPWR DGND
++	1J	1K	K10	J10	1CLK	1PREBAR	1CLRBAR
++	J10	K10	K11	J11	CLK_BUF	PREB	CLRB
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+U2 bufa(4) DPWR DGND
++	K10 J10 QD QBD   K11 J11 Q2 QB2 
++	D_H106_1 IO_H MNTYMXDLY={MNTYMXDLY} 
+U3 inva(5) DPWR DGND
++	J11	K11	PREB	CLRB	CLK_BUF
++	J11B	K11B	PRE	CLR	CLKB
++	D0_GATE IO_H 
+U4 ao(3,2) DPWR DGND
++	J11 K11 Q1 $D_HI K11 J11B   K 
++	D0_GATE IO_H 
+U5 ao(3,2) DPWR DGND
++	J11 K11 QB1 $D_HI J11 K11B   J 
++	D0_GATE IO_H 
+U6 jkff(1) DPWR DGND
++	PREB CLRB CLK_BUF   J K   QD QBD 
++	D_H106_2 IO_H MNTYMXDLY={MNTYMXDLY} 
+U7 bufa(2) DPWR DGND
++	QD QBD   Q1 QB1 
++	D_H106_3 IO_H MNTYMXDLY={MNTYMXDLY} 
+X1  PRE PREB CLR CLRB CLK_BUF CLKB Q2 1Q  DPWR DGND  106SUB
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+X2  PRE PREB CLR CLRB CLK_BUF CLKB QB2 1QBAR  DPWR DGND  106SUB
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+*
+.subckt 106SUB  P PB C CB CK CKB IN OUT DPWR DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(2) DPWR DGND
++	P C   PC 
++	D0_GATE IO_H 
+U2 and(2) DPWR DGND
++	IN PC   INCK 
++	D_H106_4 IO_H MNTYMXDLY={MNTYMXDLY} 
+U3 and(2) DPWR DGND
++	IN PC   INCKB 
++	D_H106_5 IO_H MNTYMXDLY={MNTYMXDLY} 
+U4 anda(2,2) DPWR DGND
++	INCK CK INCKB CKB   OUT1 OUT2 
++	D0_GATE IO_H 
+U5 and(2) DPWR DGND
++	PB IN   OUT3 
++	D_H106_6 IO_H MNTYMXDLY={MNTYMXDLY} 
+U6 or(3) DPWR DGND
++	OUT1 OUT2 OUT3   OUT 
++	D_H106_7 IO_H MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_H106_1 ugate (
++	tphlmn=3ns	tphlmx=3ns
++	)
+.model D_H106_2 ueff (
++	twclkhmn=10ns	twclklmn=15ns
++	twpclmn=16ns	tsudclkmn=10ns
++	tpclkqhlty=1ns	tpclkqhlmx=1ps
++	)
+.model D_H106_3 ugate (
++	tphlty=16ns	tphlmx=20ns
++	tplhty=10ns	tplhmx=15ns
++	)
+.model D_H106_4 ugate (
++	tphlty=1ns	tphlmx=1ps
++	)
+.model D_H106_5 ugate (
++	tphlty=9ns	tphlmx=15ns
++	)
+.model D_H106_6 ugate (
++	tplhty=2ns	tplhmx=3ns
++	tphlty=1ns	tphlmx=1ps
++	)
+.model D_H106_7 ugate (
++	tplhty=8ns	tplhmx=12ns
++	tphlty=11ns	tphlmx=17ns
++	)
+*$
+*-------------------------------------------------------------------------
+* 74H108  Dual J-K Negative-Edge-Triggered Flip-Flops w/ Preset, Common Clear & Common Clock
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* tdn	08/17/89	Update interface and model names
+*
+.subckt 74H108  CLK CLRBAR 1PREBAR 1J 1K 1Q 1QBAR 2PREBAR 2J 2K 2Q 2QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 bufa(2) DPWR DGND
++	CLK CLRBAR   CLKB CLRB 
++	D0_GATE IO_H IO_LEVEL={IO_LEVEL} 
+X1  CLK 1PREBAR CLRB 1J 1K 1Q 1QBAR  DPWR DGND  74H106
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+X2  CLK 2PREBAR CLRB 2J 2K 2Q 2QBAR  DPWR DGND  74H106
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+*
+*$
+*-------------------------------------------------------------------------
+* 74H183 DUAL CARRY-SAVE FULL ADDERS
+*
+* THE TTL DATA BOOK, VOL 2, STANDARD, S, LS, TTL, 1985, TI
+* NH 8/26/92       REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT 74H183 CN_I B_I A_I SUM_O CN+1_O
++   OPTIONAL: DPWR = $G_DPWR DGND = $G_DGND
++   PARAMS:   MNTYMXDLY = 0  IO_LEVEL = 0
+*
+UH183LOG LOGICEXP(3,5) DPWR DGND
++ CN_I B_I A_I
++ CN B A SUM CN+1
++ D0_GATE IO_H IO_LEVEL = {IO_LEVEL}
++
++ LOGIC:
++   CN = { CN_I }
++   B = { B_I }
++   A = { A_I }
++
++   CNBAR = { ~CN }
++   BBAR = { ~B }
++   ABAR = { ~A }
++
++   CN+1 = { ~((CNBAR & BBAR) | (BBAR & ABAR) | (CNBAR & ABAR)) }
++   SUM = { ~((CN & BBAR & A) | (CNBAR & B & A) | (CNBAR & BBAR & ABAR) |
++             (CN & B & ABAR)) }
+*
+UH183DLY PINDLY (2,0,3) DPWR DGND
++ SUM CN+1
++ CN A B
++ SUM_O CN+1_O
++ IO_H MNTYMXDLY = {MNTYMXDLY} IO_LEVEL = {IO_LEVEL}
++
++ BOOLEAN:
++   ANY_CH = { CHANGED(A,0) | CHANGED(B,0) | CHANGED(CN,0) }
++
++ PINDLY:
++   SUM_O CN+1_O = {
++     CASE(
++       ANY_CH & TRN_LH, DELAY(-1,10NS,15NS),
++       ANY_CH & TRN_HL, DELAY(-1,12NS,18NS),
++       DELAY(-1,13NS,19NS)                     ;DEFAULT
++       )
++     }
+*
+.ENDS
+*
+*$

@@ -1,0 +1,5426 @@
+* Library of programmable logic: PAL types
+*
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+*
+*
+* $Revision:   1.8  $
+* $Author:   RPEREZ  $
+* $Date:   17 Apr 1998 13:53:26  $
+*
+*
+*-------------------------------------------------------------------------
+* 20-Pin Small PAL Family
+*
+*$
+*---------
+* PAL10H8
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL10H8  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(10,16) pin20 pin10
++	pin2	pin1	pin3	pin4	pin5
++	pin6	pin7	pin8	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
++	FILE=|JEDEC_FILE| 
+U2 ora(2,8) pin20 pin10
++	row1	row2
++	row3	row4
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	row13	row14
++	row15	row16
++	pin19	pin18	pin17	pin16	pin15	pin14	pin13	pin12
++	D_PAL_20SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D0_PLD upld ()
+
+.model D_PAL_20SML ugate (
++	tplhty=25ns	tplhmx=35ns
++	tphlty=25ns	tphlmx=35ns
++	)
+
+*$
+*---------
+* PAL12H6
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL12H6  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(12,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin5
++	pin6	pin7	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(2,4) pin20 pin10
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	pin17	pin16	pin15	pin14
++	D_PAL_20SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 ora(4,2) pin20 pin10
++	row1	row2	row3	row4
++	row13	row14	row15	row16
++	pin18	pin13
++	D_PAL_20SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL14H4
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL14H4  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(14,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5
++	pin6	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(4,4) pin20 pin10
++	row1	row2	row3	row4
++	row5	row6	row7	row8
++	row9	row10	row11	row12
++	row13	row14	row15	row16
++	pin17	pin16	pin15	pin14
++	D_PAL_20SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16H2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL16H2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5	pin17
++	pin6	pin14	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(8,2) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	pin16	pin15
++	D_PAL_20SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL10L8
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL10L8  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(10,16) pin20 pin10
++	pin2	pin1	pin3	pin4	pin5
++	pin6	pin7	pin8	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(2,8) pin20 pin10
++	row1	row2
++	row3	row4
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	row13	row14
++	row15	row16
++	pin19	pin18	pin17	pin16	pin15	pin14	pin13	pin12
++	D_PAL_20SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL12L6
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL12L6  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(12,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin5
++	pin6	pin7	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(2,4) pin20 pin10
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	pin17	pin16	pin15	pin14
++	D_PAL_20SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 nora(4,2) pin20 pin10
++	row1	row2	row3	row4
++	row13	row14	row15	row16
++	pin18	pin13
++	D_PAL_20SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL14L4
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL14L4  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(14,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5
++	pin6	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(4,4) pin20 pin10
++	row1	row2	row3	row4
++	row5	row6	row7	row8
++	row9	row10	row11	row12
++	row13	row14	row15	row16
++	pin17	pin16	pin15	pin14
++	D_PAL_20SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16L2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL16L2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5	pin17
++	pin6	pin14	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(8,2) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	pin16	pin15
++	D_PAL_20SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16C1
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL16C1  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5	pin17
++	pin6	pin14	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 or(16) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	or
++	D0_GATE IO_LS 
+U3 buf pin20 pin10
++	or   pin16 
++	D_PAL_20SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv pin20 pin10
++	or   pin15 
++	D_PAL_20SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL10H8A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL10H8A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(10,16) pin20 pin10
++	pin2	pin1	pin3	pin4	pin5
++	pin6	pin7	pin8	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(2,8) pin20 pin10
++	row1	row2
++	row3	row4
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	row13	row14
++	row15	row16
++	pin19	pin18	pin17	pin16	pin15	pin14	pin13	pin12
++	D_PAL_20SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20SMLA ugate (
++	tplhty=15ns	tplhmx=25ns
++	tphlty=15ns	tphlmx=25ns
++	)
+*$
+*---------
+* PAL12H6A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL12H6A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(12,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin5
++	pin6	pin7	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(2,4) pin20 pin10
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	pin17	pin16	pin15	pin14
++	D_PAL_20SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 ora(4,2) pin20 pin10
++	row1	row2	row3	row4
++	row13	row14	row15	row16
++	pin18	pin13
++	D_PAL_20SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL14H4A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL14H4A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(14,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5
++	pin6	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(4,4) pin20 pin10
++	row1	row2	row3	row4
++	row5	row6	row7	row8
++	row9	row10	row11	row12
++	row13	row14	row15	row16
++	pin17	pin16	pin15	pin14
++	D_PAL_20SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16H2A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL16H2A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5	pin17
++	pin6	pin14	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(8,2) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	pin16	pin15
++	D_PAL_20SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL10L8A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL10L8A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(10,16) pin20 pin10
++	pin2	pin1	pin3	pin4	pin5
++	pin6	pin7	pin8	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(2,8) pin20 pin10
++	row1	row2
++	row3	row4
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	row13	row14
++	row15	row16
++	pin19	pin18	pin17	pin16	pin15	pin14	pin13	pin12
++	D_PAL_20SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL12L6A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL12L6A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(12,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin5
++	pin6	pin7	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(2,4) pin20 pin10
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	pin17	pin16	pin15	pin14
++	D_PAL_20SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 nora(4,2) pin20 pin10
++	row1	row2	row3	row4
++	row13	row14	row15	row16
++	pin18	pin13
++	D_PAL_20SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL14L4A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL14L4A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(14,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5
++	pin6	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(4,4) pin20 pin10
++	row1	row2	row3	row4
++	row5	row6	row7	row8
++	row9	row10	row11	row12
++	row13	row14	row15	row16
++	pin17	pin16	pin15	pin14
++	D_PAL_20SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16L2A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL16L2A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5	pin17
++	pin6	pin14	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(8,2) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	pin16	pin15
++	D_PAL_20SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16C1A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL16C1A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5	pin17
++	pin6	pin14	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 or(16) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	or
++	D0_GATE IO_LS 
+U3 buf pin20 pin10
++	or   pin16 
++	D_PAL_20SMLCA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv pin20 pin10
++	or   pin15 
++	D_PAL_20SMLCA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20SMLCA ugate (
++	tplhty=15ns	tplhmx=30ns
++	tphlty=15ns	tphlmx=30ns
++	)
+*$
+*---------
+* PAL10H8A2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL10H8A2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(10,16) pin20 pin10
++	pin2	pin1	pin3	pin4	pin5
++	pin6	pin7	pin8	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(2,8) pin20 pin10
++	row1	row2
++	row3	row4
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	row13	row14
++	row15	row16
++	pin19	pin18	pin17	pin16	pin15	pin14	pin13	pin12
++	D_PAL_20SMLA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20SMLA2 ugate (
++	tplhty=15ns	tplhmx=25ns
++	tphlty=15ns	tphlmx=25ns
++	)
+*$
+*---------
+* PAL12H6A2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL12H6A2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(12,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin5
++	pin6	pin7	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(2,4) pin20 pin10
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	pin17	pin16	pin15	pin14
++	D_PAL_20SMLA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 ora(4,2) pin20 pin10
++	row1	row2	row3	row4
++	row13	row14	row15	row16
++	pin18	pin13
++	D_PAL_20SMLA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL14H4A2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL14H4A2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(14,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5
++	pin6	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(4,4) pin20 pin10
++	row1	row2	row3	row4
++	row5	row6	row7	row8
++	row9	row10	row11	row12
++	row13	row14	row15	row16
++	pin17	pin16	pin15	pin14
++	D_PAL_20SMLA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16H2A2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL16H2A2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5	pin17
++	pin6	pin14	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(8,2) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	pin16	pin15
++	D_PAL_20SMLA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL10L8A2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL10L8A2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(10,16) pin20 pin10
++	pin2	pin1	pin3	pin4	pin5
++	pin6	pin7	pin8	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(2,8) pin20 pin10
++	row1	row2
++	row3	row4
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	row13	row14
++	row15	row16
++	pin19	pin18	pin17	pin16	pin15	pin14	pin13	pin12
++	D_PAL_20SMLA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL12L6A2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL12L6A2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(12,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin5
++	pin6	pin7	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(2,4) pin20 pin10
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	pin17	pin16	pin15	pin14
++	D_PAL_20SMLA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 nora(4,2) pin20 pin10
++	row1	row2	row3	row4
++	row13	row14	row15	row16
++	pin18	pin13
++	D_PAL_20SMLA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL14L4A2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL14L4A2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(14,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5
++	pin6	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(4,4) pin20 pin10
++	row1	row2	row3	row4
++	row5	row6	row7	row8
++	row9	row10	row11	row12
++	row13	row14	row15	row16
++	pin17	pin16	pin15	pin14
++	D_PAL_20SMLA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16L2A2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL16L2A2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5	pin17
++	pin6	pin14	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(8,2) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	pin16	pin15
++	D_PAL_20SMLA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16C1A2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL16C1A2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,16) pin20 pin10
++	pin2	pin1	pin3	pin19	pin4	pin18	pin5	pin17
++	pin6	pin14	pin7	pin13	pin8	pin12	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 or(16) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	or
++	D0_GATE IO_LS 
+U3 buf pin20 pin10
++	or   pin16 
++	D_PAL_20SMLCA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv pin20 pin10
++	or   pin15 
++	D_PAL_20SMLCA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20SMLCA2 ugate (
++	tplhty=15ns	tplhmx=30ns
++	tphlty=15ns	tphlmx=30ns
++	)
+*$
+*-------------------------------------------------------------------------
+* 20-Pin Medium PAL Family
+*
+*$
+*---------
+* PAL16L8
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL16L8  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin1	pin3	pin18	pin4	pin17	pin5	pin16
++	pin6	pin15	pin7	pin14	pin8	pin13	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,8) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row18	row19	row20	row21	row22	row23	row24
++	row26	row27	row28	row29	row30	row31	row32
++	row34	row35	row36	row37	row38	row39	row40
++	row42	row43	row44	row45	row46	row47	row48
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out18	out17	out16	out15	out14	out13	out12
++	D0_gate IO_LS 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   row9   pin18 
++	D_PAL_20MEDP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   row17   pin17 
++	D_PAL_20MEDP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   row25   pin16 
++	D_PAL_20MEDP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   row33   pin15 
++	D_PAL_20MEDP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   row41   pin14 
++	D_PAL_20MEDP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   row49   pin13 
++	D_PAL_20MEDP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20MEDP utgate ( ; product term enabled output
++	tplhty=25ns	tplhmx=35ns
++	tphlty=25ns	tphlmx=35ns
++	tplzty=25ns	tplzmx=35ns
++	tphzty=25ns	tphzmx=35ns
++	tpzlty=25ns	tpzlmx=35ns
++	tpzhty=25ns	tpzhmx=35ns
++	)
+*$
+*---------
+* PAL16R4
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL16R4  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin19	pin3	pin18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	pin13	pin9	pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,4) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out18	out13	out12
++	D0_gate IO_LS 
+UB ora(8,4) pin20 pin10
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	d17	d16	d15	d14
++	D0_gate IO_LS 
+UC dff(4) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d17	d16	d15	d14
++	out17	out16	out15	out14	qr_17	qr_16	qr_15	qr_14
++	D_PAL_20MED_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(4) pin20 pin10
++	qr_17 qr_16 qr_15 qr_14   q_17 q_16 q_15 q_14 
++	D_PAL_20MEDD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   row9   pin18 
++	D_PAL_20MEDP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   row49   pin13 
++	D_PAL_20MEDP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20MEDR utgate ( ; Gate pin enabled output from reg
++	tplhty=15ns	tplhmx=25ns
++	tphlty=15ns	tphlmx=25ns
++	tplzty=15ns	tplzmx=25ns
++	tphzty=15ns	tphzmx=25ns
++	tpzlty=15ns	tpzlmx=25ns
++	tpzhty=15ns	tpzhmx=25ns
++	)
+.model D_PAL_20MEDD ugate ( ; Register to feedback delay
++	tplhty=15ns	tplhmx=25ns
++	tphlty=15ns	tphlmx=25ns
++	)
+.model D_PAL_20MED_REG ueff ( ; Register timing
++	twclkhmn=25ns	twclklmn=25ns
++	tsudclkmn=35ns
++	)
+*$
+*---------
+* PAL16R6
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL16R6  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin19	pin3	q_18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	q_13	pin9	pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,2) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out12
++	D0_gate IO_LS 
+UB ora(8,6) pin20 pin10
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	d18	d17	d16	d15	d14	d13
++	D0_gate IO_LS 
+UC dff(6) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d18	d17	d16	d15	d14	d13
++	out18	out17	out16	out15	out14	out13
++	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13
++	D_PAL_20MED_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(6) pin20 pin10
++	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13
++	q_18	q_17	q_16	q_15	q_14	q_13
++	D_PAL_20MEDD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   regen   pin18 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   regen   pin13 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16R8
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   05/22/91	Created
+
+.subckt PAL16R8  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	q_19	pin3	q_18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	q_13	pin9	q_12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+UB ora(8,8) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	d19	d18	d17	d16	d15	d14	d13	d12
++	D0_gate IO_LS 
+UC dff(8) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d19	d18	d17	d16	d15	d14	d13	d12
++	out19	out18	out17	out16	out15	out14	out13	out12
++	qr_19	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13	qr_12
++	D_PAL_20MED_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(8) pin20 pin10
++	qr_19	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13	qr_12
++	q_19	q_18	q_17	q_16	q_15	q_14	q_13	q_12
++	D_PAL_20MEDD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 inv3 pin20 pin10
++	out19   regen   pin19 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out18   regen   pin18 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out13   regen   pin13 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   regen   pin12 
++	D_PAL_20MEDR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16L8A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16L8A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin1	pin3	pin18	pin4	pin17	pin5	pin16
++	pin6	pin15	pin7	pin14	pin8	pin13	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,8) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row18	row19	row20	row21	row22	row23	row24
++	row26	row27	row28	row29	row30	row31	row32
++	row34	row35	row36	row37	row38	row39	row40
++	row42	row43	row44	row45	row46	row47	row48
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out18	out17	out16	out15	out14	out13	out12
++	D0_gate IO_LS 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   row9   pin18 
++	D_PAL_20MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   row17   pin17 
++	D_PAL_20MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   row25   pin16 
++	D_PAL_20MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   row33   pin15 
++	D_PAL_20MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   row41   pin14 
++	D_PAL_20MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   row49   pin13 
++	D_PAL_20MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20MEDPA utgate ( ; product term enabled output
++	tplhty=15ns	tplhmx=25ns
++	tphlty=15ns	tphlmx=25ns
++	tplzty=13ns	tplzmx=25ns
++	tphzty=13ns	tphzmx=25ns
++	tpzlty=10ns	tpzlmx=25ns
++	tpzhty=10ns	tpzhmx=25ns
++	)
+*$
+*---------
+* PAL16R4A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R4A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin19	pin3	pin18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	pin13	pin9	pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,4) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out18	out13	out12
++	D0_gate IO_LS 
+UB ora(8,4) pin20 pin10
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	d17	d16	d15	d14
++	D0_gate IO_LS 
+UC dff(4) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d17	d16	d15	d14
++	out17	out16	out15	out14	qr_17	qr_16	qr_15	qr_14
++	D_PAL_20MED_REGA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(4) pin20 pin10
++	qr_17 qr_16 qr_15 qr_14   q_17 q_16 q_15 q_14 
++	D_PAL_20MEDDA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   row9   pin18 
++	D_PAL_20MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   row49   pin13 
++	D_PAL_20MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20MEDRA utgate ( ; Gate pin enabled output from reg
++	tplhty=10ns	tplhmx=15ns
++	tphlty=10ns	tphlmx=15ns
++	tplzty=11ns	tplzmx=20ns
++	tphzty=11ns	tphzmx=20ns
++	tpzlty=10ns	tpzlmx=20ns
++	tpzhty=10ns	tpzhmx=20ns
++	)
+.model D_PAL_20MEDDA ugate ( ; Register to feedback delay
++	tplhty=10ns	tplhmx=15ns
++	tphlty=10ns	tphlmx=15ns
++	)
+.model D_PAL_20MED_REGA ueff ( ; Register timing
++	twclkhmn=15ns	twclkhty=10ns
++	twclklmn=15ns	twclklty=10ns
++	tsudclkmn=25ns	tsudclkty=16ns
++	)
+*$
+*---------
+* PAL16R6A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R6A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin19	pin3	q_18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	q_13	pin9	pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,2) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out12
++	D0_gate IO_LS 
+UB ora(8,6) pin20 pin10
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	d18	d17	d16	d15	d14	d13
++	D0_gate IO_LS 
+UC dff(6) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d18	d17	d16	d15	d14	d13
++	out18	out17	out16	out15	out14	out13
++	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13
++	D_PAL_20MED_REGA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(6) pin20 pin10
++	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13
++	q_18	q_17	q_16	q_15	q_14	q_13
++	D_PAL_20MEDDA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   regen   pin18 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   regen   pin13 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16R8A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R8A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	q_19	pin3	q_18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	q_13	pin9	q_12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+UB ora(8,8) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	d19	d18	d17	d16	d15	d14	d13	d12
++	D0_gate IO_LS 
+UC dff(8) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d19	d18	d17	d16	d15	d14	d13	d12
++	out19	out18	out17	out16	out15	out14	out13	out12
++	qr_19	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13	qr_12
++	D_PAL_20MED_REGA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(8) pin20 pin10
++	qr_19	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13	qr_12
++	q_19	q_18	q_17	q_16	q_15	q_14	q_13	q_12
++	D_PAL_20MEDDA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 inv3 pin20 pin10
++	out19   regen   pin19 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out18   regen   pin18 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out13   regen   pin13 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   regen   pin12 
++	D_PAL_20MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16L8A2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16L8A2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin1	pin3	pin18	pin4	pin17	pin5	pin16
++	pin6	pin15	pin7	pin14	pin8	pin13	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,8) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row18	row19	row20	row21	row22	row23	row24
++	row26	row27	row28	row29	row30	row31	row32
++	row34	row35	row36	row37	row38	row39	row40
++	row42	row43	row44	row45	row46	row47	row48
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out18	out17	out16	out15	out14	out13	out12
++	D0_gate IO_LS 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   row9   pin18 
++	D_PAL_20MEDPA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   row17   pin17 
++	D_PAL_20MEDPA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   row25   pin16 
++	D_PAL_20MEDPA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   row33   pin15 
++	D_PAL_20MEDPA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   row41   pin14 
++	D_PAL_20MEDPA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   row49   pin13 
++	D_PAL_20MEDPA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20MEDPA2 utgate ( ; product term enabled output
++	tplhty=25ns	tplhmx=35ns
++	tphlty=25ns	tphlmx=35ns
++	tplzty=25ns	tplzmx=35ns
++	tphzty=25ns	tphzmx=35ns
++	tpzlty=25ns	tpzlmx=35ns
++	tpzhty=25ns	tpzhmx=35ns
++	)
+*$
+*---------
+* PAL16R4A2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R4A2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin19	pin3	pin18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	pin13	pin9	pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,4) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out18	out13	out12
++	D0_gate IO_LS 
+UB ora(8,4) pin20 pin10
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	d17	d16	d15	d14
++	D0_gate IO_LS 
+UC dff(4) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d17	d16	d15	d14
++	out17	out16	out15	out14	qr_17	qr_16	qr_15	qr_14
++	D_PAL_20MED_REGA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(4) pin20 pin10
++	qr_17 qr_16 qr_15 qr_14   q_17 q_16 q_15 q_14 
++	D_PAL_20MEDDA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   row9   pin18 
++	D_PAL_20MEDPA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   row49   pin13 
++	D_PAL_20MEDPA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20MEDRA2 utgate ( ; Gate pin enabled output from reg
++	tplhty=15ns	tplhmx=25ns
++	tphlty=15ns	tphlmx=25ns
++	tplzty=15ns	tplzmx=25ns
++	tphzty=15ns	tphzmx=25ns
++	tpzlty=15ns	tpzlmx=25ns
++	tpzhty=15ns	tpzhmx=25ns
++	)
+.model D_PAL_20MEDDA2 ugate ( ; Register to feedback delay
++	tplhty=15ns	tplhmx=25ns
++	tphlty=15ns	tphlmx=25ns
++	)
+.model D_PAL_20MED_REGA2 ueff ( ; Register timing
++	twclkhmn=25ns	twclkhty=10ns
++	twclklmn=25ns	twclklty=10ns
++	tsudclkmn=35ns	tsudclkty=25ns
++	)
+*$
+*---------
+* PAL16R6A2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R6A2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin19	pin3	q_18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	q_13	pin9	pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,2) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out12
++	D0_gate IO_LS 
+UB ora(8,6) pin20 pin10
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	d18	d17	d16	d15	d14	d13
++	D0_gate IO_LS 
+UC dff(6) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d18	d17	d16	d15	d14	d13
++	out18	out17	out16	out15	out14	out13
++	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13
++	D_PAL_20MED_REGA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(6) pin20 pin10
++	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13
++	q_18	q_17	q_16	q_15	q_14	q_13
++	D_PAL_20MEDDA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   regen   pin18 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   regen   pin13 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16R8A2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R8A2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	q_19	pin3	q_18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	q_13	pin9	q_12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+UB ora(8,8) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	d19	d18	d17	d16	d15	d14	d13	d12
++	D0_gate IO_LS 
+UC dff(8) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d19	d18	d17	d16	d15	d14	d13	d12
++	out19	out18	out17	out16	out15	out14	out13	out12
++	qr_19	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13	qr_12
++	D_PAL_20MED_REGA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(8) pin20 pin10
++	qr_19	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13	qr_12
++	q_19	q_18	q_17	q_16	q_15	q_14	q_13	q_12
++	D_PAL_20MEDDA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 inv3 pin20 pin10
++	out19   regen   pin19 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out18   regen   pin18 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out13   regen   pin13 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   regen   pin12 
++	D_PAL_20MEDRA2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16L8B
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16L8B  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin1	pin3	pin18	pin4	pin17	pin5	pin16
++	pin6	pin15	pin7	pin14	pin8	pin13	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,8) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row18	row19	row20	row21	row22	row23	row24
++	row26	row27	row28	row29	row30	row31	row32
++	row34	row35	row36	row37	row38	row39	row40
++	row42	row43	row44	row45	row46	row47	row48
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out18	out17	out16	out15	out14	out13	out12
++	D0_gate IO_LS 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   row9   pin18 
++	D_PAL_20MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   row17   pin17 
++	D_PAL_20MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   row25   pin16 
++	D_PAL_20MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   row33   pin15 
++	D_PAL_20MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   row41   pin14 
++	D_PAL_20MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   row49   pin13 
++	D_PAL_20MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20MEDPB utgate ( ; product term enabled output
++	tplhty=11ns	tplhmx=15ns
++	tphlty=11ns	tphlmx=15ns
++	tplzty=11ns	tplzmx=15ns
++	tphzty=11ns	tphzmx=15ns
++	tpzlty=11ns	tpzlmx=20ns
++	tpzhty=11ns	tpzhmx=20ns
++	)
+*$
+*---------
+* PAL16R4B
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R4B  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin19	pin3	pin18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	pin13	pin9	pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,4) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out18	out13	out12
++	D0_gate IO_LS 
+UB ora(8,4) pin20 pin10
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	d17	d16	d15	d14
++	D0_gate IO_LS 
+UC dff(4) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d17	d16	d15	d14
++	out17	out16	out15	out14	qr_17	qr_16	qr_15	qr_14
++	D_PAL_20MED_REGB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(4) pin20 pin10
++	qr_17 qr_16 qr_15 qr_14   q_17 q_16 q_15 q_14 
++	D_PAL_20MEDDB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   row9   pin18 
++	D_PAL_20MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   row49   pin13 
++	D_PAL_20MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20MEDRB utgate ( ; Gate pin enabled output from reg
++	tplhty=08ns	tplhmx=12ns
++	tphlty=08ns	tphlmx=12ns
++	tplzty=10ns	tplzmx=15ns
++	tphzty=10ns	tphzmx=15ns
++	tpzlty=10ns	tpzlmx=15ns
++	tpzhty=10ns	tpzhmx=15ns
++	)
+.model D_PAL_20MEDDB ugate ( ; Register to feedback delay
++	tplhty=08ns	tplhmx=12ns
++	tphlty=08ns	tphlmx=12ns
++	)
+.model D_PAL_20MED_REGB ueff ( ; Register timing
++	twclkhmn=10ns	twclkhty=05ns
++	twclklmn=10ns	twclklty=05ns
++	tsudclkmn=15ns	tsudclkty=10ns
++	)
+*$
+*---------
+* PAL16R6B
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R6B  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin19	pin3	q_18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	q_13	pin9	pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,2) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out12
++	D0_gate IO_LS 
+UB ora(8,6) pin20 pin10
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	d18	d17	d16	d15	d14	d13
++	D0_gate IO_LS 
+UC dff(6) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d18	d17	d16	d15	d14	d13
++	out18	out17	out16	out15	out14	out13
++	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13
++	D_PAL_20MED_REGB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(6) pin20 pin10
++	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13
++	q_18	q_17	q_16	q_15	q_14	q_13
++	D_PAL_20MEDDB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   regen   pin18 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   regen   pin13 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16R8B
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R8B  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	q_19	pin3	q_18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	q_13	pin9	q_12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+UB ora(8,8) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	d19	d18	d17	d16	d15	d14	d13	d12
++	D0_gate IO_LS 
+UC dff(8) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d19	d18	d17	d16	d15	d14	d13	d12
++	out19	out18	out17	out16	out15	out14	out13	out12
++	qr_19	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13	qr_12
++	D_PAL_20MED_REGB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(8) pin20 pin10
++	qr_19	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13	qr_12
++	q_19	q_18	q_17	q_16	q_15	q_14	q_13	q_12
++	D_PAL_20MEDDB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 inv3 pin20 pin10
++	out19   regen   pin19 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out18   regen   pin18 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out13   regen   pin13 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   regen   pin12 
++	D_PAL_20MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16L8B2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16L8B2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin1	pin3	pin18	pin4	pin17	pin5	pin16
++	pin6	pin15	pin7	pin14	pin8	pin13	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,8) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row18	row19	row20	row21	row22	row23	row24
++	row26	row27	row28	row29	row30	row31	row32
++	row34	row35	row36	row37	row38	row39	row40
++	row42	row43	row44	row45	row46	row47	row48
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out18	out17	out16	out15	out14	out13	out12
++	D0_gate IO_LS 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   row9   pin18 
++	D_PAL_20MEDPB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   row17   pin17 
++	D_PAL_20MEDPB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   row25   pin16 
++	D_PAL_20MEDPB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   row33   pin15 
++	D_PAL_20MEDPB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   row41   pin14 
++	D_PAL_20MEDPB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   row49   pin13 
++	D_PAL_20MEDPB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20MEDPB2 utgate ( ; product term enabled output
++	tplhty=15ns	tplhmx=25ns
++	tphlty=15ns	tphlmx=25ns
++	tplzty=13ns	tplzmx=25ns
++	tphzty=13ns	tphzmx=25ns
++	tpzlty=10ns	tpzlmx=25ns
++	tpzhty=10ns	tpzhmx=25ns
++	)
+*$
+*---------
+* PAL16R4B2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R4B2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin19	pin3	pin18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	pin13	pin9	pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,4) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out18	out13	out12
++	D0_gate IO_LS 
+UB ora(8,4) pin20 pin10
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	d17	d16	d15	d14
++	D0_gate IO_LS 
+UC dff(4) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d17	d16	d15	d14
++	out17	out16	out15	out14	qr_17	qr_16	qr_15	qr_14
++	D_PAL_20MED_REGB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(4) pin20 pin10
++	qr_17 qr_16 qr_15 qr_14   q_17 q_16 q_15 q_14 
++	D_PAL_20MEDDB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   row9   pin18 
++	D_PAL_20MEDPB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   row49   pin13 
++	D_PAL_20MEDPB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20MEDRB2 utgate ( ; Gate pin enabled output from reg
++	tplhty=10ns	tplhmx=15ns
++	tphlty=10ns	tphlmx=15ns
++	tplzty=11ns	tplzmx=20ns
++	tphzty=11ns	tphzmx=20ns
++	tpzlty=15ns	tpzlmx=20ns
++	tpzhty=15ns	tpzhmx=20ns
++	)
+.model D_PAL_20MEDDB2 ugate ( ; Register to feedback delay
++	tplhty=10ns	tplhmx=15ns
++	tphlty=10ns	tphlmx=15ns
++	)
+.model D_PAL_20MED_REGB2 ueff ( ; Register timing
++	twclkhmn=15ns	twclkhty=10ns
++	twclklmn=10ns	twclklty=08ns
++	tsudclkmn=20ns	tsudclkty=11ns
++	)
+*$
+*---------
+* PAL16R6B2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R6B2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin19	pin3	q_18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	q_13	pin9	pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,2) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out12
++	D0_gate IO_LS 
+UB ora(8,6) pin20 pin10
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	d18	d17	d16	d15	d14	d13
++	D0_gate IO_LS 
+UC dff(6) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d18	d17	d16	d15	d14	d13
++	out18	out17	out16	out15	out14	out13
++	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13
++	D_PAL_20MED_REGB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(6) pin20 pin10
++	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13
++	q_18	q_17	q_16	q_15	q_14	q_13
++	D_PAL_20MEDDB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   regen   pin18 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   regen   pin13 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16R8B2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R8B2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	q_19	pin3	q_18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	q_13	pin9	q_12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+UB ora(8,8) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	d19	d18	d17	d16	d15	d14	d13	d12
++	D0_gate IO_LS 
+UC dff(8) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d19	d18	d17	d16	d15	d14	d13	d12
++	out19	out18	out17	out16	out15	out14	out13	out12
++	qr_19	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13	qr_12
++	D_PAL_20MED_REGB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(8) pin20 pin10
++	qr_19	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13	qr_12
++	q_19	q_18	q_17	q_16	q_15	q_14	q_13	q_12
++	D_PAL_20MEDDB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 inv3 pin20 pin10
++	out19   regen   pin19 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out18   regen   pin18 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out13   regen   pin13 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   regen   pin12 
++	D_PAL_20MEDRB2 IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16L8D
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16L8D  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin1	pin3	pin18	pin4	pin17	pin5	pin16
++	pin6	pin15	pin7	pin14	pin8	pin13	pin9	pin11
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,8) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row18	row19	row20	row21	row22	row23	row24
++	row26	row27	row28	row29	row30	row31	row32
++	row34	row35	row36	row37	row38	row39	row40
++	row42	row43	row44	row45	row46	row47	row48
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out18	out17	out16	out15	out14	out13	out12
++	D0_gate IO_LS 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   row9   pin18 
++	D_PAL_20MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   row17   pin17 
++	D_PAL_20MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   row25   pin16 
++	D_PAL_20MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   row33   pin15 
++	D_PAL_20MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   row41   pin14 
++	D_PAL_20MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   row49   pin13 
++	D_PAL_20MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20MEDPD utgate ( ; product term enabled output
++	tplhty=7.1ns	tplhmx=10ns
++	tphlty=7.1ns	tphlmx=10ns
++	tplzty=5.0ns	tplzmx=10ns
++	tphzty=5.0ns	tphzmx=10ns
++	tpzlty=7.2ns	tpzlmx=10ns
++	tpzhty=7.2ns	tpzhmx=10ns
++	)
+*$
+*---------
+* PAL16R4D
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R4D  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin19	pin3	pin18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	pin13	pin9	pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,4) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out18	out13	out12
++	D0_gate IO_LS 
+UB ora(8,4) pin20 pin10
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	d17	d16	d15	d14
++	D0_gate IO_LS 
+UC dff(4) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d17	d16	d15	d14
++	out17	out16	out15	out14	qr_17	qr_16	qr_15	qr_14
++	D_PAL_20MED_REGD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(4) pin20 pin10
++	qr_17 qr_16 qr_15 qr_14   q_17 q_16 q_15 q_14 
++	D_PAL_20MEDDD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   row9   pin18 
++	D_PAL_20MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   row49   pin13 
++	D_PAL_20MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_20MEDRD utgate ( ; Gate pin enabled output from reg
++	tplhty=5.5ns	tplhmx=08ns
++	tphlty=5.5ns	tphlmx=08ns
++	tplzty=4.0ns	tplzmx=10ns
++	tphzty=4.0ns	tphzmx=10ns
++	tpzlty=5.5ns	tpzlmx=10ns
++	tpzhty=5.5ns	tpzhmx=10ns
++	)
+.model D_PAL_20MEDDD ugate ( ; Register to feedback delay
++	tplhty=5.5ns	tplhmx=08ns
++	tphlty=5.5ns	tphlmx=08ns
++	)
+.model D_PAL_20MED_REGD ueff ( ; Register timing
++	twclkhmn=02ns	twclklmn=3.5ns
++	tsudclkmn=5.5ns
++	)
+*$
+*---------
+* PAL16R6D
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R6D  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	pin19	pin3	q_18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	q_13	pin9	pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,2) pin20 pin10
++	row2	row3	row4	row5	row6	row7	row8
++	row58	row59	row60	row61	row62	row63	row64
++	out19	out12
++	D0_gate IO_LS 
+UB ora(8,6) pin20 pin10
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	d18	d17	d16	d15	d14	d13
++	D0_gate IO_LS 
+UC dff(6) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d18	d17	d16	d15	d14	d13
++	out18	out17	out16	out15	out14	out13
++	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13
++	D_PAL_20MED_REGD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(6) pin20 pin10
++	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13
++	q_18	q_17	q_16	q_15	q_14	q_13
++	D_PAL_20MEDDD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out19   row1   pin19 
++	D_PAL_20MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out18   regen   pin18 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin20 pin10
++	out13   regen   pin13 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   row57   pin12 
++	D_PAL_20MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16R8D
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16R8D  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	q_19	pin3	q_18	pin4	q_17	pin5	q_16
++	pin6	q_15	pin7	q_14	pin8	q_13	pin9	q_12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+UB ora(8,8) pin20 pin10
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	d19	d18	d17	d16	d15	d14	d13	d12
++	D0_gate IO_LS 
+UC dff(8) pin20 pin10
++	$d_hi	$d_hi	pin1
++	d19	d18	d17	d16	d15	d14	d13	d12
++	out19	out18	out17	out16	out15	out14	out13	out12
++	qr_19	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13	qr_12
++	D_PAL_20MED_REGD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(8) pin20 pin10
++	qr_19	qr_18	qr_17	qr_16	qr_15	qr_14	qr_13	qr_12
++	q_19	q_18	q_17	q_16	q_15	q_14	q_13	q_12
++	D_PAL_20MEDDD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	pin11   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 inv3 pin20 pin10
++	out19   regen   pin19 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin20 pin10
++	out18   regen   pin18 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin20 pin10
++	out17   regen   pin17 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin20 pin10
++	out16   regen   pin16 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin20 pin10
++	out15   regen   pin15 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin20 pin10
++	out14   regen   pin14 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin20 pin10
++	out13   regen   pin13 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin20 pin10
++	out12   regen   pin12 
++	D_PAL_20MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*-------------------------------------------------------------------------
+* 24-Pin Small PAL Family
+*
+*$
+*---------
+* PAL12L10
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL12L10  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(12,20) pin24 pin12
++	pin2	pin1	pin3	pin4	pin5	pin6
++	pin7	pin8	pin9	pin10	pin11	pin13
++	row1	row2	row3	row4	row5
++	row6	row7	row8	row9	row10
++	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(2,10) pin24 pin12
++	row1	row2
++	row3	row4
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	row13	row14
++	row15	row16
++	row17	row18
++	row19	row20
++	pin23	pin22	pin21	pin20	pin19
++	pin18	pin17	pin16	pin15	pin14
++	D_PAL_24SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24SML ugate (
++	tplhty=25ns	tplhmx=40ns
++	tphlty=25ns	tphlmx=40ns
++	)
+*$
+*---------
+* PAL14L8
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL14L8  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(14,20) pin24 pin12
++	pin2	pin1	pin3	pin23	pin4	pin5	pin6
++	pin7	pin8	pin9	pin10	pin14	pin11	pin13
++	row1	row2	row3	row4	row5
++	row6	row7	row8	row9	row10
++	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(2,6) pin24 pin12
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	row13	row14
++	row15	row16
++	pin21	pin20	pin19	pin18	pin17	pin16
++	D_PAL_24SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 nora(4,2) pin24 pin12
++	row1	row2	row3	row4
++	row17	row18	row19	row20
++	pin22	pin15
++	D_PAL_24SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16L6
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16L6  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,20) pin24 pin12
++	pin2	pin1	pin3	pin23	pin4	pin22	pin5	pin6
++	pin7	pin8	pin9	pin15	pin10	pin14	pin11	pin13
++	row1	row2	row3	row4	row5
++	row6	row7	row8	row9	row10
++	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(4,4) pin24 pin12
++	row1	row2	row3	row4
++	row5	row6	row7	row8
++	row13	row14	row15	row16
++	row17	row18	row19	row20
++	pin21	pin20	pin17	pin16
++	D_PAL_24SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 nora(2,2) pin24 pin12
++	row9 row10 row11 row12   pin19 pin18 
++	D_PAL_24SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL18L4
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL18L4  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(18,20) pin24 pin12
++	pin2	pin1	pin3	pin23	pin4	pin22	pin5	pin21	pin6
++	pin7	pin8	pin16	pin9	pin15	pin10	pin14	pin11	pin13
++	row1	row2	row3	row4	row5
++	row6	row7	row8	row9	row10
++	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(6,2) pin24 pin12
++	row1	row2	row3	row4	row5	row6
++	row15	row16	row17	row18	row19	row20
++	pin20	pin17
++	D_PAL_24SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 nora(4,2) pin24 pin12
++	row7	row8	row9	row10
++	row11	row12	row13	row14
++	pin19	pin18
++	D_PAL_24SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL20L2
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL20L2  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,16) pin24 pin12
++	pin2	pin1	pin3	pin23	pin4
++	pin22	pin5	pin21	pin6	pin20
++	pin7	pin17	pin8	pin16	pin9
++	pin15	pin10	pin14	pin11	pin13
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(8,2) pin24 pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	pin19	pin18
++	D_PAL_24SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL20C1
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL20C1  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,16) pin24 pin12
++	pin2	pin1	pin3	pin23	pin4
++	pin22	pin5	pin21	pin6	pin20
++	pin7	pin17	pin8	pin16	pin9
++	pin15	pin10	pin14	pin11	pin13
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 or(16) pin24 pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	or
++	D0_GATE IO_LS 
+U3 buf pin24 pin12
++	or   pin19 
++	D_PAL_24SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv pin24 pin12
++	or   pin18 
++	D_PAL_24SML IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL12L10A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL12L10A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(12,20) pin24 pin12
++	pin2	pin1	pin3	pin4	pin5	pin6
++	pin7	pin8	pin9	pin10	pin11	pin13
++	row1	row2	row3	row4	row5
++	row6	row7	row8	row9	row10
++	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(2,10) pin24 pin12
++	row1	row2
++	row3	row4
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	row13	row14
++	row15	row16
++	row17	row18
++	row19	row20
++	pin23	pin22	pin21	pin20	pin19
++	pin18	pin17	pin16	pin15	pin14
++	D_PAL_24SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24SMLA ugate (
++	tplhty=15ns	tplhmx=25ns
++	tphlty=15ns	tphlmx=25ns
++	)
+*$
+*---------
+* PAL14L8A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL14L8A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(14,20) pin24 pin12
++	pin2	pin1	pin3	pin23	pin4	pin5	pin6
++	pin7	pin8	pin9	pin10	pin14	pin11	pin13
++	row1	row2	row3	row4	row5
++	row6	row7	row8	row9	row10
++	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(2,6) pin24 pin12
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	row13	row14
++	row15	row16
++	pin21	pin20	pin19	pin18	pin17	pin16
++	D_PAL_24SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 nora(4,2) pin24 pin12
++	row1	row2	row3	row4
++	row17	row18	row19	row20
++	pin22	pin15
++	D_PAL_24SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL16L6A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL16L6A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,20) pin24 pin12
++	pin2	pin1	pin3	pin23	pin4	pin22	pin5	pin6
++	pin7	pin8	pin9	pin15	pin10	pin14	pin11	pin13
++	row1	row2	row3	row4	row5
++	row6	row7	row8	row9	row10
++	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(4,4) pin24 pin12
++	row1	row2	row3	row4
++	row5	row6	row7	row8
++	row13	row14	row15	row16
++	row17	row18	row19	row20
++	pin21	pin20	pin17	pin16
++	D_PAL_24SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 nora(2,2) pin24 pin12
++	row9 row10 row11 row12   pin19 pin18 
++	D_PAL_24SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL18L4A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL18L4A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(18,20) pin24 pin12
++	pin2	pin1	pin3	pin23	pin4	pin22	pin5	pin21	pin6
++	pin7	pin8	pin16	pin9	pin15	pin10	pin14	pin11	pin13
++	row1	row2	row3	row4	row5
++	row6	row7	row8	row9	row10
++	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(6,2) pin24 pin12
++	row1	row2	row3	row4	row5	row6
++	row15	row16	row17	row18	row19	row20
++	pin20	pin17
++	D_PAL_24SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 nora(4,2) pin24 pin12
++	row7	row8	row9	row10
++	row11	row12	row13	row14
++	pin19	pin18
++	D_PAL_24SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL20L2A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL20L2A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,16) pin24 pin12
++	pin2	pin1	pin3	pin23	pin4
++	pin22	pin5	pin21	pin6	pin20
++	pin7	pin17	pin8	pin16	pin9
++	pin15	pin10	pin14	pin11	pin13
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 nora(8,2) pin24 pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	pin19	pin18
++	D_PAL_24SMLA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL20C1A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL20C1A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,16) pin24 pin12
++	pin2	pin1	pin3	pin23	pin4
++	pin22	pin5	pin21	pin6	pin20
++	pin7	pin17	pin8	pin16	pin9
++	pin15	pin10	pin14	pin11	pin13
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 or(16) pin24 pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	or
++	D0_GATE IO_LS 
+U3 buf pin24 pin12
++	or   pin19 
++	D_PAL_24SMLCA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv pin24 pin12
++	or   pin18 
++	D_PAL_24SMLCA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24SMLCA ugate (
++	tplhty=15ns	tplhmx=30ns
++	tphlty=15ns	tphlmx=30ns
++	)
+*$
+*-------------------------------------------------------------------------
+* 24-Pin Exclusive-OR PAL Family
+*
+*$
+*---------
+* PAL20L10
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL20L10  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,40) pin24 pin12
++	pin2	pin1	pin3	pin22	pin4
++	pin21	pin5	pin20	pin6	pin19
++	pin7	pin18	pin8	pin17	pin9
++	pin16	pin10	pin15	pin11	pin13
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(3,10) pin24 pin12
++	row2	row3	row4
++	row6	row7	row8
++	row10	row11	row12
++	row14	row15	row16
++	row18	row19	row20
++	row22	row23	row24
++	row26	row27	row28
++	row30	row31	row32
++	row34	row35	row36
++	row38	row39	row40
++	out23	out22	out21	out20	out19
++	out18	out17	out16	out15	out14
++	D0_gate IO_LS 
+U3 inv3 pin24 pin12
++	out23   row1   pin23 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin24 pin12
++	out22   row5   pin22 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out21   row9   pin21 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out20   row13   pin20 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out19   row17   pin19 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out18   row21   pin18 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out17   row25   pin17 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out16   row29   pin16 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UB inv3 pin24 pin12
++	out15   row33   pin15 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UC inv3 pin24 pin12
++	out14   row37   pin14 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24XORP utgate ( ; product term enabled output
++	tplhty=35ns	tplhmx=50ns
++	tphlty=35ns	tphlmx=50ns
++	tplzty=35ns	tplzmx=45ns
++	tphzty=35ns	tphzmx=45ns
++	tpzlty=35ns	tpzlmx=45ns
++	tpzhty=35ns	tpzhmx=45ns
++	)
+*$
+*---------
+* PAL20X4
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL20X4  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,40) pin24 pin12
++	pin2	pin23	pin3	pin22	pin4
++	pin21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	pin16	pin10	pin15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(3,6) pin24 pin12
++	row2	row3	row4
++	row6	row7	row8
++	row10	row11	row12
++	row30	row31	row32
++	row34	row35	row36
++	row38	row39	row40
++	out23	out22	out21	out16	out15	out14
++	D0_gate IO_LS 
+U3 ora(2,8) pin24 pin12
++	row13	row14
++	row15	row16
++	row17	row18
++	row19	row20
++	row21	row22
++	row23	row24
++	row25	row26
++	row27	row28
++	or1	or2	or3	or4	or5	or6	or7	or8
++	D0_gate IO_LS 
+U4 xora(4) pin24 pin12
++	or1	or2
++	or3	or4
++	or5	or6
++	or7	or8
++	d20	d19	d18	d17
++	D0_gate IO_LS 
+U5 dff(4) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d20	d19	d18	d17
++	out20	out19	out18	out17	qr_20	qr_19	qr_18	qr_17
++	D_PAL_24XOR_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 bufa(4) pin24 pin12
++	qr_20 qr_19 qr_18 qr_17   q_20 q_19 q_18 q_17 
++	D_PAL_24XORD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out23   row1   pin23 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out22   row5   pin22 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out21   row9   pin21 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UB inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UC inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv3 pin24 pin12
++	out16   row29   pin16 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG inv3 pin24 pin12
++	out15   row33   pin15 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv3 pin24 pin12
++	out14   row37   pin14 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24XORR utgate ( ; Gate pin enabled output from reg
++	tplhty=20ns	tplhmx=30ns
++	tphlty=20ns	tphlmx=30ns
++	tplzty=20ns	tplzmx=35ns
++	tphzty=20ns	tphzmx=35ns
++	tpzlty=20ns	tpzlmx=35ns
++	tpzhty=20ns	tpzhmx=35ns
++	)
+.model D_PAL_24XORD ugate ( ; Register to feedback delay
++	tplhty=20ns	tplhmx=30ns
++	tphlty=20ns	tphlmx=30ns
++	)
+.model D_PAL_24XOR_REG ueff ( ; Register timing
++	twclkhmn=25ns	twclkhty=10ns
++	twclklmn=35ns	twclklty=20ns
++	tsudclkmn=50ns	tsudclkty=38ns
++	)
+*$
+*---------
+* PAL20X8
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20X8  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,40) pin24 pin12
++	pin2	pin23	pin3	q_22	pin4
++	q_21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	q_16	pin10	q_15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(3,2) pin24 pin12
++	row2 row3 row4 row38 row39 row40   out23 out14 
++	D0_gate IO_LS 
+U3 ora(2,16) pin24 pin12
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	row13	row14
++	row15	row16
++	row17	row18
++	row19	row20
++	row21	row22
++	row23	row24
++	row25	row26
++	row27	row28
++	row29	row30
++	row31	row32
++	row33	row34
++	row35	row36
++	or1	or2	or3	or4	or5	or6	or7	or8
++	or9	or10	or11	or12	or13	or14	or15	or16
++	D0_gate IO_LS 
+U4 xora(8) pin24 pin12
++	or1	or2
++	or3	or4
++	or5	or6
++	or7	or8
++	or9	or10
++	or11	or12
++	or13	or14
++	or15	or16
++	d22	d21	d20	d19	d18	d17	d16	d15
++	D0_gate IO_LS 
+U5 dff(8) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d22	d21	d20	d19	d18	d17	d16	d15
++	out22	out21	out20	out19	out18	out17	out16	out15
++	qr_22	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16	qr_15
++	D_PAL_24XOR_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 bufa(8) pin24 pin12
++	qr_22	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16	qr_15
++	q_22	q_21	q_20	q_19	q_18	q_17	q_16	q_15
++	D_PAL_24XORD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out23   row1   pin23 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out22   regen   pin22 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out21   regen   pin21 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UB inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UC inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv3 pin24 pin12
++	out16   regen   pin16 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG inv3 pin24 pin12
++	out15   regen   pin15 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv3 pin24 pin12
++	out14   row37   pin14 
++	D_PAL_24XORP IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL20X10
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20X10  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,40) pin24 pin12
++	pin2	q_23	pin3	q_22	pin4
++	q_21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	q_16	pin10	q_15	pin11	q_14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(2,20) pin24 pin12
++	row1	row2
++	row3	row4
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	row13	row14
++	row15	row16
++	row17	row18
++	row19	row20
++	row21	row22
++	row23	row24
++	row25	row26
++	row27	row28
++	row29	row30
++	row31	row32
++	row33	row34
++	row35	row36
++	row37	row38
++	row39	row40
++	or1	or2	or3	or4	or5
++	or6	or7	or8	or9	or10
++	or11	or12	or13	or14	or15
++	or16	or17	or18	or19	or20
++	D0_gate IO_LS 
+U3 xora(10) pin24 pin12
++	or1	or2
++	or3	or4
++	or5	or6
++	or7	or8
++	or9	or10
++	or11	or12
++	or13	or14
++	or15	or16
++	or17	or18
++	or19	or20
++	d23	d22	d21	d20	d19
++	d18	d17	d16	d15	d14
++	D0_gate IO_LS 
+U4 dff(10) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d23	d22	d21	d20	d19
++	d18	d17	d16	d15	d14
++	out23	out22	out21	out20	out19
++	out18	out17	out16	out15	out14
++	qr_23	qr_22	qr_21	qr_20	qr_19
++	qr_18	qr_17	qr_16	qr_15	qr_14
++	D_PAL_24XOR_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 bufa(10) pin24 pin12
++	qr_23	qr_22	qr_21	qr_20	qr_19
++	qr_18	qr_17	qr_16	qr_15	qr_14
++	q_23	q_22	q_21	q_20	q_19
++	q_18	q_17	q_16	q_15	q_14
++	D_PAL_24XORD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out23   regen   pin23 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out22   regen   pin22 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out21   regen   pin21 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UB inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UC inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv3 pin24 pin12
++	out16   regen   pin16 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG inv3 pin24 pin12
++	out15   regen   pin15 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv3 pin24 pin12
++	out14   regen   pin14 
++	D_PAL_24XORR IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL20L10A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL20L10A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,40) pin24 pin12
++	pin2	pin1	pin3	pin22	pin4
++	pin21	pin5	pin20	pin6	pin19
++	pin7	pin18	pin8	pin17	pin9
++	pin16	pin10	pin15	pin11	pin13
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(3,10) pin24 pin12
++	row2	row3	row4
++	row6	row7	row8
++	row10	row11	row12
++	row14	row15	row16
++	row18	row19	row20
++	row22	row23	row24
++	row26	row27	row28
++	row30	row31	row32
++	row34	row35	row36
++	row38	row39	row40
++	out23	out22	out21	out20	out19
++	out18	out17	out16	out15	out14
++	D0_gate IO_LS 
+U3 inv3 pin24 pin12
++	out23   row1   pin23 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin24 pin12
++	out22   row5   pin22 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out21   row9   pin21 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out20   row13   pin20 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out19   row17   pin19 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out18   row21   pin18 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out17   row25   pin17 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out16   row29   pin16 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UB inv3 pin24 pin12
++	out15   row33   pin15 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UC inv3 pin24 pin12
++	out14   row37   pin14 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24XORPA utgate ( ; product term enabled output
++	tplhty=23ns	tplhmx=30ns
++	tphlty=23ns	tphlmx=30ns
++	tplzty=15ns	tplzmx=30ns
++	tphzty=15ns	tphzmx=30ns
++	tpzlty=19ns	tpzlmx=30ns
++	tpzhty=19ns	tpzhmx=30ns
++	)
+*$
+*---------
+* PAL20X4A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/09/91	Created
+
+.subckt PAL20X4A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,40) pin24 pin12
++	pin2	pin23	pin3	pin22	pin4
++	pin21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	pin16	pin10	pin15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(3,6) pin24 pin12
++	row2	row3	row4
++	row6	row7	row8
++	row10	row11	row12
++	row30	row31	row32
++	row34	row35	row36
++	row38	row39	row40
++	out23	out22	out21	out16	out15	out14
++	D0_gate IO_LS 
+U3 ora(2,8) pin24 pin12
++	row13	row14
++	row15	row16
++	row17	row18
++	row19	row20
++	row21	row22
++	row23	row24
++	row25	row26
++	row27	row28
++	or1	or2	or3	or4	or5	or6	or7	or8
++	D0_gate IO_LS 
+U4 xora(4) pin24 pin12
++	or1	or2
++	or3	or4
++	or5	or6
++	or7	or8
++	d20	d19	d18	d17
++	D0_gate IO_LS 
+U5 dff(4) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d20	d19	d18	d17
++	out20	out19	out18	out17	qr_20	qr_19	qr_18	qr_17
++	D_PAL_24XOR_REGA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 bufa(4) pin24 pin12
++	qr_20 qr_19 qr_18 qr_17   q_20 q_19 q_18 q_17 
++	D_PAL_24XORDA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out23   row1   pin23 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out22   row5   pin22 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out21   row9   pin21 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UB inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UC inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv3 pin24 pin12
++	out16   row29   pin16 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG inv3 pin24 pin12
++	out15   row33   pin15 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv3 pin24 pin12
++	out14   row37   pin14 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24XORRA utgate ( ; Gate pin enabled output from reg
++	tplhty=10ns	tplhmx=15ns
++	tphlty=10ns	tphlmx=15ns
++	tplzty=10ns	tplzmx=20ns
++	tphzty=10ns	tphzmx=20ns
++	tpzlty=11ns	tpzlmx=20ns
++	tpzhty=11ns	tpzhmx=20ns
++	)
+.model D_PAL_24XORDA ugate ( ; Register to feedback delay
++	tplhty=10ns	tplhmx=15ns
++	tphlty=10ns	tphlmx=15ns
++	)
+.model D_PAL_24XOR_REGA ueff ( ; Register timing
++	twclkhmn=15ns	twclkhty=07ns
++	twclklmn=25ns	twclklty=15ns
++	tsudclkmn=30ns	tsudclkty=20ns
++	)
+*$
+*---------
+* PAL20X8A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20X8A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,40) pin24 pin12
++	pin2	pin23	pin3	q_22	pin4
++	q_21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	q_16	pin10	q_15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(3,2) pin24 pin12
++	row2 row3 row4 row38 row39 row40   out23 out14 
++	D0_gate IO_LS 
+U3 ora(2,16) pin24 pin12
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	row13	row14
++	row15	row16
++	row17	row18
++	row19	row20
++	row21	row22
++	row23	row24
++	row25	row26
++	row27	row28
++	row29	row30
++	row31	row32
++	row33	row34
++	row35	row36
++	or1	or2	or3	or4	or5	or6	or7	or8
++	or9	or10	or11	or12	or13	or14	or15	or16
++	D0_gate IO_LS 
+U4 xora(8) pin24 pin12
++	or1	or2
++	or3	or4
++	or5	or6
++	or7	or8
++	or9	or10
++	or11	or12
++	or13	or14
++	or15	or16
++	d22	d21	d20	d19	d18	d17	d16	d15
++	D0_gate IO_LS 
+U5 dff(8) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d22	d21	d20	d19	d18	d17	d16	d15
++	out22	out21	out20	out19	out18	out17	out16	out15
++	qr_22	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16	qr_15
++	D_PAL_24XOR_REGA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 bufa(8) pin24 pin12
++	qr_22	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16	qr_15
++	q_22	q_21	q_20	q_19	q_18	q_17	q_16	q_15
++	D_PAL_24XORDA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out23   row1   pin23 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out22   regen   pin22 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out21   regen   pin21 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UB inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UC inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv3 pin24 pin12
++	out16   regen   pin16 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG inv3 pin24 pin12
++	out15   regen   pin15 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv3 pin24 pin12
++	out14   row37   pin14 
++	D_PAL_24XORPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL20X10A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20X10A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,40) pin24 pin12
++	pin2	q_23	pin3	q_22	pin4
++	q_21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	q_16	pin10	q_15	pin11	q_14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(2,20) pin24 pin12
++	row1	row2
++	row3	row4
++	row5	row6
++	row7	row8
++	row9	row10
++	row11	row12
++	row13	row14
++	row15	row16
++	row17	row18
++	row19	row20
++	row21	row22
++	row23	row24
++	row25	row26
++	row27	row28
++	row29	row30
++	row31	row32
++	row33	row34
++	row35	row36
++	row37	row38
++	row39	row40
++	or1	or2	or3	or4	or5
++	or6	or7	or8	or9	or10
++	or11	or12	or13	or14	or15
++	or16	or17	or18	or19	or20
++	D0_gate IO_LS 
+U3 xora(10) pin24 pin12
++	or1	or2
++	or3	or4
++	or5	or6
++	or7	or8
++	or9	or10
++	or11	or12
++	or13	or14
++	or15	or16
++	or17	or18
++	or19	or20
++	d23	d22	d21	d20	d19
++	d18	d17	d16	d15	d14
++	D0_gate IO_LS 
+U4 dff(10) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d23	d22	d21	d20	d19
++	d18	d17	d16	d15	d14
++	out23	out22	out21	out20	out19
++	out18	out17	out16	out15	out14
++	qr_23	qr_22	qr_21	qr_20	qr_19
++	qr_18	qr_17	qr_16	qr_15	qr_14
++	D_PAL_24XOR_REGA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 bufa(10) pin24 pin12
++	qr_23	qr_22	qr_21	qr_20	qr_19
++	qr_18	qr_17	qr_16	qr_15	qr_14
++	q_23	q_22	q_21	q_20	q_19
++	q_18	q_17	q_16	q_15	q_14
++	D_PAL_24XORDA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out23   regen   pin23 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out22   regen   pin22 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out21   regen   pin21 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UB inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UC inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv3 pin24 pin12
++	out16   regen   pin16 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG inv3 pin24 pin12
++	out15   regen   pin15 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv3 pin24 pin12
++	out14   regen   pin14 
++	D_PAL_24XORRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*-------------------------------------------------------------------------
+* 24-Pin Medium PAL Family
+*
+*$
+*---------
+* PAL20L8A  
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20L8A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin1	pin3	pin23	pin4
++	pin21	pin5	pin20	pin6	pin19
++	pin7	pin18	pin8	pin17	pin9
++	pin16	pin10	pin14	pin11	pin13
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,8) pin24 pin12
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row18	row19	row20	row21	row22	row23	row24
++	row26	row27	row28	row29	row30	row31	row32
++	row34	row35	row36	row37	row38	row39	row40
++	row42	row43	row44	row45	row46	row47	row48
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out22	out21	out20	out19	out18	out17	out16	out15
++	D0_gate IO_LS 
+U3 inv3 pin24 pin12
++	out22   row1   pin22 
++	D_PAL_24MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin24 pin12
++	out21   row9   pin21 
++	D_PAL_24MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out20   row17   pin20 
++	D_PAL_24MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out19   row25   pin19 
++	D_PAL_24MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out18   row33   pin18 
++	D_PAL_24MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out17   row41   pin17 
++	D_PAL_24MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out16   row49   pin16 
++	D_PAL_24MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out15   row57   pin15 
++	D_PAL_24MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24MEDPA utgate ( ; product term enabled output
++	tplhty=18ns	tplhmx=25ns
++	tphlty=18ns	tphlmx=25ns
++	tplzty=13ns	tplzmx=25ns
++	tphzty=13ns	tphzmx=25ns
++	tpzlty=10ns	tpzlmx=25ns
++	tpzhty=10ns	tpzhmx=25ns
++	)
+*$
+*---------
+* PAL20R4A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20R4A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin23	pin3	pin22	pin4
++	pin21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	pin16	pin10	pin15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,4) pin24 pin12
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out22	out21	out16	out15
++	D0_gate IO_LS 
+UB ora(8,4) pin24 pin12
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	d20	d19	d18	d17
++	D0_gate IO_LS 
+UC dff(4) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d20	d19	d18	d17
++	out20	out19	out18	out17	qr_20	qr_19	qr_18	qr_17
++	D_PAL_24MED_REGA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(4) pin24 pin12
++	qr_20 qr_19 qr_18 qr_17   q_20 q_19 q_18 q_17 
++	D_PAL_24MEDDA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin24 pin12
++	out22   row1   pin22 
++	D_PAL_24MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin24 pin12
++	out21   row9   pin21 
++	D_PAL_24MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out16   row49   pin16 
++	D_PAL_24MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out15   row57   pin15 
++	D_PAL_24MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24MEDRA utgate ( ; Gate pin enabled output from reg
++	tplhty=12ns	tplhmx=15ns
++	tphlty=12ns	tphlmx=15ns
++	tplzty=11ns	tplzmx=20ns
++	tphzty=11ns	tphzmx=20ns
++	tpzlty=10ns	tpzlmx=20ns
++	tpzhty=10ns	tpzhmx=20ns
++	)
+.model D_PAL_24MEDDA ugate ( ; Register to feedback delay
++	tplhty=12ns	tplhmx=15ns
++	tphlty=12ns	tphlmx=15ns
++	)
+.model D_PAL_24MED_REGA ueff ( ; Register timing
++	twclkhmn=15ns	twclkhty=07ns
++	twclklmn=15ns	twclklty=07ns
++	tsudclkmn=25ns	tsudclkty=18ns
++	)
+*$
+*---------
+* PAL20R6A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20R6A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin23	pin3	pin22	pin4
++	q_21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	q_16	pin10	pin15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,2) pin24 pin12
++	row2	row3	row4	row5	row6	row7	row8
++	row58	row59	row60	row61	row62	row63	row64
++	out22	out15
++	D0_gate IO_LS 
+UB ora(8,6) pin24 pin12
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	d21	d20	d19	d18	d17	d16
++	D0_gate IO_LS 
+UC dff(6) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d21	d20	d19	d18	d17	d16
++	out21	out20	out19	out18	out17	out16
++	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16
++	D_PAL_24MED_REGA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(6) pin24 pin12
++	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16
++	q_21	q_20	q_19	q_18	q_17	q_16
++	D_PAL_24MEDDA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin24 pin12
++	out22   row1   pin22 
++	D_PAL_24MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin24 pin12
++	out21   regen   pin21 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out16   regen   pin16 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out15   row57   pin15 
++	D_PAL_24MEDPA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL20R8A
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20R8A  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin23	pin3	q_22	pin4
++	q_21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	q_16	pin10	q_15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+UB ora(8,8) pin24 pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	d22	d21	d20	d19	d18	d17	d16	d15
++	D0_gate IO_LS 
+UC dff(8) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d22	d21	d20	d19	d18	d17	d16	d15
++	out22	out21	out20	out19	out18	out17	out16	out15
++	qr_22	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16	qr_15
++	D_PAL_24MED_REGA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(8) pin24 pin12
++	qr_22	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16	qr_15
++	q_22	q_21	q_20	q_19	q_18	q_17	q_16	q_15
++	D_PAL_24MEDDA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 inv3 pin24 pin12
++	out22   regen   pin22 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin24 pin12
++	out21   regen   pin21 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out16   regen   pin16 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out15   regen   pin15 
++	D_PAL_24MEDRA IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL20L8B  
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20L8B  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin1	pin3	pin23	pin4
++	pin21	pin5	pin20	pin6	pin19
++	pin7	pin18	pin8	pin17	pin9
++	pin16	pin10	pin14	pin11	pin13
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,8) pin24 pin12
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row18	row19	row20	row21	row22	row23	row24
++	row26	row27	row28	row29	row30	row31	row32
++	row34	row35	row36	row37	row38	row39	row40
++	row42	row43	row44	row45	row46	row47	row48
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out22	out21	out20	out19	out18	out17	out16	out15
++	D0_gate IO_LS 
+U3 inv3 pin24 pin12
++	out22   row1   pin22 
++	D_PAL_24MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin24 pin12
++	out21   row9   pin21 
++	D_PAL_24MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out20   row17   pin20 
++	D_PAL_24MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out19   row25   pin19 
++	D_PAL_24MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out18   row33   pin18 
++	D_PAL_24MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out17   row41   pin17 
++	D_PAL_24MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out16   row49   pin16 
++	D_PAL_24MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out15   row57   pin15 
++	D_PAL_24MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24MEDPB utgate ( ; product term enabled output
++	tplhty=11ns	tplhmx=15ns
++	tphlty=11ns	tphlmx=15ns
++	tplzty=11ns	tplzmx=15ns
++	tphzty=11ns	tphzmx=15ns
++	tpzlty=11ns	tpzlmx=18ns
++	tpzhty=11ns	tpzhmx=18ns
++	)
+*$
+*---------
+* PAL20R4B
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20R4B  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin23	pin3	pin22	pin4
++	pin21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	pin16	pin10	pin15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,4) pin24 pin12
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out22	out21	out16	out15
++	D0_gate IO_LS 
+UB ora(8,4) pin24 pin12
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	d20	d19	d18	d17
++	D0_gate IO_LS 
+UC dff(4) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d20	d19	d18	d17
++	out20	out19	out18	out17	qr_20	qr_19	qr_18	qr_17
++	D_PAL_24MED_REGB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(4) pin24 pin12
++	qr_20 qr_19 qr_18 qr_17   q_20 q_19 q_18 q_17 
++	D_PAL_24MEDDB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin24 pin12
++	out22   row1   pin22 
++	D_PAL_24MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin24 pin12
++	out21   row9   pin21 
++	D_PAL_24MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out16   row49   pin16 
++	D_PAL_24MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out15   row57   pin15 
++	D_PAL_24MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24MEDRB utgate ( ; Gate pin enabled output from reg
++	tplhty=08ns	tplhmx=12ns
++	tphlty=08ns	tphlmx=12ns
++	tplzty=08ns	tplzmx=12ns
++	tphzty=08ns	tphzmx=12ns
++	tpzlty=10ns	tpzlmx=15ns
++	tpzhty=10ns	tpzhmx=15ns
++	)
+.model D_PAL_24MEDDB ugate ( ; Register to feedback delay
++	tplhty=08ns	tplhmx=12ns
++	tphlty=08ns	tphlmx=12ns
++	)
+.model D_PAL_24MED_REGB ueff ( ; Register timing
++	twclkhmn=10ns	twclkhty=05ns
++	twclklmn=10ns	twclklty=05ns
++	tsudclkmn=15ns	tsudclkty=10ns
++	)
+*$
+*---------
+* PAL20R6B
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20R6B  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin23	pin3	pin22	pin4
++	q_21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	q_16	pin10	pin15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,2) pin24 pin12
++	row2	row3	row4	row5	row6	row7	row8
++	row58	row59	row60	row61	row62	row63	row64
++	out22	out15
++	D0_gate IO_LS 
+UB ora(8,6) pin24 pin12
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	d21	d20	d19	d18	d17	d16
++	D0_gate IO_LS 
+UC dff(6) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d21	d20	d19	d18	d17	d16
++	out21	out20	out19	out18	out17	out16
++	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16
++	D_PAL_24MED_REGB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(6) pin24 pin12
++	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16
++	q_21	q_20	q_19	q_18	q_17	q_16
++	D_PAL_24MEDDB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin24 pin12
++	out22   row1   pin22 
++	D_PAL_24MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin24 pin12
++	out21   regen   pin21 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out16   regen   pin16 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out15   row57   pin15 
++	D_PAL_24MEDPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL20R8B
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20R8B  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin23	pin3	q_22	pin4
++	q_21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	q_16	pin10	q_15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+UB ora(8,8) pin24 pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	d22	d21	d20	d19	d18	d17	d16	d15
++	D0_gate IO_LS 
+UC dff(8) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d22	d21	d20	d19	d18	d17	d16	d15
++	out22	out21	out20	out19	out18	out17	out16	out15
++	qr_22	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16	qr_15
++	D_PAL_24MED_REGB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(8) pin24 pin12
++	qr_22	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16	qr_15
++	q_22	q_21	q_20	q_19	q_18	q_17	q_16	q_15
++	D_PAL_24MEDDB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 inv3 pin24 pin12
++	out22   regen   pin22 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin24 pin12
++	out21   regen   pin21 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out16   regen   pin16 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out15   regen   pin15 
++	D_PAL_24MEDRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL20L8D  
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20L8D  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin1	pin3	pin23	pin4
++	pin21	pin5	pin20	pin6	pin19
++	pin7	pin18	pin8	pin17	pin9
++	pin16	pin10	pin14	pin11	pin13
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,8) pin24 pin12
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row18	row19	row20	row21	row22	row23	row24
++	row26	row27	row28	row29	row30	row31	row32
++	row34	row35	row36	row37	row38	row39	row40
++	row42	row43	row44	row45	row46	row47	row48
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out22	out21	out20	out19	out18	out17	out16	out15
++	D0_gate IO_LS 
+U3 inv3 pin24 pin12
++	out22   row1   pin22 
++	D_PAL_24MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin24 pin12
++	out21   row9   pin21 
++	D_PAL_24MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out20   row17   pin20 
++	D_PAL_24MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out19   row25   pin19 
++	D_PAL_24MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out18   row33   pin18 
++	D_PAL_24MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out17   row41   pin17 
++	D_PAL_24MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out16   row49   pin16 
++	D_PAL_24MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out15   row57   pin15 
++	D_PAL_24MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24MEDPD utgate ( ; product term enabled output
++	tplhmx=10ns	tphlmx=10ns
++	tplzmx=10ns	tphzmx=10ns
++	tpzlmx=10ns	tpzhmx=10ns
++	)
+*$
+*---------
+* PAL20R4D
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20R4D  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin23	pin3	pin22	pin4
++	pin21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	pin16	pin10	pin15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,4) pin24 pin12
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	out22	out21	out16	out15
++	D0_gate IO_LS 
+UB ora(8,4) pin24 pin12
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	d20	d19	d18	d17
++	D0_gate IO_LS 
+UC dff(4) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d20	d19	d18	d17
++	out20	out19	out18	out17	qr_20	qr_19	qr_18	qr_17
++	D_PAL_24MED_REGD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(4) pin24 pin12
++	qr_20 qr_19 qr_18 qr_17   q_20 q_19 q_18 q_17 
++	D_PAL_24MEDDD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin24 pin12
++	out22   row1   pin22 
++	D_PAL_24MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin24 pin12
++	out21   row9   pin21 
++	D_PAL_24MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out16   row49   pin16 
++	D_PAL_24MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out15   row57   pin15 
++	D_PAL_24MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24MEDRD utgate ( ; Gate pin enabled output from reg
++	tplhmx=08ns	tphlmx=08ns
++	tplzmx=10ns	tphzmx=10ns
++	tpzlmx=10ns	tpzhmx=10ns
++	)
+.model D_PAL_24MEDDD ugate ( ; Register to feedback delay
++	tplhmx=08ns	tphlmx=08ns
++	)
+.model D_PAL_24MED_REGD ueff ( ; Register timing
++	twclkhmn=07ns	twclklmn=07ns
++	tsudclkmn=10ns
++	)
+*$
+*---------
+* PAL20R6D
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20R6D  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin23	pin3	pin22	pin4
++	q_21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	q_16	pin10	pin15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,2) pin24 pin12
++	row2	row3	row4	row5	row6	row7	row8
++	row58	row59	row60	row61	row62	row63	row64
++	out22	out15
++	D0_gate IO_LS 
+UB ora(8,6) pin24 pin12
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	d21	d20	d19	d18	d17	d16
++	D0_gate IO_LS 
+UC dff(6) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d21	d20	d19	d18	d17	d16
++	out21	out20	out19	out18	out17	out16
++	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16
++	D_PAL_24MED_REGD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(6) pin24 pin12
++	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16
++	q_21	q_20	q_19	q_18	q_17	q_16
++	D_PAL_24MEDDD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin24 pin12
++	out22   row1   pin22 
++	D_PAL_24MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin24 pin12
++	out21   regen   pin21 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out16   regen   pin16 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out15   row57   pin15 
++	D_PAL_24MEDPD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL20R8D
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20R8D  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin23	pin3	q_22	pin4
++	q_21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	q_16	pin10	q_15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+UB ora(8,8) pin24 pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	d22	d21	d20	d19	d18	d17	d16	d15
++	D0_gate IO_LS 
+UC dff(8) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d22	d21	d20	d19	d18	d17	d16	d15
++	out22	out21	out20	out19	out18	out17	out16	out15
++	qr_22	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16	qr_15
++	D_PAL_24MED_REGD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD bufa(8) pin24 pin12
++	qr_22	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16	qr_15
++	q_22	q_21	q_20	q_19	q_18	q_17	q_16	q_15
++	D_PAL_24MEDDD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 inv3 pin24 pin12
++	out22   regen   pin22 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv3 pin24 pin12
++	out21   regen   pin21 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out16   regen   pin16 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out15   regen   pin15 
++	D_PAL_24MEDRD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*-------------------------------------------------------------------------
+* 24-Pin Polarity PAL Family-Series B
+*
+*$
+*---------
+* PAL20P8B  
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20P8B  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11 PIN13
++	PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin1	pin3	pin23	pin4
++	pin21	pin5	pin20	pin6	pin19
++	pin7	pin18	pin8	pin17	pin9
++	pin16	pin10	pin14	pin11	pin13
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,8) pin24 pin12
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row18	row19	row20	row21	row22	row23	row24
++	row26	row27	row28	row29	row30	row31	row32
++	row34	row35	row36	row37	row38	row39	row40
++	row42	row43	row44	row45	row46	row47	row48
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	or22	or21	or20	or19	or18	or17	or16	or15
++	D0_gate IO_LS 
+UXOR pland(1,8) pin24 pin12
++	$D_LO   xor22 xor21 xor20 xor19 xor18 xor17 xor16 xor15 
++	PAL20P8B_XOR IO_LS FILE=|JEDEC_FILE| 
+U3 xora(8) pin24 pin12
++	or22	xor22
++	or21	xor21
++	or20	xor20
++	or19	xor19
++	or18	xor18
++	or17	xor17
++	or16	xor16
++	or15	xor15
++	out22	out21	out20	out19	out18	out17	out16	out15
++	D0_gate IO_LS 
+U4 inv3 pin24 pin12
++	out22   row1   pin22 
++	D_PAL_24POLPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 inv3 pin24 pin12
++	out21   row9   pin21 
++	D_PAL_24POLPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv3 pin24 pin12
++	out20   row17   pin20 
++	D_PAL_24POLPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out19   row25   pin19 
++	D_PAL_24POLPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out18   row33   pin18 
++	D_PAL_24POLPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out17   row41   pin17 
++	D_PAL_24POLPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out16   row49   pin16 
++	D_PAL_24POLPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UB inv3 pin24 pin12
++	out15   row57   pin15 
++	D_PAL_24POLPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24POLPB utgate ( ; product term enabled output
++	tplhty=11ns	tplhmx=15ns
++	tphlty=11ns	tphlmx=15ns
++	tplzty=11ns	tplzmx=15ns
++	tphzty=11ns	tphzmx=15ns
++	tpzlty=10ns	tpzlmx=15ns
++	tpzhty=10ns	tpzhmx=15ns
++	)
+.model PAL20P8B_XOR upld (
++	offset=2560
++	)
+*$
+*---------
+* PAL20RP4B
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20RP4B  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin23	pin3	pin22	pin4
++	pin21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	pin16	pin10	pin15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,4) pin24 pin12
++	row2	row3	row4	row5	row6	row7	row8
++	row10	row11	row12	row13	row14	row15	row16
++	row50	row51	row52	row53	row54	row55	row56
++	row58	row59	row60	row61	row62	row63	row64
++	or22	or21	or16	or15
++	D0_gate IO_LS 
+U3 ora(8,4) pin24 pin12
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	or20	or19	or18	or17
++	D0_gate IO_LS 
+UXOR pland(1,8) pin24 pin12
++	$D_LO   xor22 xor21 xor20 xor19 xor18 xor17 xor16 xor15 
++	PAL20RP_XOR IO_LS FILE=|JEDEC_FILE| 
+U4 xora(8) pin24 pin12
++	or22	xor22
++	or21	xor21
++	or20	xor20
++	or19	xor19
++	or18	xor18
++	or17	xor17
++	or16	xor16
++	or15	xor15
++	out22	out21	d20	d19	d18	d17	out16	out15
++	D0_gate IO_LS 
+U5 dff(4) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d20	d19	d18	d17
++	out20	out19	out18	out17	qr_20	qr_19	qr_18	qr_17
++	D_PAL_24POL_REGB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 bufa(4) pin24 pin12
++	qr_20 qr_19 qr_18 qr_17   q_20 q_19 q_18 q_17 
++	D_PAL_24POLDB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out22   row1   pin22 
++	D_PAL_24POLPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out21   row9   pin21 
++	D_PAL_24POLPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UB inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UC inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE inv3 pin24 pin12
++	out16   row49   pin16 
++	D_PAL_24POLPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv3 pin24 pin12
++	out15   row57   pin15 
++	D_PAL_24POLPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+.model D_PAL_24POLRB utgate ( ; Gate pin enabled output from reg
++	tplhty=08ns	tplhmx=12ns
++	tphlty=08ns	tphlmx=12ns
++	tplzty=11ns	tplzmx=15ns
++	tphzty=11ns	tphzmx=15ns
++	tpzlty=10ns	tpzlmx=15ns
++	tpzhty=10ns	tpzhmx=15ns
++	)
+.model D_PAL_24POLDB ugate ( ; Register to feedback delay
++	tplhty=08ns	tplhmx=12ns
++	tphlty=08ns	tphlmx=12ns
++	)
+.model D_PAL_24POL_REGB ueff ( ; Register timing
++	twclkhmn=10ns	twclkhty=05ns
++	twclklmn=10ns	twclklty=05ns
++	tsudclkmn=15ns	tsudclkty=10ns
++	)
+.model PAL20RP_XOR upld (
++	offset=2560
++	)
+*$
+*---------
+* PAL20RP6B
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20RP6B  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin23	pin3	pin22	pin4
++	q_21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	q_16	pin10	pin15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(7,2) pin24 pin12
++	row2	row3	row4	row5	row6	row7	row8
++	row58	row59	row60	row61	row62	row63	row64
++	or22	or15
++	D0_gate IO_LS 
+U3 ora(8,6) pin24 pin12
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	or21	or20	or19	or18	or17	or16
++	D0_gate IO_LS 
+UXOR pland(1,8) pin24 pin12
++	$D_LO   xor22 xor21 xor20 xor19 xor18 xor17 xor16 xor15 
++	PAL20RP_XOR IO_LS FILE=|JEDEC_FILE| 
+U4 xora(8) pin24 pin12
++	or22	xor22
++	or21	xor21
++	or20	xor20
++	or19	xor19
++	or18	xor18
++	or17	xor17
++	or16	xor16
++	or15	xor15
++	out22	d21	d20	d19	d18	d17	d16	out15
++	D0_gate IO_LS 
+U5 dff(6) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d21	d20	d19	d18	d17	d16
++	out21	out20	out19	out18	out17	out16
++	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16
++	D_PAL_24POL_REGB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 bufa(6) pin24 pin12
++	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16
++	q_21	q_20	q_19	q_18	q_17	q_16
++	D_PAL_24POLDB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out22   row1   pin22 
++	D_PAL_24POLPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out21   regen   pin21 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UB inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UC inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE inv3 pin24 pin12
++	out16   regen   pin16 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv3 pin24 pin12
++	out15   row57   pin15 
++	D_PAL_24POLPB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+
+*$
+*---------
+* PAL20RP8B
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/10/91	Created
+
+.subckt PAL20RP8B  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	pin23	pin3	q_22	pin4
++	q_21	pin5	q_20	pin6	q_19
++	pin7	q_18	pin8	q_17	pin9
++	q_16	pin10	q_15	pin11	pin14
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++	FILE=|JEDEC_FILE| 
+U2 ora(8,8) pin24 pin12
++	row1	row2	row3	row4	row5	row6	row7	row8
++	row9	row10	row11	row12	row13	row14	row15	row16
++	row17	row18	row19	row20	row21	row22	row23	row24
++	row25	row26	row27	row28	row29	row30	row31	row32
++	row33	row34	row35	row36	row37	row38	row39	row40
++	row41	row42	row43	row44	row45	row46	row47	row48
++	row49	row50	row51	row52	row53	row54	row55	row56
++	row57	row58	row59	row60	row61	row62	row63	row64
++	or22	or21	or20	or19	or18	or17	or16	or15
++	D0_gate IO_LS 
+UXOR pland(1,8) pin24 pin12
++	$D_LO   xor22 xor21 xor20 xor19 xor18 xor17 xor16 xor15 
++	PAL20RP_XOR IO_LS FILE=|JEDEC_FILE| 
+U3 xora(8) pin24 pin12
++	or22	xor22
++	or21	xor21
++	or20	xor20
++	or19	xor19
++	or18	xor18
++	or17	xor17
++	or16	xor16
++	or15	xor15
++	d22	d21	d20	d19	d18	d17	d16	d15
++	D0_gate IO_LS 
+U4 dff(8) pin24 pin12
++	$d_hi	$d_hi	pin1
++	d22	d21	d20	d19	d18	d17	d16	d15
++	out22	out21	out20	out19	out18	out17	out16	out15
++	qr_22	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16	qr_15
++	D_PAL_24POL_REGB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 bufa(8) pin24 pin12
++	qr_22	qr_21	qr_20	qr_19	qr_18	qr_17	qr_16	qr_15
++	q_22	q_21	q_20	q_19	q_18	q_17	q_16	q_15
++	D_PAL_24POLDB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 inv pin24 pin12
++	pin13   regen 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U7 inv3 pin24 pin12
++	out22   regen   pin22 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U8 inv3 pin24 pin12
++	out21   regen   pin21 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U9 inv3 pin24 pin12
++	out20   regen   pin20 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UA inv3 pin24 pin12
++	out19   regen   pin19 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UB inv3 pin24 pin12
++	out18   regen   pin18 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UC inv3 pin24 pin12
++	out17   regen   pin17 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UD inv3 pin24 pin12
++	out16   regen   pin16 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE inv3 pin24 pin12
++	out15   regen   pin15 
++	D_PAL_24POLRB IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*$
+

@@ -1,0 +1,5748 @@
+* Library of CMOS CD4000 Series Digital Models
+*
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+*
+*
+* $Revision:   1.5  $
+* $Author:   RPEREZ  $
+* $Date:   17 Apr 1998 10:54:16  $
+*
+*
+*$
+*-------------------------------------------------------------------------
+* CD4000A  CMOS NOR GATE DUAL 3 INPUT PLUS INVERTER
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4000A  A B C D E F G H K L
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nora(3,2) VDD VSS
++	A B C D E F   H K 
++	D_CD4000A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 inv VDD VSS
++	G   L 
++	D_CD4000A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4000A ugate (
++	TPLHTY=35NS	TPHLTY=35NS
++	TPLHMX=120NS	TPHLMX=80NS
++	)
+*$
+*----------
+* CD4000B  CMOS NOR GATE DUAL 3 INPUT PLUS INVERTER
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4000B  A B C D E F G H K L
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nora(3,2) VDD VSS
++	A B C D E F   H K 
++	D_CD4000B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 inv VDD VSS
++	G   L 
++	D_CD4000B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4000B ugate (
++	TPLHTY=125NS	TPHLTY=125NS
++	TPLHMX=250NS	TPHLMX=250NS
++	)
+*$
+*----------
+* CD4000UB  CMOS NOR GATE DUAL 3 INPUT PLUS INVERTER
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4000UB  A B C D E F G H K L
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nora(3,2) VDD VSS
++	A B C D E F   H K 
++	D_CD4000UB IO_4000UB MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 inv VDD VSS
++	G   L 
++	D_CD4000UB IO_4000UB MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4000UB ugate (
++	TPLHTY=60NS	TPHLTY=60NS
++	TPLHMX=120NS	TPHLMX=120NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4001A  CMOS NOR GATE QUAD 2 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4001A  A B J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nor(2) VDD VSS
++	A B   J 
++	D_CD4001A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4001A ugate (
++	TPLHTY=35NS	TPHLTY=35NS
++	TPLHMX=120NS	TPHLMX=80NS
++	)
+*$
+*----------
+* CD4001B  CMOS NOR GATE QUAD 2 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4001B  A B J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nor(2) VDD VSS
++	A B   J 
++	D_CD4001B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4001B ugate (
++	TPLHTY=125NS	TPHLTY=125NS
++	TPLHMX=250NS	TPHLMX=250NS
++	)
+*$
+*----------
+* CD4001UB  CMOS NOR GATE QUAD 2 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4001UB  A B J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nor(2) VDD VSS
++	A B   J 
++	D_CD4001UB IO_4000UB MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4001UB ugate (
++	TPLHTY=60NS	TPHLTY=60NS
++	TPLHMX=120NS	TPHLMX=120NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4002A  CMOS NOR GATE DUAL 4 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4002A  A B C D J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nor(4) VDD VSS
++	A B C D   J 
++	D_CD4002A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4002A ugate (
++	TPLHTY=35NS	TPHLTY=35NS
++	TPLHMX=120NS	TPHLMX=80NS
++	)
+*$
+*----------
+* CD4002B  CMOS NOR GATE DUAL 4 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4002B  A B C D J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nor(4) VDD VSS
++	A B C D   J 
++	D_CD4002B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4002B ugate (
++	TPLHTY=125NS	TPHLTY=125NS
++	TPLHMX=250NS	TPHLMX=250NS
++	)
+*$
+*----------
+* CD4002UB  CMOS NOR GATE DUAL 4 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4002UB  A B C D J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nor(4) VDD VSS
++	A B C D   J 
++	D_CD4002UB IO_4000UB MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4002UB ugate (
++	TPLHTY=60NS	TPHLTY=60NS
++	TPLHMX=120NS	TPHLMX=120NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4009A  CMOS HEX BUFFERS/CONVERTERS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4009A  A G
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inv VDD VSS
++	A   G 
++	D_CD4009A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4009A ugate (
++	TPLHTY=50NS	TPLHMX=100NS
++	TPHLTY=15NS	TPHLMX=70NS
++	)
+*$
+*----------
+* CD4009UB  CMOS HEX BUFFERS/CONVERTERS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4009UB  A G
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inv VDD VSS
++	A   G 
++	D_CD4009UB IO_4000UB MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4009UB ugate (
++	TPLHTY=70NS	TPLHMX=140NS
++	TPHLTY=30NS	TPHLMX=60NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4010A  CMOS HEX BUFFERS/CONVERTERS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4010A  A G
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS DPWR=$G_DPWR
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 buf VDD VSS
++	A   A1 
++	D0_GATE IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 buf DPWR VSS
++	A1   G 
++	D_CD4010A IO_HCT MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4010A ugate (
++	TPLHTY=50NS	TPLHMX=100NS
++	TPHLTY=15NS	TPHLMX=70NS
++	)
+*$
+*----------
+* CD4010B  CMOS HEX BUFFERS/CONVERTERS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4010B  A G
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS DPWR=$G_DPWR
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 buf VDD VSS
++	A   A1
++	D0_GATE IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 buf DPWR VSS
++	A1   G 
++	D_CD4010B IO_HCT MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4010B ugate (
++	TPLHTY=100NS	TPLHMX=200NS
++	TPHLTY=65NS	TPHLMX=130NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4011A  CMOS NAND GATE QUAD 2 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4011A  A B J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(2) VDD VSS
++	A B   J 
++	D_CD4011A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4011A ugate (
++	TPLHTY=50NS	TPHLTY=50NS
++	TPLHMX=100NS	TPHLMX=100NS
++	)
+*$
+*----------
+* CD4011B  CMOS NAND GATE QUAD 2 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4011B  A B J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(2) VDD VSS
++	A B   J 
++	D_CD4011B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4011B ugate (
++	TPLHTY=60NS	TPHLTY=60NS
++	TPLHMX=120NS	TPHLMX=120NS
++	)
+*$
+*----------
+* CD4011UB  CMOS NAND GATE QUAD 2 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4011UB  A B J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(2) VDD VSS
++	A B   J 
++	D_CD4011UB IO_4000UB MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4011UB ugate (
++	TPLHTY=60NS	TPHLTY=60NS
++	TPLHMX=120NS	TPHLMX=120NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4012A  CMOS NAND GATE DUAL 4 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4012A  A B C D J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(4) VDD VSS
++	A B C D   J 
++	D_CD4012A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4012A ugate (
++	TPLHTY=50NS	TPHLTY=100NS
++	TPLHMX=100NS	TPHLMX=200NS
++	)
+*$
+*----------
+* CD4012B  CMOS NAND GATE DUAL 4 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4012B  A B C D J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(4) VDD VSS
++	A B C D   J 
++	D_CD4012B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4012B ugate (
++	TPLHTY=125NS	TPHLTY=125NS
++	TPLHMX=250NS	TPHLMX=250NS
++	)
+*$
+*----------
+* CD4012UB  CMOS NAND GATE DUAL 4 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4012UB  A B C D J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(4) VDD VSS
++	A B C D   J 
++	D_CD4012UB IO_4000UB MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4012UB ugate (
++	TPLHTY=60NS	TPHLTY=60NS
++	TPLHMX=120NS	TPHLMX=120NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4013A  CMOS  Dual D-Type Flip Flops
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* tdn	10/02/89	Update interface and model names
+*
+.subckt CD4013A  SET RESET CLK D Q QBAR
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inva(2) VDD VSS
++	SET RESET   PREB CLRB 
++	D0_GATE IO_4000A IO_LEVEL={IO_LEVEL} 
+U2 dff(1) VDD VSS
++	PREB CLRB CLK   D   Q QBAR 
++	D_CD4013A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4013A ueff (
++	twclklty=125ns	twclklmx=200ns
++	twclkhty=125ns	twclkhmx=200ns
++	twpclty=125ns	twpclmx=200ns
++	tsudclkty=20ns	tsudclkmx=40ns
++	tpclkqhlty=150ns	tpclkqhlmx=300ns
++	tpclkqlhty=150ns	tpclkqlhmx=300ns
++	tppcqhlty=175ns	tppcqhlmx=300ns
++	tppcqlhty=175ns	tppcqlhmx=300ns
++	)
+*$
+*---------
+* CD4013B  CMOS Dual D-Type Flip-Flop
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* tdn	10/02/89	Update interface and model names
+*
+.subckt CD4013B  SET RESET CLK D Q QBAR
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inva(2) VDD VSS
++	SET RESET   PREB CLRB 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 dff(1) VDD VSS
++	PREB CLRB CLK   D   Q QBAR 
++	D_CD4013B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4013B ueff (
++	twclklty=70ns	twclklmx=140ns
++	twclkhty=70ns	twclkhmx=140ns
++	twpclty=90ns	twpclmx=180ns
++	tsudclkty=20ns	tsudclkmx=40ns
++	tpclkqlhmx=300ns	tpclkqhlmx=300ns
++	tppcqlhmx=300ns	tppcqhlmx=400ns
++	)
+*
+*$
+*-------------------------------------------------------------------------
+* CD4017A CMOS DECADE COUNTER/DIVIDER
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* NH 9/8/92      REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD4017A CLK_I CLKINHIBIT_I RESET_I O0_O O1_O O2_O O3_O O4_O O5_O O6_O
++               O7_O O8_O O9_O CARRYOUT_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+U17ALOG LOGICEXP(13,17) VDD VSS
++ CLK_I CLKINHIBIT_I RESET_I Q1 Q2 Q3 Q4 Q5 Q1BAR Q2BAR Q3BAR Q4BAR Q5BAR
++ CLK CLKINHIBIT RESET CLOCK O0 O1 O2 O3 O4 O5 O6 O7 O8 O9 CARRYOUT TOQ3 RST
++ D0_GATE IO_4000A IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
++
+* BUFFERS
++   CLK = { CLK_I }
++   CLKINHIBIT = { CLKINHIBIT_I }
++   RESET = { RESET_I }
++
+* OUTPUT ASSIGNMENTS
++   CLOCK = { CLK & ~CLKINHIBIT }
++   O0 = { Q5BAR & Q1BAR }
++   O1 = { Q1 & Q2BAR }
++   O2 = { Q2 & Q3BAR }
++   O3 = { Q3 & Q4BAR }
++   O4 = { Q4 & Q5BAR }
++   O5 = { Q5 & Q1 }
++   O6 = { Q1BAR & Q2 }
++   O7 = { Q2BAR & Q3 }
++   O8 = { Q3BAR & Q4 }
++   O9 = { Q4BAR & Q5 }
++   CARRYOUT = { Q5BAR }
++   TOQ3 = { ((Q1 & Q2) | (Q2 & Q3)) }
++   RST = { ~RESET }
+*
+UFF DFF(5) VDD VSS
++ $D_HI RST CLOCK Q5BAR Q1 TOQ3 Q3 Q4 Q1 Q2 Q3 Q4 Q5
++ Q1BAR Q2BAR Q3BAR Q4BAR Q5BAR
++ D0_EFF IO_4000A
+*
+U17ADLY PINDLY (11,0,4) VDD VSS
++ O0 O1 O2 O3 O4 O5 O6 O7 O8 O9 CARRYOUT
++ CLOCK RESET CLK CLKINHIBIT
++ O0_O O1_O O2_O O3_O O4_O O5_O O6_O O7_O O8_O O9_O CARRYOUT_O
++ IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++   O0_O O1_O O2_O O3_O O4_O O5_O O6_O O7_O O8_O O9_O = {
++     CASE(
++       CHANGED(RESET,0), DELAY(-1,450NS,1600NS),
++       CHANGED(CLOCK,0), DELAY(-1,500NS,1600NS),
++       DELAY(-1,501NS,1601NS)                  ;DEFAULT
++       )
++     }
++   CARRYOUT_O = {
++       DELAY(-1,350NS,1300NS)
++     }
++
++ FREQ:
++   NODE = CLK
++   MAXFREQ = 0.6MEG
++
++ WIDTH:
++   NODE = CLK
++   MIN_HI = 830NS
++   MIN_LO = 830NS
++
++ WIDTH:
++   NODE = RESET
++   MIN_HI = 830NS
++
++ SETUP_HOLD:
++   DATA(1) RESET
++   CLOCK LH = CLK
++   RELEASETIME_HL = 1000NS
++
++ SETUP_HOLD:
++   DATA(1) CLKINHIBIT
++   CLOCK LH = CLK
++   SETUPTIME = 700NS
++   WHEN = { RESET!='1 }
+*
+.ENDS
+*
+*$
+*---------
+* CD4017B CMOS COUNTER/DIVIDER
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* NH 9/8/92      REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD4017B CLK_I CLKINHIBIT_I RESET_I O0_O O1_O O2_O O3_O O4_O O5_O O6_O
++               O7_O O8_O O9_O CARRYOUT_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+U17BBUF BUF VDD VSS
++ CLK_I CLK
++ D0_GATE IO_4000B_ST IO_LEVEL={IO_LEVEL}
+*
+U17BLOG LOGICEXP(13,16) VDD VSS
++ CLK CLKINHIBIT_I RESET_I Q1 Q2 Q3 Q4 Q5 Q1BAR Q2BAR Q3BAR Q4BAR Q5BAR
++ CLKINHIBIT RESET CLOCK O0 O1 O2 O3 O4 O5 O6 O7 O8 O9 CARRYOUT TOQ3 RST
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
++
+* BUFFERS
++   CLKINHIBIT = { CLKINHIBIT_I }
++   RESET = { RESET_I }
++
+* OUTPUT ASSIGNMENTS
++   CLOCK = { ~(~CLK | CLKINHIBIT) }
++   O0 = { Q5BAR & Q1BAR }
++   O1 = { Q1 & Q2BAR }
++   O2 = { Q2 & Q3BAR }
++   O3 = { Q3 & Q4BAR }
++   O4 = { Q4 & Q5BAR }
++   O5 = { Q5 & Q1 }
++   O6 = { Q1BAR & Q2 }
++   O7 = { Q2BAR & Q3 }
++   O8 = { Q3BAR & Q4 }
++   O9 = { Q4BAR & Q5 }
++   CARRYOUT = { Q5BAR }
++   TOQ3 = { ((Q1 & Q2) | (Q2 & Q3)) }
++   RST = { ~RESET }
+*
+UFF DFF(5) VDD VSS
++ $D_HI RST CLOCK Q5BAR Q1 TOQ3 Q3 Q4 Q1 Q2 Q3 Q4 Q5
++ Q1BAR Q2BAR Q3BAR Q4BAR Q5BAR
++ D0_EFF IO_4000B
+*
+U17BDLY PINDLY (11,0,4) VDD VSS
++ O0 O1 O2 O3 O4 O5 O6 O7 O8 O9 CARRYOUT
++ CLOCK RESET CLK CLKINHIBIT
++ O0_O O1_O O2_O O3_O O4_O O5_O O6_O O7_O O8_O O9_O CARRYOUT_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ BOOLEAN:
++   CH_CLOCK = { CHANGED_LH(CLOCK,0) }
++   CH_RESET = { CHANGED_LH(RESET,0) }
++
++ PINDLY:
++   O0_O O1_O O2_O O3_O O4_O O5_O O6_O O7_O O8_O O9_O = {
++     CASE(
++       CH_RESET, DELAY(-1,265NS,530NS),
++       CH_CLOCK, DELAY(-1,325NS,650NS),
++       DELAY(-1,326NS,651NS)                  ;DEFAULT
++       )
++     }
++   CARRYOUT_O = {
++     CASE(
++       CH_RESET, DELAY(-1,265NS,530NS),
++       CH_CLOCK, DELAY(-1,300NS,600NS),
++       DELAY(-1,301NS,601NS)
++       )
++     }
++
++ FREQ:
++   NODE = CLK
++   MAXFREQ = 2.5MEG
++
++ WIDTH:
++   NODE = CLK
++   MIN_HI = 200NS
++   MIN_LO = 200NS
++
++ WIDTH:
++   NODE = RESET
++   MIN_HI = 260NS
++
++ SETUP_HOLD:
++   DATA(1) RESET
++   CLOCK LH = CLK
++   RELEASETIME_HL = 400NS
++
++ SETUP_HOLD:
++   DATA(1) CLKINHIBIT
++   CLOCK LH = CLK
++   SETUPTIME = 230NS
++   WHEN = { RESET!='1 }
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD4018A CMOS PRESETTABLE DIVIDE-BY-N COUNTER
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* NH 9/9/82       REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD4018A CLK_I PSENABLE_I RESET_I DATA_I JAM1_I JAM2_I JAM3_I JAM4_I
++              JAM5_I Q1BAR_O Q2BAR_O Q3BAR_O Q4BAR_O Q5BAR_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+U18ALOG LOGICEXP(12,20) VDD VSS
++ CLK_I PSENABLE_I RESET_I DATA_I JAM1_I JAM2_I JAM3_I JAM4_I JAM5_I Q1BAR
++   Q2BAR Q3BAR
++ CLK PSENABLE RESET DATA JAM1 JAM2 JAM3 JAM4 JAM5 RST1 RST2 RST3 RST4 RST5
++   PST1 PST2 PST3 PST4 PST5 TOD3
++ D0_GATE IO_4000A IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
+* BUFFERS
++   CLK = { CLK_I }
++   PSENABLE = { PSENABLE_I }
++   RESET = { RESET_I }
++   DATA = { DATA_I }
++   JAM1 = { JAM1_I }
++   JAM2 = { JAM2_I }
++   JAM3 = { JAM3_I }
++   JAM4 = { JAM4_I }
++   JAM5 = { JAM5_I }
++
++   RST1 = { ~(RESET | (PSENABLE & ~JAM1)) }
++   RST2 = { ~(RESET | (PSENABLE & ~JAM2)) }
++   RST3 = { ~(RESET | (PSENABLE & ~JAM3)) }
++   RST4 = { ~(RESET | (PSENABLE & ~JAM4)) }
++   RST5 = { ~(RESET | (PSENABLE & ~JAM5)) }
++   PST1 = { ~(PSENABLE & JAM1) }
++   PST2 = { ~(PSENABLE & JAM2) }
++   PST3 = { ~(PSENABLE & JAM3) }
++   PST4 = { ~(PSENABLE & JAM4) }
++   PST5 = { ~(PSENABLE & JAM5) }
++   TOD3 = { ~( (Q1BAR & Q3BAR) | Q2BAR ) }
+*
+U1FF DFF(1) VDD VSS
++ PST1 RST1 CLK DATA Q1 Q1BAR
++ D0_EFF IO_4000A
+*
+U2FF DFF(1) VDD VSS
++ PST2 RST2 CLK Q1 $D_NC Q2BAR
++ D0_EFF IO_4000A
+*
+U3FF DFF(1) VDD VSS
++ PST3 RST3 CLK TOD3 Q3 Q3BAR
++ D0_EFF IO_4000A
+*
+U4FF DFF(1) VDD VSS
++ PST4 RST4 CLK Q3 Q4 Q4BAR
++ D0_EFF IO_4000A
+*
+U5FF DFF(1) VDD VSS
++ PST5 RST5 CLK Q4 $D_NC Q5BAR
++ D0_EFF IO_4000A
+*
+U18ADLY PINDLY (5,0,9) VDD VSS
++ Q1BAR Q2BAR Q3BAR Q4BAR Q5BAR
++ CLK DATA RESET PSENABLE JAM1 JAM2 JAM3 JAM4 JAM5
++ Q1BAR_O Q2BAR_O Q3BAR_O Q4BAR_O Q5BAR_O
++ IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++   Q5BAR_O = {
++     DELAY(-1,350NS,1300NS)
++   }
++   Q1BAR_O Q2BAR_O Q3BAR_O Q4BAR_O = {
++     DELAY(-1,500NS,1600NS)
++   }
++
++ FREQ:
++   NODE = CLK
++   MAXFREQ = 0.6MEG
++
++ WIDTH:
++   NODE = CLK
++   MIN_HI = 830NS
++   MIN_LO = 830NS
++
++ WIDTH:
++   NODE = RESET
++   MIN_HI = 830NS
++
++ WIDTH:
++   NODE = PSENABLE
++   MIN_HI = 830NS
++
++ WIDTH:
++   NODE = JAM1
++   MIN_HI = 830NS
++   MIN_LO = 830NS
++   MESSAGE = "PRESET PULSE WIDTH IS TOO SHORT"
++
++ WIDTH:
++   NODE = JAM2
++   MIN_HI = 830NS
++   MIN_LO = 830NS
++   MESSAGE = "PRESET PULSE WIDTH IS TOO SHORT"
++
++ WIDTH:
++   NODE = JAM3
++   MIN_HI = 830NS
++   MIN_LO = 830NS
++   MESSAGE = "PRESET PULSE WIDTH IS TOO SHORT"
++
++ WIDTH:
++   NODE = JAM4
++   MIN_HI = 830NS
++   MIN_LO = 830NS
++   MESSAGE = "PRESET PULSE WIDTH IS TOO SHORT"
++
++ WIDTH:
++   NODE = JAM5
++   MIN_HI = 830NS
++   MIN_LO = 830NS
++   MESSAGE = "PRESET PULSE WIDTH IS TOO SHORT"
++
++ SETUP_HOLD:
++   DATA(2) RESET PSENABLE
++   CLOCK LH = CLK
++   RELEASETIME_HL = 1000NS
++
++ SETUP_HOLD:
++   DATA(1) DATA
++   CLOCK LH = CLK
++   SETUPTIME = 700NS
++   WHEN = { RESET!='1  & PSENABLE!='1 }
+*
+.ENDS
+*
+*$
+*---------
+* CD4018B CMOS PRESETTABLE DIVIDE-BY-N COUNTER
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* NH 9/9/82       REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD4018B CLK_I PSENABLE_I RESET_I DATA_I JAM1_I JAM2_I JAM3_I JAM4_I
++              JAM5_I Q1BAR_O Q2BAR_O Q3BAR_O Q4BAR_O Q5BAR_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+UBUF BUF VDD VSS
++ CLK_I CLK
++ D0_GATE IO_4000B_ST IO_LEVEL={IO_LEVEL}
+*
+U18BLOG LOGICEXP(12,20) VDD VSS
++ CLK PSENABLE_I RESET_I DATA_I JAM1_I JAM2_I JAM3_I JAM4_I JAM5_I Q1BAR
++   Q2BAR Q3BAR
++ CLOCK PSENABLE RESET DATA JAM1 JAM2 JAM3 JAM4 JAM5 RST1 RST2 RST3 RST4 RST5
++   PST1 PST2 PST3 PST4 PST5 TOD3
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
+* BUFFERS
++   PSENABLE = { PSENABLE_I }
++   RESET = { RESET_I }
++   DATA = { DATA_I }
++   JAM1 = { JAM1_I }
++   JAM2 = { JAM2_I }
++   JAM3 = { JAM3_I }
++   JAM4 = { JAM4_I }
++   JAM5 = { JAM5_I }
++
++   RST1 = { ~(RESET | (PSENABLE & ~JAM1)) }
++   RST2 = { ~(RESET | (PSENABLE & ~JAM2)) }
++   RST3 = { ~(RESET | (PSENABLE & ~JAM3)) }
++   RST4 = { ~(RESET | (PSENABLE & ~JAM4)) }
++   RST5 = { ~(RESET | (PSENABLE & ~JAM5)) }
++   PST1 = { ~(PSENABLE & JAM1) }
++   PST2 = { ~(PSENABLE & JAM2) }
++   PST3 = { ~(PSENABLE & JAM3) }
++   PST4 = { ~(PSENABLE & JAM4) }
++   PST5 = { ~(PSENABLE & JAM5) }
++   TOD3 = { ~( (Q1BAR & Q3BAR) | Q2BAR ) }
++   CLOCK = { ~(~CLK & ~PSENABLE & ~RESET) }
+*
+U1FF DFF(1) VDD VSS
++ PST1 RST1 CLOCK DATA Q1 Q1BAR
++ D0_EFF IO_4000B
+*
+U2FF DFF(1) VDD VSS
++ PST2 RST2 CLOCK Q1 $D_NC Q2BAR
++ D0_EFF IO_4000B
+*
+U3FF DFF(1) VDD VSS
++ PST3 RST3 CLOCK TOD3 Q3 Q3BAR
++ D0_EFF IO_4000B
+*
+U4FF DFF(1) VDD VSS
++ PST4 RST4 CLOCK Q3 Q4 Q4BAR
++ D0_EFF IO_4000B
+*
+U5FF DFF(1) VDD VSS
++ PST5 RST5 CLOCK Q4 $D_NC Q5BAR
++ D0_EFF IO_4000B
+*
+U18BDLY PINDLY (5,0,9) VDD VSS
++ Q1BAR Q2BAR Q3BAR Q4BAR Q5BAR
++ CLK RESET PSENABLE JAM1 JAM2 JAM3 JAM4 JAM5 DATA
++ Q1BAR_O Q2BAR_O Q3BAR_O Q4BAR_O Q5BAR_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ BOOLEAN:
++   CH_PST_RST = { CHANGED(PSENABLE,0) | CHANGED(RESET,0) | CHANGED(JAM1,0) |
++        CHANGED(JAM2,0) | CHANGED(JAM3,0) | CHANGED(JAM4,0) | 
++        CHANGED(JAM5,0) }
++     
++ PINDLY:
++   Q1BAR_O Q2BAR_O Q3BAR_O Q4BAR_O Q5BAR_O = {
++     CASE(
++       CH_PST_RST, DELAY(-1,275NS,550NS),
++       CHANGED(CLK,0), DELAY(-1,200NS,400NS),
++       DELAY(-1,276NS,551NS)
++       )
++     }
++
++ FREQ:
++   NODE = CLK
++   MAXFREQ = 3MEG
++
++ WIDTH:
++   NODE = CLK
++   MIN_HI = 160NS
++   MIN_LO = 160NS
++
++ WIDTH:
++   NODE = RESET
++   MIN_HI = 160NS
++
++ WIDTH:
++   NODE = PSENABLE
++   MIN_HI = 160NS
++
++ WIDTH:
++   NODE = JAM1
++   MIN_HI = 160NS
++   MIN_LO = 160NS
++   MESSAGE = "PRESET PULSE WIDTH IS TOO SHORT"
++
++ WIDTH:
++   NODE = JAM2
++   MIN_HI = 160NS
++   MIN_LO = 160NS
++   MESSAGE = "PRESET PULSE WIDTH IS TOO SHORT"
++
++ WIDTH:
++   NODE = JAM3
++   MIN_HI = 160NS
++   MIN_LO = 160NS
++   MESSAGE = "PRESET PULSE WIDTH IS TOO SHORT"
++
++ WIDTH:
++   NODE = JAM4
++   MIN_HI = 160NS
++   MIN_LO = 160NS
++   MESSAGE = "PRESET PULSE WIDTH IS TOO SHORT"
++
++ WIDTH:
++   NODE = JAM5
++   MIN_HI = 160NS
++   MIN_LO = 160NS
++   MESSAGE = "PRESET PULSE WIDTH IS TOO SHORT"
++
++ SETUP_HOLD:
++   DATA(2) RESET PSENABLE
++   CLOCK LH = CLK
++   RELEASETIME_HL = 80NS
++
++ SETUP_HOLD:
++   DATA(1) DATA
++   CLOCK LH = CLK
++   SETUPTIME = 40NS
++   HOLDTIME = 140NS
++   WHEN = { RESET!='1 & PSENABLE!='1 }
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD4019A  CMOS QUAD AND/OR SELECT GATE
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4019A  KA KB A1 A2 A3 A4 B1 B2 B3 B4 D1 D2 D3 D4
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 bufa(2) VDD VSS
++	KA KB   SA SB 
++	D0_GATE IO_4000A IO_LEVEL={IO_LEVEL} 
+U2 ao(2,2) VDD VSS
++	SA A1 SB B1   D1 
++	D_CD4019A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 ao(2,2) VDD VSS
++	SA A2 SB B2   D2 
++	D_CD4019A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 ao(2,2) VDD VSS
++	SA A3 SB B3   D3 
++	D_CD4019A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 ao(2,2) VDD VSS
++	SA A4 SB B4   D4 
++	D_CD4019A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4019A ugate (
++	TPLHTY=100NS	TPHLTY=100NS
++	TPLHMX=300NS	TPHLMX=300NS
++	)
+*$
+*----------
+* CD4019B  CMOS QUAD AND/OR SELECT GATE
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4019B  KA KB A1 A2 A3 A4 B1 B2 B3 B4 D1 D2 D3 D4
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 bufa(2) VDD VSS
++	KA KB   SA SB 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 ao(2,2) VDD VSS
++	SA A1 SB B1   D1 
++	D_CD4019B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 ao(2,2) VDD VSS
++	SA A2 SB B2   D2 
++	D_CD4019B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 ao(2,2) VDD VSS
++	SA A3 SB B3   D3 
++	D_CD4019B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 ao(2,2) VDD VSS
++	SA A4 SB B4   D4 
++	D_CD4019B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4019B ugate (
++	TPLHTY=150NS	TPHLTY=150NS
++	TPLHMX=300NS	TPHLMX=300NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4020A  CMOS Ripple-Carry Binary Counter/Dividers
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	10/3/89		Update interface and model names
+*
+.subckt CD4020A  INPUT RESET Q1 Q4 Q5 Q6 Q7 Q8 Q9 Q10 Q11 Q12 Q13 Q14
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UCLRB inv VDD VSS
++	RESET   CLRB 
++	D0_GATE IO_4000A IO_LEVEL={IO_LEVEL} 
+UT anda(2,12) VDD VSS
++	Q1I	Q2I
++	T3	Q3I
++	T4	Q4I
++	T5	Q5I
++	T6	Q6I
++	T7	Q7I
++	T8	Q8I
++	T9	Q9I
++	T10	Q10I
++	T11	Q11I
++	T12	Q12I
++	T13	Q13I
++	T3	T4	T5	T6	T7	T8
++	T9	T10	T11	T12	T13	T14
++	D0_GATE IO_4000A MNTYMXDLY={MNTYMXDLY} 
+UQ1I jkff(1) VDD VSS
++	$D_HI CLRB INPUT   $D_HI $D_HI   Q1I $D_NC 
++	D_CD4020A_1 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UQ2I jkff(1) VDD VSS
++	$D_HI CLRB Q1I   $D_HI $D_HI   Q2I $D_NC 
++	D_CD4020A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+UQ3I jkff(1) VDD VSS
++	$D_HI CLRB T3   $D_HI $D_HI   Q3I $D_NC 
++	D_CD4020A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+UQ4I jkff(1) VDD VSS
++	$D_HI CLRB T4   $D_HI $D_HI   Q4I $D_NC 
++	D_CD4020A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+UQ5I jkff(1) VDD VSS
++	$D_HI CLRB T5   $D_HI $D_HI   Q5I $D_NC 
++	D_CD4020A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+UQ6I jkff(1) VDD VSS
++	$D_HI CLRB T6   $D_HI $D_HI   Q6I $D_NC 
++	D_CD4020A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+UQ7I jkff(1) VDD VSS
++	$D_HI CLRB T7   $D_HI $D_HI   Q7I $D_NC 
++	D_CD4020A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+UQ8I jkff(1) VDD VSS
++	$D_HI CLRB T8   $D_HI $D_HI   Q8I $D_NC 
++	D_CD4020A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+UQ9I jkff(1) VDD VSS
++	$D_HI CLRB T9   $D_HI $D_HI   Q9I $D_NC 
++	D_CD4020A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+UQ10I jkff(1) VDD VSS
++	$D_HI CLRB T10   $D_HI $D_HI   Q10I $D_NC 
++	D_CD4020A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+UQ11I jkff(1) VDD VSS
++	$D_HI CLRB T11   $D_HI $D_HI   Q11I $D_NC 
++	D_CD4020A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+UQ12I jkff(1) VDD VSS
++	$D_HI CLRB T12   $D_HI $D_HI   Q12I $D_NC 
++	D_CD4020A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+UQ13I jkff(1) VDD VSS
++	$D_HI CLRB T13   $D_HI $D_HI   Q13I $D_NC 
++	D_CD4020A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+UQ14I jkff(1) VDD VSS
++	$D_HI CLRB T14   $D_HI $D_HI   Q14I $D_NC 
++	D_CD4020A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+UQ bufa(12) VDD VSS
++	Q1I	Q4I	Q5I	Q6I	Q7I	Q8I
++	Q9I	Q10I	Q11I	Q12I	Q13I	Q14I
++	Q1	Q4	Q5	Q6	Q7	Q8
++	Q9	Q10	Q11	Q12	Q13	Q14
++	D_CD4020A_3 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4020A_1 ueff (
++	twclklmn=500ns	twclkhmn=500ns
++	twpclmn=3000ns	tppcqhlty=1550ns
++	tppcqhlmx=2850ns
++	)
+.model D_CD4020A_2 ueff (
++	twpclmn=3000ns	tppcqhlty=1550ns
++	tppcqhlmx=2850ns
++	)
+.model D_CD4020A_3 ugate (
++	tplhty=450ns	tplhmx=650ns
++	tphlty=450ns	tphlmx=600ns
++	)
+*$
+*---------
+* CD4020B  CMOS Ripple-Carry Binary Counter/Dividers
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	10/3/89		Update interface and model names
+*
+.subckt CD4020B  INPUT RESET Q1 Q4 Q5 Q6 Q7 Q8 Q9 Q10 Q11 Q12 Q13 Q14
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UBUF buf VDD VSS
++	INPUT   IN 
++	D0_GATE IO_4000B_ST IO_LEVEL={IO_LEVEL} 
+UCLRB inv VDD VSS
++	RESET   CLRB 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+UT anda(2,12) VDD VSS
++	Q1ID	Q2I
++	T3	Q3I
++	T4	Q4I
++	T5	Q5I
++	T6	Q6I
++	T7	Q7I
++	T8	Q8I
++	T9	Q9I
++	T10	Q10I
++	T11	Q11I
++	T12	Q12I
++	T13	Q13I
++	T3	T4	T5	T6	T7	T8
++	T9	T10	T11	T12	T13	T14
++	D_CD4020B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ1ID buf VDD VSS
++	Q1I   Q1ID 
++	D_CD4020B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ1I jkff(1) VDD VSS
++	$D_HI CLRB IN   $D_HI $D_HI   Q1I $D_NC 
++	D_CD4020B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UQ2I jkff(1) VDD VSS
++	$D_HI CLRB Q1ID   $D_HI $D_HI   Q2I $D_NC 
++	D_CD4020B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ3I jkff(1) VDD VSS
++	$D_HI CLRB T3   $D_HI $D_HI   Q3I $D_NC 
++	D_CD4020B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ4I jkff(1) VDD VSS
++	$D_HI CLRB T4   $D_HI $D_HI   Q4I $D_NC 
++	D_CD4020B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ5I jkff(1) VDD VSS
++	$D_HI CLRB T5   $D_HI $D_HI   Q5I $D_NC 
++	D_CD4020B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ6I jkff(1) VDD VSS
++	$D_HI CLRB T6   $D_HI $D_HI   Q6I $D_NC 
++	D_CD4020B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ7I jkff(1) VDD VSS
++	$D_HI CLRB T7   $D_HI $D_HI   Q7I $D_NC 
++	D_CD4020B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ8I jkff(1) VDD VSS
++	$D_HI CLRB T8   $D_HI $D_HI   Q8I $D_NC 
++	D_CD4020B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ9I jkff(1) VDD VSS
++	$D_HI CLRB T9   $D_HI $D_HI   Q9I $D_NC 
++	D_CD4020B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ10I jkff(1) VDD VSS
++	$D_HI CLRB T10   $D_HI $D_HI   Q10I $D_NC 
++	D_CD4020B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ11I jkff(1) VDD VSS
++	$D_HI CLRB T11   $D_HI $D_HI   Q11I $D_NC 
++	D_CD4020B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ12I jkff(1) VDD VSS
++	$D_HI CLRB T12   $D_HI $D_HI   Q12I $D_NC 
++	D_CD4020B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ13I jkff(1) VDD VSS
++	$D_HI CLRB T13   $D_HI $D_HI   Q13I $D_NC 
++	D_CD4020B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ14I jkff(1) VDD VSS
++	$D_HI CLRB T14   $D_HI $D_HI   Q14I $D_NC 
++	D_CD4020B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ1 jkff(1) VDD VSS
++	$D_HI CLRB IN   $D_HI $D_HI   Q1 $D_NC 
++	D_CD4020B_4 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UQ bufa(11) VDD VSS
++	Q4I	Q5I	Q6I	Q7I	Q8I	Q9I	Q10I	Q11I	Q12I
++	Q13I	Q14I
++	Q4	Q5	Q6	Q7	Q8	Q9	Q10	Q11	Q12
++	Q13	Q14
++	D_CD4020B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4020B_1 ugate (
++	tplhty=100ns	tplhmx=200ns
++	tphlty=100ns	tphlmx=200ns
++	)
+.model D_CD4020B_2 ueff (
++	twclklmn=140ns	twclkhmn=140ns
++	twpclmn=200ns	tsupcclkhmn=350ns
++	tpclkqlhty=80ns	tpclkqlhmx=160ns
++	tpclkqhlty=80ns	tpclkqhlmx=160ns
++	)
+.model D_CD4020B_3 ueff (
++	twpclmn=200ns	tppcqhlty=40ns
++	tppcqhlmx=80ns
++	)
+.model D_CD4020B_4 ueff (
++	twclklmn=140ns	twclkhmn=140ns
++	twpclmn=200ns	tsupcclkhmn=350ns
++	tppcqhlty=140ns	tppcqhlmx=280ns
++	tpclkqlhty=180ns	tpclkqlhmx=360ns
++	tpclkqhlty=180ns	tpclkqhlmx=360ns
++	)
+*
+*$
+*-------------------------------------------------------------------------
+* CD4022B CMOS COUNTER/DIVIDERS
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* NH 9/9/92        REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD4022B CLK_I CLKINHIBIT_I RESET_I O0_O O1_O O2_O O3_O O4_O O5_O
++               O6_O O7_O CARRYOUT_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+U22BBUF BUF VDD VSS
++ CLK_I CLK
++ D0_GATE IO_4000B_ST IO_LEVEL={IO_LEVEL}
+*
+U22BLOG LOGICEXP(11,14) VDD VSS
++ CLK CLKINHIBIT_I RESET_I Q1 Q2 Q3 Q4 Q1BAR Q2BAR Q3BAR Q4BAR
++ CLKINHIBIT RESET CLOCK RST O0 O1 O2 O3 O4 O5 O6 O7 CARRYOUT TOD3
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
+* BUFFERS
++   CLKINHIBIT = { CLKINHIBIT_I }
++   RESET = { RESET_I }
++
+* OUTPUT ASSIGNMENTS
++   CLOCK = { ~(~CLK | CLKINHIBIT) }
++   RST = { ~RESET }
++   TOD3 = { ~( (Q1BAR & Q3BAR) | Q2BAR ) }
++
++   O0 = { Q4BAR & Q1BAR }
++   O1 = { Q1 & Q2BAR }
++   O2 = { Q2 & Q3BAR }
++   O3 = { Q3 & Q4BAR }
++   O4 = { Q1 & Q4 }
++   O5 = { Q1BAR & Q2 }
++   O6 = { Q2BAR & Q3 }
++   O7 = { Q3BAR & Q4 }
++   CARRYOUT = { ~Q4 }
+*
+U22BFF DFF(4) VDD VSS
++ $D_HI RST CLOCK Q4BAR Q1 TOD3 Q3
++ Q1 Q2 Q3 Q4 Q1BAR Q2BAR Q3BAR Q4BAR
++ D0_EFF IO_4000B
+*
+U22BDLY PINDLY (9,0,4) VDD VSS
++ O0 O1 O2 O3 O4 O5 O6 O7 CARRYOUT
++ CLOCK RESET CLK CLKINHIBIT
++ O0_O O1_O O2_O O3_O O4_O O5_O O6_O O7_O CARRYOUT_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ BOOLEAN:
++   CH_CLOCK = { CHANGED_LH(CLOCK,0) }
++   CH_RESET = { CHANGED_LH(RESET,0) }
++
++ PINDLY:
++   O0_O O1_O O2_O O3_O O4_O O5_O O6_O O7_O = {
++     CASE(
++       CH_RESET, DELAY(-1,265NS,530NS),
++       CH_CLOCK, DELAY(-1,325NS,650NS),
++       DELAY(-1,326NS,651NS)                  ;DEFAULT
++       )
++     }
++   CARRYOUT_O = {
++     CASE(
++       CH_RESET, DELAY(-1,265NS,530NS),
++       CH_CLOCK, DELAY(-1,300NS,600NS),
++       DELAY(-1,301NS,601NS)
++       )
++     }
++
++ FREQ:
++   NODE = CLK
++   MAXFREQ = 2.5MEG
++
++ WIDTH:
++   NODE = CLK
++   MIN_HI = 200NS
++   MIN_LO = 200NS
++
++ WIDTH:
++   NODE = RESET
++   MIN_HI = 260NS
++
++ SETUP_HOLD:
++   DATA(1) RESET
++   CLOCK LH = CLK
++   RELEASETIME_HL = 400NS
++
++ SETUP_HOLD:
++   DATA(1) CLKINHIBIT
++   CLOCK LH = CLK
++   SETUPTIME = 230NS
++   WHEN = { RESET!='1 }
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD4023A  CMOS NAND GATE TRIPLE 3 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4023A  A B C J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(3) VDD VSS
++	A B C   J 
++	D_CD4023A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4023A ugate (
++	TPLHTY=50NS	TPHLTY=50NS
++	TPLHMX=100NS	TPHLMX=100NS
++	)
+*$
+*----------
+* CD4023B  CMOS NAND GATE TRIPLE 3 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4023B  A B C J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(3) VDD VSS
++	A B C   J 
++	D_CD4023B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4023B ugate (
++	TPLHTY=125NS	TPHLTY=125NS
++	TPLHMX=250NS	TPHLMX=250NS
++	)
+*$
+*----------
+* CD4023UB  CMOS NAND GATE TRIPLE 3 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4023UB  A B C J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(3) VDD VSS
++	A B C   J 
++	D_CD4023UB IO_4000UB MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4023UB ugate (
++	TPLHTY=60NS	TPHLTY=60NS
++	TPLHMX=120NS	TPHLMX=120NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4024A  CMOS Ripple-Carry Binary Counter/Dividers
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	10/3/89		Update interface and model names
+*
+.subckt CD4024A  INPUT RESET Q1 Q2 Q3 Q4 Q5 Q6 Q7
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UCLRB inv VDD VSS
++	RESET   CLRB 
++	D0_GATE IO_4000A IO_LEVEL={IO_LEVEL} 
+UT anda(2,5) VDD VSS
++	Q1I	Q2I
++	T3	Q3I
++	T4	Q4I
++	T5	Q5I
++	T6	Q6I
++	T3	T4	T5	T6	T7
++	D0_GATE IO_4000A 
+UQ1I jkff(1) VDD VSS
++	$D_HI CLRB INPUT   $D_HI $D_HI   Q1I $D_NC 
++	D_CD4024A_1 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UQ2I jkff(1) VDD VSS
++	$D_HI CLRB Q1I   $D_HI $D_HI   Q2I $D_NC 
++	D_CD4024A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UQ3I jkff(1) VDD VSS
++	$D_HI CLRB T3   $D_HI $D_HI   Q3I $D_NC 
++	D_CD4024A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UQ4I jkff(1) VDD VSS
++	$D_HI CLRB T4   $D_HI $D_HI   Q4I $D_NC 
++	D_CD4024A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UQ5I jkff(1) VDD VSS
++	$D_HI CLRB T5   $D_HI $D_HI   Q5I $D_NC 
++	D_CD4024A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UQ6I jkff(1) VDD VSS
++	$D_HI CLRB T6   $D_HI $D_HI   Q6I $D_NC 
++	D_CD4024A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UQ7I jkff(1) VDD VSS
++	$D_HI CLRB T7   $D_HI $D_HI   Q7I $D_NC 
++	D_CD4024A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UQ bufa(7) VDD VSS
++	Q1I	Q2I	Q3I	Q4I	Q5I	Q6I	Q7I
++	Q1	Q2	Q3	Q4	Q5	Q6	Q7
++	D_CD4024A_3 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4024A_1 ueff (
++	twclklmn=500ns	twclkhmn=500ns
++	twpclmn=600ns	tppcqhlty=325ns
++	tppcqhlmx=400ns
++	)
+.model D_CD4024A_2 ueff (
++	twpclmn=600ns	tppcqhlty=325ns
++	tppcqhlmx=400ns
++	)
+.model D_CD4024A_3 ugate (
++	tplhty=175ns	tplhmx=400ns
++	tphlty=175ns	tphlmx=400ns
++	)
+*$
+*---------
+* CD4024B  CMOS Ripple-Carry Binary Counter/Dividers
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	10/3/89		Update interface and model names
+*
+.subckt CD4024B  INPUT RESET Q1 Q2 Q3 Q4 Q5 Q6 Q7
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UBUF buf VDD VSS
++	INPUT   IN 
++	D0_GATE IO_4000B_ST IO_LEVEL={IO_LEVEL} 
+UCLRB inv VDD VSS
++	RESET   CLRB 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+UT anda(2,5) VDD VSS
++	Q1ID	Q2I
++	T3	Q3I
++	T4	Q4I
++	T5	Q5I
++	T6	Q6I
++	T3	T4	T5	T6	T7
++	D_CD4024B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ1ID buf VDD VSS
++	Q1I   Q1ID 
++	D_CD4024B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ1I jkff(1) VDD VSS
++	$D_HI CLRB IN   $D_HI $D_HI   Q1I $D_NC 
++	D_CD4024B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UQ2I jkff(1) VDD VSS
++	$D_HI CLRB Q1ID   $D_HI $D_HI   Q2I $D_NC 
++	D_CD4024B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ3I jkff(1) VDD VSS
++	$D_HI CLRB T3   $D_HI $D_HI   Q3I $D_NC 
++	D_CD4024B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ4I jkff(1) VDD VSS
++	$D_HI CLRB T4   $D_HI $D_HI   Q4I $D_NC 
++	D_CD4024B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ5I jkff(1) VDD VSS
++	$D_HI CLRB T5   $D_HI $D_HI   Q5I $D_NC 
++	D_CD4024B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ6I jkff(1) VDD VSS
++	$D_HI CLRB T6   $D_HI $D_HI   Q6I $D_NC 
++	D_CD4024B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ7I jkff(1) VDD VSS
++	$D_HI CLRB T7   $D_HI $D_HI   Q7I $D_NC 
++	D_CD4024B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ1 jkff(1) VDD VSS
++	$D_HI CLRB IN   $D_HI $D_HI   Q1 $D_NC 
++	D_CD4024B_4 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UQ bufa(6) VDD VSS
++	Q2I	Q3I	Q4I	Q5I	Q6I	Q7I
++	Q2	Q3	Q4	Q5	Q6	Q7
++	D_CD4024B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4024B_1 ugate (
++	tplhty=100ns	tplhmx=200ns
++	tphlty=100ns	tphlmx=200ns
++	)
+.model D_CD4024B_2 ueff (
++	twclklmn=140ns	twclkhmn=140ns
++	twpclmn=200ns	tsupcclkhmn=350ns
++	tpclkqlhty=80ns	tpclkqlhmx=160ns
++	tpclkqhlty=80ns	tpclkqhlmx=160ns
++	)
+.model D_CD4024B_3 ueff (
++	twpclmn=200ns	tppcqhlty=40ns
++	tppcqhlmx=80ns
++	)
+.model D_CD4024B_4 ueff (
++	twclklmn=140ns	twclkhmn=140ns
++	twpclmn=200ns	tsupcclkhmn=350ns
++	tppcqhlty=140ns	tppcqhlmx=280ns
++	tpclkqlhty=180ns	tpclkqlhmx=360ns
++	tpclkqhlty=180ns	tpclkqhlmx=360ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4025A  CMOS NOR GATE TRIPLE 3 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4025A  A B C J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nor(3) VDD VSS
++	A B C   J 
++	D_CD4025A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4025A ugate (
++	TPLHTY=80NS	TPHLTY=60NS
++	TPLHMX=120NS	TPHLMX=95NS
++	)
+*$
+*----------
+* CD4025B  CMOS NOR GATE TRIPLE 3 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4025B  A B C J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nor(3) VDD VSS
++	A B C   J 
++	D_CD4025B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4025B ugate (
++	TPLHTY=125NS	TPHLTY=125NS
++	TPLHMX=250NS	TPHLMX=250NS
++	)
+*$
+*----------
+* CD4025UB  CMOS NOR GATE TRIPLE 3 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4025UB  A B C J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nor(3) VDD VSS
++	A B C   J 
++	D_CD4025UB IO_4000UB MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4025UB ugate (
++	TPLHTY=60NS	TPHLTY=60NS
++	TPLHMX=120NS	TPHLMX=120NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4027A  CMOS Dual J-K Master Flip-Flops
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* tdn	10/02/89	Update interface and model names
+*
+.subckt CD4027A  SET RESET CLK J K Q QBAR
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inva(2) VDD VSS
++	SET RESET   PREB CLRB 
++	D0_GATE IO_4000A IO_LEVEL={IO_LEVEL} 
+U2 inv VDD VSS
++	CLK   CLKM 
++	D0_GATE IO_4000A IO_LEVEL={IO_LEVEL} 
+U3 buf VDD VSS
++	CLKM   CLKS 
++	D_CD4027A_1 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+U4 jkff(1) VDD VSS
++	PREB CLRB CLKM   J K   Y YB 
++	D_CD4027A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} 
+U5 jkff(1) VDD VSS
++	PREB CLRB CLKS   Y YB   Q QBAR 
++	D_CD4027A_3 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4027A_1 ugate (
++	tphlmn=40ns
++	)
+.model D_CD4027A_2 ueff (
++	twclkhty=165ns	twclkhmx=330ns
++	twclklty=165ns	twclklmx=330ns
++	twpclty=30ns	twpclmx=60ns
++	tsudclkty=70ns	tsudclkmx=150ns
++	tpclkqhlmn=30ns	tpclkqlhmn=30ns
++	)
+.model D_CD4027A_3 ueff (
++	twclkhty=125ns	twclkhmx=290ns
++	twclklty=125ns	twclklmx=290ns
++	twpclty=125ns	twpclmx=200ns
++	tpclkqhlty=160ns	tpclkqhlmx=360ns
++	tpclkqlhty=160ns	tpclkqlhmx=360ns
++	tppcqhlty=175ns	tppcqhlmx=225ns
++	tppcqlhty=175ns	tppcqlhmx=225ns
++	)
+*$
+*---------
+* CD4027B  CMOS Dual J-K Master Flip-Flops
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* tdn	10/02/89	Update interface and model names
+*
+.subckt CD4027B  SET RESET CLK J K Q QBAR
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inva(2) VDD VSS
++	SET RESET   PREB CLRB 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 inv VDD VSS
++	CLK   CLKM 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U3 buf VDD VSS
++	CLKM   CLKS 
++	D_CD4027B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U4 jkff(1) VDD VSS
++	PREB CLRB CLKM   J K   Y YB 
++	D_CD4027B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U5 jkff(1) VDD VSS
++	PREB CLRB CLKS   Y YB   Q QBAR 
++	D_CD4027B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4027B_1 ugate (
++	tphlmn=30ns
++	)
+.model D_CD4027B_2 ueff (
++	twclkhty=70ns	twclkhmx=140ns
++	twclklty=70ns	twclklmx=140ns
++	twpclty=90ns	twpclmx=180ns
++	tsudclkty=100ns	tsudclkmx=200ns
++	tpclkqhlmn=20ns	tpclkqlhmn=20ns
++	)
+.model D_CD4027B_3 ueff (
++	twclkhty=40ns	twclkhmx=100ns
++	twclklty=40ns	twclklmx=100ns
++	twpclty=90ns	twpclmx=180ns
++	tpclkqhlty=120ns	tpclkqhlmx=270ns
++	tpclkqlhty=120ns	tpclkqlhmx=270ns
++	tppcqhlty=200ns	tppcqhlmx=400ns
++	tppcqlhty=150ns	tppcqlhmx=300ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4028A  BCD-to-Decimal Decoder
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	9/29/89		Update interface and model names
+*
+.subckt CD4028A  A B C D O0 O1 O2 O3 O4 O5 O6 O7 O8 O9
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UBUF bufa(4) VDD VSS
++	A B C D   AF BF CF DF 
++	D0_GATE IO_4000A IO_LEVEL={IO_LEVEL} 
+UINV inva(4) VDD VSS
++	AF BF CF DF   AB BB CB DB 
++	D0_GATE IO_4000A 
+UT nora(2,7) VDD VSS
++	AF	BF
++	AB	BF
++	AF	BB
++	AB	BB
++	CF	DF
++	CB	DF
++	CF	DB
++	T0	T1	T2	T3	T4	T5	T6
++	D0_GATE IO_4000A 
+UO anda(2,10) VDD VSS
++	T0	T4
++	T1	T4
++	T2	T4
++	T3	T4
++	T0	T5
++	T1	T5
++	T2	T5
++	T3	T5
++	T0	T6
++	T1	T6
++	O0	O1	O2	O3	O4
++	O5	O6	O7	O8	O9
++	D_CD4028A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4028A ugate (
++	tplhty=250ns	tplhmx=700ns
++	tphlty=250ns	tphlmx=700ns
++	)
+*$
+*---------
+* CD4028B  BCD-to-Decimal Decoder
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	9/29/89		Update interface and model names
+*
+.subckt CD4028B  A B C D O0 O1 O2 O3 O4 O5 O6 O7 O8 O9
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UBUF bufa(4) VDD VSS
++	A B C D   AF BF CF DF 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+UINV inva(4) VDD VSS
++	AF BF CF DF   AB BB CB DB 
++	D0_GATE IO_4000B 
+UT nora(2,7) VDD VSS
++	AF	BF
++	AB	BF
++	AF	BB
++	AB	BB
++	CF	DF
++	CB	DF
++	CF	DB
++	T0	T1	T2	T3	T4	T5	T6
++	D0_GATE IO_4000B 
+UO anda(2,10) VDD VSS
++	T0	T4
++	T1	T4
++	T2	T4
++	T3	T4
++	T0	T5
++	T1	T5
++	T2	T5
++	T3	T5
++	T0	T6
++	T1	T6
++	O0	O1	O2	O3	O4
++	O5	O6	O7	O8	O9
++	D_CD4028B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4028B ugate (
++	tplhty=175ns	tplhmx=350ns
++	tphlty=175ns	tphlmx=350ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4029A CMOS PRESETTABLE DIVIDE-BY-N COUNTER
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* JSW 9/16/92       REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD4029A CLK_I UP/DOWN_I BINARY/DECADE_I CARRY_INBAR_I PSENABLE_I 
++ JAM1_I JAM2_I JAM3_I JAM4_I Q1_O Q2_O Q3_O Q4_O CARRY_OUTBAR_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+U4029ALOG LOGICEXP(17,25) VDD VSS
++ CLK_I UP/DOWN_I BINARY/DECADE_I CARRY_INBAR_I PSENABLE_I
++ JAM1_I JAM2_I JAM3_I JAM4_I 
++ Q1 Q2 Q3 Q4 Q1BAR Q2BAR Q3BAR Q4BAR
++ CLOCK UP/DOWN BINARY/DECADE CARRY_INBAR PSENABLE JAM1 JAM2 JAM3 JAM4 
++ T2 T3 T4 LQ1 LQ2 LQ3 LQ4 CARRY_OUTBAR PRE1 PRE2 PRE3 PRE4 
++ CLR1 CLR2 CLR3 CLR4
++ D0_GATE IO_4000A IO_LEVEL={IO_LEVEL}
++ LOGIC:
++   UP/DOWN = { UP/DOWN_I }
++   BINARY/DECADE = { BINARY/DECADE_I }
++   CARRY_INBAR = { ~CARRY_INBAR_I }
++   PSENABLE = { PSENABLE_I }
++   JAM1 = { JAM1_I }
++   JAM2 = { JAM2_I }
++   JAM3 = { JAM3_I }
++   JAM4 = { JAM4_I }
++   PE = { PSENABLE }
++   BD = { BINARY/DECADE }
++   UD = { UP/DOWN }
++   BDBAR = { ~BD }
++   UDBAR = { ~UD }
++   CLOCK = { ~(CLK_I | PE) }
++   I1 = { ~(BDBAR & Q4BAR & Q3BAR & Q2BAR) }
++   TLA1 = { ~(CARRY_INBAR & Q1) }
++   TLA2 = { ~(CARRY_INBAR & Q1BAR) }
++   TLA3 = { ~((BD | Q4BAR) & UD) }
++   TLA4 = { ~(I1 & UDBAR) }
++   TLB1 = { ~(Q2 & UD) }
++   TLB2 = { ~(Q2BAR & I1 & UDBAR) }
++   TLC1 = { ~(Q3BAR & Q2BAR & UDBAR) }
++   TLC2 = { ~(UD & (~(Q4BAR | BD) | (Q2 & Q3))) }
++   T2 = { ~((TLA1 | TLA3) & (TLA2 | TLA4)) }
++   T3 = { ~((TLB1 | TLA1) & (TLB2 | TLA2)) }
++   T4 = { ~((TLC1 | TLA2) & (TLC2 | TLA1)) }
++   CO1 = { ~(~(Q2BAR & Q3BAR & Q4BAR & UDBAR) | TLA2) }
++   CO2 = { ~(~(Q4 & UD & ((Q3 & Q2) | BDBAR)) | TLA1) }
++   CARRY_OUTBAR = { ~(CO1 | CO2) }
++   PRE1 = { ~(JAM1 & PSENABLE) }
++   CLR1 = { ~(PRE1 & PSENABLE) }
++   PRE2 = { ~(JAM2 & PSENABLE) }
++   CLR2 = { ~(PRE2 & PSENABLE) }
++   PRE3 = { ~(JAM3 & PSENABLE) }
++   CLR3 = { ~(PRE3 & PSENABLE) }
++   PRE4 = { ~(JAM4 & PSENABLE) }
++   CLR4 = { ~(PRE4 & PSENABLE) }
++   LQ1 = { ~Q1BAR }
++   LQ2 = { ~Q2BAR }
++   LQ3 = { ~Q3BAR }
++   LQ4 = { ~Q4BAR }
+*
+U1FF JKFF(1) VDD VSS
++ PRE1 CLR1 CLOCK CARRY_INBAR CARRY_INBAR Q1 Q1BAR
++ D0_EFF IO_4000A
+*
+U2FF JKFF(1) VDD VSS
++ PRE2 CLR2 CLOCK T2 T2 Q2 Q2BAR
++ D0_EFF IO_4000A
+*
+U3FF JKFF(1) VDD VSS
++ PRE3 CLR3 CLOCK T3 T3 Q3 Q3BAR
++ D0_EFF IO_4000A
+*
+U4FF JKFF(1) VDD VSS
++ PRE4 CLR4 CLOCK T4 T4 Q4 Q4BAR
++ D0_EFF IO_4000A
+*
+U4029ADLY PINDLY (5,1,8) VDD VSS
++ LQ1 LQ2 LQ3 LQ4 CARRY_OUTBAR
++ CARRY_INBAR
++ CLOCK PSENABLE JAM1 JAM2 JAM3 JAM4 UP/DOWN BINARY/DECADE
++ Q1_O Q2_O Q3_O Q4_O CARRY_OUTBAR_O
++ IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++   Q1_O Q2_O Q3_O Q4_O = {
++     DELAY(-1,325NS,1300NS)
++     }
++   CARRY_OUTBAR_O = {
++     CASE(
++       CHANGED(CARRY_INBAR,0), DELAY(-1,175NS,700NS),
++       DELAY(-1,425NS,1700NS)
++       )
++     }
++
++ FREQ:
++   NODE = CLOCK
++   MAXFREQ = 1MEG
++
++ WIDTH:
++   NODE = CLOCK
++   MIN_HI = 500NS
++   MIN_LO = 500NS
++
++ WIDTH:
++   NODE = PSENABLE
++   MIN_HI = 660NS
++
++ SETUP_HOLD:
++   DATA(1) PSENABLE
++   CLOCK HL = CLOCK
++   RELEASETIME_HL = 1300NS
++
++ SETUP_HOLD:
++   DATA(2) UP/DOWN BINARY/DECADE
++   CLOCK HL = CLOCK
++   SETUPTIME = 1300NS
++   WHEN = { CARRY_INBAR!='0 }
++
++ SETUP_HOLD:
++   DATA(1) CARRY_INBAR
++   CLOCK HL = CLOCK
++   SETUPTIME = 1300NS
+*
+.ENDS
+*
+*$
+*---------
+* CD4029B CMOS PRESETTABLE DIVIDE-BY-N COUNTER
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1992, HARRIS SEMICONDUCTOR
+* JSW 9/16/92       REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD4029B CLK_I UP/DOWN_I BINARY/DECADE_I CARRY_INBAR_I PSENABLE_I 
++ JAM1_I JAM2_I JAM3_I JAM4_I Q1_O Q2_O Q3_O Q4_O CARRY_OUTBAR_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+U4029BLOG LOGICEXP(17,25) VDD VSS
++ CLK_I UP/DOWN_I BINARY/DECADE_I CARRY_INBAR_I PSENABLE_I
++ JAM1_I JAM2_I JAM3_I JAM4_I 
++ Q1 Q2 Q3 Q4 Q1BAR Q2BAR Q3BAR Q4BAR
++ CLOCK UP/DOWN BINARY/DECADE CARRY_INBAR PSENABLE JAM1 JAM2 JAM3 JAM4 
++ T2 T3 T4 LQ1 LQ2 LQ3 LQ4 CARRY_OUTBAR PRE1 PRE2 PRE3 PRE4 
++ CLR1 CLR2 CLR3 CLR4
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++ LOGIC:
++   UP/DOWN = { UP/DOWN_I }
++   BINARY/DECADE = { BINARY/DECADE_I }
++   CARRY_INBAR = { ~CARRY_INBAR_I }
++   PSENABLE = { PSENABLE_I }
++   JAM1 = { JAM1_I }
++   JAM2 = { JAM2_I }
++   JAM3 = { JAM3_I }
++   JAM4 = { JAM4_I }
++   PE = { PSENABLE }
++   BD = { BINARY/DECADE }
++   UD = { UP/DOWN }
++   BDBAR = { ~BD }
++   UDBAR = { ~UD }
++   CLOCK = { ~(CLK_I | PE) }
++   I1 = { ~(BDBAR & Q4BAR & Q3BAR & Q2BAR) }
++   TLA1 = { ~(CARRY_INBAR & Q1) }
++   TLA2 = { ~(CARRY_INBAR & Q1BAR) }
++   TLA3 = { ~((BD | Q4BAR) & UD) }
++   TLA4 = { ~(I1 & UDBAR) }
++   TLB1 = { ~(Q2 & UD) }
++   TLB2 = { ~(Q2BAR & I1 & UDBAR) }
++   TLC1 = { ~(Q3BAR & Q2BAR & UDBAR) }
++   TLC2 = { ~(UD & (~(Q4BAR | BD) | (Q2 & Q3))) }
++   T2 = { ~((TLA1 | TLA3) & (TLA2 | TLA4)) }
++   T3 = { ~((TLB1 | TLA1) & (TLB2 | TLA2)) }
++   T4 = { ~((TLC1 | TLA2) & (TLC2 | TLA1)) }
++   CO1 = { ~(~(Q2BAR & Q3BAR & Q4BAR & UDBAR) | TLA2) }
++   CO2 = { ~(~(Q4 & UD & ((Q3 & Q2) | BDBAR)) | TLA1) }
++   CARRY_OUTBAR = { ~(CO1 | CO2) }
++   PRE1 = { ~(JAM1 & PSENABLE) }
++   CLR1 = { ~(PRE1 & PSENABLE) }
++   PRE2 = { ~(JAM2 & PSENABLE) }
++   CLR2 = { ~(PRE2 & PSENABLE) }
++   PRE3 = { ~(JAM3 & PSENABLE) }
++   CLR3 = { ~(PRE3 & PSENABLE) }
++   PRE4 = { ~(JAM4 & PSENABLE) }
++   CLR4 = { ~(PRE4 & PSENABLE) }
++   LQ1 = { ~Q1BAR }
++   LQ2 = { ~Q2BAR }
++   LQ3 = { ~Q3BAR }
++   LQ4 = { ~Q4BAR }
+*
+U1FF JKFF(1) VDD VSS
++ PRE1 CLR1 CLOCK CARRY_INBAR CARRY_INBAR Q1 Q1BAR
++ D0_EFF IO_4000B
+*
+U2FF JKFF(1) VDD VSS
++ PRE2 CLR2 CLOCK T2 T2 Q2 Q2BAR
++ D0_EFF IO_4000B
+*
+U3FF JKFF(1) VDD VSS
++ PRE3 CLR3 CLOCK T3 T3 Q3 Q3BAR
++ D0_EFF IO_4000B
+*
+U4FF JKFF(1) VDD VSS
++ PRE4 CLR4 CLOCK T4 T4 Q4 Q4BAR
++ D0_EFF IO_4000B
+*
+U4029BDLY PINDLY (5,2,8) VDD VSS
++ LQ1 LQ2 LQ3 LQ4 CARRY_OUTBAR
++ CARRY_INBAR PSENABLE
++ CLOCK PSENABLE JAM1 JAM2 JAM3 JAM4 UP/DOWN BINARY/DECADE
++ Q1_O Q2_O Q3_O Q4_O CARRY_OUTBAR_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++   Q1_O Q2_O Q3_O Q4_O = {
++     CASE(
++       CHANGED_LH(PSENABLE,0), DELAY(-1,235NS,470NS),
++       DELAY(-1,250NS,500NS)
++       )
++     }
++   CARRY_OUTBAR_O = {
++     CASE(
++       CHANGED(CARRY_INBAR,0) & TRN_LH, DELAY(-1,170NS,340NS),
++       CHANGED(PSENABLE,0), DELAY(-1,320NS,640NS),
++       CHANGED(CARRY_INBAR,0), DELAY(-1,170NS,340NS),
++       DELAY(-1,280NS,560NS)
++       )
++     }
++
++ FREQ:
++   NODE = CLOCK
++   MAXFREQ = 2MEG
++
++ WIDTH:
++   NODE = CLOCK
++   MIN_HI = 180NS
++   MIN_LO = 180NS
++
++ WIDTH:
++   NODE = PSENABLE
++   MIN_HI = 130NS
++
++ SETUP_HOLD:
++   DATA(1) PSENABLE
++   CLOCK HL = CLOCK
++   RELEASETIME_HL = 200NS
++
++ SETUP_HOLD:
++   DATA(2) UP/DOWN BINARY/DECADE
++   CLOCK HL = CLOCK
++   SETUPTIME = 340NS
++   WHEN = { CARRY_INBAR!='0 }
++
++ SETUP_HOLD:
++   DATA(1) CARRY_INBAR
++   CLOCK HL = CLOCK
++   SETUPTIME = 200NS
++   HOLDTIME = 50NS
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD4030A  CMOS QUAD EXCLUSIVE-OR GATE
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4030A  A B J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 xor VDD VSS
++	A B   J 
++	D_CD4030A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4030A ugate (
++	TPLHTY=100NS	TPHLTY=100NS
++	TPLHMX=300NS	TPHLMX=300NS
++	)
+*$
+*----------
+* CD4030B  CMOS QUAD EXCLUSIVE-OR GATE
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4030B  A B J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 xor VDD VSS
++	A B   J 
++	D_CD4030B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4030B ugate (
++	TPLHTY=140NS	TPHLTY=140NS
++	TPLHMX=280NS	TPHLMX=280NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4040B  CMOS Ripple-Carry Binary Counter/Dividers
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	10/3/89		Update interface and model names
+*
+.subckt CD4040B  INPUT RESET Q1 Q2 Q3 Q4 Q5 Q6 Q7 Q8 Q9 Q10 Q11 Q12
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UBUF buf VDD VSS
++	INPUT   IN 
++	D0_GATE IO_4000B_ST IO_LEVEL={IO_LEVEL} 
+UCLRB inv VDD VSS
++	RESET   CLRB 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+UT anda(2,10) VDD VSS
++	Q1ID	Q2I
++	T3	Q3I
++	T4	Q4I
++	T5	Q5I
++	T6	Q6I
++	T7	Q7I
++	T8	Q8I
++	T9	Q9I
++	T10	Q10I
++	T11	Q11I
++	T3	T4	T5	T6	T7
++	T8	T9	T10	T11	T12
++	D_CD4040B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ1ID buf VDD VSS
++	Q1I   Q1ID 
++	D_CD4040B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ1I jkff(1) VDD VSS
++	$D_HI CLRB IN   $D_HI $D_HI   Q1I $D_NC 
++	D_CD4040B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UQ2I jkff(1) VDD VSS
++	$D_HI CLRB Q1ID   $D_HI $D_HI   Q2I $D_NC 
++	D_CD4040B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ3I jkff(1) VDD VSS
++	$D_HI CLRB T3   $D_HI $D_HI   Q3I $D_NC 
++	D_CD4040B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ4I jkff(1) VDD VSS
++	$D_HI CLRB T4   $D_HI $D_HI   Q4I $D_NC 
++	D_CD4040B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ5I jkff(1) VDD VSS
++	$D_HI CLRB T5   $D_HI $D_HI   Q5I $D_NC 
++	D_CD4040B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ6I jkff(1) VDD VSS
++	$D_HI CLRB T6   $D_HI $D_HI   Q6I $D_NC 
++	D_CD4040B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ7I jkff(1) VDD VSS
++	$D_HI CLRB T7   $D_HI $D_HI   Q7I $D_NC 
++	D_CD4040B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ8I jkff(1) VDD VSS
++	$D_HI CLRB T8   $D_HI $D_HI   Q8I $D_NC 
++	D_CD4040B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ9I jkff(1) VDD VSS
++	$D_HI CLRB T9   $D_HI $D_HI   Q9I $D_NC 
++	D_CD4040B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ10I jkff(1) VDD VSS
++	$D_HI CLRB T10   $D_HI $D_HI   Q10I $D_NC 
++	D_CD4040B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ11I jkff(1) VDD VSS
++	$D_HI CLRB T11   $D_HI $D_HI   Q11I $D_NC 
++	D_CD4040B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ12I jkff(1) VDD VSS
++	$D_HI CLRB T12   $D_HI $D_HI   Q12I $D_NC 
++	D_CD4040B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UQ1 jkff(1) VDD VSS
++	$D_HI CLRB IN   $D_HI $D_HI   Q1 $D_NC 
++	D_CD4040B_4 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UQ bufa(11) VDD VSS
++	Q2I	Q3I	Q4I	Q5I	Q6I	Q7I	Q8I	Q9I	Q10I
++	Q11I	Q12I
++	Q2	Q3	Q4	Q5	Q6	Q7	Q8	Q9	Q10
++	Q11	Q12
++	D_CD4040B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4040B_1 ugate (
++	tplhty=100ns	tplhmx=200ns
++	tphlty=100ns	tphlmx=200ns
++	)
+.model D_CD4040B_2 ueff (
++	twclklmn=140ns	twclkhmn=140ns
++	twpclmn=200ns	tsupcclkhmn=350ns
++	tpclkqlhty=80ns	tpclkqlhmx=160ns
++	tpclkqhlty=80ns	tpclkqhlmx=160ns
++	)
+.model D_CD4040B_3 ueff (
++	twpclmn=200ns	tppcqhlty=40ns
++	tppcqhlmx=80ns
++	)
+.model D_CD4040B_4 ueff (
++	twclklmn=140ns	twclkhmn=140ns
++	twpclmn=200ns	tsupcclkhmn=350ns
++	tppcqhlty=140ns	tppcqhlmx=280ns
++	tpclkqlhty=180ns	tpclkqlhmx=360ns
++	tpclkqhlty=180ns	tpclkqhlmx=360ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4041A  CMOS QUAD TRUE/COMPLEMENT BUFFER
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4041A  A E F
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 buf VDD VSS
++	A   AD 
++	D0_GATE IO_4000A IO_LEVEL={IO_LEVEL} 
+U2 buf VDD VSS
++	AD   E 
++	D_CD4041A_1 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv VDD VSS
++	AD   F 
++	D_CD4041A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4041A_1 ugate (
++	TPLHTY=75NS	TPLHMX=150NS
++	TPHLTY=65NS	TPHLMX=140NS
++	)
+.model D_CD4041A_2 ugate (
++	TPLHTY=45NS	TPLHMX=125NS
++	TPHLTY=55NS	TPHLMX=125NS
++	)
+*$
+*----------
+* CD4041UB  CMOS QUAD TRUE/COMPLEMENT BUFFER
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4041UB  A E F
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 buf VDD VSS
++	A   AD 
++	D0_GATE IO_4000UB IO_LEVEL={IO_LEVEL} 
+U2 buf VDD VSS
++	AD   E 
++	D_CD4041UB IO_4000UB MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 inv VDD VSS
++	AD   F 
++	D_CD4041UB IO_4000UB MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4041UB ugate (
++	TPLHTY=60NS	TPLHMX=120NS
++	TPHLTY=60NS	TPHLMX=120NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4042A  Quad clocked D-Latch
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* tdn	10/04/89	Update interface and model names
+*
+.subckt CD4042A  CLK POLARITY D1 D2 D3 D4 Q1 Q1BAR Q2 Q2BAR Q3 Q3BAR Q4 Q4BAR
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 bufa(2) VDD VSS
++	CLK POLARITY   CLKD POL 
++	D0_GATE IO_4000A IO_LEVEL={IO_LEVEL} 
+U2 inva(2) VDD VSS
++	CLKD POL   CLKB POLB 
++	D0_GATE IO_4000A 
+U3 ao(2,2) VDD VSS
++	CLKD POL CLKB POLB   CL 
++	D0_GATE IO_4000A 
+U4 dltch(4) VDD VSS
++	$D_HI	$D_HI	CL
++	D1	D2	D3	D4
++	Q1	Q2	Q3	Q4	Q1B	Q2B	Q3B	Q4B
++	D_CD4042A_1 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 bufa(4) VDD VSS
++	Q1B Q2B Q3B Q4B   Q1BAR Q2BAR Q3BAR Q4BAR 
++	D_CD4042A_2 IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4042A_1 ugff (
++	twghmn=350ns	tsudgmn=50ns
++	thdgmn=350ns	tpgqhlmx=600ns
++	tpgqlhmx=600ns	tpdqhlmx=300ns
++	tpdqlhmx=300ns
++	)
+.model D_CD4042A_2 ugate (
++	tphlmx=200ns	tplhmx=200ns
++	)
+*$
+*---------
+* CD4042B  Quad clocked D-Latch
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* tdn	10/04/89	Update interface and model names
+*
+.subckt CD4042B  CLK POLARITY D1 D2 D3 D4 Q1 Q1BAR Q2 Q2BAR Q3 Q3BAR Q4 Q4BAR
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 bufa(2) VDD VSS
++	CLK POLARITY   CLKD POL 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 inva(2) VDD VSS
++	CLKD POL   CLKB POLB 
++	D0_GATE IO_4000B 
+U3 ao(2,2) VDD VSS
++	CLKD POL CLKB POLB   CL 
++	D0_GATE IO_4000B 
+U4 dltch(4) VDD VSS
++	$D_HI	$D_HI	CL
++	D1	D2	D3	D4
++	Q1	Q2	Q3	Q4	$D_NC	$D_NC	$D_NC	$D_NC
++	D_CD4042B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U5 dltch(4) VDD VSS
++	$D_HI	$D_HI	CL
++	D1	D2	D3	D4
++	$D_NC	$D_N	$D_NC	$D_NC	Q1BAR	Q2BAR	Q3BAR	Q4BAR
++	D_CD4042B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4042B_1 ugff (
++	twghmn=200ns	tsudgmn=50ns
++	thdgmn=120ns	tpgqhlmx=450ns
++	tpgqlhmx=450ns	tpdqhlmx=220ns
++	tpdqlhmx=220ns
++	)
+.model D_CD4042B_2 ugff (
++	twghmn=200ns	tsudgmn=50ns
++	thdgmn=120ns	tpgqhlmx=500ns
++	tpgqlhmx=500ns	tpdqhlmx=300ns
++	tpdqlhmx=300ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4043B  CMOS Quad 3-state R/S Latches
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* tdn	10/05/89	Update interface and model names
+*
+.subckt CD4043B  S1 S2 S3 S4 R1 R2 R3 R4 EN Q1 Q2 Q3 Q4
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 bufa(8) VDD VSS
++	S1	S2	S3	S4	R1	R2	R3	R4
++	1S	2S	3S	4S	1R	2R	3R	4R
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 inva(8) VDD VSS
++	1S	2S	3S	4S	1R	2R	3R	4R
++	PRE1	PRE2	PRE3	PRE4	CLR1	CLR2	CLR3	CLR4
++	D0_GATE IO_4000B 
+U3 srff(1) VDD VSS
++	PRE1 CLR1 $D_HI   1S 1R   1Q $D_NC 
++	D_CD4043B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U4 srff(1) VDD VSS
++	PRE2 CLR2 $D_HI   2S 2R   2Q $D_NC 
++	D_CD4043B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U5 srff(1) VDD VSS
++	PRE3 CLR3 $D_HI   3S 3R   3Q $D_NC 
++	D_CD4043B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U6 srff(1) VDD VSS
++	PRE4 CLR4 $D_HI   4S 4R   4Q $D_NC 
++	D_CD4043B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U7 buf3a(4) VDD VSS
++	1Q 2Q 3Q 4Q   EN   Q1 Q2 Q3 Q4 
++	D_CD4043B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4043B_1 ugff (
++	twpclmn=160ns	tppcqhlmx=200ns
++	tppcqlhmx=200ns	tpdqhlmx=200ns
++	tpdqhlmx=200ns
++	)
+.model D_CD4043B_2 utgate (
++	tphzmx=230ns	tpzhmx=230ns
++	tplzmx=180ns	tpzlmx=180ns
++	tphlmx=100ns	tplhmx=100ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4044B  CMOS Quad 3-state R/S Latches
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* tdn	10/05/89	Update interface and model names
+*
+.subckt CD4044B  S1 S2 S3 S4 R1 R2 R3 R4 EN Q1 Q2 Q3 Q4
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inva(8) VDD VSS
++	S1	S2	S3	S4	R1	R2	R3	R4
++	1S	2S	3S	4S	1R	2R	3R	4R
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 inva(8) VDD VSS
++	1S	2S	3S	4S	1R	2R	3R	4R
++	PRE1	PRE2	PRE3	PRE4	CLR1	CLR2	CLR3	CLR4
++	D0_GATE IO_4000B 
+U3 srff(1) VDD VSS
++	PRE1 CLR1 $D_HI   1S 1R   1Q $D_NC 
++	D_CD4044B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U4 srff(1) VDD VSS
++	PRE2 CLR2 $D_HI   2S 2R   2Q $D_NC 
++	D_CD4044B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U5 srff(1) VDD VSS
++	PRE3 CLR3 $D_HI   3S 3R   3Q $D_NC 
++	D_CD4044B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U6 srff(1) VDD VSS
++	PRE4 CLR4 $D_HI   4S 4R   4Q $D_NC 
++	D_CD4044B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U7 buf3a(4) VDD VSS
++	1Q 2Q 3Q 4Q   EN   Q1 Q2 Q3 Q4 
++	D_CD4044B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4044B_1 ugff (
++	twpclmn=160ns	tppcqhlmx=200ns
++	tppcqlhmx=200ns	tpdqhlmx=200ns
++	tpdqhlmx=200ns
++	)
+.model D_CD4044B_2 utgate (
++	tphzmx=230ns	tpzhmx=230ns
++	tplzmx=180ns	tpzlmx=180ns
++	tphlmx=100ns	tplhmx=100ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4048A  CMOS Multifunction 8-Input Expandable Gate
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	10/12/89	Update interface and model names
+*
+.subckt CD4048A  KA KB KC KD EXPAND A B C D E F G H J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UBUF bufa(3) VDD VSS
++	KA KB KC   KAF KBF KCF 
++	D0_GATE IO_4000A IO_LEVEL={IO_LEVEL} 
+UINV inva(11) VDD VSS
++	A	B	C	D	E	F	G	H	KBF
++	KCF	EXPAND
++	AB	BB	CB	DB	EB	FB	GB	HB	KBB
++	KCB	EXPB
++	D0_GATE IO_4000A IO_LEVEL={IO_LEVEL} 
+UT xora(8) VDD VSS
++	KAF	AB
++	KAF	BB
++	KAF	CB
++	KAF	DB
++	KAF	EB
++	KAF	FB
++	KAF	GB
++	KAF	HB
++	T0	T1	T2	T3	T4	T5	T6	T7
++	D0_GATE IO_4000A 
+UC nanda(4,3) VDD VSS
++	T0	T1	T2	T3
++	D0	EXPB	D2	$D_HI
++	T4	T5	T6	T7
++	C0	C1	C2
++	D0_GATE IO_4000A 
+UD xora(3) VDD VSS
++	C0 KBB C1 KCB C2 KBB   D0 D1 D2 
++	D0_GATE IO_4000A 
+UJ buf3 VDD VSS
++	D1   KD   J 
++	D_CD4048A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4048A utgate (
++	tplhty=750ns	tplhmx=1600ns
++	tphlty=750ns	tphlmx=1600ns
++	tpzhty=750ns	tpzhmx=1600ns
++	tpzlty=750ns	tpzlmx=1600ns
++	tphzty=750ns	tphzmx=1600ns
++	tplzty=750ns	tplzmx=1600ns
++	)
+*$
+*---------
+* CD4048B  CMOS Multifunction 8-Input Expandable Gate
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	9/29/89		Update interface and model names
+*
+.subckt CD4048B  KA KB KC KD EXPAND A B C D E F G H J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UBUF bufa(3) VDD VSS
++	KA KB KC   KAF KBF KCF 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+UINV inva(11) VDD VSS
++	A	B	C	D	E	F	G	H	KBF
++	KCF	EXPAND
++	AB	BB	CB	DB	EB	FB	GB	HB	KBB
++	KCB	EXPB
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+UT xora(8) VDD VSS
++	AB	KAF
++	BB	KAF
++	CB	KAF
++	DB	KAF
++	EB	KAF
++	FB	KAF
++	GB	KAF
++	HB	KAF
++	T0	T1	T2	T3	T4	T5	T6	T7
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+UC nanda(4,3) VDD VSS
++	T0	T1	T2	T3
++	D0	EXPB	D3	$D_HI
++	T4	T5	T6	T7
++	C0	C1	C2
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+UD xora(2) VDD VSS
++	KBB C0 KBB C2   D0 D3 
++	D0_GATE IO_4000B 
+UD1 xor VDD VSS
++	KCB C1   D1 
++	D_CD4048B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UCT0 bufa(12) VDD VSS
++	AB	BB	CB	DB	EB	FB
++	GB	HB	KAF	KBF	KCF	EXPB
++	ABD	BBD	CBD	DBD	EBD	FBD
++	GBD	HBD	KAD	KBD	KCD	EXPBD
++	D_CD4048B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UCT1 xora(12) VDD VSS
++	AB	ABD
++	BB	BBD
++	CB	CBD
++	DB	DBD
++	EB	EBD
++	FB	FBD
++	GB	GBD
++	HB	HBD
++	KAF	KAD
++	KBF	KBD
++	KCF	KCD
++	EXPB	EXPBD
++	CT0	CT1	CT2	CT3	CT4	CT5
++	CT6	CT7	CT8	CT9	CT10	CT11
++	D0_GATE IO_4000B 
+UCT or(9) VDD VSS
++	CT0	CT1	CT2	CT3	CT4	CT5	CT6	CT7	CT8
++	CT
++	D0_GATE IO_4000B 
+UCTB inva(4) VDD VSS
++	CT CT9 CT10 CT11   CTB CT9B CT10B CT11B 
++	D0_GATE IO_4000B 
+UEN anda(4,2) VDD VSS
++	CTB	CT9B	CT11B	CT10
++	CTB	CT9B	CT11	$D_HI
++	EN1	EN2
++	D0_GATE IO_4000B 
+UEN3 buf VDD VSS
++	CT9   EN3 
++	D0_GATE IO_4000B 
+UEN4 nor(3) VDD VSS
++	EN1 EN2 EN3   EN4 
++	D0_GATE IO_4000B 
+UJI1 buf3 VDD VSS
++	D1   EN1   JI 
++	D0_TGATE IO_4000B 
+UJI2 buf3 VDD VSS
++	D1   EN2   JI 
++	D_CD4048B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UJI3 buf3 VDD VSS
++	D1   EN3   JI 
++	D_CD4048B_4 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UJI4 buf3 VDD VSS
++	D1   EN4   JI 
++	D_CD4048B_5 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UJ buf3 VDD VSS
++	JI   KD   J 
++	D_CD4048B_6 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+.ends
+*
+.model D_CD4048B_1 ugate (
++	tplhty=0.1ns	tphlty=0.1ns
++	)
+.model D_CD4048B_2 ugate (
++	tplhty=225ns	tplhmx=450ns
++	tphlty=225ns	tphlmx=450ns
++	)
+.model D_CD4048B_3 utgate (
++	tplhty=50ns	tplhmx=100ns
++	tphlty=50ns	tphlmx=100ns
++	)
+.model D_CD4048B_4 utgate (
++	tplhty=85ns	tphlmx=170ns
++	tphlty=85ns	tphlmx=170ns
++	)
+.model D_CD4048B_5 utgate (
++	tplhty=10ns	tplhmx=20ns
++	tphlty=10ns	tphlmx=20ns
++	)
+.model D_CD4048B_6 utgate (
++	tplhty=139.9ns	tplhmx=279.9ns
++	tphlty=139.9ns	tphlmx=279.9ns
++	tpzhty=80ns	tpzhmx=160ns
++	tpzlty=80ns	tpzlmx=160ns
++	tphzty=80ns	tphzmx=160ns
++	tplzty=80ns	tplzmx=160ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4049A  CMOS HEX BUFFERS/CONVERTERS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4049A  A G
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inv VDD VSS
++	A   G 
++	D_CD4049A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4049A ugate (
++	TPLHTY=50NS	TPLHMX=80NS
++	TPHLTY=15NS	TPHLMX=55NS
++	)
+*$
+*----------
+* CD4049UB  CMOS HEX BUFFERS/CONVERTERS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4049UB  A G
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inv VDD VSS
++	A   G 
++	D_CD4049UB IO_4000UB MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4049UB ugate (
++	TPLHTY=60NS	TPLHMX=120NS
++	TPHLTY=32NS	TPHLMX=65NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4050A  CMOS HEX BUFFERS/CONVERTERS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4050A  A G
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 buf VDD VSS
++	A   G 
++	D_CD4050A IO_4000A MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4050A ugate (
++	TPLHTY=75NS	TPLHMX=140NS
++	TPHLTY=55NS	TPHLMX=110NS
++	)
+*$
+*----------
+* CD4050B  CMOS HEX BUFFERS/CONVERTERS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4050B  A G
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 buf VDD VSS
++	A   G 
++	D_CD4050B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4050B ugate (
++	TPLHTY=70NS	TPLHMX=140NS
++	TPHLTY=55NS	TPHLMX=110NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4068B  CMOS 8-INPUT NAND/AND GATE
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4068B  A B C D E F G H J K
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(8) VDD VSS
++	A B C D E F G H   J 
++	D_CD4068B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 and(8) VDD VSS
++	A B C D E F G H   K 
++	D_CD4068B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4068B ugate (
++	TPLHTY=150NS	TPHLTY=150NS
++	TPLHMX=300NS	TPHLMX=300NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4069UB  CMOS HEX INVERTER
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4069UB  A G
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inv VDD VSS
++	A   G 
++	D_CD4069UB IO_4000UB MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4069UB ugate (
++	TPLHTY=55NS	TPHLTY=55NS
++	TPLHMX=110NS	TPHLMX=110NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4070B  CMOS QUAD EXCLUSIVE-OR GATE
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4070B  A B J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 xor VDD VSS
++	A B   J 
++	D_CD4070B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4070B ugate (
++	TPLHTY=140NS	TPHLTY=140NS
++	TPLHMX=280NS	TPHLMX=280NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4071B  CMOS OR GATE QUAD 2 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4071B  A B J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(2) VDD VSS
++	A B   J 
++	D_CD4071B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4071B ugate (
++	TPLHTY=125NS	TPHLTY=125NS
++	TPLHMX=250NS	TPHLMX=250NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4072B  CMOS OR GATE DUAL 4 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4072B  A B C D J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(4) VDD VSS
++	A B C D   J 
++	D_CD4072B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4072B ugate (
++	TPLHTY=125NS	TPHLTY=125NS
++	TPLHMX=250NS	TPHLMX=250NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4073B  CMOS AND GATE TRIPLE 3 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4073B  A B C J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 and(3) VDD VSS
++	A B C   J 
++	D_CD4073B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4073B ugate (
++	TPLHTY=125NS	TPHLTY=125NS
++	TPLHMX=250NS	TPHLMX=250NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4075B  CMOS OR GATE TRIPLE 3 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4075B  A B C J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(3) VDD VSS
++	A B C   J 
++	D_CD4075B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4075B ugate (
++	TPLHTY=125NS	TPHLTY=125NS
++	TPLHMX=250NS	TPHLMX=250NS
++	)
+*
+*$
+*-------------------------------------------------------------------------
+* CD4076B CMOS 4-BIT D-TYPE REGISTERS
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* NH 9/10/92      REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD4076B CLK_I RESET_I G1_I G2_I D1_I D2_I D3_I D4_I M_I N_I
++               Q1_O Q2_O Q3_O Q4_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+U76BLOG LOGICEXP(14,17) VDD VSS
++ CLK_I RESET_I G1_I G2_I D1_I D2_I D3_I D4_I M_I N_I Q1 Q2 Q3 Q4
++ CLK RESET G1 G2 D1 D2 D3 D4 M N TOD1 TOD2 TOD3 TOD4 RST OUT_DIS IN_EN
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
+* BUFFERS
++   CLK = { CLK_I }
++   RESET = { RESET_I }
++   G1 = { G1_I }
++   G2 = { G2_I }
++   D1 = { D1_I }
++   D2 = { D2_I }
++   D3 = { D3_I }
++   D4 = { D4_I }
++   M = { M_I }
++   N = { N_I }
++
++   IN_EN = { ~G1 & ~G2 }
++   IN_DIS = { ~IN_EN }
++   RST = { ~RESET }
++   OUT_DIS = { ~M & ~N }
++   TOD1 = { ( (IN_EN & D1) | (IN_DIS & Q1) ) }
++   TOD2 = { ( (IN_EN & D2) | (IN_DIS & Q2) ) }
++   TOD3 = { ( (IN_EN & D3) | (IN_DIS & Q3) ) }
++   TOD4 = { ( (IN_EN & D4) | (IN_DIS & Q4) ) }
+*
+U76BFF DFF(4) VDD VSS
++ $D_HI RST CLK TOD1 TOD2 TOD3 TOD4 Q1 Q2 Q3 Q4 $D_NC $D_NC $D_NC $D_NC
++ D0_EFF IO_4000B
+*
+U76BDLY PINDLY (4,1,10) VDD VSS
++ Q1 Q2 Q3 Q4
++ OUT_DIS
++ CLK RESET RESET G1 G2 D1 D2 D3 D4 IN_EN
++ Q1_O Q2_O Q3_O Q4_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ TRISTATE:
++   ENABLE LO OUT_DIS
++   Q1_O Q2_O Q3_O Q4_O = {
++     CASE(
++       TRN_$Z, DELAY(-1,150NS,300NS),
++       CHANGED_LH(RESET,0) & TRN_HL, DELAY(-1,230NS,460NS),
++       TRN_Z$, DELAY(-1,150NS,300NS),
++       CHANGED(CLK,0), DELAY(-1,300NS,600NS),
++       DELAY(-1,301NS,601NS)
++       )
++     }
++
++ FREQ:
++   NODE = CLK
++   MAXFREQ = 3MEG
++
++ WIDTH:
++   NODE = CLK
++   MIN_HI = 200NS
++   MIN_LO = 200NS
++
++ WIDTH:
++   NODE = RESET
++   MIN_HI = 120NS
++
++ SETUP_HOLD:
++   DATA(2) G1 G2
++   CLOCK LH = CLK
++   SETUPTIME_HI = 180NS
++   WHEN = { RESET!='1 }
++
++ SETUP_HOLD:
++   DATA(4) D1 D2 D3 D4
++   CLOCK LH = CLK
++   SETUPTIME = 200NS
++   WHEN = { RESET!='1 & IN_EN!='0}
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD4077B  CMOS QUAD EXCLUSIVE-NOR GATE
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4077B  A B J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nxor VDD VSS
++	A B   J 
++	D_CD4077B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4077B ugate (
++	TPLHTY=140NS	TPHLTY=140NS
++	TPLHMX=280NS	TPHLMX=280NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4078B  CMOS 8-INPUT NOR/OR GATE
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4078B  A B C D E F G H J K
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nor(8) VDD VSS
++	A B C D E F G H   J 
++	D_CD4078B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U2 or(8) VDD VSS
++	A B C D E F G H   K 
++	D_CD4078B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4078B ugate (
++	TPLHTY=150NS	TPHLTY=150NS
++	TPLHMX=300NS	TPHLMX=300NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4081B  CMOS AND GATE QUAD 2 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4081B  A B J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 and(2) VDD VSS
++	A B   J 
++	D_CD4081B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4081B ugate (
++	TPLHTY=125NS	TPHLTY=125NS
++	TPLHMX=250NS	TPHLMX=250NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4082B  CMOS AND GATE DUAL 4 INPUTS
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	09/29/89	Update interface and model names
+*
+.subckt CD4082B  A B C D J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 and(4) VDD VSS
++	A B C D   J 
++	D_CD4082B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4082B ugate (
++	TPLHTY=125NS	TPHLTY=125NS
++	TPLHMX=250NS	TPHLMX=250NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4085B  CMOS DUAL 2-WIDE 2-INPUT AND-OR-INVERT GATE
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4085B  INHIBIT A B C D E
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 anda(2,2) VDD VSS
++	A B C D   AB CD 
++	D_CD4085B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U2 nor(3) VDD VSS
++	INHIBIT AB CD   E 
++	D_CD4085B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4085B_1 ugate (
++	TPLHTY=75NS	TPLHMX=150NS
++	TPHLTY=60NS	TPHLMX=120NS
++	)
+.model D_CD4085B_2 ugate (
++	TPLHTY=250NS	TPLHMX=500NS
++	TPHLTY=150NS	TPHLMX=300NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4086B  CMOS EXPANDABLE 4-WIDE 2-INPUT AND-OR-INVERT GATE
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4086B  INHIBIT/EXPBAR ENABLE/EXP A B C D E F G H J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inv VDD VSS
++	ENABLE/EXP   DIS 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 anda(2,4) VDD VSS
++	A	B
++	C	D
++	E	F
++	G	H
++	AB	CD	EF	GH
++	D_CD4086B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 nor(6) VDD VSS
++	INHIBIT/EXPBAR AB CD EF GH DIS   J 
++	D_CD4085B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4086B_1 ugate (
++	TPLHTY=75NS	TPLHMX=150NS
++	TPHLTY=60NS	TPHLMX=120NS
++	)
+.model D_CD4086B_2 ugate (
++	TPLHTY=250NS	TPLHMX=500NS
++	TPHLTY=150NS	TPHLMX=300NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4093B  CMOS Quad 2-Input NAND Schmitt Triggers
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	10/2/89		Update interface and model names
+*
+.subckt CD4093B  A B J
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UJ nand(2) VDD VSS
++	A B   J 
++	D_CD4093B IO_4000B_ST MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4093B ugate (
++	tplhty=190ns	tplhmx=380ns
++	tphlty=190ns	tphlmx=380ns
++	)
+*
+*$
+*-------------------------------------------------------------------------
+* CD4095B  CMOS Gated J-K Master Slave Flip-Flops
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* KN   9-9-92  REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD4095B  SET_I RESET_I CLK_I J1_I J2_I J3_I K1_I K2_I K3_I Q_O QBAR_O
++ optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ params: MNTYMXDLY=0 IO_LEVEL=0
+*
+UBUF BUFA(9) VDD VSS
++ SET_I RESET_I CLK_I J1_I J2_I J3_I K1_I K2_I K3_I
++ SET   RESET   CLK   J1   J2   J3   K1   K2   K3
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
+*
+U1 INVA(3) VDD VSS
++ SET RESET CLK   SETBAR RESETBAR CLKBAR
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
+*
+U3 ANDA(3,2) VDD VSS
++ J1 J2 J3 K1 K2 K3   J K
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
+*
+U4 JKFF(1) VDD VSS
++ SETBAR RESETBAR CLKBAR   J K   Q QBAR
++ D0_EFF   IO_4000B IO_LEVEL={IO_LEVEL}
+*
+UCD4095BDLY PINDLY (2,0,9) VDD VSS
++ Q QBAR
++ SET RESET CLK J1 J2 J3 K1 K2 K3
++ Q_O QBAR_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++   Q_O QBAR_O = {
++     CASE(
++       CHANGED(RESET,0) | CHANGED(SET,0), DELAY(-1,150NS,300NS),
++                                          DELAY(-1,250NS,500NS)	 ;DEFAULT
++       )
++     }
++
++
++ FREQ:
++   NODE = CLK
++   MAXFREQ = 3.5MEG
++
++ WIDTH:
++   NODE = CLK
++   MIN_HI  = 140NS
++   MIN_LO  = 140NS
++
++ WIDTH:
++   NODE = RESET
++   MIN_HI  = 200NS
++   MIN_LO  = 200NS
++
++ WIDTH:
++   NODE = SET
++   MIN_HI  = 200NS
++   MIN_LO  = 200NS
++
++ SETUP_HOLD:
++   DATA(6) = J1 J2 J3 K1 K2 K3
++   CLOCK LH = CLK
++   SETUPTIME = 400NS
++   WHEN = { RESET!='1 & SET!='1 }
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD4096B  CMOS Gated J-K Master Slave Flip-Flops
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* tdn	10/02/89	Update interface and model names
+*
+.subckt CD4096B  SET RESET CLK J1 J2 J3BAR K1 K2 K3BAR Q QBAR
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inva(5) VDD VSS
++	SET	RESET	CLK	J3BAR	K3BAR
++	CLRB	PREB	CLKM	J3	K3
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U3 anda(3,2) VDD VSS
++	J1 J2 J3 K1 K2 K3   J K 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U4 buf VDD VSS
++	CLKM   CLKS 
++	D_CD4096B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U5 jkff(1) VDD VSS
++	PREB CLRB CLKM   K J   Y YB 
++	D_CD4096B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U6 jkff(1) VDD VSS
++	PREB CLRB CLKS   Y YB   1Q 1QB 
++	D_CD4096B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U7 inva(2) VDD VSS
++	1Q 1QB   Q QBAR 
++	D_CD4096B_4 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4096B_1 ugate (
++	tphlmn=30ns
++	)
+.model D_CD4096B_2 ueff (
++	twclkhty=70ns	twclkhmx=140ns
++	twclklty=70ns	twclklmx=140ns
++	twpclty=100ns	twpclmx=200ns
++	tsudclkty=200ns	tsudclkmx=400ns
++	tpclkqhlmn=20ns	tpclkqlhmn=20ns
++	tppcqhlmn=20ns	tppcqlhmn=20ns
++	)
+.model D_CD4096B_3 ueff (
++	twclkhty=40ns	twclkhmx=110ns
++	twclklty=40ns	twclklmx=110ns
++	twpclty=100ns	twpclmx=200ns
++	tpclkqhlty=120ns	tpclkqhlmx=370ns
++	tpclkqlhty=120ns	tpclkqlhmx=370ns
++	tppcqhlty=50ns	tppcqhlmx=200ns
++	tppcqlhty=50ns	tppcqlhmx=200ns
++	)
+.model D_CD4096B_4 ugate (
++	tphlmn=100ns	tplhmn=100ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4099B   8-BIT ADDRESSABLE LATCH
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* JLS   9-24-92   REMODELED USING LOGICEXP, PINDLY, AND CONSTRAINT DEVICES
+*
+.SUBCKT CD4099B   WDISABLE_I RESET_I DATA_I A0_I A1_I A2_I
++ Q0_O Q1_O Q2_O Q3_O Q4_O Q5_O Q6_O Q7_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+U0 DLTCH(1) VDD VSS
++ $D_HI RBAR0 GATE0
++ DATA   Q0   $D_NC
++ D0_GFF  IO_4000B
+*
+U1 DLTCH(1) VDD VSS
++ $D_HI RBAR1 GATE1
++ DATA   Q1   $D_NC
++ D0_GFF  IO_4000B
+*
+U2 DLTCH(1) VDD VSS
++ $D_HI RBAR2 GATE2
++ DATA   Q2   $D_NC
++ D0_GFF  IO_4000B
+*
+U3 DLTCH(1) VDD VSS
++ $D_HI RBAR3 GATE3
++ DATA   Q3   $D_NC
++ D0_GFF  IO_4000B
+*
+U4 DLTCH(1) VDD VSS
++ $D_HI RBAR4 GATE4
++ DATA   Q4   $D_NC
++ D0_GFF  IO_4000B
+*
+U5 DLTCH(1) VDD VSS
++ $D_HI RBAR5 GATE5
++ DATA   Q5   $D_NC
++ D0_GFF  IO_4000B
+*
+U6 DLTCH(1) VDD VSS
++ $D_HI RBAR6 GATE6
++ DATA   Q6   $D_NC
++ D0_GFF  IO_4000B
+*
+U7 DLTCH(1) VDD VSS
++ $D_HI RBAR7 GATE7
++ DATA   Q7   $D_NC
++ D0_GFF  IO_4000B
+*
+U4099BLOG LOGICEXP(6,22) VDD VSS
++ WDISABLE_I RESET_I DATA_I A0_I A1_I A2_I
++ WDISABLE   RESET   DATA   A0   A1   A2  
++ GATE0 GATE1 GATE2 GATE3 GATE4 GATE5 GATE6 GATE7
++ RBAR0 RBAR1 RBAR2 RBAR3 RBAR4 RBAR5 RBAR6 RBAR7
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
++   WDISABLE = { WDISABLE_I }
++   RESET    = { RESET_I }
++   DATA     = { DATA_I }
++   A0       = { A0_I }
++   A1       = { A1_I }
++   A2       = { A2_I }
++   A0BAR    = { ~A0 }
++   A1BAR    = { ~A1 }
++   A2BAR    = { ~A2 }
++
++   RBAR     = { ~RESET }
++   WRABLE   = { ~WDISABLE }
++   ADDR0    = { A2BAR & A1BAR & A0BAR }
++   ADDR1    = { A2BAR & A1BAR & A0    }
++   ADDR2    = { A2BAR & A1    & A0BAR }
++   ADDR3    = { A2BAR & A1    & A0    }
++   ADDR4    = { A2    & A1BAR & A0BAR }
++   ADDR5    = { A2    & A1BAR & A0    }
++   ADDR6    = { A2    & A1    & A0BAR }
++   ADDR7    = { A2    & A1    & A0    }
++   GATE0    = { WRABLE & ADDR0 }
++   GATE1    = { WRABLE & ADDR1 }
++   GATE2    = { WRABLE & ADDR2 }
++   GATE3    = { WRABLE & ADDR3 }
++   GATE4    = { WRABLE & ADDR4 }
++   GATE5    = { WRABLE & ADDR5 }
++   GATE6    = { WRABLE & ADDR6 }
++   GATE7    = { WRABLE & ADDR7 }
++   RBAR0   = { RBAR | GATE0 }
++   RBAR1   = { RBAR | GATE1 }
++   RBAR2   = { RBAR | GATE2 }
++   RBAR3   = { RBAR | GATE3 }
++   RBAR4   = { RBAR | GATE4 }
++   RBAR5   = { RBAR | GATE5 }
++   RBAR6   = { RBAR | GATE6 }
++   RBAR7   = { RBAR | GATE7 }
+*
+U4099BDLY PINDLY (8,0,6) VDD VSS
++ Q0 Q1 Q2 Q3 Q4 Q5 Q6 Q7
++ WDISABLE RESET DATA A0 A1 A2
++ Q0_O Q1_O Q2_O Q3_O Q4_O Q5_O Q6_O Q7_O
++ IO_4000B
++ MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++ Q0_O Q1_O Q2_O Q3_O Q4_O Q5_O Q6_O Q7_O = {
++   CASE (
++     CHANGED(A0,0) | CHANGED(A1,0) | CHANGED(A2,0), DELAY(-1,225NS, 450NS),
++     CHANGED(DATA,0) | CHANGED(WDISABLE,0)        , DELAY(-1,200NS, 400NS),
++     CHANGED(RESET,0)                             , DELAY(-1,175NS, 350NS),
++     DELAY(-1,225NS,450NS)
++     )
++   }
++
++ WIDTH:
++   NODE           = DATA
++   MIN_LO         = 200NS
++   MIN_HI         = 200NS
++ WIDTH:
++   NODE           = A0
++   MIN_LO         = 400NS
++   MIN_HI         = 400NS
++ WIDTH:
++   NODE           = A1
++   MIN_LO         = 400NS
++   MIN_HI         = 400NS
++ WIDTH:
++   NODE           = A2
++   MIN_LO         = 400NS
++   MIN_HI         = 400NS
++ WIDTH:
++   NODE           = RESET
++   MIN_HI         = 150NS
++ SETUP_HOLD:
++   DATA(1)        = DATA
++   CLOCK LH       = WDISABLE
++   SETUPTIME      = 280NS
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD4502B  CMOS STROBED HEX INVERTER/BUFFER
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4502B  DISABLE INHIBIT D1 D2 D3 D4 D5 D6 Q1 Q2 Q3 Q4 Q5 Q6
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 buf VDD VSS
++	INHIBIT   INH 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 inv VDD VSS
++	DISABLE   DIS 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U3 nor3a(2,6) VDD VSS
++	INH	D1
++	INH	D2
++	INH	D3
++	INH	D4
++	INH	D5
++	INH	D6
++	DIS
++	Q1	Q2	Q3	Q4	Q5	Q6
++	D_CD4502B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4502B utgate (
++	TPLHTY=190NS	TPHLTY=135NS
++	TPLHMX=380NS	TPHLMX=270NS
++	TPZHTY=110NS	TPHZTY=60NS
++	TPZHMX=220NS	TPHZMX=120NS
++	TPZLTY=125NS	TPLZTY=125NS
++	TPZLMX=250NS	TPLZMX=250NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4503B  CMOS HEX BUFFER
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD4503B  DISABLEA DISABLEB D1 D2 D3 D4 D5 D6 Q1 Q2 Q3 Q4 Q5 Q6
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inva(2) VDD VSS
++	DISABLEA DISABLEB   DISA DISB 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 buf3a(4) VDD VSS
++	D1 D2 D3 D4   DISA   Q1 Q2 Q3 Q4 
++	D_CD4503B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U3 buf3a(2) VDD VSS
++	D5 D6   DISB   Q5 Q6 
++	D_CD4503B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4503B utgate (
++	TPLHTY=75NS	TPHLTY=55NS
++	TPLHMX=150NS	TPHLMX=110NS
++	TPZHTY=70NS	TPHZTY=70NS
++	TPZHMX=140NS	TPHZMX=140NS
++	TPZLTY=90NS	TPLZTY=90NS
++	TPZLMX=180NS	TPLZMX=180NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4508B  CMOS Dual 4-bit Latch
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* tdn	10/06/89	Update interface and model names
+*
+.subckt CD4508B  STROBE RESET D0 D1 D2 D3 OUTDISABLE Q0 Q1 Q2 Q3
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inva(2) VDD VSS
++	RESET OUTDISABLE   CLRB EN 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 dltch(4) VDD VSS
++	$D_HI	CLRB	STROBE
++	D0	D1	D2	D3
++	0Q	1Q	2Q	3Q	$D_NC	$D_NC	$D_NC	$D_NC
++	D_CD4508B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U3 buf3a(4) VDD VSS
++	0Q 1Q 2Q 3Q   EN   Q0 Q1 Q2 Q3 
++	D_CD4508B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4508B_1 ugff (
++	twghmn=140ns	twpclmn=200ns
++	tsudgmn=50ns	tpgqhlmx=80ns
++	tpgqlhmx=80ns	tpdqhlmx=30ns
++	tpdqlhmx=30ns
++	)
+.model D_CD4508B_2 utgate (
++	tphzmx=180ns	tplzmx=180ns
++	tpzhmx=180ns	tpzlmx=180ns
++	tphlmx=180ns	tplhmx=180ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4510B  CMOS PRESETTABLE BCD UP/DOWN COUNTER
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/06/89	Update interface and model names
+*
+.subckt CD4510B  PS_EN RESET CLOCK UP/DOWN CINBAR P1 P2 P3 P4 COUTBAR Q1 Q2
++	Q3 Q4
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+X1  U/D U/DX  VDD VSS  CD4510BSUUPDOWN
+X2  U/DB U/DBX  VDD VSS  CD4510BSUUPDOWN
+U1 bufa(7) VDD VSS
++	RESET	PS_EN	UP/DOWN	P1	P2	P3	P4
++	RS	PS	U/D	I1	I2	I3	I4
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 inva(5) VDD VSS
++	RS	PS	CINBAR	U/D	CLOCK
++	RSB	PSB	CIN	U/DB	CLK
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U3 anda(2,5) VDD VSS
++	RSB	PSB
++	RSB	I1
++	RSB	I2
++	RSB	I3
++	RSB	I4
++	RPB	CL1	CL2	CL3	CL4
++	D0_GATE IO_4000B 
+U4 ora(2,4) VDD VSS
++	RPB	CL1
++	RPB	CL2
++	RPB	CL3
++	RPB	CL4
++	CLR1	CLR2	CLR3	CLR4
++	D0_GATE IO_4000B 
+U5 nanda(3,4) VDD VSS
++	RSB	PS	I1
++	RSB	PS	I2
++	RSB	PS	I3
++	RSB	PS	I4
++	PRB1	PRB2	PRB3	PRB4
++	D0_GATE IO_4000B 
+U6 nanda(2,3) VDD VSS
++	U/DX O2 U/DBX O4 O3 O4   A2 A3 A4 
++	D0_GATE IO_4000B 
+U7 nanda(3,6) VDD VSS
++	U/DBX	O2B	O3
++	U/DX	O2	O3
++	U/DBX	O2B	O3B
++	A5	A2	A3
++	CIN	OUD	B1
++	U/D	O4	O1
++	A5	A6	A7	B2	COB	A1
++	D0_GATE IO_4000B 
+U8 nanda(5,2) VDD VSS
++	U/DB	O1B	O2B	O3B	O4B
++	$D_HI	A1	A4	A6	A7
++	A8	B3
++	D0_GATE IO_4000B 
+U9 anda(4,3) VDD VSS
++	CIN	OUD	A8	A1
++	$D_HI	CIN	OUD	B2
++	$D_HI	CIN	OUD	B3
++	D2	D3	D4
++	D0_GATE IO_4000B 
+U10 jkff(1) VDD VSS
++	PRB1 CLR1 CLK   CIN CIN   O1 O1B 
++	D_CD4510B_A IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U11 jkff(1) VDD VSS
++	PRB2 CLR2 CLK   D2 D2   O2 O2B 
++	D_CD4510B_A IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U12 jkff(1) VDD VSS
++	PRB3 CLR3 CLK   D3 D3   O3 O3B 
++	D_CD4510B_A IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U13 jkff(1) VDD VSS
++	PRB4 CLR4 CLK   D4 D4   O4 O4B 
++	D_CD4510B_A IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U14 bufa(4) VDD VSS
++	O1 O2 O3 O4   Q1 Q2 Q3 Q4 
++	D_CD4510B_B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U15 buf VDD VSS
++	COB   COUTBAR 
++	D_CD4510B_C IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U16 nand3(2) VDD VSS
++	A1 A8   Q   B1 
++	D_CD4510B_F IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U17 nand3(2) VDD VSS
++	A1 A8   P   B1 
++	D_CD4510B_G IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U18 nxor3 VDD VSS
++	O1 U/D   Q   OUD 
++	D_CD4510B_F IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U19 nxor3 VDD VSS
++	O1 U/D   P   OUD 
++	D_CD4510B_G IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U20 bufa(2) VDD VSS
++	RS PS   RSL PSL 
++	D_CD4510B_H IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U21 xora(2) VDD VSS
++	RS RSL PS PSL   RSP PSP 
++	D0_GATE IO_4000B 
+U22 or(2) VDD VSS
++	RSP PSP   PULSE 
++	D0_GATE IO_4000B 
+U23 buf VDD VSS
++	PULSE   P 
++	D0_GATE IO_4000B 
+U24 inv VDD VSS
++	PULSE   Q 
++	D0_GATE IO_4000B 
+.ends
+*
+.subckt CD4510BSUUPDOWN  DATA DATAX VDD VSS
++	params: MNTYMXDLY=0
+UA buf VDD VSS
++	DATA   DATAD 
++	D_CD4510B_D IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UB xor VDD VSS
++	DATA DATAD   EN 
++	D0_GATE IO_4000B 
+UC and(2) VDD VSS
++	$D_X EN   XPULSE 
++	D0_GATE IO_4000B 
+UD buf VDD VSS
++	DATA   DATAB 
++	D_CD4510B_E IO_4000B MNTYMXDLY={MNTYMXDLY} 
+UE or(2) VDD VSS
++	DATAB XPULSE   DATAX 
++	D0_GATE IO_4000B 
+.ends
+*
+.model D_CD4510B_A ueff (
++	TWCLKLMN=150NS	TWCLKHMN=150NS
++	TSUPCCLKHMN=150NS	TSUDCLKMN=130NS
++	TWPCLMN=220NS	TPCLKQLHMN=1NS
++	TPCLKQHLMN=1NS	TPPCQLHTY=11NS
++	TPPCQHLTY=11NS	TPPCQLHMX=21NS
++	TPPCQHLMX=21NS
++	)
+.model D_CD4510B_B ugate (
++	TPLHTY=199NS	TPLHMX=399NS
++	TPHLTY=199NS	TPHLMX=399NS
++	)
+.model D_CD4510B_C ugate (
++	TPLHTY=125NS	TPLHMX=250NS
++	TPHLTY=125NS	TPHLMX=250NS
++	)
+.model D_CD4510B_D ugate (
++	TPLHMN=230NS	TPHLMN=230NS
++	)
+.model D_CD4510B_E ugate (
++	TPLHMN=230NS
++	)
+.model D_CD4510B_F utgate (
++	TPLHTY=114NS	TPLHMX=229NS
++	TPHLTY=114NS	TPHLMX=229NS
++	)
+.model D_CD4510B_G utgate (
++	TPLHTY=184NS	TPLHMX=369NS
++	TPHLTY=184NS	TPHLMX=369NS
++	)
+.model D_CD4510B_H ugate (
++	TPLHTY=197NS	TPLHMX=392NS
++	TPHLTY=197NS	TPHLMX=392NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4512B  CMOS 8-Channel Data Selector
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* tdn	10/09/89	Update interface and model names
+*
+.subckt CD4512B  D0 D1 D2 D3 D4 D5 D6 D7 A B C INHIBIT OUTDISABLE OUT
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 bufa(3) VDD VSS
++	A B C   P Q R 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 bufa(3) VDD VSS
++	P Q R   A1 B1 C1 
++	D_CD4512B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U3 bufa(8) VDD VSS
++	D0	D1	D2	D3	D4	D5	D6	D7
++	D01	D11	D21	D31	D41	D51	D61	D71
++	D_CD4512B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 inva(5) VDD VSS
++	A1	B1	C1	INHIBIT	OUTDISABLE
++	A0	B0	C0	IEN	OEN
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U5 ao(5,8) VDD VSS
++	IEN	D01	C0	B0	A0
++	IEN	D11	C0	B0	A1
++	IEN	D21	C0	B1	A0
++	IEN	D31	C0	B1	A1
++	IEN	D41	C1	B0	A0
++	IEN	D51	C1	B0	A1
++	IEN	D61	C1	B1	A0
++	IEN	D71	C1	B1	A1
++	1OUT
++	D_CD4512B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U6 buf3 VDD VSS
++	1OUT   OEN   OUT 
++	D_CD4512B_4 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4512B_1 ugate (
++	tphlmx=120ns	tplhmx=120ns
++	)
+.model D_CD4512B_2 ugate (
++	tphlmx=80ns	tplhmx=80ns
++	)
+.model D_CD4512B_3 ugate (
++	tphlmx=160ns	tplhmx=160ns
++	)
+.model D_CD4512B_4 utgate (
++	tphlmx=120ns	tplhmx=120ns
++	tphzmx=120ns	tplzmx=120ns
++	tpzhmx=120ns	tpzlmx=120ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4514B  CMOS 4-bit Latch/4-TO-16 Line Decoders
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	10/2/89		Update interface and model names
+*
+.subckt CD4514B  STROBE INHIBIT DATA1 DATA2 DATA3 DATA4 S0 S1 S2 S3 S4 S5 S6
++	S7 S8 S9 S10 S11 S12 S13 S14 S15
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UIH inv VDD VSS
++	INHIBIT   IH 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+UQ dltch(4) VDD VSS
++	$D_HI	$D_HI	STROBE
++	DATA1	DATA2	DATA3	DATA4
++	A	B	C	D	AB	BB	CB	DB
++	D_CD4514B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UT anda(5,16) VDD VSS
++	AB	BB	CB	DB	IH
++	A	BB	CB	DB	IH
++	AB	B	CB	DB	IH
++	A	B	CB	DB	IH
++	AB	BB	C	DB	IH
++	A	BB	C	DB	IH
++	AB	B	C	DB	IH
++	A	B	C	DB	IH
++	AB	BB	CB	D	IH
++	A	BB	CB	D	IH
++	AB	B	CB	D	IH
++	A	B	CB	D	IH
++	AB	BB	C	D	IH
++	A	BB	C	D	IH
++	AB	B	C	D	IH
++	A	B	C	D	IH
++	S0	S1	S2	S3	S4	S5	S6	S7
++	S8	S9	S10	S11	S12	S13	S14	S15
++	D_CD4514B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4514B_1 ugff (
++	twghmn=250ns	tsudgmn=150ns
++	tpgqlhty=235ns	tpgqlhmx=470ns
++	tpgqhlty=235ns	tpgqhlmx=470ns
++	tpdqlhty=235ns	tpdqlhmx=470ns
++	tpdqhlty=235ns	tpdqhlmx=470ns
++	)
+.model D_CD4514B_2 ugate (
++	tplhty=250ns	tplhmx=500ns
++	tphlty=250ns	tphlmx=500ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4515B  CMOS 4-bit Latch/4-TO-16 Line Decoders
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	10/2/89		Update interface and model names
+*
+.subckt CD4515B  STROBE INHIBIT DATA1 DATA2 DATA3 DATA4 S0 S1 S2 S3 S4 S5 S6
++	S7 S8 S9 S10 S11 S12 S13 S14 S15
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UIH inv VDD VSS
++	INHIBIT   IH 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+UQ dltch(4) VDD VSS
++	$D_HI	$D_HI	STROBE
++	DATA1	DATA2	DATA3	DATA4
++	A	B	C	D	AB	BB	CB	DB
++	D_CD4515B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UT nanda(5,16) VDD VSS
++	AB	BB	CB	DB	IH
++	A	BB	CB	DB	IH
++	AB	B	CB	DB	IH
++	A	B	CB	DB	IH
++	AB	BB	C	DB	IH
++	A	BB	C	DB	IH
++	AB	B	C	DB	IH
++	A	B	C	DB	IH
++	AB	BB	CB	D	IH
++	A	BB	CB	D	IH
++	AB	B	CB	D	IH
++	A	B	CB	D	IH
++	AB	BB	C	D	IH
++	A	BB	C	D	IH
++	AB	B	C	D	IH
++	A	B	C	D	IH
++	S0	S1	S2	S3	S4	S5	S6	S7
++	S8	S9	S10	S11	S12	S13	S14	S15
++	D_CD4515B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4515B_1 ugff (
++	twghmn=250ns	tsudgmn=150ns
++	tpgqlhty=235ns	tpgqlhmx=470ns
++	tpgqhlty=235ns	tpgqhlmx=470ns
++	tpdqlhty=235ns	tpdqlhmx=470ns
++	tpdqhlty=235ns	tpdqhlmx=470ns
++	)
+.model D_CD4515B_2 ugate (
++	tplhty=250ns	tplhmx=500ns
++	tphlty=250ns	tphlmx=500ns
++	)
+*
+*$
+*-------------------------------------------------------------------------
+* CD4516B DUAL UP-COUNTERS
+*
+* THE CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA
+* KN   9-9-92  REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD4516B PS_EN_I RESET_I CLOCK_I UP/DOWN_I CINBAR_I P1_I P2_I P3_I P4_I
++ COUTBAR_O Q1_O Q2_O Q3_O Q4_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+UCD4516BLOG LOGICEXP(13,27) VDD VSS
++ PS_EN_I RESET_I CLOCK_I UP/DOWN_I CINBAR_I P1_I P2_I P3_I P4_I Q1 Q2 Q3 Q4
++ PS_EN   RESET   CLOCK   UP/DOWN   CINBAR   P1   P2   P3   P4
++ COUTBAR T2 T3 T4 PRESET1 PRESET2 PRESET3 PRESET4 RESET1 RESET2 RESET3 RESET4
++ U1 U2 U3 U4  CLK CIN
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++ LOGIC:
+*   BUFFER:
++   PS_EN   = { PS_EN_I }
++   RESET   = { RESET_I }
++   CLOCK   = { CLOCK_I }
++   UP/DOWN = { UP/DOWN_I }
++   CINBAR  = { CINBAR_I }
++   P1  = { P1_I }
++   P2  = { P2_I }
++   P3  = { P3_I }
++   P4  = { P4_I }
++
+*   INTERMEDIATE TERMS:
++   RESETBAR   = { ~RESET }   ; UP/DOWN&Q2 AND UP/DOWN|Q2 CAN MINIMIZE
++   U1  = { ~(Q1 ^ UP/DOWN) & ~CINBAR }
++   U2  = { (UP/DOWN & Q2 & Q3 & Q4) | ~(UP/DOWN | Q2 | Q3 | Q4) }
++   U3  = { (UP/DOWN & Q2) | ~(UP/DOWN | Q2) }
++   U4  = { (UP/DOWN & Q2 & Q3) | ~(UP/DOWN | Q2 | Q3) }
++   CIN = { ~CINBAR }
++
+*   OUTPUT ASSIGNMENTS:
++   CLK     = { ~(CLOCK | RESET | PS_EN) }
++   PRESET1 = { RESET | ~PS_EN | ~P1 }
++   PRESET2 = { RESET | ~PS_EN | ~P2 }
++   PRESET3 = { RESET | ~PS_EN | ~P3 }
++   PRESET4 = { RESET | ~PS_EN | ~P4 }
++   RESET1  = { RESETBAR & (~PS_EN | P1) }
++   RESET2  = { RESETBAR & (~PS_EN | P2) }
++   RESET3  = { RESETBAR & (~PS_EN | P3) }
++   RESET4  = { RESETBAR & (~PS_EN | P4) }
++   COUTBAR = { ~(U1 & U2) }
++   T2      = { U1 }            ; T1 = CINBAR
++   T3      = { (U1 & U3) }
++   T4      = { (U1 & U4) }
++
+*
+U1 JKFF(1) VDD VSS PRESET1 RESET1 CLK
++ CIN CIN Q1 Q1BAR
++ D0_EFF IO_4000B
+*
+U2 JKFF(1) VDD VSS PRESET2 RESET2 CLK
++ T2 T2 Q2 Q2BAR
++ D0_EFF IO_4000B
+*
+U3 JKFF(1) VDD VSS PRESET3 RESET3 CLK
++ T3 T3 Q3 Q3BAR
++ D0_EFF IO_4000B
+*
+U4 JKFF(1) VDD VSS PRESET4 RESET4 CLK
++ T4 T4 Q4 Q4BAR
++ D0_EFF IO_4000B
+*
+UCD4516BDLY PINDLY (5,0,9) VDD VSS
++ Q1 Q2 Q3 Q4 COUTBAR
++ CLOCK CINBAR RESET PS_EN P1 P2 P3 P4 UP/DOWN
++ Q1_O Q2_O Q3_O Q4_O COUTBAR_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++   Q1_O Q2_O Q3_O Q4_O = {
++     CASE(
++       CHANGED(RESET,0) | CHANGED(PS_EN,0),  DELAY(-1,210NS,420NS),
++       CHANGED_LH(CLOCK,0),                  DELAY(-1,200NS,400NS),
++                                             DELAY(-1,211NS,421NS)  ;DEFAULT
++       )
++     }
++
++   COUTBAR_O = {
++     CASE(
++       CHANGED(RESET,0) | CHANGED(PS_EN,0),  DELAY(-1,320NS,640NS),
++       CHANGED_LH(CLOCK,0),                  DELAY(-1,240NS,480NS),
++       CHANGED(CINBAR,0),                    DELAY(-1,125NS,250NS),
++                                             DELAY(-1,321NS,641NS)  ;DEFAULT
++       )
++     }
++
++
++ FREQ:
++   NODE = CLOCK
++   MAXFREQ = 2MEG
++
++ WIDTH:
++   NODE = CLOCK
++   MIN_HI  = 150NS
++   MIN_LO  = 150NS
++
++ WIDTH:
++   NODE = RESET
++   MIN_HI  = 220NS
++   MIN_LO  = 220NS
++
++ WIDTH:
++   NODE = PS_EN
++   MIN_HI  = 220NS
++   MIN_LO  = 220NS
++
++ SETUP_HOLD:
++   DATA(1) = CINBAR
++   CLOCK LH = CLOCK
++   SETUPTIME = 130NS
++   HOLDTIME =  60NS
++   WHEN = { PS_EN!='1 & RESET!='1 }
++
++ SETUP_HOLD:
++   DATA(1) = UP/DOWN
++   CLOCK LH = CLOCK
++   SETUPTIME = 360NS
++   HOLDTIME =  30NS
++   WHEN = { PS_EN!='1 & RESET!='1  & CINBAR!='1 }
++
++ SETUP_HOLD:
++   DATA(1) = PS_EN
++   CLOCK LH = CLOCK
++   RELEASETIME_HL = 150NS
++
++ SETUP_HOLD:
++   DATA(1) = RESET
++   CLOCK LH = CLOCK
++   RELEASETIME_HL = 150NS
++
++ SETUP_HOLD:
++   DATA(4) = P1 P2 P3 P4   ; CHECK SETUPTIME PS_EN TO Pn
++   CLOCK HL = PS_EN
++   SETUPTIME = 70NS
++   WHEN = { RESET!='1  & CINBAR!='1 }
++   MESSAGE = "SETUPTIME PRESET_ENABLE TO Pn TOO SHORT"
++
++ SETUP_HOLD:
++   DATA(4) = P1 P2 P3 P4   ; CHECK HOLDTIME PS_EN TO Pn
++   CLOCK LH  = PS_EN
++   HOLDTIME = 25NS
++   WHEN = { RESET!='1  & CINBAR!='1 }
++   MESSAGE = "HOLDTIME PRESET_ENABLE TO Pn TOO SHORT"
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD4518B DUAL UP-COUNTERS
+*
+* THE CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA
+* KN   9-9-92  REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD4518B CLK_I RESET_I EN_I Q1_O Q2_O Q3_O Q4_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+UCD4518BLOG LOGICEXP(11,12) VDD VSS
++ CLK_I RESET_I EN_I  Q1 Q2 Q3 Q4 Q1BAR Q2BAR Q3BAR Q4BAR
++ CLK   RESET   EN    CLK1 CLK2 CLK3 CLK4 D1 D2 D3 D4 RESETBAR
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++ LOGIC:
+*   BUFFER:
++   CLK   = { CLK_I }
++   RESET = { RESET_I }
++   EN    = { EN_I }
++
+*   OUTPUT ASSIGNMENTS:
++   CLK/EN = { EN & ~CLK }
++   CLK1   = { ~CLK/EN }
++   CLK2   = { ~(CLK/EN & Q1 & Q4BAR) }
++   CLK3   = { ~(CLK/EN & Q1 & Q2) }
++   CLK4   = { ~(CLK/EN & Q1 & (Q4| (Q2 & Q3))) }
++   D1     = { Q1BAR }
++   D2     = { Q2BAR }
++   D3     = { Q3BAR }
++   D4     = { Q4BAR }
++   RESETBAR = { ~RESET }
+*
+U1 DFF(1) VDD VSS $D_HI RESETBAR CLK1
++ D1 Q1 Q1BAR
++ D0_EFF IO_4000B
+*
+U2 DFF(1) VDD VSS $D_HI RESETBAR CLK2
++ D2 Q2 Q2BAR
++ D0_EFF IO_4000B
+*
+U3 DFF(1) VDD VSS $D_HI RESETBAR CLK3
++ D3 Q3 Q3BAR
++ D0_EFF IO_4000B
+*
+U4 DFF(1) VDD VSS $D_HI RESETBAR CLK4
++ D4 Q4 Q4BAR
++ D0_EFF IO_4000B
+*
+UCD4518BDLY PINDLY (4,0,3) VDD VSS
++ Q1 Q2 Q3 Q4
++ CLK EN RESET
++ Q1_O Q2_O Q3_O Q4_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++   Q1_O Q2_O Q3_O Q4_O = {
++     CASE(
++       CHANGED(RESET,0),               DELAY(-1,330NS,650NS),
++       CHANGED(CLK,0) | CHANGED(EN,0), DELAY(-1,280NS,560NS),
++                                       DELAY(-1,331NS,651NS)  ;DEFAULT
++       )
++     }
++
++
++ FREQ:
++   NODE = CLK
++   MAXFREQ = 1.5MEG
++
++ WIDTH:
++   NODE = CLK
++   MIN_HI  = 200NS
++   MIN_LO  = 200NS
++
++ WIDTH:
++   NODE = RESET
++   MIN_HI  = 250NS
++   MIN_LO  = 250NS
++
++ WIDTH:
++   NODE = EN
++   MIN_HI  = 400NS
++   MIN_LO  = 400NS
++
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD4520B  CMOS Dual BCD Up-Counter
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* tdn	10/09/89	Update interface and model names
+*
+.subckt CD4520B  CLK RESET EN Q1 Q2 Q3 Q4
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 inva(3) VDD VSS
++	CLK RESET CK1   CLKB CLR CK1B 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 buf VDD VSS
++	EN   END 
++	D_CD4520B_1 IO_4000B IO_LEVEL={IO_LEVEL} 
+U3 nand(2) VDD VSS
++	CLKB END   CK1 
++	D0_GATE IO_4000B 
+U4 dff(1) VDD VSS
++	$D_HI CLR CK1   1QB   1Q 1QB 
++	D_CD4520B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U5 dff(1) VDD VSS
++	$D_HI CLR CK2   2QB   2Q 2QB 
++	D_CD4520B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U6 dff(1) VDD VSS
++	$D_HI CLR CK3   3QB   3Q 3QB 
++	D_CD4520B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U7 dff(1) VDD VSS
++	$D_HI CLR CK4   4QB   4Q 4QB 
++	D_CD4520B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U8 nanda(4,3) VDD VSS
++	$D_HI	$D_HI	1Q	CK1B
++	$D_HI	1Q	2Q	CK1B
++	1Q	2Q	3Q	CK1B
++	CK2	CK3	CK4
++	D0_GATE IO_4000B 
+U9 bufa(4) VDD VSS
++	1Q 2Q 3Q 4Q   Q1 Q2 Q3 Q4 
++	D_CD4520B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4520B_1 ugate (
++	tplhmn=200ns
++	)
+.model D_CD4520B_2 ueff (
++	twclklmn=200ns	twclkhmn=200ns
++	twpclmn=250ns	tpclkqhlmx=460ns
++	tpclkqlhmx=460ns	tppcqhlty=280ns
++	tppcqlhty=280ns	tppcqhlmx=550ns
++	tppcqlhmx=550ns
++	)
+.model D_CD4520B_3 ugate (
++	tphlmx=100ns	tplhmx=100ns
++	)
+*
+*$
+*-------------------------------------------------------------------------
+* CD4532B CMOS 8-BIT PRIORITY ENCODER
+*
+* THE CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA
+* KN   9-9-92  REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD4532B EI_I D0_I D1_I D2_I D3_I D4_I D5_I D6_I D7_I
++ Q0_O Q1_O Q2_O GS_O EO_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+UCD4532BLOG LOGICEXP(9,14) VDD VSS
++ EI_I D0_I D1_I D2_I D3_I D4_I D5_I D6_I D7_I
++ EI D0 D1 D2 D3 D4 D5 D6 D7 Q0 Q1 Q2 GS EO
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++ LOGIC:
+*   BUFFER:
++   EI   = { EI_I }
++   D0   = { D0_I }
++   D1   = { D1_I }
++   D2   = { D2_I }
++   D3   = { D3_I }
++   D4   = { D4_I }
++   D5   = { D5_I }
++   D6   = { D6_I }
++   D7   = { D7_I }
++
+*   INTERMEDIATE TERMS:
++   U1   = { ~D1 | D2 | D4 | D6 }
++   U2   = { ~D3 | D4 | D6 }
++   U3   = { ~D5 | D6 }
++   D45  = { D4 | D5 }
++   U4   = { ~D2 | D45 }
++   U5   = { ~D3 | D45 }
++   D47  = { D45 | D6 | D7 }
++   D07  = { D0 | D1 | D2 | D3 | D47 }
++
+*   OUTPUT ASSIGNMENTS:
++   Q0   = { EI & ~(U1 & U2 & U3 & ~D7) }
++   Q1   = { EI & ~(U4 & U5 & ~D6 & ~D7) }
++   Q2   = { EI & D47 }
++   GS   = { EI & D07 }
++   EO   = { ~(~EI | D07) }
++
+*
+UCD4532BDLY PINDLY (5,0,9) VDD VSS
++ Q0 Q1 Q2 GS EO
++ D0 D1 D2 D3 D4 D5 D6 D7 EI
++ Q0_O Q1_O Q2_O GS_O EO_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++ BOOLEAN:
++   CH_INPUT = { CHANGED(D0,0) | CHANGED(D1,0) | CHANGED(D2,0) | CHANGED(D3,0) |
++                CHANGED(D4,0) | CHANGED(D5,0) | CHANGED(D6,0) | CHANGED(D7,0) }
++   CH_EI    = { CHANGED(EI,0) }
++
++ PINDLY:
++   Q0_O Q1_O Q2_O = {
++     CASE(
++       CH_INPUT, DELAY(-1,220NS,440NS),
++       CH_EI,    DELAY(-1,170NS,340NS),
++                 DELAY(-1,221NS,441NS)  ;DEFAULT
++       )
++     }
++
++   EO_O GS_O = {
++     CASE(
++       CH_INPUT, DELAY(-1,170NS,340NS),
++       CH_EI,    DELAY(-1,110NS,220NS),
++                 DELAY(-1,171NS,341NS)  ;DEFAULT
++       )
++     }
++
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD4555B  CMOS Dual Binary to 1 of 4 Decoder/Demultiplexers
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	10/2/89		Update interface and model names
+*
+.subckt CD4555B  EBAR A B Q0 Q1 Q2 Q3
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UIND bufa(2) VDD VSS
++	A B   AD BD 
++	D_CD4555B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UINV inva(3) VDD VSS
++	EBAR AD BD   E AB BB 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+UQ anda(3,4) VDD VSS
++	AB	BB	E
++	AD	BB	E
++	AB	BD	E
++	AD	BD	E
++	Q0	Q1	Q2	Q3
++	D_CD4555B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4555B_1 ugate (
++	tplhty=20ns	tplhmx=40ns
++	tphlty=20ns	tphlmx=40ns
++	)
+.model D_CD4555B_2 ugate (
++	tplhty=200ns	tplhmx=400ns
++	tphlty=200ns	tphlmx=400ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4556B  CMOS Dual Binary to 1 of 4 Decoder/Demultiplexers
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	10/2/89		Update interface and model names
+*
+.subckt CD4556B  EBAR A B Q0BAR Q1BAR Q2BAR Q3BAR
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UIND bufa(2) VDD VSS
++	A B   AD BD 
++	D_CD4556B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UINV inva(3) VDD VSS
++	EBAR AD BD   E AB BB 
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+UQ nanda(3,4) VDD VSS
++	AB	BB	E
++	AD	BB	E
++	AB	BD	E
++	AD	BD	E
++	Q0BAR	Q1BAR	Q2BAR	Q3BAR
++	D_CD4556B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD4556B_1 ugate (
++	tplhty=20ns	tplhmx=40ns
++	tphlty=20ns	tphlmx=40ns
++	)
+.model D_CD4556B_2 ugate (
++	tplhty=200ns	tplhmx=400ns
++	tphlty=200ns	tphlmx=400ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4724B   8-BIT ADDRESSABLE LATCH
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* JLS   9-24-92   REMODELED USING LOGICEXP, PINDLY, AND CONSTRAINT DEVICES
+* NOTICE -- EXCEPT FOR THE PIN ARRANGEMENT, THE CD4724B IS FUNCTIONALLY
+*           IDENTICAL TO THE CD4099B.
+*
+.SUBCKT CD4724B   WDISABLE RESET DATA A0 A1 A2
++ Q0 Q1 Q2 Q3 Q4 Q5 Q6 Q7
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+X1   WDISABLE RESET DATA A0 A1 A2
++ Q0 Q1 Q2 Q3 Q4 Q5 Q6 Q7      VDD VSS            CD4099B
++ PARAMS: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD40102B   CMOS 8-STAGE PRESETTABLE SYNCHRONOUS DOWN COUNTER
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* JLS   9-23-92   REMODELED USING LOGICEXP, PINDLY, AND CONSTRAINT DEVICES
+* NOTICE -- THE LOGIC DIAGRAM PROVIDED IN THE DATABOOK IS WRONG.  THIS DEVICE
+*            WAS CREATED TO MATCH THE FUNCTIONAL DESCRIPTION.
+*
+.SUBCKT CD40102B   CLK_I CIBAR/CEBAR_I SPEBAR_I APEBAR_I CLRBAR_I
++ JAM0_I JAM1_I JAM2_I JAM3_I JAM4_I JAM5_I JAM6_I JAM7_I COBAR/ZDBAR_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+X0   J0 CLRBAR SPEBAR APEBAR CLK CI0BAR   Q0 $D_NC
++ VDD VSS   FFCLRHI_CD4010X
+X1   J1 CLRBAR SPEBAR APEBAR CLK CI1BAR   Q1 $D_NC
++ VDD VSS   FFCLRLO_CD4010X
+X2   J2 CLRBAR SPEBAR APEBAR CLK CI2BAR   Q2 $D_NC
++ VDD VSS   FFCLRLO_CD4010X
+X3   J3 CLRBAR SPEBAR APEBAR CLK CI3BAR   Q3 $D_NC
++ VDD VSS   FFCLRHI_CD4010X
+X4   J4 CLRBAR SPEBAR APEBAR CLK CI4BAR   Q4 $D_NC
++ VDD VSS   FFCLRHI_CD4010X
+X5   J5 CLRBAR SPEBAR APEBAR CLK CI5BAR   Q5 $D_NC
++ VDD VSS   FFCLRLO_CD4010X
+X6   J6 CLRBAR SPEBAR APEBAR CLK CI6BAR   Q6 $D_NC
++ VDD VSS   FFCLRLO_CD4010X
+X7   J7 CLRBAR SPEBAR APEBAR CLK CI7BAR   Q7 $D_NC
++ VDD VSS   FFCLRHI_CD4010X
+*
+U40102BLOG LOGICEXP(21,30) VDD VSS
++ Q0 Q1 Q2 Q3 Q4 Q5 Q6 Q7
++ CLK_I CIBAR/CEBAR_I SPEBAR_I APEBAR_I CLRBAR_I
++ JAM0_I JAM1_I JAM2_I JAM3_I JAM4_I JAM5_I JAM6_I JAM7_I
++ CLK   CIBAR/CEBAR   SPEBAR   APEBAR   CLRBAR  
++ JAM0   JAM1   JAM2   JAM3   JAM4   JAM5   JAM6   JAM7  
++ J0 J1 J2 J3 J4 J5 J6 J7
++ CI0BAR CI1BAR CI2BAR CI3BAR CI4BAR CI5BAR CI6BAR CI7BAR  
++ COBAR/ZDBAR
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
++   CLK      = { CLK_I }
++   CIBAR/CEBAR = { CIBAR/CEBAR_I }
++   SPEBAR   = { SPEBAR_I }
++   APEBAR   = { APEBAR_I }
++   CLRBAR   = { CLRBAR_I }
++   JAM0     = { JAM0_I }
++   JAM1     = { JAM1_I }
++   JAM2     = { JAM2_I }
++   JAM3     = { JAM3_I }
++   JAM4     = { JAM4_I }
++   JAM5     = { JAM5_I }
++   JAM6     = { JAM6_I }
++   JAM7     = { JAM7_I }
++
++   Q0BAR    = { ~Q0 }
++   Q1BAR    = { ~Q1 }
++   Q2BAR    = { ~Q2 }
++   Q3BAR    = { ~Q3 }
++   Q4BAR    = { ~Q4 }
++   Q5BAR    = { ~Q5 }
++   Q6BAR    = { ~Q6 }
++   Q7BAR    = { ~Q7 }
++   J0       = { JAM0 }
++   J1       = { JAM1 }
++   J2       = { JAM2 }
++   J3       = { JAM3 }
++   J4       = { JAM4 }
++   J5       = { JAM5 }
++   J6       = { JAM6 }
++   J7       = { JAM7 }
++   Q03      = { Q0 | Q1 | Q2 | Q3 }
++   Q47      = { Q4 | Q5 | Q6 | Q7 }
++   PASS03   = { Q0BAR & Q1BAR & Q2BAR & Q3BAR }
++   CI0BAR   = {           CIBAR/CEBAR }
++   CI1BAR   = { ~( Q03 & ~CIBAR/CEBAR & Q0BAR) }
++   CI2BAR   = { ~( Q03 & ~CIBAR/CEBAR & Q0BAR & Q1BAR) }
++   CI3BAR   = { ~(       ~CIBAR/CEBAR & Q0BAR & Q1BAR & Q2BAR) }
++   CI4BAR   = { ~(       ~CIBAR/CEBAR & ~Q03) }
++   CI5BAR   = { ~( Q47 & ~CIBAR/CEBAR & ~Q03 & Q4BAR) }
++   CI6BAR   = { ~( Q47 & ~CIBAR/CEBAR & ~Q03 & Q4BAR & Q5BAR) }
++   CI7BAR   = { ~(       ~CIBAR/CEBAR & ~Q03 & Q4BAR & Q5BAR & Q6BAR) }
++   COBAR/ZDBAR = { CIBAR/CEBAR | Q0 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 }
+*
+U40102BDLY PINDLY (1,0,13) VDD VSS
++ COBAR/ZDBAR
++ CLK CIBAR/CEBAR APEBAR CLRBAR SPEBAR JAM0 JAM1 JAM2 JAM3 JAM4 JAM5 JAM6 JAM7
++ COBAR/ZDBAR_O
++ IO_4000B
++ MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++ COBAR/ZDBAR_O = {
++   CASE (
++     CHANGED(CIBAR/CEBAR,0), DELAY(-1,200NS, 400NS),
++     CHANGED_LH(CLK,0)     , DELAY(-1,300NS, 600NS),
++     CHANGED(CLRBAR,0)     , DELAY(-1,375NS, 750NS),
++     CHANGED(APEBAR,0)     , DELAY(-1,650NS,1300NS),
++     DELAY(-1,650NS,1300NS)
++     )
++   }
++
++ FREQ:
++   NODE           = CLK
++   MAXFREQ        = .7MEGHZ
++ WIDTH:
++   NODE           = CLK
++   MIN_LO         = 300NS
++   MIN_HI         = 300NS
++ WIDTH:
++   NODE           = CLRBAR
++   MIN_LO         = 320NS
++ WIDTH:
++   NODE           = APEBAR
++   MIN_LO         = 360NS
++   WHEN           = { CLRBAR!='0 }
++ SETUP_HOLD:
++   DATA(1)        = APEBAR
++   CLOCK LH       = CLK
++   RELEASETIME_LH = 220NS
++   WHEN           = { CLRBAR!='0 }
++ SETUP_HOLD:
++   DATA(1)        = SPEBAR
++   CLOCK LH       = CLK
++   SETUPTIME      = 280NS
++   WHEN           = { CLRBAR!='0 & APEBAR!='0 }
++ SETUP_HOLD:
++   DATA(1)        = CIBAR/CEBAR
++   CLOCK LH       = CLK
++   SETUPTIME      = 500NS
++   WHEN           = { CLRBAR!='0 & APEBAR!='0 & SPEBAR!='0 }
++ SETUP_HOLD:
++   DATA(8)        = JAM0 JAM1 JAM2 JAM3 JAM4 JAM5 JAM6 JAM7
++   CLOCK LH       = CLK
++   SETUPTIME      = 200NS
++   WHEN           = { CLRBAR!='0 & APEBAR!='0 & 
++                      SPEBAR!='1 ^ CHANGED(SPEBAR,0) } 
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD40103B   CMOS 8-STAGE PRESETTABLE SYNCHRONOUS DOWN COUNTER
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* JLS   9-23-92   REMODELED USING LOGICEXP, PINDLY, AND CONSTRAINT DEVICES
+* NOTICE -- THE LOGIC DIAGRAM PROVIDED IN THE DATABOOK IS WRONG.  THIS DEVICE
+*            WAS CREATED TO MATCH THE FUNCTIONAL DESCRIPTION.
+*
+.SUBCKT CD40103B   CLK_I CIBAR/CEBAR_I SPEBAR_I APEBAR_I CLRBAR_I
++ JAM0_I JAM1_I JAM2_I JAM3_I JAM4_I JAM5_I JAM6_I JAM7_I COBAR/ZDBAR_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+X0   J0 CLRBAR SPEBAR APEBAR CLK CI0BAR   Q0 $D_NC
++ VDD VSS   FFCLRHI_CD4010X
+X1   J1 CLRBAR SPEBAR APEBAR CLK CI1BAR   Q1 $D_NC
++ VDD VSS   FFCLRHI_CD4010X
+X2   J2 CLRBAR SPEBAR APEBAR CLK CI2BAR   Q2 $D_NC
++ VDD VSS   FFCLRHI_CD4010X
+X3   J3 CLRBAR SPEBAR APEBAR CLK CI3BAR   Q3 $D_NC
++ VDD VSS   FFCLRHI_CD4010X
+X4   J4 CLRBAR SPEBAR APEBAR CLK CI4BAR   Q4 $D_NC
++ VDD VSS   FFCLRHI_CD4010X
+X5   J5 CLRBAR SPEBAR APEBAR CLK CI5BAR   Q5 $D_NC
++ VDD VSS   FFCLRHI_CD4010X
+X6   J6 CLRBAR SPEBAR APEBAR CLK CI6BAR   Q6 $D_NC
++ VDD VSS   FFCLRHI_CD4010X
+X7   J7 CLRBAR SPEBAR APEBAR CLK CI7BAR   Q7 $D_NC
++ VDD VSS   FFCLRHI_CD4010X
+*
+U40103BLOG LOGICEXP(21,30) VDD VSS
++ Q0 Q1 Q2 Q3 Q4 Q5 Q6 Q7
++ CLK_I CIBAR/CEBAR_I SPEBAR_I APEBAR_I CLRBAR_I
++ JAM0_I JAM1_I JAM2_I JAM3_I JAM4_I JAM5_I JAM6_I JAM7_I
++ CLK   CIBAR/CEBAR   SPEBAR   APEBAR   CLRBAR  
++ JAM0   JAM1   JAM2   JAM3   JAM4   JAM5   JAM6   JAM7  
++ J0 J1 J2 J3 J4 J5 J6 J7
++ CI0BAR CI1BAR CI2BAR CI3BAR CI4BAR CI5BAR CI6BAR CI7BAR  
++ COBAR/ZDBAR
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
++   CLK      = { CLK_I }
++   CIBAR/CEBAR = { CIBAR/CEBAR_I }
++   SPEBAR   = { SPEBAR_I }
++   APEBAR   = { APEBAR_I }
++   CLRBAR   = { CLRBAR_I }
++   JAM0     = { JAM0_I }
++   JAM1     = { JAM1_I }
++   JAM2     = { JAM2_I }
++   JAM3     = { JAM3_I }
++   JAM4     = { JAM4_I }
++   JAM5     = { JAM5_I }
++   JAM6     = { JAM6_I }
++   JAM7     = { JAM7_I }
++
++   Q0BAR    = { ~Q0 }
++   Q1BAR    = { ~Q1 }
++   Q2BAR    = { ~Q2 }
++   Q3BAR    = { ~Q3 }
++   Q4BAR    = { ~Q4 }
++   Q5BAR    = { ~Q5 }
++   Q6BAR    = { ~Q6 }
++   Q7BAR    = { ~Q7 }
++   J0       = { JAM0 }
++   J1       = { JAM1 }
++   J2       = { JAM2 }
++   J3       = { JAM3 }
++   J4       = { JAM4 }
++   J5       = { JAM5 }
++   J6       = { JAM6 }
++   J7       = { JAM7 }
++   Q03      = {   Q0BAR & Q1BAR & Q2BAR & Q3BAR  }
++   CI0BAR   = {           CIBAR/CEBAR }
++   CI1BAR   = { ~(       ~CIBAR/CEBAR & Q0BAR) }
++   CI2BAR   = { ~(       ~CIBAR/CEBAR & Q0BAR & Q1BAR) }
++   CI3BAR   = { ~(       ~CIBAR/CEBAR & Q0BAR & Q1BAR & Q2BAR) }
++   CI4BAR   = { ~( Q03 & ~CIBAR/CEBAR) }
++   CI5BAR   = { ~( Q03 & ~CIBAR/CEBAR & Q4BAR) }
++   CI6BAR   = { ~( Q03 & ~CIBAR/CEBAR & Q4BAR & Q5BAR) }
++   CI7BAR   = { ~( Q03 & ~CIBAR/CEBAR & Q4BAR & Q5BAR & Q6BAR) }
++   COBAR/ZDBAR = { CIBAR/CEBAR | Q0 | Q1 | Q2 | Q3 | Q4 | Q5 | Q6 | Q7 }
+*
+U40103BDLY PINDLY (1,0,13) VDD VSS
++ COBAR/ZDBAR
++ CLK CIBAR/CEBAR APEBAR CLRBAR SPEBAR JAM0 JAM1 JAM2 JAM3 JAM4 JAM5 JAM6 JAM7
++ COBAR/ZDBAR_O
++ IO_4000B
++ MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++ COBAR/ZDBAR_O = {
++   CASE (
++     CHANGED(CIBAR/CEBAR,0), DELAY(-1,200NS, 400NS),
++     CHANGED_LH(CLK,0)     , DELAY(-1,300NS, 600NS),
++     CHANGED(CLRBAR,0)     , DELAY(-1,375NS, 750NS),
++     CHANGED(APEBAR,0)     , DELAY(-1,650NS,1300NS),
++     DELAY(-1,650NS,1300NS)
++     )
++   }
++
++ FREQ:
++   NODE           = CLK
++   MAXFREQ        = .7MEGHZ
++ WIDTH:
++   NODE           = CLK
++   MIN_LO         = 300NS
++   MIN_HI         = 300NS
++ WIDTH:
++   NODE           = CLRBAR
++   MIN_LO         = 320NS
++ WIDTH:
++   NODE           = APEBAR
++   MIN_LO         = 360NS
++   WHEN           = { CLRBAR!='0 }
++ SETUP_HOLD:
++   DATA(1)        = APEBAR
++   CLOCK LH       = CLK
++   RELEASETIME_LH = 220NS
++   WHEN           = { CLRBAR!='0 }
++ SETUP_HOLD:
++   DATA(1)        = SPEBAR
++   CLOCK LH       = CLK
++   SETUPTIME      = 280NS
++   WHEN           = { CLRBAR!='0 & APEBAR!='0 }
++ SETUP_HOLD:
++   DATA(1)        = CIBAR/CEBAR
++   CLOCK LH       = CLK
++   SETUPTIME      = 500NS
++   WHEN           = { CLRBAR!='0 & APEBAR!='0 & SPEBAR!='0 }
++ SETUP_HOLD:
++   DATA(8)        = JAM0 JAM1 JAM2 JAM3 JAM4 JAM5 JAM6 JAM7
++   CLOCK LH       = CLK
++   SETUPTIME      = 200NS
++   WHEN           = { CLRBAR!='0 & APEBAR!='0 & 
++                      SPEBAR!='1 ^ CHANGED(SPEBAR,0) } 
+*
+.ENDS
+*
+*$
+*---------
+* FFCLRHI_CD4010X  GENERIC TOGGLE FLIP-FLOP WITH ASYNCHRONOUS CLEAR, COUNTER ENABLE
+*             SYNCHRONOUS LOAD, AND ASYNCHRONOUS LOAD FOR CD40102 AND CD40103
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* JLS   9-23-92   REMODELED USING LOGICEXP, PINDLY, AND CONSTRAINT DEVICES
+* NOTICE: THIS DEVICE DOES NOT RECEIVE DELAY OR IO_LEVEL PARAMETERS
+*
+.SUBCKT FFCLRHI_CD4010X   J CLRBAR SPEBAR APEBAR CLK CIBAR
++ Q QBAR   VDD VSS
+*
+U1 DFF(1) VDD VSS
++ SETBAR RESETBAR CLK
++ D   Q QBAR
++ D0_EFF  IO_4000B
+*
+UFFCLRHILOG LOGICEXP(6,3) VDD VSS
++ J CLRBAR SPEBAR APEBAR CIBAR Q
++ SETBAR RESETBAR D
++ D0_GATE IO_4000B
++
++ LOGIC:
++   SETBAR   = {  CLRBAR & (APEBAR | ~J) }
++   RESETBAR = { ~CLRBAR |  APEBAR |  J  }
++   D        = { ~(((CIBAR ^ Q) | ~SPEBAR) & (SPEBAR | ~J)) }
+*
+.ENDS
+*
+*$
+*---------
+* FFCLRLO_CD4010X  GENERIC TOGGLE FLIP-FLOP WITH ASYNCHRONOUS CLEAR, COUNTER ENABLE
+*             SYNCHRONOUS LOAD, AND ASYNCHRONOUS LOAD FOR CD40102 AND CD40103
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* JLS   9-23-92   REMODELED USING LOGICEXP, PINDLY, AND CONSTRAINT DEVICES
+* NOTICE: THIS DEVICE DOES NOT RECEIVE DELAY OR IO_LEVEL PARAMETERS
+*
+.SUBCKT FFCLRLO_CD4010X   J CLRBAR SPEBAR APEBAR CLK CIBAR
++ Q QBAR   VDD VSS
+*
+U1 DFF(1) VDD VSS
++ SETBAR RESETBAR CLK
++ D   Q QBAR
++ D0_EFF  IO_4000B
+*
+UFFCLRLOLOG LOGICEXP(6,3) VDD VSS
++ J CLRBAR SPEBAR APEBAR CIBAR Q
++ SETBAR RESETBAR D
++ D0_GATE IO_4000B
++
++ LOGIC:
++   SETBAR   = { ~CLRBAR |  APEBAR | ~J  }
++   RESETBAR = {  CLRBAR & (APEBAR |  J) }
++   D        = { ~(((CIBAR ^ Q) | ~SPEBAR) & (SPEBAR | ~J)) }
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD40106B  CMOS Hex Schmitt Triggers
+*
+* The CMOS Intergrated Circuits Databook, 1983, RCA Solid State
+* atl	10/3/89		Update interface and model names
+*
+.subckt CD40106B  A G
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+UG inv VDD VSS
++	A   G 
++	D_CD40106B IO_4000B_ST MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD40106B ugate (
++	tplhty=140ns	tplhmx=280ns
++	tphlty=140ns	tphlmx=280ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD40107B  CMOS DUAL 2-INPUT NAND BUFFER/DRIVER
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/2/89 	Update interface and model names
+*
+.subckt CD40107B  A B C
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 nand(2) VDD VSS
++	A B   C 
++	D_CD40107B IO_4000B_OC MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD40107B ugate (
++	TPLHTY=100NS	TPHLTY=100NS
++	TPLHMX=200NS	TPHLMX=200NS
++	)
+*$
+*-------------------------------------------------------------------------
+* CD40108B  CMOS 4 X 4 MULTIPORT REGISTER
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/11/89 	Update interface and model names
+*
+.subckt CD40108B  CLOCK WRITE_ENABLE W0 W1 D0 D1 D2 D3 R0A R1A R0B R1B 3STATE_A
++	3STATE_B Q0A Q1A Q2A Q3A Q0B Q1B Q2B Q3B
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 bufa(12) VDD VSS
++	W0	W1	D0	D1	D2	D3
++	R0A	R1A	R0B	R1B	CLOCK	WRITE_ENABLE
++	0W	1W	0D	1D	2D	3D
++	RA0	RA1	RB0	RB1	CLCK	WREN
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 inva(6) VDD VSS
++	0W	1W	RA0	RA1	RB0	RB1
++	0WB	1WB	RA0B	RA1B	RB0B	RB1B
++	D0_GATE IO_4000B 
+U3 anda(2,13) VDD VSS
++	1WB	0WB
++	1WB	0W
++	1W	0WB
++	0W	1W
++	RA1B	RA0B
++	RA1B	RA0
++	RA1	RA0B
++	RA1	RA0
++	RB1B	RB0B
++	RB1B	RB0
++	RB1	RB0B
++	RB1	RB0
++	CLCK	WREN
++	W00	W01	W10	W11	RA00	RA01	RA10	RA11	RB00
++	RB01	RB10	RB11	CLK
++	D0_GATE IO_4000B 
+U4 anda(2,4) VDD VSS
++	CLK	W00
++	CLK	W01
++	CLK	W10
++	CLK	W11
++	CLK0	CLK1	CLK2	CLK3
++	D0_GATE IO_4000B 
+U5 dff(4) VDD VSS
++	$D_HI	$D_HI	CLK0
++	0D	1D	2D	3D
++	Q00	Q01	Q02	Q03	$D_NC	$D_NC	$D_NC	$D_NC
++	D_CD40108B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U6 dff(4) VDD VSS
++	$D_HI	$D_HI	CLK1
++	0D	1D	2D	3D
++	Q10	Q11	Q12	Q13	$D_NC	$D_NC	$D_NC	$D_NC
++	D_CD40108B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U7 dff(4) VDD VSS
++	$D_HI	$D_HI	CLK2
++	0D	1D	2D	3D
++	Q20	Q21	Q22	Q23	$D_NC	$D_NC	$D_NC	$D_NC
++	D_CD40108B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U8 dff(4) VDD VSS
++	$D_HI	$D_HI	CLK3
++	0D	1D	2D	3D
++	Q30	Q31	Q32	Q33	$D_NC	$D_NC	$D_NC	$D_NC
++	D_CD40108B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U9 ao(2,4) VDD VSS
++	Z00 RA00 Z10 RA01 Z20 RA10 Z30 RA11   QA0 
++	D0_GATE IO_4000B 
+U10 ao(2,4) VDD VSS
++	Z01 RA00 Z11 RA01 Z21 RA10 Z31 RA11   QA1 
++	D0_GATE IO_4000B 
+U11 ao(2,4) VDD VSS
++	Z02 RA00 Z12 RA01 Z22 RA10 Z32 RA11   QA2 
++	D0_GATE IO_4000B 
+U12 ao(2,4) VDD VSS
++	Z03 RA00 Z13 RA01 Z23 RA10 Z33 RA11   QA3 
++	D0_GATE IO_4000B 
+U13 ao(2,4) VDD VSS
++	Z00 RB00 Z10 RB01 Z20 RB10 Z30 RB11   QB0 
++	D0_GATE IO_4000B 
+U14 ao(2,4) VDD VSS
++	Z01 RB00 Z11 RB01 Z21 RB10 Z31 RB11   QB1 
++	D0_GATE IO_4000B 
+U15 ao(2,4) VDD VSS
++	Z02 RB00 Z12 RB01 Z22 RB10 Z32 RB11   QB2 
++	D0_GATE IO_4000B 
+U16 ao(2,4) VDD VSS
++	Z03 RB00 Z13 RB01 Z23 RB10 Z33 RB11   QB3 
++	D0_GATE IO_4000B 
+U17 buf3a(4) VDD VSS
++	QA0 QA1 QA2 QA3   3STATE_A   Q0A Q1A Q2A Q3A 
++	D_CD40108B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U18 buf3a(4) VDD VSS
++	QB0 QB1 QB2 QB3   3STATE_B   Q0B Q1B Q2B Q3B 
++	D_CD40108B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U19 dff(1) VDD VSS
++	$D_HI CLCK CLCK   WREN   SEL1 SEL2 
++	D_CD40108B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U20 dff(2) VDD VSS
++	$D_HI CLCK CLCK   0W 1W   SEL3 SEL5 SEL4 SEL6 
++	D_CD40108B_4 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U21 buf3a(16) VDD VSS
++	Q00	Q01	Q02	Q03	Q10	Q11	Q12	Q13
++	Q20	Q21	Q22	Q23	Q30	Q31	Q32	Q33
++	SEL1
++	X00	X01	X02	X03	X10	X11	X12	X13
++	X20	X21	X22	X23	X30	X31	X32	X33
++	D0_TGATE IO_4000B 
+U22 buf3a(16) VDD VSS
++	Q00	Q01	Q02	Q03	Q10	Q11	Q12	Q13
++	Q20	Q21	Q22	Q23	Q30	Q31	Q32	Q33
++	SEL2
++	X00	X01	X02	X03	X10	X11	X12	X13
++	X20	X21	X22	X23	X30	X31	X32	X33
++	D0_TGATE IO_4000B 
+U23 buf3a(16) VDD VSS
++	X00	X01	X02	X03	X10	X11	X12	X13
++	X20	X21	X22	X23	X30	X31	X32	X33
++	SEL3
++	Y00	Y01	Y02	Y03	Y10	Y11	Y12	Y13
++	Y20	Y21	Y22	Y23	Y30	Y31	Y32	Y33
++	D0_TGATE IO_4000B 
+U24 buf3a(16) VDD VSS
++	X00	X01	X02	X03	X10	X11	X12	X13
++	X20	X21	X22	X23	X30	X31	X32	X33
++	SEL4
++	Y00	Y01	Y02	Y03	Y10	Y11	Y12	Y13
++	Y20	Y21	Y22	Y23	Y30	Y31	Y32	Y33
++	D0_TGATE IO_4000B 
+U25 buf3a(16) VDD VSS
++	Y00	Y01	Y02	Y03	Y10	Y11	Y12	Y13
++	Y20	Y21	Y22	Y23	Y30	Y31	Y32	Y33
++	SEL5
++	Z00	Z01	Z02	Z03	Z10	Z11	Z12	Z13
++	Z20	Z21	Z22	Z23	Z30	Z31	Z32	Z33
++	D0_TGATE IO_4000B 
+U26 buf3a(16) VDD VSS
++	Y00	Y01	Y02	Y03	Y10	Y11	Y12	Y13
++	Y20	Y21	Y22	Y23	Y30	Y31	Y32	Y33
++	SEL6
++	Z00	Z01	Z02	Z03	Z10	Z11	Z12	Z13
++	Z20	Z21	Z22	Z23	Z30	Z31	Z32	Z33
++	D0_TGATE IO_4000B 
+.ends
+*
+.model D_CD40108B_1 ueff (
++	THDCLKMN=220NS	TPCLKQLHTY=60NS
++	TPCLKQHLTY=60NS	TPCLKQLHMX=120NS
++	TPCLKQHLMX=120NS
++	)
+.model D_CD40108B_2 utgate (
++	TPLHTY=300NS	TPHLTY=300NS
++	TPLHMX=600NS	TPHLMX=600NS
++	TPZHTY=100NS	TPHZTY=100NS
++	TPZHMX=200NS	TPHZMX=200NS
++	TPLZTY=130NS	TPZLTY=130NS
++	TPLZMX=260NS	TPZLMX=260NS
++	)
+.model D_CD40108B_3 ueff (
++	TWCLKHMN=350NS	TWCLKLMN=350NS
++	TSUDCLKMN=250NS	THDCLKMN=270NS
++	)
+.model D_CD40108B_4 ueff (
++	TWCLKHMN=350NS	TWCLKLMN=350NS
++	TSUDCLKMN=250NS	THDCLKMN=330NS
++	)
+*
+*$
+*-------------------------------------------------------------------------
+* CD40147B 10-LINE TO 4-LINE BCD PRIORITY ENCODER
+*
+* THE CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA
+* KN   9-9-92  REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD40147B IN0_I IN1_I IN2_I IN3_I IN4_I IN5_I IN6_I IN7_I IN8_I IN9_I
++ A_O B_O C_O D_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+UCD40147BLOG LOGICEXP(10,25) VDD VSS
++ IN0_I IN1_I IN2_I IN3_I IN4_I IN5_I IN6_I IN7_I IN8_I IN9_I
++ IN0   IN1   IN2   IN3   IN4   IN5  IN6  IN7   IN8   IN9   A  B  C  D
++ U1 U2 U3 U4 U5 U6 U7 U8 IN79 IN579 IN3579
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++ LOGIC:
+*  BUFFER:
++  IN0   = { IN0_I }
++  IN1   = { IN1_I }
++  IN2   = { IN2_I }
++  IN3   = { IN3_I }
++  IN4   = { IN4_I }
++  IN5   = { IN5_I }
++  IN6   = { IN6_I }
++  IN7   = { IN7_I }
++  IN8   = { IN8_I }
++  IN9   = { IN9_I }
++  IN0BAR = { ~IN0 }
++  IN1BAR = { ~IN1 }
++  IN2BAR = { ~IN2 }
++  IN3BAR = { ~IN3 }
++  IN4BAR = { ~IN4 }
++  IN5BAR = { ~IN5 }
++  IN6BAR = { ~IN6 }
++  IN7BAR = { ~IN7 }
++  IN8BAR = { ~IN8 }
++  IN9BAR = { ~IN9 }
++
+*   INTERMEDIATE TERMS:
++   U1     = { IN8BAR & IN9 }
++   IN79   = { IN7 & IN9 }
++   U2     = { IN6BAR & IN79 }
++   IN579  = { IN5 & IN79 }
++   U3     = { IN4BAR & IN579 }
++   IN3579 = { IN3 & IN579 }
++   U4     = { IN2BAR & IN3579 }
++   U5     = { IN1 & IN3579 }
++   U6     = { IN6 & IN7 & (IN4BAR | IN5BAR | (IN2 & IN3)) }
++   U7     = { (IN4 & IN5 & IN6 & IN7) | (IN8BAR | IN9BAR) }
++   U8     = { IN0BAR | IN1BAR | IN2BAR | IN3BAR | IN4BAR | IN5BAR | IN6BAR
++                                                | IN7BAR | IN8BAR | IN9BAR }
++
+*   OUTPUT ASSIGNMENTS:
++   A  = { U8 & (U1 | U2 | U3 | U4 | U5) }
++   B  = { U8 & (U6 | IN8BAR | IN9BAR) }
++   C  = { U8 & U7 }
++   D  = { U8 & (IN8 & IN9) }
++
+*
+UCD40147BDLY PINDLY (4,0,10) VDD VSS
++ A B C D
++ IN0 IN1 IN2 IN3 IN4 IN5 IN6 IN7 IN8 IN9
++ A_O B_O C_O D_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++ BOOLEAN:
++   DATAHI   = { IN9=='1 & IN8=='1 & IN7=='1 & IN6=='1 & IN5=='1 &
++                IN4=='1 & IN3=='1 & IN2=='1 & IN1=='1 }
++
++ PINDLY:
++   A_O B_O C_O D_O = {
++     CASE (
++       DATAHI, DELAY(-1,425NS,850NS), ; OUT OF PHASE , SPECIAL CASE OF ALL 1s
++       TRN_HL, DELAY(-1,425NS,850NS), ; OUT OF PHASE
++       TRN_LH, DELAY(-1,450NS,900NS), ; IN PHASE
++       DELAY(-1,451NS,901NS)          ; DEFAULT
++       )
++     }
++
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD40160B CMOS SYNCHRONOUS PROGRAMMABLE 4-BIT COUNTERS
+*          DECADE WITH ASYNCHRONOUS CLEAR
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* NH 9/14/92        REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD40160B CLOCK_I PE_I TE_I CLEARBAR_I LOADBAR_I P1_I P2_I P3_I P4_I
++ Q1_O Q2_O Q3_O Q4_O CARRYOUT_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+U160BLOG LOGICEXP(17,14) VDD VSS
++ CLOCK_I PE_I TE_I CLEARBAR_I LOADBAR_I P1_I P2_I P3_I P4_I 
++ Q1 Q2 Q3 Q4 Q1BAR Q2BAR Q3BAR Q4BAR
++ CLOCK PE TE CLEARBAR LOADBAR P1 P2 P3 P4 TOD1 TOD2 TOD3 TOD4 CARRYOUT
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
+* BUFFERS
++   CLOCK = { CLOCK_I }
++   PE = { PE_I }
++   TE = { TE_I }
++   CLEARBAR = { CLEARBAR_I }
++   LOADBAR = { LOADBAR_I }
++   P1 = { P1_I }
++   P2 = { P2_I }
++   P3 = { P3_I }
++   P4 = { P4_I }
++
++   EN = { ~(PE & TE) }
++   LOAD = { ~LOADBAR }
++   TOD1 = { (P1 & LOAD) | (LOADBAR & ~(Q1BAR ^ ~EN)) }
++   TOD2 = { (P2 & LOAD) | (LOADBAR & ~(Q2BAR ^ ~(Q1BAR | EN | Q4))) }
++   TOD3 = { (P3 & LOAD) | (LOADBAR & ~(Q3BAR ^ ~(Q1BAR | EN | Q2BAR))) }
++   TOD4 = { (P4 & LOAD) | (LOADBAR & ~(Q4BAR ^
++     ~((Q1BAR | Q2BAR | Q3BAR | EN) & (Q1BAR | EN | Q4BAR)))) }
++   CARRYOUT = { Q1 & Q4  & TE }
+*
+U160BFF DFF(4) VDD VSS
++ $D_HI CLEARBAR CLOCK
++ TOD1  TOD2  TOD3  TOD4
++ Q1    Q2    Q3    Q4
++ Q1BAR Q2BAR Q3BAR Q4BAR
++ D0_EFF IO_4000B
+*
+U160BDLY PINDLY (5,0,9) VDD VSS
++ Q1 Q2 Q3 Q4 CARRYOUT
++ CLOCK CLEARBAR TE LOADBAR PE P1 P2 P3 P4
++ Q1_O Q2_O Q3_O Q4_O CARRYOUT_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++   Q1_O Q2_O Q3_O Q4_O = {
++     CASE(
++       CHANGED(CLEARBAR,0), DELAY(-1,250NS,500NS),
++       CHANGED(CLOCK,0), DELAY(-1,200NS,400NS),
++       DELAY(-1,251NS,501NS)
++       )
++     }
++   CARRYOUT_O = {
++     CASE(
++       CHANGED(CLOCK,0), DELAY(-1,225NS,450NS),
++       CHANGED(TE,0), DELAY(-1,125NS,250NS),
++       DELAY(-1,226NS,451NS)
++       )
++     }
++
++ FREQ:
++   NODE = CLOCK
++   MAXFREQ = 2MEG
++
++ WIDTH:
++   NODE = CLOCK
++   MIN_LO = 170NS
++   MIN_HI = 170NS
++
++ WIDTH:
++   NODE = CLEARBAR
++   MIN_LO = 170NS
++
++ SETUP_HOLD:
++   DATA(4) P1 P2 P3 P4
++   CLOCK LH = CLOCK
++   SETUPTIME = 240NS
++   WHEN = { CLEARBAR!='0 & (LOADBAR!='1 ^ CHANGED(LOADBAR,0)) }
++
++ SETUP_HOLD:
++   DATA(1) LOADBAR
++   CLOCK LH = CLOCK
++   SETUPTIME = 240NS
++   WHEN = { CLEARBAR!='0 }
++
++ SETUP_HOLD:
++   DATA(2) PE TE
++   CLOCK LH = CLOCK
++   SETUPTIME = 340NS
++   WHEN = { CLEARBAR!='0 }
++
++ SETUP_HOLD:
++   DATA(1) CLEARBAR
++   CLOCK LH = CLOCK
++   RELEASETIME_LH = 200NS
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD40161B CMOS SYNCHRONOUS PROGRAMMABLE 4-BIT COUNTERS
+*          BINARY WITH ASYNCHRONOUS CLEAR
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* JSW 9/14/92        REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD40161B CLOCK_I PE_I TE_I CLEARBAR_I LOADBAR_I P1_I P2_I P3_I P4_I
++ Q1_O Q2_O Q3_O Q4_O CARRYOUT_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+U161BLOG LOGICEXP(17,14) VDD VSS
++ CLOCK_I PE_I TE_I CLEARBAR_I LOADBAR_I P1_I P2_I P3_I P4_I 
++ Q1 Q2 Q3 Q4 Q1BAR Q2BAR Q3BAR Q4BAR
++ CLOCK PE TE CLEARBAR LOADBAR P1 P2 P3 P4 TOD1 TOD2 TOD3 TOD4 CARRYOUT
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
+* BUFFERS
++   CLOCK = { CLOCK_I }
++   PE = { PE_I }
++   TE = { TE_I }
++   CLEARBAR = { CLEARBAR_I }
++   LOADBAR = { LOADBAR_I }
++   P1 = { P1_I }
++   P2 = { P2_I }
++   P3 = { P3_I }
++   P4 = { P4_I }
++
++   EN = { ~(PE & TE) }
++   LOAD = { ~LOADBAR }
++   TOD1 = { (P1 & LOAD) | (LOADBAR & ~(Q1BAR ^ ~EN)) }
++   TOD2 = { (P2 & LOAD) | (LOADBAR & ~(Q2BAR ^ ~(Q1BAR | EN))) }
++   TOD3 = { (P3 & LOAD) | (LOADBAR & ~(Q3BAR ^ ~(Q1BAR | EN | Q2BAR))) }
++   TOD4 = { (P4 & LOAD) | (LOADBAR & ~(Q4BAR ^ 
++     ~(Q1BAR | Q2BAR | Q3BAR | EN))) }
++   CARRYOUT = { Q1 & Q2 & Q3 & Q4  & TE }
+*
+U161BFF DFF(4) VDD VSS
++ $D_HI CLEARBAR CLOCK
++ TOD1  TOD2  TOD3  TOD4
++ Q1    Q2    Q3    Q4
++ Q1BAR Q2BAR Q3BAR Q4BAR
++ D0_EFF IO_4000B
+*
+U161BDLY PINDLY (5,0,9) VDD VSS
++ Q1 Q2 Q3 Q4 CARRYOUT
++ CLOCK CLEARBAR TE LOADBAR PE P1 P2 P3 P4
++ Q1_O Q2_O Q3_O Q4_O CARRYOUT_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++   Q1_O Q2_O Q3_O Q4_O = {
++     CASE(
++       CHANGED(CLEARBAR,0), DELAY(-1,250NS,500NS),
++       CHANGED(CLOCK,0), DELAY(-1,200NS,400NS),
++       DELAY(-1,251NS,501NS)
++       )
++     }
++   CARRYOUT_O = {
++     CASE(
++       CHANGED(CLOCK,0), DELAY(-1,225NS,450NS),
++       CHANGED(TE,0), DELAY(-1,125NS,250NS),
++       DELAY(-1,226NS,451NS)
++       )
++     }
++
++ FREQ:
++   NODE = CLOCK
++   MAXFREQ = 2MEG
++
++ WIDTH:
++   NODE = CLOCK
++   MIN_LO = 170NS
++   MIN_HI = 170NS
++
++ WIDTH:
++   NODE = CLEARBAR
++   MIN_LO = 170NS
++
++ SETUP_HOLD:
++   DATA(4) P1 P2 P3 P4
++   CLOCK LH = CLOCK
++   SETUPTIME = 240NS
++   WHEN = { CLEARBAR!='0 & (LOADBAR!='1 ^ CHANGED(LOADBAR,0)) }
++
++ SETUP_HOLD:
++   DATA(1) LOADBAR
++   CLOCK LH = CLOCK
++   SETUPTIME = 240NS
++   WHEN = { CLEARBAR!='0 }
++
++ SETUP_HOLD:
++   DATA(2) PE TE
++   CLOCK LH = CLOCK
++   SETUPTIME = 340NS
++   WHEN = { CLEARBAR!='0 }
++
++ SETUP_HOLD:
++   DATA(1) CLEARBAR
++   CLOCK LH = CLOCK
++   RELEASETIME_LH = 200NS
+*
+.ENDS
+*
+*$
+*------------------------------------------------------------------------
+* CD40162B CMOS SYNCHRONOUS PROGRAMMABLE 4-BIT COUNTERS
+*          DECADE WITH SYNCHRONOUS CLEAR
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* JSW 9/19/92        REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+* NOTICE:  LOGIC DIAGRAM WAS OBTAINED FROM NATIONAL SEMICONDUCTOR, 1988
+*
+.SUBCKT CD40162B CLOCK_I PE_I TE_I CLEARBAR_I LOADBAR_I P1_I P2_I P3_I P4_I
++ Q1_O Q2_O Q3_O Q4_O CARRYOUT_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+U40162BLOG LOGICEXP(17,14) VDD VSS
++ CLOCK_I PE_I TE_I CLEARBAR_I LOADBAR_I P1_I P2_I P3_I P4_I 
++ Q1 Q2 Q3 Q4 Q1BAR Q2BAR Q3BAR Q4BAR
++ CLOCK PE TE CLEARBAR LOADBAR P1 P2 P3 P4 TOD1 TOD2 TOD3 TOD4 CARRYOUT
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
+* BUFFERS
++   CLOCK = { CLOCK_I }
++   PE = { PE_I }
++   TE = { TE_I }
++   CLEARBAR = { CLEARBAR_I }
++   LOADBAR = { LOADBAR_I }
++   P1 = { P1_I }
++   P2 = { P2_I }
++   P3 = { P3_I }
++   P4 = { P4_I }
++
++   EN = { ~(PE & TE) }
++   LOAD = { ~LOADBAR }
++   TOD1 = { (P1 & LOAD) | (LOADBAR & ~(Q1BAR ^ ~EN)) & CLEARBAR }
++   TOD2 = { (P2 & LOAD) | (LOADBAR & ~(Q2BAR ^ ~(Q1BAR | EN | Q4))) 
++     & CLEARBAR }
++   TOD3 = { (P3 & LOAD) | (LOADBAR & ~(Q3BAR ^ ~(Q1BAR | EN | Q2BAR))) 
++     & CLEARBAR }
++   TOD4 = { (P4 & LOAD) | (LOADBAR & ~(Q4BAR ^
++     ~((Q1BAR | Q2BAR | Q3BAR | EN) & (Q1BAR | EN | Q4BAR)))) & CLEARBAR }
++   CARRYOUT = { Q1 & Q4  & TE }
+*
+U40162BFF DFF(4) VDD VSS
++ $D_HI $D_HI CLOCK
++ TOD1  TOD2  TOD3  TOD4
++ Q1    Q2    Q3    Q4
++ Q1BAR Q2BAR Q3BAR Q4BAR
++ D0_EFF IO_4000B
+*
+U40162BDLY PINDLY (5,0,9) VDD VSS
++ Q1 Q2 Q3 Q4 CARRYOUT
++ CLOCK CLEARBAR TE LOADBAR PE P1 P2 P3 P4
++ Q1_O Q2_O Q3_O Q4_O CARRYOUT_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++   Q1_O Q2_O Q3_O Q4_O = {
++       DELAY(-1,200NS,400NS)
++     }
++   CARRYOUT_O = {
++     CASE(
++       CHANGED(CLOCK,0), DELAY(-1,225NS,450NS),
++       CHANGED(TE,0), DELAY(-1,125NS,250NS),
++       DELAY(-1,226NS,451NS)
++       )
++     }
++
++ FREQ:
++   NODE = CLOCK
++   MAXFREQ = 2MEG
++
++ WIDTH:
++   NODE = CLOCK
++   MIN_LO = 170NS
++   MIN_HI = 170NS
++
++ SETUP_HOLD:
++   DATA(4) P1 P2 P3 P4
++   CLOCK LH = CLOCK
++   SETUPTIME = 240NS
++   WHEN = { (CLEARBAR!='0 ^ CHANGED(CLEARBAR,0)) & 
++     (LOADBAR!='1 ^ CHANGED(LOADBAR,0)) }
++
++ SETUP_HOLD:
++   DATA(1) LOADBAR
++   CLOCK LH = CLOCK
++   SETUPTIME = 240NS
++   WHEN = { CLEARBAR!='0 }
++
++ SETUP_HOLD:
++   DATA(2) PE TE
++   CLOCK LH = CLOCK
++   SETUPTIME = 340NS
++   WHEN = { CLEARBAR!='0 ^ CHANGED(CLEARBAR,0) }
++
++ SETUP_HOLD:
++   DATA(1) CLEARBAR
++   CLOCK LH = CLOCK
++   SETUPTIME = 340NS
+*
+.ENDS
+*
+*$
+*------------------------------------------------------------------------
+* CD40163B CMOS SYNCHRONOUS PROGRAMMABLE 4-BIT COUNTERS
+*          BINARY WITH SYNCHRONOUS CLEAR
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* JSW 9/14/92        REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD40163B CLOCK_I PE_I TE_I CLEARBAR_I LOADBAR_I P1_I P2_I P3_I P4_I
++ Q1_O Q2_O Q3_O Q4_O CARRYOUT_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+U163BLOG LOGICEXP(17,14) VDD VSS
++ CLOCK_I PE_I TE_I CLEARBAR_I LOADBAR_I P1_I P2_I P3_I P4_I 
++ Q1 Q2 Q3 Q4 Q1BAR Q2BAR Q3BAR Q4BAR
++ CLOCK PE TE CLEARBAR LOADBAR P1 P2 P3 P4 TOD1 TOD2 TOD3 TOD4 CARRYOUT
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
+* BUFFERS
++   CLOCK = { CLOCK_I }
++   PE = { PE_I }
++   TE = { TE_I }
++   CLEARBAR = { CLEARBAR_I }
++   LOADBAR = { LOADBAR_I }
++   P1 = { P1_I }
++   P2 = { P2_I }
++   P3 = { P3_I }
++   P4 = { P4_I }
++
++   EN = { ~(PE & TE) }
++   LOAD = { ~LOADBAR }
++   TOD1 = { CLEARBAR & ((P1 & LOAD) | (LOADBAR & ~(Q1BAR ^ ~EN))) }
++   TOD2 = { CLEARBAR & ((P2 & LOAD) | (LOADBAR & ~(Q2BAR ^ ~(Q1BAR | EN)))) }
++   TOD3 = { CLEARBAR & ((P3 & LOAD) | (LOADBAR & ~(Q3BAR ^ 
++     ~(Q1BAR | EN | Q2BAR)))) }
++   TOD4 = { CLEARBAR & ((P4 & LOAD) | (LOADBAR & ~(Q4BAR ^ 
++     ~(Q1BAR | Q2BAR | Q3BAR | EN)))) }
++   CARRYOUT = { Q1 & Q2 & Q3 & Q4  & TE }
+*
+U163BFF DFF(4) VDD VSS
++ $D_HI $D_HI CLOCK
++ TOD1  TOD2  TOD3  TOD4
++ Q1    Q2    Q3    Q4
++ Q1BAR Q2BAR Q3BAR Q4BAR
++ D0_EFF IO_4000B
+*
+U40163BDLY PINDLY (5,0,9) VDD VSS
++ Q1 Q2 Q3 Q4 CARRYOUT
++ CLOCK CLEARBAR TE LOADBAR PE P1 P2 P3 P4
++ Q1_O Q2_O Q3_O Q4_O CARRYOUT_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++   Q1_O Q2_O Q3_O Q4_O = {
++       DELAY(-1,200NS,400NS)
++     }
++   CARRYOUT_O = {
++     CASE(
++       CHANGED(CLOCK,0), DELAY(-1,225NS,450NS),
++       CHANGED(TE,0), DELAY(-1,125NS,250NS),
++       DELAY(-1,226NS,451NS)
++       )
++     }
++
++ FREQ:
++   NODE = CLOCK
++   MAXFREQ = 2MEG
++
++ WIDTH:
++   NODE = CLOCK
++   MIN_LO = 170NS
++   MIN_HI = 170NS
++
++ SETUP_HOLD:
++   DATA(4) P1 P2 P3 P4
++   CLOCK LH = CLOCK
++   SETUPTIME = 240NS
++   WHEN = { (CLEARBAR!='0 ^ CHANGED(CLEARBAR,0)) & 
++     (LOADBAR!='1 ^ CHANGED(LOADBAR,0)) }
++
++ SETUP_HOLD:
++   DATA(1) LOADBAR
++   CLOCK LH = CLOCK
++   SETUPTIME = 240NS
++   WHEN = { CLEARBAR!='0 }
++
++ SETUP_HOLD:
++   DATA(2) PE TE
++   CLOCK LH = CLOCK
++   SETUPTIME = 340NS
++   WHEN = { CLEARBAR!='0 ^ CHANGED(CLEARBAR,0) }
++
++ SETUP_HOLD:
++   DATA(1) CLEARBAR
++   CLOCK LH = CLOCK
++   SETUPTIME = 340NS
+*
+.ENDS
+*
+*$
+*------------------------------------------------------------------------
+* CD40174B  CMOS Hex D-Type Flip-Flops
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* tdn	10/02/89	Update interface and model names
+*
+.subckt CD40174B  CLRBAR CLK D1 D2 D3 D4 D5 D6 Q1 Q2 Q3 Q4 Q5 Q6
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 dff(6) VDD VSS
++	$D_HI	CLRBAR	CLK
++	D1	D2	D3	D4	D5	D6
++	Q1	Q2	Q3	Q4	Q5	Q6
++	$D_NC	$D_NC	$D_NC	$D_NC	$D_NC	$D_NC
++	D_CD40174B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD40174B ueff (
++	twclkhmn=130ns	twclkhmn=130ns
++	twpclmn=100ns	tsudclkmn=40ns
++	thdclkmn=80ns	tpclkqhlty=150ns
++	tpclkqhlmx=300ns	tpclkqlhty=150ns
++	tpclkqlhmx=300ns	tppcqhlty=100ns
++	tppcqhlmx=200ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD40175B  CMOS Quad D-Type Flip-Flops
+*
+* The CMOS Intergrated Circuit Data Book, 1983, RCA Solid State
+* tdn	10/02/89	Update interface and model names
+*
+.subckt CD40175B  CLRBAR CLK D1 D2 D3 D4 Q1 Q1BAR Q2 Q2BAR Q3 Q3BAR Q4 Q4BAR
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 dff(4) VDD VSS
++	$D_HI	CLRBAR	CLK
++	D1	D2	D3	D4
++	Q1	Q2	Q3	Q4	Q1BAR	Q2BAR	Q3BAR	Q4BAR
++	D_CD40175B IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.ends
+*
+.model D_CD40175B ueff (
++	twclkhmn=250ns	twclkhmn=250ns
++	twpclmn=200ns	tsupcclkhmn=250ns
++	tsudclkmn=120ns	thdclkmn=80ns
++	tpclkqhlty=220ns	tpclkqhlmx=400ns
++	tpclkqlhty=220ns	tpclkqlhmx=400ns
++	tppcqhlty=325ns	tppcqhlmx=500ns
++	tppcqlhty=325ns	tppcqlhmx=500ns
++	)
+*
+*$
+*-------------------------------------------------------------------------
+* CD40192B CMOS PRESETTABLE UP/DOWN COUNTERS DUAL CLOCK WITH RESET
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* 9/10/92       REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD40192B PRESETBAR_I RESET_I CLKUP_I CLKDOWN_I J1_I J2_I J3_I J4_I
++                Q1_O Q2_O Q3_O Q4_O CARRYBAR_O BORROWBAR_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+U192BLOG LOGICEXP(16,28) VDD VSS
++ PRESETBAR_I RESET_I CLKUP_I CLKDOWN_I J1_I J2_I J3_I J4_I Q1 Q2 Q3 Q4
++   Q1BAR Q2BAR Q3BAR Q4BAR
++ PRESETBAR RESET CLKUP CLKDOWN J1 J2 J3 J4 S1 S2 S3 S4 R1 R2 R3 R4
++   CLK1 CLK2 CLK3 CLK4 CARRYBAR BORROWBAR UP2 UP3 UP4 DOWN2 DOWN3 DOWN4
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
+* BUFFERS
++   PRESETBAR = { PRESETBAR_I }
++   RESET = { RESET_I }
++   CLKUP = { CLKUP_I }
++   CLKDOWN = { CLKDOWN_I }
++   J1 = { J1_I }
++   J2 = { J2_I }
++   J3 = { J3_I }
++   J4 = { J4_I }
++
++   PRESET = { ~PRESETBAR }
++   RESETBAR = { ~RESET }
++   R1 = { ~( (PRESET & ~J1) | RESET ) }
++   R2 = { ~( (PRESET & ~J2) | RESET ) }
++   R3 = { ~( (PRESET & ~J3) | RESET ) }
++   R4 = { ~( (PRESET & ~J4) | RESET ) }
++   S1 = { ~(PRESET & J1 & RESETBAR) }
++   S2 = { ~(PRESET & J2 & RESETBAR) }
++   S3 = { ~(PRESET & J3 & RESETBAR) }
++   S4 = { ~(PRESET & J4 & RESETBAR) }
++
++   UP2 = { ~(Q1 & Q4BAR) | CLKUP }
++   DOWN2 = { ~((Q4 | Q3 | Q2) & Q1BAR ) | CLKDOWN }
++   UP3 = { (~(Q1 & Q2)) | CLKUP }
++   DOWN3 = { ~((Q3 | Q4) & Q2BAR & Q1BAR) | CLKDOWN }
++   UP4 = { ~( ((Q2 & Q3) | Q4) & Q1 ) }
++   DOWN4 = { ~(Q1BAR & Q2BAR & Q3BAR) }
++   CLK1 = { ~(CLKUP & CLKDOWN) }
++   CLK2 = { ~(UP2 & DOWN2) }
++   CLK3 = { ~(UP3 & DOWN3) }
++   CLK4 = { ~((UP4 | CLKUP) & (DOWN4 | CLKDOWN)) }
++   CARRYBAR = { UP4 | CLKUP | Q4BAR }
++   BORROWBAR = { DOWN4 | CLKDOWN | Q4 }
+*
+U192BFF1 JKFF(1) VDD VSS
++ S1 R1 CLK1 $D_HI $D_HI Q1 Q1BAR
++ D0_EFF IO_4000B
+*
+U192BFF2 JKFF(1) VDD VSS
++ S2 R2 CLK2 $D_HI $D_HI Q2 Q2BAR
++ D0_EFF IO_4000B
+*
+U192BFF3 JKFF(1) VDD VSS
++ S3 R3 CLK3 $D_HI $D_HI Q3 Q3BAR
++ D0_EFF IO_4000B
+*
+U192BFF4 JKFF(1) VDD VSS
++ S4 R4 CLK4 $D_HI $D_HI Q4 Q4BAR
++ D0_EFF IO_4000B
+*
+U192BDLY PINDLY (6,0,4) VDD VSS
++ Q1 Q2 Q3 Q4 CARRYBAR BORROWBAR
++ CLKUP CLKDOWN RESET PRESETBAR
++ Q1_O Q2_O Q3_O Q4_O CARRYBAR_O BORROWBAR_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++   Q1_O Q2_O Q3_O Q4_O = {
++     CASE(
++        CHANGED_HL(PRESETBAR,0), DELAY(-1,200NS,400NS),
++        DELAY(-1,250NS,500NS)
++        )
++      }
++   CARRYBAR_O = {
++     CASE(
++       CHANGED_HL(PRESETBAR,0), DELAY(-1,300NS,600NS),
++       CHANGED_LH(RESET,0), DELAY(-1,300NS,600NS),
++       CHANGED_LH(CLKUP,0), DELAY(-1,160NS,320NS),
++       DELAY(-1,300NS,600NS)
++       )
++     }
++   BORROWBAR_O = {
++     CASE(
++       CHANGED_HL(PRESETBAR,0), DELAY(-1,300NS,600NS),
++       CHANGED_LH(RESET,0), DELAY(-1,300NS,600NS),
++       CHANGED_LH(CLKDOWN,0), DELAY(-1,160NS,320NS),
++       DELAY(-1,300NS,600NS)
++       )
++     }
++
++ FREQ:
++   NODE = CLKUP
++   MAXFREQ = 2MEG
++
++ FREQ:
++   NODE = CLKDOWN
++   MAXFREQ = 2MEG
++
++ WIDTH:
++   NODE = CLKUP
++   MIN_HI = 180NS
++   MIN_LO = 180NS
++
++ WIDTH:
++   NODE = CLKDOWN
++   MIN_HI = 180NS
++   MIN_LO = 180NS
++
++ WIDTH:
++   NODE = RESET
++   MIN_HI = 480NS
++
++ WIDTH:
++   NODE = PRESETBAR
++   MIN_LO = 240NS
++
++ SETUP_HOLD:
++   DATA(1) RESET
++   CLOCK LH = CLKUP
++   RELEASETIME_HL = 80NS
++
++ SETUP_HOLD:
++   DATA(1) RESET
++   CLOCK LH = CLKDOWN
++   RELEASETIME_HL = 80NS
++
++ SETUP_HOLD:
++   DATA(1) PRESETBAR
++   CLOCK LH = CLKUP
++   RELEASETIME_LH = 80NS
++
++ SETUP_HOLD:
++   DATA(1) PRESETBAR
++   CLOCK LH = CLKDOWN
++   RELEASETIME_LH = 80NS
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD40193B CMOS PRESETTABLE UP/DOWN COUNTERS DUAL CLOCK WITH RESET
+*
+* CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA SOLID STATE DIVISION
+* 9/11/92       REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD40193B PRESETBAR_I RESET_I CLKUP_I CLKDOWN_I J1_I J2_I J3_I J4_I
++                Q1_O Q2_O Q3_O Q4_O CARRYBAR_O BORROWBAR_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+U193BLOG LOGICEXP(16,28) VDD VSS
++ PRESETBAR_I RESET_I CLKUP_I CLKDOWN_I J1_I J2_I J3_I J4_I Q1 Q2 Q3 Q4
++   Q1BAR Q2BAR Q3BAR Q4BAR
++ PRESETBAR RESET CLKUP CLKDOWN J1 J2 J3 J4 S1 S2 S3 S4 R1 R2 R3 R4
++   CLK1 CLK2 CLK3 CLK4 CARRYBAR BORROWBAR UP2 UP3 UP4 DOWN2 DOWN3 DOWN4
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++
++ LOGIC:
+* BUFFERS
++   PRESETBAR = { PRESETBAR_I }
++   RESET = { RESET_I }
++   CLKUP = { CLKUP_I }
++   CLKDOWN = { CLKDOWN_I }
++   J1 = { J1_I }
++   J2 = { J2_I }
++   J3 = { J3_I }
++   J4 = { J4_I }
++
++   PRESET = { ~PRESETBAR }
++   RESETBAR = { ~RESET }
++   R1 = { ~( (PRESET & ~J1) | RESET ) }
++   R2 = { ~( (PRESET & ~J2) | RESET ) }
++   R3 = { ~( (PRESET & ~J3) | RESET ) }
++   R4 = { ~( (PRESET & ~J4) | RESET ) }
++   S1 = { ~(PRESET & J1 & RESETBAR) }
++   S2 = { ~(PRESET & J2 & RESETBAR) }
++   S3 = { ~(PRESET & J3 & RESETBAR) }
++   S4 = { ~(PRESET & J4 & RESETBAR) }
++
++   UP2 = { Q1BAR | CLKUP }
++   DOWN2 = { Q1 | CLKDOWN }
++   UP3 = { ~(Q1 & Q2) | CLKUP }
++   DOWN3 = { ~(Q2BAR & Q1BAR) | CLKDOWN }
++   UP4 = { ~(Q1 & Q2 & Q3) }
++   DOWN4 = { ~(Q1BAR & Q2BAR & Q3BAR) }
++   CLK1 = { ~(CLKUP & CLKDOWN) }
++   CLK2 = { ~(UP2 & DOWN2) }
++   CLK3 = { ~(UP3 & DOWN3) }
++   CLK4 = { ~((UP4 | CLKUP) & (DOWN4 | CLKDOWN)) }
++   CARRYBAR = { UP4 | CLKUP | Q4BAR }
++   BORROWBAR = { DOWN4 | CLKDOWN | Q4 }
+*
+U193BFF1 JKFF(1) VDD VSS
++ S1 R1 CLK1 $D_HI $D_HI Q1 Q1BAR
++ D0_EFF IO_4000B
+*
+U193BFF2 JKFF(1) VDD VSS
++ S2 R2 CLK2 $D_HI $D_HI Q2 Q2BAR
++ D0_EFF IO_4000B
+*
+U193BFF3 JKFF(1) VDD VSS
++ S3 R3 CLK3 $D_HI $D_HI Q3 Q3BAR
++ D0_EFF IO_4000B
+*
+U193BFF4 JKFF(1) VDD VSS
++ S4 R4 CLK4 $D_HI $D_HI Q4 Q4BAR
++ D0_EFF IO_4000B
+*
+U193BDLY PINDLY (6,0,4) VDD VSS
++ Q1 Q2 Q3 Q4 CARRYBAR BORROWBAR
++ CLKUP CLKDOWN RESET PRESETBAR
++ Q1_O Q2_O Q3_O Q4_O CARRYBAR_O BORROWBAR_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++
++ PINDLY:
++   Q1_O Q2_O Q3_O Q4_O = {
++     CASE(
++        CHANGED_HL(PRESETBAR,0), DELAY(-1,200NS,400NS),
++        DELAY(-1,250NS,500NS)
++        )
++      }
++   CARRYBAR_O = {
++     CASE(
++       CHANGED_HL(PRESETBAR,0), DELAY(-1,300NS,600NS),
++       CHANGED_LH(RESET,0), DELAY(-1,300NS,600NS),
++       CHANGED(CLKUP,0), DELAY(-1,160NS,320NS),
++       DELAY(-1,300NS,600NS)
++       )
++     }
++   BORROWBAR_O = {
++     CASE(
++       CHANGED_HL(PRESETBAR,0), DELAY(-1,300NS,600NS),
++       CHANGED_LH(RESET,0), DELAY(-1,300NS,600NS),
++       CHANGED(CLKDOWN,0), DELAY(-1,160NS,320NS),
++       DELAY(-1,300NS,600NS)
++       )
++     }
++
++ FREQ:
++   NODE = CLKUP
++   MAXFREQ = 2MEG
++
++ FREQ:
++   NODE = CLKDOWN
++   MAXFREQ = 2MEG
++
++ WIDTH:
++   NODE = CLKUP
++   MIN_HI = 180NS
++   MIN_LO = 180NS
++
++ WIDTH:
++   NODE = CLKDOWN
++   MIN_HI = 180NS
++   MIN_LO = 180NS
++
++ WIDTH:
++   NODE = RESET
++   MIN_HI = 480NS
++
++ WIDTH:
++   NODE = PRESETBAR
++   MIN_LO = 240NS
++
++ SETUP_HOLD:
++   DATA(1) RESET
++   CLOCK LH = CLKUP
++   RELEASETIME_HL = 80NS
++
++ SETUP_HOLD:
++   DATA(1) RESET
++   CLOCK LH = CLKDOWN
++   RELEASETIME_HL = 80NS
++
++ SETUP_HOLD:
++   DATA(1) PRESETBAR
++   CLOCK LH = CLKUP
++   RELEASETIME_LH = 80NS
++
++ SETUP_HOLD:
++   DATA(1) PRESETBAR
++   CLOCK LH = CLKDOWN
++   RELEASETIME_LH = 80NS
+*
+.ENDS
+*
+*$
+*-------------------------------------------------------------------------
+* CD40208B  CMOS 4 X 4 MULTIPORT REGISTER
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* tvh	10/11/89 	Update interface and model names
+*
+.subckt CD40208B  CLOCK WRITE_ENABLE W0 W1 D0 D1 D2 D3 R0A R1A R0B R1B 3STATE_A
++	3STATE_B Q0A Q1A Q2A Q3A Q0B Q1B Q2B Q3B
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 bufa(12) VDD VSS
++	W0	W1	D0	D1	D2	D3
++	R0A	R1A	R0B	R1B	CLOCK	WRITE_ENABLE
++	0W	1W	0D	1D	2D	3D
++	RA0	RA1	RB0	RB1	CLCK	WREN
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL} 
+U2 inva(6) VDD VSS
++	0W	1W	RA0	RA1	RB0	RB1
++	0WB	1WB	RA0B	RA1B	RB0B	RB1B
++	D0_GATE IO_4000B 
+U3 anda(2,13) VDD VSS
++	1WB	0WB
++	1WB	0W
++	1W	0WB
++	0W	1W
++	RA1B	RA0B
++	RA1B	RA0
++	RA1	RA0B
++	RA1	RA0
++	RB1B	RB0B
++	RB1B	RB0
++	RB1	RB0B
++	RB1	RB0
++	CLCK	WREN
++	W00	W01	W10	W11	RA00	RA01	RA10	RA11	RB00
++	RB01	RB10	RB11	CLK
++	D0_GATE IO_4000B 
+U4 anda(2,4) VDD VSS
++	CLK	W00
++	CLK	W01
++	CLK	W10
++	CLK	W11
++	CLK0	CLK1	CLK2	CLK3
++	D0_GATE IO_4000B 
+U5 dff(4) VDD VSS
++	$D_HI	$D_HI	CLK0
++	0D	1D	2D	3D
++	Q00	Q01	Q02	Q03	$D_NC	$D_NC	$D_NC	$D_NC
++	D_CD40208B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U6 dff(4) VDD VSS
++	$D_HI	$D_HI	CLK1
++	0D	1D	2D	3D
++	Q10	Q11	Q12	Q13	$D_NC	$D_NC	$D_NC	$D_NC
++	D_CD40208B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U7 dff(4) VDD VSS
++	$D_HI	$D_HI	CLK2
++	0D	1D	2D	3D
++	Q20	Q21	Q22	Q23	$D_NC	$D_NC	$D_NC	$D_NC
++	D_CD40208B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U8 dff(4) VDD VSS
++	$D_HI	$D_HI	CLK3
++	0D	1D	2D	3D
++	Q30	Q31	Q32	Q33	$D_NC	$D_NC	$D_NC	$D_NC
++	D_CD40208B_1 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U9 ao(2,4) VDD VSS
++	Z00 RA00 Z10 RA01 Z20 RA10 Z30 RA11   QA0 
++	D0_GATE IO_4000B 
+U10 ao(2,4) VDD VSS
++	Z01 RA00 Z11 RA01 Z21 RA10 Z31 RA11   QA1 
++	D0_GATE IO_4000B 
+U11 ao(2,4) VDD VSS
++	Z02 RA00 Z12 RA01 Z22 RA10 Z32 RA11   QA2 
++	D0_GATE IO_4000B 
+U12 ao(2,4) VDD VSS
++	Z03 RA00 Z13 RA01 Z23 RA10 Z33 RA11   QA3 
++	D0_GATE IO_4000B 
+U13 ao(2,4) VDD VSS
++	Z00 RB00 Z10 RB01 Z20 RB10 Z30 RB11   QB0 
++	D0_GATE IO_4000B 
+U14 ao(2,4) VDD VSS
++	Z01 RB00 Z11 RB01 Z21 RB10 Z31 RB11   QB1 
++	D0_GATE IO_4000B 
+U15 ao(2,4) VDD VSS
++	Z02 RB00 Z12 RB01 Z22 RB10 Z32 RB11   QB2 
++	D0_GATE IO_4000B 
+U16 ao(2,4) VDD VSS
++	Z03 RB00 Z13 RB01 Z23 RB10 Z33 RB11   QB3 
++	D0_GATE IO_4000B 
+U17 buf3a(4) VDD VSS
++	QA0 QA1 QA2 QA3   3STATE_A   Q0A Q1A Q2A Q3A 
++	D_CD40208B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U18 buf3a(4) VDD VSS
++	QB0 QB1 QB2 QB3   3STATE_B   Q0B Q1B Q2B Q3B 
++	D_CD40208B_2 IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U19 dff(1) VDD VSS
++	$D_HI CLCK CLCK   WREN   SEL1 SEL2 
++	D_CD40208B_3 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U20 dff(2) VDD VSS
++	$D_HI CLCK CLCK   0W 1W   SEL3 SEL5 SEL4 SEL6 
++	D_CD40208B_4 IO_4000B MNTYMXDLY={MNTYMXDLY} 
+U21 buf3a(16) VDD VSS
++	Q00	Q01	Q02	Q03	Q10	Q11	Q12	Q13
++	Q20	Q21	Q22	Q23	Q30	Q31	Q32	Q33
++	SEL1
++	X00	X01	X02	X03	X10	X11	X12	X13
++	X20	X21	X22	X23	X30	X31	X32	X33
++	D0_TGATE IO_4000B 
+U22 buf3a(16) VDD VSS
++	Q00	Q01	Q02	Q03	Q10	Q11	Q12	Q13
++	Q20	Q21	Q22	Q23	Q30	Q31	Q32	Q33
++	SEL2
++	X00	X01	X02	X03	X10	X11	X12	X13
++	X20	X21	X22	X23	X30	X31	X32	X33
++	D0_TGATE IO_4000B 
+U23 buf3a(16) VDD VSS
++	X00	X01	X02	X03	X10	X11	X12	X13
++	X20	X21	X22	X23	X30	X31	X32	X33
++	SEL3
++	Y00	Y01	Y02	Y03	Y10	Y11	Y12	Y13
++	Y20	Y21	Y22	Y23	Y30	Y31	Y32	Y33
++	D0_TGATE IO_4000B 
+U24 buf3a(16) VDD VSS
++	X00	X01	X02	X03	X10	X11	X12	X13
++	X20	X21	X22	X23	X30	X31	X32	X33
++	SEL4
++	Y00	Y01	Y02	Y03	Y10	Y11	Y12	Y13
++	Y20	Y21	Y22	Y23	Y30	Y31	Y32	Y33
++	D0_TGATE IO_4000B 
+U25 buf3a(16) VDD VSS
++	Y00	Y01	Y02	Y03	Y10	Y11	Y12	Y13
++	Y20	Y21	Y22	Y23	Y30	Y31	Y32	Y33
++	SEL5
++	Z00	Z01	Z02	Z03	Z10	Z11	Z12	Z13
++	Z20	Z21	Z22	Z23	Z30	Z31	Z32	Z33
++	D0_TGATE IO_4000B 
+U26 buf3a(16) VDD VSS
++	Y00	Y01	Y02	Y03	Y10	Y11	Y12	Y13
++	Y20	Y21	Y22	Y23	Y30	Y31	Y32	Y33
++	SEL6
++	Z00	Z01	Z02	Z03	Z10	Z11	Z12	Z13
++	Z20	Z21	Z22	Z23	Z30	Z31	Z32	Z33
++	D0_TGATE IO_4000B 
+.ends
+*
+.model D_CD40208B_1 ueff (
++	THDCLKMN=220NS	TPCLKQLHTY=60NS
++	TPCLKQHLTY=60NS	TPCLKQLHMX=120NS
++	TPCLKQHLMX=120NS
++	)
+.model D_CD40208B_2 utgate (
++	TPLHTY=300NS	TPHLTY=300NS
++	TPLHMX=600NS	TPHLMX=600NS
++	TPZHTY=100NS	TPHZTY=100NS
++	TPZHMX=200NS	TPHZMX=200NS
++	TPLZTY=130NS	TPZLTY=130NS
++	TPLZMX=260NS	TPZLMX=260NS
++	)
+.model D_CD40208B_3 ueff (
++	TWCLKHMN=350NS	TWCLKLMN=350NS
++	TSUDCLKMN=250NS	THDCLKMN=270NS
++	)
+.model D_CD40208B_4 ueff (
++	TWCLKHMN=350NS	TWCLKLMN=350NS
++	TSUDCLKMN=250NS	THDCLKMN=330NS
++	)
+*
+*$
+*-------------------------------------------------------------------------
+* CD40257B CMOS QUAD 2-LINE-TO-1-LINE DATA SELECTOR/MULTIPLEXER
+*
+* THE CMOS INTEGRATED CIRCUITS DATABOOK, 1983, RCA
+* KN   9-8-92  REMODELED USING LOGICEXP, PINDLY, CONSTRAINT DEVICES
+*
+.SUBCKT CD40257B A1_I B1_I A2_I B2_I A3_I B3_I A4_I B4_I OUTDISABLE_I SEL_I
++ D1_O D2_O D3_O D4_O
++ OPTIONAL: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++ PARAMS: MNTYMXDLY=0 IO_LEVEL=0
+*
+UCD40257BLOG LOGICEXP(10,14) VDD VSS
++ A1_I B1_I A2_I B2_I A3_I B3_I A4_I B4_I OUTDISABLE_I SEL_I
++ A1 B1 A2 B2 A3 B3 A4 B4 OUTDISABLE SEL D1 D2 D3 D4
++ D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
++ LOGIC:
+*   BUFFER:
++   A1         = { A1_I }
++   A2         = { A2_I }
++   A3         = { A3_I }
++   A4         = { A4_I }
++   B1         = { B1_I }
++   B2         = { B2_I }
++   B3         = { B3_I }
++   B4         = { B4_I }
++   OUTDISABLE = { OUTDISABLE_I }
++   SEL        = { SEL_I }
++   SELBAR     = { ~SEL }
++
+*   OUTPUT ASSIGNMENTS:
++   D1 = { (SELBAR & A1) | (SEL & B1) }
++   D2 = { (SELBAR & A2) | (SEL & B2) }
++   D3 = { (SELBAR & A3) | (SEL & B3) }
++   D4 = { (SELBAR & A4) | (SEL & B4) }
+*
+UCD40257BDLY PINDLY (4,1,9) VDD VSS
++ D1 D2 D3 D4
++ OUTDISABLE
++ A1 A2 A3 A4 B1 B2 B3 B4 SEL
++ D1_O D2_O D3_O D4_O
++ IO_4000B MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
++ BOOLEAN:
++   CH_INPUT = { CHANGED(A1,0) | CHANGED(A2,0) | CHANGED(A3,0) | CHANGED(A4,0) |
++                CHANGED(B1,0) | CHANGED(B2,0) | CHANGED(B3,0) | CHANGED(B4,0) }
++
++ TRISTATE:
++   ENABLE LO OUTDISABLE
++   D1_O D2_O D3_O D4_O = {
++     CASE(
++       TRN_$Z | TRN_Z$,  DELAY(-1,95NS,190NS),
++       CHANGED(SEL,0),   DELAY(-1,190NS,380NS),
++       CH_INPUT,         DELAY(-1,150NS,300NS),
++                         DELAY(-1,191NS,381NS)  ;DEFAULT
++       )
++     }
++
+*
+.ENDS
+*$
+*

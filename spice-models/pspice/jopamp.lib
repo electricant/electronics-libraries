@@ -1,0 +1,3366 @@
+* Library of Japanese Operational Amplifier Models
+
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+
+* $Revision:   1.6  $
+* $Author:   RPEREZ  $
+* $Date:   20 Apr 1998 08:41:34  $
+
+* ---------------------------------------------------------------------------
+* The parameters in this model library were derived from the data sheets for
+* each part.  Each part was characterized using the Parts option.
+* ---------------------------------------------------------------------------
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt an4558   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 7.074E6 -7E6 7E6 7E6 -7E6
+  ga    6  0 11 12 565.5E-6
+  gcm   0  6 10 99 17.88E-9
+  iee   3 10 dc 30.12E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.768E3
+  rc2   4 12 1.768E3
+  re1  13 10 43.93
+  re2  14 10 43.93
+  ree  10 99 6.640E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 7.557E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=250)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt an6551   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 471.2E-6
+  gcm   0  6 10 99 14.90E-9
+  iee   3 10 dc 30.20E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 2.122E3
+  rc2   4 12 2.122E3
+  re1  13 10 395.2
+  re2  14 10 395.2
+  ree  10 99 6.623E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 18.33E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=150)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt an6552   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 7.074E6 -7E6 7E6 7E6 -7E6
+  ga    6  0 11 12 565.5E-6
+  gcm   0  6 10 99 17.88E-9
+  iee   3 10 dc 30.12E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.768E3
+  rc2   4 12 1.768E3
+  re1  13 10 43.93
+  re2  14 10 43.93
+  ree  10 99 6.640E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 7.557E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=250)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt an6553   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 1.131E-3
+  gcm   0  6 10 99 35.76E-9
+  iee   3 10 dc 60.20E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 884.2
+  rc2   4 12 884.2
+  re1  13 10 21.98
+  re2  14 10 21.98
+  ree  10 99 3.322E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 6.073E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=300)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt an6554   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 885.9E-6
+  gcm   0  6 10 99 28.02E-9
+  iee   3 10 dc 48.20E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.129E3
+  rc2   4 12 1.129E3
+  re1  13 10 50.87
+  re2  14 10 50.87
+  ree  10 99 4.149E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 5.503E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=240)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt ha17080  1 2 3 4 5 6 7
+*
+  c1   11 12 2.887E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 9.447E-9
+  iss   3 10 dc 130.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 18.00E3
+  rss  10 99 1.538E6
+  vb    9  0 dc 0
+  vc    3 53 dc 3
+  ve   54  4 dc 3
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=273.3E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ha17082  1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 9.447E-9
+  iss   3 10 dc 130.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 18.00E3
+  rss  10 99 1.538E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=273.3E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ha17083  1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 9.447E-9
+  iss   3 10 dc 130.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 18.00E3
+  rss  10 99 1.538E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=273.3E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ha17084  1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 9.447E-9
+  iss   3 10 dc 130.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 18.00E3
+  rss  10 99 1.538E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=273.3E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ha17558  1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 565.5E-6
+  gcm   0  6 10 99 5.655E-9
+  iee   3 10 dc 30.10E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.768E3
+  rc2   4 12 1.768E3
+  re1  13 10 43.96
+  re2  14 10 43.96
+  ree  10 99 6.645E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 10.10E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2.600
+  ve   54  4 dc 2.600
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=300)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ha17741  1 2 3 4 5
+*
+  c1   11 12 5.460E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 21.22E6 -21E6 21E6 21E6 -21E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 5.961E-9
+  iee  10  4 dc 30.15E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 5.305E3
+  rc2   3 12 5.305E3
+  re1  13 10 3.563E3
+  re2  14 10 3.563E3
+  ree  10 99 6.633E6
+  ro1   8  5 50
+  ro2   7 99 50
+  rp    3  4 14.04E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 40
+  vln   0 92 dc 40
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=200)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ir3741  1 2 3 4 5
+*
+  c1   11 12 5.460E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 21.22E6 -21E6 21E6 21E6 -21E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 5.961E-9
+  iee  10  4 dc 30.15E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 5.305E3
+  rc2   3 12 5.305E3
+  re1  13 10 3.563E3
+  re2  14 10 3.563E3
+  ree  10 99 6.633E6
+  ro1   8  5 50
+  ro2   7 99 50
+  rp    3  4 14.04E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 40
+  vln   0 92 dc 40
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=200)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt mb3607   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 5.961E-9
+  iee  10  4 dc 18.16E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 5.305E3
+  rc2   3 12 5.305E3
+  re1  13 10 2.410E3
+  re2  14 10 2.410E3
+  ree  10 99 11.01E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 9.049E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=112.5)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt mb47082  1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 9.447E-9
+  iss  10  4 dc 130.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   3 11 5.305E3
+  rd2   3 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 8.571E3
+  rss  10 99 1.538E6
+  vb    9  0 dc 0
+  vc    3 53 dc 3
+  ve   54  4 dc 3
+  vlim  7  8 dc 0
+  vlp  91  0 dc 25
+  vln   0 92 dc 25
+.model dx D(Is=800.0E-18)
+.model jx NJF(Is=15.00E-12 Beta=273.3E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt mb47358  1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 21.22E6 -21E6 21E6 21E6 -21E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 10.60E-9
+  iee   3 10 dc 60.09E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 5.305E3
+  rc2   4 12 5.305E3
+  re1  13 10 4.436E3
+  re2  14 10 4.436E3
+  ree  10 99 3.328E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 503
+  vb    9  0 dc 0
+  vc    3 53 dc .9
+  ve   54  4 dc .2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 40
+  vln   0 92 dc 40
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=666.7)
+.ends
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt mb47833  1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 2.581E6 -2E6 2E6 2E6 -2E6
+  ga    6  0 11 12 1.885E-3
+  gcm   0  6 10 99 18.85E-9
+  iee   3 10 dc 211.0E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 530.5
+  rc2   4 12 530.5
+  re1  13 10 282.8
+  re2  14 10 282.8
+  ree  10 99 947.9E3
+  ro1   8  5 45
+  ro2   7 99 65
+  rp    3  4 13.10E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.600
+  ve   54  4 dc 1.600
+  vlim  7  8 dc 0
+  vlp  91  0 dc 29
+  vln   0 92 dc 29
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=210)
+.ends
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt M5216    1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 6.706E6 -6E6 6E6 6E6 -6E6
+  ga    6  0 11 12 1.885E-3
+  gcm   0  6 10 99 58.90E-9
+  iee  10  4 dc 241.0E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 530.5
+  rc2   3 12 530.5
+  re1  13 10 313.7
+  re2  14 10 313.7
+  ree  10 99 829.9E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 2.551E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=240)
+.ends
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt M5220    1 2 3 4 5
+*
+  c1   11 12 2.836E-12
+  c2    6  7 1.000E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 142.2E6 -140E6 140E6 140E6 -140E6
+  ga    6  0 11 12 125.7E-6
+  gcm   0  6 10 99 2.244E-9
+  iee   3 10 dc 7.900E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 7.958E3
+  rc2   4 12 7.958E3
+  re1  13 10 1.000E-30
+  re2  14 10 1.000E-30
+  ree  10 99 25.32E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 3.242E3
+  vb    9  0 dc 0
+  vc    3 53 dc 8.300
+  ve   54  4 dc 8.300
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=4.643)
+.ends
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt M5228    1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 6.706E6 -6E6 6E6 6E6 -6E6
+  ga    6  0 11 12 1.885E-3
+  gcm   0  6 10 99 58.90E-9
+  iee   3 10 dc 241.0E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 530.5
+  rc2   4 12 530.5
+  re1  13 10 313.7
+  re2  14 10 313.7
+  ree  10 99 829.9E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 2.551E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=240)
+.ends
+*$
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt M5238   1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  css  10 99 1.000E-30
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 636.6E6 -640E6 640E6 640E6 -640E6
+  ga    6  0 11 12 12.57E-6
+  gcm   0  6 10 99 1.995E-9
+  iss   3 10 dc 200.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 79.58E3
+  rd2   4 12 79.58E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 2.045E3
+  rss  10 99 1.000E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 50
+  vln   0 92 dc 50
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=789.6E-9 Vto=-1)
+.ends
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt M5260    1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 6.706E6 -6E6 6E6 6E6 -6E6
+  ga    6  0 11 12 1.885E-3
+  gcm   0  6 10 99 58.90E-9
+  iee   3 10 dc 241.0E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 530.5
+  rc2   4 12 530.5
+  re1  13 10 313.7
+  re2  14 10 313.7
+  ree  10 99 829.9E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 2.551E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=240)
+.ends
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt TA75060P 1 2 3 4 5 6 7
+*
+  c1   11 12 2.887E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 636.6E3 -640E3 640E3 640E3 -640E3
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 29.87E-9
+  iss   3 10 dc 105.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 50
+  rp    3  4 150.0E3
+  rss  10 99 1.905E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 25
+  vln   0 92 dc 25
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=338.4E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ta75061p 1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 20.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 125.7E-6
+  gcm   0  6 10 99 19.92E-9
+  iss   3 10 dc 70.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 7.958E3
+  rd2   4 12 7.958E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 150.0E3
+  rss  10 99 2.857E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=225.6E-6 Vto=-1)
+.ends
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ta75062p 1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 62.83E-6
+  gcm   0  6 10 99 9.958E-9
+  iss   3 10 dc 35.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 15.92E3
+  rd2   4 12 15.92E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 150.0E3
+  rss  10 99 5.714E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=112.8E-6 Vto=-1)
+.ends
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ta75064p 1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 62.83E-6
+  gcm   0  6 10 99 9.958E-9
+  iss   3 10 dc 35.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 15.92E3
+  rd2   4 12 15.92E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 9.000E3
+  rss  10 99 5.714E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=112.8E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt ta75070p 1 2 3 4 5 6 7
+*
+  c1   11 12 2.887E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 339.3E-6
+  gcm   0  6 10 99 53.77E-9
+  iss   3 10 dc 234.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 2.947E3
+  rd2   4 12 2.947E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 18.00E3
+  rss  10 99 854.7E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=492.0E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ta75071p 1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 29.87E-9
+  iss   3 10 dc 130.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 21.43E3
+  rss  10 99 1.538E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=273.3E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ta75072p 1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 29.87E-9
+  iss   3 10 dc 130.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 10.71E3
+  rss  10 99 1.538E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=273.3E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ta75074p 1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 29.87E-9
+  iss   3 10 dc 130.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 5.357E3
+  rss  10 99 1.538E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=273.3E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ta75254P 1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 134.2E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 94.25E-6
+  gcm   0  6 10 99 298.0E-12
+  iee  10  4 dc 6.040E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 10.61E3
+  rc2   3 12 10.61E3
+  re1  13 10 1.976E3
+  re2  14 10 1.976E3
+  ree  10 99 33.11E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 9.393E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 25
+  vln   0 92 dc 25
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=150)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ta75358p 1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 282.7E-6
+  gcm   0  6 10 99 15.90E-9
+  iee   3 10 dc 24.09E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 3.537E3
+  rc2   4 12 3.537E3
+  re1  13 10 1.376E3
+  re2  14 10 1.376E3
+  ree  10 99 8.302E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 6.443E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 0
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=266.7)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ta75458p 1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 19.29E6 -19E6 19E6 19E6 -19E6
+  ga    6  0 11 12 207.3E-6
+  gcm   0  6 10 99 6.557E-9
+  iee  10  4 dc 24.16E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 4.823E3
+  rc2   3 12 4.823E3
+  re1  13 10 2.650E3
+  re2  14 10 2.650E3
+  ree  10 99 8.278E6
+  ro1   8  5 25
+  ro2   7 99 25
+  rp    3  4 12.99E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=150)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ta75557p 1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 22.37E6 -22E6 22E6 22E6 -22E6
+  ga    6  0 11 12 565.5E-6
+  gcm   0  6 10 99 17.88E-9
+  iee   3 10 dc 30.12E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.768E3
+  rc2   4 12 1.768E3
+  re1  13 10 43.93
+  re2  14 10 43.93
+  ree  10 99 6.640E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 9.082E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 40
+  vln   0 92 dc 40
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=250)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ta75558p 1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 22.37E6 -22E6 22E6 22E6 -22E6
+  ga    6  0 11 12 565.5E-6
+  gcm   0  6 10 99 17.88E-9
+  iee   3 10 dc 30.12E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.768E3
+  rc2   4 12 1.768E3
+  re1  13 10 43.93
+  re2  14 10 43.93
+  ree  10 99 6.640E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 9.082E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 40
+  vln   0 92 dc 40
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=250)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt ta75559p 1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 22.37E6 -22E6 22E6 22E6 -22E6
+  ga    6  0 11 12 942.5E-6
+  gcm   0  6 10 99 29.80E-9
+  iee   3 10 dc 60.12E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.061E3
+  rc2   4 12 1.061E3
+  re1  13 10 198.5
+  re2  14 10 198.5
+  ree  10 99 3.327E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 7.614E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 40
+  vln   0 92 dc 40
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=500)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt upc55    1 2 3 4 5 6 7
+*
+  c1   11 12 57.74E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 668.5E3 -670E3 670E3 670E3 -670E3
+  ga    6  0 11 12 1.257E-3
+  gcm   0  6 10 99 39.74E-9
+  iee  10  4 dc 100.4E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 795.8
+  rc2   3 12 795.8
+  re1  13 10 277.5
+  re2  14 10 277.5
+  ree  10 99 1.993E6
+  ro1   8  5 50
+  ro2   7 99 50
+  rp    3  4 11.69E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 40
+  vln   0 92 dc 40
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=277.8)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc151   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 5.961E-9
+  iee  10  4 dc 48.16E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 5.305E3
+  rc2   3 12 5.305E3
+  re1  13 10 4.213E3
+  re2  14 10 4.213E3
+  ree  10 99 4.153E6
+  ro1   8  5 25
+  ro2   7 99 25
+  rp    3  4 20.66E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=300)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt upc157   1 2 3 4 5 6 7
+*
+  c1   11 12 8.660E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 59.81E6 -60E6 60E6 60E6 -60E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 5.961E-9
+  iee  10  4 dc 15.14E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 5.305E3
+  rc2   3 12 5.305E3
+  re1  13 10 1.839E3
+  re2  14 10 1.839E3
+  ree  10 99 13.21E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 16.81E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 26.50
+  vln   0 92 dc 26.50
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=107.1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc258   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 377.0E-6
+  gcm   0  6 10 99 11.92E-9
+  iee   3 10 dc 30.12E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 2.653E3
+  rc2   4 12 2.653E3
+  re1  13 10 924.6
+  re2  14 10 924.6
+  ree  10 99 6.640E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 10.10E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=250)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc259   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 565.5E-6
+  gcm   0  6 10 99 5.655E-9
+  iee   3 10 dc 84.12E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.768E3
+  rc2   4 12 1.768E3
+  re1  13 10 1.151E3
+  re2  14 10 1.151E3
+  ree  10 99 2.378E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 7.661E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=700)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |  compensation
+*                | | | | | / \
+.subckt upc301a  1 2 3 4 5 6 7
+*
+  c1   11 12 8.660E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 59.81E6 -60E6 60E6 60E6 -60E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 5.961E-9
+  iee  10  4 dc 15.14E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 5.305E3
+  rc2   3 12 5.305E3
+  re1  13 10 1.839E3
+  re2  14 10 1.839E3
+  ree  10 99 13.21E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 16.81E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 26.50
+  vln   0 92 dc 26.50
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=107.1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt njm741   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 14.15E6 -14E6 14E6 14E6 -14E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 5.961E-9
+  iee  10  4 dc 15.07E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 5.305E3
+  rc2   3 12 5.305E3
+  re1  13 10 1.848E3
+  re2  14 10 1.848E3
+  ree  10 99 13.27E6
+  ro1   8  5 75
+  ro2   7 99 75
+  rp    3  4 17.80E3
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=214.3)
+.ends
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt TA7272P  1 2 3 4 5
+*
+  c1   11 12 872.7E-18
+  c2    6  7 1.000E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 20.12E6 -20E6 20E6 20E6 -20E6
+  ga    6  0 11 12 62.83E-6
+  gcm   0  6 10 99 1.122E-9
+  iee  10  4 dc 1.000E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 15.92E3
+  rc2   3 12 15.92E3
+  re1  13 10 1.000E-30
+  re2  14 10 1.000E-30
+  ree  10 99 200.0E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 818.2
+  vb    9  0 dc 0
+  vc    3 53 dc 2.900
+  ve   54  4 dc 2.700
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=.6667)
+.ends
+*
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc356   1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  css  10 99 6.667E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 25.40E6 -25E6 25E6 25E6 -25E6
+  ga    6  0 11 12 314.2E-6
+  gcm   0  6 10 99 3.142E-9
+  iss   3 10 dc 200.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 3.183E3
+  rd2   4 12 3.183E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 6.000E3
+  rss  10 99 1.000E6
+  vb    9  0 dc 0
+  vc    3 53 dc 2
+  ve   54  4 dc 2
+  vlim  7  8 dc 0
+  vlp  91  0 dc 22.50
+  vln   0 92 dc 22.50
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=493.5E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc458   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 659.7E-6
+  gcm   0  6 10 99 20.86E-9
+  iee   3 10 dc 48.20E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.516E3
+  rc2   4 12 1.516E3
+  re1  13 10 436.3
+  re2  14 10 436.3
+  ree  10 99 4.149E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 6.058E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.300
+  ve   54  4 dc 1.300
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=240)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc741c  1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 5.961E-9
+  iee  10  4 dc 48.16E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 5.305E3
+  rc2   3 12 5.305E3
+  re1  13 10 4.213E3
+  re2  14 10 4.213E3
+  ree  10 99 4.153E6
+  ro1   8  5 25
+  ro2   7 99 25
+  rp    3  4 20.66E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 25
+  vln   0 92 dc 25
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=300)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc801   1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 29.87E-9
+  iss   3 10 dc 130.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 15.00E3
+  rss  10 99 1.538E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=273.3E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc803   1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 2.829E6 -2E6 2E6 2E6 -2E6
+  ga    6  0 11 12 565.5E-6
+  gcm   0  6 10 99 89.62E-9
+  iss   3 10 dc 390.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 1.768E3
+  rd2   4 12 1.768E3
+  ro1   8  5 125
+  ro2   7 99 125
+  rp    3  4 7.500E3
+  rss  10 99 512.8E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 45
+  vln   0 92 dc 45
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=819.9E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc804   1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 2.829E6 -2E6 2E6 2E6 -2E6
+  ga    6  0 11 12 565.5E-6
+  gcm   0  6 10 99 89.62E-9
+  iss   3 10 dc 390.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 1.768E3
+  rd2   4 12 1.768E3
+  ro1   8  5 125
+  ro2   7 99 125
+  rp    3  4 3.750E3
+  rss  10 99 512.8E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 45
+  vln   0 92 dc 45
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=819.9E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc811   1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 31.83E6 -32E6 32E6 32E6 -32E6
+  ga    6  0 11 12 251.3E-6
+  gcm   0  6 10 99 2.513E-9
+  iss   3 10 dc 150.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 3.979E3
+  rd2   4 12 3.979E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 12.86E3
+  rss  10 99 1.333E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1.700
+  vlim  7  8 dc 0
+  vlp  91  0 dc 26
+  vln   0 92 dc 26
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=25.00E-12 Beta=421.1E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc812   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 3.528E6 -3E6 3E6 3E6 -3E6
+  ga    6  0 11 12 754.0E-6
+  gcm   0  6 10 99 7.540E-9
+  iss   3 10 dc 450.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 1.326E3
+  rd2   4 12 1.326E3
+  ro1   8  5 75
+  ro2   7 99 75
+  rp    3  4 6.000E3
+  rss  10 99 444.4E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1.700
+  vlim  7  8 dc 0
+  vlp  91  0 dc 26
+  vln   0 92 dc 26
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=25.00E-12 Beta=1.263E-3 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc813   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 3.528E6 -3E6 3E6 3E6 -3E6
+  ga    6  0 11 12 1.131E-3
+  gcm   0  6 10 99 11.31E-9
+  iss   3 10 dc 750.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 884.2
+  rd2   4 12 884.2
+  ro1   8  5 75
+  ro2   7 99 75
+  rp    3  4 12.00E3
+  rss  10 99 266.7E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1.700
+  vlim  7  8 dc 0
+  vlp  91  0 dc 26.50
+  vln   0 92 dc 26.50
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=25.00E-12 Beta=1.705E-3 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc814   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 2.358E6 -2E6 2E6 2E6 -2E6
+  ga    6  0 11 12 1.131E-3
+  gcm   0  6 10 99 11.31E-9
+  iss   3 10 dc 750.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 884.2
+  rd2   4 12 884.2
+  ro1   8  5 75
+  ro2   7 99 75
+  rp    3  4 6.000E3
+  rss  10 99 266.7E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1.700
+  vlim  7  8 dc 0
+  vlp  91  0 dc 26.50
+  vln   0 92 dc 26.50
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=25.00E-12 Beta=1.705E-3 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc815   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 754.0E-6
+  gcm   0  6 10 99 238.4E-12
+  iee  10  4 dc 48.02E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 1.326E3
+  rc2   3 12 1.326E3
+  re1  13 10 248.5
+  re2  14 10 248.5
+  ree  10 99 4.165E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 15.37E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=2.400E3)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc816   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 1.131E-3
+  gcm   0  6 10 99 357.6E-12
+  iee  10  4 dc 228.0E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   3 11 884.2
+  rc2   3 12 884.2
+  re1  13 10 657.3
+  re2  14 10 657.3
+  ree  10 99 877.1E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 16.93E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx NPN(Is=800.0E-18 Bf=11.40E3)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc821   1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 5.961E-9
+  iss   3 10 dc 130.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 15.00E3
+  rss  10 99 1.538E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=273.3E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc822   1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 2.829E6 -2E6 2E6 2E6 -2E6
+  ga    6  0 11 12 565.5E-6
+  gcm   0  6 10 99 17.88E-9
+  iss   3 10 dc 390.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 1.768E3
+  rd2   4 12 1.768E3
+  ro1   8  5 125
+  ro2   7 99 125
+  rp    3  4 7.500E3
+  rss  10 99 512.8E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 45
+  vln   0 92 dc 45
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=819.9E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc824   1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 5.961E-9
+  iss   3 10 dc 130.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 3.750E3
+  rss  10 99 1.538E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=273.3E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc831   1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 6.366E6 -6E6 6E6 6E6 -6E6
+  ga    6  0 11 12 62.83E-6
+  gcm   0  6 10 99 1.987E-9
+  iss   3 10 dc 30.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 15.92E3
+  rd2   4 12 15.92E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 136.4E3
+  rss  10 99 6.667E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1.400
+  vlim  7  8 dc 0
+  vlp  91  0 dc 13
+  vln   0 92 dc 13
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=5.000E-12 Beta=131.6E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc832   1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 954.9E3 -950E3 950E3 950E3 -950E3
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 5.961E-9
+  iss   3 10 dc 90.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 50
+  rp    3  4 75.00E3
+  rss  10 99 2.222E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1.400
+  vlim  7  8 dc 0
+  vlp  91  0 dc 13
+  vln   0 92 dc 13
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=5.000E-12 Beta=394.8E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc834   1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 6.366E6 -6E6 6E6 6E6 -6E6
+  ga    6  0 11 12 62.83E-6
+  gcm   0  6 10 99 1.987E-9
+  iss   3 10 dc 30.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 15.92E3
+  rd2   4 12 15.92E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 37.50E3
+  rss  10 99 6.667E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1.400
+  vlim  7  8 dc 0
+  vlp  91  0 dc 13
+  vln   0 92 dc 13
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=5.000E-12 Beta=131.6E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc842   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 659.7E-6
+  gcm   0  6 10 99 33.07E-9
+  iee   3 10 dc 255.3E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.516E3
+  rc2   4 12 1.516E3
+  re1  13 10 1.311E3
+  re2  14 10 1.311E3
+  ree  10 99 783.5E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 7.417E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=910.7)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc844   1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 659.7E-6
+  gcm   0  6 10 99 33.07E-9
+  iee   3 10 dc 255.3E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.516E3
+  rc2   4 12 1.516E3
+  re1  13 10 1.311E3
+  re2  14 10 1.311E3
+  ree  10 99 783.5E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 4.141E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=910.7)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4061  1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 6.366E6 -6E6 6E6 6E6 -6E6
+  ga    6  0 11 12 62.83E-6
+  gcm   0  6 10 99 1.987E-9
+  iss   3 10 dc 30.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 15.92E3
+  rd2   4 12 15.92E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 136.4E3
+  rss  10 99 6.667E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1.400
+  vlim  7  8 dc 0
+  vlp  91  0 dc 13
+  vln   0 92 dc 13
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=5.000E-12 Beta=131.6E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4064  1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 6.366E6 -6E6 6E6 6E6 -6E6
+  ga    6  0 11 12 62.83E-6
+  gcm   0  6 10 99 1.987E-9
+  iss   3 10 dc 30.00E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 15.92E3
+  rd2   4 12 15.92E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 37.50E3
+  rss  10 99 6.667E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1.400
+  vlim  7  8 dc 0
+  vlp  91  0 dc 13
+  vln   0 92 dc 13
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=5.000E-12 Beta=131.6E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4071  1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 5.961E-9
+  iss   3 10 dc 130.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 15.00E3
+  rss  10 99 1.538E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=273.3E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4074  1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 5.961E-9
+  iss   3 10 dc 130.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 3.750E3
+  rss  10 99 1.538E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=273.3E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4081  1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 10.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 127.3E6 -130E6 130E6 130E6 -130E6
+  ga    6  0 11 12 188.5E-6
+  gcm   0  6 10 99 29.87E-9
+  iss   3 10 dc 130.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 5.305E3
+  rd2   4 12 5.305E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 15.00E3
+  rss  10 99 1.538E6
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=273.3E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4082  1 2 3 4 5
+*
+  c1   11 12 2.887E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 2.829E6 -2E6 2E6 2E6 -2E6
+  ga    6  0 11 12 565.5E-6
+  gcm   0  6 10 99 89.62E-9
+  iss   3 10 dc 390.0E-6
+  hlim 90  0 vlim 1K
+  j1   11  2 10 jx
+  j2   12  1 10 jx
+  r2    6  9 100.0E3
+  rd1   4 11 1.768E3
+  rd2   4 12 1.768E3
+  ro1   8  5 125
+  ro2   7 99 125
+  rp    3  4 7.500E3
+  rss  10 99 512.8E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.500
+  ve   54  4 dc 1.500
+  vlim  7  8 dc 0
+  vlp  91  0 dc 45
+  vln   0 92 dc 45
+.model dx D(Is=800.0E-18)
+.model jx PJF(Is=15.00E-12 Beta=819.9E-6 Vto=-1)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4556  1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 1.131E-3
+  gcm   0  6 10 99 35.76E-9
+  iee   3 10 dc 150.4E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 884.2
+  rc2   4 12 884.2
+  re1  13 10 538
+  re2  14 10 538
+  ree  10 99 1.330E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 19.78E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=416.7)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4557  1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 565.5E-6
+  gcm   0  6 10 99 17.88E-9
+  iee   3 10 dc 30.36E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.768E3
+  rc2   4 12 1.768E3
+  re1  13 10 43.59
+  re2  14 10 43.59
+  ree  10 99 6.588E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 18.33E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=83.33)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4558  1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 377.0E-6
+  gcm   0  6 10 99 11.92E-9
+  iee   3 10 dc 30.12E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 2.653E3
+  rc2   4 12 2.653E3
+  re1  13 10 924.6
+  re2  14 10 924.6
+  ree  10 99 6.640E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 10.10E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=250)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4559  1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 565.5E-6
+  gcm   0  6 10 99 17.88E-9
+  iee   3 10 dc 60.12E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.768E3
+  rc2   4 12 1.768E3
+  re1  13 10 904.4
+  re2  14 10 904.4
+  ree  10 99 3.327E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 10.95E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=500)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4560  1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 659.7E-6
+  gcm   0  6 10 99 6.597E-9
+  iee   3 10 dc 84.12E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.516E3
+  rc2   4 12 1.516E3
+  re1  13 10 898.7
+  re2  14 10 898.7
+  ree  10 99 2.378E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 7.661E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1
+  ve   54  4 dc 1
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=700)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4570  1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 1.319E-3
+  gcm   0  6 10 99 13.19E-9
+  iee   3 10 dc 210.2E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 757.9
+  rc2   4 12 757.9
+  re1  13 10 511.1
+  re2  14 10 511.1
+  ree  10 99 951.5E3
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 6.263E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.600
+  ve   54  4 dc 1.600
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=1.050E3)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4572  1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 1.696E-3
+  gcm   0  6 10 99 53.65E-9
+  iee   3 10 dc 180.2E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 589.5
+  rc2   4 12 589.5
+  re1  13 10 301.7
+  re2  14 10 301.7
+  ree  10 99 1.110E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 2.315E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.300
+  ve   54  4 dc 1.300
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=900)
+.ends
+
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4574  1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 1.319E-3
+  gcm   0  6 10 99 13.19E-9
+  iee   3 10 dc 181.0E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 757.9
+  rc2   4 12 757.9
+  re1  13 10 467.9
+  re2  14 10 467.9
+  ree  10 99 1.105E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 3.606E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.600
+  ve   54  4 dc 1.600
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=180)
+.ends
+*$
+*
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt upc4741  1 2 3 4 5
+*
+  c1   11 12 8.660E-12
+  c2    6  7 30.00E-12
+  dc    5 53 dx
+  de   54  5 dx
+  dlp  90 91 dx
+  dln  92 90 dx
+  dp    4  3 dx
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 42.44E6 -42E6 42E6 42E6 -42E6
+  ga    6  0 11 12 659.7E-6
+  gcm   0  6 10 99 20.86E-9
+  iee   3 10 dc 48.20E-6
+  hlim 90  0 vlim 1K
+  q1   11  2 13 qx
+  q2   12  1 14 qx
+  r2    6  9 100.0E3
+  rc1   4 11 1.516E3
+  rc2   4 12 1.516E3
+  re1  13 10 436.3
+  re2  14 10 436.3
+  ree  10 99 4.149E6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 6.058E3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.300
+  ve   54  4 dc 1.300
+  vlim  7  8 dc 0
+  vlp  91  0 dc 20
+  vln   0 92 dc 20
+.model dx D(Is=800.0E-18)
+.model qx PNP(Is=800.0E-18 Bf=240)
+.ends
+*$

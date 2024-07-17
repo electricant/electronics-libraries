@@ -1,0 +1,1393 @@
+* Library of transmission line models and subcircuits
+
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+
+* $Revision:   1.16  $
+* $Author:   RPEREZ  $
+* $Date:   20 Apr 1998 13:54:20  $
+
+*-----------------------------------------------------------------------------
+* Coaxial cable transmission line model parameters
+*
+* The parameters in this model library were derived from Table 21-3 in
+* "Handbook of Electronics Calculations for Engineers and Technicians",
+* edited by Kaufman and Seidman, McGraw-Hill, 1988. The table provides
+* the velocity of propagation (vp) in %, nominal impedance (z0) in Ohms,
+* and a set of attenuations in dB/100 ft for frequencies between 10 MHz
+* and 3 GHz. The values of r, l, g, & c given below are all in per meter
+* units, and were obtained by the following means:
+*
+* Capacitance per meter: c = 1./ (z0 * Vp),
+* 	where Vp = vp * clight / 100 = 9.835e6 * vp
+*
+* Inductance per meter: l = z0 / Vp
+*
+* r and g are both functions of frequency, and are computed using the method
+* described in "Transmission Lines" by Robert Chipman, McGraw-Hill, 1968,
+* pp 65-66. r is assumed to increase in proportion to the square root
+* of frequency, while g varies in direct proportion to frequency. A high
+* frequency relationship for the attenuation factor is:
+*
+*	alpha = ((r / z0) + (g * z0)) / 2,
+*
+* and r and g can be found by selecting values of alpha at two frequencies
+* (100 MHz and 1 GHz are used here) and solving two simultaneous equations:
+*
+*	alpha1 = (.5 / z0) * r1 + (.5 * z0) * g1
+*	alpha2 = (.5 / z0) * sqrt(w2 / w1) * r1 + (.5 * z0) * (w2 / w1) * g1
+*
+* The alpha's are converted to units of nepers per meter, and the frequencies
+* (w1 and w2) are in units of radians per second. Kramer's rule gives:
+*
+*	     (alpha1 * w2/w1 - alpha2) * (z0 / 2)
+*	r1 = ------------------------------------
+*	       ((w2 / w1) - sqrt(w2 / w1)) / 4
+*
+*	     (alpha2 - alpha1 * sqrt(w2/w1)) / (2 * z0)
+*	g1 = ------------------------------------------
+*	        ((w2 / w1) - sqrt(w2 / w1)) / 4
+*
+* Then the frequency-dependent expressions for r and g are:
+*
+*	r = (r1 / sqrt(w1)) * sqrt(s)
+*	g = (g1 / w1) * s
+*
+* Model parameter units are as follows:
+*	len:	meters
+*	r:	Ohms/meter
+*	l:	Henries/meter
+*	g:	Mhos/meter
+*	c:	Farads/meter
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG6A/U         75       66      100	      2.9      1000	       11
+.model RG6A/U   TRN (r={59.5022u*sqrt(2*s)} l=379.050n
++			g={0.0428900p*abs(s)}   c=67.3867p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG6A/U     A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG6A/U   TRN (r={59.5022u*sqrt(PI2*frq)} l=379.050n
++			g={0.0428900p*PI2*frq}   c=67.3867p)
+t A1 A2 B1 B2 rg6a/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG6/U          75       78      100	      2.1      1000	      7.1
+.model RG6/U    TRN (r={45.9489u*sqrt(2*s)} l=320.735n
++			g={0.0107663p*abs(s)}   c=57.0195p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG6/U      A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG6/U    TRN (r={45.9489u*sqrt(PI2*frq)} l=320.735n
++			g={0.0107663p*PI2*frq}   c=57.0195p)
+t A1 A2 B1 B2 rg6/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG8/U          52       66      100	      2.2      1000	        9
+.model RG8/U    TRN (r={29.7952u*sqrt(2*s)} l=262.808n
++			g={0.0690831p*abs(s)}   c=97.1923p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG8/U      A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG8/U    TRN (r={29.7952u*sqrt(PI2*frq)} l=262.808n
++			g={0.0690831p*PI2*frq}   c=97.1923p)
+t A1 A2 B1 B2 rg8/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG8A/U         52       66      100	      2.2      1000	        9
+.model RG8A/U   TRN (r={29.7952u*sqrt(2*s)} l=262.808n
++			g={0.0690831p*abs(s)}   c=97.1923p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG8A/U     A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG8A/U   TRN (r={29.7952u*sqrt(PI2*frq)} l=262.808n
++			g={0.0690831p*PI2*frq}   c=97.1923p)
+t A1 A2 B1 B2 rg8a/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG8/U+         50       78      100	      1.8      1000	      6.2
+.model RG8/U+   TRN (r={26.0047u*sqrt(2*s)} l=213.823n
++			g={0.0178615p*abs(s)}   c=85.5293p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG8/U+     A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG8/U+   TRN (r={26.0047u*sqrt(PI2*frq)} l=213.823n
++			g={0.0178615p*PI2*frq}   c=85.5293p)
+t A1 A2 B1 B2 rg8/u+ len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG9B/U         50       66      100	      2.2      1000	        9
+.model RG9B/U   TRN (r={28.6492u*sqrt(2*s)} l=252.700n
++			g={0.0718465p*abs(s)}   c=101.08p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG9B/U     A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG9B/U   TRN (r={28.6492u*sqrt(PI2*frq)} l=252.700n
++			g={0.0718465p*PI2*frq}   c=101.08p)
+t A1 A2 B1 B2 rg9b/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG11/U         75       66      100	      2.2      1000	        9
+.model RG11/U   TRN (r={42.9738u*sqrt(2*s)} l=379.050n
++			g={0.0478977p*abs(s)}   c=67.3867p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG11/U     A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG11/U   TRN (r={42.9738u*sqrt(PI2*frq)} l=379.050n
++			g={0.0478977p*PI2*frq}   c=67.3867p)
+t A1 A2 B1 B2 rg11/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG11A/U        75       66      100	      2.2      1000	        9
+.model RG11A/U  TRN (r={42.9738u*sqrt(2*s)} l=379.050n
++			g={0.0478977p*abs(s)}   c=67.3867p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG11A/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG11A/U  TRN (r={42.9738u*sqrt(PI2*frq)} l=379.050n
++			g={0.0478977p*PI2*frq}   c=67.3867p)
+t A1 A2 B1 B2 rg11a/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG11/U+        75       78      100	      1.5      1000	      5.6
+.model RG11/U+  TRN (r={31.0734u*sqrt(2*s)} l=320.735n
++			g={0.0200825p*abs(s)}   c=57.0195p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG11/U+   A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG11/U+  TRN (r={31.0734u*sqrt(PI2*frq)} l=320.735n
++			g={0.0200825p*PI2*frq}   c=57.0195p)
+t A1 A2 B1 B2 rg11/u+ len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG12A/U        75       66      100	     2.15      1000	      8.2
+.model RG12A/U  TRN (r={43.9655u*sqrt(2*s)} l=379.050n
++			g={0.0328487p*abs(s)}   c=67.3867p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG12A/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG12A/U  TRN (r={43.9655u*sqrt(PI2*frq)} l=379.050n
++			g={0.0328487p*PI2*frq}   c=67.3867p)
+t A1 A2 B1 B2 rg12a/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG22B/U        95       66      100	      4.2       400	      9.5
+.model RG22B/U  TRN (r={104.503u*sqrt(2*s)} l=480.130n
++			g={0.0696081p*abs(s)}   c=53.2p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG22B/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG22B/U  TRN (r={104.503u*sqrt(PI2*frq)} l=480.130n
++			g={0.0696081p*PI2*frq}   c=53.2p)
+t A1 A2 B1 B2 rg22b/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG55/U       53.5       66      100	      4.3      1000	     16.5
+.model RG55/U   TRN (r={62.4883u*sqrt(2*s)} l=270.389n
++			g={0.0953858p*abs(s)}   c=94.4673p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG55/U     A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG55/U   TRN (r={62.4883u*sqrt(PI2*frq)} l=270.389n
++			g={0.0953858p*PI2*frq}   c=94.4673p)
+t A1 A2 B1 B2 rg55/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG55B/U      53.5       66      100	      4.3      1000	     16.5
+.model RG55B/U  TRN (r={62.4883u*sqrt(2*s)} l=270.389n
++			g={0.0953858p*abs(s)}   c=94.4673p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG55B/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG55B/U  TRN (r={62.4883u*sqrt(PI2*frq)} l=270.389n
++			g={0.0953858p*PI2*frq}   c=94.4673p)
+t A1 A2 B1 B2 rg55b/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG58/U       53.5       66      100	      4.6      1000	     17.5
+.model RG58/U   TRN (r={67.2044u*sqrt(2*s)} l=270.389n
++			g={0.0970724p*abs(s)}   c=94.4673p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG58/U     A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG58/U   TRN (r={67.2044u*sqrt(PI2*frq)} l=270.389n
++			g={0.0970724p*PI2*frq}   c=94.4673p)
+t A1 A2 B1 B2 rg58/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG58A/U        50       66      100	      4.9      1000	       20
+.model RG58A/U  TRN (r={63.9098u*sqrt(2*s)} l=252.700n
++			g={0.1584230p*abs(s)}   c=101.08p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG58A/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG58A/U  TRN (r={63.9098u*sqrt(PI2*frq)} l=252.700n
++			g={0.1584230p*PI2*frq}   c=101.08p)
+t A1 A2 B1 B2 rg58a/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG58C/U        50       66      100	      4.9      1000	       20
+.model RG58C/U  TRN (r={63.9098u*sqrt(2*s)} l=252.700n
++			g={0.1584230p*abs(s)}   c=101.08p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG58C/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG58C/U  TRN (r={63.9098u*sqrt(PI2*frq)} l=252.700n
++			g={0.1584230p*PI2*frq}   c=101.08p)
+t A1 A2 B1 B2 rg58c/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG58/U+        50       78      100	      4.8      1000	       18
+.model RG58/U+  TRN (r={66.1136u*sqrt(2*s)} l=213.823n
++			g={0.0992094p*abs(s)}   c=85.5293p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG58/U+    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG58/U+  TRN (r={66.1136u*sqrt(PI2*frq)} l=213.823n
++			g={0.0992094p*PI2*frq}   c=85.5293p)
+t A1 A2 B1 B2 rg58/u+ len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG59/U         75       66      100	      3.3      1000	     11.5
+.model RG59/U   TRN (r={71.0721u*sqrt(2*s)} l=379.050n
++			g={0.0249567p*abs(s)}   c=67.3867p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG59/U     A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG59/U   TRN (r={71.0721u*sqrt(PI2*frq)} l=379.050n
++			g={0.0249567p*PI2*frq}   c=67.3867p)
+t A1 A2 B1 B2 rg59/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG59B/U        75       66      100	      3.3      1000	     11.5
+.model RG59B/U  TRN (r={71.0721u*sqrt(2*s)} l=379.050n
++			g={0.0249567p*abs(s)}   c=67.3867p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG59B/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG59B/U  TRN (r={71.0721u*sqrt(PI2*frq)} l=379.050n
++			g={0.0249567p*PI2*frq}   c=67.3867p)
+t A1 A2 B1 B2 rg59b/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG59/U+        78       78      100	      2.9      1000	       11
+.model RG59/U+  TRN (r={61.8823u*sqrt(2*s)} l=333.564n
++			g={0.0412403p*abs(s)}   c=54.8264p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG59/U+    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG59/U+  TRN (r={61.8823u*sqrt(PI2*frq)} l=333.564n
++			g={0.0412403p*PI2*frq}   c=54.8264p)
+t A1 A2 B1 B2 rg59/u+ len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG62/U         93       84      100	      2.8      1000	      8.5
+.model RG62/U   TRN (r={79.9313u*sqrt(2*s)} l=369.303n
++			g={-0.00670027p*abs(s)} c=42.6989p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG62/U     A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG62/U   TRN (r={79.9313u*sqrt(PI2*frq)} l=369.303n
++			g={-0.00670027p*PI2*frq} c=42.6989p)
+t A1 A2 B1 B2 rg62/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG62A/U        93       84      100	      2.8      1000	      8.5
+.model RG62A/U  TRN (r={79.9313u*sqrt(2*s)} l=369.303n
++			g={-0.00670027p*abs(s)} c=42.6989p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG62A/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG62A/U  TRN (r={79.9313u*sqrt(PI2*frq)} l=369.303n
++			g={-0.00670027p*PI2*frq} c=42.6989p)
+t A1 A2 B1 B2 rg62a/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG63B/U       125       84      100	      1.5      1000	      5.7
+.model RG63B/U  TRN (r={51.2380u*sqrt(2*s)} l=496.375n
++			g={0.0134562p*abs(s)}   c=31.768p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG63B/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG63B/U  TRN (r={51.2380u*sqrt(PI2*frq)} l=496.375n
++			g={0.0134562p*PI2*frq}   c=31.768p)
+t A1 A2 B1 B2 rg63b/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG71B/U        93       84      100	      2.8      1000	      8.5
+.model RG71B/U  TRN (r={79.9313u*sqrt(2*s)} l=369.303n
++			g={-0.00670027p*abs(s)} c=42.6989p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG71B/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG71B/U  TRN (r={79.9313u*sqrt(PI2*frq)} l=369.303n
++			g={-0.00670027p*PI2*frq} c=42.6989p)
+t A1 A2 B1 B2 rg71b/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG174/U        50       66      100	      8.9      1000	       31
+.model RG174/U  TRN (r={127.820u*sqrt(2*s)} l=252.700n
++			g={0.100428p*abs(s)}    c=101.08p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG174/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG174/U  TRN (r={127.820u*sqrt(PI2*frq)} l=252.700n
++			g={0.100428p*PI2*frq}    c=101.08p)
+t A1 A2 B1 B2 rg174/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG178B/U       50       70      100	     13.3      1000	       45
+.model RG178B/U TRN (r={193.933u*sqrt(2*s)} l=238.260n
++			g={0.103452p*abs(s)}    c=95.304p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG178B/U   A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG178B/U TRN (r={193.933u*sqrt(PI2*frq)} l=238.260n
++			g={0.103452p*PI2*frq}    c=95.304p)
+t A1 A2 B1 B2 rg178b/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG179B/U       75       70      100	      9.8      1000	       25
+.model RG179B/U TRN (r={241.315u*sqrt(2*s)} l=357.390n
++			g={-0.140442p*abs(s)}   c=63.536p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG179B/U   A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG179B/U TRN (r={241.315u*sqrt(PI2*frq)} l=357.390n
++			g={-0.140442p*PI2*frq}   c=63.536p)
+t A1 A2 B1 B2 rg179b/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG180B/U       93       70      100	      5.1      1000	     16.5
+.model RG180B/U TRN (r={141.417u*sqrt(2*s)} l=443.164n
++			g={0.00704073p*abs(s)}  c=51.2387p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG180B/U   A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG180B/U TRN (r={141.417u*sqrt(PI2*frq)} l=443.164n
++			g={0.00704073p*PI2*frq}  c=51.2387p)
+t A1 A2 B1 B2 rg180b/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG187A/U       75       70      100	      9.8      1000	       25
+.model RG187A/U TRN (r={241.315u*sqrt(2*s)} l=357.390n
++			g={-0.140442p*abs(s)}   c=63.536p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG187A/U   A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG187A/U TRN (r={241.315u*sqrt(PI2*frq)} l=357.390n
++			g={-0.140442p*PI2*frq}   c=63.536p)
+t A1 A2 B1 B2 rg187a/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG188A/U       50       70      100	     11.5      1000	       30
+.model RG188A/U TRN (r={187.322u*sqrt(2*s)} l=238.260n
++			g={-0.223882p*abs(s)}   c=95.304p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG188A/U   A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG188A/U TRN (r={187.322u*sqrt(PI2*frq)} l=238.260n
++			g={-0.223882p*PI2*frq}   c=95.304p)
+t A1 A2 B1 B2 rg188a/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG195A/U       95       70      100	      5.1      1000	     16.5
+.model RG195A/U TRN (r={144.458u*sqrt(2*s)} l=452.694n
++			g={0.0068925p*abs(s)}   c=50.16p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG195A/U   A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG195A/U TRN (r={144.458u*sqrt(PI2*frq)} l=452.694n
++			g={0.0068925p*PI2*frq}   c=50.16p)
+t A1 A2 B1 B2 rg195a/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG196A/U       50       70      100	     13.3      1000	       45
+.model RG196A/U TRN (r={193.933u*sqrt(2*s)} l=238.260n
++			g={0.103452p*abs(s)}    c=95.304p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG196A/U   A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG196A/U TRN (r={193.933u*sqrt(PI2*frq)} l=238.260n
++			g={0.103452p*PI2*frq}    c=95.304p)
+t A1 A2 B1 B2 rg196a/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG212/U        50       66      100	      2.4      1000	      8.8
+.model RG212/U  TRN (r={33.4975u*sqrt(2*s)} l=252.700n
++			g={0.0425712p*abs(s)}   c=101.08p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG212/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG212/U  TRN (r={33.4975u*sqrt(PI2*frq)} l=252.700n
++			g={0.0425712p*PI2*frq}   c=101.08p)
+t A1 A2 B1 B2 rg212/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG213/U        50       66      100	      2.2      1000	        9
+.model RG213/U  TRN (r={28.6492u*sqrt(2*s)} l=252.700n
++			g={0.0718465p*abs(s)}   c=101.08p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG213/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG213/U  TRN (r={28.6492u*sqrt(PI2*frq)} l=252.700n
++			g={0.0718465p*PI2*frq}   c=101.08p)
+t A1 A2 B1 B2 rg213/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG214/U        50       66      100	      2.2      1000	        9
+.model RG214/U  TRN (r={28.6492u*sqrt(2*s)} l=252.700n
++			g={0.0718465p*abs(s)}   c=101.08p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG214/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG214/U  TRN (r={28.6492u*sqrt(PI2*frq)} l=252.700n
++			g={0.0718465p*PI2*frq}   c=101.08p)
+t A1 A2 B1 B2 rg214/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG215/U        50       66      100	      2.2      1000	        9
+.model RG215/U  TRN (r={28.6492u*sqrt(2*s)} l=252.700n
++			g={0.0718465p*abs(s)}   c=101.08p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG215/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG215/U  TRN (r={28.6492u*sqrt(PI2*frq)} l=252.700n
++			g={0.0718465p*PI2*frq}   c=101.08p)
+t A1 A2 B1 B2 rg215/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG217/U        50       66      100	      1.4      1000	      5.8
+.model RG217/U  TRN (r={18.0710u*sqrt(2*s)} l=252.700n
++			g={0.0482781p*abs(s)}   c=101.08p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG217/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG217/U  TRN (r={18.0710u*sqrt(PI2*frq)} l=252.700n
++			g={0.0482781p*PI2*frq}   c=101.08p)
+t A1 A2 B1 B2 rg217/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG218/U        50       66      100	     0.81      1000	      3.8
+.model RG218/U  TRN (r={9.47628u*sqrt(2*s)} l=252.700n
++			g={0.0435567p*abs(s)}   c=101.08p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG218/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG218/U  TRN (r={9.47628u*sqrt(PI2*frq)} l=252.700n
++			g={0.0435567p*PI2*frq}   c=101.08p)
+t A1 A2 B1 B2 rg218/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG219/U        50       66      100	     0.81      1000	      3.8
+.model RG219/U  TRN (r={9.47628u*sqrt(2*s)} l=252.700n
++			g={0.0435567p*abs(s)}   c=101.08p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG219/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG219/U  TRN (r={9.47628u*sqrt(PI2*frq)} l=252.700n
++			g={0.0435567p*PI2*frq}   c=101.08p)
+t A1 A2 B1 B2 rg219/u len={len}
+.ends
+*$
+*             Z0(Ohms)  vp(%)  F1(MHz) Loss1(dB/100Ft) F2(MHz)  Loss2(dB/100Ft)
+* RG223/U        50       66      100	      4.3      1000	     16.5
+.model RG223/U  TRN (r={58.4003u*sqrt(2*s)} l=252.700n
++			g={0.102063p*abs(s)}    c=101.08p)
+*$
+* Subckt version uses fixed frequency, frq, to model simple lossy line
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt RG223/U    A1  A2  B1  B2 params: frq=100Meg len=1
+.param PI2 {3.141592654*2}
+.model RG223/U  TRN (r={58.4003u*sqrt(PI2*frq)} l=252.700n
++			g={0.102063p*PI2*frq}    c=101.08p)
+t A1 A2 B1 B2 rg223/u len={len}
+.ends
+*$
+*-----------------------------------------------------------------------------
+* Twisted pair transmission line model parameters
+*
+* The parameters in the following models were derived from Table 1, page
+* 38-9 in "Reference Data for Engineers: Radio, Electronics, Computer,
+* & Communications", 8th edition, edited by M. E. Van Valkenburg, SAMS
+* Publishing, 1993. The subcicuits merely act as shells for containing
+* the specific line parameters for each twisted pair, and the general
+* model is contained in ABMlossyTline. The general model is implemented
+* using ABM because PSpice's native lossy line device does not allow
+* C or L to be functions of frequency.
+*
+* The model parameters were obtained by applying a linear least squares
+* fit to the tabular data contained in the reference. The exponent term
+* was iteratively adjusted until the least squares goodness-of-fit was
+* minimal.
+*
+* More specifically, the fitting equation for each of the R, L, G, and C
+* parameters has the following form:
+*
+*                                     p
+*                        Y = a + b * X
+*     
+* where  X is the independent variable (frequency),
+*        Y is the dependent variable, R, L, G, or C,
+*        a is the offset coefficient from the linear least squares fit, 
+*        b is the slope coefficient from the linear least squares fit,
+* and    p is an exponent chosen to minimize the least squares error.
+*
+* One way to perform a fit is to use the following steps:
+*     
+*        1) Pick a value of p to try.
+*        2) Compute 
+*                             p
+*                        Z = X
+*
+*           for each value of X on the curve.
+*        3) Calculate a and b using linear least squares on
+*     
+*			Y = a + b * Z
+*     
+*           You can do this on a spreadsheet or on a calculator that has
+*           statistical functions. You can also do it by hand, by obtaining
+*           5 sums and then plugging these into the linear least-squares
+*           formulae. The 5 sums required are:
+*
+*                        sZ = Sum(Z[i], i=1..n)
+*                        sY = Sum(Y[i], i=1..n)
+*                        sZZ = Sum(Z[i]*Z[i], i=1..n)
+*                        sYY = Sum(Y[i]*Y[i], i=1..n)
+*                        sZY = Sum(Z[i]*Y[i], i=1..n)
+*     
+*           Then
+*                        denom = sZZ * n - sZ * sZ
+*                        a = (sZZ * sY - sZ * sZY) / denom 
+*                        b = (sZY * n - sZ * sY) / denom
+*
+*        4) Calculate the least mean square error:
+*                                                     2 
+*                        error = Sum((Y[i]-(a+b*Z[i])) ), i=1..n) / n
+*
+*        5) Repeat steps 1 through 4 with different values of p, select
+*           the value of p that minimizes the error, and use the corresponding
+*           values of a and b.
+*
+* Model parameter units are as follows:
+*	len:	meters
+*	r:	Ohms/meter
+*	l:	Henries/meter
+*	g:	Mhos/meter
+*	c:	Farads/meter
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt TP19AWG    A1  A2  B1  B2 params: len=1
+*
+*        Freq      R        L        G        C
+*        (Hz)  (Ohm/mi)  (mH/mi) (umho/mi) (uF/mi)
+*         500     86.1    0.887    0.506    0.084
+*        1000     86.2    0.886    1.219    0.084
+*        2000     86.4    0.884    3.133    0.084
+*        3000     86.6    0.883     5.52    0.084
+*        5000     87.1    0.881    11.35    0.084
+*       40000    103.8    0.834    177.1    0.083
+*      225000    205.9    0.735     1577    0.083
+*      772000    370.1    0.668     7570    0.082
+*
+x19AWG A1 A2 B1 B2 ABMlossyTline params: len={len}
++	r={0.0506714+2.22244u*pwr(abs(s),0.734269)}
++	l={0.567819u-.657477n*pwr(abs(s),0.355405)}
++	g={-0.138277n+.01465p*pwr(abs(s),1.27195)}
++	c=52.1952p
+.ends
+*$
+.subckt TP19AWG_SLL    A1  A2  B1  B2 params: frq=10k len=1
+.param PI2 {3.141592654*2}
+.model TP19AWG TRN
++	r={0.0506714+2.22244u*pwr(PI2*frq,0.734269)}
++	l={0.567819u-.657477n*pwr(PI2*frq,0.355405)}
++	g={-0.138277n+.01465p*pwr(PI2*frq,1.27195)}
++	c=52.1952p
+t A1 A2 B1 B2 TP19AWG len={len}
+.ends
+*$
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt TP22AWG    A1  A2  B1  B2 params: len=1
+*
+*        Freq      R        L        G        C
+*        (Hz)  (Ohm/mi)  (mH/mi) (umho/mi) (uF/mi)
+*         500    173.1    0.871    0.494    0.082
+*        1000    173.2     0.87     1.19    0.082
+*        2000    173.3    0.869    3.058    0.082
+*        3000    173.5    0.867    5.388    0.082
+*        5000    173.8    0.866    11.08    0.082
+*       40000    185.4    0.872    177.1    0.084
+*      225000    298.5    0.798     1577    0.084
+*      772000    528.9    0.714     7570    0.084
+*
+x22AWG A1 A2 B1 B2 ABMlossyTline params: len={len}
++	r={0.105503+.330392u*pwr(abs(s),0.872524)}
++	l={0.542208u-1.13388p*pwr(abs(s),0.739643)}
++	g={-0.187429n+.0146502p*pwr(abs(s),1.27195)}
++	c=51.5738p
+.ends
+*$
+.subckt TP22AWG_SLL    A1  A2  B1  B2 params: frq=10k len=1
+.param PI2 {3.141592654*2}
+.model TP22AWG TRN
++	r={0.105503+.330392u*pwr(PI2*frq,0.872524)}
++	l={0.542208u-1.13388p*pwr(PI2*frq,0.739643)}
++	g={-0.187429n+.0146502p*pwr(PI2*frq,1.27195)}
++	c=51.5738p
+t A1 A2 B1 B2 TP22AWG len={len}
+.ends
+*$
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt TP24AWG    A1  A2  B1  B2 params: len=1
+*
+*        Freq      R        L        G        C
+*        (Hz)  (Ohm/mi)  (mH/mi) (umho/mi) (uF/mi)
+*         500      274    0.951    0.506    0.084
+*        1000      274     0.95    1.219    0.084
+*        2000    274.1    0.949    3.133    0.084
+*        3000    274.2    0.948     5.52    0.084
+*        5000    274.3    0.947    11.35    0.084
+*       40000    285.4    0.892    177.1    0.084
+*      225000    391.4     0.83     1577    0.084
+*      772000    674.2    0.753     7570    0.083
+*
+x24AWG A1 A2 B1 B2 ABMlossyTline params: len={len}
++	r={0.169014+4.7463e-008*pwr(abs(s),1.0058)}
++	l={0.604528u-.509482n*pwr(abs(s),0.363467)}
++	g={-0.138277n+.01465p*pwr(abs(s),1.27195)}
++	c=52.1952p
+.ends
+*$
+.subckt TP24AWG_SLL    A1  A2  B1  B2 params: frq=10k len=1
+.param PI2 {3.141592654*2}
+.model TP24AWG TRN
++	r={0.169014+4.7463e-008*pwr(PI2*frq,1.0058)}
++	l={0.604528u-.509482n*pwr(PI2*frq,0.363467)}
++	g={-0.138277n+.01465p*pwr(PI2*frq,1.27195)}
++	c=52.1952p
+t A1 A2 B1 B2 TP24AWG len={len}
+.ends
+*$
+*
+*                  Near end hi
+*                   |  Near end lo
+*                   |   |  Far end hi
+*                   |   |   |  Far end lo
+*                   |   |   |   |
+.subckt TP26AWG    A1  A2  B1  B2 params: len=1
+*
+*        Freq      R        L        G        C
+*        (Hz)  (Ohm/mi)  (mH/mi) (umho/mi) (uF/mi)
+*         500      440    0.995    0.476    0.079
+*        1000      440    0.995    1.146    0.079
+*        2000      440    0.995    2.946    0.079
+*        3000    440.1    0.994    5.191    0.079
+*        5000    440.2    0.993    10.67    0.079
+*       40000    446.3    0.943    177.1    0.081
+*      225000    531.2    0.889     1577     0.08
+*      772000    854.2    0.826     7570     0.08
+*
+x26AWG A1 A2 B1 B2 ABMlossyTline params: len={len}
++	r={0.272879+1.51463n*pwr(abs(s),1.23077)}
++	l={0.632206u-.580529n*pwr(abs(s),0.346467)}
++	g={-0.261535n+14.6505f*pwr(abs(s),1.27195)}
++	c=49.0883p
+.ends
+*$
+.subckt TP26AWG_SLL    A1  A2  B1  B2 params: frq=10k len=1
+.param PI2 {3.141592654*2}
+.model TP26AWG TRN
++	r={0.272879+1.51463n*pwr(PI2*frq,1.23077)}
++	l={0.632206u-.580529n*pwr(PI2*frq,0.346467)}
++	g={-0.261535n+14.6505f*pwr(PI2*frq,1.27195)}
++	c=49.0883p
+t A1 A2 B1 B2 TP26AWG len={len}
+.ends
+*$
+*-----------------------------------------------------------------------------
+*                     Near end hi
+*                      |  Near end lo
+*                      |   |  Far end hi
+*                      |   |   |  Far end lo
+*                      |   |   |   |
+.subckt ABMlossyTline A1  A2  B1  B2 params: len=1 r=0 l=1u g=0 c=1p
+*
+* This is a generalized Analog Behavioral Model template for a lossy
+* transmission line, implemented as a set of current sources across the
+* near and far ends of the line. It can be used for models that require
+* all of the line RLGC parameters to be functions of frequency.
+*
+*   A1  ---[vA]---o-------o-------o       o-------o-------o---[vB]---  B1
+*                 |       |       |       |       |       |        
+*               [ga1]   [ga2]   [ga3]   [gb3]   [gb2]   [gb1]       
+*                 |       |       |       |       |       |        
+*   A2  ----------o-------o-------o       o-------o-------o----------  B2
+*
+*--------- near side:
+vA A1 Ai 0
+ga1 Ai A2 laplace {v(A1,A2)} = {sqrt((C*s+G)/(L*s+R))}
+ga2 Ai A2 laplace {i(vB)} = {-exp(-len*sqrt((L*s+R)*(C*s+G)))}
+ga3 Ai A2 laplace {v(B1,B2)} = 
++ {-exp(-len*sqrt((L*s+R)*(C*s+G)))*sqrt((C*s+G)/(L*s+R))}
+*--------- far side:
+vB B1 Bi 0
+gb1 Bi B2 laplace {v(B1,B2)} = {sqrt((C*s+G)/(L*s+R))}
+gb2 Bi B2 laplace {i(vA)} = {-exp(-len*sqrt((L*s+R)*(C*s+G)))}
+gb3 Bi B2 laplace {v(A1,A2)} =
++ {-exp(-len*sqrt((L*s+R)*(C*s+G)))*sqrt((C*s+G)/(L*s+R))}
+*
+.ends
+*$
+*-----------------------------------------------------------------------------
+* Lossy transmission line coupling .subckt models
+*
+* The following set of subcircuits, t2coupled ... t5coupled, can 
+* be used to model coupling between lossy transmission lines.
+* The coupling is realized using the method descibed in "Efficient Transient
+* Simulation of Lossy Interconnect", by J.S. Roychowdhury and D.O. Pederson,
+* published in the Proc. DAC 91, and is subject to the following limitations:
+*
+* 1) all of the line parameters, C, L, R, G, Cm, & Lm, must be the same for
+*    all of the lines in the set;
+* 2) coupling is modeled across adjacent lines only;
+* 3) edge effects are neglected as a result of the first limitation.
+*
+*
+* Subckt t2coupled for 2 coupled transmission lines
+*
+*                  Line 1 Input
+*                   |  Line 2 Input
+*                   |   |  Line 1 Output
+*                   |   |   |  Line 2 Output
+*                   |   |   |   |
+.subckt t2coupled   1   2   3   4   params: r=0 l=-1 g=0 c=-1 lm=0 cm=0 len=-1
+t1     1   0   3   0   r={r} l={l} g={g} c={c} len={len}
+t2     2   0   4   0   r={r} l={l} g={g} c={c} len={len}
+k12   t1  t2  lm={lm} cm={cm}
+.ends t2coupled
+*$
+* Subckt t3coupled for 3 coupled transmission lines
+*
+*                  Line 1 Input
+*                   |  Line 2 Input
+*                   |   |  Line 3 Input
+*                   |   |   |  Line 1 Output
+*                   |   |   |   |  Line 2 Output
+*                   |   |   |   |   |  Line 3 Output
+*                   |   |   |   |   |   |
+.subckt t3coupled   1   2   3   4   5   6   params: r=0 l=-1 g=0 c=-1 lm=0 cm=0 len=-1
+t1     1   0   4   0   r={r} l={l} g={g} c={c} len={len}
+t2     2   0   5   0   r={r} l={l} g={g} c={c} len={len}
+t3     3   0   6   0   r={r} l={l} g={g} c={c} len={len}
+k12   t1  t2  lm={lm} cm={cm}
+k23   t2  t3  lm={lm} cm={cm}
+.ends t3coupled
+*$
+* Subckt t4coupled for 4 coupled transmission lines
+*
+*                  Line 1 Input
+*                   |  Line 2 Input
+*                   |   |  Line 3 Input
+*                   |   |   |  Line 4 Input
+*                   |   |   |   |  Line 1 Output
+*                   |   |   |   |   |  Line 2 Output
+*                   |   |   |   |   |   |  Line 3 Output
+*                   |   |   |   |   |   |   |  Line 4 Output
+*                   |   |   |   |   |   |   |   |
+.subckt t4coupled   1   2   3   4   5   6   7   8   params: r=0 l=-1 g=0 c=-1 lm=0 cm=0 len=-1
+t1     1   0   5   0   r={r} l={l} g={g} c={c} len={len}
+t2     2   0   6   0   r={r} l={l} g={g} c={c} len={len}
+t3     3   0   7   0   r={r} l={l} g={g} c={c} len={len}
+t4     4   0   8   0   r={r} l={l} g={g} c={c} len={len}
+k12   t1  t2  lm={lm} cm={cm}
+k23   t2  t3  lm={lm} cm={cm}
+k34   t3  t4  lm={lm} cm={cm}
+.ends t4coupled
+*$
+* Subckt t5coupled for 5 coupled transmission lines
+*
+*                  Line 1 Input
+*                   |  Line 2 Input
+*                   |   |  Line 3 Input
+*                   |   |   |  Line 4 Input
+*                   |   |   |   |  Line 5 Input
+*                   |   |   |   |   |  Line 1 Output
+*                   |   |   |   |   |   |  Line 2 Output
+*                   |   |   |   |   |   |   |  Line 3 Output
+*                   |   |   |   |   |   |   |   |  Line 4 Output
+*                   |   |   |   |   |   |   |   |   |  Line 5 Output
+*                   |   |   |   |   |   |   |   |   |   |
+.subckt t5coupled   1   2   3   4   5   6   7   8   9  10   params: r=0 l=-1 g=0 c=-1 lm=0 cm=0 len=-1
+t1     1   0   6   0   r={r} l={l} g={g} c={c} len={len}
+t2     2   0   7   0   r={r} l={l} g={g} c={c} len={len}
+t3     3   0   8   0   r={r} l={l} g={g} c={c} len={len}
+t4     4   0   9   0   r={r} l={l} g={g} c={c} len={len}
+t5     5   0  10   0   r={r} l={l} g={g} c={c} len={len}
+k12   t1  t2  lm={lm} cm={cm}
+k23   t2  t3  lm={lm} cm={cm}
+k34   t3  t4  lm={lm} cm={cm}
+k45   t4  t5  lm={lm} cm={cm}
+.ends t5coupled
+*$
+*-----------------------------------------------------------------------------
+* Lossy transmission line subcircuits using lumped model
+*
+* The following set of subcircuits, TLUMP1, TLUMP2, TLUMP4, TLUMP8, TLUMP16,
+* TLUMP32, TLUMP64, and TLUMP128, realize lumped models of lossy transmission
+* lines with 1, 2, 4, ... 128 lumped segments, respectively. TLUMP1 is the
+* elemental segment, and all of the other subcircuits consist of two instances
+* of the lumped model with half as many segments.
+
+* Usage is the same for all of them, as shown by example for TLUMP64:
+*
+*        Line input
+*        |  Line output             Lossy line parameters
+*        |   |  Ground              (same as for T device)
+*        |   |   |                   |   |    |   |    |
+* Xtline In Out Gnd TLUMP64 params: r=2 l=1n g=0 c=5p len=24 
+*
+* Note: The subcircuits include a parameter named "nlump". This should be
+* allowed to assume it's default value, and should not be specified by
+* the user.
+*
+.Subckt TLUMP1 In Out Gnd params: r=0 l=1 c=1 g=0 len=1 nlump=1
+*                         ;          Mid
+ R  In Mid  {r*len/nlump} ; In ---R---o---L---o---o--- Out
+ L  Mid Out {l*len/nlump} ;                   |   |
+ C  Out Gnd {c*len/nlump} ;                   C   RG
+ RG Out Gnd {nlump/g/len} ;                   |   |
+.Ends                     ; Gnd --------------o---o--- Gnd
+*$
+
+.Subckt TLUMP2  In Out Gnd params: r=0 l=1 c=1 g=0 len=1 nlump=2
+X1  In Mid Gnd TLUMP1 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+X2 Mid Out Gnd TLUMP1 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+.Ends
+*$
+
+.Subckt TLUMP4  In Out Gnd params: r=0 l=1 c=1 g=0 len=1 nlump=4
+X1   In Mid1 Gnd TLUMP1 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+X2 Mid1 Mid2 Gnd TLUMP1 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+X3 Mid2 Mid3 Gnd TLUMP1 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+X4 Mid3  Out Gnd TLUMP1 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+.Ends
+*$
+
+.Subckt TLUMP8  In Out Gnd params: r=0 l=1 c=1 g=0 len=1 nlump=8
+X1  In Mid Gnd TLUMP4 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+X2 Mid Out Gnd TLUMP4 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+.Ends
+*$
+
+.Subckt TLUMP16  In Out Gnd params: r=0 l=1 c=1 g=0 len=1 nlump=16
+X1   In Mid1 Gnd TLUMP4 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+X2 Mid1 Mid2 Gnd TLUMP4 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+X3 Mid2 Mid3 Gnd TLUMP4 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+X4 Mid3  Out Gnd TLUMP4 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+.Ends
+*$
+
+.Subckt TLUMP32  In Out Gnd params: r=0 l=1 c=1 g=0 len=1 nlump=32
+X1  In Mid Gnd TLUMP16 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+X2 Mid Out Gnd TLUMP16 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+.Ends
+*$
+
+.Subckt TLUMP64  In Out Gnd params: r=0 l=1 c=1 g=0 len=1 nlump=64
+X1   In Mid1 Gnd TLUMP16 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+X2 Mid1 Mid2 Gnd TLUMP16 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+X3 Mid2 Mid3 Gnd TLUMP16 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+X4 Mid3  Out Gnd TLUMP16 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+.Ends
+*$
+
+.Subckt TLUMP128  In Out Gnd params: r=0 l=1 c=1 g=0 len=1 nlump=128
+X1  In Mid Gnd TLUMP64 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+X2 Mid Out Gnd TLUMP64 params: r={r} l={l} c={c} g={g} len={len} nlump={nlump}
+.Ends
+*$
+*-----------------------------------------------------------------------------
+* Lossy transmission line subcircuits using lumped uniform RC model
+*
+* The following set of subcircuits, TLURC1, TLURC2, TLURC4, TLURC8, TLURC16,
+* TLURC32, TLURC64, and TLURC128, realize lumped models of lossy transmission
+* lines with 1, 2, 4, ... 128 lumped segments, respectively. TLURC1 is the
+* elemental segment, and all of the other subcircuits consist of two instances
+* of the lumped model with half as many segments.
+*
+* These subcircuits should be used when the inductance and conductance per
+* unit length are zero.
+*
+* Usage is the same for all of them, as shown by example for TLURC64:
+*
+*        Line input
+*        |  Line output           Lossy line parameters
+*        |   |  Ground            (same as for T device)
+*        |   |   |                   |   |     |
+* Xtline In Out Gnd TLURC64 params: r=2 c=5p len=24 
+*
+* Note: The subcircuits include a parameter named "nlump". This should be
+* allowed to assume it's default value, and should not be specified by
+* the user.
+*
+.Subckt TLURC1 In Out Gnd params: r=1 c=1 len=1 nlump=1
+*                         ;          Mid
+ R  In  Out {r*len/nlump} ; In -------R-------o------- Out
+*                         ;                   |
+ C  Out Gnd {c*len/nlump} ;                   C
+*                         ;                   |
+.Ends                     ; Gnd --------------o------- Gnd
+*$
+
+.Subckt TLURC2  In Out Gnd params: r=1 c=1 len=1 nlump=2
+X1  In Mid Gnd TLURC1 params: r={r} c={c} len={len} nlump={nlump}
+X2 Mid Out Gnd TLURC1 params: r={r} c={c} len={len} nlump={nlump}
+.Ends
+*$
+
+.Subckt TLURC4  In Out Gnd params: r=1 c=1 len=1 nlump=4
+X1   In Mid1 Gnd TLURC1 params: r={r} c={c} len={len} nlump={nlump}
+X2 Mid1 Mid2 Gnd TLURC1 params: r={r} c={c} len={len} nlump={nlump}
+X3 Mid2 Mid3 Gnd TLURC1 params: r={r} c={c} len={len} nlump={nlump}
+X4 Mid3  Out Gnd TLURC1 params: r={r} c={c} len={len} nlump={nlump}
+.Ends
+*$
+
+.Subckt TLURC8  In Out Gnd params: r=1 c=1 len=1 nlump=8
+X1  In Mid Gnd TLURC4 params: r={r} c={c} len={len} nlump={nlump}
+X2 Mid Out Gnd TLURC4 params: r={r} c={c} len={len} nlump={nlump}
+.Ends
+*$
+
+.Subckt TLURC16  In Out Gnd params: r=1 c=1 len=1 nlump=16
+X1   In Mid1 Gnd TLURC4 params: r={r} c={c} len={len} nlump={nlump}
+X2 Mid1 Mid2 Gnd TLURC4 params: r={r} c={c} len={len} nlump={nlump}
+X3 Mid2 Mid3 Gnd TLURC4 params: r={r} c={c} len={len} nlump={nlump}
+X4 Mid3  Out Gnd TLURC4 params: r={r} c={c} len={len} nlump={nlump}
+.Ends
+*$
+
+.Subckt TLURC32  In Out Gnd params: r=1 c=1 len=1 nlump=32
+X1  In Mid Gnd TLURC16 params: r={r} c={c} len={len} nlump={nlump}
+X2 Mid Out Gnd TLURC16 params: r={r} c={c} len={len} nlump={nlump}
+.Ends
+*$
+
+.Subckt TLURC64  In Out Gnd params: r=1 c=1 len=1 nlump=64
+X1   In Mid1 Gnd TLURC16 params: r={r} c={c} len={len} nlump={nlump}
+X2 Mid1 Mid2 Gnd TLURC16 params: r={r} c={c} len={len} nlump={nlump}
+X3 Mid2 Mid3 Gnd TLURC16 params: r={r} c={c} len={len} nlump={nlump}
+X4 Mid3  Out Gnd TLURC16 params: r={r} c={c} len={len} nlump={nlump}
+.Ends
+*$
+
+.Subckt TLURC128  In Out Gnd params: r=1 c=1 len=1 nlump=128
+X1  In Mid Gnd TLURC64 params: r={r} c={c} len={len} nlump={nlump}
+X2 Mid Out Gnd TLURC64 params: r={r} c={c} len={len} nlump={nlump}
+.Ends
+*$
+
+*
+* Coupled and uncoupled models for board parasitic support
+* 
+
+* Coupled, equal, distributed
+.subckt P/T2C in1 in2 out1 out2 params: len=1 r=0 l=1 c=1 g=0 lm=1 cm=1
+t1 in1 0 out1 0 len={len} l={l} c={c} r={r} g={g}
+t2 in2 0 out2 0 len={len} l={l} c={c} r={r} g={g}
+k1 t1 t2 lm={lm} cm={cm}
+.ends
+*$
+
+* Coupled, equal, lumped T-section
+.subckt P/L2C in1 in2 out1 out2 params: len=1 r=0 l=1 c=1 g=0 lm=1 cm=1
+r1 in1 1 {len*r}
+l1 1 2 {len*l/2}
+c1 2 0 {len*(c)}
+l2 2 out1 {len*l/2}
+
+r3 in2 3 {len*r}
+l3 3 4 {len*l/2}
+c2 4 0 {len*(c)}
+l4 4 out2 {len*l/2}
+
+k1 l1 l3 {lm/l}
+k2 l2 l4 {lm/l}
+c3 2 4 {len*cm}
+.ends
+*$
+
+* Coupled, unequal, distributed (asymmetrical)
+.subckt P/T2C_A in1 in2 out1 out2
++ params: len=1 l1=1 c1=1 r1=0 g1=0 l2=1 c2=1 r2=0 g2=0 lm=1 cm=1
+t1 in1 0 out1 0 len={len} l={l1} c={c1} r={r1} g={g1}
+t2 in2 0 out2 0 len={len} l={l2} c={c2} r={r2} g={g2}
+k1 t1 t2 lm={lm} cm={cm}
+.ends
+*$
+
+* Coupled, unequal, lumped T-section
+.subckt P/L2C_A in1 in2 out1 out2
++ params: len=1 l1=1 c1=1 r1=0 g1=0 l2=1 c2=1 r2=0 g2=0 lm=1 cm=1
+
+r1 in1 1 {len*r1}
+l1 1 2 {len*l1/2}
+c1 2 0 {len*(c1)}
+l2 2 out1 {len*l1/2}
+
+r3 in2 3 {len*r2}
+l3 3 4 {len*l2/2}
+c2 4 0 {len*(c2)}
+l4 4 out2 {len*l2/2}
+
+k1 l1 l3 {lm/l1}
+k2 l2 l4 {lm/l2}
+c3 2 4 {len*cm}
+.ends
+*$
+
+* Uncoupled (single), distributed
+.subckt P/TS in out params: len=1 r=0 l=1 c=1 g=0
+t1  in 0 out 0 len={len} l={l} r={r} c={c} g={g}
+.ends
+*$
+
+* Uncoupled (single), lumped
+.subckt P/LS in out params: len=1 r=0 l=1 c=1 g=0
+r1  in  1   {len*r}
+l1  1   2   {len*l/2}
+c1  2   0   {len*c/2}
+l2  2  out  {len*l/2}
+.ends
+*$
+

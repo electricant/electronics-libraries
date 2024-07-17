@@ -1,0 +1,846 @@
+* Library of optocoupler models
+
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+
+* $Revision:   1.17  $
+* $Author:   RPEREZ  $
+* $Date:   20 Apr 1998 10:16:14  $
+*
+*$
+*******************************************************************************
+*.model A4N25
+* 6-pin DIP: pin #1   #2   #4   #5   #6
+*		      |    |    |    |    |
+.subckt A4N25	pin1 pin2 pin4 pin5 pin6	params: rel_CTR=1
+*		Motorola	pid=4N25
+*		88-01-04 pwt
+*		88-01-18 pwt	rework Cje approximation
+
+* The data sheet used for this model is from Motorola: it was the most
+* complete for DC and switching parameters, and is was easy to find the
+* component IR-LED and phototransistor as separate devices for further
+* specifications.
+*
+  d_MainLED	pin1 pin2	MainLED
+  d_PhotoLED	pin1 1		PhotoLED .001
+  v_PhotoLED	1 pin2		0
+*
+  f_TempComp	0 2		v_PhotoLED 1.7
+  r_TempComp	2 0		TempComp {rel_CTR}
+*
+  g_BaseSrc	5 6 2 0		.9
+  q_PhotoBJT	5 6 4		PhotoBJT
+  r_C		5 pin5		.1
+  r_B		6 pin6		.1
+  r_E		4 pin4		.1
+*
+* Since active devices dominate pin-to-pin capacitance on each "side" of the
+* optocoupler, isolation is modeled by identical capacitances and resistances
+* linked to a common point; this gives isolation of .5pF and 1E+11 ohms
+  c_1		pin1 7		.4p
+  r_1		pin1 7		.12T
+  c_2		pin2 7		.4p
+  r_2		pin2 7		.12T
+  c_4		pin4 7		.4p
+  r_4		pin4 7		.12T
+  c_5		pin5 7		.4p
+  r_5		pin5 7		.12T
+  c_6		pin6 7		.4p
+  r_6		pin6 7		.12T
+*
+* Similar to Motorola MLED15.
+.model MainLED  D(Is=10.01e-21 Rs=2.049 Ikf=11.84 N=1.053 Xti=3 Cjo=40p M=.34 
++                Vj=.75 Isr=30n Nr=3.8 Bv=6 Ibv=100u Tt=.5u)
+
+* Models photon generation: same as MainLED except no AC effects, no breakdown.
+.model PhotoLED D(Is=1.1p Rs=.66 Ikf=30m N=1.9 Xti=3 Cjo=0   M=.34 Vj=.75
++		Isr=30n Nr=3.8 Bv=0 Tt=0)
+
+* Temperature compensation for system: 1.38x @ -55'C, .54x @ +100'C, all @ 10mA
+* Note: the photo BJT has its own temperature corrections, which must be kept
+* as the transistor is electrically available.
+.model TempComp	RES(R=1 Tc1=-11.27m Tc2=43.46u)
+*
+* Similar to Motorola MDR3050; Hfe=325 @ Ic=500uA, Vce=5V
+* Use beta variation (w/Parts) to model change in current-transfer ratio (CTR).
+* Hand adjust reverse beta (Br) to match saturation characteristics.
+* Set Isc to model dark current.
+* Hand adjust Cjc to match fall time @ Ic=10mA (which yields rise time, too).
+* Hand adjust reverse transit-time (Tr) to match storage time @ Ic=10mA.
+* Delay time set by LED I-V and C-V characteristics; set Cje to 25% of Cjc,
+* inspection of phototransistor chip layouts show the emitter area is 20%-25%
+* that of the collector area.  The same layouts show that base resistance is
+* made negligible by design; also, the operating currents are small.
+* Hand adjust forward transit-time (Tf) to match MDR3050 pulse data.  Check
+* against 4N25 frequency response (Fig 11, 12).
+.model PhotoBJT NPN(Is=10f Xti=3 Vaf=60
++		Bf=400 Ne=3.75 Ise=580p Ikf=.26 Xtb=1.5
++		Br=.04 Nc=2    Isc=3.5n
++		Cjc=10p  Mjc=.3333 Vjc=.75 Tr=88u
++		Cje=2.5p Mje=.3333 Vje=.75 Tf=1.5n)
+.ends
+*$
+*******************************************************************************
+*.model A4N25A
+* 6-pin DIP: pin #1   #2   #4   #5   #6
+*                 |    |    |    |    |
+.subckt A4N25A	pin1 pin2 pin4 pin5 pin6   params: rel_CTR=1
+*		88-01-05 pwt
+* Same as 4N25 (UL recognized).
+  x1 pin1 pin2 pin4 pin5 pin6 A4N25  params:  rel_CTR={rel_CTR}
+.ends
+*$
+*******************************************************************************
+*.model A4N26
+* 6-pin DIP: pin #1   #2   #4   #5   #6
+*                 |    |    |    |    |
+.subckt A4N26	pin1 pin2 pin4 pin5 pin6     params: rel_CTR=1
+*		88-01-05 pwt
+* Same as 4N25, lower isolation breakdown voltage.
+  x1 pin1 pin2 pin4 pin5 pin6 A4N25      params:  rel_CTR={rel_CTR}
+.ends
+*$
+*******************************************************************************
+*.model A4N27
+* 6-pin DIP: pin #1   #2   #4   #5   #6
+*                 |    |    |    |    |
+.subckt A4N27	pin1 pin2 pin4 pin5 pin6    params: rel_CTR=0.5
+*		88-01-05 pwt
+* Same as 4N25, lower CTR, lower isolation breakdown voltage.
+  x1 pin1 pin2 pin4 pin5 pin6 A4N25   params:  rel_CTR={rel_CTR}
+.ends
+*$
+*******************************************************************************
+*.model A4N28
+* 6-pin DIP: pin #1   #2   #4   #5   #6
+*                 |    |    |    |    |
+.subckt A4N28	pin1 pin2 pin4 pin5 pin6  params: rel_CTR=0.5
+*		88-01-05 pwt
+* Same as 4N25, lower CTR, lower isolation breakdown voltage.
+  x1 pin1 pin2 pin4 pin5 pin6 A4N25    params: rel_CTR={rel_CTR}
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* B = BJT base
+* E = BJT emitter
+.SUBCKT A4N32 A K C B E PARAMS: REL_CTR=1
+* 4N32 from Motorola Optoelectronics data book Q3/93  -  RPerez
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+* Gpcg models CTR 
+Gpcg C B TABLE  ;Photodetector {IC@IF * (normalized CTR at IF)/(Q1 BF)
++ {70m*REL_CTR*(8.448148613*0.998979389^(1/(abs(I(Vsense))+0.1p))*
++ I(Vsense)^0.449371295)/18k} (0,0) (0.3m,0.3m)
+Q1 C B V Qdtect1   ;phototransistor detector
+Q2 C V E E Qdtect2   ;Darlington
+.model Demit D IS=1P N=1.948621 RS=1.560495 BV=3 IBV=0.05U
++ CJO=18.8P VJ=0.532794 M=0.27985 EG=1.424 TT=500N
+.model Qdtect1 NPN IS=0.625P BF=135 NF=1.0941401 BR=10 TF=0 TR=1.2u
++ CJE=8.24P VJE=0.99 MJE=0.247851 CJC=8.01P VJC=0.514483 MJC=0.370451
++ ISC=0 VAF=275 IKF=0  ISE=0.1p
+.model Qdtect2 NPN IS=0.625P BF=135 NF=1.0941401 BR=10 TF=0 TR=1.2u
++ CJE=8.24P VJE=0.99 MJE=0.247851
++ ISC=0 VAF=275 IKF=0  ISE=0.1p ISS=0 CJS=3.82p VJS=0.99 MJS=0.200397
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* B = BJT base
+* E = BJT emitter
+.SUBCKT A4N33 A K C B E PARAMS: REL_CTR=1
+* 4N33 from Motorola Optoelectronics data book Q3/93  -  RPerez
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+* Gpcg models CTR 
+Gpcg C B TABLE  ;Photodetector {IC@IF * (normalized CTR at IF)/(Q1 BF)
++ {70m*REL_CTR*(8.448148613*0.998979389^(1/(abs(I(Vsense))+0.1p))*
++ I(Vsense)^0.449371295)/18k} (0,0) (0.3m,0.3m)
+Q1 C B V Qdtect1   ;phototransistor detector
+Q2 C V E E Qdtect2   ;Darlington
+.model Demit D IS=1P N=1.948621 RS=1.560495 BV=3 IBV=0.05U
++ CJO=18.8P VJ=0.532794 M=0.27985 EG=1.424 TT=500N
+.model Qdtect1 NPN IS=0.625P BF=135 NF=1.0941401 BR=10 TF=0 TR=1.2u
++ CJE=8.24P VJE=0.99 MJE=0.247851 CJC=8.01P VJC=0.514483 MJC=0.370451
++ ISC=0 VAF=275 IKF=0  ISE=0.1p
+.model Qdtect2 NPN IS=0.625P BF=135 NF=1.0941401 BR=10 TF=0 TR=1.2u
++ CJE=8.24P VJE=0.99 MJE=0.247851
++ ISC=0 VAF=275 IKF=0  ISE=0.1p ISS=0 CJS=3.82p VJS=0.99 MJS=0.200397
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* B = BJT base
+* E = BJT emitter
+.SUBCKT A4N47A A K C B E PARAMS: REL_CTR=1
+* 4N47A from TI   * RAP  5/97
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 0.15n
+* Gpcg models CTR 
+Gpcg C B TABLE  ;Photodetector {IC@IF * (normalized CTR at IF)/(Q1 BF)
++ {0.75m*REL_CTR*(128393.7*0.999895312^(1/(abs(V(T))+0.1p))*V(T)^1.6857559)/300}
++ (0,0) (10,10)
+Q1 C B E E Qdtect   ;phototransistor detector
+.model Demit D IS=6.53E-13 N=1.983045 RS=21.26446 BV=2 IBV=10U
++ CJO=18.8P VJ=0.532794 M=0.27985 EG=1.424 TT=500N
+* ISC controls dark current
+* IKF controls high current gain
+.model Qdtect NPN IS=20P BF=300 NF=1.3080447 BR=10 TF=7N TR=1.29u
++ CJE=3.7P VJE=0.99 MJE=0.2411274 CJC=4.03P VJC=0.597478 MJC=0.431978
++ ISC=0.01p VAF=6.5 IKF=0.5 ISS=0 CJS=2.03p VJS=0.61 MJS=0.31
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* B = BJT base
+* E = BJT emitter
+.SUBCKT A4N48A A K C B E PARAMS: REL_CTR=1
+* 4N48A from TI   * RAP  5/97
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 0.15n
+* Gpcg models CTR 
+Gpcg C B TABLE  ;Photodetector {IC@IF * (normalized CTR at IF)/(Q1 BF)
++ {1.2m*REL_CTR*(128393.7*0.999895312^(1/(abs(V(T))+0.1p))*V(T)^1.6857559)/300}
++ (0,0) (10,10)
+Q1 C B E E Qdtect   ;phototransistor detector
+.model Demit D IS=6.53E-13 N=1.983045 RS=21.26446 BV=2 IBV=10U
++ CJO=18.8P VJ=0.532794 M=0.27985 EG=1.424 TT=500N
+* ISC controls dark current
+* IKF controls high current gain
+.model Qdtect NPN IS=20P BF=300 NF=1.3080447 BR=10 TF=7.5N TR=1.29u
++ CJE=3.7P VJE=0.99 MJE=0.2411274 CJC=4.03P VJC=0.597478 MJC=0.431978
++ ISC=0.01p VAF=6.5 IKF=0.5 ISS=0 CJS=2.03p VJS=0.61 MJS=0.31
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* B = BJT base
+* E = BJT emitter
+.SUBCKT A4N49A A K C B E PARAMS: REL_CTR=1
+* 4N49A from TI   * RAP  5/97
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 0.15n
+* Gpcg models CTR 
+Gpcg C B TABLE  ;Photodetector {IC@IF * (normalized CTR at IF)/(Q1 BF)
++ {1.35m*REL_CTR*(128393.7*0.999895312^(1/(abs(V(T))+0.1p))*V(T)^1.6857559)/300}
++ (0,0) (10,10)
+Q1 C B E E Qdtect   ;phototransistor detector
+.model Demit D IS=6.53E-13 N=1.983045 RS=21.26446 BV=2 IBV=10U
++ CJO=18.8P VJ=0.532794 M=0.27985 EG=1.424 TT=500N
+* ISC controls dark current
+* IKF controls high current gain
+.model Qdtect NPN IS=20P BF=300 NF=1.3080447 BR=10 TF=12N TR=1.29u
++ CJE=3.7P VJE=0.99 MJE=0.2411274 CJC=4.03P VJC=0.597478 MJC=0.431978
++ ISC=0.01p VAF=6.5 IKF=0.5 ISS=0 CJS=2.03p VJS=0.61 MJS=0.31
+.ends
+*$
+*******************************************************************************
+* A = Anode
+* C = Cathode
+* P = (light)Power as voltage input
+.SUBCKT BPW32 A C P PARAMS: Spec=1.0 Sensy=0.5
+* BPW32 from Siemens   * RAP 7/97
+Rdummy P 0 1G
+Rswt P LP 1k
+Cswt LP 0 0.6n
+DPD A C PhotoDet
+GPD C A TABLE {V(LP)* Spec * Sensy} (0,0) (1,1)
+.MODEL PhotoDet D IS=0.974p RS=0.1 N=1.986196 BV=7.1 IBV=0.1n 
++ CJO=99.2p VJ=0.455536 M=0.418717 TT=500n ISR=6p NR=100
+.ends
+*$
+*******************************************************************************
+* H = high
+* L = low
+.subckt bulb H L params: Vnom=120V Pnom=100W HCtau=4.082
+*
+* Tungsten Incandescent Lamp (Lightbulb)    * RAP 6/2/97 *
+*
+* To determine voltage, current through the terminals (H and L)
+* is sensed and multiplied by the filaments instantaneous resistance.
+*
+Vsense  H c 0      ;terminal current sense
+*
+* Current is multiplied by nominal resistance and scaled to get voltage
+Efilmnt c L VALUE = {I(Vsense) * V(res) * Vnom * Vnom / Pnom}
+*
+Gpow    0 temp VALUE = {I(Vsense) * V(H,L)}   ;instantaneous power
+*
+* HCtau is used to set the heat capacity time constant.  Different
+* bulbs may have different time constants.
+Rtherml temp ambnt {2600/Pnom} ;temperature for nominal power=2600K+300K
+Ctherml temp 0 {(HCtau / 2600) * Pnom}   ;thermal capacitity
+Vambnt  ambnt 0 300             ;ambient temperature in degrees Kelvin
+*
+* Normalized resistance as a function of temperature.
+Eres res 0 TABLE {log(V(temp)/300)}
++ 0.0  0.06
++ 0.5  0.29
++ 1.0  0.56
++ 1.5  0.82
++ 2.0  0.94
++ 2.33 0.98
++ 2.405 1.04
++ 2.53 1.08
+*
+RGpath res 0 1Meg
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* B = BJT base
+* E = BJT emitter
+.SUBCKT CNY17-1 A K C B E PARAMS: REL_CTR=1
+* CNY17-1 from Motorola Optoelectronics data book Q3/93  -  RPerez
+D1 A D DCNY17   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 0.15n
+* Gpcg models CTR 
+Gpcg C B TABLE  ;Photodetector {IC@IF * (normalized CTR at IF)*REL_CTR/(Q1 BF)
++ {6m*(0.9277*V(T)^3-1.2381*V(T)^2+100.4332*V(T)-0.02771)*REL_CTR/400}
++ (0,0) (10,10)
+Q1 C B E E QCNY17   ;phototransistor detector
+.model DCNY17 D IS=1P N=1.948621 RS=1.560495 BV=6 IBV=10U
++ CJO=18.8P VJ=0.532794 M=0.27985 EG=1.424 TT=500N
+* ISC controls dark current
+* IKF controls high current gain
+.model QCNY17 NPN IS=3.64P BF=400 NF=1.193293 BR=10 TF=2N TR=350n
++ CJE=5.16P VJE=0.99 MJE=0.2411274 CJC=18P VJC=0.597478 MJC=0.431978
++ ISC=0.207N VAF=65 IKF=0.09 ISS=0 CJS=7.74p VJS=0.61 MJS=0.31
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* B = BJT base
+* E = BJT emitter
+.SUBCKT CNY17-2 A K C B E PARAMS: REL_CTR=1
+* CNY17-2 from Motorola Optoelectronics data book Q3/93  -  RPerez
+D1 A D DCNY17   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 0.25n
+* Gpcg models CTR 
+Gpcg C B TABLE  ;Photodetector {IC@IF * (normalized CTR at IF)*REL_CTR/(Q1 BF)
++ {10m*(0.9277*V(T)^3-1.2381*V(T)^2+100.4332*V(T)-0.02771)*REL_CTR/400}
++ (0,0) (10,10)
+Q1 C B E QCNY17   ;phototransistor detector
+.model DCNY17 D IS=1P N=1.948621 RS=1.560495 BV=6 IBV=10U
++ CJO=18.8P VJ=0.532794 M=0.27985 EG=1.424 TT=500N
+* ISC controls dark current
+* IKF controls high current gain
+.model QCNY17 NPN IS=3.64P BF=400 NF=1.193293 BR=10 TF=1N TR=30n
++ CJE=5.16P VJE=0.99 MJE=0.2411274 CJC=18P VJC=0.597478 MJC=0.431978
++ ISC=0.207N VAF=65 IKF=0.09 ISS=0 CJS=7.74p VJS=0.61 MJS=0.31
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* B = BJT base
+* E = BJT emitter
+.SUBCKT CNY17-3 A K C B E PARAMS: REL_CTR=1
+* CNY17-3 from Motorola Optoelectronics data book Q3/93  -  RPerez
+D1 A D DCNY17   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 0.27n
+* Gpcg models CTR 
+Gpcg C B TABLE  ;Photodetector {IC@IF * (normalized CTR at IF)/(Q1 BF)
++ {15m*(0.9277*V(T)^3-1.2381*V(T)^2+100.4332*V(T)-0.02771)*REL_CTR/400}
++ (0,0) (10,10)
+Q1 C B E QCNY17   ;phototransistor detector
+.model DCNY17 D IS=1P N=1.948621 RS=1.560495 BV=6 IBV=10U
++ CJO=18.8P VJ=0.532794 M=0.27985 EG=1.424 TT=500N
+* ISC controls dark current
+* IKF controls high current gain
+.model QCNY17 NPN IS=3.64P BF=400 NF=1.193293 BR=10 TF=13N TR=375n
++ CJE=5.16P VJE=0.99 MJE=0.2411274 CJC=18P VJC=0.597478 MJC=0.431978
++ ISC=0.207N VAF=65 IKF=0.09 ISS=0 CJS=7.74p VJS=0.61 MJS=0.31
+.ends
+*$
+*******************************************************************************
+*.model H11A2
+* 6-pin DIP: pin #1   #2   #4   #5   #6
+*                 |    |    |    |    |
+.subckt H11A2	pin1 pin2 pin4 pin5 pin6    params: rel_CTR=1
+*		88-01-05 pwt
+* Every manufacturer seems to use their own 4N25 as an equivalent device.
+  x1 pin1 pin2 pin4 pin5 pin6 A4N25     params: rel_CTR={rel_CTR}
+.ends
+*$
+*******************************************************************************
+*.model H11A3
+* 6-pin DIP: pin #1   #2   #4   #5   #6
+*                 |    |    |    |    |
+.subckt H11A3	pin1 pin2 pin4 pin5 pin6    params: rel_CTR=1
+*		88-01-05 pwt
+* Same as H11A2, higher isolation breakdown voltage.
+  x1 pin1 pin2 pin4 pin5 pin6 A4N25     params: rel_CTR={rel_CTR}
+.ends
+*$
+*******************************************************************************
+*.model H11A4
+* 6-pin DIP: pin #1   #2   #4   #5   #6
+*                 |    |    |    |    |
+.subckt H11A4	pin1 pin2 pin4 pin5 pin6    params: rel_CTR=1
+*		88-01-05 pwt
+* Every manufacturer seems to use their own 4N27 as an equivalent device.
+  x1 pin1 pin2 pin4 pin5 pin6 A4N27    params: rel_CTR={rel_CTR}
+.ends
+*$
+*******************************************************************************
+*.model H11A520
+* 6-pin DIP: pin #1   #2   #4   #5   #6
+*                 |    |    |    |    |
+.subckt H11A520	pin1 pin2 pin4 pin5 pin6   params: rel_CTR=1
+*		88-01-05 pwt
+* Same as H11A2, higher isolation breakdown voltage.
+  x1 pin1 pin2 pin4 pin5 pin6 A4N25     params: rel_CTR={rel_CTR}
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* B = BJT base
+* E = BJT emitter
+.SUBCKT H11AV1 A K C B E PARAMS: REL_CTR=1
+* H11AV1 from Motorola   * RAP  5/97
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 0.11n
+* Gpcg models CTR 
+Gpcg C B TABLE  ;Photodetector {IC@IF * (normalized CTR at IF)/(Q1 BF)
++ {15m*REL_CTR*(140.11034*0.999716761^(1/(abs(V(T))+0.1p))*V(T)^1.0873374)/400}
++ (0,0) (10,10)
+Q1 C B E E Qdtect   ;phototransistor detector
+.model Demit D IS=1.22p N=1.962592 RS=1.584805 BV=6 IBV=10U
++ CJO=18.8P VJ=0.532794 M=0.27985 EG=1.424 TT=500N
+* ISC controls dark current
+* IKF controls high current gain
+.model Qdtect NPN IS=12.5P BF=400 NF=1.2742607 BR=10 TF=1.5N TR=2.2u
++ CJE=7.62P VJE=0.99 MJE=0.243609 CJC=19.64P VJC=0.445269 MJC=0.40354
++ ISC=1p VAF=100 IKF=0.17 ISS=0 CJS=5.51p VJS=0.99 MJS=0.242193
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* B = BJT base
+* E = BJT emitter
+.SUBCKT H11AV2 A K C B E PARAMS: REL_CTR=1
+* H11AV2 from Motorola   * RAP  5/97
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 0.11n
+* Gpcg models CTR 
+Gpcg C B TABLE  ;Photodetector {IC@IF * (normalized CTR at IF)/(Q1 BF)
++ {10m*REL_CTR*(140.11034*0.999716761^(1/(abs(V(T))+0.1p))*V(T)^1.0873374)/400}
++ (0,0) (10,10)
+Q1 C B E E Qdtect   ;phototransistor detector
+.model Demit D IS=1.22p N=1.962592 RS=1.584805 BV=6 IBV=10U
++ CJO=18.8P VJ=0.532794 M=0.27985 EG=1.424 TT=500N
+* ISC controls dark current
+* IKF controls high current gain
+.model Qdtect NPN IS=12.5P BF=400 NF=1.2742607 BR=10 TF=1.5N TR=2.2u
++ CJE=7.62P VJE=0.99 MJE=0.243609 CJC=19.64P VJC=0.445269 MJC=0.40354
++ ISC=1p VAF=100 IKF=0.17 ISS=0 CJS=5.51p VJS=0.99 MJS=0.242193
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* B = BJT base
+* E = BJT emitter
+.SUBCKT H11AV3 A K C B E PARAMS: REL_CTR=1
+* H11AV3 from Motorola   * RAP  5/97
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 0.11n
+* Gpcg models CTR
+Gpcg C B TABLE  ;Photodetector {IC@IF * (normalized CTR at IF)/(Q1 BF)
++ {7m*REL_CTR*(140.11034*0.999716761^(1/(abs(V(T))+0.1p))*V(T)^1.0873374)/400}
++ (0,0) (10,10)
+Q1 C B E E Qdtect   ;phototransistor detector
+.model Demit D IS=1.22p N=1.962592 RS=1.584805 BV=6 IBV=10U
++ CJO=18.8P VJ=0.532794 M=0.27985 EG=1.424 TT=500N
+* ISC controls dark current
+* IKF controls high current gain
+.model Qdtect NPN IS=12.5P BF=400 NF=1.2742607 BR=20 TF=1.5N TR=2.2u
++ CJE=7.62P VJE=0.99 MJE=0.243609 CJC=19.64P VJC=0.445269 MJC=0.40354
++ ISC=1p VAF=100 IKF=0.07 ISS=0 CJS=5.51p VJS=0.99 MJS=0.242193
+.ends
+*$
+*******************************************************************************
+* A - Anode of LED
+* C - Cathode of LED
+* A1 - Anode of photodetector 1
+* C1 - Cathode of photodetector 1
+* A2 - Anode of photodetector 2
+* C2 - Cathode of photodetector 2
+* K1 - Servo gain
+* K2 - Forward gain
+* K3 - Transfer gain
+.Subckt IL300 A C A1 C1 A2 C2 PARAMS:  K1=0.007  K2=0.007   K3=1
+* IL300 from Siemens   * RAP 5/97
+DLED A E Demit
+VE   E C 0
+E2 D1 0 TABLE  ; {Ip2 vs IF}
++ {(0.955414823*0.999409809^(1/(abs(I(VE))+0.1p))*I(VE)^0.963133681)}
++ (0,0) (1,1)
+Rdly1 D1 D2 1K
+Cdly1 D2 0 0.17N
+Rdly2 D2 D3 1K
+Cdly2 D3 0 0.17N
+Gdly1 C1 A1 VALUE {K1*V(D3)}
+D1 A1 C1 Dtect
+RD1 A1 C1 15G
+Gdly2 C2 A2 VALUE {K3*K2*V(D3)}
+D2 A2 C2 Dtect
+RD2 A2 C2 15G
+.model Demit D IS=1.51E-16 N=1.495822 RS=2.624361 BV=5 IBV=1U
++ CJO=15P VJ=1 M=0.5 EG=1.424 TT=500N
+.model Dtect D IS=0.5p N=1 RS=0.001 BV=50 IBV=1U
++ CJO=14P VJ=0.159621 M=0.344264 EG=1.11 TT=10N
+.ends
+*$
+*******************************************************************************
+*.model MCT2
+* 6-pin DIP: pin #1   #2   #4   #5   #6
+*                 |    |    |    |    |
+.subckt MCT2	pin1 pin2 pin4 pin5 pin6   params: rel_CTR=1
+*		88-01-05 pwt
+* Every manufacturer seems to use their own 4N25 as an equivalent to the
+* General Instruments device.
+  x1 pin1 pin2 pin4 pin5 pin6 A4N25    params: rel_CTR={rel_CTR}
+.ends
+*$
+*******************************************************************************
+*.model MCT2E
+* 6-pin DIP: pin #1   #2   #4   #5   #6
+*                 |    |    |    |    |
+.subckt MCT2E	pin1 pin2 pin4 pin5 pin6    params: rel_CTR=1
+*		88-01-05 pwt
+* Same as MTC2E, higher isolation breakdown voltage.
+  x1 pin1 pin2 pin4 pin5 pin6 A4N25    params: rel_CTR={rel_CTR}
+.ends
+*$
+*******************************************************************************
+.MODEL MLED81 D
++ IS=10.000E-9
++ N=1.1248
++ RS=1.2366
++ IKF=45.752E-15
++ CJO=25.000E-12
++ M=.3333
++ VJ=.75
++ ISR=10.010E-21
++ BV=5.4169
++ IBV=10
++ TT=5.0000E-9
+*$
+*******************************************************************************
+* A = Anode
+* C = Cathode
+* P = (light)Power as output voltage
+.SUBCKT MLED96 A C P PARAMS: Spec=1.0 Sensy=0.5
+* MLED96 from Motorola   * RAP 10/97
+DLED A VC MLED96
+Rleak A VC 40Meg
+Rin P 0 1G
+VLED VC C
+ELED P 0 TABLE {I(VLED)^1.170105501*EXP(-2.114426964-4.065819492*I(VLED))} (0,0) (1,1)
+.MODEL MLED96 D
++ IS=10.000E-21
++ N=1.5219
++ RS=1.7433
++ CJO=50.000E-12
++ M=.3333
++ VJ=.75
++ ISR=100.00E-12
++ BV=5.3573
++ IBV=10
++ TT=5.0000E-9
+.ends
+*$
+*******************************************************************************
+*.model MOC1005
+* 6-pin DIP: pin #1   #2   #4   #5   #6
+*                 |    |    |    |    |
+.subckt MOC1005	pin1 pin2 pin4 pin5 pin6   params: rel_CTR=1
+*		88-01-05 pwt
+* Motorola equivalent of 4N25
+  x1 pin1 pin2 pin4 pin5 pin6 A4N25    params: rel_CTR={rel_CTR}
+.ends
+*$
+*******************************************************************************
+*.model MOC1006
+* 6-pin DIP: pin #1   #2   #4   #5   #6
+*                 |    |    |    |    |
+.subckt MOC1006	pin1 pin2 pin4 pin5 pin6    params: rel_CTR=1
+*		88-01-05 pwt
+* Motorola equivalent of 4N27
+  x1 pin1 pin2 pin4 pin5 pin6 A4N27    params: rel_CTR={rel_CTR}
+.ends
+*$
+*******************************************************************************
+* A = Anode
+* C = Cathode
+* P = (light)Power as voltage input
+.SUBCKT MRD500 A C P PARAMS: Spec=1.0 Sensy=0.3894
+* MRD500 from Motorola   * RAP 7/97
+DPD A C PhotoDet
+GPD C A TABLE {V(P)* Spec * Sensy} (0,0) (1,1)
+.MODEL PhotoDet D IS=1.02p RS=10 N=0.841978 BV=100 IBV=1u 
++ CJO=6.03p VJ=0.202968 M=0.146605 TT=1n ISR=17p
+.ends
+*$
+*******************************************************************************
+* A = Anode
+* C = Cathode
+* P = (light)Power as voltage input
+.SUBCKT MRD510 A C P PARAMS: Spec=1.0 Sensy=0.012
+* MRD510 from Motorola   * RAP 7/97
+DPD A C PhotoDet
+GPD C A TABLE {V(P)* Spec * Sensy} (0,0) (1,1)
+.MODEL PhotoDet D IS=1.02p RS=10 N=0.841978 BV=100 IBV=1u 
++ CJO=6.03p VJ=0.202968 M=0.146605 TT=1n ISR=17p
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* B = BJT base
+* E = BJT emitter
+.SUBCKT PS1001 A K C B E PARAMS: REL_CTR=1
+* PS1001 from NEC   * RAP  6/97
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 0.1n
+* Gpcg models CTR
+Gpcg C B TABLE  ;Photodetector {(IC vs IF) / Q1 BF}
++ {REL_CTR*(-0.1645809975*V(T)^3+0.02017240494*V(T)^2+0.001153610396*V(T)+1p)}
++ (0,0) (10,10)
+Q1 C B E E Qdtect   ;phototransistor detector
+.model Demit D IS=1p N=1.968797 RS=8.379573 BV=5 IBV=10U
++ CJO=100P EG=1.424 TT=500N
+* ISC controls dark current
+.model Qdtect NPN IS=25P BF=400 NF=1.3247194 BR=400 TF=1.7N TR=2.711n
++ CJE=12P CJC=25P ISC=12p VAF=100 ISS=0 CJS=10p
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* E = BJT emitter
+.SUBCKT PS2501 A K C E PARAMS: REL_CTR=1
+* PS2501 from NEC   * RAP  6/97
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 0.2n
+* Gpcg models CTR
+Gpcg C B TABLE  ;Photodetector {(IC vs IF) / Q1 BF}
++ {If(V(T)<10m,(V(T)^1.63967642*exp(5.15355287-125.491134*V(T))*REL_CTR/100),
++ (V(T)^0.540960664*exp(-1.054818991-10.04734475*V(T))*REL_CTR/100))}
++ (0,0) (10,10)
+Q1 C B E E Qdtect   ;phototransistor detector
+Rdummy B 0 4G
+.model Demit D IS=1p N=1.999644 RS=0 BV=6 IBV=10U
++ CJO=50P EG=1.424 TT=500N
+.model Qdtect NPN IS=100P BF=100 NF=1.3 BR=50 TF=0.1N TR=220n
++ CJE=10P CJC=10P VAF=100 ISS=0 CJS=1p
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* E = BJT emitter
+.SUBCKT PS2505 A K C E PARAMS: REL_CTR=1
+* PS2505 from NEC   * RAP  6/97
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+D2 D A Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 54.302p
+* Gpcg models CTR
+Gpcg C B TABLE  ;Photodetector {(IC vs IF) / Q1 BF}
++ {If(abs(V(T))<10m,
++ (abs(V(T))^1.68372145*exp(5.46602664-137.521721*abs(V(T)))*REL_CTR/100),
++ (abs(V(T))^0.441917*exp(-1.54666-6.875337*abs(V(T)))*REL_CTR/100))}
++ (0,0) (10,10)
+Q1 C B E Qdtect   ;phototransistor detector
+Rdummy B 0 5G
+.model Demit D IS=1.22E-14 N=1.638226 RS=0.757535 BV=6 IBV=10U
++ CJO=50P EG=1.424 TT=500N
+.model Qdtect NPN IS=100P BF=100 NF=1.25 BR=20 TF=4.86968N TR=1.31131u
++ CJE=197.468P CJC=110.915P VAF=100 ISS=0 CJS=36.04p
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* E = BJT emitter
+.SUBCKT PS2561 A K C E  PARAMS: REL_CTR=1
+* PS2561 from NEC   * RAP  7/97
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 58.6255p
+* Gpcg models CTR
+Gpcg C B TABLE  ;Photodetector {(IC vs IF) / Q1 BF}
++ {If(V(T)<10m,
++ (V(T)^1.605294114*exp(4.920739649-117.1774597*V(T))*REL_CTR/100),
++ (V(T)^0.449685774*exp(-1.46495545-7.719515043*V(T))*REL_CTR/100))}
++ (0,0) (10,10)
+Q1 C B E E Qdtect   ;phototransistor detector
+Rdummy B 0 5G
+.model Demit D IS=1.22E-14 N=1.638226 RS=0.757535 BV=6 IBV=10U
++ CJO=50P EG=1.424 TT=500N
+.model Qdtect NPN IS=700P BF=100 NF=1.25 BR=20 TF=6.8360n TR=870.419n
++ CJE=78.2623P CJC=90.0285P VAF=100 ISS=0 CJS=44.1055p
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* E = BJT emitter
+.SUBCKT PS2565 A K C E PARAMS: REL_CTR=1
+* PS2565 from NEC   * RAP  7/97
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+D2 D A Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 57.8917p
+* Gpcg models CTR
+Gpcg C B TABLE  ;Photodetector {(IC vs IF) / Q1 BF}
++ {If(abs(V(T))<10m,
++ (abs(V(T))^1.59963925*exp(4.88617775-112.523882*abs(V(T)))*REL_CTR/100),
++ (abs(V(T))^0.423169*exp(-1.57596-7.158995*abs(V(T)))*REL_CTR/100))}
++ (0,0) (10,10)
+Q1 C B E Qdtect   ;phototransistor detector
+Rdummy B 0 5G
+.model Demit D IS=1.22E-14 N=1.638226 RS=0.757535 BV=6 IBV=10U
++ CJO=50P EG=1.424 TT=500N
+.model Qdtect NPN IS=100P BF=100 NF=1.25 BR=20 TF=13.5378N TR=45.8149N
++ CJE=59.9477P CJC=98.1754P VAF=100 ISS=0 CJS=55.5139p
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* B = BJT base
+* E = BJT emitter
+.SUBCKT PS2601 A K C B E  PARAMS: REL_CTR=1
+* PS2601 from NEC   * RAP  7/97
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 74.7658p
+* Gpcg models CTR
+Gpcg C B TABLE  ;Photodetector {(IC vs IF) / Q1 BF}
++ {If(V(T)<8m,
++ (V(T)^1.80725553*exp(6.53900798-167.674797*V(T))*REL_CTR/700),
++ (V(T)^0.705649*exp(0.029347-18.3033*V(T))*REL_CTR/700))}
++ (0,0) (10,10)
+Q1 C B E E Qdtect   ;phototransistor detector
+Rdummy B 0 5G
+.model Demit D IS=2.36E-13 N=1.824382 RS=1.773416 BV=6 IBV=10U
++ CJO=30P EG=1.424 TT=500N
+.model Qdtect NPN IS=0.5714P BF=700 NF=1.0895332 BR=20 TF=0.7N TR=10.6n
++ CJE=6P CJC=1.7P VAF=100 ISS=0 CJS=1.p ISC=120p
+.ends
+*$
+*******************************************************************************
+* A = diode anode
+* K = diode cathode
+* C = BJT collector
+* B = BJT base
+* E = BJT emitter
+.SUBCKT PS2621 A K C B E  PARAMS: REL_CTR=1
+* PS2621 from NEC   * RAP  7/97
+D1 A D Demit   ;Gallium arsenide infrared emitting diode
+Vsense D K 0    ;Diode Current sense -> IF
+Hd   R 0 Vsense 1
+Rd   R T 10K
+Cd   T 0 14.7389p
+* Gpcg models CTR
+Gpcg C B TABLE  ;Photodetector {(IC vs IF) / Q1 BF}
++ {If(V(T)<10m,
++ (V(T)^1.61722627*exp(4.36489543-81.9441523*V(T))*REL_CTR/700),
++ (V(T)^0.465832*exp(-1.70391-4.509543*V(T))*REL_CTR/700))}
++ (0,0) (10,10)
+Q1 C B E E Qdtect   ;phototransistor detector
+Rdummy B 0 5G
+.model Demit D IS=1.09E-13 N=1.693609 RS=1.431383 BV=6 IBV=10U
++ CJO=70P EG=1.424 TT=500N
+.model Qdtect NPN IS=2.857P BF=700 NF=1.1786653 BR=20 TF=1.15564N TR=4.56886n
++ CJE=16.315P CJC=21.1189P VAF=100 ISS=0 CJS=44.5657p ISC=120p
+.ends
+*$
+*******************************************************************************
+* LD = Laser diode cathode
+* C  = Common pin
+* PD = Photodiode anode
+.SUBCKT SLD1121VS LD C PD
+* SLD1121VS from Sony   * RAP  7/97
+Dld C I dlaser
+Vid I LD
+Eop op 0 TABLE {I(Vid)} (0,0) (37m,0.3m) (40m,0.5m) (47m,5m) (100m,40m)
+Rdummy op 0 1k
+Gopd C PD TABLE {V(op)} (0,0) (30m,1.5m)
+Dpd PD C pdetec
+.model dlaser D IS=5E-37 N=1 RS=2 BV=2 IBV=10u 
+*EG=2.8 XTI=3 
+.model pdetec D CJO=5p BV=15 IBV=10u
+.ends
+*$

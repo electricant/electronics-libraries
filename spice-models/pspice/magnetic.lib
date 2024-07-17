@@ -1,0 +1,366 @@
+* Library of magnetic core model parameters
+
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+
+* $Revision:   1.11  $
+* $Author:   RPEREZ  $
+* $Date:   20 Apr 1998 08:53:24  $
+
+* The parameters in this model library were derived from the data sheets for
+* each core.
+
+*-----------------------------------------------------------------------------
+*
+* The Jiles-Atherton magnetics model is described in:
+*
+*   Theory of Ferromagnetic Hysteresis, by D C Jiles and D L Atherton,
+*   Journal of Magnetism and Magnetic Materials, vol 61 (1986) pp 48-60
+*
+*-----------------------------------------------------------------------------
+*
+* Model parameters for ferrite material (Ferroxcube 3C8) were obtained by
+* trial simulations, using the B-H curves from the manufacturer's catalog.
+* Then, the library was compiled from the data sheets for each core geometry.
+* Notice that only the geometric values change once a material is
+* characterized.
+
+* Example use:  K2 L2 .99 K1409PL_3C8
+
+* Notes:
+*   1) Using a K device (formerly only for mutual coupling) with a model
+*      reference changes the meaning of the L device: the inductance value
+*      becomes the number of turns for the winding.
+*   2) K devices can "get away" with specifying only one inductor, as in the
+*      example above, to simulate power inductors.
+
+* Example circuit file:
+
+*+-----------------------------------------------------------------------------
+*|Demonstration of power inductor B-H curve
+*|
+*|* To view results with Probe (B-H curve):
+*|* 1) Add Trace for B(K1)
+*|* 2) set X-axis variable to H(K1)
+*|*
+*|* Probe x-axis unit is Oersted
+*|* Probe y-axis unit is Gauss
+*|*
+*|.tran .1 4
+*|igen0 0 1 sin(0 .1amp 1Hz 0)	; Generator: starts with 0.1 amp sinewave, then
+*|igen1 0 1 sin(0 .1amp 1Hz 1)	;   +0.1 amps, starting at 1 second
+*|igen2 0 1 sin(0 .2amp 1Hz 2)	;   +0.2 amps, starting at 2 seconds
+*|igen3 0 1 sin(0 .8amp 1Hz 3)	;   +0.4 amps, starting at 3 seconds
+*|RL 1 0 1ohm			; generator source resistance
+*|L1 1 0 20			; inductor with 20 turns
+*|K1 L1 .9999 K528T500_3C8	; Ferroxcube torroid core
+*|.model K528T500_3C8	CORE(Ms=415.2K A=44.82 C=.4112 K=25.74)
+*|+			AREA=1.17 PATH=8.49)
+*|.options itl5=0
+*|.probe
+*|.end
+*+-----------------------------------------------------------------------------
+
+*** Ferroxcube: bulk material models
+*** from Seventh Edition catalog
+
+*** 25'C
+*$
+.model K3B7		CORE(Ms=364.8K A=45.01 C=.396  K=26.98)
+*$
+.model K3B9		CORE(Ms=341.3K A=44.36 C=.3054 K=38)
+*$
+.model K3C6A		CORE(Ms=454.6K A=52.34 C=.2989 K=22.6)
+*$
+.model K3C8		CORE(Ms=415.2K A=44.82 C=.4112 K=25.74)
+*$
+.model K3D3		CORE(Ms=356.1K A=54.37 C=.1291 K=80.59)
+*$
+.model K3E2A		CORE(Ms=353K   A=31.02 C=.7842 K=12.46)
+*$
+.model K3E5		CORE(Ms=298.5K A=14.75 C=.9755 K=27.54)
+*$
+
+*** 70'C
+*$
+.model K3B7_70C		CORE(Ms=290.7K A=32.17 C=.3409 K=26.84)
+*$
+.model K3D3_70C		CORE(Ms=295.7K A=32.73 C=.1037 K=69.62)
+*$
+.model K3E2A_70C	CORE(Ms=295.3K A=26.74 C=1.189 K=18.2)
+*$
+.model K3E5_70C		CORE(Ms=216.1K A=8.032 C=.5912 K=20.52)
+*$
+
+*** 100'C
+*$
+.model K3C6A_100C	CORE(Ms=338.4K A=35.7  C=.585  K=33.22)
+*$
+.model K3C8_100C	CORE(Ms=299.9K A=33.43 C=.3648 K=27.31)
+*$
+
+*** start of library *********************************************************
+
+*** Ferroxcube pot cores
+*$
+.model K704PL_3B7	ako:K3B7	CORE(Area=.070 Path=1.00)
+*$
+.model K704PL_3B9	ako:K3B9	CORE(Area=.070 Path=1.00)
+*$
+.model K704PL_3D3	ako:K3D3	CORE(Area=.070 Path=1.00)
+*$
+
+.model K905PL_3B7	ako:K3B7	CORE(Area=.101 Path=1.25)
+*$
+.model K905PL_3B9	ako:K3B9	CORE(Area=.101 Path=1.25)
+*$
+.model K905PL_3D3	ako:K3D3	CORE(Area=.101 Path=1.25)
+*$
+
+.model K1408PL_3B7	ako:K3B7	CORE(Area=.251 Path=1.98)
+*$
+.model K1408PL_3B9	ako:K3B9	CORE(Area=.251 Path=1.98)
+*$
+.model K1408PL_3D3	ako:K3D3	CORE(Area=.251 Path=1.98)
+*$
+.model K1408PL_3C8	ako:K3C8	CORE(Area=.251 Path=1.98)
+*$
+.model K1408PL_3E2A	ako:K3E2A	CORE(Area=.251 Path=1.98)
+*$
+
+.model K1811PL_3B7	ako:K3B7	CORE(Area=.433 Path=2.58)
+*$
+.model K1811PL_3B9	ako:K3B9	CORE(Area=.433 Path=2.58)
+*$
+.model K1811PL_3C8	ako:K3C8	CORE(Area=.433 Path=2.58)
+*$
+.model K1811PL_3D3	ako:K3D3	CORE(Area=.433 Path=2.58)
+*$
+.model K1811PL_3E2A	ako:K3E2A	CORE(Area=.433 Path=2.58)
+*$
+
+.model K2213PL_3B7	ako:K3B7	CORE(Area=.635 Path=3.15)
+*$
+.model K2213PL_3B9	ako:K3B9	CORE(Area=.635 Path=3.15)
+*$
+.model K2213PL_3C8	ako:K3C8	CORE(Area=.635 Path=3.15)
+*$
+.model K2213PL_3D3	ako:K3D3	CORE(Area=.635 Path=3.15)
+*$
+.model K2213PL_3E2A	ako:K3E2A	CORE(Area=.635 Path=3.15)
+*$
+
+.model K2616PL_3B7	ako:K3B7	CORE(Area=.948 Path=3.76)
+*$
+.model K2616PL_3B9	ako:K3B9	CORE(Area=.948 Path=3.76)
+*$
+.model K2616PL_3C8	ako:K3C8	CORE(Area=.948 Path=3.76)
+*$
+.model K2616PL_3D3	ako:K3D3	CORE(Area=.948 Path=3.76)
+*$
+.model K2616PL_3E2A	ako:K3E2A	CORE(Area=.948 Path=3.76)
+*$
+
+.model K3019PL_3B7	ako:K3B7	CORE(Area=1.38 Path=4.52)
+*$
+.model K3019PL_3B9	ako:K3B9	CORE(Area=1.38 Path=4.52)
+*$
+.model K3019PL_3C8	ako:K3C8	CORE(Area=1.38 Path=4.52)
+*$
+.model K3019PL_3E2A	ako:K3E2A	CORE(Area=1.38 Path=4.52)
+*$
+
+.model K3622PL_3B7	ako:K3B7	CORE(Area=2.02 Path=5.32)
+*$
+.model K3622PL_3B9	ako:K3B9	CORE(Area=2.02 Path=5.32)
+*$
+.model K3622PL_3C8	ako:K3C8	CORE(Area=2.02 Path=5.32)
+*$
+.model K3622PL_3E2A	ako:K3E2A	CORE(Area=2.02 Path=5.32)
+*$
+
+.model K4229PL_3B7	ako:K3B7	CORE(Area=2.66 Path=6.81)
+*$
+.model K4229PL_3C8	ako:K3C8	CORE(Area=2.66 Path=6.81)
+*$
+
+.model K4728PL_3B7	ako:K3B7	CORE(Area=3.22 Path=6.87)
+*$
+.model K4728PL_3B9	ako:K3B9	CORE(Area=3.22 Path=6.87)
+*$
+.model K4728PL_3C8	ako:K3C8	CORE(Area=3.22 Path=6.87)
+*$
+
+.model K6656PL_3C8	ako:K3C8	CORE(Area=7.15 Path=12.3)
+*$
+
+.model K2311TS_3B9	ako:K3B9	CORE(Area=.658 Path=3.02)
+*$
+.model K2311TS_3C8	ako:K3C8	CORE(Area=.658 Path=3.02)
+*$
+.model K2311TS_3E2A	ako:K3E2A	CORE(Area=.658 Path=3.02)
+*$
+
+.model K2318TS_3B9	ako:K3B9	CORE(Area=.658 Path=4.24)
+*$
+.model K2318TS_3C8	ako:K3C8	CORE(Area=.658 Path=4.24)
+*$
+.model K2318TS_3E2A	ako:K3E2A	CORE(Area=.658 Path=4.24)
+*$
+
+.model K3019TS_3B7	ako:K3B7	CORE(Area=1.27 Path=5.89)
+*$
+.model K3019TS_3B9	ako:K3B9	CORE(Area=1.27 Path=5.89)
+*$
+.model K3019TS_3C8	ako:K3C8	CORE(Area=1.27 Path=5.89)
+*$
+.model K3019TS_3E2A	ako:K3E2A	CORE(Area=1.27 Path=5.89)
+*$
+
+*** Ferroxcube square cores
+*$
+.model KRM5PL_3B7	ako:K3B7	CORE(Area=.210 Path=2.14)
+*$
+.model KRM5PL_3B9	ako:K3B9	CORE(Area=.210 Path=2.14)
+*$
+.model KRM5PL_3D3	ako:K3D3	CORE(Area=.210 Path=2.14)
+*$
+.model KRM5PL_3E2A	ako:K3E2A	CORE(Area=.210 Path=2.14)
+*$
+
+.model KRM6PL_3B7	ako:K3B7	CORE(Area=.380 Path=2.75)
+*$
+.model KRM6PL_3B9	ako:K3B9	CORE(Area=.380 Path=2.75)
+*$
+.model KRM6PL_3C8	ako:K3C8	CORE(Area=.380 Path=2.75)
+*$
+.model KRM6PL_3D3	ako:K3D3	CORE(Area=.380 Path=2.75)
+*$
+.model KRM6PL_3E2A	ako:K3E2A	CORE(Area=.380 Path=2.75)
+*$
+
+.model KRM8PL_3B7	ako:K3B7	CORE(Area=.630 Path=3.84)
+*$
+.model KRM8PL_3B9	ako:K3B9	CORE(Area=.630 Path=3.84)
+*$
+.model KRM8PL_3C8	ako:K3C8	CORE(Area=.630 Path=3.84)
+*$
+.model KRM8PL_3D3	ako:K3D3	CORE(Area=.630 Path=3.84)
+*$
+.model KRM8PL_3E2A	ako:K3E2A	CORE(Area=.630 Path=3.84)
+*$
+
+.model KRM10PL_3B7	ako:K3B7	CORE(Area=.970 Path=4.61)
+*$
+.model KRM10PL_3B9	ako:K3B9	CORE(Area=.970 Path=4.61)
+*$
+.model KRM10PL_3C8	ako:K3C8	CORE(Area=.970 Path=4.61)
+*$
+.model KRM10PL_3D3	ako:K3D3	CORE(Area=.970 Path=4.61)
+*$
+.model KRM10PL_3E2A	ako:K3E2A	CORE(Area=.970 Path=4.61)
+*$
+
+*** Ferroxcube toroid cores
+*$
+.model K135T050_3B7	ako:K3B7	CORE(Area=.0100 Path=.762)
+*$
+.model K135T050_3D3	ako:K3D3	CORE(Area=.0100 Path=.762)
+*$
+.model K135T050_3E2A	ako:K3E2A	CORE(Area=.0100 Path=.762)
+*$
+
+.model K891T050_3B7	ako:K3B7	CORE(Area=.0104 Path=.919)
+*$
+.model K891T050_3D3	ako:K3D3	CORE(Area=.0104 Path=.919)
+*$
+.model K891T050_3E2A	ako:K3E2A	CORE(Area=.0104 Path=.919)
+*$
+
+.model K231T050_3B7	ako:K3B7	CORE(Area=.0153 Path=1.02)
+*$
+.model K231T050_3D3	ako:K3D3	CORE(Area=.0153 Path=1.02)
+*$
+.model K231T050_3E2A	ako:K3E2A	CORE(Area=.0153 Path=1.02)
+*$
+
+.model K1041T060_3B7	ako:K3B7	CORE(Area=.0202 Path=1.30)
+*$
+.model K1041T060_3D3	ako:K3D3	CORE(Area=.0202 Path=1.30)
+*$
+.model K1041T060_3E2A	ako:K3E2A	CORE(Area=.0202 Path=1.30)
+*$
+
+.model K266T125_3B7	ako:K3B7	CORE(Area=.0720 Path=2.07)
+*$
+.model K266T125_3D3	ako:K3D3	CORE(Area=.0720 Path=2.07)
+*$
+.model K266T125_3E2A	ako:K3E2A	CORE(Area=.0720 Path=2.07)
+*$
+
+.model K768T188_3C8	ako:K3C8	CORE(Area=.128 Path=2.95)
+*$
+.model K768T188_3D3	ako:K3D3	CORE(Area=.128 Path=2.95)
+*$
+.model K768T188_3E2A	ako:K3E2A	CORE(Area=.128 Path=2.95)
+*$
+
+.model K204T250_3C8	ako:K3C8	CORE(Area=.148 Path=3.12)
+*$
+.model K204T250_3E2A	ako:K3E2A	CORE(Area=.148 Path=3.12)
+*$
+
+.model K331T185_3C8	ako:K3C8	CORE(Area=.153 Path=3.72)
+*$
+.model K331T185_3E2A	ako:K3E2A	CORE(Area=.153 Path=3.72)
+*$
+
+.model K846T250_3C8	ako:K3C8	CORE(Area=.259 Path=5.42)
+*$
+.model K846T250_3E2A	ako:K3E2A	CORE(Area=.259 Path=5.42)
+*$
+
+.model K846T500_3C8	ako:K3C8	CORE(Area=.518 Path=5.42)
+*$
+.model K846T500_3E2A	ako:K3E2A	CORE(Area=.518 Path=5.42)
+*$
+
+.model K502T300_3C8	ako:K3C8	CORE(Area=.371 Path=7.32)
+*$
+.model K502T300_3E2A	ako:K3E2A	CORE(Area=.371 Path=7.32)
+*$
+.model K502T300_3E5	ako:K3E5	CORE(Area=.371 Path=7.32)
+*$
+
+.model K500T400_3C8	ako:K3C8	CORE(Area=.643 Path=8.97)
+*$
+.model K500T400_3E2A	ako:K3E2A	CORE(Area=.643 Path=8.97)
+*$
+.model K500T400_3E5	ako:K3E5	CORE(Area=.643 Path=8.97)
+*$
+
+.model K500T600_3C8	ako:K3C8	CORE(Area=.963 Path=8.97)
+*$
+.model K500T600_3E2A	ako:K3E2A	CORE(Area=.963 Path=8.97)
+*$
+.model K500T600_3E5	ako:K3E5	CORE(Area=.963 Path=8.97)
+*$
+
+.model K528T500_3C6A	ako:K3C6A	CORE(Area=1.17 Path=8.49)
+*$
+.model K528T500_3C8	ako:K3C8	CORE(Area=1.17 Path=8.49)
+*$
+.model K528T500_3E2A	ako:K3E2A	CORE(Area=1.17 Path=8.49)
+*$
+
+.model K400T750_3C6A	ako:K3C6A	CORE(Area=1.78 Path=12.5)
+*$
+.model K400T750_3C8	ako:K3C8	CORE(Area=1.78 Path=12.5)
+*$
+
+.model K144T500_3C6A	ako:K3C6A	CORE(Area=2.13 Path=16.5)
+*$
+.model K144T500_3C8	ako:K3C8	CORE(Area=2.13 Path=16.5)
+*$
+
+*** end of library file
+

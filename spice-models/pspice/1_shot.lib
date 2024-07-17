@@ -1,0 +1,1212 @@
+* Library of One Shots and Monostable Multivibrators Models
+*
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+*
+*
+* $Revision:   1.1  $
+* $Author:   RPEREZ  $
+* $Date:   16 Apr 1998 13:26:32  $
+*
+*
+*$
+*-------------------------------------------------------------------------
+* 74121  Non-retriggerable Monostable Multivibrator w/Schmitt-Trigger Inputs
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* rbh 06/14/91 Created
+* rbh 06/02/92 Added dummy R/C pins
+*
+* Notes:
+* 1. The RINT, CEXT, and REXT/CEXT pins are not functional.  The output
+*    pulse width, tw(out), is controlled with the PULSE subcircuit 
+*    parameter.  Note that this means that the pulse width is FIXED for 
+*    the duration of the simulation.  You can specify this value in the 
+*    subcircuit call, e.g. X1 ... 74121 PARAMS: PULSE=1us
+* 2. Instead of a fixed minimum input pulse width (50ns), this model requires
+*    the input pulse to be at least as long as the propagation delay through
+*    the device.  Input pulses which are shorter than this value produce 
+*    an X which is tw(out) in duration.
+*
+.subckt 74121 A1 A2 B RINT CEXT REXT/CEXT Q Qbar
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: PULSE=30ns IO_LEVEL=0 MNTYMXDLY=0
+*
+R1 RINT 0 100MEG
+R2 RINT 0 100MEG
+R3 CEXT 0 100MEG
+R4 CEXT 0 100MEG
+R5 REXT/CEXT 0 100MEG
+R6 REXT/CEXT 0 100MEG
+*
+UA nand(2) DPWR DGND
++ 	A1 A2  A
++	D0_GATE IO_STD_ST IO_LEVEL={IO_LEVEL}
+UAdly dlyline DPWR DGND
++	A A_dly
++	D_121_A_dly IO_STD MNTYMXDLY={MNTYMXDLY}
+UTrigger nand(2) DPWR DGND
++	A_dly B  Trigger
++	D0_GATE IO_STD_ST IO_LEVEL={IO_LEVEL}
+UStart stim(1,1) DPWR DGND 
++	Clear
++	IO_STM
++	0S	0
++	1NS	Z
+*
+UOutputs jkff(1) DPWR DGND
++	$D_HI Clear Trigger $D_HI $D_LO Q_ Q_Bar
++	D_121_Outputs  IO_STD MNTYMXDLY={MNTYMXDLY}
+*
+UQ_Buf buf DPWR DGND
++	Q_ Q_Buf
++	D0_GATE IO_STD
+UQx isx(1) DPWR DGND
++	q_   q_x 
++	D0_GATE IO_STD 
+UQ0 is0(1) DPWR DGND
++	q_   q_0
++	D0_GATE IO_STD 
+UQ0_Bar inv DPWR DGND
++	q_0 q0_bar
++	D0_GATE IO_STD 
+*
+UQ_Rise or(2) DPWR DGND
++	Q_Buf q_x  q_rise
++	D0_GATE IO_STD 
+UTrigdly dlyline DPWR DGND
++	Trigger trigdly
++	D_121_trigdly IO_STD MNTYMXDLY={MNTYMXDLY}
+UTrigx isx(1) DPWR DGND
++	trigdly trigx
++	D0_GATE IO_STD
+UTrigx_bar inv DPWR DGND
++	trigx trigx_fall
++	D0_GATE IO_STD
+*
+UReset0 nand(2) DPWR DGND
++	q_rise trigx_fall reset0
++	D0_GATE IO_STD
+UClear jkff(1) dpwr dgnd
++	q0_bar $d_hi reset0 $d_lo $d_hi Clear $d_nc
++	D_121_pulse IO_STD MNTYMXDLY={MNTYMXDLY}
+*
+* Output buffers
+*
+UQ inv DPWR DGND 
++	q_bar Q 
++	D0_GATE IO_STD IO_LEVEL={IO_LEVEL}
+UQBar buf DPWR DGND 
++	q_bar QBAR
++	D_121_Qbar IO_STD IO_LEVEL={IO_LEVEL} MNTYMXDLY={MNTYMXDLY}
+*
+* Local timing model
+*
+.model D_121_pulse ueff(
++	tpclkqhlmn={pulse} tpclkqhlty={pulse} tpclkqhlmx={pulse}
++	)
+.ends 74121
+*
+.model D_121_Outputs ueff (
++	twclklty=35ns	twclklmx=55ns
++	tpclkqlhty=35ns	tpclkqlhmx=55ns
++	tpclkqhlty=35ns	tpclkqhlmx=55ns
++	)
+.model D_121_A_dly udly (
++	dlyty=10ns	dlymx=15ns
++	)
+.model D_121_trigdly udly (
++	dlyty=35ns	dlymx=55ns
++	)
+.model D_121_Qbar ugate (
++	tplhty=5ns	tplhmx=10ns
++	tphlty=5ns	tphlmx=10ns
++	)
+*$
+*-------------------------------------------------------------------------
+* 74122  Retriggerable Monostable Multivibrator
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* rbh 06/14/91 Created
+* rbh 06/02/92 Added dummy R/C pins
+*
+* Notes:
+* 1. The RINT, CEXT, and REXT/CEXT pins are not functional.  The output
+*    pulse width, tw(out), is controlled with the PULSE subcircuit 
+*    parameter.  Note that this means that the pulse width is FIXED for 
+*    the duration of the simulation.  You can specify this value in the 
+*    subcircuit call, e.g. X1 ... 74122 PARAMS: PULSE=1us
+* 2. Instead of a fixed minimum input pulse width (40ns), this model requires
+*    the input pulse to be at least as long as the propagation delay through
+*    the device.  Input pulses which are shorter than this value produce 
+*    an X which is tw(out) in duration.
+* 3. Some prop delays are off by a few nanoseconds.
+*
+.subckt 74122 CLRBAR A1 A2 B1 B2 RINT CEXT REXT/CEXT Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: PULSE=45ns IO_LEVEL=0 MNTYMXDLY=0
+*
+R1 RINT 0 100MEG
+R2 RINT 0 100MEG
+R3 CEXT 0 100MEG
+R4 CEXT 0 100MEG
+R5 REXT/CEXT 0 100MEG
+R6 REXT/CEXT 0 100MEG
+*
+UA nand(2) DPWR DGND
++ 	A1 A2  A
++	D0_GATE IO_STD IO_LEVEL={IO_LEVEL}
+UAdly dlyline DPWR DGND 
++	A A_dly
++	D_122_A_dly IO_STD MNTYMXDLY={MNTYMXDLY}
+*
+UTrigger and(3) DPWR DGND
++	A_dly B1 B2 Trigger
++	D0_GATE IO_STD IO_LEVEL={IO_LEVEL}
+*
+UTrigBar inv DPWR DGND
++	Trigger Trig_Bar
++	D0_GATE IO_STD
+*
+UStart stim(1,1) DPWR DGND 
++	Clear
++	IO_STM
++	0ns	0
++	1ns	Z
+*
+UClear and(2) DPWR DGND
++	CLRBAR Reset Clear
++	D0_GATE IO_STD IO_LEVEL={IO_LEVEL}
+*
+UOutputs jkff(1) DPWR DGND
++	$D_HI Clear Trig_Bar $D_HI $D_LO Q QBAR
++	D_122_Outputs  IO_STD IO_LEVEL={IO_LEVEL} MNTYMXDLY={MNTYMXDLY}
+*
+UTrigdly dlyline DPWR DGND
++	Trigger trigdly
++	D_122_trigdly IO_STD MNTYMXDLY={MNTYMXDLY}
+UTrigx isx(1) DPWR DGND
++	trigdly trigx
++	D0_GATE IO_STD
+*
+UTrigx_bar inv DPWR DGND
++	trigx trigx_bar
++	D0_GATE IO_STD
+UTrigx_barbar inv DPWR DGND
++	trigx_bar trigx_barbar
++	D_122_tedge IO_STD MNTYMXDLY={MNTYMXDLY}
+UTrigx_fall and(2) DPWR DGND
++	trigx_barbar trigx_bar trigx_fall
++	D0_GATE IO_STD
+*
+UReset0 nor(2) DPWR DGND
++	trigdly trigx_fall reset0
++	D0_GATE IO_STD
+*
+UTrig0 is0(1) DPWR DGND
++	Trigger Trig_0
++	D0_GATE IO_STD
+UTrig0_Bar inv DPWR DGND
++	Trig_0 Trig0_Bar
++	D_122_edge IO_STD MNTYMXDLY={MNTYMXDLY}
+UTrigPreset or(2) DPWR DGND
++	Trig_0 Trig0_Bar TrigPreset
++	D0_GATE IO_STD
+*
+UReset jkff(1)  DPWR DGND
++	TrigPreset $d_hi reset0 $d_lo $d_hi reset $d_nc
++	D_122_pulse IO_STD MNTYMXDLY={MNTYMXDLY}
+*
+* Local timing model
+*
+.model D_122_pulse ueff(
++	tpclkqhlmn={pulse-1ns+1ns}
++	tpclkqhlty={pulse-1ns+1ns}	;-1 for trigdly, +1=tp(trig)-tp(reset)
++	tpclkqhlmx={pulse-1ns+1ns}
++	)
+.ends 74122
+*
+.model D_122_A_dly udly (
++	dlyty=3ns	dlymx=5ns
++	)
+.model D_122_Outputs ueff (
++	twclklty=19ns	twclklmx=28ns
++	tpclkqlhty=19ns	tpclkqlhmx=28ns
++	tpclkqhlty=27ns	tpclkqhlmx=36ns
++	tppcqhlty=18ns	tppcqhlmx=27ns
++	tppcqlhty=26ns	tppcqlhmx=35ns
++	)
+.model D_122_trigdly udly (
++	dlymn=1ns	dlyty=1ns	dlymx=1ns
++	)
+.model D_122_edge ugate(
++	tplhmn=1ns	tplhty=1ns	tplhmx=1ns
++	)
+.model D_122_tedge ugate(
++	tphlmn=1ns	tphlty=1ns	tphlmx=1ns
++	)
+*$
+*-------------------------------------------------------------------------
+* 74123  Retriggerable Monostable Multivibrator
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* rbh 06/14/91 Created
+* rbh 06/02/92 Added dummy R/C pins
+*
+* Notes:
+* 1. The CEXT and REXT/CEXT pins are not functional.  The output
+*    pulse width, tw(out), is controlled with the PULSE subcircuit 
+*    parameter.  Note that this means that the pulse width is FIXED for 
+*    the duration of the simulation.  You can specify this value in the 
+*    subcircuit call, e.g. X1 ... 74123 PARAMS: PULSE=1us
+* 2. Instead of a fixed minimum input pulse width (40ns), this model requires
+*    the input pulse to be at least as long as the propagation delay through
+*    the device.  Input pulses which are shorter than this value produce 
+*    an X which is tw(out) in duration.
+* 3. Some prop delays are off by a few nanoseconds.
+*
+.subckt 74123 CLRBAR A B CEXT REXT/CEXT Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: PULSE=45ns IO_LEVEL=0 MNTYMXDLY=0
+*
+R1 CEXT 0 100MEG
+R2 CEXT 0 100MEG
+R3 REXT/CEXT 0 100MEG
+R4 REXT/CEXT 0 100MEG
+*
+UABar inv DPWR DGND
++	A ABar
++	D0_GATE IO_STD IO_LEVEL={IO_LEVEL}
+UAdly dlyline DPWR DGND 
++	ABar A_dly
++	D_123_A_dly IO_STD MNTYMXDLY={MNTYMXDLY}
+UTrigger and(2) DPWR DGND
++	A_dly B  Trigger
++	D0_GATE IO_STD IO_LEVEL={IO_LEVEL}
+*
+UTrigBar inv DPWR DGND
++	Trigger Trig_Bar
++	D0_GATE IO_STD
+*
+UStart stim(1,1) DPWR DGND 
++	Clear
++	IO_STM
++	0ns	0
++	1ns	Z
+*
+UClear and(2) DPWR DGND
++	CLRBAR Reset Clear
++	D0_GATE IO_STD IO_LEVEL={IO_LEVEL}
+*
+UOutputs jkff(1) DPWR DGND
++	$D_HI Clear Trig_Bar $D_HI $D_LO Q QBAR
++	D_123_Outputs  IO_STD IO_LEVEL={IO_LEVEL} MNTYMXDLY={MNTYMXDLY}
+*
+UTrigdly dlyline DPWR DGND
++	Trigger trigdly
++	D_123_trigdly IO_STD MNTYMXDLY={MNTYMXDLY}
+UTrigx isx(1) DPWR DGND
++	trigdly trigx
++	D0_GATE IO_STD
+*
+UTrigx_bar inv DPWR DGND
++	trigx trigx_bar
++	D0_GATE IO_STD
+UTrigx_barbar inv DPWR DGND
++	trigx_bar trigx_barbar
++	D_123_tedge IO_STD MNTYMXDLY={MNTYMXDLY}
+UTrigx_fall and(2) DPWR DGND
++	trigx_barbar trigx_bar trigx_fall
++	D0_GATE IO_STD
+*
+UReset0 nor(2) DPWR DGND
++	trigdly trigx_fall reset0
++	D0_GATE IO_STD
+*
+UTrig0 is0(1) DPWR DGND
++	Trigger Trig_0
++	D0_GATE IO_STD
+UTrig0_Bar inv DPWR DGND
++	Trig_0 Trig0_Bar
++	D_123_edge IO_STD MNTYMXDLY={MNTYMXDLY}
+UTrigPreset or(2) DPWR DGND
++	Trig_0 Trig0_Bar TrigPreset
++	D0_GATE IO_STD
+*
+UReset jkff(1)  DPWR DGND
++	TrigPreset $d_hi reset0 $d_lo $d_hi reset $d_nc
++	D_123_pulse IO_STD MNTYMXDLY={MNTYMXDLY}
+*
+* Local timing model
+*
+.model D_123_pulse ueff(
++	tpclkqhlmn={pulse-1ns+1ns}
++	tpclkqhlty={pulse-1ns+1ns}	;-1 for trigdly, +1=tp(trig)-tp(reset)
++	tpclkqhlmx={pulse-1ns+1ns}
++	)
++	)
+.ends 74123
+*
+.model D_123_A_dly udly (
++	dlyty=3ns	dlymx=5ns
++	)
+.model D_123_Outputs ueff (
++	twclklty=19ns	twclklmx=28ns
++	tpclkqlhty=19ns	tpclkqlhmx=28ns
++	tpclkqhlty=27ns	tpclkqhlmx=36ns
++	tppcqhlty=18ns	tppcqhlmx=27ns
++	tppcqlhty=26ns	tppcqlhmx=35ns
++	)
+.model D_123_trigdly udly (
++	dlymn=1ns	dlyty=1ns	dlymx=1ns
++	)
+.model D_123_edge ugate(
++	tplhmn=1ns	tplhty=1ns	tplhmx=1ns
++	)
+.model D_123_tedge ugate(
++	tphlmn=1ns	tphlty=1ns	tphlmx=1ns
++	)
+*$
+*---------	 
+* 54L121  Non-retriggerable Monostable Multivibrator w/Schmitt-Trigger Inputs
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* rbh 06/14/91 Created
+* rbh 06/02/92 Added dummy R/C pins
+*
+* Notes:
+* 1. The RINT, CEXT, and REXT/CEXT pins are not functional.  The output
+*    pulse width, tw(out), is controlled with the PULSE subcircuit 
+*    parameter.  Note that this means that the pulse width is FIXED for 
+*    the duration of the simulation.  You can specify this value in the 
+*    subcircuit call, e.g. X1 ... 54L121 PARAMS: PULSE=1us
+* 2. Instead of a fixed minimum input pulse width (100ns), this model requires
+*    the input pulse to be at least as long as the propagation delay through
+*    the device.  Input pulses which are shorter than this value produce 
+*    an X which is tw(out) in duration.
+*
+.subckt 54L121 A1 A2 B RINT CEXT REXT/CEXT Q Qbar
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: PULSE=35ns IO_LEVEL=0 MNTYMXDLY=0
+*
+R1 RINT 0 100MEG
+R2 RINT 0 100MEG
+R3 CEXT 0 100MEG
+R4 CEXT 0 100MEG
+R5 REXT/CEXT 0 100MEG
+R6 REXT/CEXT 0 100MEG
+*
+UA nand(2) DPWR DGND
++ 	A1 A2  A
++	D0_GATE IO_L_ST IO_LEVEL={IO_LEVEL}
+UAdly dlyline DPWR DGND
++	A A_dly
++	D_54L121_A_dly IO_L MNTYMXDLY={MNTYMXDLY}
+UTrigger nand(2) DPWR DGND
++	A_dly B  Trigger
++	D0_GATE IO_L_ST IO_LEVEL={IO_LEVEL}
+*
+UStart stim(1,1) DPWR DGND 
++	Clear
++	IO_STM
++	0S	0
++	1NS	Z
+*
+UOutputs jkff(1) DPWR DGND
++	$D_HI Clear Trigger $D_HI $D_LO Q_ Q_Bar
++	D_54L121_Outputs  IO_L MNTYMXDLY={MNTYMXDLY}
+*
+UQ_Buf buf DPWR DGND
++	Q_ Q_Buf
++	D0_GATE IO_L
+UQx isx(1) DPWR DGND
++	q_   q_x 
++	D0_GATE IO_L 
+UQ0 is0(1) DPWR DGND
++	q_   q_0
++	D0_GATE IO_L 
+UQ0_Bar inv DPWR DGND
++	q_0 q0_bar
++	D0_GATE IO_L 
+*
+UQ_Rise or(2) DPWR DGND
++	Q_Buf q_x  q_rise
++	D0_GATE IO_L 
+UTrigdly dlyline DPWR DGND
++	Trigger trigdly
++	D_54L121_trigdly IO_L MNTYMXDLY={MNTYMXDLY}
+UTrigx isx(1) DPWR DGND
++	trigdly trigx
++	D0_GATE IO_L
+UTrigx_bar inv DPWR DGND
++	trigx trigx_fall
++	D0_GATE IO_L
+*
+UReset0 nand(2) DPWR DGND
++	q_rise trigx_fall reset0
++	D0_GATE IO_L
+UClear jkff(1) dpwr dgnd
++	q0_bar $d_hi reset0 $d_lo $d_hi Clear $d_nc
++	D_54L121_pulse IO_L MNTYMXDLY={MNTYMXDLY}
+*
+* Output buffers
+*
+UQ inv DPWR DGND 
++	q_bar Q 
++	D0_GATE IO_L IO_LEVEL={IO_LEVEL}
+UQBar buf DPWR DGND 
++	q_bar Qbar 
++	D_54L121_Qbar IO_L IO_LEVEL={IO_LEVEL} MNTYMXDLY={MNTYMXDLY}
+*
+* Local timing model
+*
+.model D_54L121_pulse ueff(
++	tpclkqhlmn={pulse} tpclkqhlty={pulse} tpclkqhlmx={pulse}
++	)
+.ends 54L121
+*
+.model D_54L121_Outputs ueff (
++	twclklmx=110ns
++	tpclkqlhmx=110ns
++	tpclkqhlmx=110ns
++	)
+.model D_54L121_A_dly udly (
++	dlymx=30ns
++	)
+.model D_54L121_trigdly udly (
++	dlymx=110ns
++	)
+.model D_54L121_Qbar ugate (
++	tplhmx=20ns
++	tphlmx=20ns
++	)
+*$
+*---------	 
+* 54L122  Retriggerable Monostable Multivibrator
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* rbh 06/14/91 Created
+* rbh 06/02/92 Added dummy R/C pins
+*
+* Notes:
+* 1. The RINT, CEXT, and REXT/CEXT pins are not functional.  The output
+*    pulse width, tw(out), is controlled with the PULSE subcircuit 
+*    parameter.  Note that this means that the pulse width is FIXED for 
+*    the duration of the simulation.  You can specify this value in the 
+*    subcircuit call, e.g. X1 ... 54L122 PARAMS: PULSE=1us
+* 2. Instead of a fixed minimum input pulse width (50ns), this model requires
+*    the input pulse to be at least as long as the propagation delay through
+*    the device.  Input pulses which are shorter than this value produce 
+*    an X which is tw(out) in duration.
+* 3. Some prop delays are off by a few nanoseconds.
+*
+.subckt 54L122 CLRBAR A1 A2 B1 B2 RINT CEXT REXT/CEXT Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: PULSE=90ns IO_LEVEL=0 MNTYMXDLY=0
+*
+R1 RINT 0 100MEG
+R2 RINT 0 100MEG
+R3 CEXT 0 100MEG
+R4 CEXT 0 100MEG
+R5 REXT/CEXT 0 100MEG
+R6 REXT/CEXT 0 100MEG
+*
+UA nand(2) DPWR DGND
++ 	A1 A2  A
++	D0_GATE IO_L IO_LEVEL={IO_LEVEL}
+UAdly dlyline DPWR DGND 
++	A A_dly
++	D_54L122_A_dly IO_L MNTYMXDLY={MNTYMXDLY}
+*
+UTrigger and(3) DPWR DGND
++	A_dly B1 B2 Trigger
++	D0_GATE IO_L IO_LEVEL={IO_LEVEL}
+*
+UTrigBar inv DPWR DGND
++	Trigger Trig_Bar
++	D0_GATE IO_L
+*
+UStart stim(1,1) DPWR DGND 
++	Clear
++	IO_STM
++	0ns	0
++	1ns	Z
+*
+UClear and(2) DPWR DGND
++	CLRBAR Reset Clear
++	D0_GATE IO_L IO_LEVEL={IO_LEVEL}
+*
+UOutputs jkff(1) DPWR DGND
++	$D_HI Clear Trig_Bar $D_HI $D_LO Q QBAR
++	D_54L122_Outputs  IO_L IO_LEVEL={IO_LEVEL} MNTYMXDLY={MNTYMXDLY}
+*
+UTrigdly dlyline DPWR DGND
++	Trigger trigdly
++	D_54L122_trigdly IO_L MNTYMXDLY={MNTYMXDLY}
+UTrigx isx(1) DPWR DGND
++	trigdly trigx
++	D0_GATE IO_L
+*
+UTrigx_bar inv DPWR DGND
++	trigx trigx_bar
++	D0_GATE IO_L
+UTrigx_barbar inv DPWR DGND
++	trigx_bar trigx_barbar
++	D_54L122_tedge IO_L MNTYMXDLY={MNTYMXDLY}
+UTrigx_fall and(2) DPWR DGND
++	trigx_barbar trigx_bar trigx_fall
++	D0_GATE IO_L
+*
+UReset0 nor(2) DPWR DGND
++	trigdly trigx_fall reset0
++	D0_GATE IO_L
+*
+UTrig0 is0(1) DPWR DGND
++	Trigger Trig_0
++	D0_GATE IO_L
+UTrig0_Bar inv DPWR DGND
++	Trig_0 Trig0_Bar
++	D_54L122_edge IO_L MNTYMXDLY={MNTYMXDLY}
+UTrigPreset or(2) DPWR DGND
++	Trig_0 Trig0_Bar TrigPreset
++	D0_GATE IO_L
+*
+UReset jkff(1)  DPWR DGND
++	TrigPreset $d_hi reset0 $d_lo $d_hi reset $d_nc
++	D_54L122_pulse IO_L MNTYMXDLY={MNTYMXDLY}
+*
+* Local timing model
+*
+.model D_54L122_pulse ueff(
++	tpclkqhlmn={pulse-1ns+2ns}
++	tpclkqhlty={pulse-1ns+2ns}
++	tpclkqhlmx={pulse-1ns+2ns}
++	)
+.ends 54L122
+*
+.model D_54L122_A_dly udly (
++	dlyty=6ns	dlymx=10ns
++	)
+.model D_54L122_Outputs ueff (
++	twclklty=38ns	twclklmx=56ns
++	tpclkqlhty=38ns	tpclkqlhmx=56ns
++	tpclkqhlty=54ns	tpclkqhlmx=72ns
++	tppcqhlty=36ns	tppcqhlmx=54ns
++	tppcqlhty=52ns	tppcqlhmx=70ns
++	)
+.model D_54L122_trigdly udly (
++	dlymn=1ns	dlyty=1ns	dlymx=1ns
++	)
+.model D_54L122_edge ugate(
++	tplhmn=1ns	tplhty=1ns	tplhmx=1ns
++	)
+.model D_54L122_tedge ugate(
++	tphlmn=1ns	tphlty=1ns	tphlmx=1ns
++	)
+*$
+*---------
+* 54L123  Retriggerable Monostable Multivibrator
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* rbh 06/14/91 Created
+* rbh 06/02/92 Added dummy R/C pins
+*
+* Notes:
+* 1. The CEXT and REXT/CEXT pins are not functional.  The output
+*    pulse width, tw(out), is controlled with the PULSE subcircuit 
+*    parameter.  Note that this means that the pulse width is FIXED for 
+*    the duration of the simulation.  You can specify this value in the 
+*    subcircuit call, e.g. X1 ... 54L123 PARAMS: PULSE=1us
+* 2. Instead of a fixed minimum input pulse width (50ns), this model requires
+*    the input pulse to be at least as long as the propagation delay through
+*    the device.  Input pulses which are shorter than this value produce 
+*    an X which is tw(out) in duration.
+* 3. Some prop delays are off by a few nanoseconds.
+*
+.subckt 54L123 CLRBAR A B CEXT REXT/CEXT Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: PULSE=90ns IO_LEVEL=0 MNTYMXDLY=0
+*
+R1 CEXT 0 100MEG
+R2 CEXT 0 100MEG
+R3 REXT/CEXT 0 100MEG
+R4 REXT/CEXT 0 100MEG
+*
+UABar inv DPWR DGND
++	A ABar
++	D0_GATE IO_L IO_LEVEL={IO_LEVEL}
+UAdly dlyline DPWR DGND 
++	ABar A_dly
++	D_54L123_A_dly IO_L MNTYMXDLY={MNTYMXDLY}
+*
+UTrigger and(2) DPWR DGND
++	A_dly B  Trigger
++	D0_GATE IO_L IO_LEVEL={IO_LEVEL}
+*
+UTrigBar inv DPWR DGND
++	Trigger Trig_Bar
++	D0_GATE IO_L
+*
+UStart stim(1,1) DPWR DGND 
++	Clear
++	IO_STM
++	0ns	0
++	1ns	Z
+*
+UClear and(2) DPWR DGND
++	CLRBAR Reset Clear
++	D0_GATE IO_L IO_LEVEL={IO_LEVEL}
+*
+UOutputs jkff(1) DPWR DGND
++	$D_HI Clear Trig_Bar $D_HI $D_LO Q QBAR
++	D_54L123_Outputs  IO_L IO_LEVEL={IO_LEVEL} MNTYMXDLY={MNTYMXDLY}
+*
+UTrigdly dlyline DPWR DGND
++	Trigger trigdly
++	D_54L123_trigdly IO_L MNTYMXDLY={MNTYMXDLY}
+UTrigx isx(1) DPWR DGND
++	trigdly trigx
++	D0_GATE IO_L
+*
+UTrigx_bar inv DPWR DGND
++	trigx trigx_bar
++	D0_GATE IO_L
+UTrigx_barbar inv DPWR DGND
++	trigx_bar trigx_barbar
++	D_54L123_tedge IO_L MNTYMXDLY={MNTYMXDLY}
+UTrigx_fall and(2) DPWR DGND
++	trigx_barbar trigx_bar trigx_fall
++	D0_GATE IO_L
+*
+UReset0 nor(2) DPWR DGND
++	trigdly trigx_fall reset0
++	D0_GATE IO_L
+*
+UTrig0 is0(1) DPWR DGND
++	Trigger Trig_0
++	D0_GATE IO_L
+UTrig0_Bar inv DPWR DGND
++	Trig_0 Trig0_Bar
++	D_54L123_edge IO_L MNTYMXDLY={MNTYMXDLY}
+UTrigPreset or(2) DPWR DGND
++	Trig_0 Trig0_Bar TrigPreset
++	D0_GATE IO_L
+*
+UReset jkff(1)  DPWR DGND
++	TrigPreset $d_hi reset0 $d_lo $d_hi reset $d_nc
++	D_54L123_pulse IO_L MNTYMXDLY={MNTYMXDLY}
+*
+* Local timing model
+*
+.model D_54L123_pulse ueff(
++	tpclkqhlmn={pulse-1ns+2ns}
++	tpclkqhlty={pulse-1ns+2ns}
++	tpclkqhlmx={pulse-1ns+2ns}
++	)
+.ends 54L123
+*
+.model D_54L123_A_dly udly (
++	dlyty=6ns	dlymx=10ns
++	)
+.model D_54L123_Outputs ueff (
++	twclklty=38ns	twclklmx=56ns
++	tpclkqlhty=38ns	tpclkqlhmx=56ns
++	tpclkqhlty=54ns	tpclkqhlmx=72ns
++	tppcqhlty=36ns	tppcqhlmx=54ns
++	tppcqlhty=52ns	tppcqlhmx=70ns
++	)
+.model D_54L123_trigdly udly (
++	dlymn=1ns	dlyty=1ns	dlymx=1ns
++	)
+.model D_54L123_edge ugate(
++	tplhmn=1ns	tplhty=1ns	tplhmx=1ns
++	)
+.model D_54L123_tedge ugate(
++	tphlmn=1ns	tphlty=1ns	tphlmx=1ns
++	)
+*$
+*---------
+* 74LS122  Retriggerable Monostable Multivibrator
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* rbh 06/14/91 Created
+* rbh 06/02/92 Added dummy R/C pins
+*
+* Notes:
+* 1. The RINT, CEXT, and REXT/CEXT pins are not functional.  The output
+*    pulse width, tw(out), is controlled with the PULSE subcircuit 
+*    parameter.  Note that this means that the pulse width is FIXED for 
+*    the duration of the simulation.  You can specify this value in the 
+*    subcircuit call, e.g. X1 ... 74LS122 PARAMS: PULSE=1us
+* 2. Instead of a fixed minimum input pulse width (40ns), this model requires
+*    the input pulse to be at least as long as the propagation delay through
+*    the device.  Input pulses which are shorter than this value produce 
+*    an X which is tw(out) in duration.
+* 3. Some prop delays are off by a few nanoseconds.
+*
+.subckt 74LS122 CLRBAR A1 A2 B1 B2 RINT CEXT REXT/CEXT Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: PULSE=116ns IO_LEVEL=0 MNTYMXDLY=0
+*
+R1 RINT 0 100MEG
+R2 RINT 0 100MEG
+R3 CEXT 0 100MEG
+R4 CEXT 0 100MEG
+R5 REXT/CEXT 0 100MEG
+R6 REXT/CEXT 0 100MEG
+*
+UA nand(2) DPWR DGND
++ 	A1 A2  A
++	D0_GATE IO_LS_ST IO_LEVEL={IO_LEVEL}
+UB1_dly  dlyline DPWR DGND 
++	B1 B1_dly
++	D_LS122_B_dly IO_LS_ST IO_LEVEL={IO_LEVEL} MNTYMXDLY={MNTYMXDLY}
+UB2_dly  dlyline DPWR DGND 
++	B2 B2_dly
++	D_LS122_B_dly IO_LS_ST IO_LEVEL={IO_LEVEL} MNTYMXDLY={MNTYMXDLY}
+*
+UTrigger and(3) DPWR DGND
++	A B1_dly B2_dly Trigger
++	D0_GATE IO_LS
+*
+UTrigBar inv DPWR DGND
++	Trigger Trig_Bar
++	D0_GATE IO_LS
+*
+UStart stim(1,1) DPWR DGND 
++	Clear
++	IO_STM
++	0ns	0
++	1ns	Z
+*
+UClear and(2) DPWR DGND
++	CLRBAR Reset Clear
++	D0_GATE IO_LS IO_LEVEL={IO_LEVEL}
+*
+UOutputs jkff(1) DPWR DGND
++	$D_HI Clear Trig_Bar $D_HI $D_LO Q QBAR
++	D_LS122_Outputs  IO_LS IO_LEVEL={IO_LEVEL} MNTYMXDLY={MNTYMXDLY}
+*
+UTrigdly dlyline DPWR DGND
++	Trigger trigdly
++	D_LS122_trigdly IO_LS MNTYMXDLY={MNTYMXDLY}
+UTrigx isx(1) DPWR DGND
++	trigdly trigx
++	D0_GATE IO_LS
+*
+UTrigx_bar inv DPWR DGND
++	trigx trigx_bar
++	D0_GATE IO_LS
+UTrigx_barbar inv DPWR DGND
++	trigx_bar trigx_barbar
++	D_LS122_tedge IO_LS MNTYMXDLY={MNTYMXDLY}
+UTrigx_fall and(2) DPWR DGND
++	trigx_barbar trigx_bar trigx_fall
++	D0_GATE IO_LS
+*
+UReset0 nor(2) DPWR DGND
++	trigdly trigx_fall reset0
++	D0_GATE IO_LS
+*
+UTrig0 is0(1) DPWR DGND
++	Trigger Trig_0
++	D0_GATE IO_LS
+UTrig0_Bar inv DPWR DGND
++	Trig_0 Trig0_Bar
++	D_LS122_edge IO_LS MNTYMXDLY={MNTYMXDLY}
+UTrigPreset or(2) DPWR DGND
++	Trig_0 Trig0_Bar TrigPreset
++	D0_GATE IO_LS
+*
+UReset jkff(1)  DPWR DGND
++	TrigPreset $d_hi reset0 $d_lo $d_hi reset $d_nc
++	D_LS122_pulse IO_LS MNTYMXDLY={MNTYMXDLY}
+*
+* Local timing model
+*
+.model D_LS122_pulse ueff(
++	tpclkqhlmn={pulse-1ns+1ns}
++	tpclkqhlty={pulse-1ns+3ns}
++	tpclkqhlmx={pulse-1ns+6ns}
++	)
+.ends 74LS122
+*
+.model D_LS122_B_dly udly (
++	dlyty=1ns	dlymx=11ns
++	)
+.model D_LS122_Outputs ueff (
++	twclklty=23ns	twclklmx=33ns
++	tpclkqlhty=23ns	tpclkqlhmx=33ns
++	tpclkqhlty=32ns	tpclkqhlmx=45ns
++	tppcqhlty=20ns	tppcqhlmx=27ns
++	tppcqlhty=29ns	tppcqlhmx=39ns
++	)
+.model D_LS122_trigdly udly (
++	dlymn=1ns	dlyty=1ns	dlymx=1ns
++	)
+.model D_LS122_edge ugate(
++	tplhmn=1ns	tplhty=1ns	tplhmx=1ns
++	)
+.model D_LS122_tedge ugate(
++	tphlmn=1ns	tphlty=1ns	tphlmx=1ns
++	)
+*
+*$
+*---------
+* 74LS123  Retriggerable Monostable Multivibrator
+*
+* The TTL Data Book, Vol 2, 1985, TI
+* rbh 06/14/91 Created
+* rbh 06/02/92 Added dummy R/C pins
+*
+* Notes:
+* 1. The CEXT and REXT/CEXT pins are not functional.  The output
+*    pulse width, tw(out), is controlled with the PULSE subcircuit 
+*    parameter.  Note that this means that the pulse width is FIXED for 
+*    the duration of the simulation.  You can specify this value in the 
+*    subcircuit call, e.g. X1 ... 74LS123 PARAMS: PULSE=1us
+* 2. Instead of a fixed minimum input pulse width (40ns), this model requires
+*    the input pulse to be at least as long as the propagation delay through
+*    the device.  Input pulses which are shorter than this value produce 
+*    an X which is tw(out) in duration.
+* 3. Some prop delays are off by a few nanoseconds.
+*
+.subckt 74LS123 CLRBAR A B CEXT REXT/CEXT Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: PULSE=116ns IO_LEVEL=0 MNTYMXDLY=0
+*
+R1 CEXT 0 100MEG
+R2 CEXT 0 100MEG
+R3 REXT/CEXT 0 100MEG
+R4 REXT/CEXT 0 100MEG
+*
+UABar inv DPWR DGND
++ 	A ABar
++	D0_GATE IO_LS_ST IO_LEVEL={IO_LEVEL}
+UB_dly  dlyline DPWR DGND 
++	B B_dly
++	D_LS123_B_dly IO_LS_ST IO_LEVEL={IO_LEVEL} MNTYMXDLY={MNTYMXDLY}
+*
+UTrigger and(2) DPWR DGND
++	ABar B_dly  Trigger
++	D0_GATE IO_LS
+*
+UTrigBar inv DPWR DGND
++	Trigger Trig_Bar
++	D0_GATE IO_LS
+*
+UStart stim(1,1) DPWR DGND 
++	Clear
++	IO_STM
++	0ns	0
++	1ns	Z
+*
+UClear and(2) DPWR DGND
++	CLRBAR Reset Clear
++	D0_GATE IO_LS IO_LEVEL={IO_LEVEL}
+*
+UOutputs jkff(1) DPWR DGND
++	$D_HI Clear Trig_Bar $D_HI $D_LO Q QBAR
++	D_LS123_Outputs  IO_LS IO_LEVEL={IO_LEVEL} MNTYMXDLY={MNTYMXDLY}
+*
+UTrigdly dlyline DPWR DGND
++	Trigger trigdly
++	D_LS123_trigdly IO_LS MNTYMXDLY={MNTYMXDLY}
+UTrigx isx(1) DPWR DGND
++	trigdly trigx
++	D0_GATE IO_LS
+*
+UTrigx_bar inv DPWR DGND
++	trigx trigx_bar
++	D0_GATE IO_LS
+UTrigx_barbar inv DPWR DGND
++	trigx_bar trigx_barbar
++	D_LS123_tedge IO_LS MNTYMXDLY={MNTYMXDLY}
+UTrigx_fall and(2) DPWR DGND
++	trigx_barbar trigx_bar trigx_fall
++	D0_GATE IO_LS
+*
+UReset0 nor(2) DPWR DGND
++	trigdly trigx_fall reset0
++	D0_GATE IO_LS
+*
+UTrig0 is0(1) DPWR DGND
++	Trigger Trig_0
++	D0_GATE IO_LS
+UTrig0_Bar inv DPWR DGND
++	Trig_0 Trig0_Bar
++	D_LS123_edge IO_LS MNTYMXDLY={MNTYMXDLY}
+UTrigPreset or(2) DPWR DGND
++	Trig_0 Trig0_Bar TrigPreset
++	D0_GATE IO_LS
+*
+UReset jkff(1)  DPWR DGND
++	TrigPreset $d_hi reset0 $d_lo $d_hi reset reset_bar
++	D_LS123_pulse IO_LS MNTYMXDLY={MNTYMXDLY}
+*
+* Local timing model
+*
+.model D_LS123_pulse ueff(
++	tpclkqhlmn={pulse-1ns+1ns}
++	tpclkqhlty={pulse-1ns+3ns}
++	tpclkqhlmx={pulse-1ns+6ns}
++	)
+.ends 74LS123
+*
+.model D_LS123_B_dly udly (
++	dlyty=1ns	dlymx=11ns
++	)
+.model D_LS123_Outputs ueff (
++	twclklty=23ns	twclklmx=33ns
++	tpclkqlhty=23ns	tpclkqlhmx=33ns
++	tpclkqhlty=32ns	tpclkqhlmx=45ns
++	tppcqhlty=20ns	tppcqhlmx=27ns
++	tppcqlhty=29ns	tppcqlhmx=39ns
++	)
+.model D_LS123_trigdly udly (
++	dlymn=1ns	dlyty=1ns	dlymx=1ns
++	)
+.model D_LS123_edge ugate(
++	tplhmn=1ns	tplhty=1ns	tplhmx=1ns
++	)
+.model D_LS123_tedge ugate(
++	tphlmn=1ns	tphlty=1ns	tphlmx=1ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4098B  Retriggerable Monostable Multivibrator
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* rbh 06/14/91 Created
+* rbh 06/04/92 Added dummy R/C pins
+*
+* Notes:
+* 1. The RxCx and Cx pins are not functional.  Instead, this model uses a 
+*    simple PULSE width parameter to define the output pulse width tw(out).
+*    Note that this means that the pulse width is FIXED for the duration
+*    of the simulation.  You can specify this value in the subcircuit call,
+*    e.g. X1 ... CD4098B PARAMS: PULSE=1.5ms
+* 2. Trigger pulses which are shorter than the minimum input pulse width
+*    (70ns typ, 140ns max) produce an X at the outputs tw(out) in duration.
+*    When operating in non-retrigger mode (with QBar connected to TR-, etc.)
+*    this X output, because it is fed back into the inputs, will prevent 
+*    the one-shot from clearing itself.  This is correct (albeit pessimistic)
+*    behavior.  This condition can be cleared by pulsing the RESET pin.
+* 3. Because of its dependence on Rx and Cx values, minimum reset pulse
+*    width is not checked.
+*
+.subckt CD4098B RESET TR_POS TR_NEG CX RXCX  Q QBAR
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: PULSE=1us IO_LEVEL=0 MNTYMXDLY=0
+*
+R1 CX 0 100MEG
+R2 CX 0 100MEG
+R3 RXCX 0 100MEG
+R4 RXCX 0 100MEG
+*
+UA inv VDD VSS
++ 	TR_NEG TR_NEGBAR
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
+UTrigger or(2) VDD VSS
++	TR_NEGBAR TR_POS  Trigger
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
+UTrigBar inv VDD VSS
++	Trigger Trig_Bar
++	D0_GATE IO_4000B
+*
+UStart stim(1,1) VDD VSS 
++	Clear
++	IO_STM
++	0ns	0
++	1ns	Z
+*
+UClear and(2) VDD VSS
++	RESET TrigClear Clear
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
+*
+* Outputs cleared by RESET signal or delayed trigger
+*
+UOutputs jkff(1) VDD VSS
++	$D_HI Clear Trig_Bar $D_HI $D_LO Q QBAR
++	D_CD4098B_Outputs  IO_4000B IO_LEVEL={IO_LEVEL} MNTYMXDLY={MNTYMXDLY}
+*
+UTrigdly dlyline VDD VSS
++	Trigger trigdly
++	D_CD4098B_trigdly IO_4000B MNTYMXDLY={MNTYMXDLY}
+UTrigx isx(1) VDD VSS
++	trigdly trigx
++	D0_GATE IO_4000B
+*
+UTrigx_bar inv VDD VSS
++	trigx trigx_bar
++	D0_GATE IO_4000B
+UTrigx_barbar inv VDD VSS
++	trigx_bar trigx_barbar
++	D_CD4098B_tedge IO_4000B MNTYMXDLY={MNTYMXDLY}
+UTrigx_fall and(2) VDD VSS
++	trigx_barbar trigx_bar trigx_fall
++	D0_GATE IO_4000B
+*
+UReset0 nor(2) VDD VSS
++	trigdly trigx_fall reset0
++	D0_GATE IO_4000B
+*
+UTrig0 is0(1) VDD VSS
++	Trigger Trig_0
++	D0_GATE IO_4000B
+UTrig0_Bar inv VDD VSS
++	Trig_0 Trig0_Bar
++	D_CD4098B_edge IO_4000B MNTYMXDLY={MNTYMXDLY}
+UTrigPreset or(2) VDD VSS
++	Trig_0 Trig0_Bar TrigPreset
++	D0_GATE IO_4000B
+*
+UTrigClear jkff(1)  VDD VSS
++	TrigPreset $d_hi reset0 $d_lo $d_hi TrigClear $d_nc
++	D_CD4098B_pulse IO_4000B MNTYMXDLY={MNTYMXDLY}
+*
+* Local timing model
+*
+.model D_CD4098B_pulse ueff(
++	tpclkqhlmn={pulse-1ns+10ns}
++	tpclkqhlty={pulse-1ns+25ns}	; 25=tp(trigger)-tp(reset)
++	tpclkqhlmx={pulse-1ns+50ns}
++	)
+.ends CD4098B
+*
+.model D_CD4098B_Outputs ueff (
++	twclklty=70ns	  twclklmx=140ns
++	tpclkqlhty=250ns tpclkqlhmx=500ns
++	tpclkqhlty=250ns tpclkqhlmx=500ns
++	tppcqhlty=225ns  tppcqhlmx=450ns
++	tppcqlhty=225ns  tppcqlhmx=450ns
++	)
+.model D_CD4098B_trigdly udly (
++	dlymn=1ns	dlyty=1ns	dlymx=1ns
++	)
+.model D_CD4098B_edge ugate(
++	tplhmn=1ns	tplhty=1ns	tplhmx=1ns
++	)
+.model D_CD4098B_tedge ugate(
++	tphlmn=1ns	tphlty=1ns	tphlmx=1ns
++	)
+*$
+*-------------------------------------------------------------------------
+* CD4538B  Retriggerable Monostable Multivibrator
+*
+* The CMOS Integrated Circuits Data Book, 1983, RCA Solid State
+* rbh 06/14/91 Created
+* rbh 06/04/92 Added dummy R/C pins
+*
+* Notes:
+* 1. The RxCx and Cx pins are not functional.  Instead, this model uses a 
+*    simple PULSE width parameter to define the output pulse width tw(out).
+*    Note that this means that the pulse width is FIXED for the duration
+*    of the simulation.  You can specify this value in the subcircuit call,
+*    e.g. X1 ... CD4538B PARAMS: PULSE=1.5ms
+* 2. Trigger pulses which are shorter than the minimum input pulse width
+*    (80ns typ, 140ns max) produce an X at the outputs tw(out) in duration.
+*    When operating in non-retrigger mode (with QBar connected to TR-, etc.)
+*    this X output, because it is fed back into the inputs, will prevent 
+*    the one-shot from clearing itself.  This is correct (albeit pessimistic)
+*    behavior.  This condition can be cleared by pulsing the RESET pin.
+* 3. Because of its dependence on Rx and Cx values, minimum reset pulse
+*    width is not checked.
+*
+.subckt CD4538B RESET TR_POS TR_NEG CX RXCX Q QBAR
++	optional: VDD=$G_CD4000_VDD VSS=$G_CD4000_VSS
++	params: PULSE=20us IO_LEVEL=0 MNTYMXDLY=0
+*
+R1 CX 0 100MEG
+R2 CX 0 100MEG
+R3 RXCX 0 100MEG
+R4 RXCX 0 100MEG
+*
+UA inv VDD VSS
++ 	TR_NEG TR_NEGBAR
++	D0_GATE IO_4000B_ST IO_LEVEL={IO_LEVEL}
+UTrigger or(2) VDD VSS
++	TR_NEGBAR TR_POS  Trigger
++	D0_GATE IO_4000B_ST IO_LEVEL={IO_LEVEL}
+UTrigBar inv VDD VSS
++	Trigger Trig_Bar
++	D0_GATE IO_4000B
+*
+UStart stim(1,1) VDD VSS 
++	Clear
++	IO_STM
++	0ns	0
++	1ns	Z
+*
+UClear and(2) VDD VSS
++	RESET TrigClear Clear
++	D0_GATE IO_4000B IO_LEVEL={IO_LEVEL}
+*
+* Outputs cleared by RESET signal or delayed trigger
+*
+UOutputs jkff(1) VDD VSS
++	$D_HI Clear Trig_Bar $D_HI $D_LO Q QBAR
++	D_CD4538B_Outputs  IO_4000B IO_LEVEL={IO_LEVEL} MNTYMXDLY={MNTYMXDLY}
+*
+UTrigdly dlyline VDD VSS
++	Trigger trigdly
++	D_CD4538B_trigdly IO_4000B MNTYMXDLY={MNTYMXDLY}
+UTrigx isx(1) VDD VSS
++	trigdly trigx
++	D0_GATE IO_4000B
+*
+UTrigx_bar inv VDD VSS
++	trigx trigx_bar
++	D0_GATE IO_4000B
+UTrigx_barbar inv VDD VSS
++	trigx_bar trigx_barbar
++	D_CD4538B_tedge IO_4000B MNTYMXDLY={MNTYMXDLY}
+UTrigx_fall and(2) VDD VSS
++	trigx_barbar trigx_bar trigx_fall
++	D0_GATE IO_4000B
+*
+UReset0 nor(2) VDD VSS
++	trigdly trigx_fall reset0
++	D0_GATE IO_4000B
+*
+UTrig0 is0(1) VDD VSS
++	Trigger Trig_0
++	D0_GATE IO_4000B
+UTrig0_Bar inv VDD VSS
++	Trig_0 Trig0_Bar
++	D_CD4538B_edge IO_4000B MNTYMXDLY={MNTYMXDLY}
+UTrigPreset or(2) VDD VSS
++	Trig_0 Trig0_Bar TrigPreset
++	D0_GATE IO_4000B
+*
+UTrigClear jkff(1)  VDD VSS
++	TrigPreset $d_hi reset0 $d_lo $d_hi TrigClear $d_nc
++	D_CD4538B_pulse IO_4000B MNTYMXDLY={MNTYMXDLY}
+*
+* Local timing model
+*
+.model D_CD4538B_pulse ueff(
++	tpclkqhlmn={pulse-1ns+20ns}
++	tpclkqhlty={pulse-1ns+50ns}	; 50=tp(trigger)-tp(reset)
++	tpclkqhlmx={pulse-1ns+100ns}
++	)
+.ends CD4538B
+*
+.model D_CD4538B_Outputs ueff (
++	twclklty=80ns	  twclklmx=140ns
++	tpclkqlhty=300ns tpclkqlhmx=600ns
++	tpclkqhlty=300ns tpclkqhlmx=600ns
++	tppcqhlty=250ns  tppcqhlmx=500ns
++	tppcqlhty=250ns  tppcqlhmx=500ns
++	)
+.model D_CD4538B_trigdly udly (
++	dlymn=1ns	dlyty=1ns	dlymx=1ns
++	)
+.model D_CD4538B_edge ugate(
++	tplhmn=1ns	tplhty=1ns	tplhmx=1ns
++	)
+.model D_CD4538B_tedge ugate(
++	tphlmn=1ns	tphlty=1ns	tphlmx=1ns
++	)
+*$
+
+

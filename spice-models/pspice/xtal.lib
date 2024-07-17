@@ -1,0 +1,131 @@
+* Library of quartz crystals
+
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+
+* $Revision:   1.7  $
+* $Author:   RPEREZ  $
+* $Date:   20 Apr 1998 13:57:48  $
+
+* ---------------------------------------------------------------------------
+* The parameters in this model library were derived from:
+*
+*   Quartz-crystal timing accuracy
+*   Electonic Design 2, January 19, 1976; pp. 74-79
+*
+* and:
+*
+*   Electronics Designers' Handbook, Second Edition
+*   edited by L.J. Giacoletto
+*   McGraw-Hill Book Co., 1977, pp. 16-16 to 16-31
+
+* Example use:  X3 3 4 QZ32768
+
+* Notes:
+* 1) Temperature variation of resonant frequency for properly cut
+*    crystals is quadratic.  The coefficient depends on the cut used
+*    and is implemented in these subcircuits by giving the equivalent
+*    inductor a temperature coefficient.  The AT cut is an exception,
+*    and has a cubic temperature dependence which is not included in
+*    these models.
+* 2) The values of lqz, cs, and cp do not vary much from one crystal
+*    to the next.  The value of rqz, however, can vary as much as a
+*    factor of 2 up or down.  So the crystal's Q can vary over a
+*    range of 4 to 1.
+* 3) Parallel resonant crystals can be tuned slightly by attaching an
+*    external capacitor in parallel with the crystal.  The crystal's
+*    frequency is built assuming a value of the external capacitor,
+*    called the "calibration capacitance".  Its value is noted in
+*    the comment at the head of each parallel resonant crystal model.
+*$
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* 32768 hertz watch crystal, XY cut, series resonant, Q=81780
+*
+.subckt QZS32768 1 2
+*
+  lqz	1	11	lmod	4448.72259
+  .model	lmod	ind(tc2 = 8.68e-8)
+  cs	11	12	5.30279780e-015
+  rqz	12	2	11.2k
+  cp	1	2	1.84pf
+.ends
+*$
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* 100khz frequency standard, DT cut, parallel resonant, Q=20000
+*   calibration capacitance = 5pf
+.subckt QZP100K 1 2
+*
+  lqz	1	11	lmod	588.873289
+  .model	lmod	ind(tc2=3.5e-8)
+  cs	11	12	4.30423941e-015
+  rqz	12	2	18.5k
+  cp	1	2	1.72169576e-012
+.ends
+*$
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* 100khz frequency standard, DT cut, series resonant, Q=20000
+.subckt QZS100K 1 2
+*
+  lqz	1	11	lmod	588.873289
+  .model	lmod	ind(tc2=3.5e-8)
+  cs	11	12	4.30148495e-015
+  rqz	12	2	18.5k
+  cp	1	2	1.72059398e-012
+.ends
+*$
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* 1Mhz frequency standard, AT cut, parallel resonant, Q=25000,
+*   calibration capacitance = 13pf
+.subckt QZP1MEG 1 2
+*
+  lqz	1	11	2.54647909
+  cs	11	12	9.95357648e-015
+  rqz	12	2	640
+  cp	1	2	2.48839412e-012
+.ends
+*$
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* 1Mhz frequency standard, AT cut, series resonant, Q=25000
+.subckt QZS1MEG 1 2
+*
+  lqz	1	11	2.54647909
+  cs	11	12	9.94718394e-015
+  rqz	12	2	640
+  cp	1	2	2.48679599e-012
+.ends
+*$
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* 3.579545Mhz color burst, AT cut, parallel resonant, Q=25000,
+*   calibration capacitance = 18pf
+.subckt QZPCBRST 1 2
+*
+  lqz	1	11	.0555779237
+  cs	11	12	3.56169600e-014
+  rqz	12	2	50
+  cp	1	2	8.90424001e-012
+.ends
+*$
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* 10Mhz frequency standard, AT cut, parallel resonant, Q=25000
+*   calibration capacitance = 50pf
+.subckt QZP10MEG 1 2
+*
+  lqz	1	11	2.54647909e-003
+  cs	11	12	9.96041181e-014
+  rqz	12	2	6.4
+  cp	1	2	2.49010295e-011
+.ends
+*$
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+* 10Mhz frequency standard, AT cut, series resonant, Q=25000
+.subckt QZS10MEG 1 2
+*
+  lqz	1	11	2.54647909e-003
+  cs	11	12	9.94718394e-014
+  rqz	12	2	6.4
+  cp	1	2	2.48679599e-011
+.ends
+*$
+* - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+* end of library file
+

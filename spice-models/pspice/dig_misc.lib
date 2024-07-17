@@ -1,0 +1,604 @@
+* Library of digital logic
+*
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+*
+* $Revision:   1.13  $
+* $Author:   RPEREZ  $
+* $Date:   17 Apr 1998 13:51:42  $
+*
+*-------------------------------------------------------------------
+*
+* Contents
+* --------
+*  This library contains various digital subcircuits.  They are not
+*  models of specific parts, but generic functions.
+*
+*  Digital Pullup resistors
+*  Digital Pulldown resistors
+*  Delay line
+*  Digital Capacitive Load
+*
+
+*******************************************************************************
+* Pullup Resistors
+*******************************************************************************
+
+*$
+*-------------------------------------------------
+* Pullup Resistor: General, parameterized value
+*
+* MicroSim 
+* muw   10/29/90        Created
+
+.subckt PULLUP  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: VALUE=300 MNTYMXDLY=0 IO_LEVEL=0 
+*
+* USAGE:To create a 200 ohm pullup on node 123:
+*       Xnnn 123 PULLUP params: VALUE=200
+*
+* NOTE: The MNTYMXDLY and IO_LEVEL parameters are included to
+*       be consistant with the rest of the digital library.  They
+*       are not used, since there is no delay, and the DtoA model
+*       is exact.
+
+U1 pullup(1) DPWR DGND
++	A 
++	IO_PULLUP IO_LEVEL=1 
+.model  IO_PULLUP uio (
++	DRVH={VALUE}	DRVL=1MEG
++	DtoA1=PULLUP_DTOA
++	)
+.ends
+
+.subckt PULLUP_DTOA  D A  DPWR DGND
++	params: DRVL=0 DRVH=0 CAPACITANCE=0
+R1 A DPWR {DRVH}
+.ends
+
+*$
+*-------------------------------------------------
+* Pullup Resistor: 50 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLUP_50  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+* NOTE: The MNTYMXDLY and IO_LEVEL parameters are included to
+*       be consistant with the rest of the digital library.  They
+*       are not used, since there is no delay, and the DtoA model
+*       is exact.
+
+U1 pullup(1) DPWR DGND
++	A 
++	IO_PULLUP_50 IO_LEVEL=1 
+.ends
+
+.model IO_PULLUP_50 uio (
++	DRVH=50	DRVL=1MEG
++	DtoA1=PULLUP_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pullup Resistor: 75 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLUP_75  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pullup(1) DPWR DGND
++	A 
++	IO_PULLUP_75 IO_LEVEL=1 
+.ends
+
+.model IO_PULLUP_75 uio (
++	DRVH=75	DRVL=1MEG
++	DtoA1=PULLUP_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pullup Resistor: 100 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLUP_100  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pullup(1) DPWR DGND
++	A 
++	IO_PULLUP_100 IO_LEVEL=1 
+.ends
+
+.model IO_PULLUP_100 uio (
++	DRVH=100	DRVL=1MEG
++	DtoA1=PULLUP_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pullup Resistor: 150 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+
+.subckt PULLUP_150  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pullup(1) DPWR DGND
++	A 
++	IO_PULLUP_150 IO_LEVEL=1 
+.ends
+
+.model IO_PULLUP_150 uio (
++	DRVH=150	DRVL=1MEG
++	DtoA1=PULLUP_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pullup Resistor: 200 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLUP_200  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pullup(1) DPWR DGND
++	A 
++	IO_PULLUP_200 IO_LEVEL=1 
+.ends
+
+.model IO_PULLUP_200 uio (
++	DRVH=200	DRVL=1MEG
++	DtoA1=PULLUP_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pullup Resistor: 220 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLUP_220  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pullup(1) DPWR DGND
++	A 
++	IO_PULLUP_220 IO_LEVEL=1 
+.ends
+
+.model IO_PULLUP_220 uio (
++	DRVH=220	DRVL=1MEG
++	DtoA1=PULLUP_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pullup Resistor: 300 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLUP_300  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pullup(1) DPWR DGND
++	A 
++	IO_PULLUP_300 IO_LEVEL=1 
+.ends
+
+.model IO_PULLUP_300 uio (
++	DRVH=300	DRVL=1MEG
++	DtoA1=PULLUP_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pullup Resistor: 330 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLUP_330  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pullup(1) DPWR DGND
++	A 
++	IO_PULLUP_330 IO_LEVEL=1 
+.ends
+
+.model IO_PULLUP_330 uio (
++	DRVH=330	DRVL=1MEG
++	DtoA1=PULLUP_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pullup Resistor: 500 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLUP_500  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pullup(1) DPWR DGND
++	A 
++	IO_PULLUP_500 IO_LEVEL=1 
+.ends
+
+.model IO_PULLUP_500 uio (
++	DRVH=500	DRVL=1MEG
++	DtoA1=PULLUP_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pullup Resistor: 1k ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLUP_1k  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pullup(1) DPWR DGND
++	A 
++	IO_PULLUP_1k IO_LEVEL=1 
+.ends
+
+.model IO_PULLUP_1K uio (
++	DRVH=1k	DRVL=1MEG
++	DtoA1=PULLUP_DTOA
++	)
+
+
+*******************************************************************************
+* Pulldown Resistors
+*******************************************************************************
+
+*$
+*-------------------------------------------------
+* Pulldown Resistor: General, parameterized value
+*
+* MicroSim 
+* muw   10/29/90        Created
+
+.subckt PULLDOWN  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: VALUE=300 MNTYMXDLY=0 IO_LEVEL=0 
+*
+* USAGE:To create a 200 ohm pulldown on node 123:
+*       Xnnn 123 PULLDOWN params: VALUE=200
+*
+* NOTE: The MNTYMXDLY and IO_LEVEL parameters are included to
+*       be consistant with the rest of the digital library.  They
+*       are not used, since there is no delay, and the DtoA model
+*       is exact.
+
+U1 pulldn(1) DPWR DGND
++	A 
++	IO_PULLDOWN IO_LEVEL=1 
+.model  IO_PULLDOWN uio (
++	DRVL={VALUE}	DRVH=1MEG
++	DtoA1=PULLDOWN_DTOA
++	)
+.ends
+
+.subckt PULLDOWN_DTOA  D A  DPWR DGND
++	params: DRVL=0 DRVH=0 CAPACITANCE=0
+R1 A DGND {DRVL}
+.ends
+
+*$
+*-------------------------------------------------
+* Pulldown Resistor: 50 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLDOWN_50  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pulldn(1) DPWR DGND
++	A 
++	IO_PULLDOWN_50 IO_LEVEL=1 
+.ends
+
+.model IO_PULLDOWN_50 uio (
++	DRVL=50	DRVH=1MEG
++	DtoA1=PULLDOWN_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pulldown Resistor: 75 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLDOWN_75  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pulldn(1) DPWR DGND
++	A 
++	IO_PULLDOWN_75 IO_LEVEL=1 
+.ends
+
+.model IO_PULLDOWN_75 uio (
++	DRVL=75	DRVH=1MEG
++	DtoA1=PULLDOWN_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pulldown Resistor: 100 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLDOWN_100  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pulldn(1) DPWR DGND
++	A 
++	IO_PULLDOWN_100 IO_LEVEL=1 
+.ends
+
+.model IO_PULLDOWN_100 uio (
++	DRVL=100	DRVH=1MEG
++	DtoA1=PULLDOWN_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pulldown Resistor: 150 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLDOWN_150  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pulldn(1) DPWR DGND
++	A 
++	IO_PULLDOWN_150 IO_LEVEL=1 
+.ends
+
+.model IO_PULLDOWN_150 uio (
++	DRVL=150	DRVH=1MEG
++	DtoA1=PULLDOWN_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pulldown Resistor: 200 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLDOWN_200  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pulldn(1) DPWR DGND
++	A 
++	IO_PULLDOWN_200 IO_LEVEL=1 
+.ends
+
+.model IO_PULLDOWN_200 uio (
++	DRVL=200	DRVH=1MEG
++	DtoA1=PULLDOWN_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pulldown Resistor: 220 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLDOWN_220  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pulldn(1) DPWR DGND
++	A 
++	IO_PULLDOWN_220 IO_LEVEL=1 
+.ends
+
+.model IO_PULLDOWN_220 uio (
++	DRVL=220	DRVH=1MEG
++	DtoA1=PULLDOWN_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pulldown Resistor: 300 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLDOWN_300  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pulldn(1) DPWR DGND
++	A 
++	IO_PULLDOWN_300 IO_LEVEL=1 
+.ends
+
+.model IO_PULLDOWN_300 uio (
++	DRVL=300	DRVH=1MEG
++	DtoA1=PULLDOWN_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pulldown Resistor: 330 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLDOWN_330  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pulldn(1) DPWR DGND
++	A 
++	IO_PULLDOWN_330 IO_LEVEL=1 
+.ends
+
+.model IO_PULLDOWN_330 uio (
++	DRVL=330	DRVH=1MEG
++	DtoA1=PULLDOWN_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pulldown Resistor: 500 ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLDOWN_500  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pulldn(1) DPWR DGND
++	A 
++	IO_PULLDOWN_500 IO_LEVEL=1 
+.ends
+
+.model IO_PULLDOWN_500 uio (
++	DRVL=500	DRVH=1MEG
++	DtoA1=PULLDOWN_DTOA
++	)
+
+*$
+*-------------------------------------------------
+* Pulldown Resistor: 1k ohm
+*
+* MicroSim 
+* muw   12/06/89	Created
+* muw   10/29/90        Use DRVH/DRVL parameters in DtoA/AtoD subcircuit call
+
+.subckt PULLDOWN_1k  A 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0 
+U1 pulldn(1) DPWR DGND
++	A 
++	IO_PULLDOWN_1k IO_LEVEL=1 
+.ends
+
+.model IO_PULLDOWN_1K uio (
++	DRVL=1k	DRVH=1MEG
++	DtoA1=PULLDOWN_DTOA
++	)
+
+*$
+*******************************************************************************
+* Delay Line
+*******************************************************************************
+* Delay Line: Parameterized delay
+*
+* MicroSim
+* muw   12/06/89        Created
+*
+*   Note from OrCAD:  This model is not supported by the Basics+ package.
+*   ~~~~~~~~~~~~~~~~~~
+* This subcircuit is parameterized: the length of the delay
+* is set by the DELAY parameter, and the tolerance is set by 
+* the TOL parameter. The delay is in seconds, the tolerance 
+* is in percent.  The default is a 50nS delay line with a 10%
+* tolerance.
+*
+* Example:
+*
+* Xnnn inpin outpin DELAY PARAMS: DELAY=20nS TOL=5
+*
+* This creates a delay line from "inpin" to "outpin"
+* which has a 20ns typical delay, and a 5% tolerance.
+* (The min delay will be 19ns, the max will be 21ns.)
+
+.subckt DELAY  IN OUT 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: DELAY=50NS TOL=10 MNTYMXDLY=0 IO_LEVEL=0 
+U1 dlyline DPWR DGND
++	IN   OUT 
++	DLYMODEL IO_STD MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+.model DLYMODEL udly (
++	DLYMN={DELAY - (DELAY*(TOL/100))}
++	DLYTY={DELAY}
++	DLYMX={DELAY + (DELAY*(TOL/100))}
++	)
+.ends
+
+
+*******************************************************************************
+* Digital Capacitive Load
+*******************************************************************************
+
+*$
+*-------------------------------------------------
+* Digital Capacitive Load
+*
+* MicroSim
+* muw   04/10/91        Created
+*
+* This parameterized subcircuit creates a digital capacitive load
+* for load dependent delay calculations.  It does not cause the node
+* to which it is attached to be converted to an analog node, as it 
+* would be if an analog capacitor was attached to the node.
+*
+* Example:
+*
+* Xnnn node DIGCAP PARAMS: CAP = 25pF
+*
+* This creates a digital capacitive load of 25pF from digital ground
+* to "node".
+
+.subckt DIGCAP  IN 
++	optional: DPWR=$G_DPWR DGND=$G_DGND
++	params: CAP=10Pf MNTYMXDLY=0 IO_LEVEL=0 
+U1 pullup(1) DPWR DGND
++       IN
++	IO_DIGCAP MNTYMXDLY={MNTYMXDLY} IO_LEVEL=1 
+.model IO_DIGCAP uio (
++	DRVH = 100MEG  DRVL = 100MEG
++       DtoA1 = DIGCAP_DtoA
++	OUTLD = {CAP}
++	)
+.ends
+
+* Digital Capacitor DtoA Subcircuit
+
+.subckt DIGCAP_DtoA  D A  DPWR DGND
++	params: DRVL=0 DRVH=0 CAPACITANCE=0
+*
+C1  A DGND {CAPACITANCE}
+.ends
+*$
+

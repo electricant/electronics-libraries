@@ -1,0 +1,2838 @@
+* Library of junction field-effect transistor (JFET) model parameters
+
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+
+* $Revision:   1.14  $
+* $Author:   RPEREZ  $
+* $Date:   17 Apr 1998 15:20:50  $
+*
+*----------------------------------------------------------------------------
+* OrCAD Incorporated would like to acknowledge Sandia National Laboratories
+* for the contribution of their measurement-based models included in this
+* library.
+*----------------------------------------------------------------------------
+* The parameters in this model library were derived from the data sheets for
+* each part.  Each part was characterize using the Parts option.
+*----------------------------------------------------------------------------
+*$
+.model J2N2608	PJF(Beta=423.6u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-2.45
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=6.7p M=.4822 Pb=1 Fc=.5 Cgs=8.37p Kf=286.4E-18
++		Af=1)
+*		National	pid=89		case=TO18
+*		88-07-14 bam	BVmin=25
+*$
+.model J2N2609	PJF(Beta=3.2m Betatce=-.5 Rd=1 Rs=1 Lambda=18.5m Vto=-1.408
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=6.5p M=.2789 Pb=1 Fc=.5 Cgs=9p Kf=206.2E-18
++		Af=1)
+*		National	pid=88		case=TO18
+*		88-08-04 rmn	BVmin=30
+*$
+.model J2N3329	PJF(Beta=456.9u Betatce=-.5 Rd=1 Rs=1 Lambda=12m Vto=-2.114
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=7.96p M=.4822 Pb=1 Fc=.5 Cgs=9.94p Kf=310.7E-18
++		Af=1)
+*		National	pid=89		case=TO72
+*		88-07-14 bam	BVmin=20
+*$
+.model J2N3330	PJF(Beta=502u Betatce=-.5 Rd=1 Rs=1 Lambda=18m Vto=-2.686
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=7.96p M=.4822 Pb=1 Fc=.5 Cgs=9.94p Kf=310.7E-18
++		Af=1)
+*		National	pid=89		case=TO72
+*		88-07-14 bam	BVmin=20
+*$
+.model J2N3331	PJF(Beta=380.2u Betatce=-.5 Rd=1 Rs=1 Lambda=25m Vto=-4.449
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=7.96p M=.4822 Pb=1 Fc=.5 Cgs=9.94p Kf=422.3E-18
++		Af=1)
+*		National	pid=89		case=TO72
+*		88-07-14 bam	BVmin=20
+*$
+.model J2N3332	PJF(Beta=527.2u Betatce=-.5 Rd=1 Rs=1 Lambda=14m Vto=-2.636
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=7.96p M=.4822 Pb=1 Fc=.5 Cgs=9.94p Kf=181.5E-18
++		Af=1)
+*		National	pid=89		case=TO72
+*		88-07-14 bam	BVmin=20
+*$
+.model J2N3369	NJF(Beta=336.2u Betatce=-.5 Rd=1 Rs=1 Lambda=11m Vto=-2.07
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2.8p M=.2271 Pb=.5 Fc=.5 Cgs=2.916p Kf=1.214E-18
++		Af=1)
+*		National	pid=52		case=TO18
+*		88-08-02 rmn	BVmin=40
+*$
+.model J2N3370	NJF(Beta=766.8u Betatce=-.5 Rd=1 Rs=1 Lambda=9m Vto=-.65
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2.8p M=.2271 Pb=.5 Fc=.5 Cgs=2.916p Kf=2.863E-18
++		Af=1)
+*		National	pid=52		case=TO18
+*		88-08-02 rmn	BVmin=40
+*$
+.model J2N3458	NJF(Beta=700u Betatce=-.5 Rd=1 Rs=1 Lambda=6m Vto=-3.05
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2.8p M=.2271 Pb=.5 Fc=.5 Cgs=2.916p Kf=2.59E-18
++		Af=1)
+*		National	pid=52		case=TO18
+*		88-08-02 rmn	BVmin=50
+*$
+.model J2N3459	NJF(Beta=1.265m Betatce=-.5 Rd=1 Rs=1 Lambda=4m Vto=-1.4
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2.8p M=.2271 Pb=.5 Fc=.5 Cgs=2.916p Kf=4.791E-18
++		Af=1)
+*		National	pid=52		case=TO18
+*		88-08-02 rmn	BVmin=50
+*$
+.model J2N3460	NJF(Beta=2.02m Betatce=-.5 Rd=1 Rs=1 Lambda=2m Vto=-.55
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2.8p M=.2271 Pb=.5 Fc=.5 Cgs=2.916p Kf=7.722E-18
++		Af=1)
+*		National	pid=52		case=TO18
+*		88-08-02 rmn	BVmin=50
+*$
+.model J2N3684	NJF(Beta=348.1u Betatce=-.5 Rd=1 Rs=1 Lambda=11.67m Vto=-3.18
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2p M=.2271 Pb=.5 Fc=.5 Cgs=2.083p Kf=1.259E-18
++		Af=1)
+*		National	pid=52		case=TO72
+*		88-08-02 rmn	BVmin=50
+*$
+.model J2N3685	NJF(Beta=543.4u Betatce=-.5 Rd=1 Rs=1 Lambda=5.833m Vto=-1.691
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2p M=.2271 Pb=.5 Fc=.5 Cgs=2.083p Kf=2.004E-18
++		Af=1)
+*		National	pid=52		case=TO72
+*		88-08-02 rmn	BVmin=50
+*$
+.model J2N3686	NJF(Beta=723.7u Betatce=-.5 Rd=1 Rs=1 Lambda=2.333m Vto=-.957
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2p M=.2271 Pb=.5 Fc=.5 Cgs=2.083p Kf=2.697E-18
++		Af=1)
+*		National	pid=52		case=TO72
+*		88-08-02 rmn	BVmin=50
+*$
+.model J2N3687	NJF(Beta=840u Betatce=-.5 Rd=1 Rs=1 Lambda=1.167m Vto=-.5102
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2p M=.2271 Pb=.5 Fc=.5 Cgs=2.083p Kf=3.146E-18
++		Af=1)
+*		National	pid=52		case=TO72
+*		88-08-02 rmn	BVmin=50
+*$
+.model J2N3819	NJF(Beta=1.304m Betatce=-.5 Rd=1 Rs=1 Lambda=2.25m Vto=-3
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=9.882E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=25
+*$
+.model J2N3820	PJF(Beta=1.271m Betatce=-.5 Rd=1 Rs=1 Lambda=40m Vto=-2.5
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=13.27p M=.4822 Pb=1 Fc=.5 Cgs=16.58p Kf=916.6E-18
++		Af=1)
+*		National	pid=89		case=TO92
+*		88-07-14 bam	BVmin=20
+*$
+.model J2N3821	NJF(Beta=1.517m Betatce=-.5 Rd=1 Rs=1 Lambda=2.045m Vto=-.8467
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=14.3E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=50
+*$
+.model J2N3822	NJF(Beta=1.1m Betatce=-.5 Rd=1 Rs=1 Lambda=4.09m Vto=-1.962
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=10.2E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=50
+*$
+.model J2N3823	NJF(Beta=1.17m Betatce=-.5 Rd=1 Rs=1 Lambda=4m Vto=-3.3
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=8.841E-18
++		Af=1)
+*		National	pid=50		case=TO72
+*		88-08-01 rmn	BVmin=30
+*$
+.model J2N3824	NJF(Beta=436.4u Betatce=-.5 Rd=1 Rs=1 Lambda=5.333m Vto=-2.139
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=3.783E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=50
+*$
+.model J2N3921	NJF(Beta=1.57m Betatce=-.5 Rd=1 Rs=1 Lambda=4m Vto=-1.799
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=8.8p M=.5 Pb=1 Fc=.5 Cgs=4.4p Kf=33.92E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N3922	NJF(Beta=1.57m Betatce=-.5 Rd=1 Rs=1 Lambda=4m Vto=-1.799
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=8.8p M=.5 Pb=1 Fc=.5 Cgs=4.4p Kf=33.92E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N3954	NJF(Beta=768.3u Betatce=-.5 Rd=1 Rs=1 Lambda=4.25m Vto=-2.033
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=1.71p M=.5 Pb=1 Fc=.5 Cgs=.86p Kf=26.36E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N3954A	NJF(Beta=768.3u Betatce=-.5 Rd=1 Rs=1 Lambda=4.25m Vto=-2.033
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=1.71p M=.5 Pb=1 Fc=.5 Cgs=.86p Kf=26.36E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N3955	NJF(Beta=768.3u Betatce=-.5 Rd=1 Rs=1 Lambda=4.25m Vto=-2.033
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=1.71p M=.5 Pb=1 Fc=.5 Cgs=.86p Kf=26.36E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N3955A	NJF(Beta=768.3u Betatce=-.5 Rd=1 Rs=1 Lambda=4.25m Vto=-2.033
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=1.71p M=.5 Pb=1 Fc=.5 Cgs=.86p Kf=26.36E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N3956	NJF(Beta=768.3u Betatce=-.5 Rd=1 Rs=1 Lambda=4.25m Vto=-2.033
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=1.71p M=.5 Pb=1 Fc=.5 Cgs=.86p Kf=26.36E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N3957	NJF(Beta=768.3u Betatce=-.5 Rd=1 Rs=1 Lambda=4.25m Vto=-2.033
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=1.71p M=.5 Pb=1 Fc=.5 Cgs=.86p Kf=26.36E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N3958	NJF(Beta=768.3u Betatce=-.5 Rd=1 Rs=1 Lambda=4.25m Vto=-2.033
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=1.71p M=.5 Pb=1 Fc=.5 Cgs=.86p Kf=26.36E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N3966	NJF(Beta=650u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-4.876
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=7.589E-18
++		Af=1)
+*		National	pid=50		case=TO72
+*		88-08-01 rmn	BVmin=30
+*$
+.model J2N3967	NJF(Beta=754.7u Betatce=-.5 Rd=1 Rs=1 Lambda=3.667m Vto=-2.49
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=3.742p Kf=6.839E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=30
+*$
+.model J2N3967A	NJF(Beta=754.7u Betatce=-.5 Rd=1 Rs=1 Lambda=3.667m Vto=-2.49
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=3.742p Kf=6.839E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=30
+*$
+.model J2N3968	NJF(Beta=1.125m Betatce=-.5 Rd=1 Rs=1 Lambda=2.683m Vto=-1.376
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=3.742p Kf=10.45E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=30
+*$
+.model J2N3968A	NJF(Beta=1.125m Betatce=-.5 Rd=1 Rs=1 Lambda=2.683m Vto=-1.376
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=3.742p Kf=10.45E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=30
+*$
+.model J2N3969	NJF(Beta=1.57m Betatce=-.5 Rd=1 Rs=1 Lambda=1.5m Vto=-.734
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=3.742p Kf=14.81E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=30
+*$
+.model J2N3969A	NJF(Beta=1.57m Betatce=-.5 Rd=1 Rs=1 Lambda=1.5m Vto=-.734
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=3.742p Kf=14.81E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=30
+*$
+.model J2N3970	NJF(Beta=4.032m Betatce=-.5 Rd=1 Rs=1 Lambda=23m Vto=-4.514
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=10.48p M=.4069 Pb=1 Fc=.5 Cgs=9.31p Kf=53.18E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N3971	NJF(Beta=6.313m Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-2.598
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=10.48p M=.4069 Pb=1 Fc=.5 Cgs=9.31p Kf=84.47E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N3972	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=6m Vto=-1.403
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=10.48p M=.4069 Pb=1 Fc=.5 Cgs=9.31p Kf=123E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N4084	NJF(Beta=1.57m Betatce=-.5 Rd=1 Rs=1 Lambda=4m Vto=-1.799
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=8.8p M=.5 Pb=1 Fc=.5 Cgs=4.4p Kf=33.92E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N4085	NJF(Beta=1.57m Betatce=-.5 Rd=1 Rs=1 Lambda=4m Vto=-1.799
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=8.8p M=.5 Pb=1 Fc=.5 Cgs=4.4p Kf=33.92E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N4091	NJF(Beta=2.658m Betatce=-.5 Rd=1 Rs=1 Lambda=11m Vto=-5.743
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=7.94p M=.4069 Pb=1 Fc=.5 Cgs=7.06p Kf=34.43E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N4092	NJF(Beta=4.032m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.933
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=7.94p M=.4069 Pb=1 Fc=.5 Cgs=7.06p Kf=53.18E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N4093	NJF(Beta=5.695m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-1.989
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=7.94p M=.4069 Pb=1 Fc=.5 Cgs=7.06p Kf=75.98E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N4117	NJF(Beta=33.07u Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-1.2
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=45.61E-18
++		Af=1)
+*		National 	pid=53		case=TO72
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N4117A	NJF(Beta=49.01u Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-1.1
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=70.97E-18
++		Af=1)
+*		National 	pid=53		case=TO72
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N4118	NJF(Beta=52.58u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-1.732
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=76.7E-18
++		Af=1)
+*		National 	pid=53		case=TO72
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N4118A	NJF(Beta=52.58u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-1.732
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=76.7E-18
++		Af=1)
+*		National 	pid=53		case=TO72
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N4119	NJF(Beta=68.08u Betatce=-.5 Rd=1 Rs=1 Lambda=19m Vto=-2.536
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=101.8E-18
++		Af=1)
+*		National 	pid=53		case=TO72
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N4119A	NJF(Beta=68.08u Betatce=-.5 Rd=1 Rs=1 Lambda=19m Vto=-2.536
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=101.8E-18
++		Af=1)
+*		National 	pid=53		case=TO72
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N4220	NJF(Beta=819.8u Betatce=-.5 Rd=1 Rs=1 Lambda=3.266m Vto=-1.195
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=7.47E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=30
+*$
+.model J2N4220A	NJF(Beta=819.8u Betatce=-.5 Rd=1 Rs=1 Lambda=3.266m Vto=-1.195
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=7.47E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=30
+*$
+.model J2N4221	NJF(Beta=726.3u Betatce=-.5 Rd=1 Rs=1 Lambda=4.15m Vto=-2.139
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=6.564E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=30
+*$
+.model J2N4221A	NJF(Beta=726.3u Betatce=-.5 Rd=1 Rs=1 Lambda=4.15m Vto=-2.139
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=6.564E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=30
+*$
+.model J2N4222	NJF(Beta=436.4u Betatce=-.5 Rd=1 Rs=1 Lambda=5.333m Vto=-4.1
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=3.783E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=30
+*$
+.model J2N4222A	NJF(Beta=436.4u Betatce=-.5 Rd=1 Rs=1 Lambda=5.333m Vto=-4.1
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=3.783E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=30
+*$
+.model J2N4223	NJF(Beta=1.04m Betatce=-.5 Rd=1 Rs=1 Lambda=5.5m Vto=-3.05
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=7.839E-18
++		Af=1)
+*		National	pid=50		case=TO72
+*		88-08-01 rmn	BVmin=30
+*$
+.model J2N4224	NJF(Beta=1.04m Betatce=-.5 Rd=1 Rs=1 Lambda=5.5m Vto=-3.12
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=7.839E-18
++		Af=1)
+*		National	pid=50		case=TO72
+*		88-08-01 rmn	BVmin=30
+*$
+.model J2N4338	NJF(Beta=781u Betatce=-.5 Rd=1 Rs=1 Lambda=1.167m Vto=-.6606
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2.8p M=.2271 Pb=.5 Fc=.5 Cgs=2.916p Kf=2.918E-18
++		Af=1)
+*		National	pid=52		case=TO18
+*		88-08-02 rmn	BVmin=50
+*$
+.model J2N4339	NJF(Beta=555.8u Betatce=-.5 Rd=1 Rs=1 Lambda=3.5m Vto=-1.218
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2.8p M=.2271 Pb=.5 Fc=.5 Cgs=2.916p Kf=2.052E-18
++		Af=1)
+*		National	pid=52		case=TO18
+*		88-08-02 rmn	BVmin=50
+*$
+.model J2N4340	NJF(Beta=471u Betatce=-.5 Rd=1 Rs=1 Lambda=7m Vto=-2.001
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2.8p M=.2271 Pb=.5 Fc=.5 Cgs=2.916p Kf=1.727E-18
++		Af=1)
+*		National	pid=52		case=TO18
+*		88-08-02 rmn	BVmin=50
+*$
+.model J2N4341	NJF(Beta=387.1u Betatce=-.5 Rd=1 Rs=1 Lambda=14m Vto=-3.336
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2.8p M=.2271 Pb=.5 Fc=.5 Cgs=2.916p Kf=1.407E-18
++		Af=1)
+*		National 	pid=52		case=TO18
+*		88-08-02 rmn	BVmin=50
+*$
+.model J2N4381	PJF(Beta=2.658m Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-1.8
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=6.61p M=.4822 Pb=1 Fc=.5 Cgs=8.26p Kf=1.17f
++		Af=1)
+*		National	pid=89		case=TO18
+*		88-07-14 bam	BVmin=25
+*$
+.model J2N4391	NJF(Beta=2.658m Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-5.803
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.35p M=.4069 Pb=1 Fc=.5 Cgs=4.76p Kf=34.43E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N4392	NJF(Beta=5.108m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-3.018
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=4.83p M=.4069 Pb=1 Fc=.5 Cgs=4.29p Kf=67.93E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N4393	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=6m Vto=-1.422
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=4.57p M=.4069 Pb=1 Fc=.5 Cgs=4.06p Kf=123E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N4416	NJF(Beta=989.4u Betatce=-.5 Rd=1 Rs=1 Lambda=5.5m Vto=-3.06
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=7.445E-18
++		Af=1)
+*		National	pid=50		case=TO72
+*		88-08-01 rmn	BVmin=30
+*$
+.model J2N4416A	NJF(Beta=989.4u Betatce=-.5 Rd=1 Rs=1 Lambda=5.5m Vto=-3.06
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=7.445E-18
++		Af=1)
+*		National	pid=50		case=TO72
+*		88-08-01 rmn	BVmin=35
+*$
+.model J2N4856	NJF(Beta=3.084m Betatce=-.5 Rd=1 Rs=1 Lambda=11m Vto=-5.517
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=40.23E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N4856A	NJF(Beta=3.084m Betatce=-.5 Rd=1 Rs=1 Lambda=11m Vto=-5.517
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.71p M=.4069 Pb=1 Fc=.5 Cgs=5.07p Kf=40.23E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N4857	NJF(Beta=6.313m Betatce=-.5 Rd=1 Rs=1 Lambda=9.5m Vto=-3.05
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=84.47E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N4857A	NJF(Beta=6.313m Betatce=-.5 Rd=1 Rs=1 Lambda=9.5m Vto=-3.05
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.34p M=.4069 Pb=1 Fc=.5 Cgs=4.74p Kf=84.47E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N4858	NJF(Beta=7.646m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-2.387
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=102.8E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N4858A	NJF(Beta=7.646m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-2.387
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.34p M=.4069 Pb=1 Fc=.5 Cgs=4.74p Kf=102.8E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N4859	NJF(Beta=3.084m Betatce=-.5 Rd=1 Rs=1 Lambda=12m Vto=-5.431
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=40.23E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=30
+*$
+.model J2N4859A	NJF(Beta=3.084m Betatce=-.5 Rd=1 Rs=1 Lambda=12m Vto=-5.431
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.71p M=.4069 Pb=1 Fc=.5 Cgs=5.07p Kf=40.23E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=40
+*$
+.model J2N4860	NJF(Beta=6.313m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.998
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=84.47E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=30
+*$
+.model J2N4860A	NJF(Beta=6.313m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.998
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.34p M=.4069 Pb=1 Fc=.5 Cgs=4.74p Kf=84.47E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=30
+*$
+.model J2N4861	NJF(Beta=8.362m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-2.308
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=112.7E-18
++		Af=1)
+*		National	pid=51  	case=TO18
+*		88-07-13 bam	BVmin=30
+*$
+.model J2N4861A	NJF(Beta=8.362m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-2.308
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.34p M=.4069 Pb=1 Fc=.5 Cgs=4.74p Kf=112.7E-18
++		Af=1)
+*		National	pid=51		case=TO18
+*		88-07-13 bam	BVmin=30
+*$
+.model J2N4867	NJF(Beta=609.1u Betatce=-.5 Rd=1 Rs=1 Lambda=7m Vto=-1.145
++		Vtotc=-2.5m Is=29.04f Isr=281.9f N=1 Nr=2 Xti=3 Alpha=698u
++		Vk=270.4 Cgd=8p M=.3601 Pb=1 Fc=.5 Cgs=12p Kf=48.32E-18
++		Af=1)
+*		Siliconix	pid=NPA		case=TO72
+*		88-07-18 bam	BVmin=40
+*$
+.model J2N4867A	NJF(Beta=609.1u Betatce=-.5 Rd=1 Rs=1 Lambda=7m Vto=-1.145
++		Vtotc=-2.5m Is=29.04f Isr=281.9f N=1 Nr=2 Xti=3 Alpha=698u
++		Vk=270.4 Cgd=8p M=.3601 Pb=1 Fc=.5 Cgs=12p Kf=5.415E-18
++		Af=1)
+*		Siliconix	pid=NPA		case=TO72
+*		88-07-18 bam	BVmin=40
+*$
+.model J2N4868	NJF(Beta=768.3u Betatce=-.5 Rd=1 Rs=1 Lambda=6.667m Vto=-1.643
++		Vtotc=-2.5m Is=29.04f Isr=281.9f N=1 Nr=2 Xti=3 Alpha=698u
++		Vk=270.4 Cgd=8p M=.3601 Pb=1 Fc=.5 Cgs=12p Kf=102.2E-18
++		Af=1)
+*		Siliconix	pid=NPA		case=TO72
+*		88-07-18 bam	BVmin=40
+*$
+.model J2N4868A	NJF(Beta=768.3u Betatce=-.5 Rd=1 Rs=1 Lambda=6.667m Vto=-1.643
++		Vtotc=-2.5m Is=29.04f Isr=281.9f N=1 Nr=2 Xti=3 Alpha=698u
++		Vk=270.4 Cgd=8p M=.3601 Pb=1 Fc=.5 Cgs=12p Kf=10.19E-18
++		Af=1)
+*		Siliconix	pid=NPA		case=TO72
+*		88-07-18 bam	BVmin=40
+*$
+.model J2N4869	NJF(Beta=885.7u Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.512
++		Vtotc=-2.5m Is=29.04f Isr=281.9f N=1 Nr=2 Xti=3 Alpha=698u
++		Vk=270.4 Cgd=8p M=.3601 Pb=1 Fc=.5 Cgs=12p Kf=119.9E-18
++		Af=1)
+*		Siliconix	pid=NPA		case=TO72
+*		88-07-18 bam	BVmin=40
+*$
+.model J2N4869A	NJF(Beta=885.7u Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.512
++		Vtotc=-2.5m Is=29.04f Isr=281.9f N=1 Nr=2 Xti=3 Alpha=698u
++		Vk=270.4 Cgd=8p M=.3601 Pb=1 Fc=.5 Cgs=12p Kf=13.91E-18
++		Af=1)
+*		Siliconix	pid=NPA		case=TO72
+*		88-07-18 bam	BVmin=40
+*$
+.model J2N5018	PJF(Beta=772.5u Betatce=-.5 Rd=1 Rs=1 Lambda=40m Vto=-4.15
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=6.5p M=.2789 Pb=1 Fc=.5 Cgs=9p Kf=49.93E-18
++		Af=1)
+*		National	pid=88		case=TO18
+*		88-08-04 rmn	BVmin=30
+*$
+.model J2N5019	PJF(Beta=1.775m Betatce=-.5 Rd=1 Rs=1 Lambda=24m Vto=-2.229
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=6.5p M=.2789 Pb=1 Fc=.5 Cgs=9p Kf=114.5E-18
++		Af=1)
+*		National	pid=88		case=TO18
+*		88-08-04 rmn	BVmin=30
+*$
+.model J2N5020	PJF(Beta=1.004m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-.8406
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=8.55p M=.4822 Pb=1 Fc=.5 Cgs=10.68p Kf=556.7E-18
++		Af=1)
+*		National	pid=89		case=TO18
+*		88-07-14 bam	BVmin=25
+*$
+.model J2N5021	PJF(Beta=2.658m Betatce=-.5 Rd=1 Rs=1 Lambda=12m Vto=-.9996
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=8.55p M=.4822 Pb=1 Fc=.5 Cgs=10.68p Kf=1.544f
++		Af=1)
+*		National	pid=89		case=TO18
+*		88-07-14 bam	BVmin=25
+*$
+.model J2N5045	NJF(Beta=1.271m Betatce=-.5 Rd=1 Rs=1 Lambda=3.5m Vto=-1.95
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=5.71p M=.5 Pb=1 Fc=.5 Cgs=2.85p Kf=45.18E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N5046	NJF(Beta=1.271m Betatce=-.5 Rd=1 Rs=1 Lambda=3.5m Vto=-1.95
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=5.71p M=.5 Pb=1 Fc=.5 Cgs=2.85p Kf=45.18E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N5047	NJF(Beta=1.271m Betatce=-.5 Rd=1 Rs=1 Lambda=3.5m Vto=-1.95
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=5.71p M=.5 Pb=1 Fc=.5 Cgs=2.85p Kf=45.18E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N5078	NJF(Beta=850.8u Betatce=-.5 Rd=1 Rs=1 Lambda=6.75m Vto=-3.97
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=6.375E-18
++		Af=1)
+*		National	pid=50		case=TO72
+*		88-08-01 rmn	BVmin=30
+*$
+.model J2N5103	NJF(Beta=1.426m Betatce=-.5 Rd=1 Rs=1 Lambda=3.167m Vto=-1.85
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=10.82E-18
++		Af=1)
+*		National	pid=50		case=TO72
+*		88-08-01 rmn	BVmin=25
+*$
+.model J2N5104	NJF(Beta=1.914m Betatce=-.5 Rd=1 Rs=1 Lambda=3.167m Vto=-1.51
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=14.62E-18
++		Af=1)
+*		National	pid=50		case=TO72
+*		88-08-01 rmn	BVmin=25
+*$
+.model J2N5105	NJF(Beta=1.464m Betatce=-.5 Rd=1 Rs=1 Lambda=3.167m Vto=-2.5
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=11.11E-18
++		Af=1)
+*		National	pid=50		case=TO72
+*		88-08-01 rmn	BVmin=25
+*$
+.model J2N5114	PJF(Beta=510.2u Betatce=-.5 Rd=1 Rs=1 Lambda=40m Vto=-8.095
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=6.5p M=.2789 Pb=1 Fc=.5 Cgs=9p Kf=32.96E-18
++		Af=1)
+*		National	pid=88		case=TO18
+*		88-08-04 rmn	BVmin=30
+*$
+*
+* GENERIC FUNCTIONAL EQUIVALENT = 2N5114
+* SUBTYPE: JFET
+* THIS FILE CONTAINS ONE PRE-RAD MODEL AT 27 C OF THE 2N5114
+*
+*
+* THIS MODEL IS DERIVED FROM MEASURED PARAMETERS TO GIVE THE BEST
+* SIMULATION  OF THE DRAIN CURRENT VERSUS DRAIN VOLTAGE CHARACTERISTIC.
+* THIS HAS REQUIRED  SOME SLIGHT MODIFICATION OF THE THRESHOLD VOLTAGE
+* OVER THE VALUE EXTRACTED  FROM DRAIN CURRENT VERSUS GATE VOLTAGE
+* CHARACTERISTIC.  THE DRAIN AND SOURCE  RESISTANCES WERE EXTRACTED
+* FROM COMPARISON OF THE MEASURED DATA TO THE IDEAL  JFET
+* CHARACTERISTICS.  THE RESULTING RESISTANCE WAS SPLIT EVENLY BETWEEN
+* THE  DRAIN AND SOURCE.  THE CAPACITIANCE WAS MEASURED FROM THE GATE TO
+* THE DRAIN  AND SOURCE TIED TOGETHER.  THE RESULTING CAPACITANCE WAS
+* SPLIT EVENLY  BETWEEN DRAIN AND SOURCE.
+*
+*
+*
+.MODEL J2N5114/27C PJF(
++        VTO = -6.4
++       BETA = 3.55M
++     LAMBDA = 1.5M
++         RD = 36
++         RS = 36
++        CGS = 15.6P
++        CGD = 15.6P
++         PB = 0.7
++         IS = 27.4E-14
++         KF = 0
++         AF = 1
++         FC = .5
++ )
+*$
+.model J2N5115	PJF(Beta=1.031m Betatce=-.5 Rd=1 Rs=1 Lambda=32m Vto=-4.896
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=6.5p M=.2789 Pb=1 Fc=.5 Cgs=9p Kf=66.61E-18
++		Af=1)
+*		National	pid=88		case=TO18
+*		88-08-04 rmn	BVmin=30
+*$
+.model J2N5116	PJF(Beta=1.71m Betatce=-.5 Rd=1 Rs=1 Lambda=25m Vto=-2.373
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=6.5p M=.2789 Pb=1 Fc=.5 Cgs=9p Kf=110.4E-18
++		Af=1)
+*		National	pid=88		case=TO18
+*		88-08-04 rmn	BVmin=30
+*$
+.model J2N5196	NJF(Beta=812.9u Betatce=-.5 Rd=1 Rs=1 Lambda=5m Vto=-2.257
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=3.28p M=.5 Pb=1 Fc=.5 Cgs=1.64p Kf=3.664E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N5197	NJF(Beta=812.9u Betatce=-.5 Rd=1 Rs=1 Lambda=5m Vto=-2.257
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=3.28p M=.5 Pb=1 Fc=.5 Cgs=1.64p Kf=3.664E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N5198	NJF(Beta=812.9u Betatce=-.5 Rd=1 Rs=1 Lambda=5m Vto=-2.257
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=3.28p M=.5 Pb=1 Fc=.5 Cgs=1.64p Kf=3.664E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N5199	NJF(Beta=812.9u Betatce=-.5 Rd=1 Rs=1 Lambda=5m Vto=-2.257
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=3.28p M=.5 Pb=1 Fc=.5 Cgs=1.64p Kf=3.664E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N5245	NJF(Beta=1.38m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-2.442
++		Vtotc=-2.5m Is=101.9f Isr=977.5f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=3p M=.3448 Pb=1 Fc=.5 Cgs=3.383p Kf=21.68E-18
++		Af=1)
+*		National	pid=90		case=TO92
+*		88-08-05 rmn	BVmin=30
+*$
+.model J2N5246	NJF(Beta=1.948m Betatce=-.5 Rd=1 Rs=1 Lambda=7.716m Vto=-1.257
++		Vtotc=-2.5m Is=101.9f Isr=977.5f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=3p M=.3448 Pb=1 Fc=.5 Cgs=3.383p Kf=30.53E-18
++		Af=1)
+*		National	pid=90		case=TO92
+*		88-08-05 rmn	BVmin=30
+*$
+.model J2N5247	NJF(Beta=1.07m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-3.485
++		Vtotc=-2.5m Is=101.9f Isr=977.5f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=3p M=.3448 Pb=1 Fc=.5 Cgs=3.383p Kf=16.83E-18
++		Af=1)
+*		National	pid=90		case=TO92
+*		88-08-05 rmn	BVmin=30
+*$
+.model J2N5248	NJF(Beta=849.6u Betatce=-.5 Rd=1 Rs=1 Lambda=6.25m Vto=-3.6
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=6.36E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model J2N5358	NJF(Beta=1.064m Betatce=-.5 Rd=1 Rs=1 Lambda=2.571m Vto=-.8005
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=9.852E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=40
+*$
+.model J2N5359	NJF(Beta=760m Betatce=-.5 Rd=1 Rs=1 Lambda=3m Vto=-1.12
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=10.27E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=40
+*$
+.model J2N5360	NJF(Beta=698.5u Betatce=-.5 Rd=1 Rs=1 Lambda=3m Vto=-1.703
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=6.296E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=40
+*$
+.model J2N5361	NJF(Beta=479.8u Betatce=-.5 Rd=1 Rs=1 Lambda=3.75m Vto=-2.659
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=4.196E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=40
+*$
+.model J2N5362	NJF(Beta=425u Betatce=-.5 Rd=1 Rs=1 Lambda=4.2m Vto=-3.312
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=4.288E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=40
+*$
+.model J2N5363	NJF(Beta=381.8u Betatce=-.5 Rd=1 Rs=1 Lambda=5.333m Vto=-4.91
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=3.266E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=40
+*$
+.model J2N5364	NJF(Beta=347.6u Betatce=-.5 Rd=1 Rs=1 Lambda=5.333m Vto=-5.835
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=2.945E-18
++		Af=1)
+*		National	pid=55		case=TO72
+*		88-08-03 rmn	BVmin=40
+*$
+.model J2N5397	NJF(Beta=1.242m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-3.679
++		Vtotc=-2.5m Is=101.9f Isr=977.5f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=2.6p M=.3448 Pb=1 Fc=.5 Cgs=3.598p Kf=19.52E-18
++		Af=1)
+*		National	pid=90		case=TO72
+*		88-08-05 rmn	BVmin=25
+*$
+.model J2N5398	NJF(Beta=1.242m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-3.323
++		Vtotc=-2.5m Is=101.9f Isr=977.5f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=3p M=.3448 Pb=1 Fc=.5 Cgs=3.383p Kf=19.52E-18
++		Af=1)
+*		National	pid=90		case=TO72
+*		88-08-05 rmn	BVmin=25
+*$
+.model J2N5432	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=50m Vto=-5.397
++		Vtotc=-2.5m Is=533.7f Isr=5.174p N=1 Nr=2 Xti=3 Alpha=152.8u
++		Vk=111.9 Cgd=35.6p M=.4283 Pb=1 Fc=.5 Cgs=35.6p Kf=124.3E-18
++		Af=1)
+*		National	pid=58		case=TO52
+*		88-07-14 bam	BVmin=25
+*$
+.model J2N5433	NJF(Beta=12.42m Betatce=-.5 Rd=1 Rs=1 Lambda=40m Vto=-4.16
++		Vtotc=-2.5m Is=533.7f Isr=5.174p N=1 Nr=2 Xti=3 Alpha=152.8u
++		Vk=111.9 Cgd=35.6p M=.4283 Pb=1 Fc=.5 Cgs=35.6p Kf=169.9E-18
++		Af=1)
+*		National	pid=58		case=TO52
+*		88-07-14 bam	BVmin=25
+*$
+.model J2N5434	NJF(Beta=18.37m Betatce=-.5 Rd=1 Rs=1 Lambda=25m Vto=-1.906
++		Vtotc=-2.5m Is=533.7f Isr=5.174p N=1 Nr=2 Xti=3 Alpha=152.8u
++		Vk=111.9 Cgd=35.6p M=.4283 Pb=1 Fc=.5 Cgs=35.6p Kf=251.7E-18
++		Af=1)
+*		National	pid=58		case=TO52
+*		88-07-14 bam	BVmin=25
+*$
+.model J2N5452	NJF(Beta=768.3u Betatce=-.5 Rd=1 Rs=1 Lambda=2.5m Vto=-2.017
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=1.71p M=.5 Pb=1 Fc=.5 Cgs=.86p Kf=3.664E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N5453	NJF(Beta=768.3u Betatce=-.5 Rd=1 Rs=1 Lambda=2.5m Vto=-2.017
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=1.71p M=.5 Pb=1 Fc=.5 Cgs=.86p Kf=3.664E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N5454	NJF(Beta=768.3u Betatce=-.5 Rd=1 Rs=1 Lambda=2.5m Vto=-2.017
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=1.71p M=.5 Pb=1 Fc=.5 Cgs=.86p Kf=3.664E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N5457	NJF(Beta=1.125m Betatce=-.5 Rd=1 Rs=1 Lambda=2.3m Vto=-1.372
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=10.45E-18
++		Af=1)
+*		National	pid=55		case=TO92
+*		88-08-03 rmn	BVmin=25
+*$
+.model J2N5458	NJF(Beta=488.9u Betatce=-.5 Rd=1 Rs=1 Lambda=3.167m Vto=-2.882
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=4.284E-18
++		Af=1)
+*		National	pid=55		case=TO92
+*		88-08-03 rmn	BVmin=25
+*$
+.model J2N5459	NJF(Beta=377.6u Betatce=-.5 Rd=1 Rs=1 Lambda=4.167m Vto=-4.473
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=3.227E-18
++		Af=1)
+*		National	pid=55		case=TO92
+*		88-08-03 rmn	BVmin=25
+*$
+.model J2N5460	PJF(Beta=1.107m Betatce=-.5 Rd=1 Rs=1 Lambda=20m Vto=-1.75
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=2.34p M=.4822 Pb=1 Fc=.5 Cgs=2.92p Kf=673.9E-18
++		Af=1)
+*		National	pid=89		case=TO92
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N5461	PJF(Beta=1.699m Betatce=-.5 Rd=1 Rs=1 Lambda=23m Vto=-1.883
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=2.34p M=.4822 Pb=1 Fc=.5 Cgs=2.92p Kf=1.055f
++		Af=1)
+*		National	pid=89		case=TO92
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N5462	PJF(Beta=2.006m Betatce=-.5 Rd=1 Rs=1 Lambda=27.5m Vto=-2.271
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=2.34p M=.4822 Pb=1 Fc=.5 Cgs=2.92p Kf=1.255f
++		Af=1)
+*		National	pid=89		case=TO92
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N5484	NJF(Beta=2.224m Betatce=-.5 Rd=1 Rs=1 Lambda=2.5m Vto=-1.2
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=17.03E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=25
+*$
+.model J2N5485	NJF(Beta=1.039m Betatce=-.5 Rd=1 Rs=1 Lambda=4.25m Vto=-2.5
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=7.832E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=25
+*$
+.model J2N5486	NJF(Beta=736.9u Betatce=-.5 Rd=1 Rs=1 Lambda=9.5m Vto=-3.889
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=5.497E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=25
+*$
+.model J2N5515	NJF(Beta=518.5u Betatce=-.5 Rd=1 Rs=1 Lambda=300u Vto=-2.5
++		Vtotc=-2.5m Is=52.8f Isr=517.3f N=1 Nr=2 Xti=3 Alpha=19.01u
++		Vk=251.2 Cgd=8p M=.4893 Pb=.5 Fc=.5 Cgs=14.64p Kf=17.2E-18
++		Af=1)
+*		National	pid=95		case=TO71
+*		88-08-05 rmn	BVmin=40
+*$
+.model J2N5516	NJF(Beta=518.5u Betatce=-.5 Rd=1 Rs=1 Lambda=300u Vto=-2.5
++		Vtotc=-2.5m Is=52.8f Isr=517.3f N=1 Nr=2 Xti=3 Alpha=19.01u
++		Vk=251.2 Cgd=8p M=.4893 Pb=.5 Fc=.5 Cgs=14.64p Kf=17.2E-18
++		Af=1)
+*		National	pid=95		case=TO71
+*		88-08-05 rmn	BVmin=40
+*$
+.model J2N5517	NJF(Beta=518.5u Betatce=-.5 Rd=1 Rs=1 Lambda=300u Vto=-2.5
++		Vtotc=-2.5m Is=52.8f Isr=517.3f N=1 Nr=2 Xti=3 Alpha=19.01u
++		Vk=251.2 Cgd=8p M=.4893 Pb=.5 Fc=.5 Cgs=14.64p Kf=17.2E-18
++		Af=1)
+*		National	pid=95		case=TO71
+*		88-08-05 rmn	BVmin=40
+*$
+.model J2N5518	NJF(Beta=518.5u Betatce=-.5 Rd=1 Rs=1 Lambda=300u Vto=-2.5
++		Vtotc=-2.5m Is=52.8f Isr=517.3f N=1 Nr=2 Xti=3 Alpha=19.01u
++		Vk=251.2 Cgd=8p M=.4893 Pb=.5 Fc=.5 Cgs=14.64p Kf=17.2E-18
++		Af=1)
+*		National	pid=95		case=TO71
+*		88-08-05 rmn	BVmin=40
+*$
+.model J2N5519	NJF(Beta=518.5u Betatce=-.5 Rd=1 Rs=1 Lambda=300u Vto=-2.5
++		Vtotc=-2.5m Is=52.8f Isr=517.3f N=1 Nr=2 Xti=3 Alpha=19.01u
++		Vk=251.2 Cgd=8p M=.4893 Pb=.5 Fc=.5 Cgs=14.64p Kf=17.2E-18
++		Af=1)
+*		National	pid=95		case=TO71
+*		88-08-05 rmn	BVmin=40
+*$
+.model J2N5520	NJF(Beta=518.5u Betatce=-.5 Rd=1 Rs=1 Lambda=300u Vto=-2.5
++		Vtotc=-2.5m Is=52.8f Isr=517.3f N=1 Nr=2 Xti=3 Alpha=19.01u
++		Vk=251.2 Cgd=8p M=.4893 Pb=.5 Fc=.5 Cgs=14.64p Kf=3.9E-18
++		Af=1)
+*		National	pid=95		case=TO71
+*		88-08-05 rmn	BVmin=40
+*$
+.model J2N5521	NJF(Beta=518.5u Betatce=-.5 Rd=1 Rs=1 Lambda=300u Vto=-2.5
++		Vtotc=-2.5m Is=52.8f Isr=517.3f N=1 Nr=2 Xti=3 Alpha=19.01u
++		Vk=251.2 Cgd=8p M=.4893 Pb=.5 Fc=.5 Cgs=14.64p Kf=3.9E-18
++		Af=1)
+*		National	pid=95		case=TO71
+*		88-08-05 rmn	BVmin=40
+*$
+.model J2N5522	NJF(Beta=518.5u Betatce=-.5 Rd=1 Rs=1 Lambda=300u Vto=-2.5
++		Vtotc=-2.5m Is=52.8f Isr=517.3f N=1 Nr=2 Xti=3 Alpha=19.01u
++		Vk=251.2 Cgd=8p M=.4893 Pb=.5 Fc=.5 Cgs=14.64p Kf=3.9E-18
++		Af=1)
+*		National	pid=95		case=TO71
+*		88-08-05 rmn	BVmin=40
+*$
+.model J2N5523	NJF(Beta=518.5u Betatce=-.5 Rd=1 Rs=1 Lambda=300u Vto=-2.5
++		Vtotc=-2.5m Is=52.8f Isr=517.3f N=1 Nr=2 Xti=3 Alpha=19.01u
++		Vk=251.2 Cgd=8p M=.4893 Pb=.5 Fc=.5 Cgs=14.64p Kf=3.9E-18
++		Af=1)
+*		National	pid=95		case=TO71
+*		88-08-05 rmn	BVmin=40
+*$
+.model J2N5524	NJF(Beta=518.5u Betatce=-.5 Rd=1 Rs=1 Lambda=300u Vto=-2.5
++		Vtotc=-2.5m Is=52.8f Isr=517.3f N=1 Nr=2 Xti=3 Alpha=19.01u
++		Vk=251.2 Cgd=8p M=.4893 Pb=.5 Fc=.5 Cgs=14.64p Kf=3.9E-18
++		Af=1)
+*		National	pid=95		case=TO71
+*		88-08-05 rmn	BVmin=40
+*$
+.model J2N5545	NJF(Beta=1.271m Betatce=-.5 Rd=1 Rs=1 Lambda=4m Vto=-2
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=3.28p M=.5 Pb=1 Fc=.5 Cgs=1.64p Kf=55.84E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N5546	NJF(Beta=1.271m Betatce=-.5 Rd=1 Rs=1 Lambda=4m Vto=-2
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=3.28p M=.5 Pb=1 Fc=.5 Cgs=1.64p Kf=67.52E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N5547	NJF(Beta=1.271m Betatce=-.5 Rd=1 Rs=1 Lambda=4m Vto=-2
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=3.28p M=.5 Pb=1 Fc=.5 Cgs=1.64p Kf=67.52E-18
++		Af=1)
+*		National	pid=83		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model J2N5555	NJF(Beta=642.1u Betatce=-.5 Rd=1 Rs=1 Lambda=30m Vto=-5.7
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=4.621E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=25
+*$
+.model J2N5556	NJF(Beta=2.194m Betatce=-.5 Rd=1 Rs=1 Lambda=3.8m Vto=-.875
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=17E-18
++		Af=1)
+*		National	pid=50		case=TO72
+*		88-08-02 rmn	BVmin=30
+*$
+.model J2N5557	NJF(Beta=1.307m Betatce=-.5 Rd=1 Rs=1 Lambda=4m Vto=-1.805
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=10.03E-18
++		Af=1)
+*		National	pid=50		case=TO72
+*		88-08-02 rmn	BVmin=30
+*$
+.model J2N5558	NJF(Beta=864u Betatce=-.5 Rd=1 Rs=1 Lambda=6.75m Vto=-2.91
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=6.718E-18
++		Af=1)
+*		National	pid=50		case=TO72
+*		88-08-02 rmn	BVmin=30
+*$
+.model J2N5561	NJF(Beta=1.617m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-1.373
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=7.546p Kf=4.715E-18
++		Af=1)
+*		National	pid=98		case=TO71
+*		88-08-05 rmn	BVmin=50
+*$
+.model J2N5562	NJF(Beta=1.617m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-1.373
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=7.546p Kf=4.715E-18
++		Af=1)
+*		National	pid=98		case=TO71
+*		88-08-05 rmn	BVmin=50
+*$
+.model J2N5563	NJF(Beta=1.617m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-1.373
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=7.546p Kf=4.715E-18
++		Af=1)
+*		National	pid=98		case=TO71
+*		88-08-05 rmn	BVmin=50
+*$
+.model J2N5564	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-1.447
++		Vtotc=-2.5m Is=94.42f Isr=921.9f N=1 Nr=2 Xti=3 Alpha=88.38u
++		Vk=171.6 Cgd=8.67p M=.4742 Pb=1 Fc=.5 Cgs=9.76p Kf=67.86E-18
++		Af=1)
+*		National	pid=96		case=TO71
+*		88-07-15 bam	BVmin=40
+*$
+.model J2N5565	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-1.447
++		Vtotc=-2.5m Is=94.42f Isr=921.9f N=1 Nr=2 Xti=3 Alpha=88.38u
++		Vk=171.6 Cgd=8.67p M=.4742 Pb=1 Fc=.5 Cgs=9.76p Kf=67.86E-18
++		Af=1)
+*		National	pid=96		case=TO71
+*		88-07-15 bam	BVmin=40
+*$
+.model J2N5566	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-1.447
++		Vtotc=-2.5m Is=94.42f Isr=921.9f N=1 Nr=2 Xti=3 Alpha=88.38u
++		Vk=171.6 Cgd=8.67p M=.4742 Pb=1 Fc=.5 Cgs=9.76p Kf=67.86E-18
++		Af=1)
+*		National	pid=96		case=TO71
+*		88-07-15 bam	BVmin=40
+*$
+.model J2N5638	NJF(Beta=3.542m Betatce=-.5 Rd=1 Rs=1 Lambda=17.5m Vto=-4.887
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=6.7p M=.4069 Pb=1 Fc=.5 Cgs=5.95p Kf=46.48E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=30
+*$
+.model J2N5639	NJF(Beta=5.108m Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-3.264
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=6.22p M=.4069 Pb=1 Fc=.5 Cgs=5.53p Kf=67.93E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=30
+*$
+.model J2N5640	NJF(Beta=6.964m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-2.15
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.95p M=.4069 Pb=1 Fc=.5 Cgs=5.29p Kf=93.42E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=30
+*$
+.model J2N5653	NJF(Beta=3.084m Betatce=-.5 Rd=1 Rs=1 Lambda=17.5m Vto=-5.119
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=6.29p M=.4069 Pb=1 Fc=.5 Cgs=5.59p Kf=40.23E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=30
+*$
+.model J2N5654	NJF(Beta=4.554m Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-3.294
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.88p M=.4069 Pb=1 Fc=.5 Cgs=5.22p Kf=60.33E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=25
+*$
+.model J2N5668	NJF(Beta=2.224m Betatce=-.5 Rd=1 Rs=1 Lambda=2.25m Vto=-1.24
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=17.23E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=25
+*$
+.model J2N5669	NJF(Beta=1.117m Betatce=-.5 Rd=1 Rs=1 Lambda=5m Vto=-2.51
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=8.599E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=25
+*$
+.model J2N5670	NJF(Beta=683.1u Betatce=-.5 Rd=1 Rs=1 Lambda=11.25m Vto=-4.25
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=5.223E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=25
+*$
+.model J2N5902	NJF(Beta=120u Betatce=-.5 Rd=1 Rs=1 Lambda=900u Vto=-1.652
++		Vtotc=-2.5m Is=16.33f Isr=157.3f N=1 Nr=2 Xti=3 Alpha=26.25n
++		Vk=211.9 Cgd=1.23p M=.333 Pb=1 Fc=.5 Cgs=1.23p Kf=304.7E-18
++		Af=1)
+*		National	pid=84		case=TO78
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N5903	NJF(Beta=120u Betatce=-.5 Rd=1 Rs=1 Lambda=900u Vto=-1.652
++		Vtotc=-2.5m Is=16.33f Isr=157.3f N=1 Nr=2 Xti=3 Alpha=26.25n
++		Vk=211.9 Cgd=1.23p M=.333 Pb=1 Fc=.5 Cgs=1.23p Kf=304.7E-18
++		Af=1)
+*		National	pid=84		case=TO78
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N5904	NJF(Beta=120u Betatce=-.5 Rd=1 Rs=1 Lambda=900u Vto=-1.652
++		Vtotc=-2.5m Is=16.33f Isr=157.3f N=1 Nr=2 Xti=3 Alpha=26.25n
++		Vk=211.9 Cgd=1.23p M=.333 Pb=1 Fc=.5 Cgs=1.23p Kf=304.7E-18
++		Af=1)
+*		National	pid=84		case=TO78
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N5905	NJF(Beta=120u Betatce=-.5 Rd=1 Rs=1 Lambda=700u Vto=-1.652
++		Vtotc=-2.5m Is=16.33f Isr=157.3f N=1 Nr=2 Xti=3 Alpha=26.25n
++		Vk=211.9 Cgd=1.23p M=.333 Pb=1 Fc=.5 Cgs=1.23p Kf=304.7E-18
++		Af=1)
+*		National	pid=84		case=TO78
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N5906	NJF(Beta=120u Betatce=-.5 Rd=1 Rs=1 Lambda=900u Vto=-1.652
++		Vtotc=-2.5m Is=16.33f Isr=157.3f N=1 Nr=2 Xti=3 Alpha=26.25n
++		Vk=211.9 Cgd=1.23p M=.333 Pb=1 Fc=.5 Cgs=1.23p Kf=304.7E-18
++		Af=1)
+*		National	pid=84		case=TO78
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N5907	NJF(Beta=120u Betatce=-.5 Rd=1 Rs=1 Lambda=900u Vto=-1.652
++		Vtotc=-2.5m Is=16.33f Isr=157.3f N=1 Nr=2 Xti=3 Alpha=26.25n
++		Vk=211.9 Cgd=1.23p M=.333 Pb=1 Fc=.5 Cgs=1.23p Kf=304.7E-18
++		Af=1)
+*		National	pid=84		case=TO78
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N5908	NJF(Beta=120u Betatce=-.5 Rd=1 Rs=1 Lambda=900u Vto=-1.652
++		Vtotc=-2.5m Is=16.33f Isr=157.3f N=1 Nr=2 Xti=3 Alpha=26.25n
++		Vk=211.9 Cgd=1.23p M=.333 Pb=1 Fc=.5 Cgs=1.23p Kf=304.7E-18
++		Af=1)
+*		National	pid=84		case=TO78
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N5909	NJF(Beta=120u Betatce=-.5 Rd=1 Rs=1 Lambda=900u Vto=-1.652
++		Vtotc=-2.5m Is=16.33f Isr=157.3f N=1 Nr=2 Xti=3 Alpha=26.25n
++		Vk=211.9 Cgd=1.23p M=.333 Pb=1 Fc=.5 Cgs=1.23p Kf=304.7E-18
++		Af=1)
+*		National	pid=84		case=TO78
+*		88-07-14 bam	BVmin=40
+*$
+.model J2N5911	NJF(Beta=2.203m Betatce=-.5 Rd=1 Rs=1 Lambda=12m Vto=-2.694
++		Vtotc=-2.5m Is=94.35f Isr=907.9f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=2.822p M=.3744 Pb=1 Fc=.5 Cgs=3.65p Kf=36.4E-18
++		Af=1)
+*		National	pid=93		case=TO78
+*		88-08-05 rmn	BVmin=25
+*$
+.model J2N5912	NJF(Beta=2.203m Betatce=-.5 Rd=1 Rs=1 Lambda=12m Vto=-2.694
++		Vtotc=-2.5m Is=94.35f Isr=907.9f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=2.822p M=.3744 Pb=1 Fc=.5 Cgs=3.65p Kf=36.4E-18
++		Af=1)
+*		National	pid=93		case=TO78
+*		88-08-05 rmn	BVmin=25
+*$
+.model J2N5949	NJF(Beta=656.9u Betatce=-.5 Rd=1 Rs=1 Lambda=13.75m Vto=-4.322
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=5.02E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=30
+*$
+.model J2N5950	NJF(Beta=696.4u Betatce=-.5 Rd=1 Rs=1 Lambda=11.25m Vto=-3.892
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=5.326E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=30
+*$
+.model J2N5951	NJF(Beta=736.9u Betatce=-.5 Rd=1 Rs=1 Lambda=7.25m Vto=-3.427
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=5.642E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=30
+*$
+.model J2N5952	NJF(Beta=1.314m Betatce=-.5 Rd=1 Rs=1 Lambda=4m Vto=-2.021
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=10.14E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=30
+*$
+.model J2N5953	NJF(Beta=1.645m Betatce=-.5 Rd=1 Rs=1 Lambda=2.404m Vto=-1.444
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=12.72E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=30
+*$
+.model J2N6483	NJF(Beta=518.5u Betatce=-.5 Rd=1 Rs=1 Lambda=300u Vto=-2.5
++		Vtotc=-2.5m Is=52.8f Isr=517.3f N=1 Nr=2 Xti=3 Alpha=19.01u
++		Vk=251.2 Cgd=8p M=.4893 Pb=.5 Fc=.5 Cgs=14.64p Kf=3.9E-18
++		Af=1)
+*		National	pid=95		case=TO71
+*		88-08-05 rmn	BVmin=50
+*$
+.model J2N6484	NJF(Beta=518.5u Betatce=-.5 Rd=1 Rs=1 Lambda=300u Vto=-2.5
++		Vtotc=-2.5m Is=52.8f Isr=517.3f N=1 Nr=2 Xti=3 Alpha=19.01u
++		Vk=251.2 Cgd=8p M=.4893 Pb=.5 Fc=.5 Cgs=14.64p Kf=3.9E-18
++		Af=1)
+*		National	pid=95		case=TO71
+*		88-08-05 rmn	BVmin=50
+*$
+.model J2N6485	NJF(Beta=518.5u Betatce=-.5 Rd=1 Rs=1 Lambda=300u Vto=-2.5
++		Vtotc=-2.5m Is=52.8f Isr=517.3f N=1 Nr=2 Xti=3 Alpha=19.01u
++		Vk=251.2 Cgd=8p M=.4893 Pb=.5 Fc=.5 Cgs=14.64p Kf=3.9E-18
++		Af=1)
+*		National	pid=95		case=TO71
+*		88-08-05 rmn	BVmin=50
+*$
+.model J2N6905	NJF(Beta=4.032m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.215
++		Vtotc=-2.5m Is=43.63f Isr=423.6f N=1 Nr=2 Xti=3 Alpha=63.26u
++		Vk=146.3 Cgd=4.08p M=.4359 Pb=1 Fc=.5 Cgs=4.08p Kf=57.99E-18
++		Af=1)
+*		Siliconix	pid=NNR		case=TO71
+*		88-07-18 bam	BVmin=35
+*$
+.model J2N6906	NJF(Beta=4.032m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.215
++		Vtotc=-2.5m Is=43.63f Isr=423.6f N=1 Nr=2 Xti=3 Alpha=63.26u
++		Vk=146.3 Cgd=4.08p M=.4359 Pb=1 Fc=.5 Cgs=4.08p Kf=57.99E-18
++		Af=1)
+*		Siliconix	pid=NNR		case=TO71
+*		88-07-18 bam	BVmin=35
+*$
+.model J2N6907	NJF(Beta=4.032m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.215
++		Vtotc=-2.5m Is=43.63f Isr=423.6f N=1 Nr=2 Xti=3 Alpha=63.26u
++		Vk=146.3 Cgd=4.08p M=.4359 Pb=1 Fc=.5 Cgs=4.08p Kf=57.99E-18
++		Af=1)
+*		Siliconix	pid=NNR		case=TO71
+*		88-07-18 bam	BVmin=35
+*$
+.model BC264A	NJF(Beta=2m Betatce=-.5 Rd=1 Rs=1 Lambda=2.667m Vto=-1.249
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=3.35p M=.3622 Pb=1 Fc=.5 Cgs=3.598p Kf=14.38E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model BC264B	NJF(Beta=2m Betatce=-.5 Rd=1 Rs=1 Lambda=2.7m Vto=-1.48
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=3.35p M=.3622 Pb=1 Fc=.5 Cgs=3.598p Kf=20.79E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model BC264C	NJF(Beta=2m Betatce=-.5 Rd=1 Rs=1 Lambda=2.85m Vto=-1.7
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=3.35p M=.3622 Pb=1 Fc=.5 Cgs=3.598p Kf=28.38E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model BC264D	NJF(Beta=2m Betatce=-.5 Rd=1 Rs=1 Lambda=3m Vto=-1.7
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=3.35p M=.3622 Pb=1 Fc=.5 Cgs=3.598p Kf=37.15E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model BF244A	NJF(Beta=1.754m Betatce=-.5 Rd=1 Rs=1 Lambda=2.667m Vto=-1.409
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=3.35p M=.3622 Pb=1 Fc=.5 Cgs=3.736p Kf=13.56E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model BF244B	NJF(Beta=1.6m Betatce=-.5 Rd=1 Rs=1 Lambda=3.1m Vto=-2.29
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=3.35p M=.3622 Pb=1 Fc=.5 Cgs=3.736p Kf=13.56E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model BF244C	NJF(Beta=1.5m Betatce=-.5 Rd=1 Rs=1 Lambda=3.8m Vto=-3.099
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=3.35p M=.3622 Pb=1 Fc=.5 Cgs=3.736p Kf=13.56E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model BF245A	NJF(Beta=1.754m Betatce=-.5 Rd=1 Rs=1 Lambda=2.667m Vto=-1.409
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=3.35p M=.3622 Pb=1 Fc=.5 Cgs=3.736p Kf=13.56E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model BF245B	NJF(Beta=1.6m Betatce=-.5 Rd=1 Rs=1 Lambda=3.1m Vto=-2.29
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=3.35p M=.3622 Pb=1 Fc=.5 Cgs=3.736p Kf=13.56E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model BF245C	NJF(Beta=1.5m Betatce=-.5 Rd=1 Rs=1 Lambda=3.8m Vto=-3.099
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=3.35p M=.3622 Pb=1 Fc=.5 Cgs=3.736p Kf=13.56E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model BF256A	NJF(Beta=1.6m Betatce=-.5 Rd=1 Rs=1 Lambda=3.667m Vto=-1.35
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=2.132p M=.3622 Pb=1 Fc=.5 Cgs=2.104p Kf=23.06E-48
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model BF256B	NJF(Beta=1.5m Betatce=-.5 Rd=1 Rs=1 Lambda=4.2m Vto=-2.3
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=2.132p M=.3622 Pb=1 Fc=.5 Cgs=2.104p Kf=23.06E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model BF256C	NJF(Beta=1.4m Betatce=-.5 Rd=1 Rs=1 Lambda=4.6m Vto=-3.1
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=2.132p M=.3622 Pb=1 Fc=.5 Cgs=2.104p Kf=23.06E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model DN5564	NJF(Beta=9m Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-1.9
++		Vtotc=-2.5m Is=82.73f Isr=793f N=1 Nr=2 Xti=3 Alpha=15.64u
++		Vk=147.8 Cgd=5.8p M=.3184 Pb=1 Fc=.5 Cgs=11.9p Kf=529.7E-18
++		Af=1)
+*		Siliconix	pid=NCB-D	case=TO71
+*		88-08-10 rmn	BVmin=40
+*$
+.model DN5565	NJF(Beta=9m Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-1.9
++		Vtotc=-2.5m Is=82.73f Isr=793f N=1 Nr=2 Xti=3 Alpha=15.64u
++		Vk=147.8 Cgd=5.8p M=.3184 Pb=1 Fc=.5 Cgs=11.9p Kf=529.7E-18
++		Af=1)
+*		Siliconix	pid=NCB-D	case=TO71
+*		88-08-10 rmn	BVmin=40
+*$
+.model DN5566	NJF(Beta=9m Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-1.9
++		Vtotc=-2.5m Is=82.73f Isr=793f N=1 Nr=2 Xti=3 Alpha=15.64u
++		Vk=147.8 Cgd=5.8p M=.3184 Pb=1 Fc=.5 Cgs=11.9p Kf=529.7E-18
++		Af=1)
+*		Siliconix	pid=NCB-D	case=TO71
+*		88-08-10 rmn	BVmin=40
+*$
+.model DN5567	NJF(Beta=9m Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-2
++		Vtotc=-2.5m Is=82.73f Isr=793f N=1 Nr=2 Xti=3 Alpha=15.64u
++		Vk=147.8 Cgd=5.8p M=.3184 Pb=1 Fc=.5 Cgs=6.8p Kf=529.7E-18
++		Af=1)
+*		Siliconix	pid=NCB-D	case=TO71
+*		88-08-10 rmn	BVmin=40
+*$
+.model FN4117	NJF(Beta=49.01u Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-1.066
++		Vtotc=-2.5m Is=4.477f Isr=43.76f N=1 Nr=2 Xti=3 Alpha=18.01m
++		Vk=350.6 Cgd=4.49p M=.4359 Pb=1 Fc=.5 Cgs=4.49p Kf=25.61E-18
++		Af=1)
+*		Siliconix	pid=NT		case=TO72
+*		88-07-18 bam	BVmin=40
+*$
+.model FN4117A	NJF(Beta=56.27u Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-1.209
++		Vtotc=-2.5m Is=4.477f Isr=43.76f N=1 Nr=2 Xti=3 Alpha=18.01m
++		Vk=350.6 Cgd=4.49p M=.4359 Pb=1 Fc=.5 Cgs=4.49p Kf=30.82E-18
++		Af=1)
+*		Siliconix	pid=NT		case=TO72
+*		88-07-18 bam	BVmin=40
+*$
+.model FN4118	NJF(Beta=85.1u Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-1.259
++		Vtotc=-2.5m Is=4.477f Isr=43.76f N=1 Nr=2 Xti=3 Alpha=18.01m
++		Vk=350.6 Cgd=4.49p M=.4359 Pb=1 Fc=.5 Cgs=4.49p Kf=52.2E-18
++		Af=1)
+*		Siliconix	pid=NT		case=TO72
+*		88-07-18 bam	BVmin=40
+*$
+.model FN4118A	NJF(Beta=95.1u Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-1.299
++		Vtotc=-2.5m Is=4.477f Isr=43.76f N=1 Nr=2 Xti=3 Alpha=18.01m
++		Vk=350.6 Cgd=4.49p M=.4359 Pb=1 Fc=.5 Cgs=4.49p Kf=59.81E-18
++		Af=1)
+*		Siliconix	pid=NT		case=TO72
+*		88-07-18 bam	BVmin=40
+*$
+.model FN4119	NJF(Beta=17.64u Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-4.27
++		Vtotc=-2.5m Is=4.477f Isr=43.76f N=1 Nr=2 Xti=3 Alpha=18.01m
++		Vk=350.6 Cgd=4.49p M=.4359 Pb=1 Fc=.5 Cgs=4.49p Kf=4.781E-18
++		Af=1)
+*		Siliconix	pid=NT		case=TO72
+*		88-07-18 bam	BVmin=40
+*$
+.model FN4119A	NJF(Beta=22.16u Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-4.5
++		Vtotc=-2.5m Is=4.477f Isr=43.76f N=1 Nr=2 Xti=3 Alpha=18.01m
++		Vk=350.6 Cgd=4.49p M=.4359 Pb=1 Fc=.5 Cgs=4.49p Kf=7.51E-18
++		Af=1)
+*		Siliconix	pid=NT		case=TO72
+*		88-07-18 bam	BVmin=40
+*$
+.model FN4392	NJF(Beta=7.477m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-3.15
++		Vtotc=-2.5m Is=82.73f Isr=793f N=1 Nr=2 Xti=3 Alpha=15.64u
++		Vk=147.8 Cgd=5.8p M=.3184 Pb=1 Fc=.5 Cgs=11.9p Kf=440E-18
++		Af=1)
+*		Siliconix	pid=NCB		case=TO18
+*		88-08-09 rmn	BVmin=40
+*$
+.model FN4393	NJF(Beta=8.4m Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-2.1
++		Vtotc=-2.5m Is=82.73f Isr=793f N=1 Nr=2 Xti=3 Alpha=15.64u
++		Vk=147.8 Cgd=5.8p M=.3184 Pb=1 Fc=.5 Cgs=11.9p Kf=494.1E-18
++		Af=1)
+*		Siliconix	pid=NCB		case=TO18
+*		88-08-09 rmn	BVmin=40
+*$
+.model J105	NJF(Beta=9m Betatce=-.5 Rd=1 Rs=1 Lambda=50m Vto=-6.25
++		Vtotc=-2.5m Is=304.4f Isr=2.995p N=1 Nr=2 Xti=3 Alpha=699.7n
++		Vk=59.97 Cgd=140p M=.6015 Pb=.5 Fc=.5 Cgs=142.3p Kf=87.5E-18
++		Af=1)
+*		Siliconix	pid=NVA		case=TO92
+*		88-08-10 rmn	BVmin=25
+*$
+.model J106	NJF(Beta=12m Betatce=-.5 Rd=1 Rs=1 Lambda=40m Vto=-3.95
++		Vtotc=-2.5m Is=304.4f Isr=2.995p N=1 Nr=2 Xti=3 Alpha=699.7n
++		Vk=59.97 Cgd=140p M=.6015 Pb=.5 Fc=.5 Cgs=142.3p Kf=117E-18
++		Af=1)
+*		Siliconix	pid=NVA		case=TO92
+*		88-08-10 rmn	BVmin=25
+*$
+.model J107	NJF(Beta=15m Betatce=-.5 Rd=1 Rs=1 Lambda=30m Vto=-2.9
++		Vtotc=-2.5m Is=304.4f Isr=2.995p N=1 Nr=2 Xti=3 Alpha=699.7n
++		Vk=59.97 Cgd=140p M=.6015 Pb=.5 Fc=.5 Cgs=142.3p Kf=146E-18
++		Af=1)
+*		Siliconix	pid=NVA		case=TO92
+*		88-08-10 rmn	BVmin=25
+*$
+.model J108	NJF(Beta=7.646m Betatce=-.5 Rd=1 Rs=1 Lambda=50m Vto=-4.499
++		Vtotc=-2.5m Is=533.7f Isr=5.174p N=1 Nr=2 Xti=3 Alpha=152.8u
++		Vk=111.9 Cgd=47.7p M=.4283 Pb=1 Fc=.5 Cgs=47.7p Kf=104.1E-18
++		Af=1)
+*		National	pid=58		case=TO92
+*		88-07-14 bam	BVmin=25
+*$
+.model J109	NJF(Beta=12.42m Betatce=-.5 Rd=1 Rs=1 Lambda=35m Vto=-3.002
++		Vtotc=-2.5m Is=533.7f Isr=5.174p N=1 Nr=2 Xti=3 Alpha=152.8u
++		Vk=111.9 Cgd=47.7p M=.4283 Pb=1 Fc=.5 Cgs=47.7p Kf=169.9E-18
++		Af=1)
+*		National	pid=58		case=TO92
+*		88-07-14 bam	BVmin=25
+*$
+.model J110	NJF(Beta=17.3m Betatce=-.5 Rd=1 Rs=1 Lambda=25m Vto=-1.379
++		Vtotc=-2.5m Is=533.7f Isr=5.174p N=1 Nr=2 Xti=3 Alpha=152.8u
++		Vk=111.9 Cgd=47.7p M=.4283 Pb=1 Fc=.5 Cgs=47.7p Kf=236.9E-18
++		Af=1)
+*		National	pid=58		case=TO92
+*		88-07-14 bam	BVmin=25
+*$
+.model J111	NJF(Beta=2.91m Betatce=-.5 Rd=1 Rs=1 Lambda=17.5m Vto=-4.047
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=6.46p M=.4069 Pb=1 Fc=.5 Cgs=5.74p Kf=37.86E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=35
+*$
+.model J112	NJF(Beta=5.695m Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-2.057
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=6.46p M=.4069 Pb=1 Fc=.5 Cgs=5.74p Kf=75.98E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=35
+*$
+.model J113	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-1.382
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=6.46p M=.4069 Pb=1 Fc=.5 Cgs=5.74p Kf=123E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=35
+*$
+.model J114	NJF(Beta=910.9u Betatce=-.5 Rd=1 Rs=1 Lambda=20m Vto=-4.86
++		Vtotc=-2.5m Is=101.9f Isr=977.5f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=4.545p M=.3448 Pb=1 Fc=.5 Cgs=4.599p Kf=14.33E-18
++		Af=1)
+*		National	pid=90		case=TO92
+*		88-08-04 rmn	BVmin=25
+*$
+.model J174	PJF(Beta=813u Betatce=-.5 Rd=1 Rs=1 Lambda=40m Vto=-6.552
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=6.5p M=.2789 Pb=1 Fc=.5 Cgs=9p Kf=52.54E-18
++		Af=1)
+*		National	pid=88		case=TO92
+*		88-08-04 rmn	BVmin=30
+*$
+.model J175	PJF(Beta=1.031m Betatce=-.5 Rd=1 Rs=1 Lambda=28m Vto=-3.762
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=6.5p M=.2789 Pb=1 Fc=.5 Cgs=9p Kf=66.61E-18
++		Af=1)
+*		National	pid=88		case=TO92
+*		88-08-04 rmn	BVmin=30
+*$
+.model J176	PJF(Beta=2.3m Betatce=-.5 Rd=1 Rs=1 Lambda=21m Vto=-1.82
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=6.5p M=.2789 Pb=1 Fc=.5 Cgs=9p Kf=148.6E-18
++		Af=1)
+*		National	pid=88		case=TO92
+*		88-08-04 rmn	BVmin=30
+*$
+.model J177	PJF(Beta=3.3m Betatce=-.5 Rd=1 Rs=1 Lambda=18.18m Vto=-1.386
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=6.5p M=.2789 Pb=1 Fc=.5 Cgs=9p Kf=213.2E-18
++		Af=1)
+*		National	pid=88		case=TO92
+*		88-08-04 rmn	BVmin=30
+*$
+.model J201	NJF(Beta=1.621m Betatce=-.5 Rd=1 Rs=1 Lambda=2.236m Vto=-.6
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=4.667p M=.2271 Pb=.5 Fc=.5 Cgs=2.992p Kf=604.2E-18
++		Af=1)
+*		National	pid=52		case=TO92
+*		88-08-02 rmn	BVmin=40
+*$
+.model J202	NJF(Beta=985.5u Betatce=-.5 Rd=1 Rs=1 Lambda=7m Vto=-1.612
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=4.667p M=.2271 Pb=.5 Fc=.5 Cgs=2.992p Kf=360.4E-18
++		Af=1)
+*		National	pid=52		case=TO92
+*		88-08-02 rmn	BVmin=40
+*$
+.model J203	NJF(Beta=304.5u Betatce=-.5 Rd=1 Rs=1 Lambda=17m Vto=-5.369
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=4.667p M=.2271 Pb=.5 Fc=.5 Cgs=2.992p Kf=103.4E-18
++		Af=1)
+*		National	pid=52		case=TO92
+*		88-08-02 rmn	BVmin=40
+*$
+.model J204	NJF(Beta=1.004m Betatce=-.5 Rd=1 Rs=1 Lambda=3.333m Vto=-1.139
++		Vtotc=-2.5m Is=29.04f Isr=281.9f N=1 Nr=2 Xti=3 Alpha=698u
++		Vk=270.4 Cgd=3.58p M=.3601 Pb=1 Fc=.5 Cgs=5.4p Kf=165E-18
++		Af=1)
+*		Siliconix	pid=NPA		case=TO92
+*		88-07-18 bam	BVmin=25
+*$
+.model J210	NJF(Beta=2.222m Betatce=-.5 Rd=1 Rs=1 Lambda=8.8m Vto=-1.526
++		Vtotc=-2.5m Is=101.9f Isr=977.5f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=3.913p M=.3448 Pb=1 Fc=.5 Cgs=3.496p Kf=862.4E-18
++		Af=1)
+*		National	pid=90		case=TO92
+*		88-08-04 rmn	BVmin=25
+*$
+.model J211	NJF(Beta=1.808m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.9
++		Vtotc=-2.5m Is=101.9f Isr=977.5f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=3.913p M=.3448 Pb=1 Fc=.5 Cgs=3.496p Kf=701.5E-18
++		Af=1)
+*		National	pid=90		case=TO92
+*		88-08-04 rmn	BVmin=25
+*$
+.model J212	NJF(Beta=873.3u Betatce=-.5 Rd=1 Rs=1 Lambda=16m Vto=-5.029
++		Vtotc=-2.5m Is=101.9f Isr=977.5f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=3.913p M=.3448 Pb=1 Fc=.5 Cgs=3.496p Kf=337.5E-18
++		Af=1)
+*		National	pid=90		case=TO92
+*		88-08-04 rmn	BVmin=25
+*$
+.model J230	NJF(Beta=642.1u Betatce=-.5 Rd=1 Rs=1 Lambda=7.333m Vto=-1.718
++		Vtotc=-2.5m Is=29.04f Isr=281.9f N=1 Nr=2 Xti=3 Alpha=698u
++		Vk=270.4 Cgd=2.59p M=.3601 Pb=1 Fc=.5 Cgs=3.882p Kf=160.1E-18
++		Af=1)
+*		Siliconix	pid=NPA		case=TO92
+*		88-07-18 bam	BVmin=40
+*$
+.model J231	NJF(Beta=1.004m Betatce=-.5 Rd=1 Rs=1 Lambda=8.667m Vto=-2.107
++		Vtotc=-2.5m Is=29.04f Isr=281.9f N=1 Nr=2 Xti=3 Alpha=698u
++		Vk=270.4 Cgd=2.59p M=.3601 Pb=1 Fc=.5 Cgs=3.882p Kf=258.1E-18
++		Af=1)
+*		Siliconix	pid=NPA		case=TO92
+*		88-07-18 bam	BVmin=40
+*$
+.model J232	NJF(Beta=1.509m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.3
++		Vtotc=-2.5m Is=29.04f Isr=281.9f N=1 Nr=2 Xti=3 Alpha=698u
++		Vk=270.4 Cgd=2.59p M=.3601 Pb=1 Fc=.5 Cgs=3.882p Kf=396.3E-18
++		Af=1)
+*		Siliconix	pid=NPA		case=TO92
+*		88-07-18 bam	BVmin=40
+*$
+.model J270	PJF(Beta=4.187m Betatce=-.5 Rd=1 Rs=1 Lambda=16.36m Vto=-1.03
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=10.83p M=.2789 Pb=1 Fc=.5 Cgs=15p Kf=1.624f
++		Af=1)
+*		National	pid=88		case=TO92
+*		88-08-04 rmn	BVmin=30
+*$
+.model J271	PJF(Beta=1.6m Betatce=-.5 Rd=1 Rs=1 Lambda=25m Vto=-2.519
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=10.83p M=.2789 Pb=1 Fc=.5 Cgs=15p Kf=620.6E-18
++		Af=1)
+*		National	pid=88		case=TO92
+*		88-08-04 rmn	BVmin=30
+*$
+.model J300	NJF(Beta=1.242m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-3.236
++		Vtotc=-2.5m Is=101.9f Isr=977.5f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=3p M=.3448 Pb=1 Fc=.5 Cgs=3.383p Kf=19.52E-18
++		Af=1)
+*		National	pid=90		case=TO92
+*		88-08-05 rmn	BVmin=25
+*$
+.model J304	NJF(Beta=729u Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-3.52
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=2.17p M=.3622 Pb=1 Fc=.5 Cgs=2.205p Kf=5.58E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=30
+*$
+.model J305	NJF(Beta=2.104m Betatce=-.5 Rd=1 Rs=1 Lambda=6.667m Vto=-1.44
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=2.17p M=.3622 Pb=1 Fc=.5 Cgs=2.205p Kf=16.3E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=30
+*$
+.model J308	NJF(Beta=3.688m Betatce=-.5 Rd=1 Rs=1 Lambda=16m Vto=-3.095
++		Vtotc=-2.5m Is=193.9f Isr=1.881p N=1 Nr=2 Xti=3 Alpha=7.533u
++		Vk=74.1 Cgd=6.2p M=.4647 Pb=1 Fc=.5 Cgs=6.2p Kf=50.51E-18
++		Af=1)
+*		National	pid=92		case=TO92
+*		88-07-14 bam	BVmin=25
+*$
+.model J309	NJF(Beta=4.682m Betatce=-.5 Rd=1 Rs=1 Lambda=14.5m Vto=-2.075
++		Vtotc=-2.5m Is=193.9f Isr=1.881p N=1 Nr=2 Xti=3 Alpha=7.533u
++		Vk=74.1 Cgd=6.2p M=.4647 Pb=1 Fc=.5 Cgs=6.2p Kf=64.12E-18
++		Af=1)
+*		National	pid=92		case=TO92
+*		88-07-14 bam	BVmin=25
+*$
+.model J310	NJF(Beta=3.384m Betatce=-.5 Rd=1 Rs=1 Lambda=17m Vto=-3.409
++		Vtotc=-2.5m Is=193.9f Isr=1.881p N=1 Nr=2 Xti=3 Alpha=7.533u
++		Vk=74.1 Cgd=6.2p M=.4647 Pb=1 Fc=.5 Cgs=6.2p Kf=46.34E-18
++		Af=1)
+*		National 	pid=92		case=TO92
+*		88-07-14 bam    BVmin=25
+*$
+.model J401	NJF(Beta=1.577m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.316
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=6.044p Kf=4.592E-18
++		Af=1)
+*		National	pid=98		case=8-Pin DIP
+*		88-08-05 rmn	BVmin=50
+*$
+.model J402	NJF(Beta=1.577m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.316
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=6.044p Kf=4.592E-18
++		Af=1)
+*		National	pid=98		case=8-Pin DIP
+*		88-08-05 rmn	BVmin=50
+*$
+.model J403	NJF(Beta=1.577m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.316
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=6.044p Kf=4.592E-18
++		Af=1)
+*		National	pid=98		case=8-Pin DIP
+*		88-08-05 rmn	BVmin=50
+*$
+.model J404	NJF(Beta=1.577m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.316
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=6.044p Kf=4.592E-18
++		Af=1)
+*		National	pid=98		case=8-Pin DIP
+*		88-08-05 rmn	BVmin=50
+*$
+.model J405	NJF(Beta=1.577m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.316
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=6.044p Kf=4.592E-18
++		Af=1)
+*		National	pid=98		case=8-Pin DIP
+*		88-08-05 rmn	BVmin=50
+*$
+.model J406	NJF(Beta=1.577m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.316
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=6.044p Kf=4.592E-18
++		Af=1)
+*		National	pid=98		case=8-Pin DIP
+*		88-08-05 rmn	BVmin=50
+*$
+.model J410	NJF(Beta=858.8u Betatce=-.5 Rd=1 Rs=1 Lambda=3.5m Vto=-2
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=2p M=.5 Pb=1 Fc=.5 Cgs=1p Kf=8.821E-18
++		Af=1)
+*		National	pid=83		case=8-Pin DIP
+*		88-07-15 bam	BVmin=40
+*$
+.model J411	NJF(Beta=858.8u Betatce=-.5 Rd=1 Rs=1 Lambda=3.5m Vto=-2
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=2p M=.5 Pb=1 Fc=.5 Cgs=1p Kf=8.821E-18
++		Af=1)
+*		National	pid=83		case=8-Pin DIP
+*		88-07-15 bam	BVmin=40
+*$
+.model J412	NJF(Beta=858.8u Betatce=-.5 Rd=1 Rs=1 Lambda=3.5m Vto=-2
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=2p M=.5 Pb=1 Fc=.5 Cgs=1p Kf=8.821E-18
++		Af=1)
+*		National	pid=83		case=8-Pin DIP
+*		88-07-15 bam	BVmin=40
+*$
+.model MPF102	NJF(Beta=1.04m Betatce=-.5 Rd=1 Rs=1 Lambda=2m Vto=-3.41
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=11.73E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=25
+*$
+.model MPF103	NJF(Beta=561.5u Betatce=-.5 Rd=1 Rs=1 Lambda=3.5m Vto=-1.947
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=4.978E-18
++		Af=1)
+*		National	pid=55		case=TO92
+*		88-08-03 rmn	BVmin=25
+*$
+.model MPF104	NJF(Beta=488.9u Betatce=-.5 Rd=1 Rs=1 Lambda=3.83m Vto=-2.882
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=4.284E-18
++		Af=1)
+*		National	pid=55		case=TO92
+*		88-08-03 rmn	BVmin=25
+*$
+.model MPF105	NJF(Beta=377.6u Betatce=-.5 Rd=1 Rs=1 Lambda=4.167m Vto=-4.473
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=3.227E-18
++		Af=1)
+*		National	pid=55		case=TO92
+*		88-08-03 rmn	BVmin=25
+*$
+.model MPF106	NJF(Beta=1.518m Betatce=-.5 Rd=1 Rs=1 Lambda=2.25m Vto=-2.21
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=11.73E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=25
+*$
+.model MPF107	NJF(Beta=821.6u Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-3.721
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=6.301E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=25
+*$
+.model MPF108	NJF(Beta=741.2u Betatce=-.5 Rd=1 Rs=1 Lambda=3m Vto=-2.789
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=6.709E-18
++		Af=1)
+*		National	pid=55		case=TO92
+*		88-08-03 rmn	BVmin=25
+*$
+.model MPF109	NJF(Beta=435u Betatce=-.5 Rd=1 Rs=1 Lambda=3.9m Vto=-3.51
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=3.67E-18
++		Af=1)
+*		National	pid=55		case=TO92
+*		88-08-03 rmn	BVmin=25
+*$
+.model MPF110	NJF(Beta=769.7u Betatce=-.5 Rd=1 Rs=1 Lambda=9m Vto=-3.56
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=12.01E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=20
+*$
+.model MPF111	NJF(Beta=769.7m Betatce=-.5 Rd=1 Rs=1 Lambda=9m Vto=-3.88
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=12.01E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=20
+*$
+.model MPF112	NJF(Beta=377.1u Betatce=-.5 Rd=1 Rs=1 Lambda=4.1m Vto=-3.85
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=3.222E-18
++		Af=1)
+*		National	pid=55		case=TO92
+*		88-08-03 rmn	BVmin=25
+*$
+.model MPF256	NJF(Beta=1.548m Betatce=-.5 Rd=1 Rs=1 Lambda=7.62m Vto=-2.127
++		Vtotc=-2.5m Is=101.9f Isr=977.5f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=3p M=.3448 Pb=1 Fc=.5 Cgs=3.383p Kf=24.29E-18
++		Af=1)
+*		National	pid=90		case=TO92
+*		88-08-05 rmn	BVmin=25
+*$
+.model MPF820	NJF(Beta=6.964m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.204
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=7.94p M=.4069 Pb=1 Fc=.5 Cgs=7.06p Kf=93.42E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=25
+*$
+.model MPF2608	PJF(Beta=423.6u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-2.45
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=6.7p M=.4822 Pb=1 Fc=.5 Cgs=8.37p Kf=286.4E-18
++		Af=1)
+*		Motorola	pid=2N2308	case=TO18
+*		88-07-19 bam	BVmin=25
+*$
+.model MPF3330	PJF(Beta=502u Betatce=-.5 Rd=1 Rs=1 Lambda=18m Vto=-2.686
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=7.96p M=.4822 Pb=1 Fc=.5 Cgs=9.94p Kf=310.7E-18
++		Af=1)
+*		Motorola	pid=2N3330	case=TO72
+*		88-07-19 bam	BVmin=20
+*$
+.model MPF3970	NJF(Beta=4.032m Betatce=-.5 Rd=1 Rs=1 Lambda=23m Vto=-4.514
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=10.48p M=.4069 Pb=1 Fc=.5 Cgs=9.31p Kf=53.18E-18
++		Af=1)
+*		Motorola	pid=2N3970	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF3971	NJF(Beta=6.313m Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-2.598
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=10.48p M=.4069 Pb=1 Fc=.5 Cgs=9.31p Kf=84.47E-18
++		Af=1)
+*		Motorola	pid=2N3971	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF3972	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=6m Vto=-1.403
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=10.48p M=.4069 Pb=1 Fc=.5 Cgs=9.31p Kf=123E-18
++		Af=1)
+*		Motorola	pid=2N3972	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4091	NJF(Beta=2.658m Betatce=-.5 Rd=1 Rs=1 Lambda=11m Vto=-5.743
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=7.94p M=.4069 Pb=1 Fc=.5 Cgs=7.06p Kf=34.43E-18
++		Af=1)
+*		Motorola	pid=2N4091	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4092	NJF(Beta=4.032m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.933
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=7.94p M=.4069 Pb=1 Fc=.5 Cgs=7.06p Kf=53.18E-18
++		Af=1)
+*		Motorola	pid=2N4092	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4093	NJF(Beta=5.695m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-1.989
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=7.94p M=.4069 Pb=1 Fc=.5 Cgs=7.06p Kf=75.98E-18
++		Af=1)
+*		Motorola	pid=2N4093	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4117	NJF(Beta=33.07u Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-1.2
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=45.61E-18
++		Af=1)
+*		Motorola 	pid=2N4117	case=TO72
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4117A	NJF(Beta=49.01u Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-1.1
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=70.97E-18
++		Af=1)
+*		Motorola 	pid=2N4117A	case=TO72
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4118	NJF(Beta=52.58u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-1.732
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=76.7E-18
++		Af=1)
+*		Motorola 	pid=2N4118	case=TO72
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4118A	NJF(Beta=52.58u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-1.732
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=76.7E-18
++		Af=1)
+*		Motorola 	pid=2N4118A	case=TO72
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4119	NJF(Beta=68.08u Betatce=-.5 Rd=1 Rs=1 Lambda=19m Vto=-2.536
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=101.8E-18
++		Af=1)
+*		Motorola 	pid=2N4119	case=TO72
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4119A	NJF(Beta=68.08u Betatce=-.5 Rd=1 Rs=1 Lambda=19m Vto=-2.536
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=101.8E-18
++		Af=1)
+*		Motorola 	pid=2N4119A	case=TO72
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4391	NJF(Beta=2.658m Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-5.803
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.35p M=.4069 Pb=1 Fc=.5 Cgs=4.76p Kf=34.43E-18
++		Af=1)
+*		Motorola	pid=2N4391	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4392	NJF(Beta=5.108m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-3.018
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=4.83p M=.4069 Pb=1 Fc=.5 Cgs=4.29p Kf=67.93E-18
++		Af=1)
+*		Motorola	pid=2N4392	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4393	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=6m Vto=-1.422
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=4.57p M=.4069 Pb=1 Fc=.5 Cgs=4.06p Kf=123E-18
++		Af=1)
+*		Motorola	pid=2N4393	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4856	NJF(Beta=3.084m Betatce=-.5 Rd=1 Rs=1 Lambda=11m Vto=-5.517
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=40.23E-18
++		Af=1)
+*		Motorola	pid=2N4856	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4856A	NJF(Beta=3.084m Betatce=-.5 Rd=1 Rs=1 Lambda=11m Vto=-5.517
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.71p M=.4069 Pb=1 Fc=.5 Cgs=5.07p Kf=40.23E-18
++		Af=1)
+*		Motorola	pid=2N4856A	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4857	NJF(Beta=6.313m Betatce=-.5 Rd=1 Rs=1 Lambda=9.5m Vto=-3.05
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=84.47E-18
++		Af=1)
+*		Motorola	pid=2N4857	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4857A	NJF(Beta=6.313m Betatce=-.5 Rd=1 Rs=1 Lambda=9.5m Vto=-3.05
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.34p M=.4069 Pb=1 Fc=.5 Cgs=4.74p Kf=84.47E-18
++		Af=1)
+*		Motorola	pid=2N4857A	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4858	NJF(Beta=7.646m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-2.387
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=102.8E-18
++		Af=1)
+*		Motorola	pid=2N4858	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4858A	NJF(Beta=7.646m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-2.387
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.34p M=.4069 Pb=1 Fc=.5 Cgs=4.74p Kf=102.8E-18
++		Af=1)
+*		Motorola	pid=2N4858A	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4859	NJF(Beta=3.084m Betatce=-.5 Rd=1 Rs=1 Lambda=12m Vto=-5.431
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=40.23E-18
++		Af=1)
+*		Motorola	pid=2N4859	case=TO18
+*		88-07-19 bam	BVmin=30
+*$
+.model MPF4859A	NJF(Beta=3.084m Betatce=-.5 Rd=1 Rs=1 Lambda=12m Vto=-5.431
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.71p M=.4069 Pb=1 Fc=.5 Cgs=5.07p Kf=40.23E-18
++		Af=1)
+*		Motorola	pid=2N4859A	case=TO18
+*		88-07-19 bam	BVmin=40
+*$
+.model MPF4860	NJF(Beta=6.313m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.998
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=84.47E-18
++		Af=1)
+*		Motorola	pid=2N4860	case=TO18
+*		88-07-19 bam	BVmin=30
+*$
+.model MPF4860A	NJF(Beta=6.313m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.998
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.34p M=.4069 Pb=1 Fc=.5 Cgs=4.74p Kf=84.47E-18
++		Af=1)
+*		Motorola	pid=2N4860A	case=TO18
+*		88-07-19 bam	BVmin=30
+*$
+.model MPF4861	NJF(Beta=8.362m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-2.308
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=112.7E-18
++		Af=1)
+*		Motorola	pid=2N4861	case=TO18
+*		88-07-19 bam	BVmin=30
+*$
+.model MPF4861A	NJF(Beta=8.362m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-2.308
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.34p M=.4069 Pb=1 Fc=.5 Cgs=4.74p Kf=112.7E-18
++		Af=1)
+*		Motorola	pid=2N4861A	case=TO18
+*		88-07-19 bam	BVmin=30
+*$
+.model NDF9406	NJF(Beta=1.004m Betatce=-.5 Rd=1 Rs=1 Lambda=2m Vto=-2.25
++		Vtotc=-2.5m Is=32.73f Isr=320.2f N=1 Nr=2 Xti=3 Cgd=4.2p
++		Alpha=48.15p Vk=120 M=.5 Pb=1 Fc=.5 Cgs=2.1p Kf=5.278E-18
++		Af=1)
+*	     	National	pid=94		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model NDF9407	NJF(Beta=1.004m Betatce=-.5 Rd=1 Rs=1 Lambda=2m Vto=-2.25
++		Vtotc=-2.5m Is=32.73f Isr=320.2f N=1 Nr=2 Xti=3 Cgd=4.2p
++		Alpha=48.15p Vk=120 M=.5 Pb=1 Fc=.5 Cgs=2.1p Kf=5.278E-18
++		Af=1)
+*		National	pid=94		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model NDF9408	NJF(Beta=1.004m Betatce=-.5 Rd=1 Rs=1 Lambda=2m Vto=-2.25
++		Vtotc=-2.5m Is=32.73f Isr=320.2f N=1 Nr=2 Xti=3 Cgd=4.2p
++		Alpha=48.15p Vk=120 M=.5 Pb=1 Fc=.5 Cgs=2.1p Kf=5.278E-18
++		Af=1)
+*		National	pid=94		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model NDF9409	NJF(Beta=1.004m Betatce=-.5 Rd=1 Rs=1 Lambda=2m Vto=-2.25
++		Vtotc=-2.5m Is=32.73f Isr=320.2f N=1 Nr=2 Xti=3 Cgd=4.2p
++		Alpha=48.15p Vk=120 M=.5 Pb=1 Fc=.5 Cgs=2.1p Kf=5.278E-18
++		Af=1)
+*		National	pid=94		case=TO71
+*		88-07-15 bam	BVmin=50
+*$
+.model NDF9410	NJF(Beta=1.004m Betatce=-.5 Rd=1 Rs=1 Lambda=2m Vto=-2.25
++		Vtotc=-2.5m Is=32.73f Isr=320.2f N=1 Nr=2 Xti=3 Cgd=4.2p
++		Alpha=48.15p Vk=120 M=.5 Pb=1 Fc=.5 Cgs=2.1p Kf=5.278E-18
++		Af=1)
+*		National	pid=94		case=TO71
+*		88-07-15 bam  	BVmin=50
+*$
+.model NF5101	NJF(Beta=12.42m Betatce=-.5 Rd=1 Rs=1 Lambda=3m Vto=-.7414
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=10.76p M=.4069 Pb=1 Fc=.5 Cgs=9.56p Kf=424.4E-18
++		Af=1)
+*		National	pid=51		case=TO72
+*		88-07-13 bam	BVmin=40
+*$
+.model NF5102	NJF(Beta=14.28m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-1.001
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=10.76p M=.4069 Pb=1 Fc=.5 Cgs=9.56p Kf=493.1E-18
++		Af=1)
+*		National	pid=51		case=TO72
+*		88-07-13 bam	BVmin=40
+*$
+.model NF5103	NJF(Beta=14.28m Betatce=-.5 Rd=1 Rs=1 Lambda=9m Vto=-1.4
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=10.76p M=.4069 Pb=1 Fc=.5 Cgs=9.56p Kf=493.1E-18
++		Af=1)
+*		National	pid=51		case=TO72
+*		88-07-13 bam	BVmin=40
+*$
+.model NF5301-2 NJF(Beta=72.27u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-2.123
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=108.7E-18
++		Af=1)
+*		National 	pid=53		case=TO72
+*		88-07-14 bam	BVmin=30
+*$
+.model NF5301	NJF(Beta=62.04u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-1.887
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=91.99E-18
++		Af=1)
+*		National 	pid=53		case=TO72
+*		88-07-14 bam	BVmin=30
+*$
+.model NF5301-1 NJF(Beta=81.03u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-1.428
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=123E-18
++		Af=1)
+*		National 	pid=53		case=TO72
+*		88-07-14 bam	BVmin=30
+*$
+.model NF5301-3 NJF(Beta=72.27u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-1.748
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=108.7E-18
++		Af=1)
+*		National 	pid=53		case=TO72
+*		88-07-14 bam	BVmin=30
+*$
+.model NPD5564	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-1.447
++		Vtotc=-2.5m Is=94.42f Isr=921.9f N=1 Nr=2 Xti=3 Alpha=88.38u
++		Vk=171.6 Cgd=8.67p M=.4742 Pb=1 Fc=.5 Cgs=9.76p Kf=67.86E-18
++		Af=1)
+*		National	pid=96		case=8-Pin DIP
+*		88-07-15 bam	BVmin=40
+*$
+.model NPD5565	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-1.447
++		Vtotc=-2.5m Is=94.42f Isr=921.9f N=1 Nr=2 Xti=3 Alpha=88.38u
++		Vk=171.6 Cgd=8.67p M=.4742 Pb=1 Fc=.5 Cgs=9.76p Kf=67.86E-18
++		Af=1)
+*		National	pid=96		case=8-Pin DIP
+*		88-07-15 bam	BVmin=40
+*$
+.model NPD5566	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=7.5m Vto=-1.447
++		Vtotc=-2.5m Is=94.42f Isr=921.9f N=1 Nr=2 Xti=3 Alpha=88.38u
++		Vk=171.6 Cgd=8.67p M=.4742 Pb=1 Fc=.5 Cgs=9.76p Kf=67.86E-18
++		Af=1)
+*		National	pid=96		case=8-Pin DIP
+*		88-07-15 bam	BVmin=40
+*$
+.model NPD8301	NJF(Beta=858.8u Betatce=-.5 Rd=1 Rs=1 Lambda=3.5m Vto=-2
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=2p M=.5 Pb=1 Fc=.5 Cgs=1p Kf=8.821E-18
++		Af=1)
+*		National	pid=83		case=8-Pin DIP
+*		88-07-15 bam	BVmin=40
+*$
+.model NPD8302	NJF(Beta=858.8u Betatce=-.5 Rd=1 Rs=1 Lambda=3.5m Vto=-2
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=2p M=.5 Pb=1 Fc=.5 Cgs=1p Kf=8.821E-18
++		Af=1)
+*		National	pid=83		case=8-Pin DIP
+*		88-07-15 bam	BVmin=40
+*$
+.model NPD8303	NJF(Beta=858.8u Betatce=-.5 Rd=1 Rs=1 Lambda=3.5m Vto=-2
++		Vtotc=-2.5m Is=24.55f Isr=240.1f N=1 Nr=2 Xti=3 Alpha=764.7u
++		Vk=267.7 Cgd=2p M=.5 Pb=1 Fc=.5 Cgs=1p Kf=8.821E-18
++		Af=1)
+*		National	pid=83		case=8-Pin DIP
+*		88-07-15 bam	BVmin=40
+*$
+.model P1086	PJF(Beta=772.5u Betatce=-.5 Rd=1 Rs=1 Lambda=40m Vto=-4.15
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=6.5p M=.2789 Pb=1 Fc=.5 Cgs=9p Kf=49.93E-18
++		Af=1)
+*		National	pid=88		case=TO92
+*		88-08-04 rmn	BVmin=30
+*$
+.model P1087	PJF(Beta=1.775m Betatce=-.5 Rd=1 Rs=1 Lambda=24m Vto=-2.229
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=6.5p M=.2789 Pb=1 Fc=.5 Cgs=9p Kf=114.5E-18
++		Af=1)
+*		National	pid=88		case=TO92
+*		88-08-04 rmn	BVmin=30
+*$
+.model PF5101	NJF(Beta=12.42m Betatce=-.5 Rd=1 Rs=1 Lambda=5m Vto=-.7627
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=10.76p M=.4069 Pb=1 Fc=.5 Cgs=9.56p Kf=424.4E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+.model PF5102	NJF(Beta=14.28m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-.9723
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=10.76p M=.4069 Pb=1 Fc=.5 Cgs=9.56p Kf=493.1E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+.model PF5103	NJF(Beta=14.28m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.372
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=10.76p M=.4069 Pb=1 Fc=.5 Cgs=9.56p Kf=493.1E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+.model PF5301	NJF(Beta=72.27u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-1.798
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=108.7E-18
++		Af=1)
+*		National	pid=53		case=TO92
+*		88-07-14 bam	BVmin=30
+*$
+.model PF5301-1 NJF(Beta=95.1u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-1.4
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=146.1E-18
++		Af=1)
+*		National	pid=53		case=TO92
+*		88-07-14 bam	BVmin=30
+*$
+.model PF5301-2 NJF(Beta=72.27u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-2.088
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=108.7E-18
++		Af=1)
+*		National	pid=53		case=TO92
+*		88-07-14 bam	BVmin=30
+*$
+.model PF5301-3 NJF(Beta=72.27u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-1.951
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=108.7E-18
++		Af=1)
+*		National	pid=53		case=TO92
+*		88-07-14 bam	BVmin=30
+*$
+.model PN3684	NJF(Beta=348.1u Betatce=-.5 Rd=1 Rs=1 Lambda=11.67m Vto=-3.18
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2p M=.2271 Pb=.5 Fc=.5 Cgs=2.083p Kf=1.259E-18
++		Af=1)
+*		National	pid=52		case=TO92
+*		88-08-02 rmn	BVmin=50
+*$
+.model PN3685	NJF(Beta=543.4u Betatce=-.5 Rd=1 Rs=1 Lambda=5.833m Vto=-1.691
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2p M=.2271 Pb=.5 Fc=.5 Cgs=2.083p Kf=2.004E-18
++		Af=1)
+*		National	pid=52		case=TO92
+*		88-08-02 rmn	BVmin=50
+*$
+.model PN3686	NJF(Beta=723.7u Betatce=-.5 Rd=1 Rs=1 Lambda=2.333m Vto=-.957
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2p M=.2271 Pb=.5 Fc=.5 Cgs=2.083p Kf=2.697E-18
++		Af=1)
+*		National	pid=52		case=TO92
+*		88-08-02 rmn	BVmin=50
+*$
+.model PN3687	NJF(Beta=840u Betatce=-.5 Rd=1 Rs=1 Lambda=1.167m Vto=-.5102
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2p M=.2271 Pb=.5 Fc=.5 Cgs=2.083p Kf=3.146E-18
++		Af=1)
+*		National	pid=52		case=TO92
+*		88-08-02 rmn	BVmin=50
+*$
+.model PN4091	NJF(Beta=2.417m Betatce=-.5 Rd=1 Rs=1 Lambda=17m Vto=-5.481
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=7.94p M=.4069 Pb=1 Fc=.5 Cgs=7.06p Kf=31.17E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+.model PN4092	NJF(Beta=5.108m Betatce=-.5 Rd=1 Rs=1 Lambda=11m Vto=-2.978
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=7.94p M=.4069 Pb=1 Fc=.5 Cgs=7.06p Kf=67.93E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+.model PN4093	NJF(Beta=8.508m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-1.973
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=7.94p M=.4069 Pb=1 Fc=.5 Cgs=7.06p Kf=114.7E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+.model PN4117	NJF(Beta=30.26u Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-1.412
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=41.21E-18
++		Af=1)
+*		National	pid=53		case=TO92
+*		88-07-14 bam	BVmin=40
+*$
+.model PN4117A	NJF(Beta=45.57u Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-1.172
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=65.45E-18
++		Af=1)
+*		National	pid=53		case=TO92
+*		88-07-14 bam	BVmin=40
+*$
+.model PN4118	NJF(Beta=60.08u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-1.652
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=88.82E-18
++		Af=1)
+*		National	pid=53		case=TO92
+*		88-07-14 bam	BVmin=40
+*$
+.model PN4118A	NJF(Beta=60.08u Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-1.652
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=88.82E-18
++		Af=1)
+*		National	pid=53		case=TO92
+*		88-07-14 bam	BVmin=40
+*$
+.model PN4119	NJF(Beta=72.27u Betatce=-.5 Rd=1 Rs=1 Lambda=19m Vto=-2.5
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=108.7E-18
++		Af=1)
+*		National	pid=53		case=TO92
+*		88-07-14 bam	BVmin=40
+*$
+.model PN4119A	NJF(Beta=72.27u Betatce=-.5 Rd=1 Rs=1 Lambda=19m Vto=-2.5
++		Vtotc=-2.5m Is=5.261f Isr=51.03f N=1 Nr=2 Xti=3 Alpha=797.9n
++		Vk=90.45 Cgd=3.94p M=.4335 Pb=1 Fc=.5 Cgs=4.93p Kf=108.7E-18
++		Af=1)
+*		National	pid=53		case=TO92
+*		88-07-14 bam	BVmin=40
+*$
+.model PN4120	NJF(Beta=15.41u Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-4.679
++		Vtotc=-2.5m Is=4.477f Isr=43.76f N=1 Nr=2 Xti=3 Alpha=18.01m
++		Vk=350.6 Cgd=4.49p M=.4359 Pb=1 Fc=.5 Cgs=4.49p Kf=3.501E-18
++		Af=1)
+*		Siliconix	pid=NT		case=TO92
+*		88-07-18 bam	BVmin=40
+*$
+.model PN4220	NJF(Beta=819.8u Betatce=-.5 Rd=1 Rs=1 Lambda=3.266m Vto=-1.195
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=7.47E-18
++		Af=1)
+*		National	pid=55		case=TO92
+*		88-08-03 rmn	BVmin=30
+*$
+.model PN4221	NJF(Beta=726.3u Betatce=-.5 Rd=1 Rs=1 Lambda=4.3m Vto=-2.139
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=6.564E-18
++		Af=1)
+*		National	pid=55		case=TO92
+*		88-08-03 rmn	BVmin=30
+*$
+.model PN4222	NJF(Beta=436.4u Betatce=-.5 Rd=1 Rs=1 Lambda=5.333m Vto=-2.9
++		Vtotc=-2.5m Is=181.3f Isr=1.747p N=1 Nr=2 Xti=3 Alpha=2.543u
++		Vk=152.2 Cgd=4p M=.3114 Pb=.5 Fc=.5 Cgs=4.627p Kf=3.783E-18
++		Af=1)
+*		National	pid=55		case=TO92
+*		88-08-03 rmn	BVmin=30
+*$
+.model PN4223	NJF(Beta=1.04m Betatce=-.5 Rd=1 Rs=1 Lambda=5.5m Vto=-3.14
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=7.839E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model PN4224	NJF(Beta=1.04m Betatce=-.5 Rd=1 Rs=1 Lambda=5.5m Vto=-3.27
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=7.839E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model PN4302	NJF(Beta=650u Betatce=-.5 Rd=1 Rs=1 Lambda=6m Vto=-1.55
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2.8p M=.2271 Pb=.5 Fc=.5 Cgs=2.916p Kf=2.42E-18
++		Af=1)
+*		National	pid=52		case=TO92
+*		88-08-02 rmn	BVmin=30
+*$
+.model PN4303	NJF(Beta=550u Betatce=-.5 Rd=1 Rs=1 Lambda=9.5m Vto=-2.92
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2.8p M=.2271 Pb=.5 Fc=.5 Cgs=2.916p Kf=2.03E-18
++		Af=1)
+*		National	pid=52		case=TO92
+*		88-08-02 rmn	BVmin=30
+*$
+.model PN4304	NJF(Beta=350u Betatce=-.5 Rd=1 Rs=1 Lambda=16.67m Vto=-3.85
++		Vtotc=-2.5m Is=114.5f Isr=1.091p N=1 Nr=2 Xti=3 Alpha=506.8u
++		Vk=251.7 Cgd=2.8p M=.2271 Pb=.5 Fc=.5 Cgs=2.916p Kf=1.28E-18
++		Af=1)
+*		National	pid=52		case=TO92
+*		88-08-02 rmn	BVmin=30
+*$
+.model PN4342	PJF(Beta=2.006m Betatce=-.5 Rd=1 Rs=1 Lambda=30m Vto=-1.988
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=6.33p M=.4822 Pb=1 Fc=.5 Cgs=7.91p Kf=702.2E-18
++		Af=1)
+*		National	pid=89		case=TO92
+*		88-07-14 bam	BVmin=25
+*$
+.model PN4360	PJF(Beta=4.032m Betatce=-.5 Rd=1 Rs=1 Lambda=32m Vto=-2.057
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=6.33p M=.4822 Pb=1 Fc=.5 Cgs=7.91p Kf=6.295f
++		Af=1)
+*		National	pid=89		case=TO92
+*		88-07-14 bam	BVmin=20
+*$
+.model PN4391	NJF(Beta=3.084m Betatce=-.5 Rd=1 Rs=1 Lambda=17.5m Vto=-5.27
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=5.35p M=.4069 Pb=1 Fc=.5 Cgs=4.76p Kf=40.23E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+.model PN4392	NJF(Beta=5.816m Betatce=-.5 Rd=1 Rs=1 Lambda=12m Vto=-2.808
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=4.83p M=.4069 Pb=1 Fc=.5 Cgs=4.29p Kf=77.64E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+.model PN4393	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-1.417
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=4.57p M=.4069 Pb=1 Fc=.5 Cgs=4.06p Kf=123E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+.model PN4416	NJF(Beta=989.4u Betatce=-.5 Rd=1 Rs=1 Lambda=5.5m Vto=-3.07
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=7.445E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-01 rmn	BVmin=30
+*$
+.model PN4856	NJF(Beta=3.084m Betatce=-.5 Rd=1 Rs=1 Lambda=17.5m Vto=-5.681
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=40.23E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+.model PN4857	NJF(Beta=6.313m Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-2.997
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=84.47E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+.model PN4858	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.11
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=123E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+.model PN4859	NJF(Beta=3.084m Betatce=-.5 Rd=1 Rs=1 Lambda=17.5m Vto=-5.704
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=40.23E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=30
+*$
+.model PN4860	NJF(Beta=6.313m Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-3.017
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=84.47E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=30
+*$
+.model PN4861	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.18
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=123E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=30
+*$
+.model PN5033	PJF(Beta=1.57m Betatce=-.5 Rd=1 Rs=1 Lambda=12m Vto=-1.105
++		Vtotc=-2.5m Is=222.4f Isr=2.177p N=1 Nr=2 Xti=3 Alpha=29.8u
++		Vk=400.1 Cgd=8.16p M=.4822 Pb=1 Fc=.5 Cgs=10.19p Kf=815.6E-18
++		Af=1)
+*		National	pid=89		case=TO92
+*		88-07-14 bam	BVmin=20
+*$
+.model PN5163	NJF(Beta=1.228m Betatce=-.5 Rd=1 Rs=1 Lambda=9m Vto=-3.82
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=9.469E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=25
+*$
+.model PN5432	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=50m Vto=-5.697
++		Vtotc=-2.5m Is=533.7f Isr=5.174p N=1 Nr=2 Xti=3 Alpha=152.8u
++		Vk=111.9 Cgd=35.6p M=.4283 Pb=1 Fc=.5 Cgs=35.6p Kf=124.3E-18
++		Af=1)
+*		National	pid=58		case=TO92
+*		88-07-14 bam	BVmin=25
+*$
+.model PN5433	NJF(Beta=12.42m Betatce=-.5 Rd=1 Rs=1 Lambda=40m Vto=-4.4
++		Vtotc=-2.5m Is=533.7f Isr=5.174p N=1 Nr=2 Xti=3 Alpha=152.8u
++		Vk=111.9 Cgd=35.6p M=.4283 Pb=1 Fc=.5 Cgs=35.6p Kf=169.9E-18
++		Af=1)
+*		National	pid=58		case=TO92
+*		88-07-14 bam	BVmin=25
+*$
+.model PN5434	NJF(Beta=17.3m Betatce=-.5 Rd=1 Rs=1 Lambda=20m Vto=-1.949
++		Vtotc=-2.5m Is=533.7f Isr=5.174p N=1 Nr=2 Xti=3 Alpha=152.8u
++		Vk=111.9 Cgd=35.6p M=.4283 Pb=1 Fc=.5 Cgs=35.6p Kf=236.9E-18
++		Af=1)
+*		National	pid=58		case=TO92
+*		88-07-14 bam	BVmin=25
+*$
+.model TIS58	NJF(Beta=1.46m Betatce=-.5 Rd=1 Rs=1 Lambda=2.5m Vto=-1.921
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=11.27E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=25
+*$
+.model TIS59	NJF(Beta=764.6u Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-4.14
++		Vtotc=-2.5m Is=33.57f Isr=322.4f N=1 Nr=2 Xti=3 Alpha=311.7u
++		Vk=243.6 Cgd=1.6p M=.3622 Pb=1 Fc=.5 Cgs=2.414p Kf=5.858E-18
++		Af=1)
+*		National	pid=50		case=TO92
+*		88-08-02 rmn	BVmin=25
+*$
+.model TIS73	NJF(Beta=3.084m Betatce=-.5 Rd=1 Rs=1 Lambda=17.5m Vto=-5.581
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=40.23E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=30
+*$
+.model TIS74	NJF(Beta=6.313m Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-3.117
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=84.47E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=30
+*$
+.model TIS75	NJF(Beta=9.109m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.18
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=15.92p M=.4069 Pb=1 Fc=.5 Cgs=14.16p Kf=123E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=30
+*$
+.model U200	NJF(Beta=10.26m Betatce=-.5 Rd=1 Rs=1 Lambda=6.236m Vto=-1.2
++		Vtotc=-2.5m Is=82.73f Isr=793f N=1 Nr=2 Xti=3 Alpha=15.64u
++		Vk=147.8 Cgd=5.8p M=.3184 Pb=1 Fc=.5 Cgs=11.9p Kf=603.6
++		Af=1)
+*		Siliconix	pid=NCB		case=TO18
+*		88-08-09 rmn	BVmin=30
+*$
+.model U201	NJF(Beta=8m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-2.45
++		Vtotc=-2.5m Is=82.73f Isr=793f N=1 Nr=2 Xti=3 Alpha=15.64u
++    		Vk=147.8 Cgd=5.8p M=.3184 Pb=1 Fc=.5 Cgs=11.9p Kf=440E-18
++		Af=1)
+*		Siliconix	pid=NCB		case=TO18
+*		88-08-09 rmn	BVmin=30
+*$
+.model U202	NJF(Beta=5.412m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-4
++		Vtotc=-2.5m Is=82.73f Isr=793f N=1 Nr=2 Xti=3 Alpha=15.64u
++		Vk=147.8 Cgd=5.8p M=.3184 Pb=1 Fc=.5 Cgs=11.9p Kf=318.2E-18
++		Af=1)
+*		Siliconix	pid=NCB		case=TO18
+*		88-08-09 rmn	BVmin=30
+*$
+.model U257	NJF(Beta=2.203m Betatce=-.5 Rd=1 Rs=1 Lambda=12m Vto=-2.475
++		Vtotc=-2.5m Is=94.35f Isr=907.9f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=2.822p M=.3744 Pb=1 Fc=.5 Cgs=3.65p Kf=86E-18
++		Af=1)
+*		National	pid=93		case=TO78
+*		88-08-05 rmn	BVmin=25
+*$
+.model U290	NJF(Beta=9m Betatce=-.5 Rd=1 Rs=1 Lambda=50m Vto=-6.25
++		Vtotc=-2.5m Is=304.4f Isr=2.995p N=1 Nr=2 Xti=3 Alpha=699.7n
++   		Vk=59.97 Cgd=60p M=.6015 Pb=.5 Fc=.5 Cgs=60p Kf=87.5E-18
++		Af=1)
+*		Siliconix	pid=NVA		case=TO52
+*		88-08-10 rmn	BVmin=30
+*$
+.model U291	NJF(Beta=15m Betatce=-.5 Rd=1 Rs=1 Lambda=30m Vto=-3.6
++		Vtotc=-2.5m Is=304.4f Isr=2.995p N=1 Nr=2 Xti=3 Alpha=699.7n
++		Vk=59.97 Cgd=60p M=.6015 Pb=.5 Fc=.5 Cgs=60p Kf=146E-18
++		Af=1)
+*		Siliconix	pid=NVA		case=TO52
+*		88-08-10 rmn	BVmin=30
+*$
+.model U304	PJF(Beta=1.5m Betatce=-.5 Rd=1 Rs=1 Lambda=3m Vto=-5.81
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=16.15p M=.4134 Pb=1 Fc=.5 Cgs=16.5p Kf=144.8E-18
++		Af=1)
+*		Siliconix	pid=PS-A/B	case=TO18
+*		88-08-10 rmn	BVmin=30
+*$
+.model U305	PJF(Beta=1.8m Betatce=-.5 Rd=1 Rs=1 Lambda=3.333m Vto=-4.014
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=16.15p M=.4134 Pb=1 Fc=.5 Cgs=16.5p Kf=174.8E-18
++		Af=1)
+*		Siliconix	pid=PS-A/B	case=TO18
+*		88-08-10 rmn	BVmin=30
+*$
+.model U306	PJF(Beta=2.5m Betatce=-.5 Rd=1 Rs=1 Lambda=4.204m Vto=-2.062
++		Vtotc=-2.5m Is=461.5f Isr=4.402p N=1 Nr=2 Xti=3 Alpha=32.54u
++		Vk=393.2 Cgd=16.15p M=.4134 Pb=1 Fc=.5 Cgs=16.5p Kf=244.7E-18
++		Af=1)
+*		Siliconix	pid=PS-A/B	case=TO18
+*		88-08-10 rmn	BVmin=30
+*$
+.model U308	NJF(Beta=4.337m Betatce=-.5 Rd=1 Rs=1 Lambda=16m Vto=-2.852
++		Vtotc=-2.5m Is=193.9f Isr=1.881p N=1 Nr=2 Xti=3 Alpha=7.533u
++		Vk=74.1 Cgd=5p M=.4647 Pb=1 Fc=.5 Cgs=5p Kf=59.4E-18
++		Af=1)
+*		National	pid=92		case=TO52
+*		88-07-14 bam	BVmin=25
+*$
+.model U309	NJF(Beta=5.04m Betatce=-.5 Rd=1 Rs=1 Lambda=14m Vto=-2.026
++		Vtotc=-2.5m Is=193.9f Isr=1.881p N=1 Nr=2 Xti=3 Alpha=7.533u
++		Vk=74.1 Cgd=5p M=.4647 Pb=1 Fc=.5 Cgs=5p Kf=69.01E-18
++		Af=1)
+*		National	pid=92		case=TO52
+*		88-07-14 bam	BVmin=25
+*$
+.model U310	NJF(Beta=3.688m Betatce=-.5 Rd=1 Rs=1 Lambda=17m Vto=-3.324
++		Vtotc=-2.5m Is=193.9f Isr=1.881p N=1 Nr=2 Xti=3 Alpha=7.533u
++		Vk=74.1 Cgd=7.4p M=.4647 Pb=1 Fc=.5 Cgs=7.4p Kf=50.51E-18
++		Af=1)
+*		National	pid=92		case=TO52
+*		88-07-14 bam	BVmin=25
+*$
+.model U311	NJF(Beta=1.485m Betatce=-.5 Rd=1 Rs=1 Lambda=2.887m Vto=-4.796
++		Vtotc=-2.5m Is=24.01f Isr=231.9f N=1 Nr=2 Xti=3 Alpha=16.46u
++		Vk=55.46 Cgd=6.5p M=.4532 Pb=1 Fc=.5 Cgs=6.5p Kf=5.765E-18
++		Af=1)
+*		Siliconix	pid=NZB		case=TO72
+*		88-08-10 rmn	BVmin=25
+*$
+.model U312	NJF(Beta=1.242m Betatce=-.5 Rd=1 Rs=1 Lambda=8m Vto=-3.679
++		Vtotc=-2.5m Is=101.9f Isr=977.5f N=1 Nr=2 Xti=3 Alpha=13.92u
++		Vk=88.13 Cgd=2.6p M=.3448 Pb=1 Fc=.5 Cgs=3.198p Kf=19.52E-18
++		Af=1)
+*		National	pid=90		case=TO52
+*		88-08-05 rmn	BVmin=25
+*$
+.model U401	NJF(Beta=1.577m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.316
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=6.044p Kf=4.592E-18
++		Af=1)
+*		National	pid=98		case=TO71
+*		88-08-05 rmn	BVmin=50
+*$
+.model U402	NJF(Beta=1.577m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.316
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=6.044p Kf=4.592E-18
++		Af=1)
+*		National	pid=98		case=TO71
+*		88-08-05 rmn	BVmin=50
+*$
+.model U403	NJF(Beta=1.577m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.316
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=6.044p Kf=4.592E-18
++		Af=1)
+*		National	pid=98		case=TO71
+*		88-08-05 rmn	BVmin=50
+*$
+.model U404	NJF(Beta=1.577m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.316
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=6.044p Kf=4.592E-18
++		Af=1)
+*		National	pid=98		case=TO71
+*		88-08-05 rmn	BVmin=50
+*$
+.model U405	NJF(Beta=1.577m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.316
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=6.044p Kf=4.592E-18
++		Af=1)
+*		National	pid=98		case=TO71
+*		88-08-05 rmn	BVmin=50
+*$
+.model U406	NJF(Beta=1.577m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-1.316
++		Vtotc=-2.5m Is=19.73f Isr=191.3f N=1 Nr=2 Xti=3 Alpha=68.56u
++		Vk=212.2 Cgd=5.6p M=.3916 Pb=.5 Fc=.5 Cgs=6.044p Kf=4.592E-18
++		Af=1)
+*		National	pid=98		case=TO71
+*		88-08-05 rmn	BVmin=50
+*$
+.model U410	NJF(Beta=801.3u Betatce=-.5 Rd=1 Rs=1 Lambda=5m Vto=-1.866
++		Vtotc=-2.5m Is=224.2f Isr=2.192p N=1 Nr=2 Xti=3 Alpha=71.03u
++		Vk=176.1 Cgd=3.03p M=.4911 Pb=1 Fc=.5 Cgs=3.03p Kf=49.66E-18
++		Af=1)
+*		Siliconix	pid=NQP		case=TO71
+*		88-07-18 bam	BVmin=40
+*$
+.model U411	NJF(Beta=801.3u Betatce=-.5 Rd=1 Rs=1 Lambda=5m Vto=-1.866
++		Vtotc=-2.5m Is=224.2f Isr=2.192p N=1 Nr=2 Xti=3 Alpha=71.03u
++		Vk=176.1 Cgd=3.03p M=.4911 Pb=1 Fc=.5 Cgs=3.03p Kf=49.66E-18
++		Af=1)
+*		Siliconix	pid=NQP		case=TO71
+*		88-07-18 bam	BVmin=40
+*$
+.model U412	NJF(Beta=801.3u Betatce=-.5 Rd=1 Rs=1 Lambda=5m Vto=-1.866
++		Vtotc=-2.5m Is=224.2f Isr=2.192p N=1 Nr=2 Xti=3 Alpha=71.03u
++		Vk=176.1 Cgd=3.03p M=.4911 Pb=1 Fc=.5 Cgs=3.03p Kf=49.66E-18
++		Af=1)
+*		Siliconix	pid=NQP		case=TO71
+*		88-07-18 bam	BVmin=40
+*$
+.model U427	NJF(Beta=428.6u Betatce=-.5 Rd=1 Rs=1 Lambda=4m Vto=-1.25
++		Vtotc=-2.5m Is=5.86f Isr=56.06f N=1 Nr=2 Xti=3 Alpha=81.65u
++ 		Vk=190.4 Cgd=750f M=.301 Pb=1 Fc=.5 Cgs=1.7p Kf=125.6E-18
++		Af=1)
+*		Siliconix	pid=NNT		case=TO78
+*		88-08-10 rmn	BVmin=40
+*$
+.model U428	NJF(Beta=300u Betatce=-.5 Rd=1 Rs=1 Lambda=6m Vto=-1.75
++		Vtotc=-2.5m Is=5.86f Isr=56.06f N=1 Nr=2 Xti=3 Alpha=81.65u
++		Vk=190.4 Cgd=750f M=.301 Pb=1 Fc=.5 Cgs=1.7p Kf=81.65E-18
++		Af=1)
+*		Siliconix	pid=NNT		case=TO78
+*		88-08-10 rmn	BVmin=40
+*$
+.model U430	NJF(Beta=5.412m Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-1.952
++		Vtotc=-2.5m Is=24.01f Isr=231.9f N=1 Nr=2 Xti=3 Alpha=16.46u
++		Vk=55.46 Cgd=5.85p M=.5 Pb=1 Fc=.5 Cgs=6.49p Kf=32.04E-18
++		Af=1)
+*		Siliconix	pid=NZA-D	case=TO99
+*		88-07-18 bam	BVmin=25
+*$
+.model U431	NJF(Beta=5.412m Betatce=-.5 Rd=1 Rs=1 Lambda=15m Vto=-2.802
++		Vtotc=-2.5m Is=24.01f Isr=231.9f N=1 Nr=2 Xti=3 Alpha=16.46u
++		Vk=55.46 Cgd=5.85p M=.5 Pb=1 Fc=.5 Cgs=6.49p Kf=32.04E-18
++		Af=1)
+*		Siliconix	pid=NZA-D	case=TO99
+*		88-07-18 bam	BVmin=25
+*$
+.model U440	NJF(Beta=1.978m Betatce=-.5 Rd=1 Rs=1 Lambda=30m Vto=-2.839
++		Vtotc=-2.5m Is=36.18f Isr=346.4f N=1 Nr=2 Xti=3 Alpha=105u
++		Vk=107 Cgd=2.11p M=.333 Pb=1 Fc=.5 Cgs=2.47p Kf=27.88E-18
++		Af=1)
+*		Siliconix	pid=NZF-D	case=TO71
+*		88-07-18 bam	BVmin=25
+*$
+.model U441	NJF(Beta=1.978m Betatce=-.5 Rd=1 Rs=1 Lambda=30m Vto=-2.839
++		Vtotc=-2.5m Is=36.18f Isr=346.4f N=1 Nr=2 Xti=3 Alpha=105u
++		Vk=107 Cgd=2.11p M=.333 Pb=1 Fc=.5 Cgs=2.47p Kf=27.88E-18
++		Af=1)
+*		Siliconix	pid=NZF-D	case=TO71
+*		88-07-18 bam	BVmin=25
+*$
+.model U443	NJF(Beta=1.978m Betatce=-.5 Rd=1 Rs=1 Lambda=30m Vto=-2.839
++		Vtotc=-2.5m Is=36.18f Isr=346.4f N=1 Nr=2 Xti=3 Alpha=105u
++		Vk=107 Cgd=2.11p M=.333 Pb=1 Fc=.5 Cgs=2.47p Kf=27.88E-18
++		Af=1)
+*		Siliconix	pid=NZF-D	case=TO78
+*		88-07-18 bam	BVmin=25
+*$
+.model U444	NJF(Beta=1.978m Betatce=-.5 Rd=1 Rs=1 Lambda=30m Vto=-2.839
++		Vtotc=-2.5m Is=36.18f Isr=346.4f N=1 Nr=2 Xti=3 Alpha=105u
++		Vk=107 Cgd=2.11p M=.333 Pb=1 Fc=.5 Cgs=2.47p Kf=27.88E-18
++		Af=1)
+*		Siliconix	pid=NZF-D	case=TO78
+*		88-07-18 bam	BVmin=25
+*$
+.model U1897	NJF(Beta=2.741m Betatce=-.5 Rd=1 Rs=1 Lambda=17.5m Vto=-5.5
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=7.94p M=.4069 Pb=1 Fc=.5 Cgs=7.06p Kf=35.56E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+.model U1898	NJF(Beta=5.108m Betatce=-.5 Rd=1 Rs=1 Lambda=13m Vto=-3
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=7.94p M=.4069 Pb=1 Fc=.5 Cgs=7.06p Kf=67.93E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+.model U1899	NJF(Beta=7.646m Betatce=-.5 Rd=1 Rs=1 Lambda=10m Vto=-2.131
++		Vtotc=-2.5m Is=205.2f Isr=1.988p N=1 Nr=2 Xti=3 Alpha=20.98u
++		Vk=123.7 Cgd=7.94p M=.4069 Pb=1 Fc=.5 Cgs=7.06p Kf=102.8E-18
++		Af=1)
+*		National	pid=51		case=TO92
+*		88-07-13 bam	BVmin=40
+*$
+*** end of library file

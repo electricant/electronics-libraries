@@ -1,0 +1,739 @@
+* Library of Miscellaneous Analog Models
+
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+
+* $Revision:   1.3  $
+* $Author:   RPEREZ  $
+* $Date:   17 Apr 1998 10:24:28  $
+
+*---------------------------------------------------------------------------
+*
+* OrCAD Incorporated would like to acknowledge Sandia National Laboratories
+* for the contribution of their measurement-based model included in this 
+* library.
+
+*----------------------------------------------------------------------------
+
+*$
+*-----------------------------------------------------------------------------
+* Example uses:
+*   - voltage-controlled capacitor ...	use "variable admittance"
+*   - voltage-controlled inductor ...	use "variable impedance"
+
+* Variable admittance: Yout = Yref * V
+*           control input: voltage
+*           |  reference capacitor/conductance (connect other lead to ground)
+*          / \ |  output: floating admittance
+*          + - | / \
+.subckt yx 1 2 3 4 5
+  ecopy  3 6 poly(2) (1,2) (4,5) 0 0 0 0 1
+  fout   4 5 vsense 1
+  rin    1 2 1G
+  vsense 0 6 0
+.ends
+
+*$
+* End of yx model
+
+
+* Variable impedance: Zout = Zref * V
+*           control input: voltage
+*           |  reference inductor/resistor (connect other lead to ground)
+*          / \ |  output: floating impedance
+*          + - | / \
+.subckt zx 1 2 3 4 5
+  eout   4 6 poly(2) (1,2) (3,0) 0 0 0 0 1
+  fcopy  0 3 vsense 1
+  rin    1 2 1G
+  vsense 6 5 0
+.ends
+
+*$
+* End of zx model
+
+
+*-----------------------------------------------------------------------------
+*.model CA3600E
+*14-pin DIP: pin#1  #2  #3  #4  #5  #6  #7  #8  #9  #10 #11 #12 #13 #14
+*                |   |   |   |   |   |   |   |   |   |   |   |   |   |
+.subckt CA3600E p01 p02 p03 p04 p05 p06 p07 p08 p09 p10 p11 p12 p13 p14
+*		RCA		pid=CA3600
+*		89-07-21 pwt
+
+* The RCA data sheet was used for this model.
+
+* BE SURE to keep pin #14 at the most positive potential w.r.t any other pin!
+* BE SURE to keep pin # 7 at the most negative potential w.r.t any other pin!
+
+  m_N1 p08   6 p07 p07 nch	; device N1
+  m_N2 p05   3 p04 p07 nch	; device N2
+  m_N3 p12  10 p09 p07 nch	; device N3
+
+  m_P1 p13   6 p14 p14 pch	; device P1
+  m_P2 p01   3 p02 p14 pch	; device P2
+  m_P3 p12  10 p11 p14 pch	; device P3
+
+* Input protection circuits from Fig. 34
+
+  rx03 p03   3 r_zap 1		; input protection on pin #3
+  dx3p p03 p14 d_zap
+  di3p   3 p14 d_zap
+  di3n p07   3 d_zap
+
+  rx06 p06   6 r_zap 1		; input protection on pin #6
+  dx6p p06 p14 d_zap
+  di6p   6 p14 d_zap
+  di6n p07   6 d_zap
+
+  rx10 p10  10 r_zap 1		; input protection on pin #10
+  dx1p p10 p14 d_zap
+  di1p  10 p14 d_zap
+  di1n p07  10 d_zap
+
+  d1 p07 p14 d_body		; supply protection diode (D5 in Fig. 34)
+
+* MOS characteristics derived as follows:
+*
+*	Id vs Vgs from Fig. 3 and 6 (using Parts as an aid)
+*
+*	output capacitance hand adjusted using simulations
+*
+*	Miller capacitance and output impedance hand adjusted using
+*	simulations to match Fig. 10 and 11
+
+.model nch nmos(Level=1 Tox=300n Uo=600 Kp=20.54u W=144u L=8u Vto= 1.3
++		Lambda=15m Cbd=4p Cbs=4p Cgdo=1.7n Cgso=1.7n Rs=1 Rd=1)
+.model pch pmos(Level=1 Tox=300n Uo=300 Kp=10.32u W=328u L=8u Vto=-1.5
++		Lambda=15m Cbd=8p Cbs=8p Cgdo=1.7n Cgso=1.7n Rs=1 Rd=1)
+.model r_zap  res(r=1.73K)
+.model d_zap  D(Is= 1p Rs=1 N=1 Xti=3 Eg=1.11 Cjo=.01p M=0 Bv=20 Ibv=.1u)
+.model d_body D(Is=15n Rs=1 N=1 Xti=3 Eg=1.11 Cjo=10p M=.5 Vj=.75
++		Fc=.5 Isr=.15n Nr=2 Bv=20 Ibv=100u)
+.ends
+
+*$
+*End of CA3600E model
+
+
+*SPICE 2G.6 Compatible
+*
+* GENERIC FUNCTIONAL EQUIVALENT = 54C14  
+* MANUFACTURERS PART NO. = MM54C14J  
+* TYPE: IC_LINEAR  
+* SUBTYPE: SCHMITT  
+* THIS IS A PRE-RAD MODEL AT 27 C OF THE MM54HC14.   
+* CREATION DATE: NOV. 15, 1984  
+*
+.SUBCKT 54HC14/ANLG 1  2  3  4  5  6   7  8  9  10 11 12 13 14  
+*             NODES A1 Y1 A2 Y2 A3 Y3 GND Y4 A4 Y5 A5 Y6 A6 VCC  
+X1 1 2 14 7 STRIG  
+X2 2 3 14 7 STRIG  
+X3 5 6 14 7 STRIG  
+X4 9 8 14 7 STRIG  
+X5 11 10 14 7 STRIG  
+X6 13 12 14 7 STRIG  
+D1 7 14 GNDVCC  
+.MODEL GNDVCC D (
++         IS = 20.9E-12
++         RS = 0
++          N = 1
++         TT = 0
++        CJO = 56.PF
++         VJ = 1
++          M = .5
++         EG = 1.11
++        XTI = 3
++         KF = 0
++         AF = 1
++         FC = .5
++         BV = 9.9999E+13
++        IBV = .001
++ )
+.ENDS 54HC14/ANLG
+.SUBCKT STRIG 1  2   4   3  
+*      NODES IN OUT VCC GND  
+M1 4 11 5 4 MM54HCP L=3.5U W=248.5U AD=2.98N AS=2.98N  
+M2 5 6 3 4 MM54HCP L=3.5U W=303U AD=3.64N AS=3.64N  
+M5 5 11 6 4 MM54HCP L=3.5U W=372.7U AD=4.47N AS=4.47N  
+M4 6 11 7 3 MM54HCN L=3.5U W=200U AD=2.4N AS=2.4N  
+M3 7 11 3 3 MM54HCN L=3.5U W=133.3U AD=1.6N AS=1.6N  
+M6 4 6 7 3 MM54HCN L=3.5U W=79.5U AD=.954N AS=.954N  
+M7 4 6 8 4 MM54HCP L=3.5U W=698.5U AD=8.38N AS=8.38N  
+M8 8 6 3 3 MM54HCN L=3.5U W=292.3U AD=3.51N AS=3.51N  
+M9 4 8 2 4 MM54HCP L=3.5U W=2207.7U AD=26.5N AS=26.5N  
+M10 2 8 3 3 MM54HCN L=3.5U W=946.2U AD=11.4N AS=11.4N  
+D1 9 4 INVCC  
+D2 3 9 GNDIN  
+D3 2 4 OUTVCC  
+D4 3 2 GNDOUT  
+R1 5 3 1MEG  
+R2 7 3 1MEG  
+R3 6 3 1MEG  
+R4 8 3 1MEG  
+R5 1 9 111  
+R6 9 11 38  
+.MODEL MM54HCP PMOS       (
++      LEVEL = 1
++        VTO = -.6
++         KP = 10.1E-6
++      GAMMA = 0
++        PHI = .6
++     LAMBDA = .015
++         RD = 5.
++         RS = 5.
++        CBD = 0
++        CBS = 0
++         IS = 1E-14
++         PB = .8
++       CGSO = 1.57E-9
++       CGDO = 7.84E-10
++       CGBO = 0
++        RSH = 0
++         CJ = 9.68E-5
++         MJ = .5
++       CJSW = 0
++       MJSW = .33
++         JS = 1.37E-4
++        TOX = .0000001
++        NSS = 0
++        NFS = 0
++        TPG = 1
++         XJ = 0
++         LD = 0
++         UO = 600
++      UCRIT = 10000
++       UEXP = 0
++       UTRA = 0
++       VMAX = 0
++       NEFF = 1
++        XQC = 1
++         KF = 0
++         AF = 1
++         FC = .5
++      DELTA = 0
++      THETA = 0
++        ETA = 0
++      KAPPA = .2
++ )
+.MODEL MM54HCN NMOS       (
++      LEVEL = 1
++        VTO = .375
++         KP = 19.5E-6
++      GAMMA = 0
++        PHI = .6
++     LAMBDA = .00005
++         RD = 3.5
++         RS = 3.5
++        CBD = 0
++        CBS = 0
++         IS = 1E-14
++         PB = .8
++       CGSO = 1.57E-9
++       CGDO = 7.84E-10
++       CGBO = 0
++        RSH = 0
++         CJ = 3.06E-4
++         MJ = .5
++       CJSW = 0
++       MJSW = .33
++         JS = 3.41E-3
++        TOX = .0000001
++        NSS = 0
++        NFS = 0
++        TPG = 1
++         XJ = 0
++         LD = 0
++         UO = 600
++      UCRIT = 10000
++       UEXP = 0
++       UTRA = 0
++       VMAX = 0
++       NEFF = 1
++        XQC = 1
++         KF = 0
++         AF = 1
++         FC = .5
++      DELTA = 0
++      THETA = 0
++        ETA = 0
++      KAPPA = .2
++ )
+.MODEL INVCC D (
++         IS = .488E-15
++         RS = 5.
++          N = 1
++         TT = 0
++        CJO = .36PF
++         VJ = 1
++          M = .5
++         EG = 1.11
++        XTI = 3
++         KF = 0
++         AF = 1
++         FC = .5
++         BV = 9.9999E+13
++        IBV = .001
++ )
+.MODEL GNDIN D (
++         IS = 3.88E-15
++         RS = 3.5
++          N = 1
++         TT = 0
++        CJO = 1.13PF
++         VJ = 1
++          M = .5
++         EG = 1.11
++        XTI = 3
++         KF = 0
++         AF = 1
++         FC = .5
++         BV = 9.9999E+13
++        IBV = .001
++ )
+.MODEL OUTVCC D (
++         IS = 1.06E-12
++         RS = 5.
++          N = 1
++         TT = 0
++        CJO = 2.56PF
++         VJ = 1
++          M = .5
++         EG = 1.11
++        XTI = 3
++         KF = 0
++         AF = 1
++         FC = .5
++         BV = 9.9999E+13
++        IBV = .001
++ )
+.MODEL GNDOUT D (
++         IS = 11.3E-12
++         RS = 3.5
++          N = 1
++         TT = 0
++        CJO = 3.47PF
++         VJ = 1
++          M = .5
++         EG = 1.11
++        XTI = 3
++         KF = 0
++         AF = 1
++         FC = .5
++         BV = 9.9999E+13
++        IBV = .001
++ )
+.ENDS STRIG  
+*$
+*End of 54HC14/ANLG model
+
+
+.SUBCKT 555C GND TRIGGERbar OUTPUT RESETbar CONTROL THRESHOLD DISCHARGE VCC 
+* 
+* CMOS 555 TIMER
+*
+R_R1     CONTROL VCC 150K 
+R_R2     2 CONTROL 150K 
+R_R3     GND 2 150K 
+E_EMIR   VDD GND VCC GND 1
+M_M1     DISCHARGE 1 GND GND NCHAN555 L=2U W=1000U
+E_EVAL   1 GND 13 GND 1
+R_U6_R1  TRIGGERbar 2 1000G 
+R_U6_R2  TRIGGERbar 2 1000G 
+E_U6_E1CMP  3 GND 2 TRIGGERbar 10K
+R_U6_R3  3 23 10MEG 
+R_U6_R4  GND 23 10MEG 
+D_U6_D2CLMP  23 4 DIODE 
+D_U6_D1CLMP  GND 5 DIODE 
+V_U6_V2  23 5 dc 0.8V  
+E_U6_E1  4 GND POLY(1) VDD GND -0.8 1
+R_U7_R1  CONTROL THRESHOLD 1000G 
+R_U7_R2  CONTROL THRESHOLD 1000G 
+E_U7_E1CMP  6 GND THRESHOLD CONTROL 10K
+R_U7_R3  6 21 10MEG 
+R_U7_R4  GND 21 10MEG 
+D_U7_D2CLMP  21 7 DIODE 
+D_U7_D1CLMP  GND 8 DIODE 
+V_U7_V2  21 8 dc 0.8V  
+E_U7_E1  7 GND POLY(1) VDD GND -0.8 1
+M_U2_U1_M4  9 OUTPUT GND GND NCHAN555 L=2U W=1000U
+M_U2_U1_M3  9 17 GND GND NCHAN555 L=2U W=1000U
+M_U2_U1_M6  10 9 GND GND NCHAN555 L=2U W=300U
+M_U2_U1_M8  13 10 GND GND NCHAN555 L=2U W=250U 
+M_U2_U1_M1  11 OUTPUT VDD VDD PCHAN555 L=2U W=1000U
+M_U2_U1_M2  9 17 11 11 PCHAN555 L=2U W=1000U
+M_U2_U1_M5  10 9 VDD VDD PCHAN555 L=2U W=300U
+M_U2_U1_M7  13 10 VDD VDD PCHAN555_OUT L=2U W=350U
+M_U2_U2_M4  12 18 GND GND NCHAN555 L=2U W=1000U
+M_U2_U2_M3  12 13 GND GND NCHAN555 L=2U W=1000U
+M_U2_U2_M6  14 12 GND GND NCHAN555 L=2U W=300U
+M_U2_U2_M8  OUTPUT 14 GND GND NCHAN555 L=2U W=250U 
+M_U2_U2_M1  15 18 VDD VDD PCHAN555 L=2U W=1000U
+M_U2_U2_M2  12 13 15 15 PCHAN555 L=2U W=1000U
+M_U2_U2_M5  14 12 VDD VDD PCHAN555 L=2U W=300U
+M_U2_U2_M7  OUTPUT 14 VDD VDD PCHAN555_OUT L=2U W=350U
+M_U2_U3_M1  16 25 VDD VDD PCHAN555 L=2U W=1000U
+M_U2_U3_M2  17 24 16 16 PCHAN555 L=2U W=1000U
+M_U2_U3_M3  17 24 GND GND NCHAN555 L=2U W=1000U
+M_U2_U3_M4  17 25 GND GND NCHAN555 L=2U W=1000U
+M_U2_U4_M1  18 20 VDD VDD PCHAN555 L=2U W=2U
+M_U2_U4_M2  18 RESETbar VDD VDD PCHAN555 L=2U W=2U
+M_U2_U4_M3  18 20 19 19 NCHAN555 L=2U W=1000U
+M_U2_U4_M4  19 RESETbar GND GND NCHAN555 L=2U W=1000U
+M_U2_U5_M1  20 24 VDD VDD PCHAN555 L=2U W=2U
+M_U2_U5_M2  20 21 VDD VDD PCHAN555 L=2U W=2U
+M_U2_U5_M3  20 24 22 22 NCHAN555 L=2U W=1000U
+M_U2_U5_M4  22 21 GND GND NCHAN555 L=2U W=1000U
+M_U2_U6_M2  24 23 GND GND NCHAN555 L=2U W=1000U
+M_U2_U6_M3  24 23 VDD VDD PCHAN555 L=2U W=2U
+M_U2_U7_M2  25 RESETbar GND GND NCHAN555 L=2U W=1000U
+M_U2_U7_M3  25 RESETbar VDD VDD PCHAN555 L=2U W=2U
+R_U2_R1  RESETbar GND 250G 
+J_J1     VCC GND GND JNEMOD 
+R_R6     GND VCC 192K 
+*
+.MODEL DIODE D RS=0.01
+.MODEL PCHAN555 PMOS CGBO=1P CGDO=1P CGSO=1P VTO=-0.2
+.MODEL NCHAN555 NMOS CGBO=1P CGDO=1P CGSO=1P VTO=0.2
+.MODEL PCHAN555_OUT PMOS CGBO=1P CGDO=1P CGSO=1P VTO=-0.2 CBD=200P
+.MODEL JNEMOD NJF VTO=-2.5 BETA=5.12U
+.ENDS    555C
+*
+*|* CMOS 555 TIMER CONNECTED IN ASTABLE OPERATION
+*|.LIB MISC.LIB
+*|.PARAM CVAL=20N
+*|VRST 4 0 PULSE(1 0 700U 1U 1U 400U 1)
+*|C2 3 0 10P
+*|VCC 8 0 5
+*|RA 8 7 4700
+*|RB 7 6 2200
+*|C1 6 0 {CVAL}
+*|X1 0 6 3 4 5 6 7 8 555C
+*|CTRL 5 0 10P
+*|.IC V(6)=0
+*|.TRAN 10U 800U
+*|.PROBE
+*|.END
+
+*$
+* This model is for the old bipolar 555 supplied by National
+* Semi Lm555, it is essentially the data schematic entered
+* with some manipulation of the bipolar parameters to correct 
+* drive capability and timing. The max frequency of 100k as 
+* hinted at by Nat Semi is maintained but does conflict with 
+* the trigger propagation delay. It would seem that the real part
+* is capable of higher freqs. The high current transients with 
+* change of output are seen with this model.
+.subckt 555b 1 2 3 4 5 6 7 8
+  q_q2     18 31 32  qnpn555 
+  q_q1     18 6 31  qnpn555 
+  q_q4     17 5 30  qnpn555 
+  q_q3     17 30 32  qnpn555 
+  q_q5d    15 18 8  qpnp555 
+  q_q5     18 18 8  qpnp555 
+  q_q6d    16 17 8  qpnp555 
+  q_q6     17 17 8  qpnp555 
+  q_q11    19 9 20  qpnp555 
+  q_q9     22 24 19  qpnp555 
+  q_q10    1 25 24  qpnp555 
+  q_q8     21 23 19  qpnp555 
+  q_q7     1 2 23  qpnp555 
+  q_q12    21 22 1  qnpn555 
+  q_q13    22 22 1  qnpn555 
+  r_r1     20 8 1k 
+  r_r3     25 5 5k 
+  r_r4     1 25 5k 
+  q_q16    15 16 1  qnpn555 
+  q_q15    16 16 1  qnpn555 
+  q_q17    14 15 13  qnpn555 
+  q_q18    13 21 1  qnpn555 
+  q_q19    12 13 1  qnpn555 
+  q_q21    14 14 12  qnpn555 
+  r_r5     5 8 5k 
+  r_r6     14 9 7.5k 
+  r_r8     1 32 10k 
+  q_q22    9 9 8  qpnp555 
+  q_q22d   10 9 8  qpnp555 
+  q_q20    10 12 1  qnpn555 
+  r_r10    13 10 4.7k 
+  q_q23    11 10 26  qnpn555  .5
+  q_q26    3 29 1  qnpn555  .5
+  r_r11    27 26 100 
+  r_r12    1 26 3.3k 
+  r_r14    26 29 120 
+  r_r15    11 8 6.2k 
+  q_q27    8 11 28  qnpn555 
+  q_q28    8 28 3  qnpn555 
+  r_r16    3 28 3.9k 
+  q_q24    1 11 3  qpnp555 
+  q_q25    27 4 14  qpnp555 
+  q_q14    7 27 1  qnpn555
+  cslow1   15 0 40p
+  cslow2   16 0 40p 
+  cslow11  21 0 40p
+  cslow22  22 0 40p 
+.model qnpn555	npn(is=14.34f xti=3 eg=1.11 vaf=74.03 bf=65.62 ne=1.208
++		ise=19.48f ikf=20m xtb=1.5 br=9.715 nc=2 isc=0 ikr=0 rc=1
++		cjc=40p mjc=.3416 vjc=.75 fc=.5 cje=40p mje=.377 vje=.75
++		tr=58.98n tf=1n itf=.6 vtf=1.7 xtf=3 rb=10)
+.model qpnp555	pnp(is=650.6e-18 xti=3 eg=1.11 vaf=115.7 bf=70.35 ne=1.829
++		ise=180.5f ikf=20m xtb=1.5 br=4.146 nc=2 isc=0 ikr=0 rc=.715
++		cjc=40p mjc=.5383 vjc=.75 fc=.5 cje=40p mje=.3357 vje=.75
++		tr=119.9n tf=1n itf=.65 vtf=5 xtf=1.7 rb=10)
+.ends
+
+*|* BIPOLAR 555 TIMER CONNECTED IN ASTABLE OPERATION
+*|.LIB MISC.LIB
+*|.PARAM CVAL=20N
+*|VRST 4 0 PULSE(1 0 700U 1U 1U 400U 1) 
+*|C2 3 0 10P
+*|VCC 8 0 5
+*|RA 8 7 4700
+*|RB 7 6 2200
+*|C1 6 0 {CVAL}
+*|X1 0 6 3 4 5 6 7 8 555B
+*|CTRL 5 0 10P
+*|.IC V(6)=0
+*|.TRAN 10U 800U
+*|.PROBE
+*|.END
+
+*$
+*End of 555C model
+
+
+* Three phase transformer model:
+*   This circuit models a (linear) three phase transformer where all three
+*   windings are on a single "EI" core.  The model assumes the same number
+*   of turns on the windings for each phase.  The phase asymetry of
+*   transformer is controled by the Permeance_ratio parameter (a value of
+*   1 gives a symetric transformer).
+*
+*                               Phase 1 Phase 2 Phase 3
+*                               (left) (center) (right)
+*                                |   |	 |   |   |   |
+.SUBCKT THREE_PHASE_TRANSFORMER P11 P12 P21 P22 P31 P32  ; Primary
++                               S11 S12 S21 S22 S31 S32  ; Secondary
++ PARAMS:
++  pri_ind = 200mh	; Primary inductance (center winding)
++  V_ratio = 1		; Voltage or turns ratio (sec/pri)
++  Permeance_ratio = 1	; Ratio of Permeance_inner/Permeance_outer
+*  (Permeance_ratio is the ratio of (voltage on center primary)/(voltage on right primary)
+*   when the left primary is driven and all other windings are open.)
++  pri_R = .1		; Primary resistance
++  sec_R = .1		; Secondary resistance
++  K_coef = .9999	; Mutual coupling coefficient
+*
+* We separate each winding into two series parts.  This represents
+* the two magnetic paths that each winding is part of.
+*
+* Phase 1 is left winding, Phase 2 is center, and Phase 3 is right
+*
+* Magnetic Loop 'a': left inner loop
+*
+LP1a P1a P1c {pri_ind/2}
+LP2a P2b P2a {pri_ind/2}
+LS1a S1a S1c {pri_ind*V_ratio*V_ratio/2}
+LS2a S2b S2a {pri_ind*V_ratio*V_ratio/2}
+Ka LP1a LP2a LS1a LS2a {K_coef}
+*
+* Magnetic Loop 'b': right inner loop
+*
+LP2b P22 P2b {pri_ind/2}
+LP3b P3b P3c {pri_ind/2}
+LS2b S22 S2b {pri_ind*V_ratio*V_ratio/2}
+LS3b S3b S3c {pri_ind*V_ratio*V_ratio/2}
+Kb LP2b LP3b LS2b LS3b {K_coef}
+*
+* Magnetic Loop 'c': the outer loop
+*
+LP1c P1c P12 {pri_ind/(2*Permeance_ratio)}
+LP3c P32 P3c {pri_ind/(2*Permeance_ratio)}
+LS1c S1c S12 {pri_ind*V_ratio*V_ratio/(2*Permeance_ratio)}
+LS3c S32 S3c {pri_ind*V_ratio*V_ratio/(2*Permeance_ratio)}
+Kc LP1c LP3c LS1c LS3c {K_coef}
+*
+* Winding Resistances
+*
+RP1 P1a P11 {pri_R}
+RS1 S1a S11 {sec_R}
+RP2 P2a P21 {pri_R}
+RS2 S2a S21 {sec_R}
+RP3 P3b P31 {pri_R}
+RS3 S3b S31 {sec_R}
+*
+.ENDS
+* Three phase transformer test circuit
+*
+* A simple test circuit
+*
+*X1 P1 0 P2 0 P3 0 S1 0 S2 0 S3 0 THREE_PHASE_TRANSFORMER
+*+ PARAMS: pri_ind=100mh V_ratio=0.0477 Permeance_ratio=5
+*
+*Vin P1 0 sin(0 155 60 0 0 0deg) 
+*
+*.param RPL1=1MEG
+*.param RPL2=1MEG
+*.param RPL3=1MEG
+*.param RSL1=1MEG
+*.param RSL2=1MEG
+*.param RSL3=1MEG
+*
+*RPL1 P1 0 {RPL1}
+*RPL2 P2 0 {RPL2}
+*RPL3 P3 0 {RPL3}
+*RSL1 S1 0 {RSL1}
+*RSL2 S2 0 {RSL2}
+*RSL3 S3 0 {RSL3}
+*
+*.step param RPL2 LIST 1MEG  1
+*
+*.tran 1ms 60ms 0 .4ms
+*.probe
+*.end
+
+*$
+*End of THREE_PHASE_TRANSFORMER
+
+
+* Relay models:
+*  Both physical and behavioral models are provided.  In almost all situations
+*  the behavioral models should be used: They are much faster to simulate, and
+*  normally provide more realistic results. (See application notes for more
+*  discussion of relay models.)
+*
+*
+* Physical model of relay electro-mechanical system
+*
+* Note: This model is derived from the Application Note "Modeling an
+*       Electro-Mechanical Device".  It has been updated to use new
+*       functions available for expressions.  Also, the RELAY_SPDT_PHY_MSRD
+*       subcircuit uses equations to calculate
+*       values for the physical parameters from measured relay behavior.
+*
+* These subcircuits models the entire electro-mechanical system, and because
+* of this it takes a while to simulate.  If all you are interested in is the
+* electrical behavior of the relay see the RELAY_SPDT_BHV and RELAY_SPDT_BHV_BOUNCE
+* models which follow.
+*
+.subckt RELAY_SPDT_PHY coila coilb no nc com
++ PARAMS:
++  R_coil = 10    ; Coil resistance
++  L_coil = 5mH	  ; Coil inductance
++  R_open = 100MEG; contact open resistance
++  R_close= 0.05  ; contact closed resistance
++  turns  = 100	  ; number of turns on coil
++  arm_mass = .5  ; Contact arm mass (moment)
++  spr    = 40	  ; contact arm spring force
++  minP   = 1	  ; Minimum permeance (when arm is away from coil)
++  maxP   = 5	  ; Maximum permeance (when arm is close to coil)
++  drag   = 1	  ; air and other contact arm drag
++  lim_K  = 1e6	  ; limit spring rate
++  damping= 1e3	  ; limit damping rate
+
+* electrical model of coil
+v_winding coila  a1     0
+r_winding a1     a2     {R_coil}
+l_winding a2     coilb  {L_coil}
+
+* forces on contact arm
+g_mag v0 vel value = {0.5*pwr(table(v(dis), 0,minP, 1,maxP)*turns*i(v_winding),2)*(maxP-minP)}
+g_drg vel v0 value = {drag*v(vel)}
+g_lim vel v0 value = {(v(dis)-limit(v(dis),0,1))*lim_K}
+g_dmp vel v0 value = {table(v(dis),-0.001,1, 0,0, 1,0, 1.001,1)*v(vel)*damping}
+i_spr vel 0 {spr}
+l_dum v0  0  10mh ; dummy series inductor to help PSpice pick a good timestep size
+
+* Integrate the force to velocity
+c_vel vel 0 {arm_mass}
+r_vel vel 0 1G
+
+* Integrate the velocity to distance
+g_dis 0 dis value = {v(vel)}
+c_dis dis 0 1
+r_dis dis 0 1G
+
+* model the switch contacts
+s1 no com dis 0 smod_no
+s2 nc com dis 0 smod_nc
+.model smod_no vswitch(von=1 voff=0.99 ron={R_close} roff={R_open})
+.model smod_nc vswitch(von=0 voff=0.01 ron={R_close} roff={R_open})
+
+.ends
+
+
+* To calculate values for the physical model you can use the following
+* subcircuit. 
+
+.subckt RELAY_SPDT_PHY_MSRD coila coilb no nc com
++ PARAMS:
++ T_drop = 150mSec ; Time for contacts to drop when current is turned off
++ I_pull = 50ma    ; Pull-in current
++ I_drop = 10ma    ; Drop-out current
++ R_coil = 10      ; Coil resistance
++ L_coil = 5mH     ; Coil inductance
+*
+* Calculate the Physical parameters, then call the physical model with these
+* values.
+*
+.PARAM  turns  = 100	       ; not really important, factors out of equations
+.PARAM  arm_mass = .5         ; also factors out
+.PARAM  spr    = {2*arm_mass/(T_drop*T_drop)}
+.PARAM  minP   = {pwr((2*spr)/(turns*turns*I_pull*I_pull*((I_pull-I_drop)/I_drop)),1/3)}
+.PARAM  maxP   = {minP*(1+((I_pull-I_drop)/I_drop))}
+.PARAM  drag   = {.1*spr*T_drop} ; linear drag durring all contact motion (small)
+.PARAM  lim_K  = {spr*3e4}   ; Limit stop spring constant -- must be alot bigger than spring
+.PARAM  damping= {lim_K/1e4} ; Damping rate: smaller makes more bounces
+
+x1 coila coilb no nc com RELAY_SPDT_PHY
++ PARAMS:
++  R_coil  = {R_coil}    ; Coil resistance
++  L_coil  = {L_coil}    ; Coil inductance
++  turns   = {turns}     ; number of turns on coil
++  arm_mass= {arm_mass}  ; Contact arm mass (moment)
++  spr     = {spr}       ; contact arm spring force
++  minP    = {minP}      ; Minimum permeance (when arm is away from coil)
++  maxP    = {maxP}      ; Maximum permeance (when arm is close to coil)
++  drag    = {drag}      ; air and other contact arm drag
++  lim_K   = {lim_K}     ; limit spring rate
++  damping = {damping}   ; limit damping rate
+
+.ends
+
+*$
+*End of RELAY_SPDT_PHY
+
+
+* Time Dependent Switch Models
+*$
+* For DC and AC analyses, the switch will be Open.
+.SUBCKT  Sw_tClose  1  2  PARAMS: 
++ tClose=0     ; time at which switch begins to close
++ ttran=1u     ; time required to switch states (must be realistic, not 0)
++ Rclosed=0.01 ; Closed state resistance
++ Ropen=1Meg   ; Open state resistance (Ropen/Rclosed < 1E10)
+V1 3 0 pulse(0 1 {tClose} {ttran} 1 10k 11k)
+S1 1 2 3 0 Smod
+.model Smod Vswitch(Ron={Rclosed} Roff={Ropen})
+.ends
+
+*$
+*End of Sw_tClose model
+
+
+* For DC and AC analyses, the switch will be Closed.
+.SUBCKT  Sw_tOpen   1  2  PARAMS: 
++ tOpen=0      ; time at which switch begins to open
++ ttran=1u     ; time required to switch states (must be realistic, not 0)
++ Rclosed=0.01 ; Closed state resistance
++ Ropen=1Meg   ; Open state resistance (Ropen/Rclosed < 1E10)
+V1 3 0 pulse(1 0 {tOpen} {ttran} 1 10k 11k)
+S1 1 2 3 0 Smod
+.model Smod Vswitch(Ron={Rclosed} Roff={Ropen})
+.ends
+
+*$
+
+* end of time dependent switch models
+
+* end of library
+

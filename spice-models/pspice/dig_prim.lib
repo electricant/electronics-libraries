@@ -1,0 +1,2181 @@
+* Library of PLD Digital Primitives
+*
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+*
+*
+* $Revision:   1.5  $
+* $Author:   RPEREZ  $
+* $Date:   17 Apr 1998 13:56:20  $
+*
+*
+* ----------------------------------------------------------------------
+*
+*
+*                              TRI STATE SYMBOLS
+*
+**************************************************************************
+*$
+*
+* ENABLE HIGH BUFFER WITH TRI-STATE OUTPUT
+*
+.SUBCKT BUFTH  I0 OE  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 BUF3
++  DPWR  DGND
++  I0 OE  O
++  D_PLD_TGATE IO_PLD
+*
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+* ENABLE LOW BUFFER WITH TRI-STATE OUTPUT
+*
+.SUBCKT BUFTL  I0 OE  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR  DGND
++  OE  OEBAR
++  D_PLD_GATE IO_PLD
+*
+U2 BUF3
++  DPWR  DGND
++  I0 OEBAR  O
++  D_PLD_TGATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+* ENABLE HIGH INVERTER WITH TRI-STATE OUTPUT
+*
+.SUBCKT INVTH  I0 OE  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV3
++  DPWR  DGND
++  I0 OE  O
++  D_PLD_TGATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+* ENABLE LOW INVERTER WITH TRI-STATE OUTPUT
+*
+.SUBCKT INVTL  I0 OE  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR  DGND
++  OE  OEBAR
++  D_PLD_GATE IO_PLD
+*
+U2 INV3
++  DPWR  DGND
++  I0 OEBAR  O
++  D_PLD_TGATE IO_PLD
+*
+.ENDS
+*$
+*
+*****************************************************************************
+*
+*                                GATES
+*
+*
+*****************************************************************************
+*$
+*
+* 2 INPUT AND GATE
+*
+.SUBCKT AND2  I0 I1  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(2)
++  DPWR  DGND
++  I0 I1  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT AND3 GATE
+*
+.SUBCKT AND3  I0 I1 I2  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(3)
++  DPWR  DGND
++  I0 I1 I2  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT AND4 GATE
+*
+.SUBCKT AND4  I0 I1 I2 I3  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(4)
++  DPWR  DGND
++  I0 I1 I2 I3  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT AND5 GATE
+*
+.SUBCKT AND5  I0 I1 I2 I3 I4  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(5)
++  DPWR  DGND
++  I0 I1 I2 I3 I4  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT AND6 GATE
+*
+.SUBCKT AND6  I0 I1 I2 I3 I4 I5  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(6)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT AND7 GATE
+*
+.SUBCKT AND7  I0 I1 I2 I3 I4 I5 I6  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(7)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT AND8 GATE
+*
+.SUBCKT AND8  I0 I1 I2 I3 I4 I5 I6 I7  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(8)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT AND9 GATE
+*
+.SUBCKT AND9  I0 I1 I2 I3 I4 I5 I6 I7 I8  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(9)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT AND10 GATE
+*
+.SUBCKT AND10  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(10)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT AND11 GATE
+*
+.SUBCKT AND11  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(11)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT AND12 GATE
+*
+.SUBCKT AND12  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(12)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT AND13 GATE
+*
+.SUBCKT AND13  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(13)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT AND14 GATE
+*
+.SUBCKT AND14  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(14)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT AND15 GATE
+*
+.SUBCKT AND15  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(15)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT AND16 GATE
+*
+.SUBCKT AND16  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14 I15  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(16)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14 I15  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  1 INPUT BUFFER
+*
+.SUBCKT BUF  I0  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 BUF
++  DPWR  DGND
++  I0  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  1 INPUT INVERTER
+*
+.SUBCKT INV  I0  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR  DGND
++  I0  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+* 2 INPUT NAND GATE
+*
+.SUBCKT NAN2  I0 I1  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(2)
++  DPWR  DGND
++  I0 I1  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NAND3 GATE
+*
+.SUBCKT NAN3  I0 I1 I2  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(3)
++  DPWR  DGND
++  I0 I1 I2  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NAND4 GATE
+*
+.SUBCKT NAN4  I0 I1 I2 I3  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(4)
++  DPWR  DGND
++  I0 I1 I2 I3  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NAND5 GATE
+*
+.SUBCKT NAN5  I0 I1 I2 I3 I4  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(5)
++  DPWR  DGND
++  I0 I1 I2 I3 I4  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NAND6 GATE
+*
+.SUBCKT NAN6  I0 I1 I2 I3 I4 I5  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(6)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NAND7 GATE
+*
+.SUBCKT NAN7  I0 I1 I2 I3 I4 I5 I6  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(7)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NAND8 GATE
+*
+.SUBCKT NAN8  I0 I1 I2 I3 I4 I5 I6 I7  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(8)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NAND9 GATE
+*
+.SUBCKT NAN9  I0 I1 I2 I3 I4 I5 I6 I7 I8  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(9)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NAND10 GATE
+*
+.SUBCKT NAN10  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(10)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NAND11 GATE
+*
+.SUBCKT NAN11  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(11)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NAND12 GATE
+*
+.SUBCKT NAN12  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(12)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NAND13 GATE
+*
+.SUBCKT NAN13  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(13)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NAND14 GATE
+*
+.SUBCKT NAN14  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(14)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NAND15 GATE
+*
+.SUBCKT NAN15  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(15)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NAND16 GATE
+*
+.SUBCKT NAN16  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14 I15  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NAND(16)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14 I15  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+* 2 INPUT NOR GATE
+*
+.SUBCKT NOR2  I0 I1  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(2)
++  DPWR  DGND
++  I0 I1  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NOR3 GATE
+*
+.SUBCKT NOR3  I0 I1 I2  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(3)
++  DPWR  DGND
++  I0 I1 I2  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NOR4 GATE
+*
+.SUBCKT NOR4  I0 I1 I2 I3  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(4)
++  DPWR  DGND
++  I0 I1 I2 I3  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NOR5 GATE
+*
+.SUBCKT NOR5  I0 I1 I2 I3 I4  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(5)
++  DPWR  DGND
++  I0 I1 I2 I3 I4  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NOR6 GATE
+*
+.SUBCKT NOR6  I0 I1 I2 I3 I4 I5  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(6)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NOR7 GATE
+*
+.SUBCKT NOR7  I0 I1 I2 I3 I4 I5 I6  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(7)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NOR8 GATE
+*
+.SUBCKT NOR8  I0 I1 I2 I3 I4 I5 I6 I7  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(8)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NOR9 GATE
+*
+.SUBCKT NOR9  I0 I1 I2 I3 I4 I5 I6 I7 I8  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(9)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NOR10 GATE
+*
+.SUBCKT NOR10  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(10)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NOR11 GATE
+*
+.SUBCKT NOR11  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(11)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NOR12 GATE
+*
+.SUBCKT NOR12  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(12)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NOR13 GATE
+*
+.SUBCKT NOR13  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(13)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NOR14 GATE
+*
+.SUBCKT NOR14  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(14)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NOR15 GATE
+*
+.SUBCKT NOR15  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(15)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT NOR16 GATE
+*
+.SUBCKT NOR16  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14 I15  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 NOR(16)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14 I15  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+* 2 INPUT OR GATE
+*
+.SUBCKT OR2  I0 I1  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(2)
++  DPWR  DGND
++  I0 I1  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT OR3 GATE
+*
+.SUBCKT OR3  I0 I1 I2  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(3)
++  DPWR  DGND
++  I0 I1 I2  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT OR4 GATE
+*
+.SUBCKT OR4  I0 I1 I2 I3  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(4)
++  DPWR  DGND
++  I0 I1 I2 I3  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT OR5 GATE
+*
+.SUBCKT OR5  I0 I1 I2 I3 I4  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(5)
++  DPWR  DGND
++  I0 I1 I2 I3 I4  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT OR6 GATE
+*
+.SUBCKT OR6  I0 I1 I2 I3 I4 I5  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(6)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT OR7 GATE
+*
+.SUBCKT OR7  I0 I1 I2 I3 I4 I5 I6  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(7)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT OR8 GATE
+*
+.SUBCKT OR8  I0 I1 I2 I3 I4 I5 I6 I7  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(8)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT OR9 GATE
+*
+.SUBCKT OR9  I0 I1 I2 I3 I4 I5 I6 I7 I8  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(9)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT OR10 GATE
+*
+.SUBCKT OR10  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(10)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT OR11 GATE
+*
+.SUBCKT OR11  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(11)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT OR12 GATE
+*
+.SUBCKT OR12  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(12)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT OR13 GATE
+*
+.SUBCKT OR13  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(13)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT OR14 GATE
+*
+.SUBCKT OR14  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(14)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT OR15 GATE
+*
+.SUBCKT OR15  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(15)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT OR16 GATE
+*
+.SUBCKT OR16  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14 I15  O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 OR(16)
++  DPWR  DGND
++  I0 I1 I2 I3 I4 I5 I6 I7 I8 I9 I10 I11 I12 I13 I14 I15  O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  INPUT XOR GATE
+*
+.SUBCKT XOR  I0 I1 O
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 XOR
++  DPWR  DGND
++  I0 I1 O
++  D_PLD_GATE IO_PLD
+*
+.ENDS
+*$
+**************************************************************************
+*
+*      
+*                                 LATCHES
+*
+*
+*
+**************************************************************************
+*$
+*
+*
+*  D LATCH
+*
+.SUBCKT DLAT D LAT  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 DLTCH(1)
++  DPWR  DGND
++  $D_HI $D_HI LAT
++  D
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  D LATCH WITH ENABLE LOW RESET
+*
+.SUBCKT DLATR D LAT R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 DLTCH(1)
++  DPWR  DGND
++  $D_HI R LAT
++  D
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  D LATCH WITH ENABLE LOW RESET AND PRESET
+*
+.SUBCKT DLATRS D LAT R S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 DLTCH(1)
++  DPWR  DGND
++  S R LAT
++  D
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  D LATCH WITH ENABLE LOW PRESET
+*
+.SUBCKT DLATS D LAT S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 DLTCH(1)
++  DPWR  DGND
++  S $D_HI  LAT
++  D
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  D LATCH WITH ENABLE HIGH RESET
+*
+.SUBCKT DLATRH D LAT R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR  DGND
++  R  RBAR
++  D_PLD_GATE IO_PLD
+*
+U2 DLTCH(1)
++  DPWR  DGND
++  $D_HI RBAR LAT
++  D
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  D LATCH WITH ENABLE HIGH RESET AND PRESET
+*
+.SUBCKT DLATRSH D LAT R S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INVA(2)
++  DPWR  DGND
++  R    S
++  RBAR SBAR
++  D_PLD_GATE IO_PLD
+*
+U2 DLTCH(1)
++  DPWR  DGND
++  SBAR RBAR LAT
++  D
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*
+*  D LATCH WITH ENABLE HIGH PRESET
+*
+.SUBCKT DLATSH D LAT S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INVA
++  DPWR  DGND
++  S
++  SBAR
++  D_PLD_GATE IO_PLD
+*
+U2 DLTCH(1)
++  DPWR  DGND
++  SBAR $D_HI  LAT
++  D
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+**************************************************************************
+*
+*
+*                              FLIP FLOPS
+*
+*
+**************************************************************************
+*$
+*
+*                              D FLIP FLOP
+*
+*
+.SUBCKT DFF D CLK  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 DFF(1)
++  DPWR DGND
++  $D_HI $D_HI CLK
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*                      D FLIP FLOP WITH ENABLE LOW RESET
+*
+*
+.SUBCKT DFFR D CLK R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 DFF(1)
++  DPWR DGND
++  $D_HI R CLK
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*           D FLIP FLOP WITH ENABLE LOW PRESET AND RESET
+*
+*
+.SUBCKT DFFRS D CLK R S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 DFF(1)
++  DPWR DGND
++  S R  CLK
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*                      D FLIP FLOP WITH ENABLE LOW PRESET
+*
+*
+.SUBCKT DFFS D CLK S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 DFF(1)
++  DPWR DGND
++  S $D_HI  CLK
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*                      D FLIP FLOP WITH ENABLE HIGH RESET
+*
+*
+.SUBCKT DFFRH D CLK R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR  DGND
++  R    
++  RBAR 
++  D_PLD_GATE IO_PLD
+*
+U2 DFF(1)
++  DPWR DGND
++  $D_HI RBAR CLK
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*           D FLIP FLOP WITH ENABLE HIGH PRESET AND RESET
+*
+*
+.SUBCKT DFFRSH D CLK R S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INVA(2)
++  DPWR  DGND
++  R    S
++  RBAR SBAR
++  D_PLD_GATE IO_PLD
+*
+U2 DFF(1)
++  DPWR DGND
++  SBAR RBAR  CLK
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*                      D FLIP FLOP WITH ENABLE HIGH PRESET
+*
+*
+.SUBCKT DFFSH D CLK S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR  DGND
++  S
++  SBAR
++  D_PLD_GATE IO_PLD
+*
+U2 DFF(1)
++  DPWR DGND
++  SBAR $D_HI  CLK
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*                D FLIP FLOP WITH ENABLE HIGH CLOCK ENABLE
+*
+*
+.SUBCKT DFFC D CLK CE  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(2)
++  DPWR  DGND
++  CLK CE 
++  CLKO
++  D_PLD_GATE IO_PLD
+*
+U2 DFF(1)
++  DPWR DGND
++  $D_HI $D_HI  CLKO
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*       D FLIP FLOP WITH ENABLE HIGH CLOCK ENABLE AND ENABLE LOW RESET
+*
+*
+.SUBCKT DFFCR D CLK CE R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(2)
++  DPWR  DGND
++  CLK CE 
++  CLKO
++  D_PLD_GATE IO_PLD
+*
+U2 DFF(1)
++  DPWR DGND
++  $D_HI R CLKO
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*D FLIP FLOP WITH ENABLE HIGH CLOCK ENABLE AND ENABLE LOW PRESET AND RESET
+*
+*
+.SUBCKT DFFCRS D CLK CE R S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(2)
++  DPWR  DGND
++  CLK CE 
++  CLKO
++  D_PLD_GATE IO_PLD
+*
+U2 DFF(1)
++  DPWR DGND
++  S R CLKO
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*       D FLIP FLOP WITH ENABLE HIGH CLOCK ENABLE AND ENABLE LOW PRESET
+*
+*
+.SUBCKT DFFCS D CLK CE S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(2)
++  DPWR  DGND
++  CLK CE 
++  CLKO
++  D_PLD_GATE IO_PLD
+*
+U2 DFF(1)
++  DPWR DGND
++  S $D_HI CLKO
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*    D FLIP FLOP WITH ENABLE HIGH CLOCK ENABLE AND ENABLE HIGH RESET
+*
+*
+.SUBCKT DFFCRH D CLK CE R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(2)
++  DPWR  DGND
++  CLK CE 
++  CLKO
++  D_PLD_GATE IO_PLD
+*
+U2 INV
++  DPWR  DGND
++  R
++  RBAR
++  D_PLD_GATE IO_PLD
+*
+U3 DFF(1)
++  DPWR DGND
++  $D_HI RBAR CLKO
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*        D FLIP FLOP WITH ENABLE HIGH CLOCK ENABLE, PRESET AND RESET
+*
+*
+.SUBCKT DFFCRSH D CLK CE R S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(2)
++  DPWR  DGND
++  CLK CE 
++  CLKO
++  D_PLD_GATE IO_PLD
+*
+U2 INVA(2)
++  DPWR  DGND
++  R    S
++  RBAR SBAR
++  D_PLD_GATE IO_PLD
+*
+U3 DFF(1)
++  DPWR DGND
++  SBAR RBAR CLKO
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*       D FLIP FLOP WITH ENABLE HIGH CLOCK ENABLE AND RESET
+*
+*
+.SUBCKT DFFCSH D CLK CE S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 AND(2)
++  DPWR  DGND
++  CLK CE 
++  CLKO
++  D_PLD_GATE IO_PLD
+*
+U2 INV
++  DPWR DGND
++  S
++  SBAR
++  D_PLD_GATE IO_PLD
+*
+U3 DFF(1)
++  DPWR DGND
++  SBAR $D_HI CLKO
++  D
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*                            JK FLIP FLOP 
+*
+*
+.SUBCKT JKFF  J CLK K  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 JKFF(1)
++  DPWR DGND
++  $D_HI $D_HI CLK
++  J
++  K
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*                     JK FLIP FLOP WITH ENABLE LOW RESET
+*
+*
+.SUBCKT JKFFR  J CLK K R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 JKFF(1)
++  DPWR DGND
++  $D_HI R CLK
++  J
++  K
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*              JK FLIP FLOP WITH ENABLE LOW PRESET AND RESET
+*
+*
+.SUBCKT JKFFRS  J CLK K R S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 JKFF(1)
++  DPWR DGND
++  S R CLK
++  J
++  K
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*                     JK FLIP FLOP WITH ENABLE LOW PRESET
+*
+*
+.SUBCKT JKFFS  J CLK K S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 JKFF(1)
++  DPWR DGND
++  S $D_HI CLK
++  J
++  K
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*                     JK FLIP FLOP WITH ENABLE HIGH RESET
+*
+*
+.SUBCKT JKFFRH  J CLK K R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR DGND
++  R
++  RBAR
++  D_PLD_GATE IO_PLD
+*
+U2 JKFF(1)
++  DPWR DGND
++  $D_HI RBAR CLK
++  J
++  K
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*              JK FLIP FLOP WITH ENABLE HIGH PRESET AND RESET
+*
+*
+.SUBCKT JKFFRSH  J CLK K R S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INVA(2)
++  DPWR DGND
++  R    S
++  RBAR SBAR
++  D_PLD_GATE IO_PLD
+*
+U2 JKFF(1)
++  DPWR DGND
++  SBAR RBAR CLK
++  J
++  K
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*                     JK FLIP FLOP WITH ENABLE HIGH PRESET
+*
+*
+.SUBCKT JKFFSH  J CLK K S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR DGND
++  S
++  SBAR
++  D_PLD_GATE IO_PLD
+*
+U2 JKFF(1)
++  DPWR DGND
++  SBAR $D_HI CLK
++  J
++  K
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*                                RS FLIP FLOP
+*              
+*
+.SUBCKT RSFF  SE CLK RE  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 SRFF(1)
++  DPWR DGND
++  $D_HI $D_HI CLK
++  SE
++  RE
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*                RS FLIP FLOP WITH ENABLE LOW RESET
+*
+*
+.SUBCKT RSFFR  SE CLK RE R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 SRFF(1)
++  DPWR DGND
++  $D_HI R CLK
++  SE
++  RE
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*              RS FLIP FLOP WITH ENABLE LOW PRESET AND RESET
+*
+*
+.SUBCKT RSFFRS  SE CLK RE R S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 SRFF(1)
++  DPWR DGND
++  S R CLK
++  SE
++  RE
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*              RS FLIP FLOP WITH ENABLE LOW PRESET
+*
+*
+.SUBCKT RSFFS  SE CLK RE S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 SRFF(1)
++  DPWR DGND
++  S $D_HI CLK
++  SE
++  RE
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*              RS FLIP FLOP WITH ENABLE HIGH RESET
+*
+*
+.SUBCKT RSFFRH  SE CLK RE R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR  DGND
++  R    
++  RBAR 
++  D_PLD_GATE IO_PLD
+*
+U2 SRFF(1)
++  DPWR DGND
++  $D_HI RBAR CLK
++  SE
++  RE
++  Q
++  QBAR     
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*            RS FLIP FLOP WITH ENABLE HIGH PRESET AND RESET
+*
+*
+.SUBCKT RSFFRSH  SE CLK RE R S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INVA(2)
++  DPWR  DGND
++  R    S
++  RBAR SBAR
++  D_PLD_GATE IO_PLD
+*
+U2 SRFF(1)
++  DPWR DGND
++  SBAR RBAR CLK
++  SE
++  RE
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*                 RS FLIP FLOP WITH ENABLE HIGH PRESET
+*
+*
+.SUBCKT RSFFSH  SE CLK RE S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR  DGND
++  S
++  SBAR
++  D_PLD_GATE IO_PLD
+*
+U2 SRFF(1)
++  DPWR DGND
++  SBAR $D_HI CLK
++  SE
++  RE
++  Q
++  QBAR
++  D_PLD_GFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*                              T (JK) FLIP FLOP 
+*
+*
+.SUBCKT TFF  T CLK  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 JKFF(1)
++  DPWR DGND
++  $D_HI $D_HI CLK
++  T
++  T
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*              T (JK) FLIP FLOP WITH ENABLE LOW RESET
+*
+*
+.SUBCKT TFFR  T CLK R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 JKFF(1)
++  DPWR DGND
++  $D_HI R CLK
++  T
++  T
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*      T (JK) FLIP FLOP WITH ENABLE LOW PRESET AND RESET
+*
+*
+.SUBCKT TFFRS  T CLK R S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 JKFF(1)
++  DPWR DGND
++  S R CLK
++  T
++  T
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*              T (JK) FLIP FLOP WITH ENABLE LOW PRESET
+*
+*
+.SUBCKT TFFS  T CLK S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 JKFF(1)
++  DPWR DGND
++  S $D_HI CLK
++  T
++  T
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*              T (JK) FLIP FLOP WITH ENABLE HIGH RESET
+*
+*
+.SUBCKT TFFRH  T CLK R  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR  DGND
++  R    
++  RBAR 
++  D_PLD_GATE IO_PLD
+*
+U2 JKFF(1)
++  DPWR DGND
++  $D_HI RBAR CLK
++  T
++  T
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*      T (JK) FLIP FLOP WITH ENABLE HIGH PRESET AND RESET
+*
+*
+.SUBCKT TFFRSH  T CLK R S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INVA(2)
++  DPWR  DGND
++  R    S
++  RBAR SBAR
++  D_PLD_GATE IO_PLD
+*
+U2 JKFF(1)
++  DPWR DGND
++  SBAR RBAR CLK
++  T
++  T
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*-------------------------------------------------------------------------
+*
+*              T (JK) FLIP FLOP WITH ENABLE HIGH RESET
+*
+*
+.SUBCKT TFFSH  T CLK S  Q QBAR
++	optional: DPWR=$G_DPWR DGND=$G_DGND
+*
+U1 INV
++  DPWR  DGND
++  S
++  SBAR
++  D_PLD_GATE IO_PLD
+*
+U2 JKFF(1)
++  DPWR DGND
++  SBAR $D_HI CLK
++  T
++  T
++  Q
++  QBAR
++  D_PLD_EFF IO_PLD
+*
+.ENDS
+*$
+*
+*****************************************************************************
+*
+*                                ADDERS
+*
+*
+*****************************************************************************
+*$
+* 1-BIT BINARY ADDER
+* 
+.SUBCKT ADD1 S0 COUT A0 B0 CIN 
++ OPTIONAL: DPWR = $G_DPWR DGND = $G_DGND
+
+UADD1LOG LOGICEXP(3,2) DPWR DGND
++ A0 B0 CIN
++ S0 COUT
++ D_PLD_GATE IO_PLD 
++
++ LOGIC:
++   A0BAR = { ~A0 }
++   B0BAR = { ~B0 }
++   CINBAR = { ~CIN }
++
++   S0 = { (CINBAR & A0BAR & B0) | (CIN & A0BAR & B0BAR) 
++          | (A0 & B0 & CIN) | (A0 & B0BAR & CINBAR) } 
++   COUT = { (CIN & B0) | (CIN & A0) | (A0 & B0) }
+
+.ENDS
+*$
+*
+*-------------------------------------------------------------------------
+*$
+* 2-BIT BINARY ADDER
+* 
+.SUBCKT ADD2 S0 S1 COUT A0 A1 B0 B1 CIN 
++ OPTIONAL: DPWR = $G_DPWR DGND = $G_DGND
+
+UADD2LOG LOGICEXP(5,3) DPWR DGND
++ CIN A0 B0 A1 B1
++ S0 S1 COUT
++ D_PLD_GATE IO_PLD 
++
++ LOGIC:
++   A1BAR = { ~A1 }
++   B1BAR = { ~B1 }
++
++   CINA0B0 = { ~( (CIN & A0) | (CIN & B0) | (A0 & B0) ) }
++   S0 = { (CIN & CINA0B0) | (A0 & CINA0B0) | (B0 & CINA0B0) | (CIN & A0 & B0)}
++   COUT = { ~( ( CINA0B0 & A1BAR) | (CINA0B0 & B1BAR) | (A1BAR & B1BAR) ) }
++   S1 = { ~( (CINA0B0 & COUT) | (COUT & A1BAR) | (COUT & B1BAR) |
++               (A1BAR & B1BAR & CINA0B0) ) }
+
+.ENDS
+*$
+*
+*-------------------------------------------------------------------------
+*$
+* 
+* 3-BIT BINARY ADDER
+*
+.SUBCKT ADD3 S0 S1 S2 COUT A0 A1 A2 B0 B1 B2 CIN 
++ OPTIONAL: DPWR = $G_DPWR DGND = $G_DGND
+
+UADD3LOG LOGICEXP(7,4) DPWR DGND
++ A0 A1 A2 B0 B1 B2 CIN 
++ S0 S1 S2 COUT 
++ D_PLD_GATE IO_PLD
++
++ LOGIC:
++   NAND2 = { ~(A2 & B2) }
++   NAND1 = { ~(A1 & B1) }
++   NAND0 = { ~(A0 & B0) }
++   NOR2 = { ~(A2 | B2) }
++   NOR1 = { ~(A1 | B1) }
++   NOR0 = { ~(A0 | B0) }
++   CINBAR = { ~CIN }
++
++   S0 = { (NAND0 & ~NOR0) ^ CIN }
++   S1 = { (NAND1 & ~NOR1) ^ (~(NOR0 | (NAND0 & CINBAR))) }
++   S2 = { (NAND2 & ~NOR2) ^ (~(NOR1 | (NOR0 & NAND1) |
++            (NAND1 & NAND0 & CINBAR))) }
++   COUT = { (~(NOR2 | (NOR1 & NAND2) |
++            (NOR0 & NAND2 & NAND1) | (NAND2 & NAND1 & NAND0 & CINBAR))) }
+   
+.ENDS
+*$
+*
+*-------------------------------------------------------------------------
+*$
+* 
+* 4-BIT BINARY ADDER
+*
+.SUBCKT ADD4 S0 S1 S2 S3 COUT A0 A1 A2 A3 B0 B1 B2 B3 CIN 
++ OPTIONAL: DPWR = $G_DPWR DGND = $G_DGND
+
+UADD4LOG LOGICEXP(9,5) DPWR DGND
++ A0 A1 A2 A3 B0 B1 B2 B3 CIN 
++ S0 S1 S2 S3 COUT 
++ D_PLD_GATE IO_PLD
++
++ LOGIC:
++   NAND3 = { ~(A3 & B3) }
++   NAND2 = { ~(A2 & B2) }
++   NAND1 = { ~(A1 & B1) }
++   NAND0 = { ~(A0 & B0) }
++   NOR3 = { ~(A3 | B3) }
++   NOR2 = { ~(A2 | B2) }
++   NOR1 = { ~(A1 | B1) }
++   NOR0 = { ~(A0 | B0) }
++   CINBAR = { ~CIN }
++
++   S0 = { (NAND0 & ~NOR0) ^ CIN }
++   S1 = { (NAND1 & ~NOR1) ^ (~(NOR0 | (NAND0 & CINBAR))) }
++   S2 = { (NAND2 & ~NOR2) ^ (~(NOR1 | (NOR0 & NAND1) |
++            (NAND1 & NAND0 & CINBAR))) }
++   S3 = { (NAND3 & ~NOR3) ^ (~(NOR2 | (NOR1 & NAND2) |
++            (NOR0 & NAND2 & NAND1) | (NAND2 & NAND1 & NAND0 & CINBAR))) }
++   COUT = { ~( NOR3 | (NOR2 & NAND3) | (NOR1 & NAND3 & NAND2) |
++             (NOR0 & NAND3 & NAND2 & NAND1) |
++             (NAND3 & NAND2 & NAND1 & NAND0 & CINBAR) ) }
+
+.ENDS
+*$
+*
+*-------------------------------------------------------------------------
+*$
+* 
+* 8-BIT BINARY ADDER
+*
+.SUBCKT ADD8 S0 S1 S2 S3 S4 S5 S6 S7 COUT
++ A0 A1 A2 A3 A4 A5 A6 A7 B0 B1 B2 B3 B4 B5 B6 B7 CIN 
++ OPTIONAL: DPWR = $G_DPWR DGND = $G_DGND
+
+UADD8LOG LOGICEXP(17,9) DPWR DGND
++ A0 A1 A2 A3 A4 A5 A6 A7 B0 B1 B2 B3 B4 B5 B6 B7 CIN 
++ S0 S1 S2 S3 S4 S5 S6 S7 COUT 
++ D_PLD_GATE IO_PLD
++
++ LOGIC:
++   NAND7 = { ~(A7 & B7) }
++   NAND6 = { ~(A6 & B6) }
++   NAND5 = { ~(A5 & B5) }
++   NAND4 = { ~(A4 & B4) }
++   NAND3 = { ~(A3 & B3) }
++   NAND2 = { ~(A2 & B2) }
++   NAND1 = { ~(A1 & B1) }
++   NAND0 = { ~(A0 & B0) }
++   NOR7 = { ~(A7 | B7) }
++   NOR6 = { ~(A6 | B6) }
++   NOR5 = { ~(A5 | B5) }
++   NOR4 = { ~(A4 | B4) }
++   NOR3 = { ~(A3 | B3) }
++   NOR2 = { ~(A2 | B2) }
++   NOR1 = { ~(A1 | B1) }
++   NOR0 = { ~(A0 | B0) }
++   CINBAR = { ~CIN }
++
++   S0 = { (NAND0 & ~NOR0) ^ CIN }
++   S1 = { (NAND1 & ~NOR1) ^ (~(NOR0 | (NAND0 & CINBAR))) }
++   S2 = { (NAND2 & ~NOR2) ^ (~(NOR1 | (NOR0 & NAND1) |
++            (NAND1 & NAND0 & CINBAR))) }
++   S3 = { (NAND3 & ~NOR3) ^ (~(NOR2 | (NOR1 & NAND2) |
++            (NOR0 & NAND2 & NAND1) | (NAND2 & NAND1 & NAND0 & CINBAR))) }
++   S4 = { (NAND4 & ~NOR4) ^ (~( NOR3 | (NOR2 & NAND3) | 
++            (NOR1 & NAND3 & NAND2) | (NOR0 & NAND3 & NAND2 & NAND1) |
++            (NAND3 & NAND2 & NAND1 & NAND0 & CINBAR))) }
++   S5 = { (NAND5 & ~NOR5) ^ (~( NOR4 | (NOR3 & NAND4) | 
++            (NOR2 & NAND4 & NAND3) | (NOR1 & NAND4 & NAND3 & NAND2) |
++            (NOR0 & NAND4 & NAND3 & NAND2 & NAND1) |
++            (NAND4 & NAND3 & NAND2 & NAND1 & NAND0 & CINBAR))) }
++   S6 = { (NAND6 & ~NOR6) ^ (~( NOR5 | (NOR4 & NAND5) | 
++            (NOR3 & NAND5 & NAND4) | (NOR2 & NAND5 & NAND4 & NAND3) |
++            (NOR1 & NAND5 & NAND4 & NAND3 & NAND2) |
++            (NOR0 & NAND5 & NAND4 & NAND3 & NAND2 & NAND1) |
++            (NAND5 & NAND4 & NAND3 & NAND2 & NAND1 & NAND0 & CINBAR))) }
++   S7 = { (NAND7 & ~NOR7) ^ (~( NOR6 | (NOR5 & NAND6) | 
++            (NOR4 & NAND6 & NAND5) | (NOR3 & NAND6 & NAND5 & NAND4) |
++            (NOR2 & NAND6 & NAND5 & NAND4 & NAND3) |
++            (NOR1 & NAND6 & NAND5 & NAND4 & NAND3 & NAND2) |
++            (NOR0 & NAND6 & NAND5 & NAND4 & NAND3 & NAND2 & NAND1) |
++            (NAND6 & NAND5 & NAND4 & NAND3 & NAND2 & NAND1 & NAND0 &
++            CINBAR))) }
++   COUT = { ~( NOR7 | (NOR6 & NAND7) | 
++            (NOR5 & NAND7 & NAND6) | (NOR4 & NAND7 & NAND6 & NAND5) |
++            (NOR3 & NAND7 & NAND6 & NAND5 & NAND4) |
++            (NOR2 & NAND7 & NAND6 & NAND5 & NAND4 & NAND3) |
++            (NOR1 & NAND7 & NAND6 & NAND5 & NAND4 & NAND3 & NAND2) |
++            (NOR0 & NAND7 & NAND6 & NAND5 & NAND4 & NAND3 & NAND2 & NAND1) |
++            (NAND7 & NAND6 & NAND5 & NAND4 & NAND3 & NAND2 & NAND1 & NAND0 &
++            CINBAR)) }
+
+.ENDS
+*$
+*
+*-----------------------------
+*
+.MODEL D_PLD_GATE  UGATE
+.MODEL D_PLD_TGATE  UTGATE
+.MODEL D_PLD_EFF  UEFF
+.MODEL D_PLD_GFF  UGFF
+.MODEL IO_PLD  UIO
+*
+*$

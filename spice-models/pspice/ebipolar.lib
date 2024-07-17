@@ -1,0 +1,1192 @@
+* Library of European Bipolar Transistor Models
+*
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+*
+* $Revision:   1.5  $
+* $Author:   RPEREZ  $
+* $Date:   17 Apr 1998 14:02:02  $
+*
+*
+* ----------------------------------------------------------------------------
+* The parameters in this model library were derived from the data sheets for
+* each part.  Each part was characterized using Parts.
+*
+*
+*------------------------------------------------------------------------------
+* Small-Signal Bipolar Transistors
+* contents: SIEMENS Discrete Semiconductors for Surface Mounting 87/88
+* contents: PHILIPS Semiconductors Book S3 1988
+* note	: hoe, C and Ts may be estimated by given or conventional limits.
+*$
+.model BC107A   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=116.3 Bf=375.5 Ise=7.049f
++               Ne=1.281 Ikf=4.589 Nk=.5 Xtb=1.5 Br=2.611 Isc=121.7p Nc=1.865
++               Ikr=5.313 Rc=1.464 Cjc=5.38p Mjc=.329 Vjc=.6218 Fc=.5 Cje=11.5p
++               Mje=.2717 Vje=.5 Tr=10n Tf=451p Itf=6.194 Xtf=17.43 Vtf=10)
+*		PHILIPS		pid=bc107a	case=TO18
+*		91-08-02 dsq
+*$
+.model BC107B   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=59.59 Bf=381.7 Ise=59.74f
++               Ne=1.522 Ikf=3.289 Nk=.5 Xtb=1.5 Br=2.359 Isc=192.9p Nc=1.954
++               Ikr=7.807 Rc=1.427 Cjc=5.38p Mjc=.329 Vjc=.6218 Fc=.5 Cje=11.5p
++               Mje=.2718 Vje=.5 Tr=10n Tf=438p Itf=5.716 Xtf=14.51 Vtf=10)
+*		PHILIPS		pid=bc107b	case=TO18
+*		91-08-02 dsq
+*$
+.model BC108A   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=116.3 Bf=375.5 Ise=7.049f
++               Ne=1.281 Ikf=4.589 Nk=.5 Xtb=1.5 Br=2.611 Isc=121.7p Nc=1.865
++               Ikr=5.313 Rc=1.464 Cjc=5.38p Mjc=.329 Vjc=.6218 Fc=.5 Cje=11.5p
++               Mje=.2717 Vje=.5 Tr=10n Tf=451p Itf=6.194 Xtf=17.43 Vtf=10)
+*		PHILIPS		pid=bc107a	case=TO18
+*		91-08-02 dsq
+*$
+.model BC108B   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=59.59 Bf=381.7 Ise=59.74f
++               Ne=1.522 Ikf=3.289 Nk=.5 Xtb=1.5 Br=2.359 Isc=192.9p Nc=1.954
++               Ikr=7.807 Rc=1.427 Cjc=5.38p Mjc=.329 Vjc=.6218 Fc=.5 Cje=11.5p
++               Mje=.2718 Vje=.5 Tr=10n Tf=438p Itf=5.716 Xtf=14.51 Vtf=10)
+*		PHILIPS		pid=bc107b	case=TO18
+*		91-08-02 dsq
+*$
+.model BC108C   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=28.14 Bf=677 Ise=7.049f Ne=1.38
++               Ikf=96.23 Nk=.5 Xtb=1.5 Br=2.209 Isc=250.3p Nc=2.002 Ikr=10.73
++               Rc=1.433 Cjc=5.38p Mjc=.329 Vjc=.6218 Fc=.5 Cje=11.5p Mje=.2717
++               Vje=.5 Tr=10n Tf=437.8p Itf=3.097 Xtf=12.85 Vtf=10)
+*		PHILIPS		pid=bc108c	case=TO18
+*		91-08-02 dsq
+*$
+.model BC109B   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=59.59 Bf=381.7 Ise=59.74f
++               Ne=1.522 Ikf=3.289 Nk=.5 Xtb=1.5 Br=2.359 Isc=192.9p Nc=1.954
++               Ikr=7.807 Rc=1.427 Cjc=5.38p Mjc=.329 Vjc=.6218 Fc=.5 Cje=11.5p
++               Mje=.2718 Vje=.5 Tr=10n Tf=438p Itf=5.716 Xtf=14.51 Vtf=10)
+*		PHILIPS		pid=bc107b	case=TO18
+*		91-08-02 dsq
+*$
+.model BC109C   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=28.14 Bf=677 Ise=7.049f Ne=1.38
++               Ikf=96.23 Nk=.5 Xtb=1.5 Br=2.209 Isc=250.3p Nc=2.002 Ikr=10.73
++               Rc=1.433 Cjc=5.38p Mjc=.329 Vjc=.6218 Fc=.5 Cje=11.5p Mje=.2717
++               Vje=.5 Tr=10n Tf=437.8p Itf=3.097 Xtf=12.85 Vtf=10)
+*		PHILIPS		pid=bc108c	case=TO18
+*		91-08-02 dsq
+*$
+.model BC177    PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=55.46 Bf=154.4 Ise=412.1f
++               Ne=1.429 Ikf=.2994 Nk=.7028 Xtb=1.5 Br=3.99 Isc=1.03n Nc=1.958
++               Ikr=9.726 Rc=1.833 Cjc=11p Mjc=.2223 Vjc=.5 Fc=.5 Cje=33p
++               Mje=.3333 Vje=.5 Tr=10n Tf=847.7p Itf=2.198 Xtf=23.26 Vtf=10)
+*		PHILIPS		pid=bc177	case=TO18
+*		91-07-31 dsq
+*$
+.model BC178A   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=44.61 Bf=187 Ise=336.8f
++               Ne=1.459 Ikf=.2059 Nk=.5081 Xtb=1.5 Br=4.068 Isc=1.121n
++               Nc=1.953 Ikr=10.05 Rc=1.86 Cjc=11p Mjc=.2223 Vjc=.5 Fc=.5
++               Cje=33p Mje=.3333 Vje=.5 Tr=10n Tf=845.5p Itf=1.701 Xtf=19.04
++               Vtf=10)
+*		PHILIPS		pid=bc178a	case=TO18
+*		91-08-02 dsq
+*$
+.model BC178B   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=30.75 Bf=271.9 Ise=2.821p
++               Ne=1.925 Ikf=.2462 Nk=.5416 Xtb=1.5 Br=3.009 Isc=1.753n
++               Nc=2.075 Ikr=8.143 Rc=1.803 Cjc=11p Mjc=.2223 Vjc=.5 Fc=.5
++               Cje=33p Mje=.3333 Vje=.5 Tr=10n Tf=846p Itf=1.546 Xtf=18.27
++               Vtf=10)
+*		PHILIPS 	pid=bc178b	case=TO18
+*		91-08-02 dsq
+*$
+.model BC179A   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=44.61 Bf=187 Ise=336.8f
++               Ne=1.459 Ikf=.2059 Nk=.5081 Xtb=1.5 Br=4.068 Isc=1.121n
++               Nc=1.953 Ikr=10.05 Rc=1.86 Cjc=11p Mjc=.2223 Vjc=.5 Fc=.5
++               Cje=33p Mje=.3333 Vje=.5 Tr=10n Tf=845.5p Itf=1.701 Xtf=19.04
++               Vtf=10)
+*		PHILIPS		pid=bc178a	case=TO18
+*		91-08-02 dsq
+*$
+.model BC179B   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=30.75 Bf=271.9 Ise=2.821p
++               Ne=1.925 Ikf=.2462 Nk=.5416 Xtb=1.5 Br=3.009 Isc=1.753n
++               Nc=2.075 Ikr=8.143 Rc=1.803 Cjc=11p Mjc=.2223 Vjc=.5 Fc=.5
++               Cje=33p Mje=.3333 Vje=.5 Tr=10n Tf=846p Itf=1.546 Xtf=18.27
++               Vtf=10)
+*		PHILIPS 	pid=bc178b	case=TO18
+*		91-08-02 dsq
+*$
+.model BC368    NPN(Is=14.06f Xti=3 Eg=1.11 Vaf=100 Bf=187.6 Ise=137.2f
++               Ne=1.468 Ikf=4.103 Nk=.5507 Xtb=1.5 Br=4.541 Isc=44.13f
++               Nc=1.471 Ikr=1.701 Rc=91m Cjc=52.24p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=156p Mje=.3333 Vje=.5 Tr=10n Tf=964.8p Itf=595.3 Xtf=1.001K
++               Vtf=10)
+*		PHILIPS		pid=bc368	case=TO92
+*		91-08-02 dsq
+*$
+.model BC369    PNP(Is=13.01f Xti=3 Eg=1.11 Vaf=100 Bf=191.1 Ise=105f Ne=1.695
++               Ikf=2.253 Nk=.5176 Xtb=1.5 Br=9.046MEG Isc=853.3f Nc=9.905
++               Ikr=116.1 Rc=.1694 Cjc=87.73p Mjc=.3333 Vjc=.5 Fc=.5 Cje=261p
++               Mje=.3333 Vje=.5 Tr=10n Tf=998.5p Itf=14.84 Xtf=15.37 Vtf=10)
+*		PHILIPS		pid=bc369	case=TO92
+*		91-07-31 dsq
+*$
+.model BC546A   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=127.9 Bf=253 Ise=96.26f
++               Ne=1.556 Ikf=77.05m Nk=.5305 Xtb=1.5 Br=1 Isc=130.8f Nc=1.602
++               Ikr=3.321 Rc=.8766 Cjc=5.25p Mjc=.3147 Vjc=.5697 Fc=.5
++               Cje=11.5p Mje=.6715 Vje=.5 Tr=10n Tf=409.5p Itf=1.994 Xtf=40.12
++               Vtf=10)
+*		PHILIPS		pid=bc546a	case=TO92
+*		91-07-31 dsq
+*$
+.model BC546B   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=62.79 Bf=374.6 Ise=68f Ne=1.576
++               Ikf=81.57m Nk=.4767 Xtb=1.5 Br=1 Isc=12.4f Nc=1.835 Ikr=3.924
++               Rc=.9747 Cjc=5.25p Mjc=.3147 Vjc=.5697 Fc=.5 Cje=11.5p
++               Mje=.6715 Vje=.5 Tr=10n Tf=410.2p Itf=1.491 Xtf=40.06 Vtf=10)
+*		PHILIPS		pid=bc546b	case=TO92
+*		91-07-31 dsq
+*$
+.model BC547A   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=127.9 Bf=253 Ise=96.26f
++               Ne=1.556 Ikf=77.05m Nk=.5305 Xtb=1.5 Br=1 Isc=130.8f Nc=1.602
++               Ikr=3.321 Rc=.8766 Cjc=5.25p Mjc=.3147 Vjc=.5697 Fc=.5
++               Cje=11.5p Mje=.6715 Vje=.5 Tr=10n Tf=409.5p Itf=1.994 Xtf=40.12
++               Vtf=10)
+*		PHILIPS		pid=bc546a	case=TO92
+*		91-07-31 dsq
+*$
+.model BC547B   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=62.79 Bf=374.6 Ise=68f Ne=1.576
++               Ikf=81.57m Nk=.4767 Xtb=1.5 Br=1 Isc=12.4f Nc=1.835 Ikr=3.924
++               Rc=.9747 Cjc=5.25p Mjc=.3147 Vjc=.5697 Fc=.5 Cje=11.5p
++               Mje=.6715 Vje=.5 Tr=10n Tf=410.2p Itf=1.491 Xtf=40.06 Vtf=10)
+*		PHILIPS		pid=bc546b	case=TO92
+*		91-07-31 dsq
+*$
+.model BC547C   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=24.76 Bf=543.1 Ise=78.17f
++               Ne=1.679 Ikf=94.96m Nk=.5381 Xtb=1.5 Br=1 Isc=27.51f Nc=1.775
++               Ikr=3.321 Rc=.9706 Cjc=5.25p Mjc=.3147 Vjc=.5697 Fc=.5
++               Cje=11.5p Mje=.6715 Vje=.5 Tr=10n Tf=410.7p Itf=1.12 Xtf=26.19
++               Vtf=10)
+*		PHILIPS		pid=bc547c	case=TO92
+*		91-07-31 dsq
+*$
+.model BC548A   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=127.9 Bf=253 Ise=96.26f
++               Ne=1.556 Ikf=77.05m Nk=.5305 Xtb=1.5 Br=1 Isc=130.8f Nc=1.602
++               Ikr=3.321 Rc=.8766 Cjc=5.25p Mjc=.3147 Vjc=.5697 Fc=.5
++               Cje=11.5p Mje=.6715 Vje=.5 Tr=10n Tf=409.5p Itf=1.994 Xtf=40.12
++               Vtf=10)
+*		PHILIPS		pid=bc546a	case=TO92
+*		91-07-31 dsq
+*$
+.model BC548B   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=62.79 Bf=374.6 Ise=68f Ne=1.576
++               Ikf=81.57m Nk=.4767 Xtb=1.5 Br=1 Isc=12.4f Nc=1.835 Ikr=3.924
++               Rc=.9747 Cjc=5.25p Mjc=.3147 Vjc=.5697 Fc=.5 Cje=11.5p
++               Mje=.6715 Vje=.5 Tr=10n Tf=410.2p Itf=1.491 Xtf=40.06 Vtf=10)
+*		PHILIPS		pid=bc546b	case=TO92
+*		91-07-31 dsq
+*$
+.model BC548C   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=24.76 Bf=543.1 Ise=78.17f
++               Ne=1.679 Ikf=94.96m Nk=.5381 Xtb=1.5 Br=1 Isc=27.51f Nc=1.775
++               Ikr=3.321 Rc=.9706 Cjc=5.25p Mjc=.3147 Vjc=.5697 Fc=.5
++               Cje=11.5p Mje=.6715 Vje=.5 Tr=10n Tf=410.7p Itf=1.12 Xtf=26.19
++               Vtf=10)
+*		PHILIPS		pid=bc547c	case=TO92
+*		91-07-31 dsq
+*$
+.model BC549B   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=59.93 Bf=375.6 Ise=56.03f
++               Ne=1.553 Ikf=87.07m Nk=.4901 Xtb=1.5 Br=2.886 Isc=7.371p
++               Nc=1.508 Ikr=5.426 Rc=1.175 Cjc=5.5p Mjc=.3132 Vjc=.4924 Fc=.5
++               Cje=11.5p Mje=.6558 Vje=.5 Tr=10n Tf=417.3p Itf=1.512 Xtf=39.51
++               Vtf=10)
+*		PHILIPS		pid=bc549b	case=TO92
+*		91-07-31 dsq
+*$
+.model BC549C   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=23.89 Bf=493.2 Ise=99.2f
++               Ne=1.829 Ikf=.1542 Nk=.6339 Xtb=1.5 Br=2.886 Isc=7.371p
++               Nc=1.508 Ikr=5.426 Rc=1.175 Cjc=5.5p Mjc=.3132 Vjc=.4924 Fc=.5
++               Cje=11.5p Mje=.6558 Vje=.5 Tr=10n Tf=420.3p Itf=1.374 Xtf=39.42
++               Vtf=10)
+*		PHILIPS		pid=bc549c	case=TO92
+*		91-07-31 dsq
+*$
+.model BC550B   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=59.93 Bf=375.6 Ise=56.03f
++               Ne=1.553 Ikf=87.07m Nk=.4901 Xtb=1.5 Br=2.886 Isc=7.371p
++               Nc=1.508 Ikr=5.426 Rc=1.175 Cjc=5.5p Mjc=.3132 Vjc=.4924 Fc=.5
++               Cje=11.5p Mje=.6558 Vje=.5 Tr=10n Tf=417.3p Itf=1.512 Xtf=39.51
++               Vtf=10)
+*		PHILIPS		pid=bc549b	case=TO92
+*		91-07-31 dsq
+*$
+.model BC550C   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=23.89 Bf=493.2 Ise=99.2f
++               Ne=1.829 Ikf=.1542 Nk=.6339 Xtb=1.5 Br=2.886 Isc=7.371p
++               Nc=1.508 Ikr=5.426 Rc=1.175 Cjc=5.5p Mjc=.3132 Vjc=.4924 Fc=.5
++               Cje=11.5p Mje=.6558 Vje=.5 Tr=10n Tf=420.3p Itf=1.374 Xtf=39.42
++               Vtf=10)
+*		PHILIPS		pid=bc549c	case=TO92
+*		91-07-31 dsq
+*$
+.model BC556A   PNP(Is=1.02f Xti=3 Eg=1.11 Vaf=73.79 Bf=174.7 Ise=10.73f
++               Ne=1.644 Ikf=.1023 Nk=.5033 Xtb=1.5 Br=4.432 Isc=14.74f
++               Nc=1.296 Ikr=2.237 Rc=1.039 Cjc=9.81p Mjc=.332 Vjc=.4865 Fc=.5
++               Cje=30p Mje=.3333 Vje=.5 Tr=10n Tf=830.3p Itf=.8981 Xtf=10.32
++               Vtf=10)
+*		PHILIPS		pid=bc556a	case=TO92
+*		91-08-09 dsq
+*$
+.model BC556B   PNP(Is=1.02f Xti=3 Eg=1.11 Vaf=52.31 Bf=306.5 Ise=10.27f
++               Ne=1.764 Ikf=91.85m Nk=.5351 Xtb=1.5 Br=7.437 Isc=1.02f Nc=1.63
++               Ikr=1.7 Rc=1.162 Cjc=9.81p Mjc=.332 Vjc=.4865 Fc=.5 Cje=30p
++               Mje=.3333 Vje=.5 Tr=10n Tf=611.6p Itf=1.37 Xtf=25.92 Vtf=10)
+*		PHILIPS		pid=bc556b	case=TO92
+*		91-08-02 dsq
+*$
+.model BC557A   PNP(Is=1.02f Xti=3 Eg=1.11 Vaf=73.79 Bf=174.7 Ise=10.73f
++               Ne=1.644 Ikf=.1023 Nk=.5033 Xtb=1.5 Br=4.432 Isc=14.74f
++               Nc=1.296 Ikr=2.237 Rc=1.039 Cjc=9.81p Mjc=.332 Vjc=.4865 Fc=.5
++               Cje=30p Mje=.3333 Vje=.5 Tr=10n Tf=830.3p Itf=.8981 Xtf=10.32
++               Vtf=10)
+*		PHILIPS		pid=bc556a	case=TO92
+*		91-08-09 dsq
+*$
+.model BC557B   PNP(Is=1.02f Xti=3 Eg=1.11 Vaf=52.31 Bf=306.5 Ise=10.27f
++               Ne=1.764 Ikf=91.85m Nk=.5351 Xtb=1.5 Br=6.48 Isc=1.472f
++               Nc=1.294 Ikr=.5584 Rc=1.086 Cjc=9.81p Mjc=.332 Vjc=.4865 Fc=.5
++               Cje=30p Mje=.3333 Vje=.5 Tr=10n Tf=611.6p Itf=1.373 Xtf=26.05
++               Vtf=10)
+*		PHILIPS		pid=bc556b	case=TO92
+*		91-08-02 dsq
+*$
+.model BC557C   PNP(Is=1.02f Xti=3 Eg=1.11 Vaf=30.52 Bf=416.3 Ise=14.67f
++               Ne=1.854 Ikf=.2088 Nk=.8219 Xtb=1.5 Br=9.102 Isc=4.1f Nc=3.982
++               Ikr=19.25m Rc=.9373 Cjc=9.81p Mjc=.332 Vjc=.4865 Fc=.5 Cje=30p
++               Mje=.3333 Vje=.5 Tr=10n Tf=516.2p Itf=1.701 Xtf=35.24 Vtf=10)
+*		PHILIPS		pid=bc557c	case=TO92
+*		91-08-02 dsq
+*$
+.model BC558A   PNP(Is=1.02f Xti=3 Eg=1.11 Vaf=73.79 Bf=174.7 Ise=10.73f
++               Ne=1.644 Ikf=.1023 Nk=.5033 Xtb=1.5 Br=4.432 Isc=14.74f
++               Nc=1.296 Ikr=2.237 Rc=1.039 Cjc=9.81p Mjc=.332 Vjc=.4865 Fc=.5
++               Cje=30p Mje=.3333 Vje=.5 Tr=10n Tf=830.3p Itf=.8981 Xtf=10.32
++               Vtf=10)
+*		PHILIPS		pid=bc556a	case=TO92
+*		91-08-09 dsq
+*$
+.model BC558B   PNP(Is=1.02f Xti=3 Eg=1.11 Vaf=52.31 Bf=306.5 Ise=10.27f
++               Ne=1.764 Ikf=91.85m Nk=.5351 Xtb=1.5 Br=6.48 Isc=1.472f
++               Nc=1.294 Ikr=.5584 Rc=1.086 Cjc=9.81p Mjc=.332 Vjc=.4865 Fc=.5
++               Cje=30p Mje=.3333 Vje=.5 Tr=10n Tf=611.6p Itf=1.373 Xtf=26.05
++               Vtf=10)
+*		PHILIPS		pid=bc556b	case=TO92
+*		91-08-02 dsq
+*$
+.model BC558C   PNP(Is=1.02f Xti=3 Eg=1.11 Vaf=30.52 Bf=416.3 Ise=14.67f
++               Ne=1.854 Ikf=.2088 Nk=.8219 Xtb=1.5 Br=9.102 Isc=4.1f Nc=3.982
++               Ikr=19.25m Rc=.9373 Cjc=9.81p Mjc=.332 Vjc=.4865 Fc=.5 Cje=30p
++               Mje=.3333 Vje=.5 Tr=10n Tf=516.2p Itf=1.701 Xtf=35.24 Vtf=10)
+*		PHILIPS		pid=bc557c	case=TO92
+*		91-08-02 dsq
+*$
+.model BC559A   PNP(Is=1.02f Xti=3 Eg=1.11 Vaf=74.76 Bf=175.1 Ise=10.26f
++               Ne=1.641 Ikf=88.84m Nk=.4971 Xtb=1.5 Br=4.329 Isc=71.92f
++               Nc=1.401 Ikr=9.634 Rc=1.071 Cjc=9.81p Mjc=.332 Vjc=.4865 Fc=.5
++               Cje=30p Mje=.3333 Vje=.5 Tr=10n Tf=822.7p Itf=3.991 Xtf=174.7
++               Vtf=10)
+*		PHILIPS		pid=bc559a	case=TO92
+*		91-07-31 dsq
+*$
+.model BC559B   PNP(Is=1.02f Xti=3 Eg=1.11 Vaf=51.26 Bf=289.6 Ise=9.846f
++               Ne=1.845 Ikf=.1026 Nk=.5413 Xtb=1.5 Br=6.124 Isc=1.113f Nc=1.97
++               Ikr=.2035 Rc=1.078 Cjc=9.81p Mjc=.332 Vjc=.4865 Fc=.5 Cje=30p
++               Mje=.3333 Vje=.5 Tr=10n Tf=612.4p Itf=1.287 Xtf=25.55 Vtf=10)
+*		PHIILIPS	pid=bc559b	case=TO92
+*		91-08-02 dsq
+*$
+.model BC559C   PNP(Is=1.02f Xti=3 Eg=1.11 Vaf=34.62 Bf=401.6 Ise=38.26p
++               Ne=5.635 Ikf=74.73m Nk=.512 Xtb=1.5 Br=9.011 Isc=1.517f
++               Nc=1.831 Ikr=.1469 Rc=1.151 Cjc=9.81p Mjc=.332 Vjc=.4865 Fc=.5
++               Cje=30p Mje=.3333 Vje=.5 Tr=10n Tf=524p Itf=.9847 Xtf=17.71
++               Vtf=10)
+*		PHILIPS		pid=bc559c	case=TO92
+*		91-08-02 dsq
+*$
+.model BC560A   PNP(Is=1.02f Xti=3 Eg=1.11 Vaf=74.76 Bf=175.1 Ise=10.26f
++               Ne=1.641 Ikf=88.84m Nk=.4971 Xtb=1.5 Br=4.329 Isc=71.92f
++               Nc=1.401 Ikr=9.634 Rc=1.071 Cjc=9.81p Mjc=.332 Vjc=.4865 Fc=.5
++               Cje=30p Mje=.3333 Vje=.5 Tr=10n Tf=822.7p Itf=3.991 Xtf=174.7
++               Vtf=10)
+*		PHILIPS		pid=bc559a	case=TO92
+*		91-07-31 dsq
+*$
+.model BC560B   PNP(Is=1.02f Xti=3 Eg=1.11 Vaf=51.26 Bf=289.6 Ise=9.846f
++               Ne=1.845 Ikf=.1026 Nk=.5413 Xtb=1.5 Br=6.124 Isc=1.113f Nc=1.97
++               Ikr=.2035 Rc=1.078 Cjc=9.81p Mjc=.332 Vjc=.4865 Fc=.5 Cje=30p
++               Mje=.3333 Vje=.5 Tr=10n Tf=612.4p Itf=1.287 Xtf=25.55 Vtf=10)
+*		PHIILIPS	pid=bc559b	case=TO92
+*		91-08-02 dsq
+*$
+.model BC560C   PNP(Is=1.02f Xti=3 Eg=1.11 Vaf=34.62 Bf=401.6 Ise=38.26p
++               Ne=5.635 Ikf=74.73m Nk=.512 Xtb=1.5 Br=9.011 Isc=1.517f
++               Nc=1.831 Ikr=.1469 Rc=1.151 Cjc=9.81p Mjc=.332 Vjc=.4865 Fc=.5
++               Cje=30p Mje=.3333 Vje=.5 Tr=10n Tf=524p Itf=.9847 Xtf=17.71
++               Vtf=10)
+*		PHILIPS		pid=bc559c	case=TO92
+*		91-08-02 dsq
+*$
+.model BC807-16 PNP(Is=32.53f Xti=3 Eg=1.11 Vaf=100 Bf=209 Ise=318.3f Ne=1.542
++               Ikf=.6049 Nk=.6086 Xtb=1.5 Br=6.501 Isc=179.5f Nc=1.832
++               Ikr=.1402 Rc=.4026 Cjc=24.29p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p
++               Mje=.3333 Vje=.5 Tr=10n Tf=703p Itf=13.36 Xtf=1.289K Vtf=10)
+*		SIEMENS		pid=bc807-16	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC807-25 PNP(Is=32.53f Xti=3 Eg=1.11 Vaf=100 Bf=340 Ise=288.9f Ne=1.568
++               Ikf=.4118 Nk=.5241 Xtb=1.5 Br=6.333 Isc=262.4f Nc=1.87
++               Ikr=32.84m Rc=.3998 Cjc=24.29p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=71.14p Mje=.3333 Vje=.5 Tr=10n Tf=704.1p Itf=14.26
++               Xtf=1.332K Vtf=10)
+*		SIEMENS		pid=bc807-25	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC807-40 PNP(Is=32.53f Xti=3 Eg=1.11 Vaf=100 Bf=460.8 Ise=301.2f
++               Ne=1.615 Ikf=.4967 Nk=.5594 Xtb=1.5 Br=6.87 Isc=283.2f Nc=1.97
++               Ikr=9.135m Rc=.3759 Cjc=24.29p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=71.14p Mje=.3333 Vje=.5 Tr=10n Tf=704.3p Itf=13.89
++               Xtf=1.333K Vtf=10)
+*		SIEMENS		pid=bc807-40	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC808-16 PNP(Is=32.53f Xti=3 Eg=1.11 Vaf=100 Bf=209 Ise=318.3f Ne=1.542
++               Ikf=.6049 Nk=.6086 Xtb=1.5 Br=6.501 Isc=179.5f Nc=1.832
++               Ikr=.1402 Rc=.4026 Cjc=24.29p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p
++               Mje=.3333 Vje=.5 Tr=10n Tf=703p Itf=13.36 Xtf=1.289K Vtf=10)
+*		SIEMENS		pid=bc807-16	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC808-25 PNP(Is=32.53f Xti=3 Eg=1.11 Vaf=100 Bf=340 Ise=288.9f Ne=1.568
++               Ikf=.4118 Nk=.5241 Xtb=1.5 Br=6.333 Isc=262.4f Nc=1.87
++               Ikr=32.84m Rc=.3998 Cjc=24.29p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=71.14p Mje=.3333 Vje=.5 Tr=10n Tf=704.1p Itf=14.26
++               Xtf=1.332K Vtf=10)
+*		SIEMENS		pid=bc807-25	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC808-40 PNP(Is=32.53f Xti=3 Eg=1.11 Vaf=100 Bf=460.8 Ise=301.2f
++               Ne=1.615 Ikf=.4967 Nk=.5594 Xtb=1.5 Br=6.87 Isc=283.2f Nc=1.97
++               Ikr=9.135m Rc=.3759 Cjc=24.29p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=71.14p Mje=.3333 Vje=.5 Tr=10n Tf=704.3p Itf=13.89
++               Xtf=1.333K Vtf=10)
+*		SIEMENS		pid=bc807-40	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC817-16 NPN(Is=32.53f Xti=3 Eg=1.11 Vaf=100 Bf=190.4 Ise=299f Ne=1.583
++               Ikf=.7695 Nk=.5467 Xtb=1.5 Br=6.313 Isc=138f Nc=2.053 Ikr=.187
++               Rc=.4216 Cjc=24.29p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p Mje=.3333
++               Vje=.5 Tr=10n Tf=660.1p Itf=2.204 Xtf=66.65 Vtf=10)
+*		SIEMENS 	pid=bc817-16	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC817-25 NPN(Is=32.53f Xti=3 Eg=1.11 Vaf=100 Bf=294.4 Ise=318.5f
++               Ne=1.642 Ikf=.8311 Nk=.5663 Xtb=1.5 Br=5.855 Isc=199.7f Nc=2.09
++               Ikr=.1075 Rc=.4196 Cjc=24.29p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p
++               Mje=.3333 Vje=.5 Tr=10n Tf=660.8p Itf=2.569 Xtf=88.29 Vtf=10)
+*		SIEMENS		pid=bc817-25	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC817-40 NPN(Is=32.53f Xti=3 Eg=1.11 Vaf=100 Bf=407.8 Ise=333.4f
++               Ne=1.692 Ikf=.9448 Nk=.6041 Xtb=1.5 Br=6.39 Isc=268.8f Nc=2.125
++               Ikr=.1193 Rc=.4205 Cjc=24.29p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p
++               Mje=.3333 Vje=.5 Tr=10n Tf=662p Itf=3.238 Xtf=134.9 Vtf=10)
+*		SIEMENS		pid=bc817-40	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC818-16 NPN(Is=32.53f Xti=3 Eg=1.11 Vaf=100 Bf=190.4 Ise=299f Ne=1.583
++               Ikf=.7695 Nk=.5467 Xtb=1.5 Br=6.313 Isc=138f Nc=2.053 Ikr=.187
++               Rc=.4216 Cjc=24.29p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p Mje=.3333
++               Vje=.5 Tr=10n Tf=660.1p Itf=2.204 Xtf=66.65 Vtf=10)
+*		SIEMENS 	pid=bc817-16	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC818-25 NPN(Is=32.53f Xti=3 Eg=1.11 Vaf=100 Bf=294.4 Ise=318.5f
++               Ne=1.642 Ikf=.8311 Nk=.5663 Xtb=1.5 Br=5.855 Isc=199.7f Nc=2.09
++               Ikr=.1075 Rc=.4196 Cjc=24.29p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p
++               Mje=.3333 Vje=.5 Tr=10n Tf=660.8p Itf=2.569 Xtf=88.29 Vtf=10)
+*		SIEMENS		pid=bc817-25	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC818-40 NPN(Is=32.53f Xti=3 Eg=1.11 Vaf=100 Bf=407.8 Ise=333.4f
++               Ne=1.692 Ikf=.9448 Nk=.6041 Xtb=1.5 Br=6.39 Isc=268.8f Nc=2.125
++               Ikr=.1193 Rc=.4205 Cjc=24.29p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p
++               Mje=.3333 Vje=.5 Tr=10n Tf=662p Itf=3.238 Xtf=134.9 Vtf=10)
+*		SIEMENS		pid=bc817-40	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC846A   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=106.8 Bf=182.9 Ise=85.16f
++               Ne=1.709 Ikf=.1196 Nk=.5227 Xtb=1.5 Br=3.988 Isc=10.68f
++               Nc=2.417 Ikr=2.721 Rc=1.374 Cjc=7.287p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=9.485p Mje=.3333 Vje=.5 Tr=10n Tf=662.3p Itf=1.577
++               Xtf=14.27 Vtf=10)
+*		SIEMENS		pid=bc846a	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC846B   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=62.37 Bf=279.1 Ise=59.16f
++               Ne=1.81 Ikf=.2201 Nk=.6305 Xtb=1.5 Br=3.816 Isc=16.17f Nc=2.394
++               Ikr=1.859 Rc=1.508 Cjc=7.287p Mjc=.3333 Vjc=.5 Fc=.5 Cje=9.485p
++               Mje=.3333 Vje=.5 Tr=10n Tf=664p Itf=4.664 Xtf=147 Vtf=10)
+*		SIEMENS		pid=bc846b	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC847A   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=106.8 Bf=182.9 Ise=85.16f
++               Ne=1.709 Ikf=.1196 Nk=.5227 Xtb=1.5 Br=3.988 Isc=10.68f
++               Nc=2.417 Ikr=2.721 Rc=1.374 Cjc=7.287p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=9.485p Mje=.3333 Vje=.5 Tr=10n Tf=662.3p Itf=1.577
++               Xtf=14.27 Vtf=10)
+*		SIEMENS		pid=bc846a	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC847B   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=62.37 Bf=279.1 Ise=59.16f
++               Ne=1.81 Ikf=.2201 Nk=.6305 Xtb=1.5 Br=3.816 Isc=16.17f Nc=2.394
++               Ikr=1.859 Rc=1.508 Cjc=7.287p Mjc=.3333 Vjc=.5 Fc=.5 Cje=9.485p
++               Mje=.3333 Vje=.5 Tr=10n Tf=664p Itf=4.664 Xtf=147 Vtf=10)
+*		SIEMENS		pid=bc846b	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC847C   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=29.03 Bf=462.4 Ise=57.19f
++               Ne=2.002 Ikf=.1609 Nk=.6124 Xtb=1.5 Br=3.988 Isc=10.68f
++               Nc=2.417 Ikr=2.721 Rc=1.374 Cjc=7.287p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=9.485p Mje=.3333 Vje=.5 Tr=10n Tf=663.1p Itf=1.423
++               Xtf=14.94 Vtf=10)
+*		SIEMENS		pid=bc847c	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC848A   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=106.8 Bf=182.9 Ise=85.16f
++               Ne=1.709 Ikf=.1196 Nk=.5227 Xtb=1.5 Br=3.988 Isc=10.68f
++               Nc=2.417 Ikr=2.721 Rc=1.374 Cjc=7.287p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=9.485p Mje=.3333 Vje=.5 Tr=10n Tf=662.3p Itf=1.577
++               Xtf=14.27 Vtf=10)
+*		SIEMENS		pid=bc846a	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC848B   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=62.37 Bf=279.1 Ise=59.16f
++               Ne=1.81 Ikf=.2201 Nk=.6305 Xtb=1.5 Br=3.816 Isc=16.17f Nc=2.394
++               Ikr=1.859 Rc=1.508 Cjc=7.287p Mjc=.3333 Vjc=.5 Fc=.5 Cje=9.485p
++               Mje=.3333 Vje=.5 Tr=10n Tf=664p Itf=4.664 Xtf=147 Vtf=10)
+*		SIEMENS		pid=bc846b	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC848C   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=29.03 Bf=462.4 Ise=57.19f
++               Ne=2.002 Ikf=.1609 Nk=.6124 Xtb=1.5 Br=3.988 Isc=10.68f
++               Nc=2.417 Ikr=2.721 Rc=1.374 Cjc=7.287p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=9.485p Mje=.3333 Vje=.5 Tr=10n Tf=663.1p Itf=1.423
++               Xtf=14.94 Vtf=10)
+*		SIEMENS		pid=bc847c	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC849B   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=62.37 Bf=279.1 Ise=59.16f
++               Ne=1.81 Ikf=.2201 Nk=.6305 Xtb=1.5 Br=3.816 Isc=16.17f Nc=2.394
++               Ikr=1.859 Rc=1.508 Cjc=7.287p Mjc=.3333 Vjc=.5 Fc=.5 Cje=9.485p
++               Mje=.3333 Vje=.5 Tr=10n Tf=664p Itf=4.664 Xtf=147 Vtf=10)
+*		SIEMENS		pid=bc846b	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC849C   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=29.03 Bf=462.4 Ise=57.19f
++               Ne=2.002 Ikf=.1609 Nk=.6124 Xtb=1.5 Br=3.988 Isc=10.68f
++               Nc=2.417 Ikr=2.721 Rc=1.374 Cjc=7.287p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=9.485p Mje=.3333 Vje=.5 Tr=10n Tf=663.1p Itf=1.423
++               Xtf=14.94 Vtf=10)
+*		SIEMENS		pid=bc847c	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC850B   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=62.37 Bf=279.1 Ise=59.16f
++               Ne=1.81 Ikf=.2201 Nk=.6305 Xtb=1.5 Br=3.816 Isc=16.17f Nc=2.394
++               Ikr=1.859 Rc=1.508 Cjc=7.287p Mjc=.3333 Vjc=.5 Fc=.5 Cje=9.485p
++               Mje=.3333 Vje=.5 Tr=10n Tf=664p Itf=4.664 Xtf=147 Vtf=10)
+*		SIEMENS		pid=bc846b	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC850C   NPN(Is=7.049f Xti=3 Eg=1.11 Vaf=29.03 Bf=462.4 Ise=57.19f
++               Ne=2.002 Ikf=.1609 Nk=.6124 Xtb=1.5 Br=3.988 Isc=10.68f
++               Nc=2.417 Ikr=2.721 Rc=1.374 Cjc=7.287p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=9.485p Mje=.3333 Vje=.5 Tr=10n Tf=663.1p Itf=1.423
++               Xtf=14.94 Vtf=10)
+*		SIEMENS		pid=bc847c	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC856A   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=106.8 Bf=180.6 Ise=2.666p
++               Ne=1.944 Ikf=.1094 Nk=.4986 Xtb=1.5 Br=7.16 Isc=196p Nc=1.815
++               Ikr=9.677 Rc=2.791 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=605.1p Itf=2.326 Xtf=20.43 Vtf=10)
+*		SIEMENS		pid=bc856a	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC856B   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=62.37 Bf=277.7 Ise=1.966p
++               Ne=2.123 Ikf=.1686 Nk=.545 Xtb=1.5 Br=7.16 Isc=196p Nc=1.815
++               Ikr=9.677 Rc=2.891 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=605.9p Itf=2.133 Xtf=23.02 Vtf=10)
+*		SIEMENS		pid=bc856b	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC857A   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=106.8 Bf=180.6 Ise=2.666p
++               Ne=1.944 Ikf=.1094 Nk=.4986 Xtb=1.5 Br=7.16 Isc=196p Nc=1.815
++               Ikr=9.677 Rc=2.791 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=605.1p Itf=2.326 Xtf=20.43 Vtf=10)
+*		SIEMENS		pid=bc856a	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC857B   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=62.37 Bf=277.7 Ise=1.966p
++               Ne=2.123 Ikf=.1686 Nk=.545 Xtb=1.5 Br=7.16 Isc=196p Nc=1.815
++               Ikr=9.677 Rc=2.891 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=605.9p Itf=2.133 Xtf=23.02 Vtf=10)
+*		SIEMENS		pid=bc856b	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC857C   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=29.03 Bf=462.2 Ise=1.648p
++               Ne=2.405 Ikf=.1165 Nk=.5254 Xtb=1.5 Br=7.16 Isc=196p Nc=1.815
++               Ikr=9.677 Rc=2.791 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=605.4p Itf=3.088 Xtf=41.48 Vtf=10)
+*		SIEMENS		pid=bc857c	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC858A   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=106.8 Bf=180.6 Ise=2.666p
++               Ne=1.944 Ikf=.1094 Nk=.4986 Xtb=1.5 Br=7.16 Isc=196p Nc=1.815
++               Ikr=9.677 Rc=2.791 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=605.1p Itf=2.326 Xtf=20.43 Vtf=10)
+*		SIEMENS		pid=bc856a	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC858B   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=62.37 Bf=277.7 Ise=1.966p
++               Ne=2.123 Ikf=.1686 Nk=.545 Xtb=1.5 Br=7.16 Isc=196p Nc=1.815
++               Ikr=9.677 Rc=2.891 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=605.9p Itf=2.133 Xtf=23.02 Vtf=10)
+*		SIEMENS		pid=bc856b	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC858C   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=29.03 Bf=462.2 Ise=1.648p
++               Ne=2.405 Ikf=.1165 Nk=.5254 Xtb=1.5 Br=7.16 Isc=196p Nc=1.815
++               Ikr=9.677 Rc=2.791 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=605.4p Itf=3.088 Xtf=41.48 Vtf=10)
+*		SIEMENS		pid=bc857c	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC859A   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=106.8 Bf=180.6 Ise=2.666p
++               Ne=1.944 Ikf=.1094 Nk=.4986 Xtb=1.5 Br=7.16 Isc=196p Nc=1.815
++               Ikr=9.677 Rc=2.791 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=605.1p Itf=2.326 Xtf=20.43 Vtf=10)
+*		SIEMENS		pid=bc856a	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC859B   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=62.37 Bf=277.7 Ise=1.966p
++               Ne=2.123 Ikf=.1686 Nk=.545 Xtb=1.5 Br=7.16 Isc=196p Nc=1.815
++               Ikr=9.677 Rc=2.891 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=605.9p Itf=2.133 Xtf=23.02 Vtf=10)
+*		SIEMENS		pid=bc856b	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC859C   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=29.03 Bf=462.2 Ise=1.648p
++               Ne=2.405 Ikf=.1165 Nk=.5254 Xtb=1.5 Br=7.16 Isc=196p Nc=1.815
++               Ikr=9.677 Rc=2.791 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=605.4p Itf=3.088 Xtf=41.48 Vtf=10)
+*		SIEMENS		pid=bc857c	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC860B   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=62.37 Bf=277.7 Ise=1.966p
++               Ne=2.123 Ikf=.1686 Nk=.545 Xtb=1.5 Br=7.16 Isc=196p Nc=1.815
++               Ikr=9.677 Rc=2.891 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=605.9p Itf=2.133 Xtf=23.02 Vtf=10)
+*		SIEMENS		pid=bc856b	case=SOT23
+*		91-08-21 dsq
+*$
+.model BC860C   PNP(Is=336.7f Xti=3 Eg=1.11 Vaf=29.03 Bf=462.2 Ise=1.648p
++               Ne=2.405 Ikf=.1165 Nk=.5254 Xtb=1.5 Br=7.16 Isc=196p Nc=1.815
++               Ikr=9.677 Rc=2.791 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=605.4p Itf=3.088 Xtf=41.48 Vtf=10)
+*		SIEMENS		pid=bc857c	case=SOT23
+*		91-08-21 dsq
+*$
+.model BCW60A   NPN(Is=26.39f Xti=3 Eg=1.11 Vaf=106.8 Bf=167.4 Ise=254.6f
++               Ne=1.806 Ikf=1.363 Nk=.5 Xtb=1.5 Br=9.901 Isc=20.57p Nc=1.912
++               Ikr=3.201 Rc=3.001 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=597.7p Itf=2.959 Xtf=293.8 Vtf=10)
+*		SIEMENS		pid=bcw60a	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW60B   NPN(Is=26.39f Xti=3 Eg=1.11 Vaf=79.03 Bf=243.1 Ise=274.6f
++               Ne=1.859 Ikf=1.798 Nk=.5 Xtb=1.5 Br=8.91 Isc=13.41p Nc=1.847
++               Ikr=7.019 Rc=3.011 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=596.8p Itf=2.553 Xtf=234.7 Vtf=10)
+*		SIEMENS		pid=bcw60b	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW60C   NPN(Is=26.39f Xti=3 Eg=1.11 Vaf=62.37 Bf=331.9 Ise=278.6f
++               Ne=2.004 Ikf=2.57 Nk=.5 Xtb=1.5 Br=9.451 Isc=15.74p Nc=1.797
++               Ikr=2.344 Rc=3.117 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=597.1p Itf=2.501 Xtf=233.9 Vtf=10)
+*		SIEMENS		pid=bcw60ff	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW60D   NPN(Is=26.39f Xti=3 Eg=1.11 Vaf=35.7 Bf=449.2 Ise=191.3f
++               Ne=2.138 Ikf=1.969 Nk=.5 Xtb=1.5 Br=9.116 Isc=14.45p Nc=1.778
++               Ikr=3.14 Rc=3.154 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=596.3p Itf=2.629 Xtf=282 Vtf=10)
+*		SIEMENS		pid=bcw60fn	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW60FF  NPN(Is=26.39f Xti=3 Eg=1.11 Vaf=62.37 Bf=331.9 Ise=278.6f
++               Ne=2.004 Ikf=2.57 Nk=.5 Xtb=1.5 Br=9.451 Isc=15.74p Nc=1.797
++               Ikr=2.344 Rc=3.117 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=597.1p Itf=2.501 Xtf=233.9 Vtf=10)
+*		SIEMENS		pid=bcw60ff	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW60FN  NPN(Is=26.39f Xti=3 Eg=1.11 Vaf=35.7 Bf=449.2 Ise=191.3f
++               Ne=2.138 Ikf=1.969 Nk=.5 Xtb=1.5 Br=9.116 Isc=14.45p Nc=1.778
++               Ikr=3.14 Rc=3.154 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=596.3p Itf=2.629 Xtf=282 Vtf=10)
+*		SIEMENS		pid=bcw60fn	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW61A   PNP(Is=26.39f Xti=3 Eg=1.11 Vaf=106.8 Bf=166.5 Ise=249.1f
++               Ne=1.806 Ikf=1.217 Nk=.5 Xtb=1.5 Br=8.744 Isc=82.16p Nc=2.283
++               Ikr=29.82m Rc=2.543 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5
++               Cje=8.397p Mje=.3865 Vje=.5 Tr=10n Tf=590.5p Itf=.603 Xtf=225
++               Vtf=1)
+*		SIEMENS		pid=bcw61a	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW61B   PNP(Is=26.39f Xti=3 Eg=1.11 Vaf=79.03 Bf=243.9 Ise=236.2f
++               Ne=1.831 Ikf=.4069 Nk=.5 Xtb=1.5 Br=8.138 Isc=92.15p Nc=2.252
++               Ikr=.3702 Rc=2.597 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=590.5p Itf=.642 Xtf=225.6 Vtf=1)
+*		SIEMENS		pid=bcw61b	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW61C   PNP(Is=26.39f Xti=3 Eg=1.11 Vaf=62.37 Bf=330.6 Ise=285.2f
++               Ne=2.013 Ikf=2.498 Nk=.5 Xtb=1.5 Br=7.258 Isc=104.6p Nc=2.312
++               Ikr=.332 Rc=2.694 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=590.8p Itf=.8403 Xtf=457.4 Vtf=1)
+*		SIEMENS		pid=bcw61ff	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW61D   PNP(Is=26.39f Xti=3 Eg=1.11 Vaf=35.7 Bf=464.5 Ise=227f Ne=2.108
++               Ikf=.1247 Nk=.5 Xtb=1.5 Br=7.094 Isc=90.49p Nc=2.24 Ikr=.4226
++               Rc=2.604 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p Mje=.3865
++               Vje=.5 Tr=10n Tf=591.1p Itf=.7698 Xtf=230.9 Vtf=1)
+*		SIEMENS		pid=bcw61fn	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW61FF  PNP(Is=26.39f Xti=3 Eg=1.11 Vaf=62.37 Bf=330.6 Ise=285.2f
++               Ne=2.013 Ikf=2.498 Nk=.5 Xtb=1.5 Br=7.258 Isc=104.6p Nc=2.312
++               Ikr=.332 Rc=2.694 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=590.8p Itf=.8403 Xtf=457.4 Vtf=1)
+*		SIEMENS		pid=bcw61ff	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW61FN  PNP(Is=26.39f Xti=3 Eg=1.11 Vaf=35.7 Bf=464.5 Ise=227f Ne=2.108
++               Ikf=.1247 Nk=.5 Xtb=1.5 Br=7.094 Isc=90.49p Nc=2.24 Ikr=.4226
++               Rc=2.604 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p Mje=.3865
++               Vje=.5 Tr=10n Tf=591.1p Itf=.7698 Xtf=230.9 Vtf=1)
+*		SIEMENS		pid=bcw61fn	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW65A   NPN(Is=44.97f Xti=3 Eg=1.11 Vaf=100 Bf=242.4 Ise=44.98f
++               Ne=1.302 Ikf=1.006 Nk=.7057 Xtb=1.5 Br=5.128 Isc=6.206p
++               Nc=1.474 Ikr=6.858 Rc=.4184 Cjc=14.57p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=71.14p Mje=.3333 Vje=.5 Tr=10n Tf=707.7p Itf=5.249
++               Xtf=23.37 Vtf=10)
+*		SIEMENS		pid=bcw65a	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW65B   NPN(Is=44.97f Xti=3 Eg=1.11 Vaf=100 Bf=364.7 Ise=44.99f
++               Ne=1.337 Ikf=1.029 Nk=.7096 Xtb=1.5 Br=5.792 Isc=1.332p
++               Nc=1.307 Ikr=6.716 Rc=.421 Cjc=14.57p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=71.14p Mje=.3333 Vje=.5 Tr=10n Tf=707.9p Itf=5.32 Xtf=23.35
++               Vtf=10)
+*		SIEMENS		pid=bcw65b	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW65C   NPN(Is=44.97f Xti=3 Eg=1.11 Vaf=100 Bf=500.5 Ise=45.03f
++               Ne=1.363 Ikf=1.017 Nk=.7023 Xtb=1.5 Br=5.448 Isc=1.983p
++               Nc=1.344 Ikr=6.609 Rc=.4217 Cjc=14.57p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=71.14p Mje=.3333 Vje=.5 Tr=10n Tf=697.1p Itf=2.639
++               Xtf=24.55 Vtf=10)
+*		SIEMENS		pid=bcw65c	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW66F   NPN(Is=44.97f Xti=3 Eg=1.11 Vaf=100 Bf=242.4 Ise=44.98f
++               Ne=1.302 Ikf=1.006 Nk=.7057 Xtb=1.5 Br=5.128 Isc=6.206p
++               Nc=1.474 Ikr=6.858 Rc=.4184 Cjc=14.57p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=71.14p Mje=.3333 Vje=.5 Tr=10n Tf=707.7p Itf=5.249
++               Xtf=23.37 Vtf=10)
+*		SIEMENS		pid=bcw65a	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW66G   NPN(Is=893.9E-21 Xti=3 Eg=1.11 Vaf=100 Bf=452.8 Ise=1.053E-18
++               Ne=1.21 Ikf=.9479 Nk=.6981 Xtb=1.5 Br=5.401 Isc=1.897f Nc=1.415
++               Ikr=3.105 Rc=.4201 Cjc=14.57p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p
++               Mje=.3333 Vje=.5 Tr=10n Tf=689.5p Itf=6.121 Xtf=23.27 Vtf=10)
+*		SIEMENS		pid=bcw65b	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW66H   NPN(Is=44.97f Xti=3 Eg=1.11 Vaf=100 Bf=500.5 Ise=45.03f
++               Ne=1.363 Ikf=1.017 Nk=.7023 Xtb=1.5 Br=5.448 Isc=1.983p
++               Nc=1.344 Ikr=6.609 Rc=.4217 Cjc=14.57p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=71.14p Mje=.3333 Vje=.5 Tr=10n Tf=697.1p Itf=2.639
++               Xtf=24.55 Vtf=10)
+*		SIEMENS		pid=bcw65c	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW67A   PNP(Is=44.97f Xti=3 Eg=1.11 Vaf=100 Bf=256.4 Ise=424.6f Ne=1.46
++               Ikf=.5694 Nk=.6383 Xtb=1.5 Br=13.26 Isc=1.56p Nc=1.654
++               Ikr=9.432 Rc=.554 Cjc=14.57p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p
++               Mje=.3333 Vje=.5 Tr=10n Tf=655p Itf=.8418 Xtf=10.72 Vtf=10)
+*		SIEMENS		pid=bcw67a	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW67B   PNP(Is=44.97f Xti=3 Eg=1.11 Vaf=100 Bf=373.4 Ise=600f Ne=1.538
++               Ikf=.6542 Nk=.669 Xtb=1.5 Br=12.01 Isc=1.997p Nc=1.678
++               Ikr=9.679 Rc=.5562 Cjc=14.57p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p
++               Mje=.3333 Vje=.5 Tr=10n Tf=669.8p Itf=1.943 Xtf=37.78 Vtf=10)
+*		SIEMENS		pid=bcw67b	case=SOT23
+*		91-08-23 dsq
+*$
+.model BCW67C   PNP(Is=44.97f Xti=3 Eg=1.11 Vaf=100 Bf=550.3 Ise=233.3f
++               Ne=1.478 Ikf=.5906 Nk=.646 Xtb=1.5 Br=12.01 Isc=1.997p Nc=1.678
++               Ikr=9.679 Rc=.5562 Cjc=14.57p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p
++               Mje=.3333 Vje=.5 Tr=10n Tf=675.6p Itf=3.423 Xtf=96.44 Vtf=10)
+*		SIEMENS		pid=bcw67c	case=SOT23
+*		91-08-23 dsq
+*$
+.model BCW68F   PNP(Is=44.97f Xti=3 Eg=1.11 Vaf=100 Bf=256.4 Ise=424.6f Ne=1.46
++               Ikf=.5694 Nk=.6383 Xtb=1.5 Br=13.26 Isc=1.56p Nc=1.654
++               Ikr=9.432 Rc=.554 Cjc=14.57p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p
++               Mje=.3333 Vje=.5 Tr=10n Tf=655p Itf=.8418 Xtf=10.72 Vtf=10)
+*		SIEMENS		pid=bcw67a	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCW68G   PNP(Is=44.97f Xti=3 Eg=1.11 Vaf=100 Bf=373.4 Ise=600f Ne=1.538
++               Ikf=.6542 Nk=.669 Xtb=1.5 Br=12.01 Isc=1.997p Nc=1.678
++               Ikr=9.679 Rc=.5562 Cjc=14.57p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p
++               Mje=.3333 Vje=.5 Tr=10n Tf=669.8p Itf=1.943 Xtf=37.78 Vtf=10)
+*		SIEMENS		pid=bcw67b	case=SOT23
+*		91-08-23 dsq
+*$
+.model BCW68H   PNP(Is=44.97f Xti=3 Eg=1.11 Vaf=100 Bf=550.3 Ise=233.3f
++               Ne=1.478 Ikf=.5906 Nk=.646 Xtb=1.5 Br=12.01 Isc=1.997p Nc=1.678
++               Ikr=9.679 Rc=.5562 Cjc=14.57p Mjc=.3333 Vjc=.5 Fc=.5 Cje=71.14p
++               Mje=.3333 Vje=.5 Tr=10n Tf=675.6p Itf=3.423 Xtf=96.44 Vtf=10)
+*		SIEMENS		pid=bcw67c	case=SOT23
+*		91-08-23 dsq
+*$
+.model BCX41    NPN(Is=211.1f Xti=3 Eg=1.11 Vaf=100 Bf=171 Ise=1.975p Ne=1.629
++               Ikf=.7668 Nk=.5103 Xtb=1.5 Br=24.68 Isc=109.7p Nc=1.588
++               Ikr=3.115 Rc=.463 Cjc=29.15p Mjc=.3333 Vjc=.5 Fc=.5 Cje=87.45p
++               Mje=.3333 Vje=.5 Tr=10n Tf=1.461n Itf=8.247 Xtf=568.2 Vtf=10)
+*		SIEMENS		pid=bcx41	case=SOT23
+*		91-08-23 dsq
+*$
+.model BCX42    PNP(Is=211.1f Xti=3 Eg=1.11 Vaf=100 Bf=171 Ise=1.975p Ne=1.629
++               Ikf=.7668 Nk=.5103 Xtb=1.5 Br=24.68 Isc=109.7p Nc=1.588
++               Ikr=3.115 Rc=.463 Cjc=29.15p Mjc=.3333 Vjc=.5 Fc=.5 Cje=87.45p
++               Mje=.3333 Vje=.5 Tr=10n Tf=1.461n Itf=8.247 Xtf=568.2 Vtf=10)
+*		SIEMENS		pid=bcx42	case=SOT23
+*		91-08-23 dsq
+*$
+.model BCX70G   NPN(Is=26.39f Xti=3 Eg=1.11 Vaf=106.8 Bf=167.4 Ise=254.6f
++               Ne=1.806 Ikf=1.363 Nk=.5 Xtb=1.5 Br=9.901 Isc=20.57p Nc=1.912
++               Ikr=3.201 Rc=3.001 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=597.7p Itf=2.959 Xtf=293.8 Vtf=10)
+*		SIEMENS		pid=bcw60a	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCX70H   NPN(Is=26.39f Xti=3 Eg=1.11 Vaf=79.03 Bf=243.1 Ise=274.6f
++               Ne=1.859 Ikf=1.798 Nk=.5 Xtb=1.5 Br=8.91 Isc=13.41p Nc=1.847
++               Ikr=7.019 Rc=3.011 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=596.8p Itf=2.553 Xtf=234.7 Vtf=10)
+*		SIEMENS		pid=bcw60b	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCX70J   NPN(Is=26.39f Xti=3 Eg=1.11 Vaf=62.37 Bf=331.9 Ise=278.6f
++               Ne=2.004 Ikf=2.57 Nk=.5 Xtb=1.5 Br=9.451 Isc=15.74p Nc=1.797
++               Ikr=2.344 Rc=3.117 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=597.1p Itf=2.501 Xtf=233.9 Vtf=10)
+*		SIEMENS		pid=bcw60ff	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCX70K   NPN(Is=26.39f Xti=3 Eg=1.11 Vaf=35.7 Bf=449.2 Ise=191.3f
++               Ne=2.138 Ikf=1.969 Nk=.5 Xtb=1.5 Br=9.116 Isc=14.45p Nc=1.778
++               Ikr=3.14 Rc=3.154 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=596.3p Itf=2.629 Xtf=282 Vtf=10)
+*		SIEMENS		pid=bcw60fn	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCX71G   PNP(Is=26.39f Xti=3 Eg=1.11 Vaf=106.8 Bf=166.5 Ise=249.1f
++               Ne=1.806 Ikf=1.217 Nk=.5 Xtb=1.5 Br=8.744 Isc=82.16p Nc=2.283
++               Ikr=29.82m Rc=2.543 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5
++               Cje=8.397p Mje=.3865 Vje=.5 Tr=10n Tf=590.5p Itf=.603 Xtf=225
++               Vtf=1)
+*		SIEMENS		pid=bcw61a	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCX71H   PNP(Is=26.39f Xti=3 Eg=1.11 Vaf=79.03 Bf=243.9 Ise=236.2f
++               Ne=1.831 Ikf=.4069 Nk=.5 Xtb=1.5 Br=8.138 Isc=92.15p Nc=2.252
++               Ikr=.3702 Rc=2.597 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=590.5p Itf=.642 Xtf=225.6 Vtf=1)
+*		SIEMENS		pid=bcw61b	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCX71J   PNP(Is=26.39f Xti=3 Eg=1.11 Vaf=62.37 Bf=330.6 Ise=285.2f
++               Ne=2.013 Ikf=2.498 Nk=.5 Xtb=1.5 Br=7.258 Isc=104.6p Nc=2.312
++               Ikr=.332 Rc=2.694 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p
++               Mje=.3865 Vje=.5 Tr=10n Tf=590.8p Itf=.8403 Xtf=457.4 Vtf=1)
+*		SIEMENS		pid=bcw61ff	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCX71K   PNP(Is=26.39f Xti=3 Eg=1.11 Vaf=35.7 Bf=464.5 Ise=227f Ne=2.108
++               Ikf=.1247 Nk=.5 Xtb=1.5 Br=7.094 Isc=90.49p Nc=2.24 Ikr=.4226
++               Rc=2.604 Cjc=11.51p Mjc=.3626 Vjc=.5 Fc=.5 Cje=8.397p Mje=.3865
++               Vje=.5 Tr=10n Tf=591.1p Itf=.7698 Xtf=230.9 Vtf=1)
+*		SIEMENS		pid=bcw61fn	case=SOT23
+*		91-08-22 dsq
+*$
+.model BCY58-8  NPN(Is=64.04f Xti=3 Eg=1.11 Vaf=79.03 Bf=395.1 Ise=599f
++               Ne=1.598 Ikf=.1799 Nk=.6331 Xtb=1.5 Br=1 Isc=9.225n Nc=3.14
++               Ikr=16.96 Rc=1.286 Cjc=11.15p Mjc=.3333 Vjc=.5 Fc=.5 Cje=16.78p
++               Mje=.3333 Vje=.5 Tr=629.7n Tf=423.5p Itf=2.989 Xtf=106 Vtf=10)
+*		PHILIPS		pid=bcy58-8	case=TO18
+*		91-08-02 dsq
+*$
+.model BCY58-9  NPN(Is=64.04f Xti=3 Eg=1.11 Vaf=62.37 Bf=473.2 Ise=549.7f
++               Ne=1.721 Ikf=.1237 Nk=.6057 Xtb=1.5 Br=1 Isc=22.53n Nc=3.624
++               Ikr=10.72 Rc=1.261 Cjc=11.15p Mjc=.3333 Vjc=.5 Fc=.5 Cje=16.78p
++               Mje=.3333 Vje=.5 Tr=622.7n Tf=423.4p Itf=3.503 Xtf=107 Vtf=10)
+*		PHILIPS		pid=bcy58-9	case=TO18
+*		91-08-02 dsq
+*$
+.model BCY58-10 NPN(Is=64.04f Xti=3 Eg=1.11 Vaf=35.7 Bf=676 Ise=444.3f Ne=1.771
++               Ikf=.1013 Nk=.6259 Xtb=1.5 Br=1 Isc=38.48n Nc=4.097 Ikr=5.942
++               Rc=1.19 Cjc=11.15p Mjc=.3333 Vjc=.5 Fc=.5 Cje=16.78p Mje=.3333
++               Vje=.5 Tr=609.8n Tf=423.5p Itf=3.794 Xtf=108.1 Vtf=10)
+*		PHILIPS		pid=bcy58-10	case=TO18
+*		91-08-02 dsq
+*$
+.model BCY59-7  NPN(Is=64.04f Xti=3 Eg=1.11 Vaf=106.8 Bf=4.957K Ise=6.195p
++               Ne=1.686 Ikf=12.15m Nk=.4944 Xtb=1.5 Br=2.624 Isc=2.92n
++               Nc=3.015 Ikr=3.889 Rc=1.149 Cjc=11.15p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=16.78p Mje=.3333 Vje=.5 Tr=638n Tf=410.8p Itf=15.08
++               Xtf=118.1 Vtf=10)
+*		PHILIPS		pid=bcy58-7	case=TO18
+*		91-08-02 dsq
+*$
+.model BCY59-8  NPN(Is=64.04f Xti=3 Eg=1.11 Vaf=79.03 Bf=395.1 Ise=599f
++               Ne=1.598 Ikf=.1799 Nk=.6331 Xtb=1.5 Br=1 Isc=9.225n Nc=3.14
++               Ikr=16.96 Rc=1.286 Cjc=11.15p Mjc=.3333 Vjc=.5 Fc=.5 Cje=16.78p
++               Mje=.3333 Vje=.5 Tr=629.7n Tf=423.5p Itf=2.989 Xtf=106 Vtf=10)
+*		PHILIPS		pid=bcy58-8	case=TO18
+*		91-08-02 dsq
+*$
+.model BCY59-9  NPN(Is=64.04f Xti=3 Eg=1.11 Vaf=62.37 Bf=473.2 Ise=549.7f
++               Ne=1.721 Ikf=.1237 Nk=.6057 Xtb=1.5 Br=1 Isc=22.53n Nc=3.624
++               Ikr=10.72 Rc=1.261 Cjc=11.15p Mjc=.3333 Vjc=.5 Fc=.5 Cje=16.78p
++               Mje=.3333 Vje=.5 Tr=622.7n Tf=423.4p Itf=3.503 Xtf=107 Vtf=10)
+*		PHILIPS		pid=bcy58-9	case=TO18
+*		91-08-02 dsq
+*$
+.model BCY59-10 NPN(Is=64.04f Xti=3 Eg=1.11 Vaf=35.7 Bf=676 Ise=444.3f Ne=1.771
++               Ikf=.1013 Nk=.6259 Xtb=1.5 Br=1 Isc=38.48n Nc=4.097 Ikr=5.942
++               Rc=1.19 Cjc=11.15p Mjc=.3333 Vjc=.5 Fc=.5 Cje=16.78p Mje=.3333
++               Vje=.5 Tr=609.8n Tf=423.5p Itf=3.794 Xtf=108.1 Vtf=10)
+*		PHILIPS		pid=bcy58-10	case=TO18
+*		91-08-02 dsq
+*$
+.model BCY71    PNP(Is=22.48f Xti=3 Eg=1.11 Vaf=68.32 Bf=323.6 Ise=291.5f
++               Ne=1.906 Ikf=.1158 Nk=.5113 Xtb=1.5 Br=1 Isc=1.181p Nc=1.234
++               Ikr=9.81 Rc=2.019 Cjc=23.19p Mjc=.2354 Vjc=.5 Fc=.5 Cje=9p
++               Mje=.3117 Vje=.5 Tr=809.2n Tf=275.3p Itf=17.79 Xtf=214.9 Vtf=10
+*		PHILIPS		pid=bcy71	case=TO18
+*		91-08-06 dsq
+*$
+.model BCY78-7  PNP(Is=55.58p Xti=3 Eg=1.11 Vaf=106.8 Bf=188.5 Ise=230.7p
++               Ne=2.751 Ikf=74.06m Nk=.5019 Xtb=1.5 Br=2.429 Isc=34.94n
++               Nc=2.499 Ikr=1.387 Rc=2.829 Cjc=16p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=16.78p Mje=.3333 Vje=.5 Tr=283n Tf=762.6p Itf=5.95
++               Xtf=180.6 Vtf=10)
+*		PHILIPS		pid=bcy78-7	case=TO18
+*		91-07-31 dsq
+*$
+.model BCY78-8  PNP(Is=55.58p Xti=3 Eg=1.11 Vaf=79.03 Bf=272.6 Ise=223.2p
++               Ne=2.939 Ikf=77.89m Nk=.5 Xtb=1.5 Br=2.429 Isc=34.94n Nc=2.499
++               Ikr=1.387 Rc=2.829 Cjc=16p Mjc=.3333 Vjc=.5 Fc=.5 Cje=16.78p
++               Mje=.3333 Vje=.5 Tr=272.7n Tf=762.4p Itf=5.969 Xtf=203.6 Vtf=10
+*		PHILIPS		pid=bcy78-8	case=TO18
+*		91-07-31 dsq
+*$
+.model BCY78-9  PNP(Is=55.58p Xti=3 Eg=1.11 Vaf=62.37 Bf=361.2 Ise=160.7p
++               Ne=3.065 Ikf=98.02m Nk=.5 Xtb=1.5 Br=2.429 Isc=34.94n Nc=2.499
++               Ikr=1.387 Rc=2.829 Cjc=16p Mjc=.3333 Vjc=.5 Fc=.5 Cje=16.78p
++               Mje=.3333 Vje=.5 Tr=267n Tf=763.1p Itf=5.112 Xtf=203.8 Vtf=10)
+*		PHILIPS		pid=bcy78-9	case=TO18
+*		91-07-31 dsq
+*$
+.model BCY78-10 PNP(Is=55.58p Xti=3 Eg=1.11 Vaf=35.7 Bf=523.4 Ise=161.8p
++               Ne=2.89 Ikf=70.98m Nk=.5 Xtb=1.5 Br=2.429 Isc=34.94n Nc=2.499
++               Ikr=1.387 Rc=2.829 Cjc=16p Mjc=.3333 Vjc=.5 Fc=.5 Cje=16.78p
++               Mje=.3333 Vje=.5 Tr=262.5n Tf=763p Itf=5.411 Xtf=180.8 Vtf=10)
+*		PHILIPS		pid=bcy78-10	case=TO18
+*		91-07-31 dsq
+*$
+.model BCY79-7  PNP(Is=55.58p Xti=3 Eg=1.11 Vaf=106.8 Bf=188.5 Ise=230.7p
++               Ne=2.751 Ikf=74.06m Nk=.5019 Xtb=1.5 Br=2.429 Isc=34.94n
++               Nc=2.499 Ikr=1.387 Rc=2.829 Cjc=16p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=16.78p Mje=.3333 Vje=.5 Tr=283n Tf=762.6p Itf=5.95
++               Xtf=180.6 Vtf=10)
+*		PHILIPS		pid=bcy78-7	case=TO18
+*		91-07-31 dsq
+*$
+.model BCY79-8  PNP(Is=55.58p Xti=3 Eg=1.11 Vaf=79.03 Bf=272.6 Ise=223.2p
++               Ne=2.939 Ikf=77.89m Nk=.5 Xtb=1.5 Br=2.429 Isc=34.94n Nc=2.499
++               Ikr=1.387 Rc=2.829 Cjc=16p Mjc=.3333 Vjc=.5 Fc=.5 Cje=16.78p
++               Mje=.3333 Vje=.5 Tr=272.7n Tf=762.4p Itf=5.969 Xtf=203.6 Vtf=10
+*		PHILIPS		pid=bcy78-8	case=TO18
+*		91-07-31 dsq
+*$
+.model BCY79-9  PNP(Is=55.58p Xti=3 Eg=1.11 Vaf=62.37 Bf=361.2 Ise=160.7p
++               Ne=3.065 Ikf=98.02m Nk=.5 Xtb=1.5 Br=2.429 Isc=34.94n Nc=2.499
++               Ikr=1.387 Rc=2.829 Cjc=16p Mjc=.3333 Vjc=.5 Fc=.5 Cje=16.78p
++               Mje=.3333 Vje=.5 Tr=267n Tf=763.1p Itf=5.112 Xtf=203.8 Vtf=10)
+*		PHILIPS		pid=bcy78-9	case=TO18
+*		91-07-31 dsq
+*$
+.model BCY79-10 PNP(Is=55.58p Xti=3 Eg=1.11 Vaf=35.7 Bf=523.4 Ise=161.8p
++               Ne=2.89 Ikf=70.98m Nk=.5 Xtb=1.5 Br=2.429 Isc=34.94n Nc=2.499
++               Ikr=1.387 Rc=2.829 Cjc=16p Mjc=.3333 Vjc=.5 Fc=.5 Cje=16.78p
++               Mje=.3333 Vje=.5 Tr=262.5n Tf=763p Itf=5.411 Xtf=180.8 Vtf=10)
+*		PHILIPS		pid=bcy78-10	case=TO18
+*		91-07-31 dsq
+*$
+.model BFT44    PNP(Is=7.34n Xti=3 Eg=1.11 Vaf=100 Bf=131.8 Ise=7.34n Ne=1.593
++               Ikf=.862 Nk=.7194 Xtb=1.5 Br=1 Isc=2.155u Nc=2.236 Ikr=4.712
++               Rc=3.255 Cjc=44.37p Mjc=.3333 Vjc=.5 Fc=.5 Cje=133.1p Mje=.3333
++               Vje=.5 Tr=10n Tf=1.576n Itf=9.045 Xtf=221.6 Vtf=10)
+*		PHILIPS		pid=bft44	case=TO39
+*		91-08-09 dsq
+*$
+.model BFT45    PNP(Is=7.34n Xti=3 Eg=1.11 Vaf=100 Bf=131.8 Ise=7.34n Ne=1.593
++               Ikf=.862 Nk=.7194 Xtb=1.5 Br=1 Isc=2.155u Nc=2.236 Ikr=4.712
++               Rc=3.255 Cjc=44.37p Mjc=.3333 Vjc=.5 Fc=.5 Cje=133.1p Mje=.3333
++               Vje=.5 Tr=10n Tf=1.576n Itf=9.045 Xtf=221.6 Vtf=10)
+*		PHILIPS		pid=bft44	case=TO39
+*		91-08-09 dsq
+*$
+.model BFX34    NPN(Is=3.31p Xti=3 Eg=1.11 Vaf=100 Bf=361 Ise=465.3p Ne=1.745
++               Ikf=1.936 Nk=.5128 Xtb=1.5 Br=1.239 Isc=62.67p Nc=1.486
++               Ikr=.9787 Rc=.1321 Cjc=87.45p Mjc=.3333 Vjc=.5 Fc=.5 Cje=521.7p
++               Mje=.3333 Vje=.5 Tr=10n Tf=1.489n Itf=17.31 Xtf=13.82 Vtf=10)
+*		PHILIPS		pid=bfx34	case=TO39
+*		91-08-09 dsq
+*$
+.model BFY50    NPN(Is=1.476f Xti=3 Eg=1.11 Vaf=281.4 Bf=6.07K Ise=2.327p
++               Ne=1.652 Ikf=.1692 Nk=.6378 Xtb=1.5 Br=678.6 Isc=17.55p Nc=1.43
++               Ikr=.6167 Rc=.5062 Cjc=16p Mjc=.3333 Vjc=.5 Fc=.5 Cje=48p
++               Mje=.3333 Vje=.5 Tr=1.218u Tf=1.064n Itf=214.3 Xtf=17K Vtf=10)
+*		PHILIPS		pid=bfy50	case=TO39
+*		91-08-16 dsq
+*$
+.model BFY51    NPN(Is=160.8p Xti=3 Eg=1.11 Vaf=281.4 Bf=314 Ise=10.14n
++               Ne=1.947 Ikf=.3372 Nk=.5752 Xtb=1.6 Br=1 Isc=70.08n Nc=1.483
++               Ikr=.9179 Rc=.5481 Cjc=16p Mjc=.3333 Vjc=.5 Fc=.5 Cje=48p
++               Mje=.3333 Vje=.5 Tr=1.536u Tf=940.4p Itf=28.19 Xtf=1.77K Vtf=10
+*		PHILIPS		pid=bfy51	case=TO39
+*		91-08-16 dsq
+*$
+.model BFY52    NPN(Is=160.8p Xti=3 Eg=1.11 Vaf=281.4 Bf=24.98K Ise=19.66n
++               Ne=2.048 Ikf=.1072 Nk=.6601 Xtb=1.5 Br=2.015 Isc=91.99n
++               Nc=1.566 Ikr=1.721 Rc=.4963 Cjc=16p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=48p Mje=.3333 Vje=.5 Tr=815.2n Tf=792.7p Itf=214.9
++               Xtf=2.303K Vtf=10)
+*		PHILIPS		pid=bfy52	case=TO39
+*		91-08-16 dsq
+*$
+.model BFY55    NPN(Is=3.367p Xti=3 Eg=1.11 Vaf=310.9 Bf=94.46 Ise=33.05p
++               Ne=1.483 Ikf=.5451 Nk=.4767 Xtb=1.5 Br=8.334 Isc=34.05p
++               Nc=1.468 Ikr=.6541 Rc=.6467 Cjc=28.15p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=93.85p Mje=.3333 Vje=.5 Tr=49.58n Tf=1.782n Itf=49.71
++               Xtf=9.095K Vtf=10)
+*		PHILIPS		pid=bcy55	case=TO39
+*		91-08-12 dsq
+*$
+.model BSV15-6  PNP(Is=70.49f Xti=3 Eg=1.11 Vaf=100 Bf=78.81 Ise=795.9f Ne=1.5
++               Ikf=.9977 Nk=.6579 Xtb=1.5 Br=18.45 Isc=715.1f Nc=1.23
++               Ikr=1.222 Rc=.8335 Cjc=47.58p Mjc=.3333 Vjc=.5 Fc=.5 Cje=212.4p
++               Mje=.3333 Vje=.5 Tr=391.7n Tf=1.983n Itf=11.92 Xtf=64.06 Vtf=10
+*		PHILIPS		pid=bsv15-6	case=TO39
+*		91-07-31 dsq
+*$
+.model BSV15-10 PNP(Is=70.49f Xti=3 Eg=1.11 Vaf=100 Bf=118.4 Ise=681f Ne=1.558
++               Ikf=.5245 Nk=.525 Xtb=1.5 Br=18.45 Isc=715.1f Nc=1.23 Ikr=1.222
++               Rc=.8335 Cjc=47.58p Mjc=.3333 Vjc=.5 Fc=.5 Cje=212.4p Mje=.3333
++               Vje=.5 Tr=304.6n Tf=1.977n Itf=11.86 Xtf=55.69 Vtf=10)
+*		PHILIPS		pid=bsv15-10	case=TO39
+*		91-07-31 dsq
+*$
+.model BSV15-16 PNP(Is=70.49f Xti=3 Eg=1.11 Vaf=100 Bf=180.1 Ise=735.8f Ne=1.64
++               Ikf=.6947 Nk=.596 Xtb=1.5 Br=18.45 Isc=715.1f Nc=1.23 Ikr=1.222
++               Rc=.8335 Cjc=47.58p Mjc=.3333 Vjc=.5 Fc=.5 Cje=212.4p Mje=.3333
++               Vje=.5 Tr=262.5n Tf=1.981n Itf=14.46 Xtf=75.99 Vtf=10)
+*		PHILIPS		pid=bsv15-16	case=TO39
+*		91-07-31 dsq
+*$
+.model BSV16-6  PNP(Is=70.49f Xti=3 Eg=1.11 Vaf=100 Bf=78.81 Ise=795.9f Ne=1.5
++               Ikf=.9977 Nk=.6579 Xtb=1.5 Br=18.45 Isc=715.1f Nc=1.23
++               Ikr=1.222 Rc=.8335 Cjc=47.58p Mjc=.3333 Vjc=.5 Fc=.5 Cje=212.4p
++               Mje=.3333 Vje=.5 Tr=391.7n Tf=1.983n Itf=11.92 Xtf=64.06 Vtf=10
+*		PHILIPS		pid=bsv15-6	case=TO39
+*		91-07-31 dsq
+*$
+.model BSV16-10 PNP(Is=70.49f Xti=3 Eg=1.11 Vaf=100 Bf=118.4 Ise=681f Ne=1.558
++               Ikf=.5245 Nk=.525 Xtb=1.5 Br=18.45 Isc=715.1f Nc=1.23 Ikr=1.222
++               Rc=.8335 Cjc=47.58p Mjc=.3333 Vjc=.5 Fc=.5 Cje=212.4p Mje=.3333
++               Vje=.5 Tr=304.6n Tf=1.977n Itf=11.86 Xtf=55.69 Vtf=10)
+*		PHILIPS		pid=bsv15-10	case=TO39
+*		91-07-31 dsq
+*$
+.model BSV16-16 PNP(Is=70.49f Xti=3 Eg=1.11 Vaf=100 Bf=180.1 Ise=735.8f Ne=1.64
++               Ikf=.6947 Nk=.596 Xtb=1.5 Br=18.45 Isc=715.1f Nc=1.23 Ikr=1.222
++               Rc=.8335 Cjc=47.58p Mjc=.3333 Vjc=.5 Fc=.5 Cje=212.4p Mje=.3333
++               Vje=.5 Tr=262.5n Tf=1.981n Itf=14.46 Xtf=75.99 Vtf=10)
+*		PHILIPS		pid=bsv15-16	case=TO39
+*		91-07-31 dsq
+*$
+.model BSV17-6  PNP(Is=70.49f Xti=3 Eg=1.11 Vaf=100 Bf=78.81 Ise=795.9f Ne=1.5
++               Ikf=.9977 Nk=.6579 Xtb=1.5 Br=18.45 Isc=715.1f Nc=1.23
++               Ikr=1.222 Rc=.8335 Cjc=35.44p Mjc=.3333 Vjc=.5 Fc=.5 Cje=212.4p
++               Mje=.3333 Vje=.5 Tr=391.7n Tf=1.986n Itf=14.75 Xtf=94.3 Vtf=10)
+*		PHILIPS		pid=bsv17-6	case=TO39
+*		91-07-31 dsq
+*$
+.model BSV17-10 PNP(Is=70.49f Xti=3 Eg=1.11 Vaf=100 Bf=118.4 Ise=681f Ne=1.558
++               Ikf=.5245 Nk=.525 Xtb=1.5 Br=18.45 Isc=715.1f Nc=1.23 Ikr=1.222
++               Rc=.8335 Cjc=36.44p Mjc=.3333 Vjc=.5 Fc=.5 Cje=213.4p Mje=.3333
++               Vje=.5 Tr=304.6n Tf=1.98n Itf=14.64 Xtf=81.44 Vtf=10)
+*		PHILIPS		pid=bsv17-10	case=TO39
+*		91-08-12 dsq
+*$
+.model BSW66A   NPN(Is=44.97f Xti=3 Eg=1.11 Vaf=100 Bf=315.4 Ise=102f Ne=1.261
++               Ikf=.8199 Nk=.7642 Xtb=1.5 Br=4.824 Isc=159.8f Nc=1.705
++               Ikr=.3971 Rc=.2572 Cjc=52p Mjc=.3767 Vjc=.5 Fc=.5 Cje=240p
++               Mje=.2501 Vje=.5 Tr=10n Tf=1.05n Itf=2.639 Xtf=36.17 Vtf=10)
+*		PHILIPS		pid=bsw66a	case=TO39
+*		91-08-12 dsq
+*$
+.model BSW67A   NPN(Is=44.97f Xti=3 Eg=1.11 Vaf=100 Bf=315.4 Ise=102f Ne=1.261
++               Ikf=.8199 Nk=.7642 Xtb=1.5 Br=4.824 Isc=159.8f Nc=1.705
++               Ikr=.3971 Rc=.2572 Cjc=52p Mjc=.3767 Vjc=.5 Fc=.5 Cje=240p
++               Mje=.2501 Vje=.5 Tr=10n Tf=1.05n Itf=2.639 Xtf=36.17 Vtf=10)
+*		PHILIPS		pid=bsw66a	case=TO39
+*		91-08-12 dsq
+*$
+.model BSW68A   NPN(Is=44.97f Xti=3 Eg=1.11 Vaf=100 Bf=315.4 Ise=102f Ne=1.261
++               Ikf=.8199 Nk=.7642 Xtb=1.5 Br=4.824 Isc=159.8f Nc=1.705
++               Ikr=.3971 Rc=.2572 Cjc=52p Mjc=.3767 Vjc=.5 Fc=.5 Cje=240p
++               Mje=.2501 Vje=.5 Tr=10n Tf=1.05n Itf=2.639 Xtf=36.17 Vtf=10)
+*		PHILIPS		pid=bsw66a	case=TO39
+*		91-08-12 dsq
+*$
+.model BSX19    NPN(Is=20.75f Xti=3 Eg=1.11 Vaf=100 Bf=738K Ise=14.86p Ne=1.709
++               Ikf=1.366m Nk=.4817 Xtb=1.5 Br=507 Isc=45.28p Nc=1.452
++               Ikr=2.923 Rc=.8978 Cjc=3.334p Mjc=.2086 Vjc=.5 Fc=.5 Cje=4.118p
++               Mje=.3794 Vje=.5 Tr=4n Tf=280.7p Itf=321.5 Xtf=8.541K Vtf=10)
+*		PHILIPS		pid=bsx19	case=TO18
+*		91-08-16 dsq
+*$
+.model BSX20    NPN(Is=20.75f Xti=3 Eg=1.11 Vaf=100 Bf=113.4 Ise=224.4f
++               Ne=1.439 Ikf=76.38m Nk=.5276 Xtb=1.8 Br=2.025 Isc=163.1p
++               Nc=1.438 Ikr=5.567 Rc=1.156 Cjc=3.334p Mjc=.2086 Vjc=.5 Fc=.5
++               Cje=4.118p Mje=.3794 Vje=.5 Tr=45.49n Tf=236.7p Itf=1.912
++               Xtf=43.51 Vtf=10)
+*		PHILIPS		pid=bsx20	case=TO18
+*		91-08-16 dsq
+*$
+.model BSX45-10 NPN(Is=66.19f Xti=3 Eg=1.11 Vaf=100 Bf=367.1 Ise=752.8f
++               Ne=1.418 Ikf=.1276 Nk=.5462 Xtb=1.5 Br=967.1 Isc=3.662n
++               Nc=1.779 Ikr=2.449 Rc=.5938 Cjc=60.73p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=94.85p Mje=.3333 Vje=.5 Tr=10n Tf=1.358n Itf=1.081
++               Xtf=22.58 Vtf=10)
+*		PHILIPS		pid=bsx45-10	case=TO39
+*		91-08-12 dsq
+*$
+.model BSX45-16 NPN(Is=66.19f Xti=3 Eg=1.11 Vaf=100 Bf=600.9 Ise=93.12f Ne=1.31
++               Ikf=.1347 Nk=.5522 Xtb=1.2 Br=889.8 Isc=3.42n Nc=1.74 Ikr=12.98
++               Rc=.5886 Cjc=60.73p Mjc=.3333 Vjc=.5 Fc=.5 Cje=94.85p Mje=.3333
++               Vje=.5 Tr=10n Tf=1.353n Itf=2.957 Xtf=145.5 Vtf=10)
+*		PHILIPS		pid=bsx45-16	case=TO39
+*		91-08-16 dsq
+*$
+.model BSX46-10 NPN(Is=66.19f Xti=3 Eg=1.11 Vaf=100 Bf=367.1 Ise=752.8f
++               Ne=1.418 Ikf=.1276 Nk=.5462 Xtb=1.5 Br=967.1 Isc=3.662n
++               Nc=1.779 Ikr=2.449 Rc=.5938 Cjc=48.58p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=94.85p Mje=.3333 Vje=.5 Tr=10n Tf=1.372n Itf=1.216
++               Xtf=16.64 Vtf=10)
+*		PHILIPS		pid=bsx46-10	case=TO39
+*		91-08-12 dsq
+*$
+.model BSX46-16 NPN(Is=66.19f Xti=3 Eg=1.11 Vaf=100 Bf=600.9 Ise=93.12f Ne=1.31
++               Ikf=.1347 Nk=.5522 Xtb=1.2 Br=889.8 Isc=3.42n Nc=1.74 Ikr=12.98
++               Rc=.5886 Cjc=48.58p Mjc=.3333 Vjc=.5 Fc=.5 Cje=94.85p Mje=.3333
++               Vje=.5 Tr=10n Tf=1.361n Itf=2.994 Xtf=146.2 Vtf=10)
+*		PHILIPS		pid=bsx46-16	case=TO39
+*		91-08-16 dsq
+*$
+.model BSX47-10 NPN(Is=66.19f Xti=3 Eg=1.11 Vaf=100 Bf=367.1 Ise=752.8f
++               Ne=1.418 Ikf=.1276 Nk=.5462 Xtb=1.5 Br=967.1 Isc=3.662n
++               Nc=1.779 Ikr=2.449 Rc=.5938 Cjc=48.58p Mjc=.3333 Vjc=.5 Fc=.5
++               Cje=94.85p Mje=.3333 Vje=.5 Tr=10n Tf=1.372n Itf=1.216
++               Xtf=16.64 Vtf=10)
+*		PHILIPS		pid=bsx47-10	case=TO39
+*		91-08-12 dsq
+*$
+.model BSX59    NPN(Is=2.148p Xti=3 Eg=1.11 Vaf=100 Bf=5.51MEG Ise=14.31p
++               Ne=1.341 Ikf=1.467 Nk=.8282 Xtb=1.75 Br=2.722 Isc=4.352u
++               Nc=2.902 Ikr=11.54 Rc=.4745 Cjc=19.04p Mjc=.2126 Vjc=.5 Fc=.5
++               Cje=45.81p Mje=.3426 Vje=.5 Tr=10n Tf=300.6p Itf=3.73 Xtf=40.95
++               Vtf=10)
+*		PHILIPS		pid=bsx59	case=TO39
+*		91-08-16 dsq
+*$
+.model BSX60    NPN(Is=991.3f Xti=3 Eg=1.11 Vaf=100 Bf=45.02MEG Ise=5.844p
++               Ne=1.342 Ikf=1.513 Nk=.8609 Xtb=1.35 Br=11.94 Isc=294n Nc=2.206
++               Ikr=69.6m Rc=.4327 Cjc=19.04p Mjc=.2126 Vjc=.5 Fc=.5 Cje=45.81p
++               Mje=.3426 Vje=.5147 Tr=10n Tf=300.3p Itf=3.307 Xtf=32.58 Vtf=10
+*		PHILIPS		pid=bsx60	case=TO39
+*		91-08-16 dsq
+*$
+.model BSX61    NPN(Is=377.1f Xti=3 Eg=1.11 Vaf=100 Bf=3.39K Ise=1.529p
++               Ne=1.314 Ikf=1.57 Nk=.8664 Xtb=1.5 Br=13.35 Isc=153.1n Nc=2.243
++               Ikr=2.079 Rc=.4756 Cjc=19.04p Mjc=.2126 Vjc=.5 Fc=.5 Cje=45.81p
++               Mje=.3426 Vje=.5147 Tr=10n Tf=300p Itf=3.281 Xtf=51.95 Vtf=10)
+*		PHILIPS		pid=bsx61	case=TO39
+*		91-08-16 dsq
+*$
+.model SMBTA05  NPN(Is=9.744f Xti=3 Eg=1.11 Vaf=100 Bf=104 Ise=96.9f Ne=1.615
++               Ikf=.6711 Nk=.5215 Xtb=1.5 Br=7.835 Isc=6.488p Nc=1.471
++               Ikr=1.021 Rc=.3037 Cjc=12p Mjc=.3333 Vjc=.5 Fc=.5 Cje=36p
++               Mje=.3333 Vje=.5 Tr=10n Tf=1.333n Itf=30.41 Xtf=484.6 Vtf=10)
+*		SIEMENS		pid=smbta05	case=SOT23
+*		91-08-28 dsq
+*$
+.model SMBTA06  NPN(Is=9.744f Xti=3 Eg=1.11 Vaf=100 Bf=104 Ise=96.9f Ne=1.615
++               Ikf=.6711 Nk=.5215 Xtb=1.5 Br=7.835 Isc=6.488p Nc=1.471
++               Ikr=1.021 Rc=.3037 Cjc=12p Mjc=.3333 Vjc=.5 Fc=.5 Cje=36p
++               Mje=.3333 Vje=.5 Tr=10n Tf=1.333n Itf=30.41 Xtf=484.6 Vtf=10)
+*		SIEMENS		pid=smbta05	case=SOT23
+*		91-08-28 dsq
+*$
+.model SMBTA20  NPN(Is=3.31f Xti=3 Eg=1.11 Vaf=100 Bf=315.3 Ise=30.83f Ne=1.744
++               Ikf=67.18m Nk=.3523 Xtb=1.5 Br=5.232 Isc=1.227p Nc=1.561
++               Ikr=.6492 Rc=1.623 Cjc=12.2p Mjc=.3333 Vjc=.5 Fc=.5 Cje=8.614p
++               Mje=.3333 Vje=.5 Tr=10n Tf=591p Itf=1.423 Xtf=51.17 Vtf=10)
+*		SIEMENS		pid=smbta20	case=SOT23
+*		91-08-28 dsq
+*$
+.model SMBTA55  PNP(Is=9.744f Xti=3 Eg=1.11 Vaf=100 Bf=107.1 Ise=9.747f
++               Ne=1.377 Ikf=1.26 Nk=.7865 Xtb=1.5 Br=3.584 Isc=59.76f Nc=1.511
++               Ikr=1.901 Rc=.6051 Cjc=29.15p Mjc=.3333 Vjc=.5 Fc=.5 Cje=87.45p
++               Mje=.3333 Vje=.5 Tr=10n Tf=977.7p Itf=13.98 Xtf=131.9 Vtf=10)
+*		SIEMENS		pid=smbta55	case=SOT23
+*		91-08-28 dsq
+*$
+.model SMBTA56  PNP(Is=9.744f Xti=3 Eg=1.11 Vaf=100 Bf=107.1 Ise=9.747f
++               Ne=1.377 Ikf=1.26 Nk=.7865 Xtb=1.5 Br=3.584 Isc=59.76f Nc=1.511
++               Ikr=1.901 Rc=.6051 Cjc=29.15p Mjc=.3333 Vjc=.5 Fc=.5 Cje=87.45p
++               Mje=.3333 Vje=.5 Tr=10n Tf=977.7p Itf=13.98 Xtf=131.9 Vtf=10)
+*		SIEMENS		pid=smbta55	case=SOT23
+*		91-08-28 dsq
+*$
+* end of library

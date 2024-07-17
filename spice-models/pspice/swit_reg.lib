@@ -1,0 +1,2432 @@
+* Library of Switchmode Regulator Controller Chips
+
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+
+* $Revision:   1.18  $
+* $Author:   RPEREZ  $
+* $Date:   20 Jul 1998 11:17:40  $
+
+*----------------------------------------------------------------------------
+
+* OrCAD Incorporated would like to acknowledge Sandia National Laboratories
+* for the contribution of their measurement-based model included in this 
+* library.
+
+*----------------------------------------------------------------------------
+
+
+* BEFORE USING ANY OF THE MODELS IT IS IMPORTANT TO READ THE COMMENTS
+* PRECEDING EACH MODEL DEFINITION.  ALSO, THERE IS A CIRCUIT EXAMPLE
+* FOLLOWING EACH MODEL DEFINITION.
+
+* It will rapidly become obvious that cycle by cycle simulation is
+* expensive, so considerable thought should be given before beginning
+* a simulation sequence.  A good tip would be to set up intitial conditions
+* so that the power supply is close to steady state i.e. output voltage
+* is set to regulated value.  With this achieved a few cycles should be
+* adequate to check the overall functionality of the loop.  With the loop
+* checked out for stability, other start up and response tests can be done
+* overnight.  Also, a good idea is to do an open loop check on the power
+* stage and filter.
+
+* Data sheets for parts modeled in this library are available from:
+*
+* Silicon General
+* 11861 Western Avenue
+* Garden Grove, CA 92641
+* (714) 898-8121
+*
+*$
+*** SG1524B ***
+
+* The following model for the 1524B was obtained by consulting the data sheets
+* and corresponding with Silicon General.  A number of simplifications were
+* made to speed up the model, among these we have:
+* (a) replaced th oscillator with ideal voltage sources,
+* (b) simplified the output stage (only two bipolars per output driver),
+* (c) made the shutdown pin respond to digital stimulus, and
+* (d) used digital simulation for the internal logic.
+
+* The impact of that these simplifications must be considered in the context
+* of the parameters of the circuit, and the circuit being examined.  The
+* above list might change as we get feedback.
+
+.subckt SG1524B ; note: the node numbers are equivalent to chip pinout
++  1    ; - input of error amp
++  2    ; + input of error amp
++  3    ; oscillator output
++  4    ; + current loop sense
++  5    ; - current loop sense
++  7    ; oscillator ramp output, capacitor NOT NECESSARY due to (a) above.
++  8    ; ground
++  9    ; compensation pin
++ 10    ; shutdown pin
++ 11    ; emitter A
++ 12    ; collector A
++ 13    ; collector B
++ 14    ; emitter B
++ 15    ; vin
++ 16    ; vref
++ params:
++ period   = 1ms ; internal clock period
++ deadtime = 1us ; internal clock deadtime
+
+* Pin 6 (RT pin) NOT NECESSARY due to (a) above.
+
+  xdigpwr 8 DPWR DGND DIGIFPWR
+  xbufpwr 8 bufpwr bufgnd digifpwr params: voltage=5.7v
+  rextcl1 4 15 6.7meg
+  rextcl2 5 15 6.7meg
+* stanby current
+  gp 15 DGND table {v(15)} (0 0) (6 5m)
+  v_clkset 7 DGND pulse(1 3 .1ns
++ {period-deadtime-2*deadtime/100} {deadtime} {deadtime/100} {period} )
+  u99 BUF bufPWR DGND dclk 3 d0_gate io_std
+  x15 7 dclk DPWR DGND gen_clk 
+* current limit section
+  ecurlim 909 DGND table {((v(4)-.2)-v(5))*1200} (0 0) (5 5)
+  rlim 909 911 43k
+  qclim 9 911 DGND q_pwm
+  rext 16 0 1G
+  rout 116 16 1
+  e18 116 0  table={v(15)} (0 0) (6 5)
+  x91 116 55 DPWR DGND uvsch 
+  sreset1 9 DGND 55 DGND sreset
+.model sreset vswitch (ron=500 roff=100meg von=2 voff=1.9)
+  x6 1 2 9  DPWR DGND erramp
+  o6 9 7 compmod dgtlnet=39 io_std
+.model compmod doutput(
++ s0name=0 s0vlo=-15 s0vhi=0
++ s1name=1 s1vlo=  0 s1vhi=7 )
+  un1 and(2) DPWR DGND 510 39 4110 d0_gate io_std
+  uinv inv DPWR DGND 10 510 dshutd io_std
+  uinvd1 inv DPWR DGND 4110 4113 delgate io_std ; organizes the delay through cl
+  uinvd2 inv DPWR DGND 4113   40 delgate io_std ; comparator
+.model dshutd  ugate(tplhty=100ns, tphlty=100ns)
+.model delgate ugate(tplhty= 62ns, tphlty= 62ns)
+  eintern 115 0 15 0 1
+  x1 115  dclk 40 31 32  DPWR DGND log1524b 
+  x2  31 32 12 13 11 14 DPWR DGND ppout 
+.ends
+*+----------------------------------------------------------------------------
+*|* POWER SUPPLY CONTAINING SG1524B
+*|*
+*|* THE FOLLOWING LINES CONFIGURE A BUCK REGULATOR AROUND A 1524B
+*|* AND DEMONSTRATES THE USE OF THE 1524B MACROMODEL.
+*|
+*|.LIB "swit_reg.lib"
+*|.LIB "digital.lib"
+*|
+*|.IC V(711)=4.8                ; INITIALIZE THE OUTPUT TO 5 VOLTS 
+*|                              ; (CLOSE TO STEADY)
+*|
+*|VIN 15 0 20                   ; INPUT VOLTAGE SET TO 15 VOLTS
+*|RLOAD 711 0 5                 ; 1.25A LOAD CURRENT AT OUTPUT 
+*|UPRS STIM(1,1) $G_DPWR $G_8 10 IO_STM 0S 0    ; DIGITAL SHUTDOWN 
+*|                                              ; SIGNAL DISABLED
+*|VEMMITS EMMITS 0 0            ; TIE THE EMITTERS OF THE OUTPUT DRIVERS 
+*|                              ; TO GND
+*|VREF 2 0 2.5                  ; REFERENCE INPUT TO +IN OF ERROR AMP
+*|X8  12 711 1 15  BUCK         ; CALL TO BUCK CCT
+*|V4 4 0 PULSE(0 1 6MS 1U 1U 1M 1)             ; CURRENT OVERLOAD 
+*|                                             ; SHUTDOWN TEST
+*|VCLIM  5 0 0                  ; -IN OF CURRENT LIMIT AMP GNDED
+*|RCOMP 50 0 20K                ; COMPENSATION RESISTOR
+*|CCOMP 9 50 100N               ; COMPENSATION CAPACITANCE
+*|
+*|X1  1 2 3 4 5 7 0 9 10 EMMITS 12 12 EMMITS 15 16  SG1524B
+*|+ PARAMS: PERIOD=22U DEADTIME=0.5U
+*|
+*|* BUCK CONVERTER
+*|.SUBCKT BUCK 7 5 21 1
+*|R1   2 7 150
+*|Q1   4 2 1  QX2
+*|C1   5 88    4840UF
+*|RZERO 88 0 .0002
+*|RSNUB 4 5 1.5K
+*|L1   4 5    500UH
+*|D1   0 4    DX
+*|RO1 5 21   10
+*|RO2 21 0  10
+*|.ENDS
+*|
+*|.MODEL DX     D(IS=0.1P RS=16 CJO=2P TT=12N BV=100 IBV=0.1P)
+*|.MODEL QX2    PNP(IS=1.34F XTI=3 EG=1.11 VAF=74.03 BF=65.62 NE=1.208
+*|+             ISE=19.48F IKF=5.385 XTB=1.5 BR=9.715 NC=2 ISC=0 IKR=0 RC=1
+*|+             CJC=1.393P MJC=.3416 VJC=.75 FC=.5 CJE=2.01P MJE=.377 VJE=.75
+*|+             TR=.1N TF=408.8P ITF=.6 VTF=1.7 XTF=3 RB=10)
+*|
+*|.TRAN 10U 5MS 
+*|.PROBE V(711) V(1) I(L1) V(7) D(3) V(12) V(10) V(4)
+*|.END
+*+----------------------------------------------------------------------------
+*$
+
+
+*** SG1525 ***
+
+* The following model for the 1525 was obtained by consulting the data sheets
+* and corresponding with Silicon General.  A number of simplifications were
+* made to speed up the model, among these we have:
+* (a) replaced th oscillator with ideal voltage sources,
+* (b) simplified the output stage (only two bipolars per output driver),
+* (c) the sync pin is ignored (can drive clock directly if needs be),
+* (d) made the shutdown pin respond to digital stimulus, and
+* (e) used digital simulation for the internal logic.
+
+* The impact of that these simplifications must be considered in the context
+* of the parameters of the circuit, and the circuit being examined.  The
+* above list might change as we get feedback.
+
+.subckt SG1525  ; note: the node numbers are equivalent to chip pinout
++  1    ; - input of error amp
++  2    ; + input of error amp
++  4    ; oscillator output
++  5    ; ramp output
++  8    ; soft start pin
++  9    ; compensation pin
++ 10    ; shutdown pin
++ 11    ; output A
++ 12    ; ground
++ 13    ; collector of the output drivers
++ 14    ; output B
++ 15    ; vin
++ 16    ; vref
++ params:
++ period   = 25us ; internal clock period
++ deadtime = 0.5us ; internal clock deadtime
+
+* Pin  3 (sync) NOT USED due to (a) above. 
+* Pin  6 (oscillator time resistor) NOT INCLUDED due to (a) above.
+* Pin  7 (discharge resistor pin) NOT INCLUDED due to (a) above.
+
+  xdigpwr 12 DPWR DGND DIGIFPWR
+
+  v_clkset 5 DGND  pulse(0.9 3.3 .1ns
++ {period-deadtime-2*deadtime/100} {deadtime} {deadtime/100} {period} )
+  u99 BUF DPWR DGND dclk 4 d0_gate io_std
+  x15 5 dclk  DPWR DGND gen_clk 
+  uinvds1 inv DPWR DGND    10 1110 delgate io_std       ; organizes the delay
+  uinvds2 inv DPWR DGND  1110 1010 delgate io_std       ; through loop
+  .model dshutd  ugate(tplhty=2ns, tphlty=2ns)
+
+.model delgate ugate(tplhty=60ns, tphlty=60ns)
+  uinvd1 inv DPWR DGND   22 2220 dshutd io_std  ; organizes the delay
+  uinvd2 inv DPWR DGND 2220 2222 dshutd io_std  ; through loop
+  v16 26 DGND 5.1
+  r16 16 DGND 1G
+  rser1 26 16 1
+*model standby current
+  gp 15 DGND table {v(15)} (0 0) (8 14m)        ; 0mA at 0V, 14mA at 8V
+* erramp
+  x4 1 2 60 9 DPWR DGND eamp3 
+* soft st section
+  x1 5 60 8 22  DPWR DGND softst
+  ustst stim(1,1) DPWR DGND  57 io_stm 0s 0 1us 1
+* toggle flip flop
+  uhigh stim(1,1) DPWR DGND  51 io_stm 0s 1
+  u10 dff(1) DPWR DGND  51,57,dclk,21 20 21 d0_eff io_std
+  x16 8 713 1010  DPWR DGND uvlock 
+  ouvlock 15 DGND uvl dgtlnet=713 io_std
+.model uvl doutput(
++ s0name=0 s0vlo= 7 s0vhi=50
++ s1name=1 s1vlo= 0 s1vhi=7.2 )
+  eintern 115 DGND 15 DGND 1
+  roc4 DPWR 7114 10
+  roc3 DPWR 7113 10
+  roc1 115 7111 10
+  roc2  115 7112 10
+  u1 nor(5)  DPWR DGND 713 20 dclk 77 1010 7111 d_00 io_pwm_oc
+  u2 nor(5)  DPWR DGND 713 21 dclk 77 1010 7112 d_00 io_pwm_oc
+  u3 or(5)   DPWR DGND 713 20 dclk 77 1010 7113 d_00 io_pwm_oc
+  u4 or(5)   DPWR DGND 713 21 dclk 77 1010 7114 d_00 io_pwm_oc
+
+* set-dominant latch
+  u5 srff(1) DPWR DGND  51 51 51 2222 101 77 78 d0_gff io_dft
+  u6 inv DPWR DGND dclk 100 d0_gate io_std
+  u7 nor(2) DPWR DGND 100 2222 101 d0_gate io_std
+
+  rblim1 7111 731 900
+  rblim2 7112 732 900
+  rblim3 7113 733 1.2k
+  rblim4 7114 734 1.2K
+  qo1 735 731 11 q_pwm1
+  qo2 735 732 14 q_pwm1
+  qo3  11 733 DGND q_pwm1
+  q04  14 734 DGND q_pwm1
+  vdrop 13 735 1
+.model sw iswitch (ron=1 roff=1e8 ion=400e-3 ioff=350e-3)
+.model q_pwm1    npn(is=1.34f bf=65.62 ikf=.5385 rc=9
++               cjc=1.393p mjc=.3416 vjc=.75 cje=2.01p mje=.377 vje=.75
++               tf=408.8p rb=10)
+.ends
+*+----------------------------------------------------------------------------
+*|* POWER SUPPLY CONTAINING SG1525
+*|*
+*|* THE FOLLOWING LINES DEMONSTRATE A BUCK REGULATOR USING THE SG1525 MODEL.
+*|
+*|.LIB 
+*|
+*|VREF 2 0 2.5          ; SET UP REFERENCE VOLTAGE
+*|CCOMP 9 50 500P       ; COMPENSATION CAPACITANCE
+*|RCOMP 50 0 2K         ; COMPENSATION RESISTANCE
+*|X8  13 711 1 15  BUCK ; CALL TO BUCK SUBCKT
+*|CSS 8 0 100P          ; SOFT-START CAPACITANCE
+*|VIN 15 0 20           ; SUPPLY VOLTAGE
+*|V11 11 0 0            ; GND OUTPUT A
+*|V14 14 0 0            ; GND OUTPUT B
+*|VSHUT 10 0 0          ; DISABLE SHUTDOWN
+*|
+*|X1 1 2 4 5 8 9  10 11 0 13 14 15 16 SG1525
+*|+ PARAMS: PERIOD=25U DEADTIME=0.5U
+*|
+*|* BUCK CONVERTER
+*|.SUBCKT BUCK 7 5 21 1
+*|* 7=VC
+*|* 5=OUT
+*|* 21=FEEDBACK
+*|* 1=VIN
+*|
+*|R1   2 7 150
+*|R2   1 2 50
+*|Q1   4 2 1  QX2
+*|C1   5 88    200UF
+*|RZERO 88 0 .0002
+*|RSNUB 4 5 1.5K
+*|L1   4 5    500UH
+*|D1   0 4    DX
+*|RO1 5 21   10
+*|RO2 21 0  10
+*|.ENDS
+*|
+*|.MODEL DX     D(IS=0.1P RS=16 CJO=2P TT=12N BV=100 IBV=0.1P)
+*|.MODEL QX2    PNP(IS=1.34F XTI=3 EG=1.11 VAF=74.03 BF=65.62 NE=1.208
+*|+             ISE=19.48F IKF=5.385 XTB=1.5 BR=9.715 NC=2 ISC=0 IKR=0 RC=1
+*|+             CJC=1.393P MJC=.3416 VJC=.75 FC=.5 CJE=2.01P MJE=.377 VJE=.75
+*|+             TR=.1N TF=408.8P ITF=.6 VTF=1.7 XTF=3 RB=10)
+*|
+*|.TRAN 50U 1500U
+*|.PROBE V(711) V(5) V(9)
+*|* V(711)=OUTPUT, V(5)=RAMP, V(9)=COMP
+*|.END
+*+----------------------------------------------------------------------------
+*$
+*
+* MANUFACTURERS PART NO. = SG1525AJ  (SILICON GENERAL)  
+* SUBTYPE: REGULATOR  
+*******************************************************************************  
+* THIS FILE CONTAINS 1 MODEL OF THE SG1525AJ PULSE WIDTH MODULATOR, 
+* PRERAD 25C  
+*  
+***************************************************  
+*  
+* THIS MODEL HAS BEEN TESTED IN A PUSH-PULL QUADRUPLER FIRESET CKT  
+* AND IN A BUCK REGULATOR CONFIGURATION.  MEASURED VS SIMULATED DATA 
+* WAS  COMPARED AND THE MODEL WORKS WELL OVER ALL FREQUENCIES.  
+*  
+******USE THE FOLLOWING .OPTION STATEMENT WHEN USING THIS MODEL.  
+*SET ITL5=0 FOR INFINITE NUMBER OF ITERATIONS. THE DEFAULT IS 5000.  CKTS  
+***WITH TRANSFORMERS OR OTHER REGULATORS REQUIRE THIS.  
+*  
+.OPTIONS ITL5=0  
+*****  
+*  
+* USE THE FOLLOWING .IC CONDITION IN YOUR CKT NETLIST.  IT SETS THE INITIAL  
+* CONDITIONS FOR THE TOGGLE FLIP-FLOP.  THE OUTPUT OF THE TOGGLE FLIP-FLOP  
+***IS UNSTABLE W/OUT THESE CONDITIONS.  
+******  
+*****  
+**X5 IS THE SUBCKT CALL # FOR THE TOGGLE FLIP-FLOP WITHIN SUBCKT SG1525A  
+*        |            |  
+.IC V(X1.X5.2)=5 V(X1.X5.3)=0  
+*     |            |  
+* X1 IS SUBCKT CALL # FOR SG1525A - ASSUMES YOU LABEL IT X1 IN YOUR NETLIST  
+* CHANGE THIS PART OF THE NODE # TO CORRELATE TO THE SUBCKT CALL # THAT YOU  
+* ASSIGN SUBCKT SG1525A IN YOUR CKT NETLIST  
+*  
+.SUBCKT SG1525A/25C 18 6  1  2   9  111 40  15  114  16 116  
++ params:  period = 25u   deadtime = 0.5u
+*************      -IN |  |  |   |   |   |   |   |   |   |  
+*****************     +IN |  |   |   |   |   |   |   |   |  
+********************     OSC |   |   |   |   |   |   |   |  
+***********************     RAMP |   |   |   |   |   |   |  
+**************************     COMP  |   |   |   |   |   |  
+*******************************     OUTA |   |   |   |   |  
+************************************     GND |   |   |   |  
+***************************************     VC   |   |   |  
+******************************************     OUTB  |   |  
+***********************************************     VIN  |  
+**************************************************     VREF  
+* SYNC - PIN3 IS NOT USED  
+**PINS 5,6, AND 7 ARE COMBINED INTO PIN2, THE RAMP.  THERE IS NO NEED TO  
+**CONNECT CAPACITORS AND RESISTORS AT THESE PINS FOR RAMP GENERATION 
+* BECAUSE  THIS WAVEFORM IS DEFINED BY THE USER IN THE OSCILLATOR SECTION
+* THROUGH TWO MODEL PARAMETERS:  PERIOD, DEADTIME.
+* THE  IDEAL OSCILLATOR IN THIS MODEL IS DEFINED BY TWO VOLTAGE PULSE 
+* WAVEFORMS  (VPULSE).  ONE SETS THE OSCILLATOR OUTPUT AND THE OTHER 
+* DEFINES THE SAWTOOTH  WAVEFORM.  PLEASE SEE THE OSCILLATOR SUBCKT 
+* SECTION FOR INSTRUCTIONS ON  DEFINING THESE WAVEFORMS.  
+**PIN8, SOFT-START, AND PIN10, SHUTDOWN, ARE NOT USED IN THIS MODEL  
+**PIN9, THE COMPENSATION PIN, REQUIRES TWO RESISTORS IN PARALLEL WHEN 
+* USED  BECAUSE PSPICE GENERATES AN ERROR MESSAGE IF THERE ARE NOT TWO 
+* CONNECTIONS  AT EVERY NODE.  
+r9a 9 0 1G
+r9b 9 0 1G
+X1 1 2 40 OSC  PARAMS: PERIOD={PERIOD} DEADTIME={DEADTIME} 
+X4 5 1 11 10 4 40 SR  
+X5 1 13 12 4 40 TFF_SG1525A
+X8 16 15 116 11 1 13 20 111 40 PWMOUT  
+X9 16 15 116 11 1 12 20 114 40 PWMOUT  
+EOPAMPUVL 20 40 25 16 1 ;UNDER VOLTAGE LOCKOUT  
+VIN25 25 40 8.7V  
+RIN25 25 40 1MEG  
+VFIVE 4 40 5V ;POWER TO INTERNAL CKTS  
+VREF 116 40 5.1V ;OUTPUT OF REFERENCE SECTION  
+EOPAMP1  3 40 6 18 10K ;THIS IS THE ERROR AMPLIFIER  
+RIN6 6 40 10E12  
+RIN18 18 40 10E12  
+EOPAMP2  5 40 2 3 1 ;THIS IS THE COMPARATOR  
+RIN2 2 40 10E12  
+RIN3 3 40 10E12  
+*********************************************  
+.ENDS SG1525A/25C  
+*********************************************  
+.SUBCKT OSC    1         2       40   PARAMS: PERIOD=25U DEADTIME=0.5U
+*           OSC OUT     RAMP    GROUND  
+*  
+* THE USER DEFINES THE OSCILLATOR OUTPUT WAVEFORM AS A PULSE TRAIN.  THIS 
+* PULSE TRAIN IS USED FOR INTERNAL SIGNALS TO THE TOGGLE FLIP-FLOP, SR 
+* LATCH, AND  4 INPUT NOR GATES OF THE OUTPUT SECTION.  
+* THE USER DEFINES THE CAPACITOR RAMP WAVEFORM WHICH IS USED AS AN 
+* INTERNAL  SIGNAL TO THE PULSE WIDTH MODULATOR COMPARATOR.  
+*  
+* SET THE OSC PULSE WITH THE VOSC STATEMENT:  
+*  
+* T=PERIOD   D=DEADTIME    DELAY=T-D  
+*  
+* I.E. PULSE(0      5    T-D    20E-9  20E-9  D-(TR & TF)   T ) OSC WAVEFORM  
+*            |      |     |      |      |        |          |  
+*         (VBEGIN  VEND  DELAY  TRISE  TFALL  PULSEWIDTH   PERIOD)  
+*  
+*  
+VOSC 1 40 PULSE(0 5  {period-deadtime} 20N 20N {deadtime-40n} {period} )  
+*  
+* SET THE RAMP PULSE WITH THE VCAP STATEMENT:  
+*  
+* T=PERIOD   D=DEADTIME    RISETIME OF SAWTOOTH = T-D  
+*  
+* PULSE(1      3     0      T-D   D-(5E-9)    5E-9        T) CAP VOLT WAVEFORM  
+*       |      |     |       |       |         |          |  
+*    (VBEGIN  VEND  DELAY  TRISE  TFALL    PULSEWIDTH   PERIOD)  
+*  
+*  
+VCAP 2 40 PULSE(1 3.5 0 {period-deadtime} {deadtime-5n} 5n {period} )  
+R1 1 40 1E6  
+R2 2 40 1E6  
+.ENDS OSC  
+**********************************************  
+*-----------------------------------------------------------------------------  
+.SUBCKT SR    1     4     5   6     10    40  
+*             S     R     Q  QBAR   VCC   GROUND  
+X1 1 2 3 10 40 NAND  
+X2 3 4 2 10 40 NAND  
+X3 3 6 5 10 40 NAND  
+X4 5 2 6 10 40 NAND  
+R6 6 40 10E6  
+C3 3 40 0.5E-12 IC=0.5  
+CQ 5 40 0.5E-12 IC=5  
+C6 6 40 0.5E-12 IC=0.5  
+.ENDS SR  
+**********************************************  
+* NAND GATE USING TWO DIODES AND A TRANSISTOR  
+.SUBCKT NAND 1  2  3  4  40  
+************IN  |  |  |  |  
+************** IN  |  |  |  
+******************OUT |  |  
+******************** VCC |  
+*********************** GND  
+D1 8 6 D1  
+D2 8 7 D1  
+Q1 9 11 40 NP; Q222200 CAUSES OSCILLATIONS AT 250HZ ; USE NP HERE  
+R1 4 8 1E3  
+R2 4 9 1E3  
+R3 10 11 1E3  
+R4 1 40 1E6  
+R5 2 40 1E6  
+E1 6 40 1 40 1  
+E2 7 40 2 40 1  
+E3 10 40 8 40 0.75  
+E4 20 40 9 40 1  
+R20 20 12 1E3  
+C12 12 40 1E-12  
+E5 30 40 12 40 1  
+ROUT 30 3 40  
+.ENDS NAND  
+**********************************************  
+.SUBCKT TFF_SG1525A 1 10 20 50 40  
+*********** |  |  |  |  |  
+*********** |  |  |  | GND  
+*********** |  |  | VCC  
+*********** |  |  QNOT  
+*********** |  Q  
+*********** INPUT  
+****************************  
+**** 2 INPUT NAND2 GATE ****  
+****************************  
+R3 2 50 1E3  
+R4 50 3 1E3  
+R5 2 6 10E3  
+R6 3 5 10E3  
+Q1 2 5 40 Q222200  
+Q2 3 6 40 Q222200  
+D1 5 7 D1  
+D2 6 8 D1  
+C1 1 7 100E-12  
+C2 1 8 100E-12  
+R1 2 7 10000  
+R2 3 8 10000  
+X1 2 2 10 50 40 NAND  
+*NAND AS INVERTER TO BUFFER OUTPUT.  
+X2 3 3 20 50 40 NAND  
+*NAND AS INVERTER TO BUFFER OUTPUT.  
+.ENDS TFF_SG1525A
+******************************  
+**      SG1525A OUTPUT STAGE (X7, X8)     **  
+********************************************  
+.SUBCKT PWMOUT 1 2 17 12 13 14 20 5 40  
+**             | | |  |  |  |  |  | |  
+**             | | |  |  |  |  |  | GND  
+**             | | |  |  |  |  |  OUTPUT  
+**             | | |  |  |  |  UVL  
+**             | | |  |  |  Q  
+**             | | |  |  OSC  
+**             | | |  NOT PWM  
+**             | | VREF  
+**             | VC  
+**             VIN  
+*****************************************  
+I3MA 1 6 3MA  
+I3MA2 1 3 3MA  
+RI3 1 6 10MEG  
+RI32 1 3 10MEG  
+Q1 8 9 40 Q222200  
+Q2 8 10 40 Q222200  
+Q3 8 11 40 Q222200  
+Q4 6 8 40 Q222200  
+Q5 3 6 7 Q222200  
+Q6 2 3 4 Q222200  
+Q7 2 4 5 Q222200  
+Q8 5 7 40 Q222200  
+Q9 8 20 40 Q222200  
+R1 4 5 5K  
+R2 7 40 2K  
+R3 12 9 10K  
+R4 13 10 10K  
+R5 14 11 10K  
+D1 4 3 D1  
+D2 5 3 D1  
+IREF 17 8 500UA  
+RIREF 17 8 10MEG  
+.ENDS  PWMOUT  
+********************* MODELS FOR THE PWM SUBCKTS  ******  
+.MODEL NP NPN(
++         IS = 1E-16
++         BF = 50
++         NF = 1
++        VAF = 50
++        IKF = 9.9999E+13
++        ISE = 0
++         NE = 1.5
++         BR = 1
++         NR = 1
++        VAR = 9.9999E+13
++        IKR = 9.9999E+13
++        ISC = 0
++         NC = 2
++         RB = 70
++        IRB = 9.9999E+13
++        RBM = 0
++         RE = 0
++         RC = 40
++        CJE = 0.9PF
++        VJE = .75
++        MJE = .33
++         TF = 0.1NS
++        XTF = 0
++        VTF = 9.9999E+13
++        ITF = 0
++        PTF = 0
++        CJC = 1.5PF
++        VJC = 0.85
++        MJC = .33
++       XCJC = 1
++         TR = 10NS
++        CJS = 2PF
++        VJS = .75
++        MJS = 0
++        XTB = 0
++         EG = 1.11
++        XTI = 3
++         KF = 0
++         AF = 1
++         FC = .5
++ )
+*
+.MODEL D1 D(
++         IS = 1E-14
++         RS = 40
++          N = 1
++         TT = 0.1NS
++        CJO = 0.9PF
++         VJ = 1
++          M = .5
++         EG = 1.11
++        XTI = 3
++         KF = 0
++         AF = 1
++         FC = .5
++         BV = 9.9999E+13
++        IBV = .001
++ )
+*BETTER SWITCHING TIME W/2N2222 THAN QNOM FROM LIBRARY-THE DEFAULT IS 0 - 
+* TOO  FAST  
+.MODEL Q222200 NPN      (
++         IS = 3.97589E-14
++         BF = 195.3412
++         NF = 1.0040078
++        VAF = 53.081
++        IKF = 0.976
++        ISE = 1.60241E-14
++         NE = 1.4791931
++         BR = 1.1107942
++         NR = 0.9928261
++        VAR = 11.3571702
++        IKR = 2.4993953
++        ISC = 1.88505E-12
++         NC = 1.1838278
++         RB = 56.5826472
++        IRB = 1.50459E-4
++        RBM = 5.2592283
++         RE = 0.0402974
++         RC = 0.4208
++        CJE = 2.56E-11
++        VJE = 0.682256
++        MJE = 0.3358856
++         TF = 3.3E-10
++        XTF = 6
++        VTF = 0.574
++        ITF = 0.32
++        PTF = 25.832
++        CJC = 1.40625E-11
++        VJC = 0.5417393
++        MJC = 0.4547893
++       XCJC = 1
++         TR = 3.2E-7
++        CJS = 0
++        VJS = .75
++        MJS = 0
++        XTB = 1.6486
++         EG = 1.11
++        XTI = 5.8315
++         KF = 0
++         AF = 1
++         FC = 0.83
++ )
+*$
+
+*** SG1526B ***
+
+* The following model for the 1526B was obtained by consulting the data sheets
+* and corresponding with Silicon General.  A number of simplifications were
+* made to speed up the model, among these we have:
+* (a) replaced th oscillator with ideal voltage sources,
+* (b) simplified the output stage (only two bipolars per output driver),
+* (c) the sync pin is ignored (can drive clock directly if needs be),
+* (d) made the shutdown pin respond to digital stimulus, and
+* (e) used digital simulation for the internal logic.
+
+* The impact of that these simplifications must be considered in the context
+* of the parameters of the circuit, and the circuit being examined.  The
+* above list might change as we get feedback.
+
+.subckt SG1526B ; note: the node numbers are equivalent to chip pinout
++  1    ; + input of error amp
++  2    ; - input of error amp
++  3    ; compensation pin
++  4    ; soft start pin
++  5    ; reset pin
++  6    ; - current sense
++  7    ; + current sense
++  8    ; shutdown_bar
++ 10    ; oscillator ramp output, capacitor NOT NECESSARY due to (a) above.
++ 12    ; SYNC pin, NOT USED due to (a) above. To synchronize two chips just
+*               remove v_clk_set and u_clk_set and drive the clock and ramp
+*               nodes from external sources.
++ 13    ; output A
++ 14    ; collector of the output drivers
++ 15    ; ground
++ 16    ; output B
++ 17    ; vin
++ 18    ; vref
++ params:
++ period   = 1mS ; internal clock period
++ deadtime = 1uS ; internal clock deadtime
+
+* Pin  9 (oscillator timing resistor) NOT INCLUDED due to (a) above.
+* Pin 11 (deadtime resistor) NOT INCLUDED due to (a) above.
+
+  xdigpwr 15 DPWR DGND DIGIFPWR
+
+*stanby current
+  gp 17 DGND table {v(17)} (0 0) (8 16m)
+  v_clkset 10 DGND  pulse(1 3 .1ns {period-deadtime-2*deadtime/100} {deadtime} {deadtime/100} {period} )
+  u99 BUF DPWR DGND dclk 12 d0_gate io_std
+  x15 10 dclk  DPWR DGND gen_clk1 
+  x6 1 2 3  DPWR DGND eamp1
+  rout 118 18 1
+  e18 118 DGND table {v(17)} (0 0) (8 5.1)
+  x91 18 55  DPWR DGND uvsch1 
+  sreset  4 DGND  5 DGND sreset
+  sreset1 4 DGND 55 DGND sreset5
+  i1 4 0 -100u
+  sso_st 4 DGND 4 DGND smod
+.model smod vswitch (ron=1 roff=100meg von=5.6 voff=5)
+.model sreset vswitch (ron=500 roff=100meg von=.8 voff=.9)
+.model sreset5 vswitch (ron=500 roff=100meg von=.9 voff=.8)
+  rconv1 440 DGND 1G
+  rconv2 550 DGND 1G
+  eg1 440 DGND table={(v(4)+.7-v(3))*1e3} (0 0) (1 1)   ; selects minumum of
+  eg2 550 DGND table={(v(3)-v(4)-.7)*1e3} (0 0) (1 1)   ; v4 and v3 and feeds
+  esum 94 DGND value={v(440)*v(3)+v(550)*(v(4)+0.7)}    ; to 94 (diode drop
+  rconv3 94 DGND 1e9                                    ; added to v(4) )
+  o6 94 10 compmod dgtlnet=39 io_std
+.model compmod doutput(
++ s0name=0 s0vlo=-15 s0vhi=0
++ s1name=1 s1vlo=  0 s1vhi=7)
+  ocl 7 6 clmod dgtlnet=71 io_std       ; output of cl comparator
+.model clmod doutput(                   ; anded with bar of shutdown
++ s0name=0 s0vlo=-15 s0vhi=.1           ; feeding into and with pwm out
++ s1name=1 s1vlo=.08 s1vhi= 7)
+  uinvd1 inv DPWR DGND   71  771 delgate io_std ; organizes the delay
+  uinvd2 inv DPWR DGND  771 7771 delgate io_std ; through cl comparator
+  uinv1  inv DPWR DGND 7771   72 d0_gate io_std
+  uand2 and(2) DPWR DGND  8 72 73 d0_gate io_std
+  un1   and(2) DPWR DGND 73 39 40 dshutd  io_std
+.model dshutd  ugate(tplhty=100ns, tphlty=100ns)
+.model delgate ugate(tplhty= 62ns, tphlty= 62ns)
+  eintern 117 DGND 17 DGND 1
+  x1 117 dclk 40 31 32 33 34  DPWR DGND log1526b 
+  x2  15 31 32 33 34 14 13 16  DPWR DGND ppout1 
+.ends
+*+----------------------------------------------------------------------------
+*|* POWER SUPPLY CONTAINING SG1526B
+*|*
+*|* THE FOLLOWING LINES CONFIGURE A BUCK REGLATOR AROUND A 1526B
+*|* AND DEMONSTRATES THE USE OF THE 1526B MACROMODEL.
+*|
+*|.LIB "swit_reg.lib"
+*|.LIB 
+*|
+*|.PARAM CL1=.2N,TRR=10N,RP=18K
+*|
+*|.OPTIONS ITL4=20 ITL5=0 RELTOL=.01
+*|.IC V(2)=5.0,V(3)=1.5 ; INITIALISE THE OUTPUT AND THE ERRAMP OUTPUT
+*|
+*|VIN 17 0 20           ; INPUT SET TO 20 VOLTS
+*|VCOLL 14 0 15         ; COLLECTORS OF OUTPUT DRIVERS SET TO 15V
+*|ILOAD 2 0 1           ; SET LOAD AT OUPUT TO 1AMP
+*|USHUT STIM (1,1) $D_PWR DGND 8 IO_STM  0.000000S 1 ; DISABLE SHUTDOWN
+*|CCOMP 3 50 104NF      ; COMPENSATION CAPACITANCE
+*|RCOMP 50 0 {RP}       ; COMPENSATION RESISTANCE
+*|VSET 1 0  5           ; SET + TERMINAL OF ERRAMP TO 5
+*|X8  13 16 17 2   BUCK ; CAll TO BUCK SUBCKT
+*|ROUT 2 0 100
+*|CSO_ST 4 0 10N
+*|VRESET 5 0 5          ; RESET DISABLED
+*|.IC V(4) = 4.9        ; RESET CAP ALREADY CHARGED
+*|V6 6 0 0              ; CURRENT OVERLOAD DIABLED
+*|V7 7 0 0              ; -VE OF CURRENT OVERLOAD AMP
+*|
+*|X1  1 2 3 4 5 6 7 8 10 12 13 14 0 16 17 18 SG1526B
+*|+ PARAMS: PERIOD=1ms DEADTIME=1us
+*|
+*|* BUCK CONVERTER
+*|*            VA VB IN OUT
+*|.SUBCKT BUCK 13 16 1 5
+*|  R1   2 7 510
+*|  Q1   4 2 1  QX2
+*|  C1   5 88    4840UF
+*|  RZERO 88 0 .0002
+*|  RSNUB 4 5 3.0K
+*|  L1   4 5   500UH
+*|  D1   0 4    DX1
+*|  Q2   7 11 0  Q2N3904
+*|  D2  133 11 DX
+*|  D3  166 11 DX
+*|  RSER1 133 13 1K
+*|  RSER2 166 16 1K
+*|.MODEL LMOD IND(L=1 IL1=-125U )
+*|.ENDS
+*|
+*|.MODEL DX1    D(IS=0.1P RS=16 CJO=2P TT=12N BV=100 IBV=0.1P
+*|.MODEL DX     D(IS=0.1P RS=16 CJO=2P TT=12N BV=100 IBV=0.1P)
+*|
+*|.MODEL QX2    PNP(IS=500F XTI=3 EG=1.11 VAF=50 BF=1MEG NE=3.423 ISE=15.06N
+*|+             IKF=39.04U XTB=1.5 BR=50 NC=2 ISC=0 IKR=0 RC=.2 CJC=319.1P
+*|+             MJC=.4924 VJC=.75 FC=.5 CJE=323.3P MJE=.5972 VJE=.75 TR=28.11N
+*|+             TF=430.9P ITF=0 VTF=0 XTF=0)
+*|
+*|.model Q2N3904        NPN(Is=6.734f Xti=3 Eg=1.11 Vaf=74.03 Bf=416.4 Ne=1.259
+*|+             Ise=6.734f Ikf=66.78m Xtb=1.5 Br=.7371 Nc=2 Isc=0 Ikr=0 Rc=1
+*|+             Cjc=3.638p Mjc=.3085 Vjc=.75 Fc=.5 Cje=4.493p Mje=.2593 Vje=.75
+*|+             Tr=239.5n Tf=301.2p Itf=.4 Vtf=4 Xtf=2 Rb=10)
+*|
+*|.TRAN 1US 5M
+*|.PROBE V(2) V(1) V(13) V(16) V(4) V(7) D(8)
+*|.END
+*+----------------------------------------------------------------------------
+*$
+
+*** SG1529 ***
+
+* The following model for the 1529 was obtained by consulting the data sheets
+* and corresponding with Silicon General.  A number of simplifications were
+* made to speed up the model, among these we have:
+* (a) replaced th oscillator with ideal voltage sources,
+* (b) simplified the output stage (only two bipolars per output driver),
+* (c) made the shutdown pin respond to digital stimulus, and
+* (d) used digital simulation for the internal logic.
+
+* The impact of that these simplifications must be considered in the context
+* of the parameters of the circuit, and the circuit being examined.  The
+* above list might change as we get feedback.
+
+.subckt SG1529  ; note: the node numbers are equivalent to chip pinout
++  1    ; - input of error amp
++  2    ; + input of error amp
++  3    ; oscillator output
++  4    ; + current loop sense
++  5    ; - current loop sense
++  7    ; oscillator ramp output, capacitor NOT NECESSARY due to (a) above.
++  8    ; feed forward pin
++  9    ; ground
++ 10    ; compensation pin
++ 11    ; shutdown pin
++ 12    ; emmitter A
++ 13    ; collector A
++ 14    ; collector B
++ 15    ; emmitter B
++ 16    ; vin
++ 17    ; vref
++ params:
++ period   = 1mS ; internal clock period
++ deadtime = 1uS ; internal clock deadtime
+
+* Pin 6 (RT pin) NOT NECESSARY due to (a) above.
+* Pin 18 not included (NO CONNECT)
+
+  xdigpwr 9 DPWR DGND DIGIFPWR
+
+  rext11 4 0 1G
+  rest22 5 0 1G
+*stanby current
+  gp 16 DGND table {v(16)} (0 0) (7 5m)
+  v_clkset 7 DGND pulse(1 3 .1ns
++ {period-deadtime-2*deadtime/100} {deadtime} {deadtime/100} {period} )
+  u99 BUF DPWR DGND dclk 3 d0_gate io_std
+  x15 7 dclk DPWR DGND gen_clk 
+*current limit section
+  ecurlim 909 DGND table {((v(4)-.2)-v(5))*1200} (0 0) (5 5)
+  vlim 909 910 0
+  wlim 910 911 vlim swlim
+.model swlim iswitch (ron=100 roff=1e5 ion=90e-6 ioff=100e-6)
+  qclim 10 911 0 q_pwm
+  rext  17  0 1G
+  rout 116 17 1
+  e18 116 DGND table {v(16)} (0 0) (7 5.1)
+  x91 116 55  DPWR DGND uvsch2 
+  sreset1 10 DGND 55 DGND sreset
+.model sreset vswitch (ron=500 roff=100meg von=2 voff=1.9)
+  x6 1 2 10  DPWR DGND eamp2
+  o6 10 8 compmod dgtlnet=39 io_std
+.model compmod doutput(
++ s0name=0 s0vlo=-15 s0vhi=0
++ s1name=1 s1vlo=  0 s1vhi=7 )
+  uinv   inv DPWR DGND  11 511 d0_gate io_std
+  un1 and(2) DPWR DGND  511 39 4110 dshutd io_std
+  uinvd1 inv DPWR DGND 4110 4113 delgate io_std ; organizes the delay
+  uinvd2 inv DPWR DGND 4113   40 delgate io_std ; through cl comparator
+.model dshutd  ugate(tplhty=100ns, tphlty=100ns)
+.model delgate ugate(tplhty= 62ns, tphlty= 62ns)
+  eintern 1116 0 16 0 1
+  x1 1116 dclk 40 31 32  DPWR DGND log1524b 
+  x2  31 32 13 14 12 15  DPWR DGND ppout2 
+.ends
+*+----------------------------------------------------------------------------
+*|* POWER SUPPLY CONTAINING SG1529
+*|*
+*|* THE FOLLOWING LINES CONFIGURE A BUCK REGLATOR AROUND A 1529
+*|* AND DEMONSTRATES THE USE OF THE 1529 MACROMODEL.
+*|
+*|.LIB "swit_reg.lib"
+*|.LIB 
+*|
+*|.IC V(711)=5 V(10)=1.5  ;INITIALISE THE OUTPUTS
+*|.OPTIONS ITL5=0 RELTOL=.01
+*|
+*|VIN 16 0 20           ; SET INPUT TO 20 VOLTS
+*|ILOAD 711 0 1         ; LOAD OUTPUT WITH 1 AMP
+*|UPRS STIM(1,1) $G_DPWR DGND 11 IO_STM  0S 0 ; DISABLE SHUTDOWN
+*|VEMMIT EMMITT 0 0     ; TIE EMMITTERS TO GND
+*|VREF 2 0 2.5          ; POSITIVE OF ERRAMP
+*|X8  12 711 1 16  BUCK ; CALL TO BUCK  SUBCKT
+*|V4 4 0 0              ; DISABLE CURRENT SENSE
+*|VCURLIM  5 0 0        ; DISABLE CURRENT SENSE
+*|COMP 10 56 100N       ; COMPENSATION CAPACITANCE
+*|RCOMP 56 0 20K        ; COMPENSATION RESISTANCE
+*|
+*|X1  1 2 3 4 5 7 7 0 10 11 EMMITT 12 12 EMMITT 16 17  SG1529
+*|+ PARAMS: PERIOD=1ms DEADTIME=1us
+*|
+*|* BUCK CONVERTER
+*|.SUBCKT BUCK 7 5 21 1
+*|R1   2 7 150
+*|Q1   4 2 1  QX2
+*|C1   5 88    4840UF
+*|RZERO 88 0 .0002
+*|RSNUB 4 5 1.5K
+*|L1   4 5    500UH
+*|D1   0 4    DX
+*|RO1 5 21   10
+*|RO2 21 0  10
+*|.ENDS
+*|
+*|.MODEL DX     D(IS=0.1P RS=16 CJO=2P TT=12N BV=100 IBV=0.1P)
+*|.MODEL QX2    PNP(IS=1.34F XTI=3 EG=1.11 VAF=74.03 BF=65.62 NE=1.208
+*|+             ISE=19.48F IKF=5.385 XTB=1.5 BR=9.715 NC=2 ISC=0 IKR=0 RC=1
+*|+             CJC=1.393P MJC=.3416 VJC=.75 FC=.5 CJE=2.01P MJE=.377 VJE=.75
+*|+             TR=.1N TF=408.8P ITF=.6 VTF=1.7 XTF=3 RB=10)
+*|
+*|.TRAN 10US 5MS
+*|.PROBE V(4) D(11) V(711) I(VIN)
+*|.END
+*+----------------------------------------------------------------------------
+*$
+
+*** SG1825 ***
+
+* The following model for the 1825 was obtained by consulting the data sheets
+* and corresponding with Silicon General.  A number of simplifications were
+* made to speed up the model, among these we have:
+* (a) replaced the oscillator with ideal voltage sources
+* (b) simplified the output stage (only two bipolars per output driver),
+* (c) used digital simulation for the internal logic.
+
+* The impact of that these simplifications must be considered in the context
+* of the parameters of the circuit, and the circuit being examined.  The
+* above list might change as we get feedback.
+
+.subckt sg1825 
++  1    ;- error amp input
++  2    ;+ error amp input
++  3    ;error amp output
++  4    ;clock
++  6    ;ct : capacitor NOT NECESSARY due to (a) above.   
++  7    ;ramp
++  8    ;soft start
++  9    ;I limit shutdown
++ 10    ;ground
++ 11    ;output A
++ 12    ;Pwr Gnd
++ 13    ;out driver collectors
++ 14    ;output B
++ 15    ;Vin
++ 16    ;Vref
++ params:
++ period   = 2.5u ; internal clock period
++ deadtime = 5e-8 ; internal clock deadtime
+
+  xdigpwr 10 DPWR DGND DIGIFPWR
+
+  r11 11 11a 1k
+  c11 11a 0 10p
+  r14 14 14a 1k
+  c14 14a 0 10p
+*micropower description;
+  g1 15 DGND table {v(15)}=(0,0) (1,.5m) (8,1.5m) (9,2.5m) (10,22m)
+  g1freq 15 DGND table {(1-v(uvcompaa))/(1k*period)} (0,0) (100,1m) (500,12m) (1e3,30m)
+  v1 one 0 1
+  x78 10011 uvcompaa  one 0  DtoAcone1 ; uvcompaa is inverted this time
+  vconv conv 0 1
+  rconv conv 0 1k
+  eref 16a DGND table {v(conv)*v(15)}= (9,0) (9.1,5.1) ; little info on iv characteristics
+  vsens 16a 16b 0 
+  efall 16b 16 table {i(vsens)} (0 0) (10m 20m) (30m 1) (40m 3) (50m 5)
+  echeck check 0 16b 16 1
+  rcheck check 0 1g
+  r16a 16a 0 1g
+  r16b 16b 0 1g
+  r16  16  0 1g
+  ouvlock 15 DGND uvl dgtlnet=10011 io_std
+  ouvloc1 16 DGND uvlref dgtlnet=10012 io_std
+  unnd1 nand(2) DPWR DGND 10011 10012 1001 d0_gate io_std 
+.model uvl doutput(
++ s1name=1 s1vlo= 9 s1vhi=50 
++ s0name=0 s0vlo= -5 s0vhi=9.8 ) 
+.model uvlref doutput(
++ s1name=1 s1vlo= 4 s1vhi=10 
++ s0name=0 s0vlo= -1 s0vhi=4.2 ) 
+  v_clkset 6 DGND pulse(1 3 .1ns
++ {period-deadtime-2*deadtime/100} {deadtime} {deadtime/100} {period} )
+  u99 BUF DPWR DGND dclk 4 d0_gate io_std
+  x15 6 dclk  DPWR DGND gen_clk      
+  r6 6 0 100k
+  vtrig1 1111 DGND 1
+  otrigl 9 1111 cmp1825 dgtlnet=46 io_std
+.model cmp1825 doutput(
++ s0name=0 s0vlo= -35 s0vhi=0
++ s1name=1 s1vlo= 0 s1vhi=70) 
+  vtrig2 1144 DGND 1.4
+  otrigh 9 1144 trig1825 dgtlnet=49 io_std
+.model trig1825 doutput(
++ s0name=0 s0vlo= -35 s0vhi=0 
++ s1name=1 s1vlo= 0 s1vhi=70)
+  uor2 or(2) DPWR DGND 49 1001 45 d0_gate io_std 
+* block  containing lower left hand side of the chip
+*     + - eao  sstd  pwmi-  trig1c pwmo   vin
+  xbl1  1 2 3 7 8  45    57     46     44   16   DPWR DGND   bl11825
+*     clk pwmout   orout   q  qb 
+  xlog  dclk      44    73      20 21  DPWR DGND  log1825 
+*...                      vc   oa  ob
+  xoutst  20  21   73  12   13   11  14  DPWR DGND outs1825 
+.ends
+
+*-----------------------------------------------------------------------------
+*|* POWER SUPPLY TO TEST THE 1825 MACROMODEL
+*|* THIS IS A 200KHZ PUSHPULL CURRENT MODE SUPPLY 
+*|* AND CLOSELY RESEMBLES THAT DESCRIBED IN TE APPLICATION NOTES
+*|* FOR THE SG1825 IN THE SILICON GENERAL DATA BOOK(1990), THE BOOTSTRAP 
+*|* WINDINGS WERE IGNORED AS AN UNCESSARY ADDITION TO THIS SIMULATION
+*|* THE OUTPUT NODE IS 28. OTHER NODES ARE EASILY RECOGNISED BY REFERRING
+*|* TO THE CHIP AND THE CIRCUIT DIAGRAM IN THE DATA BOOK.
+*|.OPTIONS ITL5=0  RELTOL=.01 
+*|.PARAM SCALE=2
+*|*.STEP PARAM SCALE LIST  1 2 4 6 ;CHECK OUT THE EFFECT OF TRANSFORMER INDUCTANCE
+*|.LIB "swit_reg.lib" 
+*|.LIB 
+*|.IC V(7)=0 V(29)=5 V(16)=1.625 V(28)=5  V(11)=0 V(19)=0
+*|.PROBE  V(28) V(29) V(6) I(L7) V(25) V(23)  V(20) V(22) V(16) 
+*|.PROBE  D(X1.46) D(X1.49) D(X1.45)
+*|.TRAN 1US 200US  
+*|  K1 L1 L2 L3 L4 .99    
+*|  RCONNECT 9 7 3MEG
+*|  C3   21   20 .01U
+*|  C5   29    0 .001U
+*|  C6    4    0 .1U
+*|  ILOAD   28    0 PULSE(1 1.5  1M .001M .001M 1M 4M)
+*|  ILOAD1 28 0 PULSE(0 3 1.5M 1U 1U .1M 4M)
+*|  ILOAD2 28 0 PULSE(0 10 1.8M 1U 1U .1M 4M)
+*|  R13   25    0 1
+*|  R16    8   10 10
+*|  R17   27   10 10
+*|  L7   10   28 18.5U
+*|  RL7 10 28 500 
+*|  R1    6    0 1K
+*|  R5   22    4 2.7K
+*|  R8   20   28 2.7K
+*|  L1    7   0 {11U*SCALE}
+*|  RL1 7 0 4K 
+*|  L2   0   26 {11U*SCALE}
+*|  RL2 0 26 4K 
+*|  C7    0   1 220U
+*|  V1   1    0 28
+*|  R4   22    0 33K
+*|  R77    6   20 33K
+*|  RBET 5 5A 10
+*|  S77 5 0 2555 0 SINVS
+*|.MOD SINVS VSWITCH (RON=200 ROFF=.1 VON=1 VOFF=2)
+*|  VSWITCHI 2555 0 PULSE(0 5 .1M 5U 5U 2 4)
+*|  C13   23    0 390P
+*|  C9   28    0 47.7U
+*|  R9   13   11 50
+*|  R10   18   19 50
+*|  R11   23   25 510
+*|  R12   31   25 510
+*|  C1    9   14 510P
+*|  C2   24   30 510P
+*|  C12   31    0 510P
+*|  R14   14    0 560
+*|  R15    0   24 560
+*|  R3   16   21 6.2K
+*|  L3    9   1F {160U*SCALE}
+*|  RL3   1F 1 .01
+*|  RL33 9 1 14K 
+*|  L4   1G   30 {160U*SCALE}
+*|  RL44 1G 1 .01
+*|  RL4 1 30 14K 
+*|  C10   26   27 910P
+*|  C11    7    8 910P
+*|  CT    5    0 470P
+*|  D1   11   13 D1N5819
+*|  D2   19   18 D1N5819
+*|  D5   24    0 D1N5819
+*|  D6   14    0 D1N5819
+*|  M1    9   11   25A   25A IRF840
+*|  M2   30   19   25B   25B IRF840
+*|  LA 25A 25 10N
+*|  LB 25B 25 10N
+*|  D7    7   10 MUR410
+*|  D8   26   10 MUR410
+*|  Q1    4    5A    6 Q2N2222
+*|  VCHIP 1515 0 16
+*|  V12 122  0 0
+*|  X1   20   22   16 CLK  5   23   29   31   0  13  122  1515   18 1515    4 SG1825
+*|.end
+*-----------------------------------------------------------------------------
+*$
+*** SG1842 ***
+
+* The following model for the 1842 was obtained by consulting the data sheets
+* and corresponding with Silicon General.  A number of simplifications were
+* made to speed up the model, among these we have:
+* (a) replaced the oscillator with ideal voltage sources
+* (b) simplified the output stage (only two bipolars per output driver),
+* (c) used digital simulation for the internal logic.
+* (d) if u want to check for feedback loading use ea184s1 
+* (e) because so many versions of this chip are now widely available
+* with widely variable quiescent current another parameter has been added
+* which allows you set the quiesent current {quiescur}
+
+* The impact of that these simplifications must be considered in the context
+* of the parameters of the circuit, and the circuit being examined.  The
+* above list might change as we get feedback.
+
+.subckt sg1842 
++  1    ; compensation
++  2    ; - error amp (fb)
++  3    ; I sense 
++  5    ; ground
++  6    ; output
++  7    ; vcc 
++  8    ; vref
++ params:
++ period   = 22.5u ; internal clock period
++ deadtime = 2e-6 ; internal clock deadtime
++ quiescur = 11m  ;quiescent current
+ 
+* Pin 4 was not included (Rt Ct) due to (a) above
+
+  xdigpwr 5 DPWR DGND DIGIFPWR
+  eref ref DGND value={5*v(uvcompaa)}
+  G7 7 DGND VALUE={quiescur*V(UVCOMPAA)}
+  rref ref 0 1g
+  v8a 8a 8 0
+  r8 8 0 1g
+  r8a 8a 0 1g
+  eref1 8a 0 value={v(ref)-v(8b)} 
+  xll1 8a  loadrc
+  xload3 3 loadrc
+  xll2 8b  loadrc
+  edeg 8b 0 table={i(v8a)} (0 0) (50m 25m) (80m 1) (100m 4)
+  o6 7 DGND uvcomp dgtlnet=uvlo io_std
+.model uvcomp doutput(
++ s0name=0 s0vlo= 10 s0vhi=100 
++ s1name=1 s1vlo= -30 s1vhi=16)
+  v2p5 intref DGND 2.5
+  x1 intref 2 1  DPWR DGND ea184s
+  escaledown eao DGND table={(v(1,DGND)-1.4)*.333} (0 0) (1,1)
+  reao eao eaoa 1k
+  ceao eaoa 0 10p
+  o7 3 eao compmod dgtlnet=reset io_std
+.model compmod doutput(
++ s0name=0 s0vlo= -300 s0vhi=0 
++ s1name=1 s1vlo= 0 s1vhi=300) 
+  v_clkset ramp DGND pulse(1 3 .1ns
++ {period-deadtime-2*deadtime/100} {deadtime} {deadtime/100} {period} )
+  x15 ramp set  DPWR DGND gen_clk 
+  ustart stim(1,1) DPWR DGND  87 io_stm  
++ 0s 0
++ 20ns 1                        ; q and clk fed into or
+  uhi stim(1,1) DPWR DGND  222 io_stm 0s 1
+  usrdps srff(1) DPWR DGND  87 222 222 setz reset q qb d0_gff io_std
+  udl1 dlyline DPWR DGND set setz dlmod io_std
+  udl3 dlyline DPWR DGND qb qbd dlmod1 io_std
+.model dlmod udly(dlyty=5n)
+.model dlmod1 udly(dlyty=150n)
+  x119      set          uvlo   qbd   7  6  DPWR DGND  outst423 
+  v1 one 0 1
+  x78 uvlo uvcompaa  one 0   DtoAcone
+  vp7 p7 DGND .7
+  rp7 p7 DGND 1g
+  serr  1 p7 uvcompaa 0 sofferr
+  sout  6 DGND  uvcompaa 0 soffmod
+.model sofferr vswitch (ron=50  roff=100meg von=.1 voff=.9)
+.model soffmod vswitch (ron=100 roff=100meg von=.1 voff=.9)
+.ends sg1842
+
+*-----------------------------------------------------------------------------
+*|* POWER SUPPLY TO CHECK 1842/1843 MACROMODELS
+*|* ADAPTED FROM A SUPPLY SUGGESTED BY VIRGINIA POLYTECHNIC INSTITUTE
+*|* FORWARD CONVERTER, OUTPUT NODE IS OUT, SENSED CURRENT IS AT NODE SENSE
+*|* CNTRL IS THE OUTPUT OF THE PWM DRIVER, REFER TO CHIP PINS FOR OTHER NODES.
+*|.OPTIONS ITL5=0 RELTOL=.01 abstol=1e-4
+*|.LIB "swit_reg.lib" 
+*|.LIB 
+*|.IC V(OUT)=7.5 V(7)=.2 V(SENSE)=1  
+*|.TRAN 1NS 4000U 
+*|.PROBE V([CNTRL]) V([SENSE]) V(7) V([OUT]) i(x2.lf) v([fb]) v([extr1])
+*|.probe i(x1.l1) v([xchip.eao]) v([extr]) v([x2.sensea]) d([xchip.reset])
+*|.probe d([xchip.q]) d([xchip.qb]) v([tout]) v([dconn])
+*|  VIN 15 0 20V
+*|  R11 CNTRL 0 1K  ; JUST A LOAD FOR THE OUTPUT DRIVER
+*|  C11 CNTRL 0 10P
+*|  X1  CNTRL TOUT  TRANSMOD ; TRANSFORMER AND MODULATOR
+*|  rext extr 0 1g
+*|  vext extr 0 pulse( 0 .1 1ns 9.9u .1u .01u 10u)
+*|  rser extr extr1 1k
+*|  cpext extr1 0 10p
+*|  iload 0 out pulse (0 10 2.1m 1u 1u 1 2)
+*|  X2  TOUT OUT DCONN sense extr1 OFILTER    ; FILTER
+*|  RDIV1 OUT OUTA 10K            ; DIVIDE THE  5VOLT OUTPUT I.E. FEEDBACK
+*|  RDIV2 OUTA 0 5K               ; 2.5VOLTS (+ OF EAMP FIXED INTERNALLY TO 2.5)
+*|  R1 OUTA FB 20K                ; COMPENSATION NETWORK
+*|  C2 OUTA 61 .0083U             ; ZERO AND ONE POLE
+*|  R3 61 FB 1K
+*|  C3 FB 7 .0015U
+*|  XCHIP 7 FB  SENSE 0 CNTRL 15 VREF SG1842
+*|+params: period=10u deadtime=.1u quiescur=11m
+*|.SUBCKT OFILTER TOUT OUT DCONN sense extr
+*|  DFWD TOUT DCONN DX
+*|  DFREE 0 DCONN DX
+*|  LF DCONNa OUT 5U IC=160
+*|  vs dconn dconna 0
+*|  vstop stop 0 pulse (1 0 2.000 1u 1u 1 2)
+*|  rstop stop 0 1g
+*|  vstart sta 0 pulse (0 .772 2.000 1u 1u 1 2)
+*|  rsta sta 0 1g
+*|  esense sensea 0 table={v(stop)*(i(vs)/100)+v(extr)+v(sta)-1.} (0,0) (5,5)
+*|  rsense sensea sense 10
+*|  cpar sense 0 10p
+*|  RC OUT BETW .003
+*|  CF BETW 0 6500U
+*|  ROUT OUT 0 .05
+*|.ENDS
+*|.SUBCKT TRANSMOD CNTRL TOUT 
+*|  V1 5 0 250
+*|  L1 1a 2 400U
+*|  RPAR 1A 2 25000
+*|  RSER 1A 1 .05
+*|  rl2 tout 0 2.k
+*|  rser1  touta tout .001 
+*|  L2 TOUTa 0 1U
+*|  K1 L1 L2 .99
+*|  S1 5 1 CNTRL 0 SMOD
+*|  S2 2 SENSE1 CNTRL 0 SMOD
+*|  CRED 1 INBET 110P
+*|  RRED INBET 0 60 
+*|  DRED INBET 0 DX
+*|  csnub2 0 inbet1 10p
+*|  rsnub2 inbet1 touta 1000 
+*|  dsnub inbet1 touta dx1
+*|  RSENSE SENSE1 0 .1  ; CHANGED TO SCALE THE OUTPUT CURRENT TO 1
+*|.MODEL SMOD VSWITCH(VON=1 VOFF=.5 RON=.5 ROFF=1MEG)
+*|.ENDS
+*|.model dx1 d(is=1e-14 rs=.01)
+*|.MODEL DX D(IS=1E-14 RS=.001)
+*|.end
+*-----------------------------------------------------------------------------
+*$
+
+*** SG1843 ***
+
+
+* The following model for the 1843 was obtained by consulting the data sheets
+* and corresponding with Silicon General.  A number of simplifications were
+* made to speed up the model, among these we have:
+* (a) replaced the oscillator with ideal voltage sources
+* (b) simplified the output stage (only two bipolars per output driver),
+* (c) used digital simulation for the internal logic.
+* (d) if u want to check for feedback loading use ea184s1 
+* (e) because so many versions of this chip are now widely available
+* with widely variable quiescent current another parameter has been added
+* which allows you set the quiesent current {quiescur}
+
+* The impact of that these simplifications must be considered in the context
+* of the parameters of the circuit, and the circuit being examined.  The
+* above list might change as we get feedback.
+
+.subckt sg1843 
++  1    ; compensation
++  2    ; - error amp (fb)
++  3    ; I sense 
++  5    ; ground
++  6    ; output
++  7    ; vcc 
++  8    ; vref
++ params:
++ period   = 22.5u ; internal clock period
++ deadtime = 2e-6 ;  internal clock deadtime
++ quiescur = 11m  ;  quiescent current
+
+* Pin 4 was not included (Rt Ct) due to (a) above
+
+  xdigpwr 5 DPWR DGND DIGIFPWR
+
+  eref ref DGND value={5*v(uvcompaa)}
+  G7 7 DGND VALUE={quiescur*V(UVCOMPAA)}
+  rref ref 0 1g
+  v8a 8a 8 0
+  r8 8 0 1g
+  r8a 8a 0 1g
+  eref1 8a 0 value={v(ref)-v(8b)} 
+  xll1 8a  loadrc
+  xload3 3 loadrc
+  xll2 8b  loadrc
+  edeg 8b 0 table={i(v8a)} (0 0) (50m 25m) (80m 1) (100m 4)
+  o6 7 DGND uvcomp dgtlnet=uvlo io_std
+.model uvcomp doutput(
++ s0name=0 s0vlo= 7.6 s0vhi=100 
++ s1name=1 s1vlo= -30 s1vhi=8.4) 
+  v2p5 intref DGND 2.5
+  x1 intref 2 1  DPWR DGND ea184s 
+  escaledown eao DGND table={(v(1,DGND)-1.4)*.333} (0 0) (1,1)
+  reao eao eaoa 1k
+  ceao eaoa 0 10p
+  o7 3 eao compmod dgtlnet=reset io_std
+.model compmod doutput(
++ s0name=0 s0vlo= -300 s0vhi=0 
++ s1name=1 s1vlo= 0 s1vhi=300) 
+  v_clkset ramp DGND pulse(1 3 .1ns
++ {period-deadtime-2*deadtime/100} {deadtime} {deadtime/100} {period} )
+  x15 ramp set  DPWR DGND gen_clk 
+  ustart stim(1,1) DPWR DGND  87 io_stm  
++ 0s 0
++ 20ns 1                        ; q and clk fed into or
+  uhi stim(1,1) DPWR DGND  222 io_stm 0s 1
+  usrdps srff(1) DPWR DGND  87 222 222 setz reset q qb d0_gff io_std
+  udl1 dlyline DPWR DGND set setz dlmod io_std
+  udl3 dlyline DPWR DGND qb qbd dlmod1 io_std
+.model dlmod udly(dlyty=5n)
+.model dlmod1 udly(dlyty=150n)
+  x119      set          uvlo   qbd   7  6  DPWR DGND  outst423 
+  v1 one 0 1
+  x78 uvlo uvcompaa  one 0   DtoAcone
+  vp7 p7 DGND .7
+  rp7 p7 DGND 1g
+  serr  1 p7 uvcompaa 0 sofferr
+  sout  6 DGND  uvcompaa 0 soffmod
+.model sofferr vswitch (ron=50  roff=100meg von=.1 voff=.9)
+.model soffmod vswitch (ron=100 roff=100meg von=.1 voff=.9)
+.ends sg1843
+
+*-----------------------------------------------------------------------------
+* FOR SAMPLE POWER SUPPLY  SEE ABOVE ( SUPPLY FOR 1842)
+*-----------------------------------------------------------------------------
+*$
+*** SG1844 ***
+
+
+* The following model for the 1844 was obtained by consulting the data sheets
+* and corresponding with Silicon General.  A number of simplifications were
+* made to speed up the model, among these we have:
+* (a) replaced the oscillator with ideal voltage sources
+* (b) simplified the output stage (only two bipolars per output driver),
+* (c) used digital simulation for the internal logic.
+* (d) if u want to check for feedback loading use ea184s1 
+
+* The impact of that these simplifications must be considered in the context
+* of the parameters of the circuit, and the circuit being examined.  The
+* above list might change as we get feedback.
+
+.subckt sg1844
++  1    ; compensation
++  2    ; - error amp (fb)
++  3    ; I sense 
++  5    ; ground
++  6    ; output
++  7    ; vcc 
++  8    ; vref
++ params:
++ period   = 22.5u ; internal clock period
++ deadtime = 2e-6 ; internal clock deadtime
+
+* Pin 4 was not included (Rt Ct) due to (a) above
+
+  xdigpwr 5 DPWR DGND DIGIFPWR
+
+  eref ref DGND value={5*v(uvcompaa)}
+  G7 7 DGND VALUE={11M*V(UVCOMPAA)}
+  rref ref 0 1g
+  v8a 8a 8 0
+  r8 8 0 1g
+  r8a 8a 0 1g
+  eref1 8a DGND value={v(ref)-v(8b)} 
+  xll1 8a  loadrc
+  xload3 3 loadrc
+  xll2 8b  loadrc
+  edeg 8b 0 table={i(v8a)} (0 0) (50m 25m) (80m 1) (100m 4)
+  o6 7 DGND uvcomp dgtlnet=uvlo io_std
+.model uvcomp doutput(
++ s0name=0 s0vlo= 10 s0vhi=100 
++ s1name=1 s1vlo= -30 s1vhi=16) 
+  v2p5 intref DGND 2.5
+  x1 intref 2 1  DPWR DGND ea184s 
+  escaledown eao DGND table={(v(1,DGND)-1.4)*.333} (0 0) (1,1)
+  reao eao eaoa 1k
+  ceao eaoa 0 10p
+  o7 3 eao compmod dgtlnet=reset io_std
+.model compmod doutput(
++ s0name=0 s0vlo= -300 s0vhi=0 
++ s1name=1 s1vlo= 0 s1vhi=300) 
+  v_clkset ramp DGND pulse(1 3 .1ns
++ {period-deadtime-2*deadtime/100} {deadtime} {deadtime/100} {period} )
+  x15 ramp set  DPWR DGND gen_clk 
+  ustart stim(1,1) DPWR DGND  87 io_stm  
++ 0s 0
++ 20ns 1                        ; q and clk fed into or
+  uhi stim(1,1) DPWR DGND  222 io_stm 0s 1
+  usrdps srff(1) DPWR DGND  87 222 222 setz reset q qb d0_gff io_std
+  udl1 dlyline DPWR DGND set setz dlmod io_std
+  udl3 dlyline DPWR DGND qb qbd dlmod1 io_std
+.model dlmod udly(dlyty=5n)
+.model dlmod1 udly(dlyty=150n)
+  u10 dff(1) DPWR DGND  222,87,setz,21 20 21 d0_eff io_std
+  x119      20 set          uvlo   qbd   7  6   DPWR DGND outst445 
+  v1 one 0 1
+  x78 uvlo uvcompaa  one 0   DtoAcone
+  vp7 p7 DGND .7
+  rp7 p7 DGND 1g
+  serr  1 p7 uvcompaa 0 sofferr
+  sout  6 DGND  uvcompaa 0 soffmod
+.model sofferr vswitch (ron=50  roff=100meg von=.1 voff=.9)
+.model soffmod vswitch (ron=100 roff=100meg von=.1 voff=.9)
+.ends sg1844
+
+*-----------------------------------------------------------------------------
+*|* POWER SUPPLY TO CHECK 1844/1845 MACROMODELS
+*|* ADAPTED FROM A SUPPLY SUGGESTED BY VIRGINIA POLYTECHNIC INSTITUTE
+*|* FORWARD CONVERTER, OUTPUT NODE IS OUT, SENSED CURRENT IS AT NODE SENSE
+*|* CNTRL IS THE PWM DRIVER, REFER TO CHIPS PINS FOR OTHER NODES.
+*|.OPTIONS ITL5=0 RELTOL=.01 abstol=1e-4
+*|.LIB "swit_reg.lib" 
+*|.LIB 
+*|.IC V(OUT)=3 V(7)=2 V(SENSE)=3 
+*|.TRAN 1NS 2000U 
+*|.PROBE  V([CNTRL]) V([SENSE]) V(7) V([OUT]) 
+*|  VIN 15 0 20V
+*|  R11 CNTRL 0 1K               ; JUST A LOAD FOR THE OUTPUT FRIVER
+*|  C11 CNTRL 0 10P
+*|  X1  CNTRL TOUT SENSE TRANSMOD  ; TRANSFORMER AND MODULATOR
+*|  X2  TOUT OUT DCONN OFILTER     ; FILTER
+*|  RDIV1 OUT OUTA 5K              ; MULTIPLY 3VOLT OUTPUT BY 25/30 I.E FEEDBACK
+*|  RDIV2 OUTA 0 25K               ; 2.5VOLTS (+ OF EAMP FIXED INTERNALLY TO 2.5)
+*|  R1 OUTA FB 20K               ; COMPENSATION NETWORK
+*|  C2 OUTA 61 .0083U            ; ZERO AND A POLE
+*|  R3 61 FB 1K
+*|  C3 FB 7 .0015U
+*|  XCHIP 7 FB  SENSE 0 CNTRL 15 VREF SG1845
+*|.SUBCKT OFILTER TOUT OUT DCONN
+*|  DFWD TOUT DCONN DX
+*|  DFREE 0 DCONN DX
+*|  LF DCONN OUT 5U IC=100
+*|  RC OUT BETW .003
+*|  CF BETW 0 6500U
+*|  ROUT OUT 0 .05
+*|.ENDS
+*|.SUBCKT TRANSMOD CNTRL TOUT SENSE
+*|  V1 5 0 250
+*|  L1 1A 2 4000U
+*|  RPAR 1A 2 25000
+*|  RSER 1A 1 .05
+*|  L2 TOUT 0 10U
+*|  r2t tout 0 5k
+*|  K1 L1 L2 .99
+*|  S1 5 1 CNTRL 0 SMOD
+*|  S2 2 SENSE CNTRL 0 SMOD
+*|  CRED 1 INBET 110P
+*|  RRED INBET 0 60 
+*|  DRED INBET 0 DX
+*|  RSENSE SENSE 0 .17  ; CHANGED TO SCALE THE OUTPUT CURRENT TO 1
+*|.MODEL SMOD VSWITCH(VON=1 VOFF=.5 RON=.5 ROFF=1MEG)
+*|.ENDS
+*|.MODEL DX D(IS=1E-14 RS=.001)
+*|.end
+*-----------------------------------------------------------------------------
+*$
+
+*** SG1845 ***
+
+* The following model for the 1845 was obtained by consulting the data sheets
+* and corresponding with Silicon General.  A number of simplifications were
+* made to speed up the model, among these we have:
+* (a) replaced the oscillator with ideal voltage sources
+* (b) simplified the output stage (only two bipolars per output driver),
+* (c) used digital simulation for the internal logic.
+* (d) if u want to check for feedback loading use ea184s1 
+
+* The impact of that these simplifications must be considered in the context
+* of the parameters of the circuit, and the circuit being examined.  The
+* above list might change as we get feedback.
+
+.subckt sg1845
++  1    ; compensation
++  2    ; - error amp (fb)
++  3    ; I sense 
++  5    ; ground
++  6    ; output
++  7    ; vcc 
++  8    ; vref
++ params:
++ period   = 22.5u ; internal clock period
++ deadtime = 2e-6 ; internal clock deadtime
+
+* Pin 4 was not included (Rt Ct) due to (a) above
+
+  xdigpwr 5 DPWR DGND DIGIFPWR
+
+  eref ref DGND value={5*v(uvcompaa)}
+  G7 7 DGND VALUE={11M*V(UVCOMPAA)}
+  rref ref 0 1g
+  v8a 8a 8 0
+  r8 8 0 1g
+  r8a 8a 0 1g
+  eref1 8a DGND value={v(ref)-v(8b)} 
+  xll1 8a  loadrc
+  xload3 3 loadrc
+  xll2 8b  loadrc
+  edeg 8b 0 table={i(v8a)} (0 0) (50m 25m) (80m 1) (100m 4)
+  o6 7 DGND uvcomp dgtlnet=uvlo io_std
+.model uvcomp doutput(
++ s0name=0 s0vlo= 7.6 s0vhi=100 
++ s1name=1 s1vlo= -30 s1vhi=8.4) 
+  v2p5 intref DGND 2.5
+  x1 intref 2 1  DPWR DGND ea184s 
+  escaledown eao DGND table={(v(1,DGND)-1.4)*.333} (0 0) (1,1)
+  reao eao eaoa 1k
+  ceao eaoa 0 10p
+  o7 3 eaoa compmod dgtlnet=reset io_std
+.model compmod doutput(
++ s0name=0 s0vlo= -300 s0vhi=0 
++ s1name=1 s1vlo= 0 s1vhi=300) 
+  v_clkset ramp DGND pulse(1 3 .1ns
++ {period-deadtime-2*deadtime/100} {deadtime} {deadtime/100} {period} )
+  x15 ramp set  DPWR DGND gen_clk 
+  ustart stim(1,1) DPWR DGND  87 io_stm  
++ 0s 0
++ 20ns 1                        ; q and clk fed into or
+  uhi stim(1,1) DPWR DGND  222 io_stm 0s 1
+  usrffsdinv inv DPWR DGND set setbar d0_gate io_std
+  usrffsdand and(2) DPWR DGND setbar resetz resetzsd d0_gate io_std
+  usrdps srff(1) DPWR DGND  87 222 222 set resetzsd q qb d0_gff io_std
+  udl1 dlyline DPWR DGND reset resetz dlmod1 io_std
+  udl3 dlyline DPWR DGND qb qbd dlmod io_std
+.model dlmod udly(dlyty=5n)
+.model dlmod1 udly(dlyty=150n)
+  u10 dff(1) DPWR DGND  222,87,set,21 20 21 d0_eff io_std
+  x119      20 set          uvlo   qbd   7  6  DPWR DGND  outst445 
+  v1 one 0 1
+  x78 uvlo uvcompaa  one 0   DtoAcone
+  vp7 p7 DGND .7
+  rp7 p7 DGND 1g
+  serr  1 p7 uvcompaa 0 sofferr
+  sout  6 DGND  uvcompaa 0 soffmod
+.model sofferr vswitch (ron=50  roff=100meg von=.1 voff=.9)
+.model soffmod vswitch (ron=100 roff=100meg von=.1 voff=.9)
+.ends sg1845
+
+*-----------------------------------------------------------------------------
+* FOR SAMPLE POWER SUPPLY  SEE ABOVE ( SUPPLY FOR 1844)
+*-----------------------------------------------------------------------------
+*$
+*** SG1846 ***
+
+
+* The following model for the 1846 was obtained by consulting the data sheets
+* and corresponding with Silicon General.  A number of simplifications were
+* made to speed up the model, among these we have:
+* (a) replaced the oscillator with ideal voltage sources
+* (b) simplified the output stage (only two bipolars per output driver),
+* (c) used digital simulation for the internal logic.
+* (d) use of two switches to mimic thyristor shutdown latching
+
+* The impact of that these simplifications must be considered in the context
+* of the parameters of the circuit, and the circuit being examined.  The
+* above list might change as we get feedback.
+
+.subckt sg1846 
++  1    ; current limit / soft start
++  2    ; vref
++  3    ; - current sense
++  4    ; + current sense
++  5    ; + error amp
++  6    ; - error amp
++  7    ; compensation
++  8    ; ct/ramp out
++ 10    ; clock out
++ 11    ; output a
++ 12    ; ground
++ 13    ; vc 
++ 14    ; output b
++ 15    ; vin
++ 16    ; shutdown
++ params:
++ period   = 22.5u ; internal clock period
++ deadtime = 2e-6 ; internal clock deadtime
+
+  xdigpwr 12 DPWR DGND DIGIFPWR
+
+  routref 21 2a 1
+  r22 2a 0 1g
+  eref 2 DGND VALUE={5.1*V(UVCOMPAA)}
+  vone one 0 1
+  x78 uvlo uvcompaa  one 0   DtoAcone
+  G7 15 DGND VALUE={17m*V(UVCOMPAA)}
+  rref 2 DGND 1g
+  r8 8 DGND 1g
+  xload 4 loadrc
+  v_clkset 8 DGND pulse(1 3 .1ns
++ {period-deadtime-2*deadtime/100} {deadtime} {deadtime/100} {period} )
+  u99 BUF DPWR DGND dclk 10 d0_gate io_std
+  x15 8 dclk  DPWR DGND gen_clk 
+*    +cs -cs ni i compensation pwmout vin 
+  xll  4    3  5  6 7            pwmout 15  DPWR DGND errcomp 
+  o6 15 DGND compmod dgtlnet=uvlo io_std
+.model compmod doutput(
++ s0name=0 s0vlo= 7.699 s0vhi=40 
++ s1name=1 s1vlo= -30 s1vhi=7.701) 
+*     clk/sync shutdowno pwmout   orout   q  qb
+  xlog  dclk       shto      pwmout    73      20 21  DPWR DGND  log1846 
+*                             vc   oa  ob
+  xoutst  20  21   73 uvlo    13   11  14  DPWR DGND outst1846 
+  v1077 1077 DGND 5
+  v1078 1078 DGND 0
+  n1 uvloa 1078 1077 dinstm dgtlnet=uvlo io_std
+  qout DGND 1 7 pnp11pwm
+  vsrc 667 DGND 6
+  isrc 667 7 .5m
+  sml 1 0 uvloa 0 sml
+  x1 1 16 shto  DPWR DGND latchpwm 
+.ends
+
+*-----------------------------------------------------------------------------
+*|* POWER SUPPLY TO CHECK THE 1846 MACROMODEL
+*|* ADAPTED FROM A SUPPLY SUGGESTED BY VIRGINIA POLYTECHNIC INSTITUTE
+*|* FORWARD CONVERTER, OUTPUT NODE IS OUT, SENSED CURRENT IS AT NODE SENSE
+*|* CNTRL IS THE OUTPUT OF THE PWM DRIVERS, REFER TO CHIP PINS FOR OTHER NODES.
+*|.OPTIONS ITL5=0 RELTOL=.01 ABSTOL=1E-3
+*|.LIB  "swit_reg.lib" 
+*|.LIB  
+*|.PARAM RSERIES=1K
+*|.STEP PARAM RSERIES LIST  20K  ; CHECK OUT LATCHING
+*|.IC V(OUT)=5 V(7)=2 V(SENSE)=3 
+*|.TRAN 1NS 2000U 
+*|.PROBE V(14) V(11) V([OUT]) V([SENSE]) V(5) V(7) V([FB])  D([XCHIP.PWMOUT]) V([XCHIP.SHTO]) V(16)
+*|  V16 16 0 PULSE(0 5 1M .1U .1U .2M .4M) 
+*|  VIN 15 0 20V
+*|  VIN1 13 0 20V
+*|  VLIM 1A 0 15
+*|  RLIM 1A 1 {RSERIES} 
+*|  CLIM 1 0 100P
+*|  R11 11 0 1K
+*|  R14  14 0 1K
+*|  C11 11 0 10P
+*|  C14 14 0 10P
+*|  XLDD 11 LOADRC
+*|  XLDD1 14 LOADRC
+*|  vdg dg 0 0
+*|* JUST ORS THE OUTPUTS OF 14 AND 11
+*|  RCONV1 440 DG 1G
+*|  XLL1 440 LOADRC
+*|  RCONV2 550 DG 1G
+*|  XLL2 550 LOADRC
+*|  EG1 440 DG TABLE={(V(14)-V(11))*1E3} (0 0) (1 1)    ; SELECTS MINUMUM OF
+*|  EG2 550 DG TABLE={(V(11)-V(14))*1E3} (0 0) (1 1)    ; V4 AND V3 AND FEEDS
+*|  ESUM CNTRL DG VALUE={V(440)*V(14)+V(550)*V(11)}     ; TO 94 (DIODE DROP
+*|  RCONV3 CNTRL DG 1E9                                 ; ADDED TO V(4) )
+*|  RCNTRL CNTRL CNTRLA 1K
+*|  CCNT CNTRLA 0 10P
+*|  X1  CNTRLA TOUT SENSE TRANSMOD    ; TRANSFORMER AND MODULATOR
+*|  X2  TOUT OUT DCONN OFILTER        ; FILTER
+*|  R1 OUT FB 20K                           ; FEEDBACK NETWORK
+*|  C2 OUT 61 .0083U                ; ONE ZERO AND ONE POLE
+*|  R3 61 FB 1K
+*|  C3 FB 7 .0015U
+*|  VREF1 5 0 5.1
+*|  XCHIP 1 2 0 SENSE 5 FB 7 8 10 11 0 13 14 15 16 SG1846
+*|.SUBCKT OFILTER TOUT OUT DCONN
+*|  DFWD TOUT DCONN DX
+*|  DFREE 0 DCONN DX
+*|  LF DCONN OUT 5U IC=100
+*|  RC OUT BETW .003
+*|  CF BETW 0 6500U
+*|  ROUT OUT 0 .05
+*|  XLOAD DCONN LOADRC
+*|.ENDS
+*|.SUBCKT TRANSMOD CNTRL TOUT SENSE
+*|  V1 5 0 250
+*|  XLL1 1A LOADRC
+*|  XLL2 2 LOADRC
+*|  L1 1A 2 4000U
+*|  RPAR 1A 2 25000
+*|  RSER 1A 1 .05
+*|  L2 TOUT 0 10U
+*|  R2T TOUT 0 5K
+*|  K1 L1 L2 .99
+*|  S1 5 1 CNTRL 0 SMOD
+*|  S2 2 SENSE CNTRL 0 SMOD
+*|  CRED 1 INBET 110P
+*|  RRED INBET 0 60 
+*|  DRED INBET 0 DX
+*|  RSENSE SENSE 0 .36
+*|.MODEL SMOD VSWITCH(VON=1 VOFF=.5 RON=.5 ROFF=1MEG)
+*|.ENDS
+*|.MODEL DX D(IS=1E-14 RS=.001)
+*|.end
+*-----------------------------------------------------------------------------
+*$
+
+*** SUPPORT CIRCUITS *********************************************************
+
+.subckt dpscir clk pulse q1 q1b DPWR DGND 
+  ustrt stim(1,1) DPWR DGND 59 io_stm 0s 0 1ns 1
+  uhi   stim(1,1) DPWR DGND  hi io_stm 0s 1
+  ulo   stim(1,1) DPWR DGND  low io_stm 0s 0
+  uinv  inv DPWR DGND clk clkb d0_gate io_std
+  uinv1 inv DPWR DGND ando pulseb d0_gate io_std
+  udl1 srff(1) DPWR DGND 59 hi  hi ando  clkb   q1 qb1 d0_gff io_std
+  uinv2 inv DPWR DGND q1 q1b d0_gate io_std
+  udl dff(1) DPWR DGND clkb 59 pulseb low qdo 6 d0_eff io_std
+  un1 and(2) DPWR DGND qdo pulse ando d0_gate io_std
+.ends
+*$
+.subckt log1524b 17 clk 4 31 32 DPWR DGND
+  udlat dltch(1) DPWR DGND 2 2 invb 4 qd qbd d0_dltch io_std
+  uinv inv DPWR DGND clk invb d0_gate io_std
+  usrmem srff(1) DPWR DGND 59 2 2 clk qd memq memqb d0_gff io_std
+  uinvd2 inv DPWR DGND memq   memqb1 d0_gate io_std     ; through cl comparator
+  utog dff(1) DPWR DGND 59,2,memqb1,21 20 21 d0_eff io_std
+  emir 17a 0 17 0 1
+  r17 17 0 1g
+  r1oc 17a 31 10
+  r2oc 17a 32 10
+  un1 nor(3) DPWR DGND 20 clk qbd 31 d0_gate io_pwm_oc
+  un2 nor(3) DPWR DGND 21 clk qbd 32 d0_gate io_pwm_oc
+  uhi   stim(1,1) DPWR DGND  2 io_stm 0s 1
+  ustrt stim(1,1) DPWR DGND 59 io_stm 0s 0 3ns 1
+  .model d0_dltch ugff
+.ends
+*$
+.subckt log1526b 17 clk 4 31 32 33 34 DPWR DGND
+  uinv2 inv DPWR DGND clk clkb d0_gate io_std
+  uinvd2 inv DPWR DGND memq   memqb1 d0_gate io_std     
+  x1 clkb 4 qd qbd  DPWR DGND dpscir 
+  usrmem srff(1) DPWR DGND 59 2 2 clkb qd memq memqb d0_gff io_std
+* toggle flip flop
+.model delgate  ugate(tplhty=1ns, tphlty=1ns)
+.model delgate1  ugate(tplhty=4ns, tphlty=4ns)
+  utog dff(1) DPWR DGND 59,2,memqb1,21 20 21 d0_eff io_std
+  emir 17a 0 17 0 1
+  r17 17 0 1g
+  r1oc 17a 31 10
+  r2oc 17a 32 10
+  r3oc 17a 33 10
+  r4oc 17a 34 10
+  un1 nor(3) DPWR DGND 20 clkb qbd 31 d0_gate io_pwm_oc
+  un2 nor(3) DPWR DGND 21 clkb qbd 32 d0_gate io_pwm_oc
+  un3  or(3) DPWR DGND 20 clkb qbd 33 d0_gate io_pwm_oc
+  un4  or(3) DPWR DGND 21 clkb qbd 34 d0_gate io_pwm_oc
+  uhi   stim(1,1) DPWR DGND  2 io_stm 0s 1
+  ustrt stim(1,1) DPWR DGND 59 io_stm 0s 0 3ns 1
+.ends
+*$
+.subckt ppout 7111 7112 98 99 11 14 DPWR DGND
+  rblim1 7111 731 50
+  rblim2 7112 732 50
+  qo1 98 731 11 q_pwm
+  qo2 99 732 14 q_pwm
+  rlkga 98 11 10meg
+  rlkgb 99 14 10meg
+ .model q_pwm npn (rc=10 tf=700n cje=10p cjc=10p cjs=100p)
+.ends
+*$
+.subckt ppout1 15 7111 7112 7113 7114 13 11 14 DPWR DGND
+  rblim1 7111 731 50
+  rblim2 7112 732 50
+  rblim3 7113 733 50
+  rblim4 7114 734 50
+  qo1 735 731 140 q_pwm
+  w1 731 DGND vs1 sw
+  vs1 140 11 0
+  qo2 735 732 141 q_pwm
+  w2 732 DGND vs2 sw
+  vs2 141 14 0
+  qo3  11 733 143 q_pwm
+  w3 733 DGND vs3 sw
+  vs3 143 DGND 0
+  q04  14 734 144 q_pwm
+  w4 734 DGND vs4 sw
+  vs4 144 DGND 0
+  vdrop 13 735 1
+.model sw iswitch (ron=1 roff=1e8 ion=150e-3 ioff=140e-3)
+.ends
+*$
+.subckt ppout2 7111 7112 98 99 12 14 DPWR DGND
+  rblim1 7111 731 50
+  rblim2 7112 732 50
+  qo1 98 731 140 q_pwm1
+  w1 74 DGND vs1 sw
+  vtest 731 74 0
+  vs1 140 12 0
+  qo2 99 732 141 q_pwm1
+  w2 732 DGND vs2 sw
+  vs2 141 14 0
+.model sw iswitch (ron=1 roff=1e8 ion=500e-3 ioff=450e-3)
+.ends
+*$
+.subckt erramp  ; error amplifier
++ 2     ; - in
++ 1     ; + in
++ 5     ; output
++ DPWR DGND 
+ vt 10 DGND 3.6
+  vb 20 DGND .8
+  rin1 1 0 2meg
+  rin2 2 0 2meg
+  dt 5 10 dx
+  db 20 5 dx
+  g1 DGND 5 table {.002*(v(1)-v(2))+0.5u } (-200u -200u) (200u 200u)
+  rout 5 DGND 4meg
+  cpole 5 DGND 159p
+.model dx d(rs=1)
+.ends
+*$
+.subckt eamp1   ; error amplifier
++ 1     ; + in
++ 2     ; - in
++ 5     ; output
++ DPWR DGND 
+  vt 10 DGND 4.3
+  vb 20 DGND .7
+  rin1 1 DGND 1e10
+  rin2 2 DGND 1e10
+  dt 5 10 dx
+  db 20 5 dx
+* g1 0 5 table {.0062*exp((v(1)-v(2))/.0256) *(v(1)-v(2)) } (-100u -100u) (100u 100u)
+  g1 0 5 table {.0045 *(v(1)-v(2)) } (-200u -200u) (200u 200u)
+  rout 5 DGND 2megs
+  cpole 5 DGND .2n
+.model dx d(is=1e-19 rs=.01)
+.ends
+*$
+.subckt eamp2   ; error amplifier
++ 2     ; + in
++ 1     ; - in
++ 5     ; output
++ DPWR DGND 
+  vt 10 DGND 4.3
+  vb 20 DGND .7
+  rin1 1 0 1e10
+  rin2 2 0 1e10
+  dt 5 10 dx
+  db 20 5 dx
+* g1 0 5 table {.0028*exp((v(1)-v(2))/.0256) *(v(1)-v(2)) } (-100u -100u) (100u 100u)
+  g1 DGND 5 table {.0028 *(v(1)-v(2)) } (-200u -200u) (200u 200u)
+  rout 5 DGND 4megs
+  cpole 5 DGND .2n
+.model dx d(is=1e-19 rs=.01)
+.ends
+*$
+.subckt eamp3   ; error amplifier
++  1    ; - in
++  2    ; + in
++  60   ; output
++  9    ; compensation
++ DPWR DGND
+  vt 10 DGND 4.9
+  vb 20 DGND .7
+  rin1 2 DGND 5.1meg
+  rin2 1 DGND 5.1meg
+  dt 60 10 dx
+  db 20 60 dx
+  g1 DGND 60 table {.0018 *(v(2)-v(1))+1u } (-100u -100u) (100u 100u) 
+
+  rout 60 DGND 3megs
+  cpole 60 DGND 140p
+  r30 9 60 30
+.model dx d(is=1e-19 rs=1)
+.ends
+*$
+.subckt uvsch 20 5 DPWR DGND    ; under voltage schmitt trigger
+  rext 20 0 10meg
+  et 7 DGND table {2*(3.55 + 0.04*v(5) -v(20)) } (0 0) (5 5)
+  ro 7 5 100
+  co 5 DGND 10p
+.ends
+*$
+.subckt uvsch1 20 5 DPWR DGND   ; under voltage schmitt trigger
+  rext 20 DGND 1G
+  et 7 DGND table {1e3*(4.2 + 0.06*v(5) -v(20)) } (0 0) (5 5)
+  ro 7 5 100
+  co 5 DGND 10p
+.ends
+*$
+.subckt uvsch2 20 5 DPWR DGND   ; under voltage schmitt trigger
+  rext 20 0 1G
+  et 7 DGND table {1e3*(4.2+v(DGND) + 0.06*v(5) -v(20)) } (0 0) (5 5)
+  ro 7 5 100
+  co 5 DGND 10p
+.ends
+*$
+.subckt softst  ; soft start circuit
++ 5     ; ramp from oscillator
++ 1     ; error amp output
++ 2     ; soft start pin
++ 7     ; PWM output
++ DPWR DGND 
+  x1 1 2  3  DPWR DGND opamp_pwm 
+  o6 5 4 compmod dgtlnet=7 io_std
+  s2 1 4 3 DGND sonlo
+  s3 2 4 3 DGND sonhi
+  i1 2 DGND -50u
+  s1 2 DGND 2 DGND smod
+  v1 8 0 pulse(1 0 0 2n 1 10k 11k)
+  s4 2 DGND 8 0 sw_topen
+.model compmod doutput(
++ s0name=0 s0vlo=-15 s0vhi=0
++ s1name=1 s1vlo=  0 s1vhi=7 )
+.model sonlo vswitch (ron=1 roff=100meg von=2.4 voff=2.6)
+.model sonhi vswitch (ron=1 roff=100meg von=2.6 voff=2.4)
+.model smod  vswitch (ron=1 roff=100meg von=5.1 voff=5)
+.model sw_topen vswitch( ron=1 roff=10meg von=0.9 voff=0.1 )
+.ends
+*$
+.subckt uvlock 1 4 5 DPWR DGND
+* uv lock out section which interacts with the soft start section
+* to start a discharge of the soft start cap
+  u1 or(2)  DPWR DGND 4 5 3  d_00 io_std
+  rshut 3 6 93k
+  qshut 1 6 DGND shutmod
+.model shutmod npn (bf=50)
+.ends
+*$
+.subckt opamp_pwm 
++ 1     ; + in
++ 2     ; - in
++ 6     ; output
++ DPWR DGND 
+  vt 10 DGND 4.3
+  vb 20 DGND .7
+  dt 6 10 dx
+  db 20 6 dx
+  eop 5 DGND value {10*(v(1)-v(2))}
+  ro 5 6 100
+  c0 6 DGND 1p
+.model dx       d(is=0.1p rs=16 cjo=2p tt=12n bv=100 ibv=0.1p)
+.ends
+*$
+
+.subckt log1825 12 4   73  20 21 DPWR DGND 
+  uhi stim(1,1) DPWR DGND  2 io_stm 0s 1
+  ustart stim(1,1) DPWR DGND  87 io_stm  
++ 0s 0
++ 20ns 1 
+  uor2 or(2) DPWR DGND  12 18 73z d0_gate io_std
+  udl1 dlyline DPWR DGND 73z 73 dlmod io_std
+.model dlmod udly(dlyty=70n)
+  usrdps srff(1) DPWR DGND  87 2 2 12 4 17 18 d0_gff io_std
+* toggle flip flop
+  utog dff(1) DPWR DGND  87,2,73,21 20 21 d0_eff io_std 
+.ends
+*$
+*                tq  tqb  otherinput    vc ota otb
+.subckt outs1825  20  21   27          15  14a  13  16 DPWR DGND
+  emir 14 0 14a 0 1
+  r1oc 14 31 10
+  r2oc 14 32 10
+  r3oc 14 33 10
+  r4oc 14 34 10
+  un1 nor(2) DPWR DGND  20 27  31 d0_gate io_pwm_oc
+  un2 nor(2) DPWR DGND  21 27  32 d0_gate io_pwm_oc
+  un11 or(2) DPWR DGND  20 27  33 d0_gate io_pwm_oc
+  un22 or(2) DPWR DGND  21 27  34 d0_gate  io_pwm_oc
+  x2 15 31 32 33 34 14 13 16  DPWR DGND ppou1825 
+.ends
+*$
+*----------------gnd | top push  bpush | toppull bot pull |   vc ot ob
+.subckt ppou1825  15   7111     7112      7113    7114        13 11 14 DPWR DGND
+  rblim1 7111 731 50
+  rblim2 7112 732 50
+  rblim3 7113 733 50
+  rblim4 7114 734 50
+  qo1 735 731 140 q_pwm
+  w1 731 15 vs1 isw25
+  vs1 140 11 0
+  qo2 735 732 141 q_pwm
+  w2 732 15 vs2 isw25
+  vs2 141 14 0
+  qo3  11 733 143 q_pwm
+  w3 733 0 vs3 isw25
+  vs3 143 15 0
+  q04  14 734 144 q_pwm
+  w4 734 15 vs4 isw25
+  vs4 144 15 0
+  vdrop 13 735 1
+.model isw25 iswitch (ron=1 roff=1e8 ion=1.5 ioff=1.3)
+.ends
+*$
+.subckt bl11825 1 2 3 7 8 45 57 46 44 16 DPWR DGND
+  x1  7 57 46 44 comp1825
+  x2  8 1 2 3 45 57 16  DPWR DGND  bl1825
+.ends
+*$
+.subckt comp1825 7 57 46 44
+  vadd 67 7 1.25
+  o6 67 57 compwm dgtlnet=39 io_std
+.model compwm doutput(
++ s0name=0 s0vlo= -30 s0vhi=0 
++ s1name=1 s1vlo= 0 s1vhi=30) 
+  uor2 or(2) DPWR DGND  39 46 44 d0_gate io_std
+.ends
+*$
+* softst,erramp and shutdown with soft st
+.subckt bl1825  8 1 2 3  45 57 16 DPWR DGND
+  e77 77 DGND 16 DGND 1 ; power for amp ;10 is gnd for amp
+  vgndamp 110 DGND 1.17
+  x1  2 1 77 110 3 eamp1825 
+  x2 8 3 57  DPWR DGND minpd
+  isource DGND 8 9u
+  sstop 8 DGND 8 DGND sstop25
+  sswit 8 DGND 45 DGND ssoftd25 
+.ends
+*$
+.subckt minpd 4 5 94 DPWR DGND
+  rconv1 440 0 1e9
+  rconv2 550 0 1e9
+  rconv conv 0 1k
+  vconv conv 0 1
+  eg1 440 DGND table={v(conv)*((v(4)+.7-v(5))*1e5)} (0 0) (1 1)  ; selects minumum of
+  eg2 550 DGND table={v(conv)*((v(5)-v(4)-.7)*1e5)} (0 0) (1 1)  ; v4 and v3 and feeds
+  esum 94 DGND value={v(conv)*(v(440)*v(5)+v(550)*(v(4)+0.7))} ; to 94 (diode drop
+  rconv3 94 0 1e9                                       ; added to v(4) )
+.ends
+*$
+* eamp1825 operational amplifier "macromodel" subcircuit
+* created using parts release 4.04p on 08/03/90 at 10:26
+* ** modified to give asymetric drive capability **
+* connections:   non-inverting input
+*                | inverting input
+*                | | positive power supply
+*                | | | negative power supply
+*                | | | | output
+*                | | | | |
+.subckt eamp1825 1 2 3 4 5 
+*
+  c1   11 12 2.887e-12
+  c2    6  7 10.00e-12
+  dc    5 53 dxea25
+  de   54  5 dxea25
+  dlp  90 91 dxea25
+  dln  92 90 dxea25
+  dp    4  3 dxea25
+  egnd 99  0 poly(2) (3,0) (4,0) 0 .5 .5
+  fb    7 99 poly(5) vb vc ve vlp vln 0 6.482e6 -6e6 6e6 6e6 -6e6
+  ga    6  0 11 12 345.6e-6
+  gcm   0  6 10 99 6.171e-9
+  iee  10  4 dc 121.2e-6
+  hlim 90  0 vlim 1k
+  q1   11  2 13 qxea25
+  q2   12  1 14 qxea25
+  r2    6  9 100.0e3
+  rc1   3 11 2.894e3
+  rc2   3 12 2.894e3
+  re1  13 10 2.438e3
+  re2  14 10 2.438e3
+  ree  10 99 1.650e6
+  ro1   8  5 50
+  ro2   7 99 25
+  rp    3  4 2.865e3
+  vb    9  0 dc 0
+  vc    3 53 dc 1.07
+  ve   54  4 dc 0
+  vlim  7  8 dc 0
+  vlp  91  0 dc 2.500
+  vln   0 92 dc .700
+.model dxea25 d(is=800.0e-18)
+.model qxea25 npn(is=800.0e-18 bf=100)
+.ends
+*$
+.model ssoftd25 vswitch (ron=5k roff=100meg von=1 voff=.7) 
+*$
+.model sstop25 vswitch (ron=1 roff=100meg von=13 voff=12.) 
+*$
+
+*                t  otherinput  uvlo  qb    vc ota 
+.subckt outst445  20  27          uvlo  qb    14  13  DPWR DGND
+  e14 14a 0 14 0 1
+  r1oc 14a 31 10
+  r3oc 14a 33 10
+  un1 nor(4) DPWR DGND 20 uvlo  27 qb  31 d0_gate io_pwm_oc
+  un11 or(4) DPWR DGND 20 uvlo  27 qb  33 d0_gate io_pwm_oc
+  x2  31  33  14 13   DPWR DGND ppout4s 
+.model d0_gate1 ugate (tplhty=40ns tphlty=40ns)
+.ends
+*$
+*                  otherinput  uvlo  qb    vc ota 
+.subckt outst423    27          uvlo  qb    14  13  DPWR DGND
+  e14 14a 0 14 0 1
+  r1oc 14a 31 10
+  r3oc 14a 33 10
+  un1 nor(3) DPWR DGND uvlo  27 qb  31 d0_gate io_pwm_oc
+  un11 or(3) DPWR DGND uvlo  27 qb  33 d0_gate io_pwm_oc
+  x2  31  33  14 13   DPWR DGND ppout4s 
+.model d0_gate1 ugate (tplhty=40ns tphlty=40ns)
+.ends
+*$
+*-------------- | push         pull       vc ot 
+.subckt ppout4s     7111         7113       13 11 DPWR DGND
+  rblim1 7111 731 50
+  rblim3 7113 733 50
+  qo1 735 731 140 q_pwm
+  w1 731 DGND vs1 isw184s
+  vs1 140 11 0
+  qo3  11 733 143 q_pwm
+  w3 733 0 vs3 isw184s
+  vs3 143 DGND 0
+  vdrop 13 735 1
+.model isw184s iswitch (ron=1 roff=1e8 ion=1 ioff=.9)
+.ends
+*$
+.subckt ea184s1 2 1  8 DPWR DGND
+* uc1842 error amp 
+* node 1 is the inverting input , 2 is the noninverting input
+* node 8 is the output , 4 is the positive supply voltage
+  v4 4 0 15
+  ri 2 1 1meg
+  ci 2 1 1pf
+  g1 DGND 5 2 1 156u
+  r1 5 DGND 5.6g
+  c1 5 DGND 25pf
+  vo 4 6 dc 2
+  vn 7 DGND dc 1
+  eo 10 DGND 5 DGND 1.0
+  vmo 10 8a 0
+  w1 8a 8b vmo imos
+  w2 8b 8  vmo imos1
+.model imos iswitch(ron=10 roff=25k ion=.4m ioff=.6m)
+.model imos1 iswitch(ron=10 roff=25k ion=-1.9ma ioff=-2.2m)
+  rog 8 0 1g
+  cog 8 0 1p
+  d2 7 5 dn
+  d3 5 6 dn
+.model dn d
+.ends 
+*$
+
+.subckt ea184s4 101 fb out dpwr dgnd
+Q_Q1     17 18 dgnd  q_pwm1a 
+Q_Q4     18 18 dgnd  q_pwm1a 
+Q_q5d    dgnd 8 10  q_pwm2a .75
+Q_q5     18 8 10  q_pwm2a  .25
+Q_q6d    dgnd 18 12  q_pwm2a 
+Q_q6     17 13 10  q_pwm2a .25
+v_V1     100 dgnd  7.5 
+I_I1     100 13 dc 16u  
+I_I2     100 10 dc 21u  
+I_I5     100 117 dc 16u  
+I_I6     100 out dc 1.36m  
+Q_Q36    dgnd 20 13  q_pwm2a 
+Q_Q37    dgnd 17 117  q_pwm2a 
+Q_Q38    out 23 dgnd  q_pwm1a 
+Q_Q39    out 117 23  q_pwm1a 
+C_C3     117 out 3p 
+C_C4     17 out 17p 
+Q_Q40    dgnd fb 8  q_pwm2a 
+R_R19    101 20 960 
+Q_Q41    dgnd 13 10  q_pwm2a .75
+R_R20    dgnd 23 35k 
+D_D1     dgnd out D1nbv56
+D_D2     dgnd fb D1Nbv56 
+I_I7     100  8 dc 16u  
+I_I8     100 12 dc 16u
+.model D1Nbv56  D(Is=880.5E-18 Rs=.25 Ikf=0 N=1 Xti=3 Eg=1.11 Cjo=5p M=.5516
++               Vj=.75 Fc=.5 Isr=1.859n Nr=2 Bv=5.6 Ibv=20.245m Nbv=1.6989
++               Ibvl=1.9556m Nbvl=14.976 Tbv1=-21.277u) 
+.ends
+*$
+.subckt ea184s5 2 1 out DPWR DGND
+r2 2 0 1g
+r1 1 0 1g
+cload out 0 1p
+g1 mid DGND table={v(2,1)*1.2e-4} (-5u -5u) (5u 5u)
+rmid mid DGND 12meg
+x1 mid out  DPWR DGND outsa
+dp out 60 dmod ;  to check ac transer curve it is necessary to .ic
+vp 60 DGND dc 5.5 ; v(mid) to .7315.
+.model dmod d       
+.ends
+*$
+.subckt outsa mid out DPWR DGND 
+vp 60 DGND dc 5.5 ; interferes with this. (not a factor for normal operation)
+isrc  60 emmit 16u
+q1 DGND mid emmit q_pwm2a
+q2 out emmit base3 q_pwm1a
+isrc2 60 out 1.36m
+q3 out base3 DGND q_pwm1a
+rbase3 base3 DGND 35k
+rout out DGND 13k
+cmill1 out mid 17p
+cmill2 out emmit 3p
+.ends
+.model q_pwm1a  npn(is=1.34f xti=3 eg=1.11 vaf=74.03 bf=65.62 ne=1.208
++               ise=0 ikf=.5385 xtb=1.5 br=9.715 nc=2 isc=0 ikr=0 rc=18
++               cjc=1.393p mjc=.3416 vjc=.75 fc=.5 cje=2.01p mje=.377 vje=.75
++               tr=.1n tf=408.8p itf=.6 vtf=1.7 xtf=3 rb=10)
+.model q_pwm2a  pnp(is=1.34f xti=3 eg=1.11 vaf=74.03 bf=65.62 ne=1.208
++               ise=0 ikf=.5385 xtb=1.5 br=9.715 nc=2 isc=0 ikr=0 rc=18
++               cjc=1.393p mjc=.3416 vjc=.75 fc=.5 cje=2.01p mje=.377 vje=.75
++               tr=.1n tf=408.8p itf=.6 vtf=1.7 xtf=3 rb=10)
+*$
+
+*               + -  o 
+.subckt ea184s 2 1  8 DPWR DGND
+* uc1842 error amp 
+* node 1 is the inverting input , 2 is the noninverting input
+* node 8 is the output , 4 is the positive supply voltage
+  v4 4 0 15
+  ri 2 1 1meg
+  ci 2 1 1pf
+  g1 DGND 5 2 1 156u
+  r1 5 DGND 5.6g
+  c1 5 DGND 25pf
+  vo 4 6 dc 2
+  vn 7 DGND dc 1
+  eo 10 DGND 5 DGND 1.0
+  ro 10 8 125
+  rog 8 0 1g
+  cog 8 0 1p
+  d2 7 5 dn
+  d3 5 6 dn
+.model dn d
+.ends 
+*$
+.subckt loadrc 1
+r1 1 1a 1k
+c1 1a 0 10p
+.ends
+*$
+*               +cs -cs ni i compensation pwmout vin
+.subckt errcomp 4    3  5  6 7            pwmout 15 DPWR DGND
+  vsub 67 7 -.7 ; sum of -vdiode anf +.5
+  o6 57 67 comp1846 dgtlnet=pwmout io_std
+.model comp1846 doutput(
++ s0name=0 s0vlo= -300 s0vhi=0 
++ s1name=1 s1vlo= 0 s1vhi=300) 
+  egain3 57 0 4 3  3
+*            - + o vdd
+  xea        6 5 7 15  DPWR DGND    ea1846   ; error amp call
+
+.ends
+*$
+*            clk  shutdowno      pwmout  orout   q  qbar
+.subckt log1846  10   shto           pwmout    73      20 21  DPWR DGND
+  uhi stim(1,1) DPWR DGND  2 io_stm 0s 1
+  ustart stim(1,1) DPWR DGND  87 io_stm  
++ 0s 0
++ 20ns 1                        ; q and clk fed into or
+  uor21 or(2) DPWR DGND  10 17 73z d0_gate io_std
+  udl1 dlyline DPWR DGND 73z 73 dlmod io_std
+.model dlmod udly(dlyty=70n)
+  uor22 or(2) DPWR DGND  pwmout shto orco d0_gate io_std ; create two s's
+  usrdps srff(1) DPWR DGND  87 2 2 orco 10 17 18 d0_gff io_std
+* toggle flip flop
+  utog dff(1) DPWR DGND  87,2,73,21 20 21 d0_eff io_std 
+.ends
+*$
+*                tq  tqb  otherinput  uvlo    gnd  vc ota otb
+.subckt outst1846  20  21   27          uvlo      14  13  16 DPWR DGND
+  e14 14a 0 14 0 1
+  r1oc 14a 31 10
+  r2oc 14a 32 10
+  r3oc 14a 33 10
+  r4oc 14a 34 10
+  un1 nor(3) DPWR DGND uvlo 20 27  31 d0_gate io_pwm_oc
+  un2 nor(3) DPWR DGND uvlo 21 27  32 d0_gate io_pwm_oc
+  un11 or(3) DPWR DGND uvlo 20 27  33 d0_gate io_pwm_oc
+  un22 or(3) DPWR DGND uvlo 21 27  34 d0_gate  io_pwm_oc
+  x2  31 32 33 34 14 13 16  DPWR DGND ppou1846 
+.model d0_gate1 ugate (tplhty=40ns tphlty=40ns)
+.ends
+*$
+*-------------- | top push  bpush | toppull bot pull |   vc ot ob
+.subckt ppou1846     7111     7112      7113    7114        13 11 14 DPWR DGND
+  rblim1 7111 731 50
+  rblim2 7112 732 50
+  rblim3 7113 733 50
+  rblim4 7114 734 50
+  qo1 735 731 140 q_pwm
+  w1 731 DGND vs1 isw1846
+  vs1 140 11 0
+  qo2 735 732 141 q_pwm
+  w2 732 DGND vs2 isw1846
+  vs2 141 14 0
+  qo3  11 733 143 q_pwm
+  w3 733 0 vs3 isw1846
+  vs3 143 DGND 0
+  q04  14 734 144 q_pwm
+  w4 734 DGND vs4 isw1846
+  vs4 144 DGND 0
+  vdrop 13 735 1
+.model isw1846 iswitch (ron=1 roff=1e8 ion=1.5 ioff=1.3)
+.ends
+*$
+*          - + o vdd
+.subckt ea1846 1 2 3 4 DPWR DGND
+* uc1846 error amp : got from paper by Dr V.Bello  
+* node 1 is the inverting input , 2 is the noninverting input
+* node 3 is the output , 4 is the positive supply voltage
+  ri 2 1 1meg
+  ci 2 1 1pf
+  g1 DGND 5 2 1 126u
+  r1 5 DGND 1.6g
+  c1 5 DGND 25pf
+  vo 4 6 dc 3
+  vn 7 DGND dc .5
+  eo 10 DGND 5 DGND 1.0
+  ro 10 8 100
+  co 8 0 1p
+  io 3 9 dc 6.5ma
+  do 9 3 dn
+  d1 9 8 dn
+  d2 7 5 dn
+  d3 5 6 dn
+.model dn d
+.ends ea1846
+*$
+* here the operation of the thyristor is mimiced with a pair of
+* switches : if the current flowing into 1 is greater than 1.5ma
+* then node 16 looses on-off control
+* node 16 is compared with 350m and if greater it triggers thyrister
+.subckt latchpwm 1 16 16a DPWR DGND
+  r11 1 DGND 1g
+  r16 16 DGND 1g
+  r16a 16a 16b 1k
+  c16b 16b 0 10p 
+  ecompar 16a 0 table={(v(16)-v(350))*1000} (0,0) (5,5)
+  r250 350 DGND 1g
+  v350 350 DGND .350
+  vmeas 1 1a 0
+  c11 1a DGND 1p
+  vbegin begin 0 pulse(0 1 1e-9  .5e-9 .5e-9 10 15)
+  rbegin begin 0 1g
+  g1 0 vs1a value={i(vmeas)*v(begin)}
+  rfilter vs1a vs1 50
+  r1 vs1 DGND  1k
+  c1 vs1 DGND  10p
+  sml 1a DGND 16a DGND sml
+  r1a 1a 1f 1k
+  c1a 1f 0 10p
+  d1 1a 1b dx off
+.model dx d(is=1e-8 n=.16)
+  ssl 1b DGND vs1 DGND    ssl
+  r1b 1b 1f 1k
+  c1b 1f 0 10p
+.model ssl vswitch(ron=10 roff=1e6 von=1.5 voff=1.4)  ; sets latching current
+.ends                                                 ; above von*1e-3 latched
+*$
+.model pnp11pwm pnp(is=1.34f bf=100)
+*$
+.model sml vswitch(ron=10 roff=1e6 von=3 voff=.8)
+
+*$
+.subckt gen_clk ramp dclk DPWR DGND
+* generate the digital clock from the analog ramp
+  vser ramp ramp1 0
+ cramp ramp1 0 10e-6
+ vofset offs 0 .0001
+ roffs offs 0 1
+  eset  offs pos_neg value {i(vser)}
+  ocmp1 pos_neg 0 cmp dgtlnet=dclk io_std
+.model cmp doutput(
++ s0name=0 s0vlo=-20000 s0vhi=0
++ s1name=1 s1vlo=    0 s1vhi=20000)
+.ends
+*$
+
+.subckt gen_clk1 ramp dclk DPWR DGND
+* generate the digital clock from the analog ramp (SG1526B version)
+  vser ramp ramp1 0
+  cramp ramp1 0 10e-6
+  eset  pos_neg offs value={i(vser)}
+  vofset offs 0 .0001
+  roffs offs 0 1
+  ocmp1 pos_neg 0  cmp dgtlnet=dclk io_std
+.model cmp doutput(
++ s0name=0 s0vlo=-4000 s0vhi=0
++ s1name=1 s1vlo=    0 s1vhi=500)
+.ends
+*$
+
+.model din74s_o1 dinput(
++       s0name = 0, s0tsw = .1ns, s0rlo = .1 s0rhi = 10k,  ; 11.7ohm, 0.15v
++       s1name = 1, s1tsw = .1ns, s1rlo = 200k s1rhi = 200k,
++       s2name = x, s2tsw = .1ns, s2rlo = 34.6 s2rhi = 98.4, ; 25.6ohm, 1.30v
++       s3name = z, s3tsw = .1ns, s3rlo = 200k s3rhi = 200k,
++       s4name = R, s4tsw = .1ns, s4rlo = 34.6 s4rhi = 98.4,
++       s5name = F, s5tsw = .1ns, s5rlo = 34.6 s5rhi = 98.4,
++       clo=1p chi=1p)
+*$
+.subckt dtoa_s_o1 d a dpwr dgnd 
++       params: drvl=0 drvh=0 capacitance=0
+  n1 a dgnd dpwr din74s_o1 dgtlnet = d  io_s_oc
+  c1 a 0 {capacitance+0.1pf}
+.ends
+*$
+.model q_pwm    npn(is=1.34f xti=3 eg=1.11 vaf=74.03 bf=65.62 ne=1.208
++               ise=19.48f ikf=.5385 xtb=1.5 br=9.715 nc=2 isc=0 ikr=0 rc=9
++               cjc=1.393p mjc=.3416 vjc=.75 fc=.5 cje=2.01p mje=.377 vje=.75
++               tr=.1n tf=408.8p itf=.6 vtf=1.7 xtf=3 rb=10)
+*$
+.model q_pwm1   npn(is=1.34f xti=3 eg=1.11 vaf=74.03 bf=65.62 ne=1.208
++               ise=19.48f ikf=.5385 xtb=1.5 br=9.715 nc=2 isc=0 ikr=0 rc=18
++               cjc=1.393p mjc=.3416 vjc=.75 fc=.5 cje=2.01p mje=.377 vje=.75
++               tr=.1n tf=408.8p itf=.6 vtf=1.7 xtf=3 rb=10)
+*$
+.model io_pwm_oc uio (
++ drvh=1meg, drvl=60.6,
++ atod1=atod_s,    atod2=atod_s_nx, atod3=atod_s_e,  atod4=atod_s_nxe
++ dtoa1=dtoa_s_o1, dtoa2=dtoa_s_o1, dtoa3=dtoa_s_o1, dtoa4=dtoa_s_o1 )
+*$
+.model dx       d(is=0.1p rs=.1 cjo=2p tt=1p bv=100 ibv=0.1p)
+*$
+.subckt dtoacone  d a  dpwr dgnd
++       params: drvl=0 drvh=0 capacitance=0
+*
+n1  a dgnd dpwr dincone dgtlnet=d io_std
+c1  a 0 {capacitance+0.1pf}
+.ends
+*$
+.model DINcone dinput (
++       s0name="0"      s0tsw=3.5ns     s0rlo=1000      s0rhi=1    ; 1ohm,   1 0.09v
++       s1name="1"      s1tsw=5.5ns     s1rlo=1         s1rhi=1000 ; 1ohm,  0
++       s2name="X"      s2tsw=3.5ns     s2rlo=42.9      s2rhi=116  ; 31.3ohm, 1.35v
++       s3name="R"      s3tsw=3.5ns     s3rlo=42.9      s3rhi=116  ; 31.3ohm, 1.35v
++       s4name="F"      s4tsw=3.5ns     s4rlo=42.9      s4rhi=116  ; 31.3ohm, 1.35v
++       s5name="Z"      s5tsw=3.5ns     s5rlo=200K      s5rhi=200K
++       )
+*$
+.subckt dtoacone1  d a  dpwr dgnd
++       params: drvl=0 drvh=0 capacitance=0
+*
+n1  a dgnd dpwr dincone dgtlnet=d io_std
+c1  a 0 {capacitance+0.1pf}
+.ends
+*$
+.model DINcone1 dinput (
++       s0name="0"      s0tsw=3.5ns     s0rlo=1      s0rhi=1000    ; 1ohm,   1 0.09v
++       s1name="1"      s1tsw=5.5ns     s1rlo=1000       s1rhi=1 ; 1ohm,  0
++       s2name="X"      s2tsw=3.5ns     s2rlo=42.9      s2rhi=116  ; 31.3ohm, 1.35v
++       s3name="R"      s3tsw=3.5ns     s3rlo=42.9      s3rhi=116  ; 31.3ohm, 1.35v
++       s4name="F"      s4tsw=3.5ns     s4rlo=42.9      s4rhi=116  ; 31.3ohm, 1.35v
++       s5name="Z"      s5tsw=3.5ns     s5rlo=200K      s5rhi=200K
++       )
+*$

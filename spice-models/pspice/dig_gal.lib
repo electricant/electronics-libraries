@@ -1,0 +1,3823 @@
+* Library of programmable logic: GAL types
+
+*  Copyright OrCAD, Inc. 1998 All Rights Reserved.
+*
+* Release date:   January 1994
+
+* $Revision:   1.8  $
+* $Author:   RPEREZ  $
+* $Date:   17 Apr 1998 13:43:12  $
+*
+* 
+*-------------------------------------------------------------------------
+* 20-Pin Generic Array Logic Family
+*
+*$
+*---------
+* GAL16V8-20L
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* muw   09/04/91	Created
+
+.subckt GAL16V8-20L  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	OM0_f	pin3	OM1_f	pin4	OM2_f	pin5	OM3_f
++	pin6	OM4_f	pin7	OM5_f	pin8	OM6_f	pin9	OM7_f
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin20 pin10
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL16V8_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin20 pin10
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL16V8_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin20 pin10
++	$D_LO   ac0 
++	GAL16V8_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin20 pin10
++	$D_LO   syn 
++	GAL16V8_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin20 pin10
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL16V8_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin20 pin10
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL16V8_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin20 pin10
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE buf pin20 pin10
++	pin11   p11buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	p11buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin20 pin10
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin20 pin10
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n19 g pin19 c ac10 
++	xor0 syn ac0  pin20 pin10  GAL16V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n18 g pin18 n19 
++	ac11 xor1 syn ac0  pin20 pin10  GAL16V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n17 g pin17 n18 
++	ac12 xor2 syn ac0  pin20 pin10  GAL16V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n16 g pin16 n17 
++	ac13 xor3 syn ac0  pin20 pin10  GAL16V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n15 g pin15 n14 
++	ac14 xor4 syn ac0  pin20 pin10  GAL16V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n14 g pin14 n13 
++	ac15 xor5 syn ac0  pin20 pin10  GAL16V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n13 g pin13 n12 
++	ac16 xor6 syn ac0  pin20 pin10  GAL16V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n12 g pin12 
++	p11buf ac17 xor7 syn ac0  pin20 pin10  GAL16V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+
+.subckt GAL16V8-20_OLMC  R0 R1 R2 R3 R4 R5 R6 R7 C F S N G PIN P AC1N XORN SYN
++	AC0
++	optional: PWR=$G_DPWR GND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(8) pwr gnd
++	r0x r1 r2 r3 r4 r5 r6 r7   or 
++	D0_GATE IO_LS 
+U2 xor pwr gnd
++	or xorn   dn 
++	D0_GATE IO_LS 
+U3 dff(1) pwr gnd
++	$d_hi $d_hi c   dn   q0 q0bar 
++	D_GAL16V8-20_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 and(2) pwr gnd
++	ac0 ac1n   r0d 
++	D0_GATE IO_LS 
+U5 inv3 pwr gnd
++	out   e   pin 
++	D_GAL16V8-20_out IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 buf pwr gnd
++	pin   ibuf 
++	D_GAL16V8-20_in IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  r0d r0 $d_lo r0x  pwr gnd  GAL_MUX21
+x2  ac0 ac1n $d_hi $d_lo g r0 e  pwr gnd  GAL_MUX41
+x3  s ac1n p p q0bar ibuf f  pwr gnd  GAL_MUX41
+x4  ac1n $d_lo ibuf n  pwr gnd  GAL_MUX21
+x5  ac0 ac1n dn dn q0 dn out  pwr gnd  GAL_MUX41
+.ends
+
+.model D_GAL16V8-20_REG ueff ( ; Register timing
++	twclkhmn=12ns	twclklmn=12ns
++	tsudclkmn=15ns
++	)
+.model D_GAL16V8-20_OUT utgate ( ; Gate pin enabled output from reg
++	tplhmx=15ns	tphlmx=15ns
++	tplzmx=18ns	tphzmx=18ns
++	tpzlmx=18ns	tpzhmx=18ns
++	)
+.model D_GAL16V8-20_IN ugate ( ; Register to feedback delay
++	tplhmx=15ns	tphlmx=15ns
++	)
+.subckt GAL_MUX21  SEL D0 D1 Y
++	optional: PWR=$G_DPWR GND=$G_DGND
+U1 inv pwr gnd
++	sel   selbar 
++	D0_GATE IO_LS 
+U2 ao(2,2) pwr gnd
++	selbar d0 sel d1   y 
++	D0_GATE IO_LS 
+.ends
+
+.subckt GAL_MUX41  SEL1 SEL0 D00 D01 D10 D11 Y
++	optional: PWR=$G_DPWR GND=$G_DGND
+U1 inva(2) pwr gnd
++	sel0 sel1   sel0bar sel1bar 
++	D0_GATE IO_LS 
+U2 ao(3,4) pwr gnd
++	sel1bar	sel0bar	d00
++	sel1bar	sel0	d01
++	sel1	sel0bar	d10
++	sel1	sel0	d11
++	y
++	D0_GATE IO_LS 
+.ends
+
+.model GAL16V8_XOR upld (
++	offset=2048
++	)
+.model GAL16V8_AC1 upld (
++	offset=2120
++	)
+.model GAL16V8_AC0 upld (
++	offset=2193
++	)
+.model GAL16V8_SYN upld (
++	offset=2192
++	)
+.model GAL16V8_PTD upld (
++	offset=2128
++	)
+.model GAL16V8_USW upld (
++	offset=2056
++	)
+*$
+*---------
+* GAL16V8-25Q
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL16V8-25Q  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	OM0_f	pin3	OM1_f	pin4	OM2_f	pin5	OM3_f
++	pin6	OM4_f	pin7	OM5_f	pin8	OM6_f	pin9	OM7_f
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin20 pin10
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL16V8_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin20 pin10
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL16V8_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin20 pin10
++	$D_LO   ac0 
++	GAL16V8_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin20 pin10
++	$D_LO   syn 
++	GAL16V8_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin20 pin10
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL16V8_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin20 pin10
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL16V8_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin20 pin10
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE buf pin20 pin10
++	pin11   p11buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	p11buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin20 pin10
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin20 pin10
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n19 g pin19 c ac10 
++	xor0 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n18 g pin18 n19 
++	ac11 xor1 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n17 g pin17 n18 
++	ac12 xor2 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n16 g pin16 n17 
++	ac13 xor3 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n15 g pin15 n14 
++	ac14 xor4 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n14 g pin14 n13 
++	ac15 xor5 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n13 g pin13 n12 
++	ac16 xor6 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n12 g pin12 
++	p11buf ac17 xor7 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+
+.subckt GAL16V8-25_OLMC  R0 R1 R2 R3 R4 R5 R6 R7 C F S N G PIN P AC1N XORN SYN
++	AC0
++	optional: PWR=$G_DPWR GND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(8) pwr gnd
++	r0x r1 r2 r3 r4 r5 r6 r7   or 
++	D0_GATE IO_LS 
+U2 xor pwr gnd
++	or xorn   dn 
++	D0_GATE IO_LS 
+U3 dff(1) pwr gnd
++	$d_hi $d_hi c   dn   q0 q0bar 
++	D_GAL16V8-25_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 and(2) pwr gnd
++	ac0 ac1n   r0d 
++	D0_GATE IO_LS 
+U5 inv3 pwr gnd
++	out   e   pin 
++	D_GAL16V8-25_out IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 buf pwr gnd
++	pin   ibuf 
++	D_GAL16V8-25_in IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  r0d r0 $d_lo r0x  pwr gnd  GAL_MUX21
+x2  ac0 ac1n $d_hi $d_lo g r0 e  pwr gnd  GAL_MUX41
+x3  s ac1n p p q0bar ibuf f  pwr gnd  GAL_MUX41
+x4  ac1n $d_lo ibuf n  pwr gnd  GAL_MUX21
+x5  ac0 ac1n dn dn q0 dn out  pwr gnd  GAL_MUX41
+.ends
+
+.model D_GAL16V8-25_REG ueff ( ; Register timing
++	twclkhmn=15ns	twclklmn=15ns
++	tsudclkmn=20ns
++	)
+.model D_GAL16V8-25_OUT utgate ( ; Gate pin enabled output from reg
++	tplhmx=15ns	tphlmx=15ns
++	tplzmx=20ns	tphzmx=20ns
++	tpzlmx=20ns	tpzhmx=20ns
++	)
+.model D_GAL16V8-25_IN ugate ( ; Register to feedback delay
++	tplhmx=15ns	tphlmx=15ns
++	)
+*$
+*---------
+* GAL16V8-25L
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL16V8-25L  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	OM0_f	pin3	OM1_f	pin4	OM2_f	pin5	OM3_f
++	pin6	OM4_f	pin7	OM5_f	pin8	OM6_f	pin9	OM7_f
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin20 pin10
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL16V8_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin20 pin10
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL16V8_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin20 pin10
++	$D_LO   ac0 
++	GAL16V8_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin20 pin10
++	$D_LO   syn 
++	GAL16V8_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin20 pin10
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL16V8_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin20 pin10
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL16V8_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin20 pin10
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE buf pin20 pin10
++	pin11   p11buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	p11buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin20 pin10
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin20 pin10
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n19 g pin19 c ac10 
++	xor0 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n18 g pin18 n19 
++	ac11 xor1 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n17 g pin17 n18 
++	ac12 xor2 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n16 g pin16 n17 
++	ac13 xor3 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n15 g pin15 n14 
++	ac14 xor4 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n14 g pin14 n13 
++	ac15 xor5 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n13 g pin13 n12 
++	ac16 xor6 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n12 g pin12 
++	p11buf ac17 xor7 syn ac0  pin20 pin10  GAL16V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+
+*$
+*---------
+* GAL16V8-30Q
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL16V8-30Q  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	OM0_f	pin3	OM1_f	pin4	OM2_f	pin5	OM3_f
++	pin6	OM4_f	pin7	OM5_f	pin8	OM6_f	pin9	OM7_f
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin20 pin10
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL16V8_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin20 pin10
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL16V8_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin20 pin10
++	$D_LO   ac0 
++	GAL16V8_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin20 pin10
++	$D_LO   syn 
++	GAL16V8_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin20 pin10
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL16V8_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin20 pin10
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL16V8_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin20 pin10
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE buf pin20 pin10
++	pin11   p11buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	p11buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin20 pin10
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin20 pin10
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n19 g pin19 c ac10 
++	xor0 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n18 g pin18 n19 
++	ac11 xor1 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n17 g pin17 n18 
++	ac12 xor2 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n16 g pin16 n17 
++	ac13 xor3 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n15 g pin15 n14 
++	ac14 xor4 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n14 g pin14 n13 
++	ac15 xor5 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n13 g pin13 n12 
++	ac16 xor6 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n12 g pin12 
++	p11buf ac17 xor7 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+
+.subckt GAL16V8-30_OLMC  R0 R1 R2 R3 R4 R5 R6 R7 C F S N G PIN P AC1N XORN SYN
++	AC0
++	optional: PWR=$G_DPWR GND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(8) pwr gnd
++	r0x r1 r2 r3 r4 r5 r6 r7   or 
++	D0_GATE IO_LS 
+U2 xor pwr gnd
++	or xorn   dn 
++	D0_GATE IO_LS 
+U3 dff(1) pwr gnd
++	$d_hi $d_hi c   dn   q0 q0bar 
++	D_GAL16V8-30_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 and(2) pwr gnd
++	ac0 ac1n   r0d 
++	D0_GATE IO_LS 
+U5 inv3 pwr gnd
++	out   e   pin 
++	D_GAL16V8-30_out IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 buf pwr gnd
++	pin   ibuf 
++	D_GAL16V8-30_in IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  r0d r0 $d_lo r0x  pwr gnd  GAL_MUX21
+x2  ac0 ac1n $d_hi $d_lo g r0 e  pwr gnd  GAL_MUX41
+x3  s ac1n p p q0bar ibuf f  pwr gnd  GAL_MUX41
+x4  ac1n $d_lo ibuf n  pwr gnd  GAL_MUX21
+x5  ac0 ac1n dn dn q0 dn out  pwr gnd  GAL_MUX41
+.ends
+
+.model D_GAL16V8-30_REG ueff ( ; Register timing
++	twclkhmn=15ns	twclklmn=15ns
++	tsudclkmn=25ns
++	)
+.model D_GAL16V8-30_OUT utgate ( ; Gate pin enabled output from reg
++	tplhmx=20ns	tphlmx=20ns
++	tplzmx=25ns	tphzmx=25ns
++	tpzlmx=25ns	tpzhmx=25ns
++	)
+.model D_GAL16V8-30_IN ugate ( ; Register to feedback delay
++	tplhmx=20ns	tphlmx=20ns
++	)
+*$
+*---------
+* GAL16V8-30L
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL16V8-30L  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+
+U1 plandc(16,64) pin20 pin10
++	pin2	OM0_f	pin3	OM1_f	pin4	OM2_f	pin5	OM3_f
++	pin6	OM4_f	pin7	OM5_f	pin8	OM6_f	pin9	OM7_f
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin20 pin10
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL16V8_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin20 pin10
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL16V8_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin20 pin10
++	$D_LO   ac0 
++	GAL16V8_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin20 pin10
++	$D_LO   syn 
++	GAL16V8_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin20 pin10
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL16V8_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin20 pin10
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL16V8_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin20 pin10
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE buf pin20 pin10
++	pin11   p11buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	p11buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin20 pin10
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin20 pin10
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n19 g pin19 c ac10 
++	xor0 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n18 g pin18 n19 
++	ac11 xor1 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n17 g pin17 n18 
++	ac12 xor2 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n16 g pin16 n17 
++	ac13 xor3 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n15 g pin15 n14 
++	ac14 xor4 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n14 g pin14 n13 
++	ac15 xor5 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n13 g pin13 n12 
++	ac16 xor6 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n12 g pin12 
++	p11buf ac17 xor7 syn ac0  pin20 pin10  GAL16V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+
+*$
+*---------
+* GAL16V8A-10
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL16V8A-10  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	OM0_f	pin3	OM1_f	pin4	OM2_f	pin5	OM3_f
++	pin6	OM4_f	pin7	OM5_f	pin8	OM6_f	pin9	OM7_f
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin20 pin10
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL16V8A_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin20 pin10
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL16V8A_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin20 pin10
++	$D_LO   ac0 
++	GAL16V8A_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin20 pin10
++	$D_LO   syn 
++	GAL16V8A_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin20 pin10
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL16V8A_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin20 pin10
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL16V8A_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin20 pin10
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE buf pin20 pin10
++	pin11   p11buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	p11buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin20 pin10
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin20 pin10
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n19 g pin19 c ac10 
++	xor0 syn ac0  pin20 pin10  GAL16V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n18 g pin18 n19 
++	ac11 xor1 syn ac0  pin20 pin10  GAL16V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n17 g pin17 n18 
++	ac12 xor2 syn ac0  pin20 pin10  GAL16V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n16 g pin16 n17 
++	ac13 xor3 syn ac0  pin20 pin10  GAL16V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n15 g pin15 n14 
++	ac14 xor4 syn ac0  pin20 pin10  GAL16V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n14 g pin14 n13 
++	ac15 xor5 syn ac0  pin20 pin10  GAL16V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n13 g pin13 n12 
++	ac16 xor6 syn ac0  pin20 pin10  GAL16V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n12 g pin12 
++	p11buf ac17 xor7 syn ac0  pin20 pin10  GAL16V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+
+.subckt GAL16V8A-10_OLMC  R0 R1 R2 R3 R4 R5 R6 R7 C F S N G PIN P AC1N XORN
++	SYN AC0
++	optional: PWR=$G_DPWR GND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(8) pwr gnd
++	r0x r1 r2 r3 r4 r5 r6 r7   or 
++	D0_GATE IO_LS 
+U2 xor pwr gnd
++	or xorn   dn 
++	D0_GATE IO_LS 
+U3 dff(1) pwr gnd
++	$d_hi $d_hi c   dn   q0 q0bar 
++	D_GAL16V8A-10_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 and(2) pwr gnd
++	ac0 ac1n   r0d 
++	D0_GATE IO_LS 
+U5 inv3 pwr gnd
++	out   e   pin 
++	D_GAL16V8A-10_out IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 buf pwr gnd
++	pin   ibuf 
++	D_GAL16V8A-10_in IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  r0d r0 $d_lo r0x  pwr gnd  GAL_MUX21
+x2  ac0 ac1n $d_hi $d_lo g r0 e  pwr gnd  GAL_MUX41
+x3  s ac1n p p q0bar ibuf f  pwr gnd  GAL_MUX41
+x4  ac1n $d_lo ibuf n  pwr gnd  GAL_MUX21
+x5  ac0 ac1n dn dn q0 dn out  pwr gnd  GAL_MUX41
+.ends
+
+.model D_GAL16V8A-10_REG ueff ( ; Register timing
++	twclkhmn=08ns	twclklmn=08ns
++	tsudclkmn=10ns
++	)
+.model D_GAL16V8A-10_OUT utgate ( ; Gate pin enabled output from reg
++	tplhmx=08ns	tphlmx=08ns
++	tplzmx=10ns	tphzmx=10ns
++	tpzlmx=10ns	tpzhmx=10ns
++	)
+.model D_GAL16V8A-10_IN ugate ( ; Register to feedback delay
++	tplhmx=08ns	tphlmx=08ns
++	)
+.model GAL16V8A_XOR upld (
++	offset=2048
++	)
+.model GAL16V8A_AC1 upld (
++	offset=2120
++	)
+.model GAL16V8A_AC0 upld (
++	offset=2193
++	)
+.model GAL16V8A_SYN upld (
++	offset=2192
++	)
+.model GAL16V8A_PTD upld (
++	offset=2128
++	)
+.model GAL16V8A_USW upld (
++	offset=2056
++	)
+*$
+*---------
+* GAL16V8A-12
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL16V8A-12  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	OM0_f	pin3	OM1_f	pin4	OM2_f	pin5	OM3_f
++	pin6	OM4_f	pin7	OM5_f	pin8	OM6_f	pin9	OM7_f
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin20 pin10
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL16V8A_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin20 pin10
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL16V8A_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin20 pin10
++	$D_LO   ac0 
++	GAL16V8A_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin20 pin10
++	$D_LO   syn 
++	GAL16V8A_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin20 pin10
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL16V8A_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin20 pin10
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL16V8A_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin20 pin10
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE buf pin20 pin10
++	pin11   p11buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	p11buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin20 pin10
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin20 pin10
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n19 g pin19 c ac10 
++	xor0 syn ac0  pin20 pin10  GAL16V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n18 g pin18 n19 
++	ac11 xor1 syn ac0  pin20 pin10  GAL16V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n17 g pin17 n18 
++	ac12 xor2 syn ac0  pin20 pin10  GAL16V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n16 g pin16 n17 
++	ac13 xor3 syn ac0  pin20 pin10  GAL16V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n15 g pin15 n14 
++	ac14 xor4 syn ac0  pin20 pin10  GAL16V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n14 g pin14 n13 
++	ac15 xor5 syn ac0  pin20 pin10  GAL16V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n13 g pin13 n12 
++	ac16 xor6 syn ac0  pin20 pin10  GAL16V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n12 g pin12 
++	p11buf ac17 xor7 syn ac0  pin20 pin10  GAL16V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+
+.subckt GAL16V8A-12_OLMC  R0 R1 R2 R3 R4 R5 R6 R7 C F S N G PIN P AC1N XORN
++	SYN AC0
++	optional: PWR=$G_DPWR GND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(8) pwr gnd
++	r0x r1 r2 r3 r4 r5 r6 r7   or 
++	D0_GATE IO_LS 
+U2 xor pwr gnd
++	or xorn   dn 
++	D0_GATE IO_LS 
+U3 dff(1) pwr gnd
++	$d_hi $d_hi c   dn   q0 q0bar 
++	D_GAL16V8A-12_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 and(2) pwr gnd
++	ac0 ac1n   r0d 
++	D0_GATE IO_LS 
+U5 inv3 pwr gnd
++	out   e   pin 
++	D_GAL16V8A-12_out IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 buf pwr gnd
++	pin   ibuf 
++	D_GAL16V8A-12_in IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  r0d r0 $d_lo r0x  pwr gnd  GAL_MUX21
+x2  ac0 ac1n $d_hi $d_lo g r0 e  pwr gnd  GAL_MUX41
+x3  s ac1n p p q0bar ibuf f  pwr gnd  GAL_MUX41
+x4  ac1n $d_lo ibuf n  pwr gnd  GAL_MUX21
+x5  ac0 ac1n dn dn q0 dn out  pwr gnd  GAL_MUX41
+.ends
+
+.model D_GAL16V8A-12_REG ueff ( ; Register timing
++	twclkhmn=08ns	twclklmn=08ns
++	tsudclkmn=12ns
++	)
+.model D_GAL16V8A-12_OUT utgate ( ; Gate pin enabled output from reg
++	tplhmx=10ns	tphlmx=10ns
++	tplzmx=10ns	tphzmx=10ns
++	tpzlmx=10ns	tpzhmx=10ns
++	)
+.model D_GAL16V8A-12_IN ugate ( ; Register to feedback delay
++	tplhmx=10ns	tphlmx=10ns
++	)
+*$
+*---------
+* GAL16V8A-15
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL16V8A-15  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	OM0_f	pin3	OM1_f	pin4	OM2_f	pin5	OM3_f
++	pin6	OM4_f	pin7	OM5_f	pin8	OM6_f	pin9	OM7_f
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin20 pin10
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL16V8A_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin20 pin10
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL16V8A_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin20 pin10
++	$D_LO   ac0 
++	GAL16V8A_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin20 pin10
++	$D_LO   syn 
++	GAL16V8A_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin20 pin10
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL16V8A_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin20 pin10
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL16V8A_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin20 pin10
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE buf pin20 pin10
++	pin11   p11buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	p11buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin20 pin10
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin20 pin10
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n19 g pin19 c ac10 
++	xor0 syn ac0  pin20 pin10  GAL16V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n18 g pin18 n19 
++	ac11 xor1 syn ac0  pin20 pin10  GAL16V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n17 g pin17 n18 
++	ac12 xor2 syn ac0  pin20 pin10  GAL16V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n16 g pin16 n17 
++	ac13 xor3 syn ac0  pin20 pin10  GAL16V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n15 g pin15 n14 
++	ac14 xor4 syn ac0  pin20 pin10  GAL16V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n14 g pin14 n13 
++	ac15 xor5 syn ac0  pin20 pin10  GAL16V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n13 g pin13 n12 
++	ac16 xor6 syn ac0  pin20 pin10  GAL16V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n12 g pin12 
++	p11buf ac17 xor7 syn ac0  pin20 pin10  GAL16V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+
+.subckt GAL16V8A-15_OLMC  R0 R1 R2 R3 R4 R5 R6 R7 C F S N G PIN P AC1N XORN
++	SYN AC0
++	optional: PWR=$G_DPWR GND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(8) pwr gnd
++	r0x r1 r2 r3 r4 r5 r6 r7   or 
++	D0_GATE IO_LS 
+U2 xor pwr gnd
++	or xorn   dn 
++	D0_GATE IO_LS 
+U3 dff(1) pwr gnd
++	$d_hi $d_hi c   dn   q0 q0bar 
++	D_GAL16V8A-15_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 and(2) pwr gnd
++	ac0 ac1n   r0d 
++	D0_GATE IO_LS 
+U5 inv3 pwr gnd
++	out   e   pin 
++	D_GAL16V8A-15_out IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 buf pwr gnd
++	pin   ibuf 
++	D_GAL16V8A-15_in IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  r0d r0 $d_lo r0x  pwr gnd  GAL_MUX21
+x2  ac0 ac1n $d_hi $d_lo g r0 e  pwr gnd  GAL_MUX41
+x3  s ac1n p p q0bar ibuf f  pwr gnd  GAL_MUX41
+x4  ac1n $d_lo ibuf n  pwr gnd  GAL_MUX21
+x5  ac0 ac1n dn dn q0 dn out  pwr gnd  GAL_MUX41
+.ends
+
+.model D_GAL16V8A-15_REG ueff ( ; Register timing
++	twclkhmn=10ns	twclklmn=10ns
++	tsudclkmn=12ns
++	)
+.model D_GAL16V8A-15_OUT utgate ( ; Gate pin enabled output from reg
++	tplhmx=12ns	tphlmx=12ns
++	tplzmx=15ns	tphzmx=15ns
++	tpzlmx=15ns	tpzhmx=15ns
++	)
+.model D_GAL16V8A-15_IN ugate ( ; Register to feedback delay
++	tplhmx=12ns	tphlmx=12ns
++	)
+*$
+*---------
+* GAL16V8A-20
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL16V8A-20  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN11 PIN12
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19
++	optional: PIN20=$G_DPWR PIN10=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(16,64) pin20 pin10
++	pin2	OM0_f	pin3	OM1_f	pin4	OM2_f	pin5	OM3_f
++	pin6	OM4_f	pin7	OM5_f	pin8	OM6_f	pin9	OM7_f
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin20 pin10
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL16V8A_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin20 pin10
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL16V8A_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin20 pin10
++	$D_LO   ac0 
++	GAL16V8A_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin20 pin10
++	$D_LO   syn 
++	GAL16V8A_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin20 pin10
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL16V8A_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin20 pin10
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL16V8A_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin20 pin10
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE buf pin20 pin10
++	pin11   p11buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin20 pin10
++	p11buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin20 pin10
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin20 pin10
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n19 g pin19 c ac10 
++	xor0 syn ac0  pin20 pin10  GAL16V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n18 g pin18 n19 
++	ac11 xor1 syn ac0  pin20 pin10  GAL16V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n17 g pin17 n18 
++	ac12 xor2 syn ac0  pin20 pin10  GAL16V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n16 g pin16 n17 
++	ac13 xor3 syn ac0  pin20 pin10  GAL16V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n15 g pin15 n14 
++	ac14 xor4 syn ac0  pin20 pin10  GAL16V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n14 g pin14 n13 
++	ac15 xor5 syn ac0  pin20 pin10  GAL16V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n13 g pin13 n12 
++	ac16 xor6 syn ac0  pin20 pin10  GAL16V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n12 g pin12 
++	p11buf ac17 xor7 syn ac0  pin20 pin10  GAL16V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+.ends
+
+.subckt GAL16V8A-20_OLMC  R0 R1 R2 R3 R4 R5 R6 R7 C F S N G PIN P AC1N XORN
++	SYN AC0
++	optional: PWR=$G_DPWR GND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(8) pwr gnd
++	r0x r1 r2 r3 r4 r5 r6 r7   or 
++	D0_GATE IO_LS 
+U2 xor pwr gnd
++	or xorn   dn 
++	D0_GATE IO_LS 
+U3 dff(1) pwr gnd
++	$d_hi $d_hi c   dn   q0 q0bar 
++	D_GAL16V8A-20_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 and(2) pwr gnd
++	ac0 ac1n   r0d 
++	D0_GATE IO_LS 
+U5 inv3 pwr gnd
++	out   e   pin 
++	D_GAL16V8A-20_out IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 buf pwr gnd
++	pin   ibuf 
++	D_GAL16V8A-20_in IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  r0d r0 $d_lo r0x  pwr gnd  GAL_MUX21
+x2  ac0 ac1n $d_hi $d_lo g r0 e  pwr gnd  GAL_MUX41
+x3  s ac1n p p q0bar ibuf f  pwr gnd  GAL_MUX41
+x4  ac1n $d_lo ibuf n  pwr gnd  GAL_MUX21
+x5  ac0 ac1n dn dn q0 dn out  pwr gnd  GAL_MUX41
+.ends
+
+.model D_GAL16V8A-20_REG ueff ( ; Register timing
++	twclkhmn=12ns	twclklmn=12ns
++	tsudclkmn=15ns
++	)
+.model D_GAL16V8A-20_OUT utgate ( ; Gate pin enabled output from reg
++	tplhmx=15ns	tphlmx=15ns
++	tplzmx=18ns	tphzmx=18ns
++	tpzlmx=18ns	tpzhmx=18ns
++	)
+.model D_GAL16V8A-20_IN ugate ( ; Register to feedback delay
++	tplhmx=15ns	tphlmx=15ns
++	)
+*$
+*-------------------------------------------------------------------------
+* 24-Pin Generic Array Logic Family
+*
+*$
+*---------
+* GAL20V8-20L
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/12/91	Created
+
+.subckt GAL20V8-20L  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	IN_23	pin3	OM0_f	pin4
++	OM1_f	pin5	OM2_f	pin6	OM3_f
++	pin7	OM4_f	pin8	OM5_f	pin9
++	OM6_f	pin10	OM7_f	pin11	IN_13
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin24 pin12
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL20V8_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin24 pin12
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL20V8_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin24 pin12
++	$D_LO   ac0 
++	GAL20V8_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin24 pin12
++	$D_LO   syn 
++	GAL20V8_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin24 pin12
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL20V8_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin24 pin12
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL20V8_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin24 pin12
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE bufa(3) pin24 pin12
++	pin13 pin14 pin23   p13buf p14buf p23buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	p13buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin24 pin12
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin24 pin12
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n22 g pin22 p23buf 
++	ac10 xor0 syn ac0  pin24 pin12  GAL20V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n21 g pin21 n22 
++	ac11 xor1 syn ac0  pin24 pin12  GAL20V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n20 g pin20 n21 
++	ac12 xor2 syn ac0  pin24 pin12  GAL20V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n19 g pin19 n20 
++	ac13 xor3 syn ac0  pin24 pin12  GAL20V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n18 g pin18 n17 
++	ac14 xor4 syn ac0  pin24 pin12  GAL20V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n17 g pin17 n16 
++	ac15 xor5 syn ac0  pin24 pin12  GAL20V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n16 g pin16 n15 
++	ac16 xor6 syn ac0  pin24 pin12  GAL20V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n15 g pin15 
++	p14buf ac17 xor7 syn ac0  pin24 pin12  GAL20V8-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x9  syn p23buf c in_23  pin24 pin12  GAL_MUX21
+x10  syn p14buf p13buf in_13  pin24 pin12  GAL_MUX21
+.ends
+
+.subckt GAL20V8-20_OLMC  R0 R1 R2 R3 R4 R5 R6 R7 C F S N G PIN P AC1N XORN SYN
++	AC0
++	optional: PWR=$G_DPWR GND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(8) pwr gnd
++	r0x r1 r2 r3 r4 r5 r6 r7   or 
++	D0_GATE IO_LS 
+U2 xor pwr gnd
++	or xorn   dn 
++	D0_GATE IO_LS 
+U3 dff(1) pwr gnd
++	$d_hi $d_hi c   dn   q0 q0bar 
++	D_GAL20V8-20_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 and(2) pwr gnd
++	ac0 ac1n   r0d 
++	D0_GATE IO_LS 
+U5 inv3 pwr gnd
++	out   e   pin 
++	D_GAL20V8-20_out IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 buf pwr gnd
++	pin   ibuf 
++	D_GAL20V8-20_in IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  r0d r0 $d_lo r0x  pwr gnd  GAL_MUX21
+x2  ac0 ac1n $d_hi $d_lo g r0 e  pwr gnd  GAL_MUX41
+x3  s ac1n p p q0bar ibuf f  pwr gnd  GAL_MUX41
+x4  ac1n $d_lo ibuf n  pwr gnd  GAL_MUX21
+x5  ac0 ac1n dn dn q0 dn out  pwr gnd  GAL_MUX41
+.ends
+
+.model D_GAL20V8-20_REG ueff ( ; Register timing
++	twclkhmn=12ns	twclklmn=12ns
++	tsudclkmn=15ns
++	)
+.model D_GAL20V8-20_OUT utgate ( ; Gate pin enabled output from reg
++	tplhmx=15ns	tphlmx=15ns
++	tplzmx=18ns	tphzmx=18ns
++	tpzlmx=18ns	tpzhmx=18ns
++	)
+.model D_GAL20V8-20_IN ugate ( ; Register to feedback delay
++	tplhmx=15ns	tphlmx=15ns
++	)
+.model GAL20V8_XOR upld (
++	offset=2560
++	)
+.model GAL20V8_AC1 upld (
++	offset=2632
++	)
+.model GAL20V8_AC0 upld (
++	offset=2705
++	)
+.model GAL20V8_SYN upld (
++	offset=2704
++	)
+.model GAL20V8_PTD upld (
++	offset=2640
++	)
+.model GAL20V8_USW upld (
++	offset=2568
++	)
+*$
+*---------
+* GAL20V8-25Q
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL20V8-25Q  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	IN_23	pin3	OM0_f	pin4
++	OM1_f	pin5	OM2_f	pin6	OM3_f
++	pin7	OM4_f	pin8	OM5_f	pin9
++	OM6_f	pin10	OM7_f	pin11	IN_13
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin24 pin12
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL20V8_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin24 pin12
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL20V8_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin24 pin12
++	$D_LO   ac0 
++	GAL20V8_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin24 pin12
++	$D_LO   syn 
++	GAL20V8_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin24 pin12
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL20V8_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin24 pin12
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL20V8_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin24 pin12
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE bufa(3) pin24 pin12
++	pin13 pin14 pin23   p13buf p14buf p23buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	p13buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin24 pin12
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin24 pin12
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n22 g pin22 p23buf 
++	ac10 xor0 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n21 g pin21 n22 
++	ac11 xor1 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n20 g pin20 n21 
++	ac12 xor2 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n19 g pin19 n20 
++	ac13 xor3 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n18 g pin18 n17 
++	ac14 xor4 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n17 g pin17 n16 
++	ac15 xor5 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n16 g pin16 n15 
++	ac16 xor6 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n15 g pin15 
++	p14buf ac17 xor7 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x9  syn p23buf c in_23  pin24 pin12  GAL_MUX21
+x10  syn p14buf p13buf in_13  pin24 pin12  GAL_MUX21
+.ends
+
+.subckt GAL20V8-25_OLMC  R0 R1 R2 R3 R4 R5 R6 R7 C F S N G PIN P AC1N XORN SYN
++	AC0
++	optional: PWR=$G_DPWR GND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(8) pwr gnd
++	r0x r1 r2 r3 r4 r5 r6 r7   or 
++	D0_GATE IO_LS 
+U2 xor pwr gnd
++	or xorn   dn 
++	D0_GATE IO_LS 
+U3 dff(1) pwr gnd
++	$d_hi $d_hi c   dn   q0 q0bar 
++	D_GAL20V8-25_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 and(2) pwr gnd
++	ac0 ac1n   r0d 
++	D0_GATE IO_LS 
+U5 inv3 pwr gnd
++	out   e   pin 
++	D_GAL20V8-25_out IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 buf pwr gnd
++	pin   ibuf 
++	D_GAL20V8-25_in IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  r0d r0 $d_lo r0x  pwr gnd  GAL_MUX21
+x2  ac0 ac1n $d_hi $d_lo g r0 e  pwr gnd  GAL_MUX41
+x3  s ac1n p p q0bar ibuf f  pwr gnd  GAL_MUX41
+x4  ac1n $d_lo ibuf n  pwr gnd  GAL_MUX21
+x5  ac0 ac1n dn dn q0 dn out  pwr gnd  GAL_MUX41
+.ends
+
+.model D_GAL20V8-25_REG ueff ( ; Register timing
++	twclkhmn=15ns	twclklmn=15ns
++	tsudclkmn=20ns
++	)
+.model D_GAL20V8-25_OUT utgate ( ; Gate pin enabled output from reg
++	tplhmx=15ns	tphlmx=15ns
++	tplzmx=20ns	tphzmx=20ns
++	tpzlmx=20ns	tpzhmx=20ns
++	)
+.model D_GAL20V8-25_IN ugate ( ; Register to feedback delay
++	tplhmx=15ns	tphlmx=15ns
++	)
+*$
+*---------
+* GAL20V8-25L
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL20V8-25L  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	IN_23	pin3	OM0_f	pin4
++	OM1_f	pin5	OM2_f	pin6	OM3_f
++	pin7	OM4_f	pin8	OM5_f	pin9
++	OM6_f	pin10	OM7_f	pin11	IN_13
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin24 pin12
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL20V8_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin24 pin12
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL20V8_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin24 pin12
++	$D_LO   ac0 
++	GAL20V8_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin24 pin12
++	$D_LO   syn 
++	GAL20V8_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin24 pin12
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL20V8_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin24 pin12
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL20V8_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin24 pin12
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE bufa(3) pin24 pin12
++	pin13 pin14 pin23   p13buf p14buf p23buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	p13buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin24 pin12
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin24 pin12
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n22 g pin22 p23buf 
++	ac10 xor0 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n21 g pin21 n22 
++	ac11 xor1 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n20 g pin20 n21 
++	ac12 xor2 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n19 g pin19 n20 
++	ac13 xor3 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n18 g pin18 n17 
++	ac14 xor4 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n17 g pin17 n16 
++	ac15 xor5 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n16 g pin16 n15 
++	ac16 xor6 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n15 g pin15 
++	p14buf ac17 xor7 syn ac0  pin24 pin12  GAL20V8-25_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x9  syn p23buf c in_23  pin24 pin12  GAL_MUX21
+x10  syn p14buf p13buf in_13  pin24 pin12  GAL_MUX21
+.ends
+
+*$
+*---------
+* GAL20V8-30Q
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL20V8-30Q  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	IN_23	pin3	OM0_f	pin4
++	OM1_f	pin5	OM2_f	pin6	OM3_f
++	pin7	OM4_f	pin8	OM5_f	pin9
++	OM6_f	pin10	OM7_f	pin11	IN_13
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin24 pin12
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL20V8_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin24 pin12
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL20V8_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin24 pin12
++	$D_LO   ac0 
++	GAL20V8_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin24 pin12
++	$D_LO   syn 
++	GAL20V8_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin24 pin12
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL20V8_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin24 pin12
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL20V8_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin24 pin12
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE bufa(3) pin24 pin12
++	pin13 pin14 pin23   p13buf p14buf p23buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	p13buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin24 pin12
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin24 pin12
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n22 g pin22 p23buf 
++	ac10 xor0 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n21 g pin21 n22 
++	ac11 xor1 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n20 g pin20 n21 
++	ac12 xor2 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n19 g pin19 n20 
++	ac13 xor3 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n18 g pin18 n17 
++	ac14 xor4 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n17 g pin17 n16 
++	ac15 xor5 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n16 g pin16 n15 
++	ac16 xor6 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n15 g pin15 
++	p14buf ac17 xor7 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x9  syn p23buf c in_23  pin24 pin12  GAL_MUX21
+x10  syn p14buf p13buf in_13  pin24 pin12  GAL_MUX21
+.ends
+
+.subckt GAL20V8-30_OLMC  R0 R1 R2 R3 R4 R5 R6 R7 C F S N G PIN P AC1N XORN SYN
++	AC0
++	optional: PWR=$G_DPWR GND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(8) pwr gnd
++	r0x r1 r2 r3 r4 r5 r6 r7   or 
++	D0_GATE IO_LS 
+U2 xor pwr gnd
++	or xorn   dn 
++	D0_GATE IO_LS 
+U3 dff(1) pwr gnd
++	$d_hi $d_hi c   dn   q0 q0bar 
++	D_GAL20V8-30_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 and(2) pwr gnd
++	ac0 ac1n   r0d 
++	D0_GATE IO_LS 
+U5 inv3 pwr gnd
++	out   e   pin 
++	D_GAL20V8-30_out IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 buf pwr gnd
++	pin   ibuf 
++	D_GAL20V8-30_in IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  r0d r0 $d_lo r0x  pwr gnd  GAL_MUX21
+x2  ac0 ac1n $d_hi $d_lo g r0 e  pwr gnd  GAL_MUX41
+x3  s ac1n p p q0bar ibuf f  pwr gnd  GAL_MUX41
+x4  ac1n $d_lo ibuf n  pwr gnd  GAL_MUX21
+x5  ac0 ac1n dn dn q0 dn out  pwr gnd  GAL_MUX41
+.ends
+
+.model D_GAL20V8-30_REG ueff ( ; Register timing
++	twclkhmn=15ns	twclklmn=15ns
++	tsudclkmn=25ns
++	)
+.model D_GAL20V8-30_OUT utgate ( ; Gate pin enabled output from reg
++	tplhmx=20ns	tphlmx=20ns
++	tplzmx=25ns	tphzmx=25ns
++	tpzlmx=25ns	tpzhmx=25ns
++	)
+.model D_GAL20V8-30_IN ugate ( ; Register to feedback delay
++	tplhmx=20ns	tphlmx=20ns
++	)
+*$
+*---------
+* GAL20V8-30L
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL20V8-30L  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	IN_23	pin3	OM0_f	pin4
++	OM1_f	pin5	OM2_f	pin6	OM3_f
++	pin7	OM4_f	pin8	OM5_f	pin9
++	OM6_f	pin10	OM7_f	pin11	IN_13
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin24 pin12
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL20V8_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin24 pin12
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL20V8_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin24 pin12
++	$D_LO   ac0 
++	GAL20V8_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin24 pin12
++	$D_LO   syn 
++	GAL20V8_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin24 pin12
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL20V8_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin24 pin12
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL20V8_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin24 pin12
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE bufa(3) pin24 pin12
++	pin13 pin14 pin23   p13buf p14buf p23buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	p13buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin24 pin12
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin24 pin12
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n22 g pin22 p23buf 
++	ac10 xor0 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n21 g pin21 n22 
++	ac11 xor1 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n20 g pin20 n21 
++	ac12 xor2 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n19 g pin19 n20 
++	ac13 xor3 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n18 g pin18 n17 
++	ac14 xor4 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n17 g pin17 n16 
++	ac15 xor5 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n16 g pin16 n15 
++	ac16 xor6 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n15 g pin15 
++	p14buf ac17 xor7 syn ac0  pin24 pin12  GAL20V8-30_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x9  syn p23buf c in_23  pin24 pin12  GAL_MUX21
+x10  syn p14buf p13buf in_13  pin24 pin12  GAL_MUX21
+.ends
+
+*$
+*---------
+* GAL20V8A-10
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL20V8A-10  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	IN_23	pin3	OM0_f	pin4
++	OM1_f	pin5	OM2_f	pin6	OM3_f
++	pin7	OM4_f	pin8	OM5_f	pin9
++	OM6_f	pin10	OM7_f	pin11	IN_13
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin24 pin12
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL20V8A_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin24 pin12
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL20V8A_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin24 pin12
++	$D_LO   ac0 
++	GAL20V8A_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin24 pin12
++	$D_LO   syn 
++	GAL20V8A_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin24 pin12
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL20V8A_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin24 pin12
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL20V8A_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin24 pin12
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE bufa(3) pin24 pin12
++	pin13 pin14 pin23   p13buf p14buf p23buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	p13buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin24 pin12
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin24 pin12
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n22 g pin22 p23buf 
++	ac10 xor0 syn ac0  pin24 pin12  GAL20V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n21 g pin21 n22 
++	ac11 xor1 syn ac0  pin24 pin12  GAL20V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n20 g pin20 n21 
++	ac12 xor2 syn ac0  pin24 pin12  GAL20V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n19 g pin19 n20 
++	ac13 xor3 syn ac0  pin24 pin12  GAL20V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n18 g pin18 n17 
++	ac14 xor4 syn ac0  pin24 pin12  GAL20V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n17 g pin17 n16 
++	ac15 xor5 syn ac0  pin24 pin12  GAL20V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n16 g pin16 n15 
++	ac16 xor6 syn ac0  pin24 pin12  GAL20V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n15 g pin15 
++	p14buf ac17 xor7 syn ac0  pin24 pin12  GAL20V8A-10_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x9  syn p23buf c in_23  pin24 pin12  GAL_MUX21
+x10  syn p14buf p13buf in_13  pin24 pin12  GAL_MUX21
+.ends
+
+.subckt GAL20V8A-10_OLMC  R0 R1 R2 R3 R4 R5 R6 R7 C F S N G PIN P AC1N XORN
++	SYN AC0
++	optional: PWR=$G_DPWR GND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(8) pwr gnd
++	r0x r1 r2 r3 r4 r5 r6 r7   or 
++	D0_GATE IO_LS 
+U2 xor pwr gnd
++	or xorn   dn 
++	D0_GATE IO_LS 
+U3 dff(1) pwr gnd
++	$d_hi $d_hi c   dn   q0 q0bar 
++	D_GAL20V8A-10_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 and(2) pwr gnd
++	ac0 ac1n   r0d 
++	D0_GATE IO_LS 
+U5 inv3 pwr gnd
++	out   e   pin 
++	D_GAL20V8A-10_out IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 buf pwr gnd
++	pin   ibuf 
++	D_GAL20V8A-10_in IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  r0d r0 $d_lo r0x  pwr gnd  GAL_MUX21
+x2  ac0 ac1n $d_hi $d_lo g r0 e  pwr gnd  GAL_MUX41
+x3  s ac1n p p q0bar ibuf f  pwr gnd  GAL_MUX41
+x4  ac1n $d_lo ibuf n  pwr gnd  GAL_MUX21
+x5  ac0 ac1n dn dn q0 dn out  pwr gnd  GAL_MUX41
+.ends
+
+.model D_GAL20V8A-10_REG ueff ( ; Register timing
++	twclkhmn=08ns	twclklmn=08ns
++	tsudclkmn=10ns
++	)
+.model D_GAL20V8A-10_OUT utgate ( ; Gate pin enabled output from reg
++	tplhmx=08ns	tphlmx=08ns
++	tplzmx=10ns	tphzmx=10ns
++	tpzlmx=10ns	tpzhmx=10ns
++	)
+.model D_GAL20V8A-10_IN ugate ( ; Register to feedback delay
++	tplhmx=08ns	tphlmx=08ns
++	)
+.model GAL20V8A_XOR upld (
++	offset=2560
++	)
+.model GAL20V8A_AC1 upld (
++	offset=2632
++	)
+.model GAL20V8A_AC0 upld (
++	offset=2705
++	)
+.model GAL20V8A_SYN upld (
++	offset=2704
++	)
+.model GAL20V8A_PTD upld (
++	offset=2640
++	)
+.model GAL20V8A_USW upld (
++	offset=2568
++	)
+*$
+*---------
+* GAL20V8A-12
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL20V8A-12  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	IN_23	pin3	OM0_f	pin4
++	OM1_f	pin5	OM2_f	pin6	OM3_f
++	pin7	OM4_f	pin8	OM5_f	pin9
++	OM6_f	pin10	OM7_f	pin11	IN_13
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin24 pin12
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL20V8A_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin24 pin12
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL20V8A_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin24 pin12
++	$D_LO   ac0 
++	GAL20V8A_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin24 pin12
++	$D_LO   syn 
++	GAL20V8A_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin24 pin12
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL20V8A_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin24 pin12
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL20V8A_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin24 pin12
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE bufa(3) pin24 pin12
++	pin13 pin14 pin23   p13buf p14buf p23buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	p13buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin24 pin12
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin24 pin12
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n22 g pin22 p23buf 
++	ac10 xor0 syn ac0  pin24 pin12  GAL20V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n21 g pin21 n22 
++	ac11 xor1 syn ac0  pin24 pin12  GAL20V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n20 g pin20 n21 
++	ac12 xor2 syn ac0  pin24 pin12  GAL20V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n19 g pin19 n20 
++	ac13 xor3 syn ac0  pin24 pin12  GAL20V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n18 g pin18 n17 
++	ac14 xor4 syn ac0  pin24 pin12  GAL20V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n17 g pin17 n16 
++	ac15 xor5 syn ac0  pin24 pin12  GAL20V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n16 g pin16 n15 
++	ac16 xor6 syn ac0  pin24 pin12  GAL20V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n15 g pin15 
++	p14buf ac17 xor7 syn ac0  pin24 pin12  GAL20V8A-12_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x9  syn p23buf c in_23  pin24 pin12  GAL_MUX21
+x10  syn p14buf p13buf in_13  pin24 pin12  GAL_MUX21
+.ends
+
+.subckt GAL20V8A-12_OLMC  R0 R1 R2 R3 R4 R5 R6 R7 C F S N G PIN P AC1N XORN
++	SYN AC0
++	optional: PWR=$G_DPWR GND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(8) pwr gnd
++	r0x r1 r2 r3 r4 r5 r6 r7   or 
++	D0_GATE IO_LS 
+U2 xor pwr gnd
++	or xorn   dn 
++	D0_GATE IO_LS 
+U3 dff(1) pwr gnd
++	$d_hi $d_hi c   dn   q0 q0bar 
++	D_GAL20V8A-12_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 and(2) pwr gnd
++	ac0 ac1n   r0d 
++	D0_GATE IO_LS 
+U5 inv3 pwr gnd
++	out   e   pin 
++	D_GAL20V8A-12_out IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 buf pwr gnd
++	pin   ibuf 
++	D_GAL20V8A-12_in IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  r0d r0 $d_lo r0x  pwr gnd  GAL_MUX21
+x2  ac0 ac1n $d_hi $d_lo g r0 e  pwr gnd  GAL_MUX41
+x3  s ac1n p p q0bar ibuf f  pwr gnd  GAL_MUX41
+x4  ac1n $d_lo ibuf n  pwr gnd  GAL_MUX21
+x5  ac0 ac1n dn dn q0 dn out  pwr gnd  GAL_MUX41
+.ends
+
+.model D_GAL20V8A-12_REG ueff ( ; Register timing
++	twclkhmn=08ns	twclklmn=08ns
++	tsudclkmn=12ns
++	)
+.model D_GAL20V8A-12_OUT utgate ( ; Gate pin enabled output from reg
++	tplhmx=10ns	tphlmx=10ns
++	tplzmx=10ns	tphzmx=10ns
++	tpzlmx=10ns	tpzhmx=10ns
++	)
+.model D_GAL20V8A-12_IN ugate ( ; Register to feedback delay
++	tplhmx=10ns	tphlmx=10ns
++	)
+*$
+*---------
+* GAL20V8A-15
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL20V8A-15  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	IN_23	pin3	OM0_f	pin4
++	OM1_f	pin5	OM2_f	pin6	OM3_f
++	pin7	OM4_f	pin8	OM5_f	pin9
++	OM6_f	pin10	OM7_f	pin11	IN_13
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin24 pin12
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL20V8A_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin24 pin12
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL20V8A_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin24 pin12
++	$D_LO   ac0 
++	GAL20V8A_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin24 pin12
++	$D_LO   syn 
++	GAL20V8A_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin24 pin12
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL20V8A_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin24 pin12
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL20V8A_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin24 pin12
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE bufa(3) pin24 pin12
++	pin13 pin14 pin23   p13buf p14buf p23buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	p13buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin24 pin12
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin24 pin12
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n22 g pin22 p23buf 
++	ac10 xor0 syn ac0  pin24 pin12  GAL20V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n21 g pin21 n22 
++	ac11 xor1 syn ac0  pin24 pin12  GAL20V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n20 g pin20 n21 
++	ac12 xor2 syn ac0  pin24 pin12  GAL20V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n19 g pin19 n20 
++	ac13 xor3 syn ac0  pin24 pin12  GAL20V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n18 g pin18 n17 
++	ac14 xor4 syn ac0  pin24 pin12  GAL20V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n17 g pin17 n16 
++	ac15 xor5 syn ac0  pin24 pin12  GAL20V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n16 g pin16 n15 
++	ac16 xor6 syn ac0  pin24 pin12  GAL20V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n15 g pin15 
++	p14buf ac17 xor7 syn ac0  pin24 pin12  GAL20V8A-15_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x9  syn p23buf c in_23  pin24 pin12  GAL_MUX21
+x10  syn p14buf p13buf in_13  pin24 pin12  GAL_MUX21
+.ends
+
+.subckt GAL20V8A-15_OLMC  R0 R1 R2 R3 R4 R5 R6 R7 C F S N G PIN P AC1N XORN
++	SYN AC0
++	optional: PWR=$G_DPWR GND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(8) pwr gnd
++	r0x r1 r2 r3 r4 r5 r6 r7   or 
++	D0_GATE IO_LS 
+U2 xor pwr gnd
++	or xorn   dn 
++	D0_GATE IO_LS 
+U3 dff(1) pwr gnd
++	$d_hi $d_hi c   dn   q0 q0bar 
++	D_GAL20V8A-15_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 and(2) pwr gnd
++	ac0 ac1n   r0d 
++	D0_GATE IO_LS 
+U5 inv3 pwr gnd
++	out   e   pin 
++	D_GAL20V8A-15_out IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 buf pwr gnd
++	pin   ibuf 
++	D_GAL20V8A-15_in IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  r0d r0 $d_lo r0x  pwr gnd  GAL_MUX21
+x2  ac0 ac1n $d_hi $d_lo g r0 e  pwr gnd  GAL_MUX41
+x3  s ac1n p p q0bar ibuf f  pwr gnd  GAL_MUX41
+x4  ac1n $d_lo ibuf n  pwr gnd  GAL_MUX21
+x5  ac0 ac1n dn dn q0 dn out  pwr gnd  GAL_MUX41
+.ends
+
+.model D_GAL20V8A-15_REG ueff ( ; Register timing
++	twclkhmn=10ns	twclklmn=10ns
++	tsudclkmn=12ns
++	)
+.model D_GAL20V8A-15_OUT utgate ( ; Gate pin enabled output from reg
++	tplhmx=12ns	tphlmx=12ns
++	tplzmx=15ns	tphzmx=15ns
++	tpzlmx=15ns	tpzhmx=15ns
++	)
+.model D_GAL20V8A-15_IN ugate ( ; Register to feedback delay
++	tplhmx=12ns	tphlmx=12ns
++	)
+*$
+*---------
+* GAL20V8A-20
+*
+* Programmable Logic Devices Databook and Design Guide,
+* 1989 Edition, National Semiconductor
+* tdn   09/17/91	Created
+
+.subckt GAL20V8A-20  PIN1 PIN2 PIN3 PIN4 PIN5 PIN6 PIN7 PIN8 PIN9 PIN10 PIN11
++	PIN13 PIN14 PIN15 PIN16 PIN17 PIN18 PIN19 PIN20 PIN21 PIN22 PIN23
++	optional: PIN24=$G_DPWR PIN12=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
++	text: JEDEC_FILE="PAL.JED"
+U1 plandc(20,64) pin24 pin12
++	pin2	IN_23	pin3	OM0_f	pin4
++	OM1_f	pin5	OM2_f	pin6	OM3_f
++	pin7	OM4_f	pin8	OM5_f	pin9
++	OM6_f	pin10	OM7_f	pin11	IN_13
++	row0	row1	row2	row3	row4	row5	row6	row7
++	row8	row9	row10	row11	row12	row13	row14	row15
++	row16	row17	row18	row19	row20	row21	row22	row23
++	row24	row25	row26	row27	row28	row29	row30	row31
++	row32	row33	row34	row35	row36	row37	row38	row39
++	row40	row41	row42	row43	row44	row45	row46	row47
++	row48	row49	row50	row51	row52	row53	row54	row55
++	row56	row57	row58	row59	row60	row61	row62	row63
++	D0_PLD IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} FILE=|JEDEC_FILE| 
+UXOR pland(1,8) pin24 pin12
++	$D_LO   xor0 xor1 xor2 xor3 xor4 xor5 xor6 xor7 
++	GAL20V8A_xor IO_LS FILE=|JEDEC_FILE| 
+UAC1 pland(1,8) pin24 pin12
++	$D_LO   ac10 ac11 ac12 ac13 ac14 ac15 ac16 ac17 
++	GAL20V8A_ac1 IO_LS FILE=|JEDEC_FILE| 
+UAC0 pland(1,1) pin24 pin12
++	$D_LO   ac0 
++	GAL20V8A_ac0 IO_LS FILE=|JEDEC_FILE| 
+USYN pland(1,1) pin24 pin12
++	$D_LO   syn 
++	GAL20V8A_syn IO_LS FILE=|JEDEC_FILE| 
+UPTD pland(1,64) pin24 pin12
++	$D_LO
++	ptd0	ptd1	ptd2	ptd3	ptd4	ptd5	ptd6	ptd7
++	ptd8	ptd9	ptd10	ptd11	ptd12	ptd13	ptd14	ptd15
++	ptd16	ptd17	ptd18	ptd19	ptd20	ptd21	ptd22	ptd23
++	ptd24	ptd25	ptd26	ptd27	ptd28	ptd29	ptd30	ptd31
++	ptd32	ptd33	ptd34	ptd35	ptd36	ptd37	ptd38	ptd39
++	ptd40	ptd41	ptd42	ptd43	ptd44	ptd45	ptd46	ptd47
++	ptd48	ptd49	ptd50	ptd51	ptd52	ptd53	ptd54	ptd55
++	ptd56	ptd57	ptd58	ptd59	ptd60	ptd61	ptd62	ptd63
++	GAL20V8A_ptd IO_LS FILE=|JEDEC_FILE| 
+* User signature word
+UUSW pland(1,64) pin24 pin12
++	$D_LO
++	usw0	usw1	usw2	usw3	usw4	usw5	usw6	usw7
++	usw8	usw9	usw10	usw11	usw12	usw13	usw14	usw15
++	usw16	usw17	usw18	usw19	usw20	usw21	usw22	usw23
++	usw24	usw25	usw26	usw27	usw28	usw29	usw30	usw31
++	usw32	usw33	usw34	usw35	usw36	usw37	usw38	usw39
++	usw40	usw41	usw42	usw43	usw44	usw45	usw46	usw47
++	usw48	usw49	usw50	usw51	usw52	usw53	usw54	usw55
++	usw56	usw57	usw58	usw59	usw60	usw61	usw62	usw63
++	GAL20V8A_usw IO_LS FILE=|JEDEC_FILE| 
+UPTDA anda(2,64) pin24 pin12
++	row0	ptd0
++	row1	ptd1
++	row2	ptd2
++	row3	ptd3
++	row4	ptd4
++	row5	ptd5
++	row6	ptd6
++	row7	ptd7
++	row8	ptd8
++	row9	ptd9
++	row10	ptd10
++	row11	ptd11
++	row12	ptd12
++	row13	ptd13
++	row14	ptd14
++	row15	ptd15
++	row16	ptd16
++	row17	ptd17
++	row18	ptd18
++	row19	ptd19
++	row20	ptd20
++	row21	ptd21
++	row22	ptd22
++	row23	ptd23
++	row24	ptd24
++	row25	ptd25
++	row26	ptd26
++	row27	ptd27
++	row28	ptd28
++	row29	ptd29
++	row30	ptd30
++	row31	ptd31
++	row32	ptd32
++	row33	ptd33
++	row34	ptd34
++	row35	ptd35
++	row36	ptd36
++	row37	ptd37
++	row38	ptd38
++	row39	ptd39
++	row40	ptd40
++	row41	ptd41
++	row42	ptd42
++	row43	ptd43
++	row44	ptd44
++	row45	ptd45
++	row46	ptd46
++	row47	ptd47
++	row48	ptd48
++	row49	ptd49
++	row50	ptd50
++	row51	ptd51
++	row52	ptd52
++	row53	ptd53
++	row54	ptd54
++	row55	ptd55
++	row56	ptd56
++	row57	ptd57
++	row58	ptd58
++	row59	ptd59
++	row60	ptd60
++	row61	ptd61
++	row62	ptd62
++	row63	ptd63
++	rwo0	rwo1	rwo2	rwo3	rwo4	rwo5	rwo6	rwo7
++	rwo8	rwo9	rwo10	rwo11	rwo12	rwo13	rwo14	rwo15
++	rwo16	rwo17	rwo18	rwo19	rwo20	rwo21	rwo22	rwo23
++	rwo24	rwo25	rwo26	rwo27	rwo28	rwo29	rwo30	rwo31
++	rwo32	rwo33	rwo34	rwo35	rwo36	rwo37	rwo38	rwo39
++	rwo40	rwo41	rwo42	rwo43	rwo44	rwo45	rwo46	rwo47
++	rwo48	rwo49	rwo50	rwo51	rwo52	rwo53	rwo54	rwo55
++	rwo56	rwo57	rwo58	rwo59	rwo60	rwo61	rwo62	rwo63
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UE bufa(3) pin24 pin12
++	pin13 pin14 pin23   p13buf p14buf p23buf 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UF inv pin24 pin12
++	p13buf   g 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UG buf pin24 pin12
++	pin1   c 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+UH inv pin24 pin12
++	syn   synbar 
++	D0_gate IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  rwo0 rwo1 rwo2 rwo3 rwo4 rwo5 rwo6 rwo7 c om0_f synbar n22 g pin22 p23buf 
++	ac10 xor0 syn ac0  pin24 pin12  GAL20V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x2  rwo8 rwo9 rwo10 rwo11 rwo12 rwo13 rwo14 rwo15 c om1_f ac0 n21 g pin21 n22 
++	ac11 xor1 syn ac0  pin24 pin12  GAL20V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x3  rwo16 rwo17 rwo18 rwo19 rwo20 rwo21 rwo22 rwo23 c om2_f ac0 n20 g pin20 n21 
++	ac12 xor2 syn ac0  pin24 pin12  GAL20V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x4  rwo24 rwo25 rwo26 rwo27 rwo28 rwo29 rwo30 rwo31 c om3_f ac0 n19 g pin19 n20 
++	ac13 xor3 syn ac0  pin24 pin12  GAL20V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x5  rwo32 rwo33 rwo34 rwo35 rwo36 rwo37 rwo38 rwo39 c om4_f ac0 n18 g pin18 n17 
++	ac14 xor4 syn ac0  pin24 pin12  GAL20V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x6  rwo40 rwo41 rwo42 rwo43 rwo44 rwo45 rwo46 rwo47 c om5_f ac0 n17 g pin17 n16 
++	ac15 xor5 syn ac0  pin24 pin12  GAL20V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x7  rwo48 rwo49 rwo50 rwo51 rwo52 rwo53 rwo54 rwo55 c om6_f ac0 n16 g pin16 n15 
++	ac16 xor6 syn ac0  pin24 pin12  GAL20V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x8  rwo56 rwo57 rwo58 rwo59 rwo60 rwo61 rwo62 rwo63 c om7_f synbar n15 g pin15 
++	p14buf ac17 xor7 syn ac0  pin24 pin12  GAL20V8A-20_OLMC
++	params: MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL}
+x9  syn p23buf c in_23  pin24 pin12  GAL_MUX21
+x10  syn p14buf p13buf in_13  pin24 pin12  GAL_MUX21
+.ends
+
+.subckt GAL20V8A-20_OLMC  R0 R1 R2 R3 R4 R5 R6 R7 C F S N G PIN P AC1N XORN
++	SYN AC0
++	optional: PWR=$G_DPWR GND=$G_DGND
++	params: MNTYMXDLY=0 IO_LEVEL=0
+U1 or(8) pwr gnd
++	r0x r1 r2 r3 r4 r5 r6 r7   or 
++	D0_GATE IO_LS 
+U2 xor pwr gnd
++	or xorn   dn 
++	D0_GATE IO_LS 
+U3 dff(1) pwr gnd
++	$d_hi $d_hi c   dn   q0 q0bar 
++	D_GAL20V8A-20_REG IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U4 and(2) pwr gnd
++	ac0 ac1n   r0d 
++	D0_GATE IO_LS 
+U5 inv3 pwr gnd
++	out   e   pin 
++	D_GAL20V8A-20_out IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+U6 buf pwr gnd
++	pin   ibuf 
++	D_GAL20V8A-20_in IO_LS MNTYMXDLY={MNTYMXDLY} IO_LEVEL={IO_LEVEL} 
+x1  r0d r0 $d_lo r0x  pwr gnd  GAL_MUX21
+x2  ac0 ac1n $d_hi $d_lo g r0 e  pwr gnd  GAL_MUX41
+x3  s ac1n p p q0bar ibuf f  pwr gnd  GAL_MUX41
+x4  ac1n $d_lo ibuf n  pwr gnd  GAL_MUX21
+x5  ac0 ac1n dn dn q0 dn out  pwr gnd  GAL_MUX41
+.ends
+
+.model D_GAL20V8A-20_REG ueff ( ; Register timing
++	twclkhmn=12ns	twclklmn=12ns
++	tsudclkmn=15ns
++	)
+.model D_GAL20V8A-20_OUT utgate ( ; Gate pin enabled output from reg
++	tplhmx=15ns	tphlmx=15ns
++	tplzmx=18ns	tphzmx=18ns
++	tpzlmx=18ns	tpzhmx=18ns
++	)
+.model D_GAL20V8A-20_IN ugate ( ; Register to feedback delay
++	tplhmx=15ns	tphlmx=15ns
++	)
+*$
+
